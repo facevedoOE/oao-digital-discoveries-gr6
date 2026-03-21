@@ -1,0 +1,271 @@
+<!-- ============================================================
+     CANVAS PAGE: Lesson 1.1 — What Is Digital Communication?
+     Course: Digital Discoveries #0200021 | Grade 6 | Unit 1
+     Standard: SC.6.CC.1.1
+     INSTRUCTIONS: Paste the contents of <body> into the Canvas
+     Rich Content Editor (HTML view). The <style> block must be
+     included — paste everything between and including the two
+     <div id="dd-root"> tags.
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Lesson 1.1 – What Is Digital Communication?</title></head>
+<body>
+
+<style>
+  /* ── Optima / Digital Discoveries Brand Tokens ── */
+  :root {
+    --navy-deep:   #0A1628;
+    --navy-main:   #0E1C42;
+    --navy-mid:    #1A3166;
+    --navy-light:  #2B4A8A;
+    --cyan-vivid:  #00C4E8;
+    --cyan-mid:    #55C8E8;
+    --cyan-pale:   #C8F0FA;
+    --cyan-bg:     #E8F8FC;
+    --teal:        #0E5568;
+    --green:       #1A6B2A;
+    --green-bg:    #D4F0DC;
+    --amber:       #C87800;
+    --amber-bg:    #FFF3D0;
+    --purple:      #67308F;
+    --purple-bg:   #F0E8F8;
+    --off-white:   #F7FAFD;
+    --light-gray:  #EEF2F7;
+    --mid-gray:    #6B7A8D;
+    --white:       #FFFFFF;
+  }
+
+  #dd-root * { box-sizing: border-box; margin: 0; padding: 0; }
+  #dd-root { font-family: Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #1a1a2e; max-width: 860px; margin: 0 auto; }
+
+  /* ── Lesson Banner ── */
+  .dd-banner {
+    display: flex; border-radius: 8px; overflow: hidden;
+    margin-bottom: 28px; box-shadow: 0 4px 18px rgba(10,22,40,.22);
+  }
+  .dd-banner__stripe { width: 10px; background: var(--cyan-vivid); flex-shrink: 0; }
+  .dd-banner__body { background: var(--navy-deep); padding: 28px 32px; flex: 1; }
+  .dd-banner__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; color: var(--cyan-mid); text-transform: uppercase; margin-bottom: 6px; }
+  .dd-banner__title { font-size: 30px; font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 8px; }
+  .dd-banner__meta { font-size: 13px; color: var(--cyan-pale); }
+
+  /* ── Section Label ── */
+  .dd-section-label {
+    display: flex; align-items: center; gap: 10px;
+    margin: 32px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cyan-vivid);
+  }
+  .dd-section-label__icon { font-size: 18px; }
+  .dd-section-label__text { font-size: 11px; font-weight: 800; letter-spacing: .2em; color: var(--navy-main); text-transform: uppercase; }
+
+  /* ── Sub-header ── */
+  .dd-subheader { font-size: 17px; font-weight: 700; color: var(--navy-main); margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
+  .dd-subheader span { font-size: 20px; }
+
+  /* ── Body text ── */
+  .dd-body { margin-bottom: 14px; font-size: 15px; color: #1a1a2e; }
+
+  /* ── Bullet list ── */
+  .dd-list { list-style: none; padding: 0; margin: 0 0 16px 0; }
+  .dd-list li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 9px; font-size: 15px; }
+  .dd-list li::before { content: "◆"; color: var(--cyan-vivid); font-size: 11px; flex-shrink: 0; margin-top: 4px; }
+
+  /* ── Callout box ── */
+  .dd-callout {
+    display: flex; border-radius: 6px; overflow: hidden;
+    margin: 18px 0; box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  }
+  .dd-callout__bar { width: 6px; flex-shrink: 0; }
+  .dd-callout__body { padding: 16px 20px; flex: 1; border: 1px solid; border-left: none; border-radius: 0 6px 6px 0; }
+  .dd-callout__label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .dd-callout--cyan  .dd-callout__bar { background: var(--cyan-vivid); }
+  .dd-callout--cyan  .dd-callout__body { background: var(--cyan-bg); border-color: var(--cyan-pale); }
+  .dd-callout--cyan  .dd-callout__label { color: var(--teal); }
+  .dd-callout--green .dd-callout__bar { background: var(--green); }
+  .dd-callout--green .dd-callout__body { background: var(--green-bg); border-color: #a8d8b0; }
+  .dd-callout--green .dd-callout__label { color: var(--green); }
+  .dd-callout--amber .dd-callout__bar { background: var(--amber); }
+  .dd-callout--amber .dd-callout__body { background: var(--amber-bg); border-color: #f0d080; }
+  .dd-callout--amber .dd-callout__label { color: var(--amber); }
+  .dd-callout--purple .dd-callout__bar { background: var(--purple); }
+  .dd-callout--purple .dd-callout__body { background: var(--purple-bg); border-color: #c8a8e0; }
+  .dd-callout--purple .dd-callout__label { color: var(--purple); }
+
+  /* ── Data table ── */
+  .dd-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .dd-table thead tr { background: var(--navy-main); color: var(--white); }
+  .dd-table thead th { padding: 11px 14px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-align: left; }
+  .dd-table tbody tr:nth-child(odd)  { background: var(--white); }
+  .dd-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .dd-table tbody td { padding: 10px 14px; border-bottom: 1px solid var(--light-gray); vertical-align: top; }
+
+  /* ── Step rows ── */
+  .dd-steps { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+  .dd-step { display: flex; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+  .dd-step__num { background: var(--cyan-vivid); color: var(--navy-deep); font-size: 20px; font-weight: 800; width: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .dd-step__body { background: var(--off-white); border: 1px solid var(--light-gray); border-left: 3px solid var(--cyan-pale); padding: 12px 18px; flex: 1; }
+  .dd-step__title { font-weight: 700; color: var(--navy-main); font-size: 15px; margin-bottom: 4px; }
+  .dd-step__desc  { font-size: 14px; color: #333; }
+
+  /* ── Vocab table ── */
+  .dd-vocab { width: 100%; border-collapse: collapse; margin: 16px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .dd-vocab thead tr { background: var(--cyan-vivid); }
+  .dd-vocab thead th { padding: 10px 14px; font-size: 11px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; color: var(--navy-deep); text-align: left; }
+  .dd-vocab tbody tr:nth-child(odd)  { background: var(--white); }
+  .dd-vocab tbody tr:nth-child(even) { background: var(--off-white); }
+  .dd-vocab tbody td { padding: 10px 14px; border-bottom: 1px solid var(--cyan-pale); font-size: 14px; vertical-align: top; }
+  .dd-vocab .term { font-weight: 700; color: var(--navy-main); width: 160px; }
+
+  /* ── What's Next ── */
+  .dd-next { display: flex; border-radius: 8px; overflow: hidden; margin: 28px 0 8px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .dd-next__arrow { background: var(--navy-main); color: var(--cyan-vivid); font-size: 26px; font-weight: 900; width: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .dd-next__body { background: var(--light-gray); border: 1px solid #d0d8e8; border-left: none; padding: 16px 20px; flex: 1; }
+  .dd-next__label { font-size: 11px; font-weight: 800; letter-spacing: .18em; color: var(--navy-main); text-transform: uppercase; margin-bottom: 6px; }
+  .dd-next__text  { font-size: 15px; color: #1a1a2e; }
+
+  /* ── Divider ── */
+  .dd-divider { border: none; border-top: 1px solid var(--cyan-pale); margin: 26px 0; }
+
+  /* ── Obj pills ── */
+  .dd-obj { background: var(--off-white); border-left: 4px solid var(--cyan-vivid); border-radius: 0 6px 6px 0; padding: 10px 16px; margin-bottom: 10px; font-size: 15px; }
+</style>
+
+<div id="dd-root">
+
+  <!-- BANNER -->
+  <div class="dd-banner">
+    <div class="dd-banner__stripe"></div>
+    <div class="dd-banner__body">
+      <div class="dd-banner__eyebrow">Lesson 1.1 &nbsp;·&nbsp; Unit 1: Digital Foundations &nbsp;·&nbsp; SC.6.CC.1.1</div>
+      <div class="dd-banner__title">What Is Digital Communication?</div>
+      <div class="dd-banner__meta">Digital Discoveries &nbsp;·&nbsp; Course #0200021 &nbsp;·&nbsp; Grade 6</div>
+    </div>
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div class="dd-section-label">
+    <span class="dd-section-label__icon">🎯</span>
+    <span class="dd-section-label__text">Learning Objectives</span>
+  </div>
+  <p class="dd-body">By the end of this lesson, you will be able to:</p>
+  <div class="dd-obj">Define digital communication and identify at least four tools used to communicate online.</div>
+  <div class="dd-obj">Explain why the choice of digital communication tool matters for different audiences and purposes.</div>
+  <div class="dd-obj">Recognize the difference between <strong>synchronous</strong> (real-time) and <strong>asynchronous</strong> (not real-time) digital communication.</div>
+  <div class="dd-obj">Describe how digital messages travel from sender to receiver using basic concepts of networks.</div>
+
+  <hr class="dd-divider">
+
+  <!-- INTRODUCTION -->
+  <div class="dd-section-label">
+    <span class="dd-section-label__icon">🚀</span>
+    <span class="dd-section-label__text">Lesson Introduction</span>
+  </div>
+  <p class="dd-body">Think about the last time you sent a message to someone. Maybe you texted a friend, left a comment on a video, or sent a response in a class chat. Every one of those moments was an act of digital communication — and you probably did it without thinking twice! But have you ever stopped to wonder exactly what happens when you hit send? Where does that message go? How does it get there so fast? And why does the way you write to your teacher look so different from the way you message your best friend?</p>
+  <p class="dd-body">In this lesson, you are going to explore the world of digital communication from the ground up. You will discover that there are many different tools and channels for communicating online — from email and video calls to discussion boards and messaging apps — and that each one has its own strengths, rules, and best uses. Understanding these tools is the first step toward becoming a smart, confident, and effective digital communicator. Let's get started!</p>
+
+  <hr class="dd-divider">
+
+  <!-- CORE CONTENT -->
+  <div class="dd-section-label">
+    <span class="dd-section-label__icon">📖</span>
+    <span class="dd-section-label__text">Core Content</span>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="dd-subheader"><span>📡</span> Section 1: What Is Digital Communication?</div>
+  <p class="dd-body">Digital communication is any exchange of information that takes place using electronic devices and the internet. This includes sending emails, posting on a class discussion board, video calling a relative in another state, chatting in a gaming app, or even just reacting to a post with an emoji. If it travels through a screen or a network, it counts as digital communication.</p>
+  <p class="dd-body">At its most basic level, every act of digital communication involves three parts:</p>
+  <ul class="dd-list">
+    <li>A <strong>sender</strong> — the person creating and sending the message.</li>
+    <li>A <strong>message</strong> — the information, idea, or feeling being shared.</li>
+    <li>A <strong>receiver</strong> — the person (or people) getting the message.</li>
+  </ul>
+  <p class="dd-body">What makes digital communication unique is the <strong>channel</strong> — the technology that carries the message from one place to another. Choosing the right channel for your message is one of the most important skills a digital communicator can have.</p>
+
+  <!-- Section 2 -->
+  <div class="dd-subheader"><span>🛠️</span> Section 2: Types of Digital Communication Tools</div>
+  <p class="dd-body">There are many different digital communication tools, and they each work best in certain situations:</p>
+  <table class="dd-table">
+    <thead><tr><th>Tool Type</th><th>Examples</th><th>Best Used For</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Email</strong></td><td>Gmail, Outlook, Canvas Inbox</td><td>Formal messages, detailed questions, school communication</td></tr>
+      <tr><td><strong>Instant Messaging</strong></td><td>Text messages, WhatsApp, Discord</td><td>Quick conversations with people you know well</td></tr>
+      <tr><td><strong>Video Calling</strong></td><td>Zoom, Google Meet, FaceTime</td><td>Real-time discussions, group meetings, tutoring sessions</td></tr>
+      <tr><td><strong>Discussion Boards</strong></td><td>Canvas Discussions, school forums</td><td>Sharing ideas with a class, building on each other's thinking</td></tr>
+      <tr><td><strong>VR Environments</strong></td><td>ENGAGE VR, AltspaceVR</td><td>Immersive collaboration, virtual field trips, presentations</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Section 3 -->
+  <div class="dd-subheader"><span>⏱️</span> Section 3: Synchronous vs. Asynchronous Communication</div>
+  <p class="dd-body">One of the most useful distinctions in digital communication is the difference between <strong>synchronous</strong> and <strong>asynchronous</strong> communication.</p>
+  <table class="dd-table">
+    <thead><tr><th>Synchronous (Real-Time)</th><th>Asynchronous (On Your Own Time)</th></tr></thead>
+    <tbody>
+      <tr><td>Both people are online at the same time</td><td>People respond whenever it is convenient for them</td></tr>
+      <tr><td>Examples: video calls, live chats</td><td>Examples: email, discussion board posts</td></tr>
+      <tr><td>Like a phone call — both parties present</td><td>Like leaving a note — read and replied to later</td></tr>
+      <tr><td>Great for quick decisions and live collaboration</td><td>Great for thoughtful, carefully worded responses</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Section 4 -->
+  <div class="dd-subheader"><span>🌐</span> Section 4: How Messages Travel — Networks Explained</div>
+  <p class="dd-body">Have you ever wondered how your message goes from your device to your friend's device in less than a second? It all comes down to <strong>networks</strong>. A network is a system of connected devices that can share information. When you send a digital message, it is broken into small pieces called <strong>data packets</strong> that travel through <strong>routers</strong> — devices that act like digital traffic directors — and are reassembled instantly at the other end.</p>
+
+  <div class="dd-steps">
+    <div class="dd-step">
+      <div class="dd-step__num">1</div>
+      <div class="dd-step__body">
+        <div class="dd-step__title">Your message is broken into data packets</div>
+        <div class="dd-step__desc">Instead of sending the whole message at once, your device splits it into small chunks of data called packets.</div>
+      </div>
+    </div>
+    <div class="dd-step">
+      <div class="dd-step__num">2</div>
+      <div class="dd-step__body">
+        <div class="dd-step__title">Packets travel through routers</div>
+        <div class="dd-step__desc">Routers act like digital traffic directors — they read each packet's destination and send it along the fastest available route.</div>
+      </div>
+    </div>
+    <div class="dd-step">
+      <div class="dd-step__num">3</div>
+      <div class="dd-step__body">
+        <div class="dd-step__title">Packets are reassembled at the destination</div>
+        <div class="dd-step__desc">When all packets arrive, they are put back together in order — and your message appears instantly!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocab -->
+  <div class="dd-callout dd-callout--cyan" style="margin-top:20px;">
+    <div class="dd-callout__bar"></div>
+    <div class="dd-callout__body">
+      <div class="dd-callout__label">📘 Key Vocabulary</div>
+      <table class="dd-vocab">
+        <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td class="term">Network</td><td>A system of connected devices that can share information with each other.</td></tr>
+          <tr><td class="term">Data packet</td><td>A small chunk of data split from a larger message that travels across a network.</td></tr>
+          <tr><td class="term">Router</td><td>A device that directs data packets toward the correct destination — like a digital traffic sign.</td></tr>
+          <tr><td class="term">Synchronous</td><td>Communication that happens in real time, with both parties online simultaneously.</td></tr>
+          <tr><td class="term">Asynchronous</td><td>Communication where sender and receiver are not online at the same time.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- WHAT'S NEXT -->
+  <div class="dd-next">
+    <div class="dd-next__arrow">→</div>
+    <div class="dd-next__body">
+      <div class="dd-next__label">What's Next</div>
+      <div class="dd-next__text">Now that you understand what digital communication is and how messages travel, it is time to zoom in on <em>how</em> you communicate. In <strong>Lesson 1.2</strong>, you will explore tone and professional language — and discover why the same message can land very differently depending on how it is written.</div>
+    </div>
+  </div>
+
+</div><!-- /dd-root -->
+</body>
+</html>
