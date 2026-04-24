@@ -1,0 +1,120 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 1 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Lesson 1.1
+  Standard: SC.6.CC.1.1 — Digital Communication Basics
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → C
+  Q3 → B
+  Q4 → B
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which of the following is the BEST example of SYNCHRONOUS
+    digital communication?
+───────────────────────────────────────────────────────────────
+  A) Posting a reply to a discussion board the night before class
+     ❌ Discussion posts are asynchronous — they're read whenever
+        the reader gets to them, not live.
+  B) Sending an email to your teacher about homework
+     ❌ Email is asynchronous — sender and receiver are not online
+        at the same time.
+  C) Joining a live video class with your teacher and classmates  ✓ CORRECT
+     ✅ Live video calls are synchronous: everyone is present and
+        communicating in real time. (SC.6.CC.1.1)
+  D) Leaving a voicemail for a friend
+     ❌ A voicemail is asynchronous — the friend listens later,
+        not in real time.
+
+───────────────────────────────────────────────────────────────
+Q2. What is a DATA PACKET?
+───────────────────────────────────────────────────────────────
+  A) A folder that stores all of your digital files
+     ❌ That describes storage or a directory — not a packet.
+  B) A password that protects your messages
+     ❌ That's encryption or authentication, not a packet.
+  C) A small chunk of information that travels across a network  ✓ CORRECT
+     ✅ Data packets are small pieces of a larger message. They
+        travel separately and are reassembled at the destination.
+        (SC.6.CC.1.1)
+  D) A type of router used to connect devices
+     ❌ Routers DIRECT packets — they aren't packets themselves.
+
+───────────────────────────────────────────────────────────────
+Q3. You need to send your science teacher a detailed question
+    about a project. Which tool is MOST appropriate?
+───────────────────────────────────────────────────────────────
+  A) A quick text with abbreviations
+     ❌ Too informal for a teacher, and texting class questions is
+        rarely the right channel.
+  B) An email written in a clear, polite tone                    ✓ CORRECT
+     ✅ Email is asynchronous, professional, and leaves a written
+        record — ideal for a detailed question to a teacher.
+        (SC.6.CC.1.1)
+  C) A reaction emoji on a class post
+     ❌ An emoji can't carry a full question. The teacher won't
+        know what you're asking.
+  D) A live video call at midnight
+     ❌ Synchronous calls require both people present — and late
+        at night is not appropriate for a teacher.
+
+───────────────────────────────────────────────────────────────
+Q4. Which statement BEST describes ASYNCHRONOUS communication?
+───────────────────────────────────────────────────────────────
+  A) Both people must be online at the same time
+     ❌ That describes SYNCHRONOUS, not asynchronous.
+  B) Messages are sent and received at different times, not live  ✓ CORRECT
+     ✅ The prefix "a-" means "not" — asynchronous = not together
+        in time. Emails and discussion posts are classic examples.
+        (SC.6.CC.1.1)
+  C) Asynchronous communication only works for video calls
+     ❌ Video calls are typically synchronous — opposite of
+        asynchronous.
+  D) Asynchronous communication needs a special network
+     ❌ Asynchronous tools use the same networks as synchronous
+        tools; the difference is timing, not hardware.
+
+───────────────────────────────────────────────────────────────
+Q5. In digital communication, what is the role of a ROUTER?
+───────────────────────────────────────────────────────────────
+  A) It creates new messages for the sender
+     ❌ Routers don't write messages — they move them.
+  B) It permanently stores all data packets on a server
+     ❌ That's storage/archiving, not routing.
+  C) It directs data packets to the correct destination           ✓ CORRECT
+     ✅ A router is like a digital traffic cop — it reads each
+        packet's destination and sends it along the fastest
+        available route. (SC.6.CC.1.1)
+  D) It converts text messages into voice messages
+     ❌ That's voice-to-text software, not a router.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-01-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,129 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 2 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Lessons 1.2–1.3
+  Standard: SC.6.CC.1.1 — Digital Communication in Practice
+  (Etiquette, Tone, Prudence & Temperance)
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → A
+  Q4 → C
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. What does "netiquette" mean?
+───────────────────────────────────────────────────────────────
+  A) A special kind of internet connection
+     ❌ That would describe hardware or network speed — not a
+        behavior rule.
+  B) The unwritten rules of respectful online communication       ✓ CORRECT
+     ✅ Right! "Netiquette" blends "network" and "etiquette" —
+        it's the code of polite online conduct. (SC.6.CC.1.1)
+  C) A software that blocks bad messages
+     ❌ That describes a filter or moderation tool, not
+        netiquette.
+  D) The name of a popular social media app
+     ❌ It's not an app — it's a set of behavior norms.
+
+───────────────────────────────────────────────────────────────
+Q2. The 3 C's of effective digital writing are:
+───────────────────────────────────────────────────────────────
+  A) Creativity, caution, curiosity
+     ❌ Those are great qualities, but not the 3 C's.
+  B) Color, contrast, clarity
+     ❌ Clarity is correct — but color and contrast belong to
+        visual design, not writing.
+  C) Clarity, concision, courtesy                                 ✓ CORRECT
+     ✅ Clarity (be understood), concision (respect the reader's
+        time), courtesy (kind tone). (SC.6.CC.1.1)
+  D) Confidence, charm, cleverness
+     ❌ Nice qualities for a conversation, but these are not the
+        3 C's of digital writing.
+
+───────────────────────────────────────────────────────────────
+Q3. You just wrote an angry reply to a discussion post. What is
+    the WISEST action?
+───────────────────────────────────────────────────────────────
+  A) Save it as a draft, wait at least 30 minutes, and reread    ✓ CORRECT
+     before sending
+     ✅ This is the classic practice of TEMPERANCE — pausing
+        before reacting. If the message still fits after the
+        break, send. If not, you saved yourself. (SC.6.CC.1.1)
+  B) Post it right away while you still feel strongly
+     ❌ Messages written in strong emotion almost always sound
+        worse the next day. This breaks temperance.
+  C) Send it privately to a few friends first
+     ❌ Now multiple people have a copy they could share. Not a
+        safer path — it's a riskier one.
+  D) Type it in ALL CAPS so your point is clear
+     ❌ ALL CAPS reads like shouting and breaks netiquette —
+        this makes the problem worse, not better.
+
+───────────────────────────────────────────────────────────────
+Q4. Which version of "I can't make practice today" has the
+    BEST tone for a TEACHER or COACH?
+───────────────────────────────────────────────────────────────
+  A) "cant come 2 practice, sry"
+     ❌ Too casual and abbreviated for a teacher or coach. The
+        tone doesn't fit the audience.
+  B) "WHY DOES EVERYONE THINK I CAN COME TO EVERYTHING"
+     ❌ ALL CAPS = shouting. Also, this tone is accusatory, not
+        respectful.
+  C) "Hi Coach, I won't be able to attend practice today due to  ✓ CORRECT
+     a family commitment. I'll be there Wednesday. Thank you."
+     ✅ Formal, respectful, specific — tone matches the
+        audience. Includes greeting, reason, plan, and thanks.
+        (SC.6.CC.1.1)
+  D) "not coming today 🙃"
+     ❌ Too curt and too casual. Missing greeting, reason, and
+        any courtesy for a coach or teacher.
+
+───────────────────────────────────────────────────────────────
+Q5. The classical virtue of PRUDENCE, applied to digital
+    communication, means:
+───────────────────────────────────────────────────────────────
+  A) Being brave enough to post your real opinions
+     ❌ That's closer to fortitude (courage), not prudence.
+  B) Wisely choosing the right action at the right moment —      ✓ CORRECT
+     the right tool, audience, and timing
+     ✅ Exactly! Prudence is practical wisdom. Online, it's
+        asking "Is this the right channel? Right time? Right
+        audience?" before acting. (SC.6.CC.1.1)
+  C) Treating every person fairly and equally
+     ❌ That describes the virtue of justice — also important,
+        but a different virtue.
+  D) Staying calm when you're angry
+     ❌ Close! That's the virtue of TEMPERANCE (self-control),
+        not prudence (wise choice). Prudence decides; temperance
+        restrains.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-02-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════
