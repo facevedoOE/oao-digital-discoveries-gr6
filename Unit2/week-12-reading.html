@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 12 — Encryption &amp; Digital Identity | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+
+<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
+
+  <!-- HEADER BAR -->
+  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
+    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
+      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
+      <circle cx="24" cy="28" r="7" fill="#fff"/>
+      <circle cx="40" cy="28" r="7" fill="#fff"/>
+      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
+      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
+      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
+      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div style="flex:1;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
+      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+    </div>
+    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 2 · WEEK 12</div>
+  </div>
+
+  <!-- HERO -->
+  <div style="background:linear-gradient(135deg,#0E1C42 0%,#1a2a5e 50%,#0E5568 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.30) 0%,rgba(85,200,232,0) 70%);"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(199,146,44,0.25) 0%,rgba(199,146,44,0) 70%);"></div>
+    <div style="position:relative;z-index:2;">
+      <div style="display:inline-block;background:rgba(85,200,232,0.15);border:1px solid #55C8E8;color:#55C8E8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lessons 5.2 &amp; 5.3 · SC.6.CS.1.5, 1.6</div>
+      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Encryption &amp; Digital Identity</h1>
+      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Your password travels across the internet every time you log in. So why can't a hacker just read it? The answer is a 2,000-year-old idea that protects your secrets — and a modern one that protects your identity. This week: codes, ciphers, and the digital footprint you're leaving right now.</p>
+    </div>
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
+      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Define encryption</strong> and explain why we use it to protect data in motion.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Encrypt and decrypt</strong> a short message using a Caesar shift cipher.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Recognize HTTPS</strong> as a sign of an encrypted connection — and spot when it's missing.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Manage your digital identity</strong> — avatars, usernames, and the footprint you leave online.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · The Secret-Message Problem</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">If a message has to travel, anyone can read it… unless</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">Imagine writing a note in class and passing it across the room. Every student who handles it could open it. The internet is the same — your message hops through dozens of routers, networks, and servers on the way to its destination, and at every step, someone <em>could</em> peek inside.</p>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">The fix is more than 2,000 years old. <strong style="color:#ffffff;">Encryption</strong> is the practice of scrambling a message so only the right person — the one with the right "key" — can read it. The original (readable) message is called <strong style="color:#ffffff;">plaintext</strong>; the scrambled version is <strong style="color:#ffffff;">ciphertext</strong>.</p>
+
+    <!-- Plaintext -> ciphertext diagram -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
+      <svg width="100%" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+        <!-- Plaintext -->
+        <rect x="20" y="40" width="160" height="80" rx="10" fill="#76C043" opacity="0.16" stroke="#76C043" stroke-width="2"/>
+        <text x="100" y="70" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#76C043">PLAINTEXT</text>
+        <text x="100" y="96" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#e2e8f0">HELLO</text>
+        <!-- Encrypt arrow -->
+        <line x1="190" y1="80" x2="240" y2="80" stroke="#C7922C" stroke-width="2" stroke-dasharray="4,4"/>
+        <polygon points="240,80 230,75 230,85" fill="#C7922C"/>
+        <text x="215" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#C7922C">ENCRYPT</text>
+        <text x="215" y="100" text-anchor="middle" font-size="14">🔑</text>
+        <!-- Ciphertext -->
+        <rect x="250" y="40" width="160" height="80" rx="10" fill="#67308F" opacity="0.18" stroke="#67308F" stroke-width="2"/>
+        <text x="330" y="70" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#b388d8">CIPHERTEXT</text>
+        <text x="330" y="96" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#e2e8f0">KHOOR</text>
+        <!-- Decrypt arrow -->
+        <line x1="420" y1="80" x2="470" y2="80" stroke="#C7922C" stroke-width="2" stroke-dasharray="4,4"/>
+        <polygon points="470,80 460,75 460,85" fill="#C7922C"/>
+        <text x="445" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#C7922C">DECRYPT</text>
+        <text x="445" y="100" text-anchor="middle" font-size="14">🔑</text>
+        <!-- Plaintext again -->
+        <rect x="480" y="40" width="100" height="80" rx="10" fill="#76C043" opacity="0.16" stroke="#76C043" stroke-width="2"/>
+        <text x="530" y="70" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#76C043">PLAINTEXT</text>
+        <text x="530" y="96" text-anchor="middle" font-family="Courier New, monospace" font-size="14" fill="#e2e8f0">HELLO</text>
+        <text x="300" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#8a9bb8">Encrypt → travel safely → Decrypt with the right key</text>
+      </svg>
+    </div>
+
+    <!-- VOCABULARY block -->
+    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
+      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Encryption</strong> — scrambling a message so only the right person can read it.</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Decryption</strong> — un-scrambling a message back to its original form.</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Plaintext</strong> — a message in its readable form, before it's scrambled.</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Ciphertext</strong> — the scrambled version of a message.</p>
+        <p style="margin:0;"><strong style="color:#ffffff;">Key</strong> — the secret information that lets you encrypt or decrypt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · The Caesar Cipher</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Julius Caesar's two-thousand-year-old trick</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">When the Roman general Julius Caesar sent battle messages, he scrambled them with one of the simplest codes ever invented — now called the <strong style="color:#ffffff;">Caesar cipher</strong> or <strong style="color:#ffffff;">shift cipher</strong>. The rule: shift each letter forward by a fixed number. With a shift of <strong>3</strong>, the letter <em>A</em> becomes <em>D</em>, <em>B</em> becomes <em>E</em>, and so on.</p>
+
+    <!-- Shift cipher visual -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">🔁 Shift = 3</div>
+      <div style="font-family:Courier New, monospace;font-size:14px;color:#e2e8f0;background:#0a0a14;padding:14px;border-radius:8px;border:1px solid #1e2a4a;overflow-x:auto;">
+        <div style="white-space:pre;color:#76C043;">Plain:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+        <div style="white-space:pre;color:#b388d8;">Cipher: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</div>
+      </div>
+      <p style="margin:14px 0 0;color:#c8d6e8;font-size:14px;line-height:1.6;">To encrypt <strong style="color:#76C043;">HELLO</strong> with a shift of 3: H→K, E→H, L→O, L→O, O→R = <strong style="color:#b388d8;">KHOOR</strong>.</p>
+      <p style="margin:8px 0 0;color:#c8d6e8;font-size:14px;line-height:1.6;">To decrypt, use the SAME key (3) and shift backward.</p>
+    </div>
+
+    <!-- Worked example -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">✍️ Try It (in your head)</div>
+      <p style="margin:0 0 8px;color:#e2e8f0;font-size:15px;">With a shift of <strong style="color:#C7922C;">3</strong>, what does <strong style="color:#b388d8;font-family:Courier New,monospace;">FDW</strong> decrypt to?</p>
+      <p style="margin:0;color:#8a9bb8;font-size:13px;font-style:italic;">(Shift each letter back 3 places.)</p>
+      <details style="margin-top:12px;">
+        <summary style="cursor:pointer;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:700;">Reveal answer →</summary>
+        <p style="margin:8px 0 0;color:#76C043;font-family:Courier New,monospace;font-size:15px;">FDW → C-A-T → <strong>CAT</strong></p>
+      </details>
+    </div>
+
+    <!-- CHECK FOR UNDERSTANDING -->
+    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;"><strong style="color:#ffffff;">Pause and think:</strong> Caesar's enemies eventually figured out his cipher. There are only 25 possible shifts, so a determined human could just try them all. What does that suggest about why <em>modern</em> encryption uses keys with billions of possibilities — not just 25?</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;font-style:italic;">(Hint: how many tries would it take a computer to guess 25 vs. 100,000,000,000,000?)</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · HTTPS &amp; the Lock Icon</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">The little padlock that does a lot</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Look at the address bar of your browser right now. You'll see a small <strong style="color:#76C043;">🔒 padlock</strong> next to the address, and the address starts with <strong style="color:#76C043;">https://</strong>. That little <strong>"s"</strong> stands for <em>secure</em>, and it means modern encryption is protecting every byte traveling between your device and the website.</p>
+
+    <!-- HTTP vs HTTPS comparison -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #ff6b6b;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#ff6b6b;text-transform:uppercase;margin-bottom:10px;">⚠️ HTTP (no S)</div>
+        <div style="font-family:Courier New, monospace;color:#ff6b6b;background:#0a0a14;padding:8px 12px;border-radius:6px;border:1px solid #1e2a4a;font-size:13px;margin-bottom:10px;">http://example.com</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Plaintext on the network</li>
+          <li>Anyone in between can read what you send</li>
+          <li>NEVER type a password into an HTTP page</li>
+        </ul>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #76C043;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#76C043;text-transform:uppercase;margin-bottom:10px;">🔒 HTTPS (secure)</div>
+        <div style="font-family:Courier New, monospace;color:#76C043;background:#0a0a14;padding:8px 12px;border-radius:6px;border:1px solid #1e2a4a;font-size:13px;margin-bottom:10px;">https://example.com</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Encrypted automatically</li>
+          <li>Even on coffee-shop Wi-Fi, your password stays scrambled</li>
+          <li>Look for the padlock — and the "s"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- THINK ABOUT IT -->
+    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">HTTPS protects data <em>in motion</em> — but not what happens after. The website you log into still sees your password, your messages, and what you click. That's why the classical virtue of <strong style="color:#ffffff;">prudence</strong> matters even when the lock icon is green: pick trustworthy sites, and don't share confidential info with sites that don't have a good reason to ask.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · Your Digital Identity</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Avatars, usernames, and the "you" the world sees</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">The internet sees a different version of you than your friends do. Your <strong style="color:#ffffff;">digital identity</strong> is everything that represents you online — your username, your avatar, the bio in your profile, the photos you post, the games you play. You build it, intentionally or not, every single day.</p>
+
+    <!-- Identity components -->
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🪪</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Username</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">The name people see and search for. <em style="color:#55C8E8;">Smart move:</em> avoid your full real name, your birth year, or your school. Use something memorable but not personal — <code>BlueDragon42</code> is fine; <code>SophiaMartinez2014</code> is not.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🖼️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Avatar / Profile Picture</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">A picture that represents you. <em style="color:#C7922C;">Smart move:</em> on public platforms, use a drawing, an icon, or a character — not a clear photo of your face that strangers can save and reuse.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">📝</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Bio &amp; Posts</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">The words you write. <em style="color:#b388d8;">Smart move:</em> share interests and opinions, not addresses, schedules, or daily routines. "I love astronomy" is fine; "I walk to the corner of Oak and 5th every day at 3:30" is not.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">⚙️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Privacy Settings</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">The control panel. <em style="color:#76C043;">Smart move:</em> default to <strong>private</strong> or <strong>friends only</strong>. Turn off location sharing on apps that don't need it. Review settings every few months.</div>
+      </div>
+    </div>
+
+    <!-- DID YOU KNOW -->
+    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">Many colleges, sports teams, and even employers now <strong style="color:#ffffff;">search for people online before accepting them</strong>. They Google the name, look at public posts, and read old comments. The digital identity you build at 11 may still be findable when you're applying to college at 17.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · Your Digital Footprint</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Footprints don't wash away in the rain</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Every search, every like, every post, every comment leaves a tiny mark. Add them up, and you get your <strong style="color:#ffffff;">digital footprint</strong> — the trail of data you create as you move through the internet. Some footprints you make on purpose (a Canvas post). Some are made <em>about</em> you (a server logging which videos you watched).</p>
+
+    <!-- Active vs passive -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #55C8E8;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#55C8E8;text-transform:uppercase;margin-bottom:10px;">👣 Active Footprint</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">What you post on purpose.</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Discussion posts and comments</li>
+          <li>Photos you upload</li>
+          <li>Profile bios and reviews</li>
+        </ul>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #C7922C;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#C7922C;text-transform:uppercase;margin-bottom:10px;">🌫️ Passive Footprint</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">What's collected automatically.</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Search history and watch time</li>
+          <li>Location tracked by apps</li>
+          <li>Cookies that follow you across sites</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- The Permanence Rule -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#ff6b6b;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;">📌 The Permanence Rule</div>
+      <p style="margin:0 0 8px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:700;line-height:1.3;">"Once it's online, treat it as permanent."</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;line-height:1.6;">Even when you delete a post, screenshots, archives, and search-engine caches can keep a copy alive. The smart habit: <em>before</em> you post, ask "would future-me be okay if anyone could read this in five years?"</p>
+    </div>
+
+    <!-- REAL-WORLD CONNECTION -->
+    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Encryption isn't just for hackers and spies. Every time you log into Canvas, every time your parent buys something online, every time a doctor sends a prescription — encryption is the invisible thing keeping it safe. You depend on it dozens of times a day without noticing.</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;">Knowing how it works — and where it stops — turns you from a passive user into a thoughtful digital citizen.</p>
+    </div>
+  </div>
+
+  <!-- KEY VOCABULARY GRID -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 12</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Encryption</div>
+        <div style="color:#c8d6e8;font-size:14px;">Scrambling a message so only the right person can read it.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Decryption</div>
+        <div style="color:#c8d6e8;font-size:14px;">Un-scrambling a message back to its original form.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Plaintext</div>
+        <div style="color:#c8d6e8;font-size:14px;">A message in its readable form, before scrambling.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Ciphertext</div>
+        <div style="color:#c8d6e8;font-size:14px;">A scrambled message — looks like nonsense without the key.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Cipher</div>
+        <div style="color:#c8d6e8;font-size:14px;">A method or set of rules for encrypting and decrypting.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Caesar / Shift cipher</div>
+        <div style="color:#c8d6e8;font-size:14px;">A simple cipher that shifts each letter forward by a fixed number.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Encryption key</div>
+        <div style="color:#c8d6e8;font-size:14px;">The secret information that locks or unlocks an encrypted message.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">HTTPS</div>
+        <div style="color:#c8d6e8;font-size:14px;">A secure web protocol — the "s" means encryption is protecting the connection.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Digital identity</div>
+        <div style="color:#c8d6e8;font-size:14px;">The online version of you — username, avatar, posts, and profile.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Avatar</div>
+        <div style="color:#c8d6e8;font-size:14px;">A picture or icon that represents you in an online space.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Digital footprint</div>
+        <div style="color:#c8d6e8;font-size:14px;">The trail of data you leave behind as you use the internet.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Active vs Passive footprint</div>
+        <div style="color:#c8d6e8;font-size:14px;">What you post on purpose vs. what's collected automatically.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFLECTION PROMPT -->
+  <div style="padding:40px 32px 32px;">
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Imagine a stranger Googled <em>your</em> username today.</div>
+      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Pick one platform where you have a profile (a game, a Discord server, a school account, anything). Then answer in 4–6 sentences:</p>
+      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
+        <li>What does your username, avatar, and bio say about you?</li>
+        <li>Could a stranger figure out your real name, school, or daily routine from your profile?</li>
+        <li>What's one change you'd make this week to clean up your digital identity?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHAT'S NEXT -->
+  <div style="padding:0 32px 48px;">
+    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
+      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 13</strong>, you'll move from protecting yourself to <em>evaluating others</em>. Who is this website's author? Is the .com you're reading actually trustworthy? You'll learn the tells that separate real sources from clever fakes.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
+    Digital Discoveries · Optima Academy Online · Course 0200021 · Standards SC.6.CS.1.5, SC.6.CS.1.6
+  </div>
+
+</div>
+
+</body>
+</html>

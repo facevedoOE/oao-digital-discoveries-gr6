@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 9 — The Journey of Data | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+
+<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
+
+  <!-- ═══════════════ HEADER BAR ═══════════════ -->
+  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
+    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
+      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
+      <circle cx="24" cy="28" r="7" fill="#fff"/>
+      <circle cx="40" cy="28" r="7" fill="#fff"/>
+      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
+      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
+      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
+      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div style="flex:1;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
+      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+    </div>
+    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 2 · WEEK 9</div>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <div style="background:linear-gradient(135deg,#0E1C42 0%,#1a2a5e 50%,#0E5568 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.28) 0%,rgba(85,200,232,0) 70%);"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(103,48,143,0.25) 0%,rgba(103,48,143,0) 70%);"></div>
+    <div style="position:relative;z-index:2;">
+      <div style="display:inline-block;background:rgba(85,200,232,0.15);border:1px solid #55C8E8;color:#55C8E8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lesson 4.1 · Standard SC.6.CS.1.1</div>
+      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">The Journey of Data</h1>
+      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Every photo you save, every game score that loads, every Canvas message that arrives — it's all data on a journey. This week, you'll trace that journey from the moment data is created, through where it sleeps, all the way to the second it lands back on your screen.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ LEARNING OBJECTIVES ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
+      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Define data</strong> and identify the three states it can be in: at rest, in motion, and in use.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Compare local and cloud storage</strong> and explain when each one is the smarter choice.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Trace the journey</strong> a single piece of data takes from your device to a server and back.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Distinguish networks</strong> — LAN, WAN, and the Internet — and explain how data is retrieved from a database.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 1 ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · What Is Data, Really?</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Every tap, swipe, and save is data</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">Open your phone or laptop and ask yourself: <em>what just happened?</em> A photo loaded. A song started. A friend's message popped up. Each of those moments is the result of <strong style="color:#ffffff;">data</strong> — facts, numbers, words, images, sounds, or any information a computer can store and use.</p>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Data isn't just one thing. It exists in <strong style="color:#ffffff;">three different states</strong>, and each state matters for how we protect it, move it, and pay for it.</p>
+
+    <!-- Three states diagram (inline SVG) -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
+      <svg width="100%" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+        <!-- At Rest -->
+        <rect x="30" y="40" width="140" height="80" rx="12" fill="#55C8E8" opacity="0.16" stroke="#55C8E8" stroke-width="2"/>
+        <text x="100" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#55C8E8">AT REST</text>
+        <text x="100" y="92" text-anchor="middle" font-size="28">💾</text>
+        <text x="100" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#8a9bb8">Stored on a drive</text>
+        <!-- In Motion -->
+        <rect x="230" y="40" width="140" height="80" rx="12" fill="#C7922C" opacity="0.16" stroke="#C7922C" stroke-width="2"/>
+        <text x="300" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#C7922C">IN MOTION</text>
+        <text x="300" y="92" text-anchor="middle" font-size="28">📡</text>
+        <text x="300" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#8a9bb8">Traveling on a network</text>
+        <!-- In Use -->
+        <rect x="430" y="40" width="140" height="80" rx="12" fill="#76C043" opacity="0.16" stroke="#76C043" stroke-width="2"/>
+        <text x="500" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#76C043">IN USE</text>
+        <text x="500" y="92" text-anchor="middle" font-size="28">🧠</text>
+        <text x="500" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#8a9bb8">Open and being processed</text>
+      </svg>
+    </div>
+
+    <!-- 3 states cards -->
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 20px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">💾</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Data at Rest</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Sitting on a hard drive, a phone, a USB stick, or a cloud server. Not moving, not being looked at — just stored. <em style="color:#55C8E8;">Example:</em> a photo on your phone you haven't opened in months.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">📡</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Data in Motion</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Traveling between devices through Wi-Fi, cell signal, or cables. <em style="color:#C7922C;">Example:</em> a Canvas message moving from your laptop to your teacher's screen.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🧠</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Data in Use</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Open in an app and being read, edited, or processed by a computer right now. <em style="color:#76C043;">Example:</em> a Google Doc you're typing into this very second.</div>
+      </div>
+    </div>
+
+    <!-- VOCABULARY block -->
+    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
+      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Data</strong> — facts, numbers, words, images, or sounds that a computer can store and use.</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Data at rest</strong> — data being stored on a device or server (not moving, not open).</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Data in motion</strong> — data traveling between devices over a network.</p>
+        <p style="margin:0;"><strong style="color:#ffffff;">Data in use</strong> — data open in an app and being processed by a computer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 2 ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · Where Data Sleeps — Storage</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Local storage vs. cloud storage</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">When data is "at rest," it has to live somewhere — like a book sitting on a shelf. There are two big shelves where digital data sleeps: <strong style="color:#ffffff;">local storage</strong> (right on your device) and <strong style="color:#ffffff;">cloud storage</strong> (on a server far away that you reach through the internet).</p>
+
+    <!-- Comparison cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #55C8E8;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#55C8E8;text-transform:uppercase;margin-bottom:10px;">📱 Local Storage</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;">Lives on your device.</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Hard drives (HDD), solid-state drives (SSD), USB sticks, SD cards</li>
+          <li>Works without internet — fast and private</li>
+          <li>If your device is lost or broken, the data is gone</li>
+          <li>Limited by the size of your device</li>
+        </ul>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #C7922C;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#C7922C;text-transform:uppercase;margin-bottom:10px;">☁️ Cloud Storage</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;">Lives on a far-away server.</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Google Drive, iCloud, OneDrive, Dropbox</li>
+          <li>Reach it from any device with internet</li>
+          <li>Your stuff survives even if your laptop dies</li>
+          <li>Needs a connection — and someone else holds your data</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Storage type icons row -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">⚙️ Common Storage Devices</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div style="text-align:center;padding:12px;background:#0a0a14;border-radius:10px;border:1px solid #1e2a4a;">
+          <div style="font-size:32px;margin-bottom:6px;">💽</div>
+          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;">HDD</div>
+          <div style="color:#8a9bb8;font-size:11px;margin-top:4px;">Spinning disks. Cheap, big, slower.</div>
+        </div>
+        <div style="text-align:center;padding:12px;background:#0a0a14;border-radius:10px;border:1px solid #1e2a4a;">
+          <div style="font-size:32px;margin-bottom:6px;">⚡</div>
+          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;">SSD</div>
+          <div style="color:#8a9bb8;font-size:11px;margin-top:4px;">No moving parts. Fast, quiet, pricier.</div>
+        </div>
+        <div style="text-align:center;padding:12px;background:#0a0a14;border-radius:10px;border:1px solid #1e2a4a;">
+          <div style="font-size:32px;margin-bottom:6px;">🔌</div>
+          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;">USB / SD</div>
+          <div style="color:#8a9bb8;font-size:11px;margin-top:4px;">Tiny, portable, easy to lose.</div>
+        </div>
+        <div style="text-align:center;padding:12px;background:#0a0a14;border-radius:10px;border:1px solid #1e2a4a;">
+          <div style="font-size:32px;margin-bottom:6px;">☁️</div>
+          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;">Cloud</div>
+          <div style="color:#8a9bb8;font-size:11px;margin-top:4px;">Remote servers. Reach it anywhere.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECK FOR UNDERSTANDING -->
+    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;"><strong style="color:#ffffff;">Pause and think:</strong> You're about to leave for a week-long camping trip with no Wi-Fi. You want to bring 50 of your favorite songs. Should you save them in cloud storage or local storage? Why?</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;font-style:italic;">(Hint: think about what cloud storage requires that you won't have at the campsite.)</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 3 ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · The Round Trip</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">From your screen to a server and back</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">When you upload a photo to Google Drive, the file doesn't just teleport. It takes a real journey across cables, antennas, and switches — and a tiny copy of it ends up "at rest" on a server you'll probably never see. Here's the round trip, step by step:</p>
+
+    <!-- Journey diagram (numbered steps) -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">1</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">You hit Save (data is in use → in motion)</div>
+            <div style="color:#c8d6e8;font-size:14px;">Your device packages up the photo and gets it ready to leave — file size, file name, your account info, all attached.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">2</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">It hops through your home network to the internet</div>
+            <div style="color:#c8d6e8;font-size:14px;">Wi-Fi → router → modem → your internet provider's network. From there, it's on the public internet.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">3</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">It arrives at a server in a data center</div>
+            <div style="color:#c8d6e8;font-size:14px;">A <strong style="color:#ffffff;">server</strong> is a powerful computer built to <em>serve</em> data to thousands of people at once. It writes the photo to a drive — now it's at rest.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">4</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Tomorrow, you ask for it back</div>
+            <div style="color:#c8d6e8;font-size:14px;">Open the app on a different device. The server hears your <strong style="color:#ffffff;">request</strong>, finds the file, and sends a copy back across the same kind of journey.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">5</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">The photo loads on your screen (back in use)</div>
+            <div style="color:#c8d6e8;font-size:14px;">Three states. One round trip. All in just a few seconds.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THINK ABOUT IT -->
+    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">Classical thinkers prized the virtue of <strong style="color:#ffffff;">prudence</strong> — knowing the right action for the right moment. Choosing where data sleeps is a small act of prudence: the wrong choice can cost you privacy, speed, or even the data itself. A wise digital citizen learns to ask, <em>"Where should this live, and why?"</em></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 4 ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · Networks Big and Small</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">LAN, WAN, and the Internet</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Data in motion travels along a <strong style="color:#ffffff;">network</strong> — a group of devices linked together so they can share information. Networks come in different sizes, and each size has a name:</p>
+
+    <!-- Network types grid -->
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🏠</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">LAN — Local Area Network</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Devices in <em>one place</em> — your house, your school, a single coffee shop. Connected by Wi-Fi or short cables. <em style="color:#55C8E8;">Example:</em> your laptop, phone, and smart TV all using the same home Wi-Fi.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🌆</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">WAN — Wide Area Network</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Connects LANs across cities, states, or countries. <em style="color:#C7922C;">Example:</em> a school district with five campuses sharing one student records system.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🌐</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">The Internet</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">The biggest WAN of all — billions of devices and millions of networks, linked across the entire planet. <em style="color:#76C043;">Example:</em> visiting a website hosted in another country.</div>
+      </div>
+    </div>
+
+    <!-- Network nesting visual -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;text-align:center;">
+      <svg width="100%" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+        <!-- Internet (outer) -->
+        <circle cx="300" cy="90" r="85" fill="#76C043" opacity="0.10" stroke="#76C043" stroke-width="2"/>
+        <text x="300" y="20" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#76C043">INTERNET</text>
+        <!-- WAN (middle) -->
+        <circle cx="300" cy="100" r="55" fill="#C7922C" opacity="0.14" stroke="#C7922C" stroke-width="2"/>
+        <text x="300" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#C7922C">WAN</text>
+        <!-- LAN (inner) -->
+        <circle cx="300" cy="110" r="28" fill="#55C8E8" opacity="0.20" stroke="#55C8E8" stroke-width="2"/>
+        <text x="300" y="115" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#55C8E8">LAN</text>
+        <!-- Caption -->
+        <text x="300" y="170" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#8a9bb8">Networks nest inside bigger networks — LANs inside WANs inside the Internet.</text>
+      </svg>
+    </div>
+
+    <!-- DID YOU KNOW -->
+    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">Most of the internet doesn't actually live in the sky. Around <strong style="color:#ffffff;">95% of international internet traffic</strong> travels through thick fiber-optic cables lying on the ocean floor. There are over 500 of these undersea cables crisscrossing the planet right now — your TikTok video may have crossed an ocean before reaching you.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 5 ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · Finding the Right File</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Storing data is half the job — finding it is the other half</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Imagine a school library with one billion books and no organization system. That's basically what the internet is — except it has to give you the right book in less than a second. The trick? <strong style="color:#ffffff;">Databases</strong> and <strong style="color:#ffffff;">queries</strong>.</p>
+
+    <!-- Retrieval flow -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">DB</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">A database is data stored in a smart, searchable structure</div>
+            <div style="color:#c8d6e8;font-size:14px;">Think of a giant spreadsheet — rows and columns — but built so a computer can scan millions of entries in milliseconds.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">?</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">A query is a question you ask the database</div>
+            <div style="color:#c8d6e8;font-size:14px;">When you search Canvas for "ancient Rome," your search words become a query — a set of instructions that tells the database what to find.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">↩</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Results travel back as data in motion</div>
+            <div style="color:#c8d6e8;font-size:14px;">The database hands the matches back to the app, which sends them to your screen. The data leaves "rest," moves, and ends up "in use" — all in one click.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL-WORLD CONNECTION -->
+    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Hospitals run on databases. When a doctor pulls up your medical records, they're sending a query to a database that may hold tens of millions of patient files. The right data has to arrive in seconds — and only the right people are allowed to see it.</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;">The same kind of data journey you'll trace this week is what keeps doctors, pilots, banks, and search engines working every minute of every day.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ KEY VOCABULARY GRID ═══════════════ -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 9</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Data</div>
+        <div style="color:#c8d6e8;font-size:14px;">Facts, numbers, words, images, or sounds that a computer can store and use.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Data at rest</div>
+        <div style="color:#c8d6e8;font-size:14px;">Data being stored on a device or server — not moving and not open.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Data in motion</div>
+        <div style="color:#c8d6e8;font-size:14px;">Data traveling between devices over a network.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Data in use</div>
+        <div style="color:#c8d6e8;font-size:14px;">Data open in an app and actively being read or processed by a computer.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Local storage</div>
+        <div style="color:#c8d6e8;font-size:14px;">Storage that lives on your own device (HDD, SSD, USB, SD card).</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Cloud storage</div>
+        <div style="color:#c8d6e8;font-size:14px;">Storage on a remote server you reach through the internet.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Server</div>
+        <div style="color:#c8d6e8;font-size:14px;">A powerful computer built to store and serve data to many users at once.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Network</div>
+        <div style="color:#c8d6e8;font-size:14px;">A group of devices linked together so they can share information.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">LAN</div>
+        <div style="color:#c8d6e8;font-size:14px;">Local Area Network — devices linked together in one place (home, school).</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">WAN</div>
+        <div style="color:#c8d6e8;font-size:14px;">Wide Area Network — connects LANs across cities, states, or countries.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Database</div>
+        <div style="color:#c8d6e8;font-size:14px;">An organized collection of data built so a computer can search it quickly.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Query</div>
+        <div style="color:#c8d6e8;font-size:14px;">A request that tells a database what data to find and return.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ REFLECTION PROMPT ═══════════════ -->
+  <div style="padding:40px 32px 32px;">
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Trace the journey of <em>your</em> last upload.</div>
+      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Pick <strong>one</strong> file you saved, sent, or uploaded in the last 24 hours — a photo, a homework file, a chat message, anything. Then answer in 4–6 sentences:</p>
+      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
+        <li>What three states (rest, motion, use) did your data pass through?</li>
+        <li>Did it end up on local storage, cloud storage, or both? How do you know?</li>
+        <li>Roughly how far did it travel — same building, same city, or somewhere far away?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ WHAT'S NEXT ═══════════════ -->
+  <div style="padding:0 32px 48px;">
+    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
+      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 10</strong>, you'll discover <em>who</em> is allowed to see, edit, or delete data — and why <strong>access and permissions</strong> matter as much as the data itself. Spoiler: the difference between an "Editor" and a "Viewer" can save (or sink) a group project.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
+    Digital Discoveries · Optima Academy Online · Course 0200021 · Standard SC.6.CS.1.1
+  </div>
+
+</div>
+
+</body>
+</html>

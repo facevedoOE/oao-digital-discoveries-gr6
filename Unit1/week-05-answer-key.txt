@@ -1,0 +1,120 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 5 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Lesson 3.1
+  Standard: SC.6.CO.1.1 — File Types & Digital Organization
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → B
+  Q3 → C
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. A FILE EXTENSION (like .docx or .mp3) tells the computer:
+───────────────────────────────────────────────────────────────
+  A) The author's name
+     ❌ Authors aren't part of the extension. The extension is
+        always after the dot.
+  B) Where the file is stored
+     ❌ Storage location is in the file path, not the extension.
+  C) What kind of file it is and which app should open it      ✓ CORRECT
+     ✅ Right! Extensions match files to apps. Without the
+        extension, the computer often can't tell what to do.
+        (SC.6.CO.1.1)
+  D) The size of the file
+     ❌ File size is shown separately. Extensions describe
+        TYPE, not size.
+
+───────────────────────────────────────────────────────────────
+Q2. Which file extension belongs to the AUDIO family?
+───────────────────────────────────────────────────────────────
+  A) .docx
+     ❌ .docx is a document format (Microsoft Word).
+  B) .mp3                                                       ✓ CORRECT
+     ✅ Right! .mp3 is the universal audio format used for
+        music, podcasts, and voice memos. (SC.6.CO.1.1)
+  C) .png
+     ❌ .png is an image format.
+  D) .stl
+     ❌ .stl is a 3D model format (used for 3D printing).
+
+───────────────────────────────────────────────────────────────
+Q3. You finished a 4-page essay. Your teacher asks you to
+    submit it in a format that LOCKS the layout and works on
+    any device. Which format is BEST?
+───────────────────────────────────────────────────────────────
+  A) .txt
+     ❌ .txt strips out all formatting (no bold, fonts, or
+        layout). The opposite of locked.
+  B) .mp4
+     ❌ .mp4 is a video format. Your essay isn't a video.
+  C) .pdf                                                       ✓ CORRECT
+     ✅ Right! PDFs preserve fonts, spacing, and layout
+        exactly, on any device. The standard for finished,
+        formal submissions. (SC.6.CO.1.1)
+  D) .stl
+     ❌ .stl is for 3D models, not text documents.
+
+───────────────────────────────────────────────────────────────
+Q4. Which file name BEST follows the 4 rules of good naming
+    (specific, no spaces, dated/versioned, keeps extension)?
+───────────────────────────────────────────────────────────────
+  A) Untitled.docx
+     ❌ Not specific. "Untitled" tells you nothing about the
+        contents.
+  B) final FINAL FINAL v2 (3) latest.docx
+     ❌ Spaces, redundant words, and confused versioning. This
+        is what bad naming looks like!
+  C) civil-war-essay-v3-2026-04-27.docx                         ✓ CORRECT
+     ✅ Specific (topic), no spaces (hyphens), versioned and
+        dated, and keeps the .docx extension. (SC.6.CO.1.1)
+  D) My File
+     ❌ Not specific, contains a space, AND no extension.
+        Worst of all worlds.
+
+───────────────────────────────────────────────────────────────
+Q5. What does it mean to COMPRESS a file?
+───────────────────────────────────────────────────────────────
+  A) To delete the file
+     ❌ Compression doesn't delete the file. It shrinks it.
+  B) To rename the file
+     ❌ Renaming changes the label, not the size. Different
+        concept.
+  C) To shrink the file's size, so it takes less storage and  ✓ CORRECT
+     sends faster
+     ✅ Right! Compression rearranges or simplifies data so
+        files use less space — crucial for sharing photos and
+        videos online. (SC.6.CO.1.1)
+  D) To open the file in a new app
+     ❌ Opening just means viewing the contents. Compression
+        changes the file itself.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-05-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 7 Activity — Unit 1 Review Game | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.6;min-height:100vh;">
+
+<div id="app-root" style="max-width:820px;margin:0 auto;padding:20px;">
+
+  <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+      <div style="background:#76C043;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🏆 REVIEW GAME</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 1 · Week 7 · All Unit 1 Standards</div>
+    </div>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Unit 1 Review Game</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">Ten questions pulling from every week of Unit 1 — communication, multimedia, files, and software. Each tag tells you which week the question comes from, so you'll see exactly where to review. Earn XP for every correct answer.</p>
+  </div>
+
+  <div id="status-bar" style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:14px 20px;margin-bottom:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Progress</span>
+        <span id="progress-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:700;">Question 1 of 10</span>
+      </div>
+      <div style="background:#0a0a14;border-radius:10px;height:10px;overflow:hidden;">
+        <div id="progress-fill" style="background:linear-gradient(90deg,#55C8E8,#76C043);height:100%;width:0%;transition:width 0.4s ease;"></div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);padding:8px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;">
+      <span style="font-size:18px;">⚡</span>
+      <span style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">XP</span>
+      <span id="xp-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:800;">0</span>
+    </div>
+  </div>
+
+  <div id="question-container"></div>
+
+  <div style="text-align:center;color:#55687a;font-size:12px;margin-top:24px;padding:12px;">
+    Digital Discoveries · Optima Academy Online · Course 0200021
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    id: 1,
+    tag: 'Wk 1 · Channels',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '⏱️',
+    scenario: "You and your tutor need to work through a math problem together, in real time, where the tutor can see your screen and explain step-by-step. Which channel fits BEST?",
+    options: [
+      { text: 'Email', correct: false, why: "Email is asynchronous — you'd be waiting between every step. Real-time tutoring needs something live." },
+      { text: 'A live video call with screen sharing', correct: true, why: "Synchronous video + screen share is built for real-time tutoring. Both of you are present, and the tutor can react instantly." },
+      { text: 'A discussion board post', correct: false, why: "Discussion boards are public AND asynchronous. Bad fit for one-on-one live work." },
+      { text: 'A reaction emoji', correct: false, why: "An emoji can't carry math help! No way to teach a process with a single icon." }
+    ]
+  },
+  {
+    id: 2,
+    tag: 'Wk 2 · Tone',
+    tagColor: '#C7922C',
+    status: 'amber',
+    icon: '🎵',
+    scenario: "You feel angry after reading a discussion post. You drafted a sharp reply. What's the WISEST first move?",
+    options: [
+      { text: 'Post it before you cool off', correct: false, why: "Messages written in anger almost always sound worse the next day. This breaks temperance." },
+      { text: 'Save it as a draft, take a break, and reread it later before deciding to send', correct: true, why: "Classic temperance — pausing before reacting. The emotion check on the Before You Send rubric." },
+      { text: 'Send it privately to several friends first', correct: false, why: "Now multiple people have a copy that could be shared. Riskier, not safer." },
+      { text: 'Type it in ALL CAPS', correct: false, why: "ALL CAPS reads like shouting — breaks netiquette. Makes the problem worse." }
+    ]
+  },
+  {
+    id: 3,
+    tag: 'Wk 3 · Purpose',
+    tagColor: '#F78F1E',
+    status: 'green',
+    icon: '🎯',
+    scenario: "A 30-second video shows a hungry shelter dog, plays sad music, and ends with 'Adopt today. Save a life.' What's the MAIN rhetorical purpose?",
+    options: [
+      { text: 'To inform', correct: false, why: "Some facts may appear, but the goal isn't to teach — it's to move the audience to act." },
+      { text: 'To entertain', correct: false, why: "Sad music + shelter dog isn't designed to amuse. The goal is action, not delight." },
+      { text: 'To persuade', correct: true, why: "Emotional visuals + music + a clear call to action = persuasion. The video wants viewers to do something specific." },
+      { text: 'To confuse', correct: false, why: "Confusion isn't a real rhetorical purpose. The three are inform, persuade, entertain." }
+    ]
+  },
+  {
+    id: 4,
+    tag: 'Wk 4 · Aesthetic Unity',
+    tagColor: '#67308F',
+    status: 'red',
+    icon: '🎨',
+    scenario: "Maya's slide deck has 5 colors on slide 1, 7 different colors on slide 2, and 3 entirely new colors on slide 3. What concept is she breaking?",
+    options: [
+      { text: 'Aesthetic unity — every slide should share a small consistent palette', correct: true, why: "Right! Aesthetic unity = same look across every page. A 3–5 color palette used consistently is the foundation." },
+      { text: 'Synchronous communication', correct: false, why: "That's a Week 1 concept about timing of messages, not a design principle." },
+      { text: 'Compression', correct: false, why: "Compression shrinks file size. It's not about color choices." },
+      { text: 'Version history', correct: false, why: "Version history is for rewinding edits — not a design principle." }
+    ]
+  },
+  {
+    id: 5,
+    tag: 'Wk 5 · File Family',
+    tagColor: '#76C043',
+    status: 'blue',
+    icon: '📁',
+    scenario: "A friend sends you a file called class-project-final.pdf. What's TRUE about this file?",
+    options: [
+      { text: 'It\'s an audio file', correct: false, why: "Audio files end in .mp3, .wav, .m4a — not .pdf." },
+      { text: 'It\'s a 3D model', correct: false, why: "3D models end in .stl, .obj, .fbx, .glb — not .pdf." },
+      { text: 'It\'s a document with locked layout that opens on any device', correct: true, why: "Right! .pdf is the document format that locks fonts, spacing, and layout exactly. It's why teachers and employers ask for PDFs." },
+      { text: 'It\'s a website link', correct: false, why: "Website links end in .html or are URLs. .pdf is a file format, not a link." }
+    ]
+  },
+  {
+    id: 6,
+    tag: 'Wk 5 · Naming',
+    tagColor: '#76C043',
+    status: 'amber',
+    icon: '📛',
+    scenario: "Which file name BEST follows the 4 rules of good naming?",
+    options: [
+      { text: 'Untitled.docx', correct: false, why: "Not specific. \"Untitled\" tells you nothing about the contents." },
+      { text: 'final FINAL FINAL v2 (3) latest.docx', correct: false, why: "Spaces, redundant words, and confused versioning. Bad naming!" },
+      { text: 'civil-war-essay-v3-2026-04-27.docx', correct: true, why: "Specific (topic), no spaces (hyphens), versioned and dated, and keeps the .docx extension. Perfect." },
+      { text: 'My File', correct: false, why: "Not specific, has a space, AND no extension. Worst of all worlds." }
+    ]
+  },
+  {
+    id: 7,
+    tag: 'Wk 6 · Cloud',
+    tagColor: '#55C8E8',
+    status: 'green',
+    icon: '☁️',
+    scenario: "Why does cloud storage let you start a doc on a school laptop and finish it on your phone hours later?",
+    options: [
+      { text: 'The cloud copies the file invisibly to every device you own', correct: false, why: "It's not copies — it's ONE file living in a data center, that you're reading and editing remotely." },
+      { text: 'The file lives on remote servers; every device just opens that ONE file over the internet', correct: true, why: "Right! Cloud means one file in one data center, accessible from any device with internet. Your edits sync instantly." },
+      { text: 'You have to email yourself the file each time', correct: false, why: "Cloud's whole point is you DON'T need to email yourself — the file follows you automatically." },
+      { text: 'The file rewrites itself when you switch devices', correct: false, why: "Files don't rewrite themselves. Cloud sync is about access, not magic." }
+    ]
+  },
+  {
+    id: 8,
+    tag: 'Wk 6 · Collab Tool',
+    tagColor: '#67308F',
+    status: 'red',
+    icon: '⏪',
+    scenario: "Your teammate accidentally deleted three paragraphs of your shared Google Doc. The deadline is in two hours. Fastest fix?",
+    options: [
+      { text: 'Retype everything from memory', correct: false, why: "Slow and you might miss things. Google Docs has a faster solution." },
+      { text: 'Use VERSION HISTORY to find a version from before the deletion and restore it', correct: true, why: "Version history is a lifesaver — it's the automatic record of past saves. Open it, find the right version, restore. 30 seconds." },
+      { text: 'Delete the doc and start over', correct: false, why: "Now you've lost the GOOD work too. Use version history first." },
+      { text: 'Argue with your teammate', correct: false, why: "Wastes time AND fails the virtue of temperance. Solve the problem first." }
+    ]
+  },
+  {
+    id: 9,
+    tag: 'Wk 1 · Networks',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '🌐',
+    scenario: "When you send a text from Florida to a friend in California in less than a second, what actually happens?",
+    options: [
+      { text: 'The message travels as one big chunk through the air', correct: false, why: "Messages don't travel as one chunk. They're split into smaller pieces." },
+      { text: 'The message is broken into data packets that travel through routers and are reassembled at the destination', correct: true, why: "Right! Packets can take different paths and arrive out of order — your friend's device puts them back together. (And it can take fewer than 100 milliseconds.)" },
+      { text: 'A human at the phone company retypes it', correct: false, why: "No humans are retyping! The network routes packets automatically." },
+      { text: 'The message stays on your phone until your friend visits in person', correct: false, why: "Texts don't wait for in-person delivery! Networks deliver them instantly." }
+    ]
+  },
+  {
+    id: 10,
+    tag: 'Wk 4 · Feedback',
+    tagColor: '#C7922C',
+    status: 'green',
+    icon: '🌱',
+    scenario: "Which is the STRONGEST piece of peer feedback?",
+    options: [
+      { text: '"Good job!"', correct: false, why: "Vague. Your classmate doesn't know what to keep doing or how to improve." },
+      { text: '"On page 2, the white text on the light photo is hard to read — could you add a darker background behind the words?"', correct: true, why: "Specific (names the page and problem), kind (offers a solution), and actionable. Classic strong Glow/Grow." },
+      { text: '"This is bad."', correct: false, why: "Vague AND unkind. Tells your classmate nothing useful." },
+      { text: '"Change everything."', correct: false, why: "Overwhelming and not specific. Strong feedback names ONE thing at a time." }
+    ]
+  }
+];
+
+const POINTS_PER_CORRECT = 10;
+let currentIndex = 0;
+let totalXP = 0;
+let correctCount = 0;
+let answered = false;
+
+const STATUS_COLORS = { red:'#ff6b6b', amber:'#F78F1E', green:'#76C043', blue:'#55C8E8' };
+
+function renderQuestion() {
+  const q = QUESTIONS[currentIndex];
+  answered = false;
+  updateStatusBar();
+
+  const container = document.getElementById('question-container');
+  container.innerHTML = `
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+      <div style="background:linear-gradient(135deg,#0E1C42,#1a2a5e);padding:20px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #1e2a4a;">
+        <div style="width:12px;height:12px;border-radius:50%;background:${STATUS_COLORS[q.status]};box-shadow:0 0 12px ${STATUS_COLORS[q.status]};flex-shrink:0;"></div>
+        <div style="background:${q.tagColor};color:#0E1C42;padding:4px 10px;border-radius:10px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;">${q.tag}</div>
+        <div style="margin-left:auto;font-size:28px;">${q.icon}</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Question ${q.id} of ${QUESTIONS.length}</div>
+        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <div id="feedback-zone" style="margin-top:18px;"></div>
+      </div>
+    </div>
+  `;
+
+  const list = document.getElementById('options-list');
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.style.cssText = `background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;padding:14px 18px;color:#e2e8f0;font-family:inherit;font-size:15px;text-align:left;cursor:pointer;transition:all 0.2s ease;display:flex;gap:12px;align-items:flex-start;`;
+    btn.innerHTML = `<div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#1e2a4a;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">${String.fromCharCode(65+idx)}</div><div style="flex:1;padding-top:4px;">${opt.text}</div>`;
+    btn.addEventListener('mouseenter', () => { if (!answered) { btn.style.borderColor='#55C8E8'; btn.style.background='#111933'; } });
+    btn.addEventListener('mouseleave', () => { if (!answered) { btn.style.borderColor='#1e2a4a'; btn.style.background='#0a0a14'; } });
+    btn.addEventListener('click', () => handleAnswer(idx));
+    list.appendChild(btn);
+  });
+}
+
+function handleAnswer(selectedIdx) {
+  if (answered) return;
+  answered = true;
+  const q = QUESTIONS[currentIndex];
+  const chosen = q.options[selectedIdx];
+  const buttons = document.querySelectorAll('#options-list button');
+
+  buttons.forEach((btn, i) => {
+    btn.style.cursor = 'default';
+    btn.disabled = true;
+    const opt = q.options[i];
+    if (opt.correct) {
+      btn.style.borderColor = '#76C043';
+      btn.style.background = 'rgba(118,192,67,0.12)';
+      btn.querySelector('div').style.background = '#76C043';
+      btn.querySelector('div').style.color = '#0E1C42';
+    } else if (i === selectedIdx && !opt.correct) {
+      btn.style.borderColor = '#ff6b6b';
+      btn.style.background = 'rgba(255,107,107,0.10)';
+      btn.querySelector('div').style.background = '#ff6b6b';
+      btn.querySelector('div').style.color = '#ffffff';
+    } else {
+      btn.style.opacity = '0.55';
+    }
+  });
+
+  if (chosen.correct) { totalXP += POINTS_PER_CORRECT; correctCount++; }
+  updateStatusBar();
+
+  const fb = document.getElementById('feedback-zone');
+  const color = chosen.correct ? '#76C043' : '#ff6b6b';
+  const bgColor = chosen.correct ? 'rgba(118,192,67,0.10)' : 'rgba(255,107,107,0.08)';
+  const label = chosen.correct ? '✅ CORRECT  ·  +' + POINTS_PER_CORRECT + ' XP' : '❌ NOT QUITE';
+  fb.innerHTML = `
+    <div style="background:${bgColor};border:1px solid ${color};border-left:4px solid ${color};border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px;">
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:8px;">${label}</div>
+      <div style="color:#e2e8f0;font-size:14px;line-height:1.6;">${chosen.why}</div>
+    </div>
+    <button id="next-btn" style="width:100%;background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 18px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;">${currentIndex < QUESTIONS.length - 1 ? 'Next Question →' : 'See Your Results →'}</button>
+  `;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.addEventListener('mouseenter', () => { nextBtn.style.transform='translateY(-2px)'; nextBtn.style.boxShadow='0 6px 20px rgba(85,200,232,0.4)'; });
+  nextBtn.addEventListener('mouseleave', () => { nextBtn.style.transform='translateY(0)'; nextBtn.style.boxShadow='none'; });
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    if (currentIndex < QUESTIONS.length) renderQuestion();
+    else renderResults();
+  });
+}
+
+function updateStatusBar() {
+  document.getElementById('progress-text').textContent = `Question ${Math.min(currentIndex+1, QUESTIONS.length)} of ${QUESTIONS.length}`;
+  const pct = ((answered ? currentIndex + 1 : currentIndex) / QUESTIONS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('xp-text').textContent = totalXP;
+}
+
+function renderResults() {
+  const maxXP = POINTS_PER_CORRECT * QUESTIONS.length;
+  const pct = Math.round((totalXP / maxXP) * 100);
+  let message, emoji, color, readiness;
+  if (pct === 100) { message = "Perfect score! You're rock-solid on every Unit 1 concept — you're more than ready for the Unit 1 Assessment."; emoji = "🏆"; color = "#C7922C"; readiness = "READY"; }
+  else if (pct >= 80) { message = "Excellent! You've got a strong handle on Unit 1. Skim the answer feedback above and you'll be ready for the assessment."; emoji = "⭐"; color = "#76C043"; readiness = "READY"; }
+  else if (pct >= 60) { message = "Good progress, but a few gaps. Pay close attention to the question tags above (Wk 1, Wk 4, etc.) — those weeks need a quick reread before the assessment."; emoji = "💪"; color = "#55C8E8"; readiness = "ALMOST READY"; }
+  else { message = "Time for a focused review. The question tags above show which weeks need the most attention. Reread those, then come back and try again."; emoji = "📚"; color = "#67308F"; readiness = "NEEDS REVIEW"; }
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = 'Complete!';
+
+  document.getElementById('question-container').innerHTML = `
+    <div style="background:linear-gradient(135deg,#111122,#0E1C42);border:1px solid ${color};border-radius:14px;padding:36px 28px;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,0.5);">
+      <div style="font-size:72px;margin-bottom:12px;">${emoji}</div>
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:10px;">Unit 1 Review · ${readiness}</div>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:32px;font-weight:800;margin:0 0 8px;">${totalXP} / ${maxXP} XP</h2>
+      <div style="color:#c8d6e8;font-size:16px;margin-bottom:6px;">${correctCount} of ${QUESTIONS.length} correct · ${pct}%</div>
+      <p style="color:#e2e8f0;font-size:16px;line-height:1.55;max-width:540px;margin:16px auto 28px;">${message}</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="retry-btn" style="background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 26px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:transform 0.2s;">↻ Try Again</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('retry-btn').addEventListener('click', () => {
+    currentIndex = 0; totalXP = 0; correctCount = 0;
+    renderQuestion();
+  });
+
+  try {
+    window.parent.postMessage({
+      type: 'canvas-grade',
+      score: totalXP, maxScore: maxXP, percent: pct,
+      correctCount: correctCount, totalQuestions: QUESTIONS.length,
+      activity: 'week-07-review-game'
+    }, '*');
+  } catch (e) {}
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

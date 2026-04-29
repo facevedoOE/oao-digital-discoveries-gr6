@@ -1,0 +1,137 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 10 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Lesson 4.2
+  Standard: SC.6.CS.1.2 — Data Access & Permissions
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → C
+  Q3 → B
+  Q4 → C
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. You want your dad to READ your essay but NOT change any of
+    your sentences. Which role should you give him?
+───────────────────────────────────────────────────────────────
+  A) Owner
+     ❌ Owner has full control — including delete and re-share.
+        Way more than needed for "just read it."
+  B) Editor
+     ❌ Editor can change your sentences. You said you don't
+        want him doing that.
+  C) Viewer                                                ✓ CORRECT
+     ✅ Viewer is read-only — he can open and read but cannot
+        change anything. (SC.6.CS.1.2)
+  D) Commenter
+     ❌ Commenter could leave comments on your file. If you
+        only want him to read silently, Viewer is the tighter
+        choice.
+
+───────────────────────────────────────────────────────────────
+Q2. Your teacher wants to leave feedback on your draft but
+    should NOT rewrite your sentences. Which role gives her
+    exactly what she needs?
+───────────────────────────────────────────────────────────────
+  A) Editor
+     ❌ Editor can rewrite your sentences directly. The
+        question said she shouldn't.
+  B) Viewer
+     ❌ Viewer is read-only — she couldn't leave feedback at
+        all.
+  C) Commenter                                             ✓ CORRECT
+     ✅ Commenter can read and leave comments or suggestions,
+        but cannot change the actual content. (SC.6.CS.1.2)
+  D) Owner
+     ❌ Owner has full control of the file, including delete.
+        Far too much access for a feedback role.
+
+───────────────────────────────────────────────────────────────
+Q3. What is the PRINCIPLE OF LEAST PRIVILEGE?
+───────────────────────────────────────────────────────────────
+  A) Always give every user the highest possible role so
+     nothing breaks
+     ❌ That's the OPPOSITE of least privilege — and a recipe
+        for accidents and leaks.
+  B) Give every user exactly the access they need to do their
+     job — and nothing more                                ✓ CORRECT
+     ✅ Match the role to the real need — no extra access. The
+        fewer keys floating around, the safer your data.
+        (SC.6.CS.1.2)
+  C) Only the IT admin should ever have access to anything
+     ❌ That would block real work. Least privilege means
+        right-sizing access, not eliminating it.
+  D) Default to "Anyone with the link" so people don't have
+     to ask
+     ❌ That's the most-privilege setting, not least
+        privilege. It's the kind of mistake that causes real-
+        world data leaks.
+
+───────────────────────────────────────────────────────────────
+Q4. Which sharing setting is the MOST risky for a private
+    file you don't want strangers to see?
+───────────────────────────────────────────────────────────────
+  A) Specific people, role: Viewer
+     ❌ Very safe — only the people you list can find it, and
+        they can only read.
+  B) Anyone in your school, role: Viewer
+     ❌ Some risk, since everyone in your school can find it
+        — but the public still can't.
+  C) Anyone with the link, role: Editor                   ✓ CORRECT
+     ✅ The most dangerous combo — anyone who gets the link
+        can not only read but also change your file.
+        (SC.6.CS.1.2)
+  D) Specific people, role: Editor
+     ❌ Reasonable for a small trusted group — only the named
+        people can find it, even if they can edit.
+
+───────────────────────────────────────────────────────────────
+Q5. Your sister leaves her laptop open and signed into her
+    email. You see a private message from her teacher about
+    her grades. What is the right thing to do?
+───────────────────────────────────────────────────────────────
+  A) Read the message — her email is right there in front of
+     you
+     ❌ Just because you CAN see it doesn't mean you SHOULD.
+        That's the whole idea of ethical access.
+  B) Look away, close the laptop, and let her know it was
+     open                                                  ✓ CORRECT
+     ✅ Treat other people's private data the way you'd want
+        them to treat yours — close the door and walk away.
+        (SC.6.CS.1.2)
+  C) Read it and screenshot it, in case it's useful later
+     ❌ Even worse — now you've made a copy of someone else's
+        private data without permission.
+  D) Reply to the teacher on her behalf to be helpful
+     ❌ You'd be impersonating her — and using her account
+        without permission. Big trust break.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-10-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,134 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 7 PRACTICE QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Review Week
+  Standards: SC.6.CC.1.1, SC.6.CC.2.1, SC.6.CO.1.1, SC.6.CO.1.2
+  Practice quiz to prepare for next week's Unit 1 Assessment
+═══════════════════════════════════════════════════════════════
+
+This is a PRACTICE quiz — students get more attempts and the
+score does not count toward the Unit 1 Assessment grade. The
+goal is diagnostic: which weeks need a final review?
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C  (Wk 1 — synchronous)
+  Q2 → B  (Wk 3 — rhetorical purposes)
+  Q3 → C  (Wk 4 — aesthetic unity)
+  Q4 → C  (Wk 5 — file extensions)
+  Q5 → C  (Wk 6 — version history)
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • Practice quiz — recommend UNLIMITED attempts (or 5+)
+  • Show feedback after each attempt
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. (Week 1) Which is the BEST example of SYNCHRONOUS digital
+    communication?
+───────────────────────────────────────────────────────────────
+  A) An email sent overnight
+     ❌ Email is asynchronous — sender and receiver aren't online
+        together.
+  B) A discussion board post replied to next morning
+     ❌ Discussion posts are asynchronous — read whenever the
+        reader gets to them.
+  C) A live video class with your teacher and 20 classmates    ✓ CORRECT
+     ✅ Live video is synchronous — everyone is present and
+        communicating in real time. (SC.6.CC.1.1)
+  D) A voicemail
+     ❌ Voicemails are asynchronous — listened to later.
+
+───────────────────────────────────────────────────────────────
+Q2. (Week 3) Aristotle's three classical rhetorical purposes
+    are:
+───────────────────────────────────────────────────────────────
+  A) Inform, confuse, frustrate
+     ❌ Confusion and frustration aren't real purposes — and
+        good designers avoid both!
+  B) Inform, persuade, entertain                                ✓ CORRECT
+     ✅ Aristotle's framework, still used today: teach the
+        audience (inform), change what they think or do
+        (persuade), or delight them (entertain). (SC.6.CC.2.1)
+  C) Type, click, scroll
+     ❌ Those are user actions, not communication purposes.
+  D) Sketch, code, present
+     ❌ Those are creative steps, not rhetorical purposes.
+
+───────────────────────────────────────────────────────────────
+Q3. (Week 4) Aesthetic unity in a multimedia project means:
+───────────────────────────────────────────────────────────────
+  A) Every page uses different colors and fonts to keep things
+     interesting
+     ❌ The opposite! Variety on every page kills unity.
+  B) Including as many colors and fonts as possible
+     ❌ More isn't better. Aesthetic unity comes from RESTRAINT.
+  C) Every page feels like part of the same project — same     ✓ CORRECT
+     colors, same fonts, same layout style
+     ✅ Right! Aesthetic unity is the visual signal that one
+        designer made one project. (SC.6.CC.2.1)
+  D) Using the most expensive design software
+     ❌ Tools don't create unity. Discipline does.
+
+───────────────────────────────────────────────────────────────
+Q4. (Week 5) A file extension (like .docx or .mp3) tells the
+    computer:
+───────────────────────────────────────────────────────────────
+  A) The author's name
+     ❌ Authors aren't part of the extension.
+  B) Where the file is stored
+     ❌ Storage location is in the file path, not the extension.
+  C) What kind of file it is and which app should open it      ✓ CORRECT
+     ✅ Right! Extensions match files to apps. Without the
+        extension, the computer often can't tell what to do.
+        (SC.6.CO.1.1)
+  D) The size of the file
+     ❌ File size is shown separately. Extensions describe
+        TYPE, not size.
+
+───────────────────────────────────────────────────────────────
+Q5. (Week 6) Your teammate accidentally deleted three
+    paragraphs of your shared Google Doc. Which feature can
+    rescue the deleted text?
+───────────────────────────────────────────────────────────────
+  A) Real-time co-editing
+     ❌ Co-editing is for typing simultaneously — doesn't
+        rewind history.
+  B) Comments
+     ❌ Comments add notes; they don't restore deleted text.
+  C) Version history                                           ✓ CORRECT
+     ✅ Right! Version history is an automatic record of past
+        versions. Find a version from before the accident and
+        restore. The ultimate undo. (SC.6.CO.1.2)
+  D) Delete the document and start over
+     ❌ That makes it worse — you'd lose all the GOOD work too.
+
+═══════════════════════════════════════════════════════════════
+  HOW TO USE THIS PRACTICE QUIZ
+═══════════════════════════════════════════════════════════════
+  • Each question is tagged with the week it comes from.
+  • If a student misses Q1, they should reread Week 1.
+  • If they miss Q3, reread Week 4. Etc.
+  • Use this as a diagnostic before the Unit 1 Assessment.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-07-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to UNLIMITED (or 5+),
+     points to 5, and mark it as a practice quiz.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

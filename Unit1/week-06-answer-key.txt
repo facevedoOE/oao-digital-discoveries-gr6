@@ -1,0 +1,130 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 6 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Lessons 3.2–3.3
+  Standards: SC.6.CO.1.1, SC.6.CO.1.2
+  Productivity Software & Collaboration Tools
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → C
+  Q3 → B
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. The MAIN difference between Microsoft Word and Google Docs
+    is:
+───────────────────────────────────────────────────────────────
+  A) Word has color, Google Docs is black-and-white
+     ❌ Both apps support full color formatting.
+  B) Google Docs is illegal in some countries
+     ❌ Not the difference. Both are legal worldwide.
+  C) Word is desktop software (often offline), while Google     ✓ CORRECT
+     Docs is cloud software built for live collaboration in
+     a browser
+     ✅ Right! That's the core split: Word's strengths are
+        offline/layout, Docs' strengths are live collaboration
+        and multi-device cloud access. (SC.6.CO.1.1)
+  D) Word is for kids, Google Docs is for adults
+     ❌ Both apps are used by people of all ages.
+
+───────────────────────────────────────────────────────────────
+Q2. CLOUD STORAGE means:
+───────────────────────────────────────────────────────────────
+  A) Files stored in the sky on actual clouds
+     ❌ The name is metaphorical! The cloud is very physical —
+        warehouses on the ground.
+  B) Files stored only on your phone
+     ❌ Phone-only storage is local, not cloud.
+  C) Files stored on far-away servers in data centers,         ✓ CORRECT
+     accessible from any device with internet
+     ✅ Right! The cloud is real — giant warehouses (data
+        centers) full of computers. Cloud files follow you
+        across devices. (SC.6.CO.1.1)
+  D) A type of internet browser
+     ❌ Browsers are software that loads websites. Different
+        thing entirely.
+
+───────────────────────────────────────────────────────────────
+Q3. You're proofreading a friend's essay. You want to suggest
+    edits WITHOUT permanently changing their words. Which
+    feature should you use?
+───────────────────────────────────────────────────────────────
+  A) Real-time co-editing
+     ❌ Co-editing changes the text directly. You don't want
+        to overwrite your friend's words yet.
+  B) Suggesting mode (Track Changes)                            ✓ CORRECT
+     ✅ Suggesting mode shows your edits as PROPOSED changes
+        — your friend can accept or reject each one. Perfect
+        for proofreading someone else's work. (SC.6.CO.1.2)
+  C) Export to PDF
+     ❌ PDF export creates a locked file. You can't suggest
+        edits inside a finished PDF easily.
+  D) Print and shred the document
+     ❌ Don't shred your friend's essay! That deletes the
+        work entirely.
+
+───────────────────────────────────────────────────────────────
+Q4. Your teammate accidentally deleted three paragraphs of
+    your shared Google Doc. Which feature can rescue the
+    deleted text?
+───────────────────────────────────────────────────────────────
+  A) Real-time co-editing
+     ❌ Co-editing is for typing simultaneously. It doesn't
+        rewind history.
+  B) Comments
+     ❌ Comments add notes — they don't restore deleted text.
+  C) Version history                                            ✓ CORRECT
+     ✅ Right! Version history is an automatic record of past
+        versions. Open it, find a version from before the
+        accident, and restore. The ultimate undo. (SC.6.CO.1.2)
+  D) Delete the whole document and start over
+     ❌ That makes it worse — you'd lose all the GOOD work
+        too. Use version history instead.
+
+───────────────────────────────────────────────────────────────
+Q5. Which statement about TRADEOFFS between productivity
+    tools is MOST accurate?
+───────────────────────────────────────────────────────────────
+  A) Word is best for everything
+     ❌ No tool is best for everything. That's the meaning
+        of "tradeoff."
+  B) Google Docs is best for everything
+     ❌ Same answer — neither tool is universally better.
+  C) Each tool has strengths and weaknesses; the smart        ✓ CORRECT
+     choice depends on the job
+     ✅ Exactly! Tradeoffs are the truth of every tool. Smart
+        digital citizens think in tradeoffs, not absolutes.
+        (SC.6.CO.1.1)
+  D) Tools don't have tradeoffs
+     ❌ Every tool has tradeoffs. That's the core idea of
+        this week.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-06-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

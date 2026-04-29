@@ -1,0 +1,126 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 3 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Lesson 2.1
+  Standard: SC.6.CC.2.1 — Introduction to Multimedia Design
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → B
+  Q3 → C
+  Q4 → B
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. What does "multimedia" mean?
+───────────────────────────────────────────────────────────────
+  A) Content that uses only video
+     ❌ Video alone is one medium. Multimedia means MORE than
+        one type combined.
+  B) Content that uses only audio
+     ❌ Audio alone is one medium. Multimedia combines two or
+        more types on purpose.
+  C) Content that combines two or more types of media (text,    ✓ CORRECT
+     images, audio, video) on purpose
+     ✅ Right! "Multi-" means "many." Multimedia is many media
+        types working together. (SC.6.CC.2.1)
+  D) Content that uses only text
+     ❌ Text alone is one medium. The whole point of multimedia
+        is combining types.
+
+───────────────────────────────────────────────────────────────
+Q2. The three classical RHETORICAL PURPOSES of communication —
+    first identified by Aristotle — are:
+───────────────────────────────────────────────────────────────
+  A) Inform, confuse, frustrate
+     ❌ "Confuse" and "frustrate" are not real rhetorical
+        purposes — and good designers avoid both!
+  B) Inform, persuade, entertain                                ✓ CORRECT
+     ✅ Aristotle's framework, still used today: teach the
+        audience (inform), change what they think or do
+        (persuade), or delight them (entertain). (SC.6.CC.2.1)
+  C) Type, click, scroll
+     ❌ Those are user actions, not communication purposes.
+  D) Sketch, code, present
+     ❌ Those are creative steps, not rhetorical purposes.
+
+───────────────────────────────────────────────────────────────
+Q3. You're designing a slideshow for KINDERGARTEN students.
+    Which choice shows the BEST audience awareness?
+───────────────────────────────────────────────────────────────
+  A) Long paragraphs of text on every slide
+     ❌ Kindergarteners can't read paragraphs. Wrong audience.
+  B) A 20-page report with footnotes
+     ❌ Reports with footnotes fit a college audience, not
+        5-year-olds.
+  C) Big, friendly images and one short sentence per slide      ✓ CORRECT
+     ✅ Audience-first design: big visuals + simple language
+        match a kindergarten audience perfectly. (SC.6.CC.2.1)
+  D) A black-and-white scientific diagram with no labels
+     ❌ No engagement and no help reading — totally mismatched
+        to a kindergarten audience.
+
+───────────────────────────────────────────────────────────────
+Q4. The MAIN reason designers create a STORYBOARD before they
+    open any digital software is:
+───────────────────────────────────────────────────────────────
+  A) Storyboards are required by school rules
+     ❌ Storyboards aren't required by rules — they're chosen
+        by smart designers because they save time and effort.
+  B) Sketches are cheap to change; finished video work is       ✓ CORRECT
+     expensive to redo
+     ✅ Right! That's why every studio in the world uses
+        storyboards: catch problems while changes still cost
+        seconds, not hours. (SC.6.CC.2.1)
+  C) Storyboards look prettier than the final project
+     ❌ Storyboards are usually rough on purpose. The point is
+        planning, not beauty.
+  D) Storyboards are faster to make than the final project
+     ❌ True! But the deeper reason is changes are cheap at
+        this stage — that's why we storyboard FIRST.
+
+───────────────────────────────────────────────────────────────
+Q5. INTEGRATION in multimedia design means:
+───────────────────────────────────────────────────────────────
+  A) Adding more ingredients than necessary
+     ❌ More isn't better — integration is about how the parts
+        work together, not how many you have.
+  B) Using exactly the same color throughout
+     ❌ That's one tiny aspect of style. Integration is much
+        bigger — it's about all ingredients supporting one idea.
+  C) When all the ingredients of a project (text, visuals,      ✓ CORRECT
+     audio) support the SAME idea instead of fighting each
+     other
+     ✅ Exactly! Integrated work feels coherent — every
+        ingredient says the same thing. (SC.6.CC.2.1)
+  D) Removing all images so only text remains
+     ❌ That's not integration — that's deletion. Integration
+        keeps the ingredients but makes them work together.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-03-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

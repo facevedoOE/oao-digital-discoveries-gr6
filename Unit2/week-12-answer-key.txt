@@ -1,0 +1,131 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 12 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Lessons 5.2 & 5.3
+  Standards: SC.6.CS.1.5, SC.6.CS.1.6
+  Topic: Encryption & Digital Identity
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → B
+  Q3 → B
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. What is the MAIN PURPOSE of encryption?
+───────────────────────────────────────────────────────────────
+  A) To make data load faster on the internet
+     ❌ Encryption isn't about speed — it adds a small bit
+        of work, not less.
+  B) To scramble a message so only the right person can
+     read it                                                ✓ CORRECT
+     ✅ Encryption turns plaintext into ciphertext that's
+        unreadable without the key. (SC.6.CS.1.5)
+  C) To delete old messages automatically
+     ❌ Encryption doesn't delete anything — it scrambles
+        messages so only the right person can read them.
+  D) To store data permanently in the cloud
+     ❌ That's cloud storage. Encryption is about protecting
+        messages, not where they live.
+
+───────────────────────────────────────────────────────────────
+Q2. Using a Caesar cipher with a shift of 3, what does the
+    ciphertext FDW decrypt to (shift each letter back 3)?
+───────────────────────────────────────────────────────────────
+  A) DOG
+     ❌ Shift each letter back 3: F→C, D→A, W→T = CAT,
+        not DOG.
+  B) CAT                                                   ✓ CORRECT
+     ✅ F→C, D→A, W→T. The plaintext is CAT.
+        (SC.6.CS.1.5)
+  C) BAT
+     ❌ Close, but B is shift-back 4 from F. With shift 3,
+        F goes back to C — so the answer starts with C, not B.
+  D) CAR
+     ❌ First two letters are right (CA), but W shifts back
+        3 to T — not R.
+
+───────────────────────────────────────────────────────────────
+Q3. What does the "s" in https:// tell you about a website
+    connection?
+───────────────────────────────────────────────────────────────
+  A) It means the site is faster than other sites
+     ❌ The "s" has nothing to do with speed. It stands for
+        SECURE.
+  B) It means the connection is encrypted (secure) so data
+     is scrambled while it travels                          ✓ CORRECT
+     ✅ HTTPS means encryption is protecting the connection.
+        Without HTTPS, your password would travel as
+        plaintext. (SC.6.CS.1.5)
+  C) It means the site is owned by the school
+     ❌ The "s" doesn't say anything about who owns the
+        site — it's about encryption.
+  D) Nothing — http and https are exactly the same
+     ❌ HTTPS and HTTP are very different. HTTPS is
+        encrypted; HTTP is plaintext.
+
+───────────────────────────────────────────────────────────────
+Q4. Which of these is the SAFEST username for a public game
+    leaderboard?
+───────────────────────────────────────────────────────────────
+  A) SophiaMartinez_2014
+     ❌ Real first name + last name + birth year is way too
+        much PII for a public profile.
+  B) SophiaM_OakRidgeMS
+     ❌ Real name + the school you attend is enough for a
+        stranger to find you in real life.
+  C) BlueDragon42                                          ✓ CORRECT
+     ✅ Memorable, but no real name, school, or birthday —
+        keeps your identity private. (SC.6.CS.1.6)
+  D) 7thGrade_Rm104_Sophia
+     ❌ Even more dangerous — that points to a specific
+        school, classroom, AND name.
+
+───────────────────────────────────────────────────────────────
+Q5. Which of these is an example of a PASSIVE digital
+    footprint — data collected automatically, not posted by
+    you on purpose?
+───────────────────────────────────────────────────────────────
+  A) A discussion-board reply you typed
+     ❌ That's an ACTIVE footprint — you wrote and posted
+        it on purpose.
+  B) A photo you uploaded to your profile
+     ❌ Active — you chose to upload it.
+  C) A list of YouTube videos you've watched, tracked by
+     the app                                                ✓ CORRECT
+     ✅ You didn't post your watch history — the app
+        collected it automatically. That's a passive
+        footprint. (SC.6.CS.1.6)
+  D) A bio sentence you wrote on your profile
+     ❌ Active — those words went up because you typed
+        them.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-12-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

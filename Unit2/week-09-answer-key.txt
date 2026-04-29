@@ -1,0 +1,124 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 9 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Lesson 4.1
+  Standard: SC.6.CS.1.1 — The Journey of Data
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → B
+  Q4 → B
+  Q5 → A
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. A song file is sitting on your phone, untouched, in your
+    music folder. Which state is that data in?
+───────────────────────────────────────────────────────────────
+  A) Data in motion
+     ❌ Data in motion is traveling across a network. The song
+        file isn't moving — it's just stored.
+  B) Data at rest                                           ✓ CORRECT
+     ✅ Data at rest means stored on a device and not actively
+        moving or being processed. (SC.6.CS.1.1)
+  C) Data in use
+     ❌ Data in use means open in an app and being read or
+        processed. The file isn't open right now.
+  D) Data in transit
+     ❌ "In transit" is another way to describe data in motion —
+        but the song isn't moving. It's at rest.
+
+───────────────────────────────────────────────────────────────
+Q2. Which of these is the BEST example of CLOUD STORAGE?
+───────────────────────────────────────────────────────────────
+  A) A USB stick plugged into your laptop
+     ❌ A USB stick is local storage — it lives on your physical
+        device.
+  B) The hard drive built into a desktop computer
+     ❌ A built-in hard drive is local storage — it sits inside
+        the computer itself.
+  C) A Google Drive folder you can open from any device with
+     internet                                               ✓ CORRECT
+     ✅ Cloud storage lives on a remote server you reach over
+        the internet — Google Drive, OneDrive, iCloud, and
+        Dropbox are all examples. (SC.6.CS.1.1)
+  D) An SD card inside a digital camera
+     ❌ An SD card is local storage — a tiny chip that lives in
+        the device.
+
+───────────────────────────────────────────────────────────────
+Q3. Your home Wi-Fi connects your laptop, phone, and smart TV
+    — all in your house. What kind of network is that?
+───────────────────────────────────────────────────────────────
+  A) WAN (Wide Area Network)
+     ❌ A WAN connects networks across cities, states, or
+        countries. A home network is much smaller.
+  B) LAN (Local Area Network)                              ✓ CORRECT
+     ✅ A LAN connects devices in ONE place — like a single
+        home, school, or office. (SC.6.CS.1.1)
+  C) A database
+     ❌ A database is an organized collection of data, not a
+        type of network.
+  D) A server farm
+     ❌ A server farm is a building full of servers, not the
+        kind of network in your house.
+
+───────────────────────────────────────────────────────────────
+Q4. What is the main job of a SERVER?
+───────────────────────────────────────────────────────────────
+  A) To send Wi-Fi signals around your house
+     ❌ That's a router or wireless access point — not a server.
+  B) To store data and serve it to many users at once       ✓ CORRECT
+     ✅ A server is a powerful computer built to "serve" data to
+        many users at the same time. (SC.6.CS.1.1)
+  C) To translate languages on the internet
+     ❌ Translation apps do that — not servers as a whole.
+  D) To plug in printers and external mice
+     ❌ USB hubs and ports do that. A server's job is much
+        bigger — storing and delivering data to many users.
+
+───────────────────────────────────────────────────────────────
+Q5. You search Canvas for the words "ancient Rome." Your
+    search words become a request that the app sends to a
+    database. What is that request called?
+───────────────────────────────────────────────────────────────
+  A) A query                                               ✓ CORRECT
+     ✅ A query is a request that tells a database what data to
+        find and return. (SC.6.CS.1.1)
+  B) A packet
+     ❌ A packet is a small chunk of data traveling on a
+        network — not a search instruction.
+  C) A LAN
+     ❌ A LAN is a Local Area Network — not a search request.
+  D) A server
+     ❌ A server is the computer that stores or delivers data —
+        not the question you ask it.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-09-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

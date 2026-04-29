@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11 — Phishing, Social Engineering &amp; Privacy | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+
+<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
+
+  <!-- HEADER BAR -->
+  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
+    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
+      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
+      <circle cx="24" cy="28" r="7" fill="#fff"/>
+      <circle cx="40" cy="28" r="7" fill="#fff"/>
+      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
+      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
+      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
+      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div style="flex:1;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
+      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+    </div>
+    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 2 · WEEK 11</div>
+  </div>
+
+  <!-- HERO -->
+  <div style="background:linear-gradient(135deg,#0E1C42 0%,#3a1a4e 50%,#67308F 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(247,143,30,0.28) 0%,rgba(247,143,30,0) 70%);"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(103,48,143,0.30) 0%,rgba(103,48,143,0) 70%);"></div>
+    <div style="position:relative;z-index:2;">
+      <div style="display:inline-block;background:rgba(247,143,30,0.18);border:1px solid #F78F1E;color:#F78F1E;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lesson 5.1 · SC.6.CS.1.3, 1.4, 2.1, HS.1.1</div>
+      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Phishing, Social Engineering &amp; Privacy</h1>
+      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Last week you learned about giving the right people the right keys. This week meets the people on the other side — the scammers, tricksters, and impersonators trying to steal those keys. Spot the bait, lock your accounts, and keep your private life private.</p>
+    </div>
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
+      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Identify phishing</strong> messages and the social-engineering tricks behind them.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Classify information</strong> as public, private, or confidential — and explain why each kind needs different protection.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Build strong passwords</strong> (and explain why passphrases and multi-factor authentication matter).</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Apply safe device habits</strong> — locking, updates, and smart public-Wi-Fi behavior.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · Phishing 101</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">The bait, the hook, the catch</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">A scammer sends out thousands of fake messages pretending to be a real company — your bank, your school, a popular game. Most people delete them. But if even one or two people click the link and type in a password, the scammer wins. That's <strong style="color:#ffffff;">phishing</strong>: fishing for victims with fake bait.</p>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">The word is spelled with a "ph" because early hackers borrowed it from "phone phreaking" — and now phishing happens by email, text, DM, even fake websites.</p>
+
+    <!-- Anatomy of a phish (annotated) -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#F78F1E;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">🎣 Anatomy of a Phishing Email</div>
+      <div style="background:#0a0a14;border:1px dashed #ff6b6b;border-radius:10px;padding:18px;font-family:'Courier New',monospace;color:#c8d6e8;font-size:14px;line-height:1.7;">
+        <div style="color:#8a9bb8;">From: <span style="color:#ffffff;">support@gooogle-secure.com</span> <span style="color:#ff6b6b;">← misspelled domain</span></div>
+        <div style="color:#8a9bb8;">Subject: <span style="color:#ffffff;">⚠️ URGENT: Your account will be locked in 1 hour!!!</span> <span style="color:#ff6b6b;">← false urgency</span></div>
+        <hr style="border:none;border-top:1px solid #1e2a4a;margin:10px 0;">
+        <div style="color:#e2e8f0;">Dear Costumer, <span style="color:#ff6b6b;">← bad spelling, generic greeting</span></div>
+        <div style="margin:8px 0;color:#e2e8f0;">We notice a problem with your account. Click the button below to verify password and avoid suspention.</div>
+        <div style="background:#ff6b6b;color:#fff;display:inline-block;padding:8px 16px;border-radius:6px;font-weight:700;margin:8px 0;">VERIFY NOW</div>
+        <div style="color:#ff6b6b;font-size:12px;">↑ link goes to googel-account-secure.fakedomain.ru — not Google</div>
+        <div style="margin:8px 0;color:#e2e8f0;">Thanks,<br>Google Team</div>
+      </div>
+    </div>
+
+    <!-- 4 tells -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 20px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#F78F1E;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">⏰ Urgency</div>
+        <div style="color:#e2e8f0;font-size:14px;">"Act NOW or lose your account!" — scammers rush you so you don't think.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#67308F;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🔗 Sneaky Links</div>
+        <div style="color:#e2e8f0;font-size:14px;">A link that LOOKS right but actually goes to a fake site. Hover before clicking.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">✏️ Bad Spelling</div>
+        <div style="color:#e2e8f0;font-size:14px;">Real companies have editors. Phishers often have typos and weird grammar.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">👤 Generic Hi</div>
+        <div style="color:#e2e8f0;font-size:14px;">"Dear customer." Real services usually use your name. "Dear customer" = mass blast.</div>
+      </div>
+    </div>
+
+    <!-- VOCABULARY block -->
+    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
+      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Phishing</strong> — a scam that uses a fake message (email, text, DM) to trick you into giving up a password or personal info.</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Smishing</strong> — phishing that comes by SMS text message.</p>
+        <p style="margin:0;"><strong style="color:#ffffff;">Vishing</strong> — phishing that comes by phone call (voice).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · Social Engineering</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Hacking the human, not the computer</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Phishing is one type of a bigger family of tricks called <strong style="color:#ffffff;">social engineering</strong> — manipulating people instead of computers. The strongest password in the world doesn't help if a scammer convinces YOU to hand it over. Social engineers usually pull on one of four emotional levers:</p>
+
+    <!-- 4 levers grid -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #ff6b6b;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#ff6b6b;text-transform:uppercase;margin-bottom:10px;">⏰ Urgency</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">"Act in the next 5 minutes!"</div>
+        <div style="color:#c8d6e8;font-size:14px;">Pushes you to skip the careful thinking step. Real institutions almost never demand instant action.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #C7922C;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#C7922C;text-transform:uppercase;margin-bottom:10px;">👮 Authority</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">"This is the IRS / your principal."</div>
+        <div style="color:#c8d6e8;font-size:14px;">Pretends to be someone in charge. Authority makes us feel like we owe a quick answer.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #67308F;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#b388d8;text-transform:uppercase;margin-bottom:10px;">🎁 Reward / Scarcity</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">"You've won! Limited spots!"</div>
+        <div style="color:#c8d6e8;font-size:14px;">Free gift cards, "exclusive" Roblox skins. The reward is bait — grabbing it is the trap.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #76C043;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#76C043;text-transform:uppercase;margin-bottom:10px;">😊 Friendliness</div>
+        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">"Hey, can you help me real quick?"</div>
+        <div style="color:#c8d6e8;font-size:14px;">A friendly tone — sometimes pretending to be a friend or a classmate — to lower your guard.</div>
+      </div>
+    </div>
+
+    <!-- CHECK FOR UNDERSTANDING -->
+    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;"><strong style="color:#ffffff;">Pause and think:</strong> You get a Discord DM that says "Hey, I'm a Roblox employee — your account is about to be banned. Click here to verify in the next 5 minutes!" Which TWO social-engineering levers is that message pulling on?</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;font-style:italic;">(Hint: read it again and look at the words "Roblox employee" and "5 minutes.")</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · Public, Private, Confidential</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Three buckets of information — know which is which</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Not all data needs the same protection. The first step in keeping yourself safe is being able to <em>classify</em> the information you handle. Most schools, hospitals, and businesses sort information into three buckets:</p>
+
+    <!-- 3 buckets -->
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🌎</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Public Information</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#76C043;">Examples:</em> your school's name, your favorite sports team, your username on a public game leaderboard. Safe to share with anyone — already known or meant to be known.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🔒</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Private Information</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#C7922C;">Examples:</em> your home address, your phone number, your birthdate, your school schedule, photos of yourself. Share only with people you actually know and trust.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #ff6b6b;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🛡️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Confidential Information</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#ff6b6b;">Examples:</em> passwords, Social Security numbers, credit card numbers, medical records, two-factor codes. Never share these — not in chat, not by email, not even with people who claim to be from a company. Real companies will never ask.</div>
+      </div>
+    </div>
+
+    <!-- THINK ABOUT IT -->
+    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">Information that identifies a real human being — your name combined with your address, your photo, your birthday — is called <strong style="color:#ffffff;">PII</strong> (<em>Personally Identifiable Information</em>). The classical virtue of <strong>temperance</strong> — self-control — applies here. Every time someone online asks for PII, your job is to pause and think: <em>Do they actually need this?</em></p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · Strong Passwords &amp; MFA</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">The lock on your digital front door</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">A password is the lock on the door to every account you own. Cracking a weak password takes a computer about a second. A strong password takes thousands of years. The difference is mostly about <strong style="color:#ffffff;">length</strong> — longer beats clever.</p>
+
+    <!-- Weak vs strong -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #ff6b6b;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#ff6b6b;text-transform:uppercase;margin-bottom:10px;">❌ Weak</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li><code style="color:#ff6b6b;">password123</code></li>
+          <li><code style="color:#ff6b6b;">yourname2014</code></li>
+          <li><code style="color:#ff6b6b;">qwerty</code></li>
+          <li>Anything with your birthday, pet's name, or "1234"</li>
+          <li>The same password reused across 10 sites</li>
+        </ul>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #76C043;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#76C043;text-transform:uppercase;margin-bottom:10px;">✅ Strong</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>A <strong>passphrase</strong>: <code style="color:#76C043;">orange-lamp-tiger-cloud-9</code></li>
+          <li>16+ characters, mix of letters, numbers, symbols</li>
+          <li>Unique for each account</li>
+          <li>Stored in a password manager — not on a sticky note</li>
+          <li>Backed up by <strong>multi-factor authentication</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MFA explainer -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;">🔐 What is MFA / 2FA?</div>
+      <p style="margin:0 0 12px;color:#e2e8f0;font-size:15px;line-height:1.6;"><strong style="color:#ffffff;">Multi-factor authentication (MFA)</strong>, sometimes called <strong style="color:#ffffff;">two-factor authentication (2FA)</strong>, is when an account asks for <em>two</em> proofs that you're really you:</p>
+      <ul style="margin:0;padding:0 0 0 22px;color:#c8d6e8;font-size:14px;line-height:1.85;">
+        <li><strong style="color:#ffffff;">Something you know</strong> — your password.</li>
+        <li><strong style="color:#ffffff;">Something you have</strong> — a 6-digit code texted to your phone, or generated by an app like Google Authenticator.</li>
+      </ul>
+      <p style="margin:12px 0 0;color:#c8d6e8;font-size:14px;line-height:1.6;"><em>Even if a phisher steals your password, they can't get in without that second code.</em> MFA stops the vast majority of account takeovers.</p>
+    </div>
+
+    <!-- DID YOU KNOW -->
+    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">A modern attacker's computer can guess <strong style="color:#ffffff;">tens of billions of passwords per second</strong>. A 6-character password? Gone in under a second. A 16-character passphrase using random words? It would take longer than the age of the universe.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · Safe Device Habits</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Five small habits that beat most attacks</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Most digital safety isn't about being a hacker — it's about a few small habits done every day. These five protect you against the majority of real attacks:</p>
+
+    <!-- 5 habits -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">1</div>
+          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Lock your screen</div><div style="color:#c8d6e8;font-size:14px;">Set your phone and laptop to lock automatically after 1–5 minutes. A lock screen is the cheapest security upgrade in the world.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">2</div>
+          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Install software updates</div><div style="color:#c8d6e8;font-size:14px;">Updates aren't just new features — they patch security holes. Skipping them is like leaving a window open after the locksmith just told you it's broken.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">3</div>
+          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Don't click strange links</div><div style="color:#c8d6e8;font-size:14px;">When in doubt, type the website address yourself in a new tab — don't trust the link in the email.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">4</div>
+          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Be careful on public Wi-Fi</div><div style="color:#c8d6e8;font-size:14px;">Free coffee-shop Wi-Fi can be watched by anyone nearby. Avoid logging into bank or school accounts on it — wait until you're home.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">5</div>
+          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Tell a trusted adult when something feels wrong</div><div style="color:#c8d6e8;font-size:14px;">Got a creepy DM? An email demanding money? An account locked you out? You don't have to figure it out alone — that's what parents, teachers, and IT staff are for.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL-WORLD CONNECTION -->
+    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Most successful attacks on big companies — banks, hospitals, even schools — start with one phishing email opened by one person. Cybersecurity professionals call this "the human layer." It's the layer YOU just learned to defend.</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;">Companies pay six-figure salaries to people whose job is to teach others what you read this week. The 6th-grade habits you build now are the same instincts adults rely on every day.</p>
+    </div>
+  </div>
+
+  <!-- KEY VOCABULARY GRID -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 11</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Phishing</div>
+        <div style="color:#c8d6e8;font-size:14px;">A scam that uses fake messages to trick people into giving up passwords or personal info.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Social engineering</div>
+        <div style="color:#c8d6e8;font-size:14px;">Tricks that manipulate people (not computers) into giving up information or access.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Smishing / Vishing</div>
+        <div style="color:#c8d6e8;font-size:14px;">Phishing by SMS text (smishing) or by phone call (vishing).</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Public information</div>
+        <div style="color:#c8d6e8;font-size:14px;">Data already known or meant to be known — safe to share.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Private information</div>
+        <div style="color:#c8d6e8;font-size:14px;">Personal details (address, phone, schedule) shared only with people you know and trust.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Confidential information</div>
+        <div style="color:#c8d6e8;font-size:14px;">Highly sensitive data (passwords, SSN, medical, financial) — never share.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">PII</div>
+        <div style="color:#c8d6e8;font-size:14px;">Personally Identifiable Information — data that could identify a specific person.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Passphrase</div>
+        <div style="color:#c8d6e8;font-size:14px;">A long password made of multiple words — easier to remember and harder to crack.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Password manager</div>
+        <div style="color:#c8d6e8;font-size:14px;">An app that stores your passwords securely so you don't reuse or write them down.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">MFA / 2FA</div>
+        <div style="color:#c8d6e8;font-size:14px;">Multi-factor authentication — logging in with TWO proofs (password + a code or device).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFLECTION PROMPT -->
+  <div style="padding:40px 32px 32px;">
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Audit one of <em>your</em> most important accounts.</div>
+      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Pick one important account you use — Canvas, Google, Roblox, a game, an email. Then answer in 4–6 sentences:</p>
+      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
+        <li>How long is your password? Is it shared with any other account?</li>
+        <li>Does the account have MFA / 2FA turned on? If not, can you turn it on this week?</li>
+        <li>What's one thing you'd change today to make the account harder to break into?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHAT'S NEXT -->
+  <div style="padding:0 32px 48px;">
+    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
+      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 12</strong>, you'll learn the math trick that hides your password while it travels — <strong>encryption</strong> — plus what your <strong>digital footprint</strong> says about you, even when you think no one's looking.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
+    Digital Discoveries · Optima Academy Online · Course 0200021 · Standards SC.6.CS.1.3, 1.4, 2.1, HS.1.1
+  </div>
+
+</div>
+
+</body>
+</html>

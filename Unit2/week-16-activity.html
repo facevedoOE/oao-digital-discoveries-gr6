@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 16 Activity — Unit 2 Mixed Review | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.6;min-height:100vh;">
+
+<div id="app-root" style="max-width:820px;margin:0 auto;padding:20px;">
+
+  <!-- HEADER -->
+  <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+      <div style="background:#76C043;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">📝 REVIEW</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 2 · Week 16 · All Unit 2 Standards</div>
+    </div>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Unit 2 Mixed Review</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 scenarios mixing every Unit 2 topic. Score 100% twice and you're ready for the assessment. Retry as much as you want.</p>
+  </div>
+
+  <!-- PROGRESS + XP BAR -->
+  <div id="status-bar" style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:14px 20px;margin-bottom:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Progress</span>
+        <span id="progress-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:700;">Question 1 of 10</span>
+      </div>
+      <div style="background:#0a0a14;border-radius:10px;height:10px;overflow:hidden;">
+        <div id="progress-fill" style="background:linear-gradient(90deg,#55C8E8,#76C043);height:100%;width:0%;transition:width 0.4s ease;"></div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);padding:8px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;">
+      <span style="font-size:18px;">⚡</span>
+      <span style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">XP</span>
+      <span id="xp-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:800;">0</span>
+    </div>
+  </div>
+
+  <!-- QUESTION CONTAINER -->
+  <div id="question-container"></div>
+
+  <!-- FOOTER NOTE -->
+  <div style="text-align:center;color:#55687a;font-size:12px;margin-top:24px;padding:12px;">
+    Digital Discoveries · Optima Academy Online · Course 0200021
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    id: 1,
+    tag: 'Week 9 · Data States',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '💾',
+    scenario: "While you're typing into a Google Doc, words appearing as you type, what state is the document data in?",
+    options: [
+      { text: 'Data at rest', correct: false, why: "At rest means stored and not active. The doc is open and you\'re changing it right now." },
+      { text: 'Data in motion', correct: false, why: "In motion means traveling on a network. Editing is processing, not traveling." },
+      { text: 'Data in use', correct: true, why: "Right! Data being read or processed by an open app is in use." },
+      { text: 'Data in transit', correct: false, why: "\"In transit\" is another way to say in motion. Editing isn\'t traveling — it\'s processing." }
+    ]
+  },
+  {
+    id: 2,
+    tag: 'Week 10 · Roles',
+    tagColor: '#C7922C',
+    status: 'amber',
+    icon: '✏️',
+    scenario: "Your teacher needs to leave feedback on your essay draft using comments — but should NOT be rewriting your sentences. Which role gives her exactly what she needs?",
+    options: [
+      { text: 'Editor', correct: false, why: "Editor can change your sentences. The question said she shouldn\'t." },
+      { text: 'Viewer', correct: false, why: "Viewer is read-only — she couldn\'t leave feedback at all." },
+      { text: 'Commenter', correct: true, why: "Right! Commenter can read and leave comments, but cannot change content." },
+      { text: 'Owner', correct: false, why: "Owner has full control including delete. Far too much access for a feedback role." }
+    ]
+  },
+  {
+    id: 3,
+    tag: 'Week 11 · Phishing',
+    tagColor: '#ff6b6b',
+    status: 'red',
+    icon: '🎣',
+    scenario: "A DM says: \"Hi, I work at Discord. Send me your password AND your 6-digit MFA code, RIGHT NOW, or you\'ll lose your account!\" What\'s the right move?",
+    options: [
+      { text: 'Send the password and code so you don\'t lose the account', correct: false, why: "Real Discord employees NEVER ask for your password or MFA code. The whole point of those is that you keep them secret." },
+      { text: 'Don\'t send anything. Block, report, and tell a trusted adult.', correct: true, why: "Exactly. Authority + urgency + asking for password and MFA code = textbook phishing scam." },
+      { text: 'Send only the password — that\'s safer', correct: false, why: "Still a no. Even one piece of confidential info is too much for a stranger." },
+      { text: 'Reply asking for proof that they\'re really from Discord', correct: false, why: "Don\'t engage with phishers. Block, report, and tell a trusted adult." }
+    ]
+  },
+  {
+    id: 4,
+    tag: 'Week 11 · Info Class',
+    tagColor: '#67308F',
+    status: 'red',
+    icon: '🛡️',
+    scenario: "Which of these is CONFIDENTIAL information — never shared online, no matter who claims to ask?",
+    options: [
+      { text: 'Your favorite music genre', correct: false, why: "Music tastes are PUBLIC — fine to share." },
+      { text: 'Your password and the 6-digit MFA code that just texted to your phone', correct: true, why: "Right! Passwords and MFA codes are CONFIDENTIAL. Real companies will never ask for them." },
+      { text: 'The name of your school', correct: false, why: "School names are generally PUBLIC — printed on jerseys and websites." },
+      { text: 'Your favorite NBA team', correct: false, why: "Public — no risk in sharing." }
+    ]
+  },
+  {
+    id: 5,
+    tag: 'Week 12 · Caesar',
+    tagColor: '#67308F',
+    status: 'amber',
+    icon: '🔁',
+    scenario: "Using a Caesar cipher with a shift of 3 (each letter moves forward 3), what does CAT encrypt to?",
+    options: [
+      { text: 'BAS', correct: false, why: "That would be shifting BACKWARD. Forward 3 from C is F." },
+      { text: 'DBU', correct: false, why: "That\'s a shift of 1 (C→D, A→B, T→U). Shift of 3 gives F-D-W." },
+      { text: 'FDW', correct: true, why: "Right! C+3=F, A+3=D, T+3=W. CAT → FDW." },
+      { text: 'GEX', correct: false, why: "That\'s a shift of 4. Shift of 3 = FDW." }
+    ]
+  },
+  {
+    id: 6,
+    tag: 'Week 12 · HTTPS',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '🔒',
+    scenario: "You\'re about to log into your school account, but the URL starts with http:// (no \"s\") and there\'s no padlock. What\'s the BEST move?",
+    options: [
+      { text: 'Type your password — it\'s probably fine', correct: false, why: "Without HTTPS, your password travels in plaintext. Anyone on the network could read it." },
+      { text: 'Don\'t enter your password. Close the page and find the right HTTPS URL.', correct: true, why: "Right! No HTTPS on a login page is a major red flag." },
+      { text: 'Enter the password but use a different one than usual', correct: false, why: "Doesn\'t matter which password — any password sent over HTTP can be stolen." },
+      { text: 'Refresh the page and try again', correct: false, why: "Refreshing won\'t add encryption. The site itself needs HTTPS." }
+    ]
+  },
+  {
+    id: 7,
+    tag: 'Week 13 · CRAAP',
+    tagColor: '#76C043',
+    status: 'green',
+    icon: '🔍',
+    scenario: "You\'re writing a 6th-grade report on NASA. Which is the BEST source to cite?",
+    options: [
+      { text: 'An anonymous fan blog with no dates and no citations', correct: false, why: "No author, no dates, no citations — fails most of CRAAP." },
+      { text: 'A YouTube comment thread arguing about space', correct: false, why: "Comments aren\'t sources — no author, no facts, no review." },
+      { text: 'nasa.gov — NASA\'s own .gov website', correct: true, why: "Right! Restricted .gov + primary source on its own programs = high authority." },
+      { text: 'A Pinterest board with cool space pictures and no captions', correct: false, why: "Pinterest re-shares without source info. Not citation-quality." }
+    ]
+  },
+  {
+    id: 8,
+    tag: 'Week 13 · Lateral',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '↔️',
+    scenario: "You\'re unsure if a website you found is trustworthy. What\'s the BEST first move?",
+    options: [
+      { text: 'Stay on the page and read more carefully — the answer must be there', correct: false, why: "That\'s exactly what fact-checkers DON\'T do. Suspicious sites can look polished from the inside." },
+      { text: 'Open a new tab and search what other trusted sources say about that website', correct: true, why: "Right! That\'s lateral reading — the move journalists and pro fact-checkers use." },
+      { text: 'Trust it because it has nice graphics', correct: false, why: "Looks are easy to fake. Many scam sites look gorgeous." },
+      { text: 'Forward the page to friends and ask their opinion', correct: false, why: "Friends don\'t necessarily know. Use lateral reading on TRUSTED sources." }
+    ]
+  },
+  {
+    id: 9,
+    tag: 'Week 14 · Wellness',
+    tagColor: '#76C043',
+    status: 'amber',
+    icon: '😴',
+    scenario: "You can\'t fall asleep at night. You scroll Instagram in bed for 90 minutes every night before sleeping. Which physical effect is most likely the culprit?",
+    options: [
+      { text: 'Tech neck from looking down', correct: false, why: "Possible side issue, but it doesn\'t explain trouble falling asleep. Lighting is the main cause." },
+      { text: 'Blue light suppressing your melatonin and delaying sleep', correct: true, why: "Right! Blue light tells your brain \"it\'s daytime\" and pushes back the sleep hormone." },
+      { text: 'Drinking too much water', correct: false, why: "Water doesn\'t cause grogginess. Phone-in-bed is the issue." },
+      { text: 'The room is too cold', correct: false, why: "Temperature isn\'t the cause described here. Late-night screens suppress melatonin." }
+    ]
+  },
+  {
+    id: 10,
+    tag: 'Mixed · Capstone',
+    tagColor: '#C7922C',
+    status: 'red',
+    icon: '🧩',
+    scenario: "You\'re building a study guide and want to share it with three trusted classmates so everyone can help edit it for the next two weeks. What\'s the SMARTEST sharing setup?",
+    options: [
+      { text: '\"Anyone with the link, role: Editor\" — easier for everyone', correct: false, why: "That\'s the most-privilege setting — anyone who gets the link can edit and even delete content. Risky." },
+      { text: '\"Specific people\" with the three classmates listed as Editors', correct: true, why: "Right! Specific scope + Editor role = least privilege for the actual job. Only the three named people can find AND edit it." },
+      { text: 'Email each person a separate copy of the file', correct: false, why: "Now you have 4 different versions out of sync. Defeats the point of group editing." },
+      { text: 'Save it on a USB and pass it around', correct: false, why: "Way too slow for a 2-week project, and easy to lose." }
+    ]
+  }
+];
+
+const POINTS_PER_CORRECT = 10;
+let currentIndex = 0;
+let totalXP = 0;
+let correctCount = 0;
+let answered = false;
+
+const STATUS_COLORS = {
+  red:   '#ff6b6b',
+  amber: '#F78F1E',
+  green: '#76C043',
+  blue:  '#55C8E8'
+};
+
+function renderQuestion() {
+  const q = QUESTIONS[currentIndex];
+  answered = false;
+  updateStatusBar();
+
+  const container = document.getElementById('question-container');
+  container.innerHTML = `
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+      <div style="background:linear-gradient(135deg,#0E1C42,#1a2a5e);padding:20px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #1e2a4a;">
+        <div style="width:12px;height:12px;border-radius:50%;background:${STATUS_COLORS[q.status]};box-shadow:0 0 12px ${STATUS_COLORS[q.status]};flex-shrink:0;"></div>
+        <div style="background:${q.tagColor};color:#0E1C42;padding:4px 10px;border-radius:10px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;">${q.tag}</div>
+        <div style="margin-left:auto;font-size:28px;">${q.icon}</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Scenario ${q.id}</div>
+        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <div id="feedback-zone" style="margin-top:18px;"></div>
+      </div>
+    </div>
+  `;
+
+  const list = document.getElementById('options-list');
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.setAttribute('data-idx', idx);
+    btn.style.cssText = `
+      background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;
+      padding:14px 18px;color:#e2e8f0;font-family:inherit;font-size:15px;
+      text-align:left;cursor:pointer;transition:all 0.2s ease;
+      display:flex;gap:12px;align-items:flex-start;
+    `;
+    btn.innerHTML = `
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#1e2a4a;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">${String.fromCharCode(65+idx)}</div>
+      <div style="flex:1;padding-top:4px;">${opt.text}</div>
+    `;
+    btn.addEventListener('mouseenter', () => {
+      if (!answered) { btn.style.borderColor = '#55C8E8'; btn.style.background = '#111933'; }
+    });
+    btn.addEventListener('mouseleave', () => {
+      if (!answered) { btn.style.borderColor = '#1e2a4a'; btn.style.background = '#0a0a14'; }
+    });
+    btn.addEventListener('click', () => handleAnswer(idx));
+    list.appendChild(btn);
+  });
+}
+
+function handleAnswer(selectedIdx) {
+  if (answered) return;
+  answered = true;
+
+  const q = QUESTIONS[currentIndex];
+  const chosen = q.options[selectedIdx];
+  const buttons = document.querySelectorAll('#options-list button');
+
+  buttons.forEach((btn, i) => {
+    btn.style.cursor = 'default';
+    btn.disabled = true;
+    const opt = q.options[i];
+    if (opt.correct) {
+      btn.style.borderColor = '#76C043';
+      btn.style.background = 'rgba(118,192,67,0.12)';
+      btn.querySelector('div').style.background = '#76C043';
+      btn.querySelector('div').style.color = '#0E1C42';
+    } else if (i === selectedIdx && !opt.correct) {
+      btn.style.borderColor = '#ff6b6b';
+      btn.style.background = 'rgba(255,107,107,0.10)';
+      btn.querySelector('div').style.background = '#ff6b6b';
+      btn.querySelector('div').style.color = '#ffffff';
+    } else {
+      btn.style.opacity = '0.55';
+    }
+  });
+
+  if (chosen.correct) {
+    totalXP += POINTS_PER_CORRECT;
+    correctCount++;
+  }
+  updateStatusBar();
+
+  const fb = document.getElementById('feedback-zone');
+  const color = chosen.correct ? '#76C043' : '#ff6b6b';
+  const bgColor = chosen.correct ? 'rgba(118,192,67,0.10)' : 'rgba(255,107,107,0.08)';
+  const label = chosen.correct ? '✅ CORRECT  ·  +' + POINTS_PER_CORRECT + ' XP' : '❌ NOT QUITE';
+  fb.innerHTML = `
+    <div style="background:${bgColor};border:1px solid ${color};border-left:4px solid ${color};border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px;">
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:8px;">${label}</div>
+      <div style="color:#e2e8f0;font-size:14px;line-height:1.6;">${chosen.why}</div>
+    </div>
+    <button id="next-btn" style="width:100%;background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 18px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;">
+      ${currentIndex < QUESTIONS.length - 1 ? 'Next Scenario →' : 'See Your Results →'}
+    </button>
+  `;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.addEventListener('mouseenter', () => { nextBtn.style.transform = 'translateY(-2px)'; nextBtn.style.boxShadow = '0 6px 20px rgba(85,200,232,0.4)'; });
+  nextBtn.addEventListener('mouseleave', () => { nextBtn.style.transform = 'translateY(0)'; nextBtn.style.boxShadow = 'none'; });
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    if (currentIndex < QUESTIONS.length) {
+      renderQuestion();
+    } else {
+      renderResults();
+    }
+  });
+}
+
+function updateStatusBar() {
+  document.getElementById('progress-text').textContent = `Question ${Math.min(currentIndex+1, QUESTIONS.length)} of ${QUESTIONS.length}`;
+  const pct = ((answered ? currentIndex + 1 : currentIndex) / QUESTIONS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('xp-text').textContent = totalXP;
+}
+
+function renderResults() {
+  const maxXP = POINTS_PER_CORRECT * QUESTIONS.length;
+  const pct = Math.round((totalXP / maxXP) * 100);
+  let message, emoji, color;
+  if (pct === 100) {
+    message = "Perfect run! You're ready for the Unit 2 Assessment.";
+    emoji = "🏆"; color = "#C7922C";
+  } else if (pct >= 80) {
+    message = "Excellent work! Re-take any week-specific activity for the topics you missed, then run this review again.";
+    emoji = "⭐"; color = "#76C043";
+  } else if (pct >= 60) {
+    message = "Solid foundation. Review the week pages for the standards you missed and try again — aim for 100% before the assessment.";
+    emoji = "💪"; color = "#55C8E8";
+  } else {
+    message = "Keep going! Re-read the Week 16 study guide and the week pages for the topics you missed. Take this review at least twice more before the assessment.";
+    emoji = "📚"; color = "#67308F";
+  }
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = 'Complete!';
+
+  document.getElementById('question-container').innerHTML = `
+    <div style="background:linear-gradient(135deg,#111122,#0E1C42);border:1px solid ${color};border-radius:14px;padding:36px 28px;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,0.5);">
+      <div style="font-size:72px;margin-bottom:12px;">${emoji}</div>
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:10px;">Review Complete</div>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:32px;font-weight:800;margin:0 0 8px;">${totalXP} / ${maxXP} XP</h2>
+      <div style="color:#c8d6e8;font-size:16px;margin-bottom:6px;">${correctCount} of ${QUESTIONS.length} correct · ${pct}%</div>
+      <p style="color:#e2e8f0;font-size:16px;line-height:1.55;max-width:520px;margin:16px auto 28px;">${message}</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="retry-btn" style="background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 26px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:transform 0.2s;">
+          ↻ Try Again
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('retry-btn').addEventListener('click', () => {
+    currentIndex = 0; totalXP = 0; correctCount = 0;
+    renderQuestion();
+  });
+
+  try {
+    window.parent.postMessage({
+      type: 'canvas-grade',
+      score: totalXP,
+      maxScore: maxXP,
+      percent: pct,
+      correctCount: correctCount,
+      totalQuestions: QUESTIONS.length,
+      activity: 'week-16-activity'
+    }, '*');
+  } catch (e) { /* no-op */ }
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+═══════════════════════════════════════════════════════════════════
+  UNIT 1 SUMMATIVE ASSESSMENT — ANSWER KEY
+  Digital Discoveries · 6th Grade Computer Science · Course 0200021
+  Standards covered: SC.6.CC.1.1, SC.6.CC.2.1, SC.6.CO.1.1, SC.6.CO.1.2
+═══════════════════════════════════════════════════════════════════
+
+15 multiple-choice questions · 1 point each · 15 points total
+Recommended Canvas settings: 1 attempt, no time limit, show
+feedback after submission.
+
+═══════════════════════════════════════════════════════════════════
+  QUICK-ANSWER GRID
+═══════════════════════════════════════════════════════════════════
+   Q1 → B   |   Q6  → C   |   Q11 → C
+   Q2 → C   |   Q7  → C   |   Q12 → B
+   Q3 → B   |   Q8  → B   |   Q13 → C
+   Q4 → C   |   Q9  → C   |   Q14 → C
+   Q5 → B   |   Q10 → B   |   Q15 → C
+═══════════════════════════════════════════════════════════════════
+
+QUESTION-BY-QUESTION TOPIC MAP (for reteaching after the test):
+
+  Q1  Wk 1 · synchronous vs asynchronous       (SC.6.CC.1.1)
+  Q2  Wk 1 · data packets & routers            (SC.6.CC.1.1)
+  Q3  Wk 1 · choosing the right channel        (SC.6.CC.1.1)
+  Q4  Wk 2 · tone matching audience            (SC.6.CC.1.1)
+  Q5  Wk 2 · prudence vs temperance            (SC.6.CC.1.1)
+  Q6  Wk 3 · rhetorical purpose                (SC.6.CC.2.1)
+  Q7  Wk 3 · audience analysis                 (SC.6.CC.2.1)
+  Q8  Wk 3 · storyboarding                     (SC.6.CC.2.1)
+  Q9  Wk 4 · aesthetic unity                   (SC.6.CC.2.1)
+  Q10 Wk 4 · peer feedback (Glow & Grow)       (SC.6.CC.2.1)
+  Q11 Wk 5 · file extensions                   (SC.6.CO.1.1)
+  Q12 Wk 5 · file family identification        (SC.6.CO.1.1)
+  Q13 Wk 5 · file naming conventions           (SC.6.CO.1.1)
+  Q14 Wk 6 · cloud vs local storage            (SC.6.CO.1.1)
+  Q15 Wk 6 · collaboration features            (SC.6.CO.1.2)
+
+═══════════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────────
+Q1. (Wk 1, SC.6.CC.1.1)
+    Which is the BEST example of ASYNCHRONOUS communication?
+───────────────────────────────────────────────────────────────────
+  A) A live Zoom class
+     ❌ Zoom is synchronous — everyone is present at the same time.
+  B) An email read the next morning                              ✓ CORRECT
+     ✅ Right! Email is the classic asynchronous example —
+        sender and receiver are not online simultaneously.
+  C) A live video call with grandma
+     ❌ Video calls are synchronous.
+  D) A voice chat during an online game
+     ❌ Voice chat is synchronous — both parties speak in real time.
+
+───────────────────────────────────────────────────────────────────
+Q2. (Wk 1, SC.6.CC.1.1)
+    What is a DATA PACKET?
+───────────────────────────────────────────────────────────────────
+  A) A folder that stores all of your digital files
+     ❌ That describes storage, not a packet.
+  B) A type of router that connects devices
+     ❌ Routers DIRECT packets — they aren't packets themselves.
+  C) A small chunk of a message that travels across a network    ✓ CORRECT
+     ✅ Data packets are tiny pieces of a message that travel
+        separately and are reassembled at the destination.
+  D) A password that protects your messages
+     ❌ That describes encryption, not a packet.
+
+───────────────────────────────────────────────────────────────────
+Q3. (Wk 1, SC.6.CC.1.1)
+    You need to send your science teacher a detailed question
+    about an upcoming project. Which channel is MOST appropriate?
+───────────────────────────────────────────────────────────────────
+  A) A quick text with abbreviations
+     ❌ Too informal for a teacher and not a school-appropriate
+        channel for class questions.
+  B) An email written in a clear, polite tone                    ✓ CORRECT
+     ✅ Email is asynchronous, professional, and leaves a written
+        record — ideal for a detailed teacher question.
+  C) A reaction emoji on a class post
+     ❌ An emoji can't carry a full question.
+  D) A live video call at midnight
+     ❌ Synchronous calls require both people present — and late
+        at night isn't appropriate for a teacher.
+
+───────────────────────────────────────────────────────────────────
+Q4. (Wk 2, SC.6.CC.1.1)
+    Which version of "I can't make practice today" has the BEST
+    tone for a TEACHER OR COACH?
+───────────────────────────────────────────────────────────────────
+  A) "cant come 2 practice, sry"
+     ❌ Too casual and abbreviated for a teacher or coach.
+  B) "WHY DOES EVERYONE THINK I CAN COME TO EVERYTHING"
+     ❌ ALL CAPS = shouting; tone is also accusatory.
+  C) "Hi Coach, I won't be able to attend practice today due    ✓ CORRECT
+     to a family commitment. I'll be there Wednesday. Thank you."
+     ✅ Formal, respectful, specific — tone matches the audience.
+        Includes greeting, reason, plan, and thanks.
+  D) "not coming today 🙃"
+     ❌ Too curt and too casual; missing greeting and courtesy.
+
+───────────────────────────────────────────────────────────────────
+Q5. (Wk 2, SC.6.CC.1.1)
+    Sofia wants to clap back at someone she disagrees with online.
+    She closes the app and decides to think about it overnight
+    instead. Which classical virtue is she practicing MOST?
+───────────────────────────────────────────────────────────────────
+  A) Justice
+     ❌ Justice is fairness — that's not what Sofia is showing.
+  B) Temperance                                                  ✓ CORRECT
+     ✅ Temperance is self-control and restraint, especially
+        when emotions run hot. Sofia paused before reacting —
+        textbook temperance.
+  C) Prudence
+     ❌ Close — prudence is choosing wisely. The specific skill
+        Sofia shows (holding back strong feelings) is temperance.
+        Prudence decides; temperance restrains.
+  D) Fortitude
+     ❌ Fortitude is courage. Sofia isn't being brave here; she's
+        holding back.
+
+───────────────────────────────────────────────────────────────────
+Q6. (Wk 3, SC.6.CC.2.1)
+    A 30-second video shows a hungry shelter dog with sad music
+    and ends with "Adopt today. Save a life." What is the MAIN
+    rhetorical purpose?
+───────────────────────────────────────────────────────────────────
+  A) To inform
+     ❌ Some facts may appear, but the goal is action, not just
+        teaching.
+  B) To entertain
+     ❌ Sad music + shelter dog isn't designed to amuse.
+  C) To persuade                                                 ✓ CORRECT
+     ✅ Emotional visuals + music + a clear call to action =
+        persuasion. The video wants viewers to do something.
+  D) To confuse
+     ❌ Confusion isn't a real rhetorical purpose. The three are
+        inform, persuade, entertain.
+
+───────────────────────────────────────────────────────────────────
+Q7. (Wk 3, SC.6.CC.2.1)
+    You're designing a slideshow for KINDERGARTEN students. Which
+    choice shows the BEST audience awareness?
+───────────────────────────────────────────────────────────────────
+  A) Long paragraphs of text on every slide
+     ❌ Kindergarteners can't read paragraphs.
+  B) A 20-page report with footnotes
+     ❌ That fits a college audience, not 5-year-olds.
+  C) Big, friendly images and one short sentence per slide       ✓ CORRECT
+     ✅ Audience-first design: big visuals + simple language match
+        a kindergarten audience perfectly.
+  D) A black-and-white scientific diagram with no labels
+     ❌ No engagement and no help reading.
+
+───────────────────────────────────────────────────────────────────
+Q8. (Wk 3, SC.6.CC.2.1)
+    The MAIN reason designers create a STORYBOARD before opening
+    any digital software is:
+───────────────────────────────────────────────────────────────────
+  A) Storyboards are required by school rules
+     ❌ Smart designers choose storyboards because they save time.
+  B) Sketches are cheap to change; finished video work is        ✓ CORRECT
+     expensive to redo
+     ✅ Right! Catch problems while changes still cost seconds,
+        not hours.
+  C) Storyboards look prettier than the final project
+     ❌ Storyboards are usually rough on purpose.
+  D) Storyboards always have to be in color
+     ❌ Storyboards are typically pencil sketches with notes.
+
+───────────────────────────────────────────────────────────────────
+Q9. (Wk 4, SC.6.CC.2.1)
+    AESTHETIC UNITY in a multimedia project means:
+───────────────────────────────────────────────────────────────────
+  A) Every page uses different colors and fonts to keep things
+     interesting
+     ❌ The opposite! Variety on every page kills unity.
+  B) Including as many colors and fonts as possible
+     ❌ More isn't better. Aesthetic unity comes from RESTRAINT.
+  C) Every page feels like part of the same project — same       ✓ CORRECT
+     colors, same fonts, same layout style
+     ✅ Aesthetic unity is the visual signal that one designer
+        made one project.
+  D) Using the most expensive design software available
+     ❌ Tools don't create unity — discipline does.
+
+───────────────────────────────────────────────────────────────────
+Q10. (Wk 4, SC.6.CC.2.1)
+     Which of these is the STRONGEST piece of peer feedback?
+───────────────────────────────────────────────────────────────────
+  A) "Good job!"
+     ❌ Vague — your classmate doesn't know what to keep doing.
+  B) "On page 2, the text is hard to read against the photo —    ✓ CORRECT
+     could you add a darker background behind the words?"
+     ✅ Specific (names the page and problem), kind (offers a
+        solution), and actionable. Classic strong Glow/Grow.
+  C) "It's bad."
+     ❌ Vague AND unkind.
+  D) "Change everything."
+     ❌ Overwhelming and not specific. Strong feedback names ONE
+        thing at a time.
+
+───────────────────────────────────────────────────────────────────
+Q11. (Wk 5, SC.6.CO.1.1)
+     A FILE EXTENSION (like .docx or .mp3) tells the computer:
+───────────────────────────────────────────────────────────────────
+  A) The author's name
+     ❌ Authors aren't part of the extension.
+  B) Where the file is stored
+     ❌ Storage location is in the file path, not the extension.
+  C) What kind of file it is and which app should open it        ✓ CORRECT
+     ✅ Extensions match files to apps. Without the extension,
+        the computer often can't tell what to do.
+  D) The size of the file
+     ❌ File size is shown separately. Extensions describe TYPE.
+
+───────────────────────────────────────────────────────────────────
+Q12. (Wk 5, SC.6.CO.1.1)
+     A friend sends you a file called dragon-model.stl. What is
+     this file MOST likely?
+───────────────────────────────────────────────────────────────────
+  A) A song about dragons
+     ❌ Songs use audio extensions like .mp3, .wav.
+  B) A 3D model — possibly for a 3D printer or a game            ✓ CORRECT
+     ✅ Right! .stl is a classic 3D model format used for 3D
+        printing and CAD tools.
+  C) A short video clip of a dragon
+     ❌ Videos use .mp4, .mov, .webm.
+  D) A typed essay about dragons
+     ❌ Essays use document formats like .docx or .pdf.
+
+───────────────────────────────────────────────────────────────────
+Q13. (Wk 5, SC.6.CO.1.1)
+     Which file name BEST follows the 4 rules of good naming
+     (specific, no spaces, dated/versioned, keeps extension)?
+───────────────────────────────────────────────────────────────────
+  A) Untitled.docx
+     ❌ Not specific. "Untitled" tells you nothing.
+  B) final FINAL FINAL v2 (3) latest.docx
+     ❌ Spaces, redundant words, confused versioning.
+  C) civil-war-essay-v3-2026-04-27.docx                          ✓ CORRECT
+     ✅ Specific, no spaces, versioned and dated, and keeps
+        the .docx extension.
+  D) My File
+     ❌ Not specific, has a space, AND no extension. Worst of
+        all worlds.
+
+───────────────────────────────────────────────────────────────────
+Q14. (Wk 6, SC.6.CO.1.1)
+     CLOUD STORAGE means:
+───────────────────────────────────────────────────────────────────
+  A) Files stored in the sky on actual clouds
+     ❌ The name is metaphorical! The cloud is very physical.
+  B) Files stored only on your phone
+     ❌ Phone-only storage is local, not cloud.
+  C) Files stored on far-away servers in data centers,           ✓ CORRECT
+     accessible from any device with internet
+     ✅ The cloud is real — data centers full of computers.
+        Cloud files follow you across devices.
+  D) A type of internet browser
+     ❌ Browsers load websites — different thing entirely.
+
+───────────────────────────────────────────────────────────────────
+Q15. (Wk 6, SC.6.CO.1.2)
+     You're proofreading a friend's essay. You want to suggest
+     edits WITHOUT permanently changing their words. Which feature
+     should you use?
+───────────────────────────────────────────────────────────────────
+  A) Real-time co-editing
+     ❌ Co-editing changes the text directly. You don't want to
+        overwrite your friend's words.
+  B) Comments
+     ❌ Comments are great for asking questions, but they don't
+        SHOW the edit you're suggesting.
+  C) Suggesting mode (Track Changes)                             ✓ CORRECT
+     ✅ Suggesting mode shows your edits as PROPOSED changes —
+        your friend can accept or reject each one. Perfect for
+        proofreading someone else's work.
+  D) Export to PDF
+     ❌ PDF export creates a locked file. You can't easily
+        suggest edits inside a finished PDF.
+
+═══════════════════════════════════════════════════════════════════
+  SCORING GUIDANCE
+═══════════════════════════════════════════════════════════════════
+  • 13–15 correct (87–100%): Mastery — student is ready for Unit 2.
+  • 11–12 correct (73–86%):  Proficient — minor gaps, review tags.
+  • 9–10 correct (60–72%):   Developing — reteach weak topics.
+  • 0–8 correct  (under 60%): Re-test recommended after reteach.
+
+═══════════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: unit-1-assessment-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → 1 attempt, 15 points, summative.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════════

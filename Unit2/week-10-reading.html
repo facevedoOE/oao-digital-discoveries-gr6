@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 10 — Data Access &amp; Permissions | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+
+<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
+
+  <!-- HEADER BAR -->
+  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
+    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
+      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
+      <circle cx="24" cy="28" r="7" fill="#fff"/>
+      <circle cx="40" cy="28" r="7" fill="#fff"/>
+      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
+      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
+      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
+      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div style="flex:1;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
+      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+    </div>
+    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 2 · WEEK 10</div>
+  </div>
+
+  <!-- HERO -->
+  <div style="background:linear-gradient(135deg,#0E1C42 0%,#1a2a5e 50%,#67308F 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(103,48,143,0.32) 0%,rgba(103,48,143,0) 70%);"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.22) 0%,rgba(85,200,232,0) 70%);"></div>
+    <div style="position:relative;z-index:2;">
+      <div style="display:inline-block;background:rgba(85,200,232,0.15);border:1px solid #55C8E8;color:#55C8E8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lesson 4.2 · Standard SC.6.CS.1.2</div>
+      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Data Access &amp; Permissions</h1>
+      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Last week you traced where data goes. This week you'll learn <em>who</em> is allowed to see it, edit it, or delete it — and why a bad permission setting can ruin a group project, leak a private photo, or wipe out hours of work in one click.</p>
+    </div>
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
+      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Define permissions</strong> and explain why digital systems use them.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Compare common roles</strong> — Owner/Admin, Editor, Commenter, Viewer — and choose the right one for a job.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Configure sharing settings</strong> safely, including who can find a link and what they can do with it.</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
+          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Apply ethical thinking</strong> to access — recognizing the difference between what you <em>can</em> see and what you <em>should</em> see.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · What Are Permissions?</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Digital keys to digital rooms</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">Imagine a school building. The front office has one set of keys. The science lab has a different set. The principal can open every door, but a 6th-grade student can only open their classroom and the cafeteria. Nobody thinks that's strange — different people need different access.</p>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Digital files work exactly the same way. <strong style="color:#ffffff;">Permissions</strong> are the rules that decide who can open, change, share, or delete a piece of data. Without permissions, every file would be like an unlocked classroom — anyone could walk in and rearrange your desk.</p>
+
+    <!-- Locks visual -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
+      <svg width="100%" height="140" viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+        <!-- File icon -->
+        <rect x="240" y="30" width="120" height="80" rx="8" fill="#0a0a14" stroke="#55C8E8" stroke-width="2"/>
+        <path d="M 240 50 L 270 30 L 360 30 L 360 110 L 240 110 Z" fill="#0E1C42" stroke="#55C8E8" stroke-width="2"/>
+        <text x="300" y="78" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="14" font-weight="800" fill="#55C8E8">YOUR FILE</text>
+        <!-- Lock icon -->
+        <circle cx="300" cy="125" r="14" fill="#C7922C"/>
+        <text x="300" y="131" text-anchor="middle" font-size="16">🔒</text>
+        <!-- Three keys -->
+        <text x="100" y="50" text-anchor="middle" font-size="34">🔑</text>
+        <text x="100" y="78" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#76C043">OWNER</text>
+        <text x="100" y="96" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#8a9bb8">All access</text>
+        <text x="500" y="50" text-anchor="middle" font-size="34">🔑</text>
+        <text x="500" y="78" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#C7922C">EDITOR</text>
+        <text x="500" y="96" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#8a9bb8">Read &amp; write</text>
+        <text x="500" y="120" text-anchor="middle" font-size="22">👁️</text>
+        <text x="500" y="135" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">VIEWER</text>
+      </svg>
+    </div>
+
+    <!-- VOCABULARY block -->
+    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
+      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Permission</strong> — a rule that decides what someone is allowed to do with a piece of data.</p>
+        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Access control</strong> — the system that enforces permissions inside an app or network.</p>
+        <p style="margin:0;"><strong style="color:#ffffff;">Role</strong> — a named bundle of permissions (like "Editor" or "Viewer") that you give to a user all at once.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · The Big Four Roles</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Owner, Editor, Commenter, Viewer</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Almost every cloud app — Google Drive, Microsoft 365, Canvas, Dropbox — uses the same four roles, just with slightly different names. Once you know these four, you can use any platform.</p>
+
+    <!-- Roles grid -->
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">👑</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Owner / Admin</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Has every permission. Can view, edit, share, change other people's roles, and delete the file. <em style="color:#76C043;">Real-life:</em> the person who created the doc; the school IT admin who manages everyone's accounts.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">✏️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Editor</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Can view <em>and</em> change the file — type, delete words, add pages. Usually CAN'T change who else has access. <em style="color:#C7922C;">Real-life:</em> a teammate working on a shared lab report.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">💬</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Commenter</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Can view and add comments or suggestions, but can't change the actual content. <em style="color:#b388d8;">Real-life:</em> a teacher giving feedback on your draft without changing your words.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">👁️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Viewer</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Read-only. Can open and read the file but can't change anything or leave a comment. <em style="color:#55C8E8;">Real-life:</em> a parent who you want to see your finished essay but not edit it.</div>
+      </div>
+    </div>
+
+    <!-- Permissions matrix -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">📊 Quick Reference Grid</div>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;color:#e2e8f0;">
+        <thead>
+          <tr style="border-bottom:2px solid #1e2a4a;">
+            <th style="text-align:left;padding:10px 8px;color:#8a9bb8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;">Action</th>
+            <th style="text-align:center;padding:10px 8px;color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;">Owner</th>
+            <th style="text-align:center;padding:10px 8px;color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;">Editor</th>
+            <th style="text-align:center;padding:10px 8px;color:#b388d8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;">Commenter</th>
+            <th style="text-align:center;padding:10px 8px;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;">Viewer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #1e2a4a;">
+            <td style="padding:10px 8px;">Open and read</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#76C043;">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid #1e2a4a;">
+            <td style="padding:10px 8px;">Add comments</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#ff6b6b;">✗</td>
+          </tr>
+          <tr style="border-bottom:1px solid #1e2a4a;">
+            <td style="padding:10px 8px;">Edit the content</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#ff6b6b;">✗</td><td style="text-align:center;color:#ff6b6b;">✗</td>
+          </tr>
+          <tr style="border-bottom:1px solid #1e2a4a;">
+            <td style="padding:10px 8px;">Share with new people</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#C7922C;">~</td><td style="text-align:center;color:#ff6b6b;">✗</td><td style="text-align:center;color:#ff6b6b;">✗</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 8px;">Delete the file</td><td style="text-align:center;color:#76C043;">✓</td><td style="text-align:center;color:#ff6b6b;">✗</td><td style="text-align:center;color:#ff6b6b;">✗</td><td style="text-align:center;color:#ff6b6b;">✗</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="color:#8a9bb8;font-size:12px;margin-top:10px;font-style:italic;">~ = Editors can sometimes share, depending on the app and the owner's settings.</div>
+    </div>
+
+    <!-- CHECK FOR UNDERSTANDING -->
+    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;"><strong style="color:#ffffff;">Pause and think:</strong> You finish a personal essay and you want your dad to read it and tell you what he thinks — but you don't want him changing your sentences. Which role should you give him: Editor, Commenter, or Viewer? Why?</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;font-style:italic;">(Hint: which role can leave feedback but can't change words?)</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · Sharing Settings</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">"Anyone with the link" is louder than you think</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">When you click "Share" on a file, you usually get two big choices: <em>who</em> can find this file, and <em>what</em> they can do with it. The first choice is called the <strong style="color:#ffffff;">share scope</strong>, and it usually has three levels:</p>
+
+    <!-- Share scope levels -->
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🔒</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Specific People</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Only the email addresses you list can open it. The safest setting. <em style="color:#76C043;">Use for:</em> personal essays, sensitive group projects, things only certain people should see.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🏫</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Anyone in Your School (or Org)</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;">Anyone with a school email can find and open it — but the public can't. Medium openness. <em style="color:#C7922C;">Use for:</em> a study guide you want to share with your whole class.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #ff6b6b;border-radius:0 10px 10px 0;padding:16px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🌐</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Anyone with the Link</strong></div>
+        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#ff6b6b;">Warning — open to the entire internet.</em> If anyone shares the link, anyone in the world can open it. <em style="color:#8a9bb8;">Use only for:</em> truly public information you'd be okay with strangers seeing.</div>
+      </div>
+    </div>
+
+    <!-- THINK ABOUT IT -->
+    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">There's a simple security idea called the <strong style="color:#ffffff;">principle of least privilege</strong>: give every person <em>exactly</em> as much access as they need to do their job — and not one bit more. The fewer keys floating around, the safer your data. A janitor doesn't need the principal's master key, and a Viewer doesn't need to be an Editor.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · Managing Permissions Over Time</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Permissions aren't "set and forget"</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">A common mistake: students share a file with a group at the start of a project, then never touch the settings again. Six months later, three people who left the group still have full Editor access. That's a leak waiting to happen.</p>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Smart permission management means doing three things, on a regular schedule:</p>
+
+    <!-- Three habits -->
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">ADD</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Add the right people, with the right role</div>
+            <div style="color:#c8d6e8;font-size:14px;">Before you click "Share," ask: who needs this, and what's the lowest role that lets them do their job?</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">DROP</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Remove people who no longer need access</div>
+            <div style="color:#c8d6e8;font-size:14px;">When the project ends, when a teammate leaves the group, or when a parent stops needing to see your work — take their key back.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">CHECK</div>
+          <div style="flex:1;">
+            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Audit the access list</div>
+            <div style="color:#c8d6e8;font-size:14px;">An <strong style="color:#ffffff;">audit</strong> is just a check — open the share panel and read the list. You'll be surprised how often someone shouldn't be there anymore.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DID YOU KNOW -->
+    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
+      <p style="margin:0;color:#e2e8f0;font-size:15px;">Many of the biggest data leaks in real companies have started with one tiny mistake: a folder accidentally set to "Anyone with the link." Banks, hospitals, and even government agencies have leaked thousands of files this way. The fix isn't fancy software — it's people who understand permissions.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div style="padding:40px 32px 8px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · The Ethics of Access</div>
+    </div>
+
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Just because you CAN see it doesn't mean you SHOULD</h2>
+
+    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Sometimes a friend hands you their phone to show you a video — and their text messages are right there. Sometimes a teammate forgets to close their tab. Sometimes a teacher leaves a folder set to "Anyone with the link" by mistake. Permissions tell you what's <em>technically</em> possible. <strong style="color:#ffffff;">Ethics</strong> tell you what's <em>right</em>.</p>
+
+    <!-- Ethics cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #76C043;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#76C043;text-transform:uppercase;margin-bottom:10px;">✅ Wise Choices</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Ask before you open someone else's file</li>
+          <li>If you stumble onto private data by accident, close it and tell the owner</li>
+          <li>Never share a link that wasn't shared with you to share</li>
+          <li>Treat other people's data like a borrowed book — give it back, don't read the bookmarks</li>
+        </ul>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #ff6b6b;border-radius:10px;padding:20px;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#ff6b6b;text-transform:uppercase;margin-bottom:10px;">⚠️ Watch Out</div>
+        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
+          <li>Snooping in a sibling's open Google Drive is still snooping</li>
+          <li>Forwarding a "Viewer-only" link to people the owner didn't approve breaks trust</li>
+          <li>Editing someone's doc when you only have view-by-mistake access is sneaky</li>
+          <li>"They left it open" isn't permission — it's a mistake</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- REAL-WORLD CONNECTION -->
+    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
+      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Classical thinkers called the virtue of giving each person their proper due — no more, no less — <strong style="color:#ffffff;">justice</strong>. Permission settings are a small daily practice in justice: the right access for the right role. The same habit that makes you a good lab partner makes a doctor, banker, or government worker trustworthy with millions of records.</p>
+      <p style="margin:0;color:#c8d6e8;font-size:14px;">Hospitals, banks, and the U.S. military all use the exact same role-based permission systems you're learning to manage in Google Drive — just at a much bigger scale.</p>
+    </div>
+  </div>
+
+  <!-- KEY VOCABULARY GRID -->
+  <div style="padding:40px 32px 8px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 10</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Permission</div>
+        <div style="color:#c8d6e8;font-size:14px;">A rule that decides what someone is allowed to do with a piece of data.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Role</div>
+        <div style="color:#c8d6e8;font-size:14px;">A named bundle of permissions you assign to a user (Editor, Viewer, etc.).</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Owner / Admin</div>
+        <div style="color:#c8d6e8;font-size:14px;">The role with full control — view, edit, share, change others' access, delete.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Editor</div>
+        <div style="color:#c8d6e8;font-size:14px;">Can view and change the file's content, but usually can't change who else has access.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Commenter</div>
+        <div style="color:#c8d6e8;font-size:14px;">Can read and add comments or suggestions, but can't change the actual content.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Viewer</div>
+        <div style="color:#c8d6e8;font-size:14px;">Read-only access — can open and read but cannot edit or comment.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Access control</div>
+        <div style="color:#c8d6e8;font-size:14px;">The system inside an app or network that enforces who can do what.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Share scope</div>
+        <div style="color:#c8d6e8;font-size:14px;">Who can find a file: specific people, your school/org, or anyone with the link.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Audit</div>
+        <div style="color:#c8d6e8;font-size:14px;">A check of the current access list to make sure only the right people have access.</div>
+      </div>
+      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Least privilege</div>
+        <div style="color:#c8d6e8;font-size:14px;">The principle of giving each person only the access they truly need — no more.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFLECTION PROMPT -->
+  <div style="padding:40px 32px 32px;">
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Audit one of <em>your</em> shared files.</div>
+      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Pick one shared file or folder you've created — a Google Doc, a Canvas submission, a shared playlist. Open the share panel and look at the access list. Then answer in 4–6 sentences:</p>
+      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
+        <li>Who has access right now? What role does each person have?</li>
+        <li>Is anyone listed who shouldn't be? Anyone who has more access than they need?</li>
+        <li>What's one change you'd make based on the principle of least privilege?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHAT'S NEXT -->
+  <div style="padding:0 32px 48px;">
+    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
+      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 11</strong>, you'll meet the people on the <em>other</em> side of permissions — the attackers. <strong>Phishing</strong>, <strong>social engineering</strong>, and <strong>password security</strong>: how to spot the tricks scammers use to get the keys you should keep for yourself.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
+    Digital Discoveries · Optima Academy Online · Course 0200021 · Standard SC.6.CS.1.2
+  </div>
+
+</div>
+
+</body>
+</html>

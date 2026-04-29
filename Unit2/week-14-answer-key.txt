@@ -1,0 +1,134 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 14 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Lessons 6.2 & 6.3
+  Standard: SC.6.HS.2.2
+  Topic: Digital Wellness & Screen Time
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → B
+  Q3 → B
+  Q4 → B
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which of the following is the BEST example of ACTIVE
+    screen time?
+───────────────────────────────────────────────────────────────
+  A) Endlessly scrolling Reels and Shorts
+     ❌ Endless scrolling is the textbook example of
+        PASSIVE screen time, not active.
+  B) Watching reaction videos auto-play in the background
+     ❌ Background auto-play is the most passive form of
+        screen use.
+  C) Coding a small project or video-calling Grandma       ✓ CORRECT
+     ✅ Coding (creating) and video-calling (genuinely
+        connecting) are textbook active screen time.
+        (SC.6.HS.2.2)
+  D) Falling asleep with a movie on
+     ❌ That's passive — and combined with sleep
+        disruption, it's a wellness double-whammy.
+
+───────────────────────────────────────────────────────────────
+Q2. Why does using your phone in bed at night make it
+    harder to fall asleep?
+───────────────────────────────────────────────────────────────
+  A) The phone is too heavy to hold for long
+     ❌ Phone weight isn't the issue. The issue is light
+        affecting your sleep hormones.
+  B) Blue light from the screen suppresses melatonin and
+     tells your brain it's daytime                          ✓ CORRECT
+     ✅ Blue light suppresses melatonin and pushes back
+        the sleep signal in your brain. (SC.6.HS.2.2)
+  C) Phones drain the oxygen in your room
+     ❌ Phones don't change room oxygen. The mechanism is
+        light, not air.
+  D) Apps secretly broadcast caffeine
+     ❌ Not a real thing. The real mechanism is blue-light
+        suppression of melatonin.
+
+───────────────────────────────────────────────────────────────
+Q3. What does the 20-20-20 rule recommend for digital eye
+    strain?
+───────────────────────────────────────────────────────────────
+  A) Use 20 different apps every 20 minutes
+     ❌ App-switching has nothing to do with eye strain.
+        The rule is about distance breaks.
+  B) Every 20 minutes, look at something 20 feet away for
+     20 seconds                                             ✓ CORRECT
+     ✅ Quick distance breaks every 20 minutes give your
+        eye muscles a chance to relax. (SC.6.HS.2.2)
+  C) Limit yourself to 20 minutes of screen time per day
+     ❌ The rule isn't a daily total — it's a break
+        schedule for whatever screen time you DO have.
+  D) Look at a screen for 20 hours and then take 20 minutes
+     off
+     ❌ That's way too much screen time. The rule is much
+        smaller and more frequent.
+
+───────────────────────────────────────────────────────────────
+Q4. What is DOOMSCROLLING?
+───────────────────────────────────────────────────────────────
+  A) A new video game where you scroll through dungeons
+     ❌ Doomscrolling isn't a video game — it's a real-
+        world habit researchers study.
+  B) Scrolling through bad-news headlines, often late at
+     night, until you feel anxious                          ✓ CORRECT
+     ✅ Doomscrolling is reading bad news after bad news,
+        often late at night, leaving you anxious about
+        things that aren't actually happening to you.
+        (SC.6.HS.2.2)
+  C) Scrolling really, really fast on a touchscreen
+     ❌ Scroll speed has nothing to do with the term. It's
+        about WHAT you scroll, not HOW fast.
+  D) A built-in phone setting that locks your screen
+     ❌ Doomscrolling is a behavior, not a phone setting.
+
+───────────────────────────────────────────────────────────────
+Q5. Which is the BEST habit for keeping your phone from
+    wrecking your sleep?
+───────────────────────────────────────────────────────────────
+  A) "I'll try to use my phone less at night"
+     ❌ That's a wish, not a habit. Vague intentions
+        rarely change behavior.
+  B) Plug your phone in across the room at 9 p.m. and use
+     a real alarm clock                                     ✓ CORRECT
+     ✅ Concrete, specific, and removes the temptation.
+        That's how habits actually stick. (SC.6.HS.2.2)
+  C) Sleep with your phone under your pillow but try not
+     to check it
+     ❌ If the phone is right there, you'll check it.
+        Distance is the whole point.
+  D) Put your phone face-down right next to your bed
+     ❌ Better than face-up, but the phone is still right
+        there to grab. Across-the-room is stronger.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-14-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

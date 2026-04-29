@@ -1,0 +1,349 @@
+═══════════════════════════════════════════════════════════════
+  UNIT 2 ASSESSMENT — ANSWER KEY
+  Digital Discoveries · Unit 2 Summative
+  Topic: Data & Cyber Safety (Weeks 9–14)
+  Standards: SC.6.CS.1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 2.1,
+             SC.6.HS.1.1, 1.2, 1.4, 2.2
+═══════════════════════════════════════════════════════════════
+
+15 multiple-choice questions, 1 point each (15 points total).
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1  → B           Q9  → B
+  Q2  → C           Q10 → B
+  Q3  → B           Q11 → C
+  Q4  → C           Q12 → C
+  Q5  → C           Q13 → B
+  Q6  → B           Q14 → C
+  Q7  → C           Q15 → B
+  Q8  → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 15 multiple-choice questions, 1 point each (15 points total)
+  • 2 attempts allowed (recommended for summative)
+  • Show feedback after each attempt
+  • Shuffle answers: recommended ON
+  • Time limit: your preference (suggest 30 minutes)
+
+───────────────────────────────────────────────────────────────
+STANDARDS COVERAGE
+───────────────────────────────────────────────────────────────
+  Q1  · SC.6.CS.1.1  · Data states (in motion)
+  Q2  · SC.6.CS.1.1  · Local vs cloud storage
+  Q3  · SC.6.CS.1.1  · Network types (WAN)
+  Q4  · SC.6.CS.1.2  · Permission roles (Viewer)
+  Q5  · SC.6.CS.1.2  · Sharing-setting risk
+  Q6  · SC.6.CS.1.3  · Phishing response
+  Q7  · SC.6.CS.1.4  · Information classification
+  Q8  · SC.6.CS.2.1  · MFA / 2FA
+  Q9  · SC.6.CS.1.5  · Encryption purpose
+  Q10 · SC.6.CS.1.5  · Caesar cipher decode
+  Q11 · SC.6.CS.1.6  · Active vs passive footprint
+  Q12 · SC.6.HS.1.2  · TLD knowledge (.gov)
+  Q13 · SC.6.HS.1.4  · Spotting fake tech-support scam
+  Q14 · SC.6.HS.2.2  · Active screen time
+  Q15 · SC.6.HS.2.2  · Sleep & blue light
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which of the following is the BEST example of DATA IN
+    MOTION?
+───────────────────────────────────────────────────────────────
+  A) A photo file sitting in your phone's camera roll,
+     untouched for months
+     ❌ That's data AT REST — stored on a device and not
+        moving.
+  B) A Canvas message traveling from your laptop, through
+     Wi-Fi, to your teacher's screen                        ✓ CORRECT
+     ✅ Data traveling between devices over a network is
+        in motion. (SC.6.CS.1.1)
+  C) A Google Doc that's open and you're typing into it
+     ❌ That's data IN USE — open in an app and being
+        processed.
+  D) An mp3 song saved to a USB stick on your desk
+     ❌ That's data AT REST — stored on a USB drive, not
+        moving.
+
+───────────────────────────────────────────────────────────────
+Q2. You're heading to a remote campsite for a week with no
+    Wi-Fi. You want to listen to 50 of your favorite songs.
+    Which storage choice makes the most sense?
+───────────────────────────────────────────────────────────────
+  A) Stream the songs from a cloud music service
+     ❌ Streaming needs an internet connection — which you
+        won't have at the campsite.
+  B) Save the songs in cloud storage like Google Drive
+     ❌ Cloud storage also needs internet to reach the
+        files. Same problem as streaming.
+  C) Download the songs to local storage on your phone     ✓ CORRECT
+     ✅ Local storage works without internet. Once they're
+        on your device, you can play them anywhere.
+        (SC.6.CS.1.1)
+  D) Email the songs to yourself before you leave
+     ❌ Even if the email arrived, you'd still need
+        internet to open the attachments.
+
+───────────────────────────────────────────────────────────────
+Q3. A school district has five separate campuses, all
+    sharing one student-records system. Which type of
+    network connects the campuses?
+───────────────────────────────────────────────────────────────
+  A) LAN (Local Area Network)
+     ❌ A LAN connects devices in ONE place — like a
+        single building. Five campuses are too far apart.
+  B) WAN (Wide Area Network)                              ✓ CORRECT
+     ✅ A WAN connects multiple LANs across cities,
+        states, or countries — like a five-campus
+        district. (SC.6.CS.1.1)
+  C) A USB connection
+     ❌ USB connects two devices physically. It can't
+        reach across multiple campuses.
+  D) A database
+     ❌ A database is an organized collection of data —
+        not a type of network.
+
+───────────────────────────────────────────────────────────────
+Q4. You finish a personal essay and want your dad to READ
+    it but NOT change any of your sentences. Which role
+    should you give him?
+───────────────────────────────────────────────────────────────
+  A) Owner
+     ❌ Owner has full control — including delete and
+        re-share. Way more than needed for "just read it."
+  B) Editor
+     ❌ Editor can change your sentences. You said you
+        don't want him doing that.
+  C) Viewer                                               ✓ CORRECT
+     ✅ Viewer is read-only — he can open and read but
+        cannot change anything. (SC.6.CS.1.2)
+  D) Commenter
+     ❌ Commenter could leave comments on your file. If
+        you only want him to read silently, Viewer is the
+        tighter choice.
+
+───────────────────────────────────────────────────────────────
+Q5. Which sharing setting is the MOST RISKY for a private
+    file you don't want strangers to see?
+───────────────────────────────────────────────────────────────
+  A) Specific people, role: Viewer
+     ❌ Very safe — only the people you list can find it,
+        and they can only read.
+  B) Anyone in your school, role: Viewer
+     ❌ Some risk, since everyone in your school can find
+        it — but the public still can't.
+  C) Anyone with the link, role: Editor                   ✓ CORRECT
+     ✅ The most dangerous combo — anyone who gets the
+        link can not only read but also change your file.
+        (SC.6.CS.1.2)
+  D) Specific people, role: Editor
+     ❌ Reasonable for a small trusted group — only the
+        named people can find it, even if they can edit.
+
+───────────────────────────────────────────────────────────────
+Q6. A DM says: "Hi, I work at Discord. Send me your
+    password AND your 6-digit MFA code right now or
+    you'll lose your account!" What's the right move?
+───────────────────────────────────────────────────────────────
+  A) Send the password and code so you don't lose the
+     account
+     ❌ Real Discord employees NEVER ask for your
+        password or MFA code. The whole point of those
+        is that you keep them secret.
+  B) Don't send anything. Block, report, and tell a
+     trusted adult.                                       ✓ CORRECT
+     ✅ Authority + urgency + asking for password and
+        MFA code = textbook phishing. Block, report, tell
+        a trusted adult. (SC.6.CS.1.3)
+  C) Send only the password — that's safer
+     ❌ Still a no. Even one piece of confidential info
+        is too much to give a stranger.
+  D) Reply asking for proof they're really from Discord
+     ❌ Don't engage with phishers — anything you say
+        can be used to keep the trick going. Just block
+        and report.
+
+───────────────────────────────────────────────────────────────
+Q7. Which of the following should be classified as
+    CONFIDENTIAL information — never shared with anyone
+    online, no matter who claims to be asking?
+───────────────────────────────────────────────────────────────
+  A) Your favorite music genre
+     ❌ Music tastes are PUBLIC — totally fine to share.
+  B) The name of your school
+     ❌ A school name is generally PUBLIC — printed on
+        jerseys, posted on websites.
+  C) Your password and the 6-digit MFA code that just
+     texted to your phone                                  ✓ CORRECT
+     ✅ Passwords and MFA codes are CONFIDENTIAL. Real
+        companies will NEVER ask for them. (SC.6.CS.1.4)
+  D) Your favorite NBA team
+     ❌ Sports preferences are PUBLIC — already visible
+        on profiles or already known.
+
+───────────────────────────────────────────────────────────────
+Q8. What does multi-factor authentication (MFA) protect
+    you against, even if a scammer steals your password?
+───────────────────────────────────────────────────────────────
+  A) Slow internet speeds
+     ❌ MFA isn't about speed — it's about identity.
+  B) Account takeover by an attacker who has only your
+     password                                              ✓ CORRECT
+     ✅ Even if a phisher steals your password, they
+        can't log in without the second factor (a code
+        on your phone). (SC.6.CS.2.1)
+  C) Lost device damage and broken screens
+     ❌ MFA doesn't protect physical devices — it
+        protects access to your accounts.
+  D) Battery drain on your phone
+     ❌ MFA has nothing to do with battery life.
+
+───────────────────────────────────────────────────────────────
+Q9. What is the MAIN PURPOSE of encryption?
+───────────────────────────────────────────────────────────────
+  A) To make data load faster on the internet
+     ❌ Encryption isn't about speed — it adds a small
+        bit of work, not less.
+  B) To scramble a message so only the right person can
+     read it                                               ✓ CORRECT
+     ✅ Encryption turns plaintext into ciphertext that's
+        unreadable without the key. (SC.6.CS.1.5)
+  C) To delete old messages automatically
+     ❌ Encryption doesn't delete anything — it
+        scrambles messages so only the right person can
+        read them.
+  D) To store data permanently in the cloud
+     ❌ That's cloud storage. Encryption is about
+        protecting messages, not where they live.
+
+───────────────────────────────────────────────────────────────
+Q10. Using a Caesar cipher with a shift of 3, what does
+     the ciphertext FDW decrypt to (shift each letter
+     back 3)?
+───────────────────────────────────────────────────────────────
+  A) DOG
+     ❌ Shift each letter back 3: F→C, D→A, W→T = CAT,
+        not DOG.
+  B) CAT                                                   ✓ CORRECT
+     ✅ F→C, D→A, W→T. The plaintext is CAT.
+        (SC.6.CS.1.5)
+  C) BAT
+     ❌ Close, but B is shift-back 4 from F. With shift
+        3, F goes back to C.
+  D) CAR
+     ❌ First two letters are right (CA), but W shifts
+        back 3 to T — not R.
+
+───────────────────────────────────────────────────────────────
+Q11. Which of these is an example of a PASSIVE digital
+     footprint — data collected automatically, not
+     posted by you on purpose?
+───────────────────────────────────────────────────────────────
+  A) A discussion-board reply you typed
+     ❌ That's an ACTIVE footprint — you wrote and
+        posted it on purpose.
+  B) A photo you uploaded to your profile
+     ❌ Active — you chose to upload it.
+  C) A list of YouTube videos you've watched, tracked
+     by the app                                            ✓ CORRECT
+     ✅ You didn't post your watch history — the app
+        collected it automatically. That's a passive
+        footprint. (SC.6.CS.1.6)
+  D) A bio sentence you wrote on your profile
+     ❌ Active — those words went up because you typed
+        them.
+
+───────────────────────────────────────────────────────────────
+Q12. Which top-level domain (TLD) is restricted ONLY to
+     U.S. government agencies?
+───────────────────────────────────────────────────────────────
+  A) .com
+     ❌ Anyone can register a .com — it's the most open
+        TLD.
+  B) .org
+     ❌ Originally for non-profits, but now anyone can
+        register .org.
+  C) .gov                                                  ✓ CORRECT
+     ✅ Only U.S. government agencies can use .gov —
+        like nasa.gov, usa.gov, weather.gov.
+        (SC.6.HS.1.2)
+  D) .edu
+     ❌ .edu is restricted to U.S. accredited SCHOOLS,
+        not the government.
+
+───────────────────────────────────────────────────────────────
+Q13. A pop-up screams: "YOUR COMPUTER IS INFECTED — call
+     1-800-FAKE-NOW immediately!" What is the BEST move?
+───────────────────────────────────────────────────────────────
+  A) Call the number to fix the problem
+     ❌ Real Microsoft and Apple NEVER show pop-ups
+        asking you to call a phone number.
+  B) Close the pop-up; don't call. If it won't close,
+     force-quit the browser and tell a trusted adult.      ✓ CORRECT
+     ✅ Fake tech-support pop-ups are common scams.
+        (SC.6.HS.1.4)
+  C) Pay them with a gift card so they help faster
+     ❌ Gift-card payment to "tech support" is a
+        flashing-red sign of a scam.
+  D) Click through every option in the pop-up
+     ❌ Clicking through pop-ups often installs malware.
+
+───────────────────────────────────────────────────────────────
+Q14. Which of the following is the BEST example of
+     ACTIVE screen time?
+───────────────────────────────────────────────────────────────
+  A) Endlessly scrolling Reels and Shorts
+     ❌ Endless scrolling is the textbook example of
+        PASSIVE screen time.
+  B) Watching reaction videos auto-play in the
+     background
+     ❌ Background auto-play is the most passive form
+        of screen use.
+  C) Coding a small project or video-calling Grandma     ✓ CORRECT
+     ✅ Coding (creating) and video-calling (genuinely
+        connecting) are textbook active screen time.
+        (SC.6.HS.2.2)
+  D) Falling asleep with a movie on
+     ❌ That's passive — and combined with sleep
+        disruption, a wellness double-whammy.
+
+───────────────────────────────────────────────────────────────
+Q15. Why does using your phone in bed at night make it
+     harder to fall asleep?
+───────────────────────────────────────────────────────────────
+  A) The phone is too heavy to hold for long
+     ❌ Phone weight isn't the issue.
+  B) Blue light from the screen suppresses melatonin
+     and tells your brain it's daytime                     ✓ CORRECT
+     ✅ Blue light suppresses melatonin and pushes back
+        the sleep signal in your brain. (SC.6.HS.2.2)
+  C) Phones drain the oxygen in your room
+     ❌ Phones don't change room oxygen.
+  D) Apps secretly broadcast caffeine
+     ❌ Not a real thing.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: unit-2-assessment-canvas-import.zip
+  4. Click Import. The assessment appears in Quizzes.
+  5. Open the assessment → verify correct answers match
+     this key (especially after any answer-shuffling).
+  6. Edit quiz settings:
+       • 15 questions, 1 point each (15 points total)
+       • 2 attempts (recommended for summative)
+       • Time limit: 30 minutes (suggested)
+       • Shuffle answers: ON (recommended)
+       • Show feedback: ON
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

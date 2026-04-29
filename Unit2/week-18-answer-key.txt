@@ -1,0 +1,147 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 18 QUIZ — ANSWER KEY
+  Digital Discoveries · Semester 1 Midpoint Review
+  Topic: Mix of Unit 1 + Unit 2 + Reflection
+  Standards: SC.6.CC.1.1, SC.6.CS.1.1, SC.6.CS.1.4,
+             SC.6.HS.1.2, ELA.K12.EE.5.1
+═══════════════════════════════════════════════════════════════
+
+This is a low-stakes review quiz. The point is to celebrate
+how much you've learned in 17 weeks — not to stress.
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → B
+  Q3 → C
+  Q4 → B
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed (or unlimited — low-stakes review)
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+───────────────────────────────────────────────────────────────
+STANDARDS COVERAGE
+───────────────────────────────────────────────────────────────
+  Q1 · SC.6.CC.1.1     · Synch vs async (Unit 1)
+  Q2 · SC.6.CS.1.1     · Data states (Unit 2)
+  Q3 · SC.6.CS.1.4     · Info classification (Unit 2)
+  Q4 · SC.6.HS.1.2     · Lateral reading (Unit 2)
+  Q5 · ELA.K12.EE.5.1  · Metacognition (this week)
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. From Unit 1: Which of the following is the BEST example
+    of ASYNCHRONOUS communication?
+───────────────────────────────────────────────────────────────
+  A) A live Zoom class with 20 students
+     ❌ Zoom is synchronous — everyone is present at the
+        same time.
+  B) An email sent Tuesday night, read Wednesday morning   ✓ CORRECT
+     ✅ Email is classic asynchronous communication —
+        sender and receiver are not online at the same
+        time. (SC.6.CC.1.1)
+  C) A FaceTime call with your grandparent
+     ❌ FaceTime is synchronous — both people are on the
+        call together.
+  D) A voice chat during an online game
+     ❌ Voice chat is synchronous — you both speak in real
+        time.
+
+───────────────────────────────────────────────────────────────
+Q2. From Unit 2: A photo file is sitting on your phone,
+    untouched in your camera roll. What state is that data
+    in?
+───────────────────────────────────────────────────────────────
+  A) Data in motion
+     ❌ Data in motion is traveling across a network. The
+        photo isn't moving.
+  B) Data at rest                                          ✓ CORRECT
+     ✅ Data at rest means stored on a device and not
+        actively moving or being processed. (SC.6.CS.1.1)
+  C) Data in use
+     ❌ Data in use means open in an app and being read or
+        processed.
+  D) Data in transit
+     ❌ "In transit" is another way to describe data in
+        motion — but the photo isn't moving.
+
+───────────────────────────────────────────────────────────────
+Q3. From Unit 2: Which of these should be classified as
+    CONFIDENTIAL information — never shared online, no
+    matter who claims to ask?
+───────────────────────────────────────────────────────────────
+  A) Your favorite music genre
+     ❌ Music tastes are PUBLIC — fine to share.
+  B) The name of your school
+     ❌ A school name is generally PUBLIC — printed on
+        jerseys and websites.
+  C) Your password and the 6-digit MFA code that just
+     texted to your phone                                   ✓ CORRECT
+     ✅ Passwords and MFA codes are CONFIDENTIAL. Real
+        companies will NEVER ask for them.
+        (SC.6.CS.1.4)
+  D) Your favorite NBA team
+     ❌ Sports preferences are PUBLIC.
+
+───────────────────────────────────────────────────────────────
+Q4. From Unit 2: What is LATERAL READING?
+───────────────────────────────────────────────────────────────
+  A) Reading the same article over and over until you
+     remember it
+     ❌ Re-reading the same page doesn't fact-check it.
+  B) Leaving the page to fact-check it on other trusted
+     sources                                                ✓ CORRECT
+     ✅ Lateral reading means leaving the page and
+        searching what other trusted sources say.
+        (SC.6.HS.1.2)
+  C) Reading by holding the screen sideways
+     ❌ Lateral reading isn't about screen orientation.
+  D) Skipping every other paragraph to save time
+     ❌ That's skim-reading. Lateral reading means cross-
+        checking with OTHER sources.
+
+───────────────────────────────────────────────────────────────
+Q5. What does METACOGNITION mean?
+───────────────────────────────────────────────────────────────
+  A) Memorizing as many vocabulary words as possible
+     ❌ Memorizing facts is just memorizing — not
+        metacognition.
+  B) Thinking about your own thinking — what you know,
+     how you learned it, what's still unclear              ✓ CORRECT
+     ✅ Metacognition is the reflective thinking about
+        your own learning that powers real growth.
+        (ELA.K12.EE.5.1)
+  C) Cheating on assignments to get a higher grade
+     ❌ Definitely not. Metacognition is honest
+        reflection on YOUR learning.
+  D) Watching educational videos at 2x speed
+     ❌ Speed has nothing to do with metacognition. The
+        point is THINKING about your thinking.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-18-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings:
+       • 5 questions, 1 point each (5 points total)
+       • 3 attempts (or unlimited for a review quiz)
+       • Time limit: none
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

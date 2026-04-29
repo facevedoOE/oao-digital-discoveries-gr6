@@ -1,0 +1,144 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 16 PRACTICE QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Mixed Review
+  All Unit 2 standards (SC.6.CS.1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+  2.1, HS.1.1, HS.1.2, HS.1.4, HS.2.2)
+═══════════════════════════════════════════════════════════════
+
+This is a PRACTICE quiz. Use it to gauge readiness for the
+Unit 2 Assessment in Week 17.
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → B
+  Q3 → B
+  Q4 → B
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed (or unlimited — practice quiz)
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. You're typing into a Google Doc, words appearing as you
+    type. What state is the document data in?
+───────────────────────────────────────────────────────────────
+  A) Data at rest
+     ❌ At rest means stored and not active. The doc is
+        open and changing right now.
+  B) Data in motion
+     ❌ In motion means traveling on a network. Editing is
+        processing, not traveling.
+  C) Data in use                                            ✓ CORRECT
+     ✅ Data being read or processed by an open app is in
+        use. (SC.6.CS.1.1)
+  D) Data in transit
+     ❌ "In transit" is another way to say in motion.
+        Editing isn't traveling.
+
+───────────────────────────────────────────────────────────────
+Q2. What is the PRINCIPLE OF LEAST PRIVILEGE?
+───────────────────────────────────────────────────────────────
+  A) Always give every user the highest possible role so
+     nothing breaks
+     ❌ That's the OPPOSITE of least privilege — and a
+        recipe for accidents and leaks.
+  B) Give every user exactly the access they need to do
+     their job — and nothing more                           ✓ CORRECT
+     ✅ Match the role to the real need — no extra access.
+        (SC.6.CS.1.2)
+  C) Only the IT admin should ever have access to anything
+     ❌ That would block real work. Least privilege means
+        right-sizing, not eliminating.
+  D) Default to "Anyone with the link" so people don't
+     have to ask
+     ❌ That's the most-privilege setting, not least.
+
+───────────────────────────────────────────────────────────────
+Q3. Which is the STRONGEST password?
+───────────────────────────────────────────────────────────────
+  A) password123
+     ❌ One of the most common passwords. Cracked in under
+        a second.
+  B) orange-lamp-tiger-cloud-9                              ✓ CORRECT
+     ✅ A long passphrase with random words and a number is
+        hard to guess and brute-force. (SC.6.CS.2.1)
+  C) qwerty
+     ❌ Top 5 letters on a keyboard. Computers try this
+        first.
+  D) your first name + the year you were born
+     ❌ Way too easy to guess if a phisher knows even a
+        little about you.
+
+───────────────────────────────────────────────────────────────
+Q4. What does the "s" in https:// tell you about a website
+    connection?
+───────────────────────────────────────────────────────────────
+  A) It means the site is faster than other sites
+     ❌ The "s" has nothing to do with speed. It stands
+        for SECURE.
+  B) It means the connection is encrypted (secure) so
+     data is scrambled while it travels                     ✓ CORRECT
+     ✅ HTTPS means encryption is protecting the
+        connection. (SC.6.CS.1.5)
+  C) Nothing — http and https are exactly the same
+     ❌ HTTPS is encrypted; HTTP is plaintext. Big
+        difference.
+  D) It means the site is owned by the school
+     ❌ The "s" doesn't say anything about who owns the
+        site.
+
+───────────────────────────────────────────────────────────────
+Q5. What is LATERAL READING?
+───────────────────────────────────────────────────────────────
+  A) Reading the same article over and over until you
+     remember it
+     ❌ Re-reading the same page doesn't fact-check it.
+  B) Leaving the page to fact-check it on other trusted
+     sources                                                ✓ CORRECT
+     ✅ Lateral reading means leaving the page and
+        searching what other trusted sources say.
+        (SC.6.HS.1.2)
+  C) Reading by holding the screen sideways
+     ❌ Lateral reading isn't about screen orientation.
+  D) Skipping every other paragraph to save time
+     ❌ That's skim-reading. Lateral reading means cross-
+        checking with OTHER sources.
+
+═══════════════════════════════════════════════════════════════
+  STUDY TIPS FOR THE UNIT 2 ASSESSMENT (Week 17)
+═══════════════════════════════════════════════════════════════
+  • Take this practice quiz at least twice — once cold,
+    once after reviewing the Week 16 reading.
+  • Run the Week 16 mixed-review activity (10 scenarios)
+    until you score 100%.
+  • If a topic stumps you, re-read the corresponding
+    weekly reading (Weeks 9–14).
+  • The Unit 2 Assessment has 15 questions — roughly
+    2–3 per week, weighted across all 6 standards.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-16-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3 (or unlimited
+     for a practice quiz), points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

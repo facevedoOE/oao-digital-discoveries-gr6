@@ -1,0 +1,130 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 11 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Lesson 5.1
+  Standards: SC.6.CS.1.3, SC.6.CS.1.4, SC.6.CS.2.1, SC.6.HS.1.1
+  Topic: Phishing, Social Engineering & Privacy
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → C
+  Q4 → B
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which of the following is the BEST definition of phishing?
+───────────────────────────────────────────────────────────────
+  A) A type of fishing app for your phone
+     ❌ Phishing is NOT a real fishing app — the spelling
+        comes from a hacker term, but it's a scam, not a sport.
+  B) A scam that uses fake messages to trick people into
+     giving up passwords or personal info                   ✓ CORRECT
+     ✅ Phishing uses fake messages — emails, texts, DMs —
+        to trick people into handing over secret info.
+        (SC.6.CS.1.3)
+  C) A virus that damages computer hardware
+     ❌ That describes a hardware-damaging virus. Phishing
+        tricks PEOPLE — not the hardware itself.
+  D) A way to back up your files to the cloud
+     ❌ That's cloud backup — a totally different topic and
+        not a scam.
+
+───────────────────────────────────────────────────────────────
+Q2. Which piece of information should be classified as
+    CONFIDENTIAL — never shared with anyone online?
+───────────────────────────────────────────────────────────────
+  A) Your favorite music genre
+     ❌ Music tastes are PUBLIC — totally fine to share.
+  B) The name of your school
+     ❌ A school name is generally PUBLIC — printed on
+        jerseys, posted on websites.
+  C) Your password and the 6-digit MFA code that just texted
+     to your phone                                          ✓ CORRECT
+     ✅ Passwords and MFA codes are CONFIDENTIAL. Real
+        companies will NEVER ask for them — anyone who does
+        is trying to scam you. (SC.6.CS.1.4)
+  D) Your favorite sports team
+     ❌ Sports preferences are PUBLIC — already visible on
+        your profile or already known.
+
+───────────────────────────────────────────────────────────────
+Q3. Which of these is the STRONGEST password?
+───────────────────────────────────────────────────────────────
+  A) password123
+     ❌ One of the most common passwords in the world. A
+        computer cracks it in under a second.
+  B) qwerty
+     ❌ The top 5 letters on a keyboard. Computers try this
+        in their first 100 guesses.
+  C) orange-lamp-tiger-cloud-9                              ✓ CORRECT
+     ✅ A long passphrase with random words and a number is
+        hard to guess and would take longer than the age of
+        the universe to brute-force. (SC.6.CS.2.1)
+  D) your first name + the year you were born
+     ❌ Way too easy to guess if a phisher knows even a
+        little about you. Avoid name + birthdate combos.
+
+───────────────────────────────────────────────────────────────
+Q4. What does multi-factor authentication (MFA) protect you
+    against, even if a scammer steals your password?
+───────────────────────────────────────────────────────────────
+  A) Slow internet speeds
+     ❌ MFA isn't about speed — it's about identity.
+  B) Account takeover by an attacker who has only your
+     password                                               ✓ CORRECT
+     ✅ Even if a phisher steals your password, they can't
+        log in without the second factor (a code on your
+        phone). (SC.6.CS.2.1)
+  C) Lost device damage and broken screens
+     ❌ MFA doesn't protect physical devices — it protects
+        access to your accounts.
+  D) Battery drain on your phone
+     ❌ MFA has nothing to do with battery life.
+
+───────────────────────────────────────────────────────────────
+Q5. You're at a coffee shop on free public Wi-Fi. Which
+    activity is the LEAST safe to do on this network?
+───────────────────────────────────────────────────────────────
+  A) Reading a public news article
+     ❌ Reading public news is low-risk on any network —
+        you're not exposing private credentials.
+  B) Watching a YouTube video
+     ❌ Watching public videos is low-risk — no private
+        logins involved.
+  C) Logging into your bank account and transferring money  ✓ CORRECT
+     ✅ Banking and other sensitive logins on public Wi-Fi
+        can be intercepted. Wait until you're on a trusted
+        network. (SC.6.HS.1.1)
+  D) Checking the weather
+     ❌ Looking up public info isn't risky. The danger is
+        logging into accounts with sensitive data.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-11-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

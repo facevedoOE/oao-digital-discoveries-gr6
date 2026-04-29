@@ -1,0 +1,129 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 4 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 1 · Lessons 2.2–2.3
+  Standard: SC.6.CC.2.1 — Building Multimedia Projects
+  (Canva, Aesthetic Unity, Collaboration, Peer Feedback)
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → C
+  Q3 → B
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. AESTHETIC UNITY in a multimedia project means:
+───────────────────────────────────────────────────────────────
+  A) Every page uses different colors and fonts to keep things
+     interesting
+     ❌ The opposite! Variety on every page kills unity. The
+        whole point is consistent choices across pages.
+  B) Including as many colors and fonts as possible
+     ❌ More isn't better. Aesthetic unity comes from RESTRAINT
+        — a small fixed palette and font pair.
+  C) Every page of the design feels like part of the same       ✓ CORRECT
+     project — same colors, same fonts, same layout style
+     ✅ Right! Aesthetic unity is the visual signal that one
+        designer made one project. (SC.6.CC.2.1)
+  D) Using the most expensive design software available
+     ❌ Tools don't create unity. Discipline does. You can make
+        unified work in any tool, including free ones.
+
+───────────────────────────────────────────────────────────────
+Q2. The recommended size of a project COLOR PALETTE is:
+───────────────────────────────────────────────────────────────
+  A) At least 10 colors, the more the better
+     ❌ Too many colors creates visual chaos. Real designers
+        keep palettes small.
+  B) Exactly 1 color
+     ❌ One color is too restrictive — you can't show emphasis,
+        backgrounds, or accents.
+  C) About 3–5 colors used consistently across the project     ✓ CORRECT
+     ✅ Right! 3–5 colors is the sweet spot — enough variety to
+        show emphasis, few enough to feel unified. (SC.6.CC.2.1)
+  D) A new color for every page
+     ❌ A new palette per page is the opposite of aesthetic
+        unity.
+
+───────────────────────────────────────────────────────────────
+Q3. Which of these is the STRONGEST piece of peer feedback?
+───────────────────────────────────────────────────────────────
+  A) "Good job!"
+     ❌ Vague — your classmate doesn't know what to keep doing
+        or how to improve.
+  B) "On page 2, the text is hard to read against the photo —  ✓ CORRECT
+     could you add a darker background behind the words?"
+     ✅ Specific (names the page and the problem), kind (offers
+        a solution), and actionable. Strong Glow/Grow.
+        (SC.6.CC.2.1)
+  C) "It's bad."
+     ❌ Vague AND unkind. Tells your classmate nothing useful.
+  D) "Change everything."
+     ❌ Overwhelming and not specific. What needs to change?
+        How? Strong feedback names ONE thing.
+
+───────────────────────────────────────────────────────────────
+Q4. You and a teammate are co-editing a Canva project. You
+    disagree with their photo choice. The BEST first action is:
+───────────────────────────────────────────────────────────────
+  A) Silently delete and replace it
+     ❌ Silently overwriting a teammate's work breaks trust.
+        Always communicate first.
+  B) Stop working on the project
+     ❌ Quitting on a small disagreement is unfair to your
+        teammate and the work.
+  C) Leave a Canva comment explaining your concern and         ✓ CORRECT
+     suggesting an alternative
+     ✅ Comments protect collaboration. They give your teammate
+        a chance to respond before changes happen. (SC.6.CC.2.1)
+  D) Tell the teacher first
+     ❌ Save the teacher for big issues. Small disagreements
+        are best handled inside the team using comments.
+
+───────────────────────────────────────────────────────────────
+Q5. The 6th item on the FINAL QUALITY CHECKLIST asks you to
+    confirm:
+───────────────────────────────────────────────────────────────
+  A) Page count is at least 10
+     ❌ More pages doesn't mean better. Page count isn't on
+        the checklist.
+  B) Background music is exactly 30 seconds
+     ❌ Music length isn't a checklist item. Integration covers
+        whether it FITS the project.
+  C) Every collaborator is credited and any borrowed images    ✓ CORRECT
+     or sounds are attributed
+     ✅ Right! Honest credit (justice in action) and attribution
+        of borrowed work are non-negotiable for honest design.
+        (SC.6.CC.2.1)
+  D) The project took at least one week to make
+     ❌ Time isn't a checklist item. A great project is great
+        whether it took 30 minutes or 3 weeks.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-04-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

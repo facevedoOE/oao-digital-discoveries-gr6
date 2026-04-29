@@ -1,0 +1,135 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 13 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 2 · Lesson 6.1
+  Standards: SC.6.HS.1.2, SC.6.HS.1.4
+  Topic: Evaluating Online Sources
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → C
+  Q3 → B
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. What does the "A" for AUTHORITY in the CRAAP test ask
+    you to check?
+───────────────────────────────────────────────────────────────
+  A) When the article was last updated
+     ❌ That's CURRENCY (the first C in CRAAP), not Authority.
+  B) Whether the article fits your specific question
+     ❌ That's RELEVANCE — the R in CRAAP.
+  C) Who wrote it and what makes them an expert            ✓ CORRECT
+     ✅ Authority asks about the AUTHOR — their name,
+        credentials, and qualification to write on the
+        topic. (SC.6.HS.1.2)
+  D) Why the website exists in the first place
+     ❌ That's PURPOSE — the P in CRAAP.
+
+───────────────────────────────────────────────────────────────
+Q2. Which top-level domain (TLD) is restricted ONLY to U.S.
+    government agencies?
+───────────────────────────────────────────────────────────────
+  A) .com
+     ❌ Anyone can register a .com — it's the most open TLD
+        on the internet.
+  B) .org
+     ❌ Originally for non-profits, but now anyone can
+        register .org.
+  C) .gov                                                  ✓ CORRECT
+     ✅ Only U.S. government agencies can use .gov — like
+        nasa.gov, usa.gov, weather.gov. (SC.6.HS.1.2)
+  D) .edu
+     ❌ .edu is restricted, but to U.S. accredited SCHOOLS
+        (universities and some K-12), not to the government.
+
+───────────────────────────────────────────────────────────────
+Q3. What is LATERAL READING?
+───────────────────────────────────────────────────────────────
+  A) Reading the same article over and over until you
+     remember it
+     ❌ Re-reading the same page doesn't fact-check it —
+        you need OTHER sources for that.
+  B) Leaving the page to fact-check it on other trusted
+     sources                                                ✓ CORRECT
+     ✅ Lateral reading means leaving the page and searching
+        what other trusted sources say about the site or
+        claim. Fact-checkers use this all the time.
+        (SC.6.HS.1.2)
+  C) Reading by holding the screen sideways
+     ❌ Lateral reading isn't about screen orientation —
+        it's about checking sources against each other.
+  D) Skipping every other paragraph to save time
+     ❌ That's skim-reading. Lateral reading means cross-
+        checking with OTHER sources.
+
+───────────────────────────────────────────────────────────────
+Q4. A pop-up screams: "YOUR COMPUTER IS INFECTED — call
+    1-800-FAKE-NOW immediately!" What is the BEST move?
+───────────────────────────────────────────────────────────────
+  A) Call the number to fix the problem
+     ❌ Real Microsoft and Apple NEVER show pop-ups asking
+        you to call a phone number. The pop-up itself is
+        the scam.
+  B) Pay them with a gift card so they help faster
+     ❌ Gift-card payment to "tech support" is a flashing-
+        red sign of a scam. Real companies don't take gift
+        cards.
+  C) Close the pop-up; don't call. If it won't close,
+     force-quit the browser and tell a trusted adult.       ✓ CORRECT
+     ✅ Fake tech support pop-ups are common scams. Close,
+        don't call, and ask a trusted adult if it won't
+        close. (SC.6.HS.1.4)
+  D) Click through every option in the pop-up to find a
+     "decline" button
+     ❌ Clicking through pop-ups often installs malware.
+        Don't engage — just close.
+
+───────────────────────────────────────────────────────────────
+Q5. You're writing a 6th-grade report on the history of
+    NASA. Which is the BEST source to cite?
+───────────────────────────────────────────────────────────────
+  A) An anonymous fan blog with no dates and no citations
+     ❌ No author, no dates, no citations — that fails most
+        of CRAAP.
+  B) A YouTube comment thread arguing about space
+     ❌ Comments aren't sources — no author, no facts, no
+        review.
+  C) nasa.gov — NASA's own official .gov website           ✓ CORRECT
+     ✅ NASA's own .gov website is a primary source — high
+        authority on its own programs and citation-quality.
+        (SC.6.HS.1.2)
+  D) A Pinterest board with cool space pictures and no
+     captions
+     ❌ Pinterest re-shares images without source info.
+        Not citation-quality.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-13-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════
