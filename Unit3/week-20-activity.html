@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 20 Activity — Decomposition Detective | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;font-family:'Wix Madefor Text',system-ui,sans-serif;font-size:16px;line-height:1.6;color:#374151;background:#f8f9fa;min-height:100vh;">
+
+<!-- HEADER -->
+<header style="background:#0E1C42;color:#ffffff;box-shadow:0 4px 20px rgba(14,28,66,0.3);">
+  <div style="max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" height="40" width="200" style="height:40px;width:auto;flex-shrink:0;">
+        <circle cx="20" cy="20" r="18" fill="#3a4f7a"/>
+        <ellipse cx="20" cy="24" rx="11" ry="10" fill="#c8a87c"/>
+        <ellipse cx="20" cy="27" rx="6" ry="5.5" fill="#e8d5b7"/>
+        <ellipse cx="20" cy="16" rx="10" ry="8.5" fill="#c8a87c"/>
+        <polygon points="12,11 14.5,6 16,12" fill="#c8a87c"/>
+        <polygon points="28,11 25.5,6 24,12" fill="#c8a87c"/>
+        <circle cx="16" cy="16" r="4.2" fill="#ffffff"/>
+        <circle cx="24" cy="16" r="4.2" fill="#ffffff"/>
+        <circle cx="16" cy="16" r="2.5" fill="#0E1C42"/>
+        <circle cx="24" cy="16" r="2.5" fill="#0E1C42"/>
+        <polygon points="18.5,19 20,22.5 21.5,19" fill="#e8943a"/>
+        <ellipse cx="16.5" cy="33" rx="3" ry="1.5" fill="#e8943a"/>
+        <ellipse cx="23.5" cy="33" rx="3" ry="1.5" fill="#e8943a"/>
+        <text x="44" y="20" font-family="'Wix Madefor Display',sans-serif" font-weight="700" font-size="16" fill="#ffffff">Optima</text>
+        <text x="44" y="32" font-family="'Wix Madefor Display',sans-serif" font-weight="500" font-size="7" fill="rgba(255,255,255,0.7)" letter-spacing="2">ACADEMY ONLINE</text>
+      </svg>
+      <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);"></div>
+      <div>
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:14px;color:#55C8E8;font-weight:600;">Digital Discoveries</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);">Activity · Lesson 7.2</div>
+      </div>
+    </div>
+    <div id="xp-badge" style="display:flex;align-items:center;gap:8px;background:#C7922C;color:#ffffff;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;font-family:'Wix Madefor Display',sans-serif;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span id="xp-text">0</span> XP
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav style="background:#ffffff;border-bottom:1px solid #e5e7eb;">
+  <div style="max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:8px;font-size:14px;color:#6b7280;flex-wrap:wrap;">
+    <span>Course Home</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    <span>Unit 3: Programming</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    <span style="color:#0E1C42;font-weight:600;">Activity: Decomposition Detective</span>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main style="max-width:900px;margin:0 auto;padding:32px 24px 80px;">
+
+  <!-- Hero -->
+  <div>
+    <div style="display:inline-block;padding:4px 14px;background:#F78F1E;color:#ffffff;font-size:13px;font-weight:700;font-family:'Wix Madefor Display',sans-serif;border-radius:20px;letter-spacing:0.5px;margin-bottom:16px;">🎮 ACTIVITY</div>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:700;color:#0E1C42;line-height:1.2;margin:0 0 12px;">Decomposition Detective</h1>
+    <p style="font-size:17px;color:#6b7280;margin:0 0 32px;line-height:1.6;">Ten scenarios. Spot the best decomposition, the missing sub-problem, the piece that's still too big — and earn XP. Retry as many times as you want.</p>
+  </div>
+
+  <!-- Progress Bar -->
+  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Progress</span>
+        <span id="progress-text" style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:700;">Question 1 of 10</span>
+      </div>
+      <div style="background:#f3f4f6;border-radius:10px;height:10px;overflow:hidden;">
+        <div id="progress-fill" style="background:linear-gradient(90deg,#55C8E8,#76C043);height:100%;width:0%;transition:width 0.4s ease;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Container -->
+  <div id="question-container"></div>
+
+  <!-- Footer note -->
+  <div style="text-align:center;color:#9ca3af;font-size:12px;margin-top:24px;padding:12px;">
+    Digital Discoveries · Optima Academy Online · Course 0200021 · SC.K12.CTR.1.1, SC.K12.CTR.2.1
+  </div>
+
+</main>
+
+<script>
+const QUESTIONS = [
+  {
+    id: 1,
+    tag: 'Definition',
+    tagColor: '#55C8E8',
+    icon: '🧩',
+    scenario: "Which of these is the BEST description of <strong>decomposition</strong>?",
+    options: [
+      { text: 'Throwing away parts of a problem you don\'t like so you don\'t have to solve them', correct: false, why: "Decomposition doesn't skip parts — it breaks the WHOLE problem into smaller pieces so every part still gets solved." },
+      { text: 'Breaking a big problem into smaller sub-problems that are each easier to solve', correct: true, why: "Exactly. Decomposition takes one giant task and splits it into pieces small enough that you (or a computer) can actually finish each one." },
+      { text: 'Writing the answer to a problem before you understand it', correct: false, why: "That's guessing. Decomposition happens BEFORE you solve anything — it's the planning step." },
+      { text: 'Asking someone else to solve the problem for you', correct: false, why: "That's delegating, not decomposing. Decomposition is about reorganizing the problem into smaller pieces — you (or your team) still solve them." }
+    ]
+  },
+  {
+    id: 2,
+    tag: 'Spot the Sub-Problem',
+    tagColor: '#76C043',
+    icon: '🎂',
+    scenario: "Mia wants to <strong>plan a surprise birthday party</strong> for her dad. Which of the following is a good <em>sub-problem</em> from decomposing this big task?",
+    options: [
+      { text: '"Plan a surprise birthday party for Dad"', correct: false, why: "That's the WHOLE big problem — not a sub-problem. A sub-problem is a smaller piece you'd get after decomposing." },
+      { text: '"Pick a date and time everyone can come"', correct: true, why: "Yes! That's a small, specific piece that comes out of decomposing the big task. You could solve this one in a few minutes." },
+      { text: '"Make Dad happy forever"', correct: false, why: "That's not even finite — there's no clear end. Decomposed sub-problems should have a clear, reachable goal." },
+      { text: '"Be a great daughter"', correct: false, why: "That's a feeling or value, not a problem to solve. Sub-problems are concrete tasks." }
+    ]
+  },
+  {
+    id: 3,
+    tag: 'Still Too Big',
+    tagColor: '#F78F1E',
+    icon: '🏠',
+    scenario: "Caleb decomposed \"<strong>Clean my whole house</strong>\" into these four sub-problems: (1) Clean the kitchen, (2) Clean every other room, (3) Take out trash, (4) Mop. Which sub-problem is <strong>still too big</strong> and should be decomposed further?",
+    options: [
+      { text: '#1 — Clean the kitchen', correct: false, why: "This one's reasonable — it's one room with clear actions (dishes, counters, floor). It's small enough to start." },
+      { text: '#2 — Clean every other room', correct: true, why: "Right! \"Every other room\" is still a HUGE task — it could be 5 rooms each with their own work. Caleb should break this into one sub-problem per room." },
+      { text: '#3 — Take out trash', correct: false, why: "This one's already small — gather bags, walk them out, replace liners. Clear and finite." },
+      { text: '#4 — Mop', correct: false, why: "Mopping is a single, specific action. It might take a few minutes, but it's clearly small enough." }
+    ]
+  },
+  {
+    id: 4,
+    tag: 'Missing Piece',
+    tagColor: '#67308F',
+    icon: '🎮',
+    scenario: "Jada is decomposing \"<strong>Build a video game</strong>\" and lists: design characters, build levels, write rules, add sound. Her game launches but players keep finding broken stuff. What sub-problem did she <strong>forget</strong>?",
+    options: [
+      { text: 'Pick a name for the game', correct: false, why: "Naming matters but it's cosmetic — it doesn't cause broken gameplay." },
+      { text: 'Test for bugs before launch', correct: true, why: "Yes! Every real software project has TESTING as a sub-problem. Skipping it is why Jada's players are finding broken stuff. Decomposition has to include checking your work." },
+      { text: 'Hire a team of 50 programmers', correct: false, why: "Many games are made by small teams or even solo developers. The missing piece isn't headcount — it's testing." },
+      { text: 'Buy a more expensive computer', correct: false, why: "Hardware doesn't fix logic bugs. Testing does." }
+    ]
+  },
+  {
+    id: 5,
+    tag: 'Best Decomposition',
+    tagColor: '#55C8E8',
+    icon: '📚',
+    scenario: "Which of these is the BEST decomposition of \"<strong>Write a 5-paragraph essay on space exploration</strong>\"?",
+    options: [
+      { text: 'Type really fast for an hour', correct: false, why: "That's not a decomposition — it's just one rushed action. There are no sub-problems at all." },
+      { text: 'Pick a topic · do research · outline · write intro · write body paragraphs · write conclusion · revise', correct: true, why: "Excellent! Each sub-problem is small, specific, and ordered. You could write a clear algorithm for each one." },
+      { text: 'Read every book NASA has ever published', correct: false, why: "Way too big — and not even helpful. The piece you'd want is \"do research,\" which is much narrower than reading every book ever." },
+      { text: 'Just ask AI to write it for you', correct: false, why: "Beyond the ethics issues, this skips decomposition entirely — you don't learn anything about the problem." }
+    ]
+  },
+  {
+    id: 6,
+    tag: 'Tree Reading',
+    tagColor: '#76C043',
+    icon: '🌳',
+    scenario: "A <strong>decomposition tree</strong> for \"Make Pizza\" shows: Make Dough · Make Sauce · Add Toppings · Bake. Under \"Make Dough\" branches further into: Mix flour and water · Knead · Let it rise. What does this tree show us?",
+    options: [
+      { text: '"Make Dough" was decomposed twice — first as a sub-problem of pizza, then into smaller sub-problems of its own', correct: true, why: "Right! Some sub-problems are still too big after the first round, so you decompose them again. The tree shows that two-level decomposition." },
+      { text: '"Make Dough" is the most important step, more important than the others', correct: false, why: "Trees show structure, not importance. All four sub-problems are equally needed for pizza." },
+      { text: 'You should always make the dough first', correct: false, why: "Order matters in algorithms, but the tree shows BREAKDOWN, not order. Sauce could even be made first in real cooking." },
+      { text: 'There are too many steps and the recipe is bad', correct: false, why: "More detail in a decomposition is a GOOD thing — it means each piece is small enough to actually do." }
+    ]
+  },
+  {
+    id: 7,
+    tag: 'When to Stop',
+    tagColor: '#F78F1E',
+    icon: '🛑',
+    scenario: "When is a sub-problem small enough that you should <strong>STOP</strong> decomposing it?",
+    options: [
+      { text: 'When it has fewer than 3 letters in its name', correct: false, why: "Length of the name doesn't tell you anything about size of the problem. Stop based on whether you can SOLVE it directly." },
+      { text: 'When you could write a clear algorithm for it without breaking it down again', correct: true, why: "Yes! That's the test. If a piece is small enough to write 5–10 clear algorithm steps for, you're done — it's ready to solve." },
+      { text: 'When you get tired of decomposing', correct: false, why: "Tiredness isn't the test. Pieces that are still too big will trip you up later — push through and break them down further." },
+      { text: 'You should never stop — always keep decomposing forever', correct: false, why: "If you keep decomposing forever, you never solve anything. Decomposition has a clear stopping point: each piece is small enough to solve directly." }
+    ]
+  },
+  {
+    id: 8,
+    tag: 'Decomp Fail',
+    tagColor: '#67308F',
+    icon: '❌',
+    scenario: "A teammate hands you this \"decomposition\" of <em>Build a Music App</em>: (1) Make it work, (2) Make it look cool, (3) Make people like it. Why is this a BAD decomposition?",
+    options: [
+      { text: 'Each \"sub-problem\" is still way too vague to actually solve', correct: true, why: "Exactly. \"Make it work\" hides hundreds of tasks. \"Make it look cool\" is opinion. None of these is small or specific enough to start solving. A good decomposition produces concrete, doable pieces." },
+      { text: 'There aren\'t enough sub-problems — should be at least 20', correct: false, why: "Quantity isn't the issue. Three good sub-problems would be better than 20 bad ones. The problem here is they're all too vague." },
+      { text: 'A music app is impossible to make', correct: false, why: "Apps like Spotify and Apple Music exist — clearly possible. The decomposition is the problem, not the goal." },
+      { text: 'It\'s in the wrong order', correct: false, why: "Order isn't the main issue here. Even reordered, the pieces are still too vague to do anything with." }
+    ]
+  },
+  {
+    id: 9,
+    tag: 'Real-World Decomp',
+    tagColor: '#C7922C',
+    icon: '🚀',
+    scenario: "When NASA went to the Moon in 1969, they DIDN'T write one giant program. They decomposed the mission into hundreds of small modules: navigation, life support, lunar landing, etc. <strong>Why does decomposition matter so much for huge projects?</strong>",
+    options: [
+      { text: 'It lets many people work on different sub-problems at the same time', correct: true, why: "Right! With decomposition, the navigation team works on navigation while the life-support team works on life support — in parallel. Without it, only one person could work at a time. That's why every huge software project decomposes." },
+      { text: 'It makes the project take longer on purpose', correct: false, why: "Decomposition makes projects FASTER, not slower — work happens in parallel and bugs are easier to find." },
+      { text: 'It looks cool in presentations', correct: false, why: "Trees do look cool — but the real reason is functional. Without decomposition, the work would have been impossible to coordinate." },
+      { text: 'NASA just liked drawing diagrams', correct: false, why: "Diagrams represent thinking, but the thinking is the point. Decomposition is the engineering practice — the diagram just shows it." }
+    ]
+  },
+  {
+    id: 10,
+    tag: 'Pillar Connection',
+    tagColor: '#55C8E8',
+    icon: '🔗',
+    scenario: "How do <strong>decomposition</strong> and <strong>algorithms</strong> work together in computer science?",
+    options: [
+      { text: 'They\'re the same thing — just different words', correct: false, why: "They're related but different. Decomposition decides WHAT to solve. Algorithms decide HOW to solve each piece." },
+      { text: 'Decomposition tells you WHAT to solve. Algorithms tell you HOW to solve each piece.', correct: true, why: "Exactly. First decompose the big problem into small ones (what), then write a clear algorithm for each small piece (how). Together, they turn impossible problems into doable ones." },
+      { text: 'You only need decomposition — algorithms are optional', correct: false, why: "Decomposition gives you the pieces, but each piece still needs a clear algorithm or nothing actually gets done." },
+      { text: 'Algorithms are for computers, decomposition is for humans', correct: false, why: "Both are for humans AND computers. Decomposition organizes the problem for whoever or whatever will solve it." }
+    ]
+  }
+];
+
+const POINTS_PER_CORRECT = 10;
+let currentIndex = 0;
+let totalXP = 0;
+let correctCount = 0;
+let answered = false;
+
+function renderQuestion() {
+  const q = QUESTIONS[currentIndex];
+  answered = false;
+  updateStatusBar();
+
+  const container = document.getElementById('question-container');
+  container.innerHTML = `
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+      <div style="background:linear-gradient(135deg,#0E1C42,#1a2a5e);padding:20px 24px;display:flex;align-items:center;gap:14px;">
+        <div style="background:${q.tagColor};color:#ffffff;padding:4px 12px;border-radius:10px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;">${q.tag}</div>
+        <div style="margin-left:auto;font-size:30px;">${q.icon}</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Scenario ${q.id}</div>
+        <p style="color:#0E1C42;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <div id="feedback-zone" style="margin-top:18px;"></div>
+      </div>
+    </div>
+  `;
+
+  const list = document.getElementById('options-list');
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.setAttribute('data-idx', idx);
+    btn.style.cssText = 'background:#f9fafb;border:2px solid #e5e7eb;border-radius:10px;padding:14px 18px;color:#0E1C42;font-family:inherit;font-size:15px;text-align:left;cursor:pointer;transition:all 0.2s ease;display:flex;gap:12px;align-items:flex-start;';
+    btn.innerHTML = `
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#e5e7eb;color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">${String.fromCharCode(65+idx)}</div>
+      <div style="flex:1;padding-top:4px;">${opt.text}</div>
+    `;
+    btn.addEventListener('mouseenter', () => {
+      if (!answered) { btn.style.borderColor = '#55C8E8'; btn.style.background = '#eff6ff'; }
+    });
+    btn.addEventListener('mouseleave', () => {
+      if (!answered) { btn.style.borderColor = '#e5e7eb'; btn.style.background = '#f9fafb'; }
+    });
+    btn.addEventListener('click', () => handleAnswer(idx));
+    list.appendChild(btn);
+  });
+}
+
+function handleAnswer(selectedIdx) {
+  if (answered) return;
+  answered = true;
+  const q = QUESTIONS[currentIndex];
+  const chosen = q.options[selectedIdx];
+  const buttons = document.querySelectorAll('#options-list button');
+
+  buttons.forEach((btn, i) => {
+    btn.style.cursor = 'default';
+    btn.disabled = true;
+    const opt = q.options[i];
+    if (opt.correct) {
+      btn.style.borderColor = '#76C043';
+      btn.style.background = 'rgba(118,192,67,0.10)';
+      btn.querySelector('div').style.background = '#76C043';
+      btn.querySelector('div').style.color = '#ffffff';
+    } else if (i === selectedIdx && !opt.correct) {
+      btn.style.borderColor = '#ef4444';
+      btn.style.background = 'rgba(239,68,68,0.08)';
+      btn.querySelector('div').style.background = '#ef4444';
+      btn.querySelector('div').style.color = '#ffffff';
+    } else {
+      btn.style.opacity = '0.55';
+    }
+  });
+
+  if (chosen.correct) {
+    totalXP += POINTS_PER_CORRECT;
+    correctCount++;
+  }
+  updateStatusBar();
+
+  const fb = document.getElementById('feedback-zone');
+  const color = chosen.correct ? '#76C043' : '#ef4444';
+  const bgColor = chosen.correct ? 'rgba(118,192,67,0.08)' : 'rgba(239,68,68,0.06)';
+  const label = chosen.correct ? '✅ CORRECT  ·  +' + POINTS_PER_CORRECT + ' XP' : '❌ NOT QUITE';
+  fb.innerHTML = `
+    <div style="background:${bgColor};border:1px solid ${color};border-left:4px solid ${color};border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px;">
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:8px;">${label}</div>
+      <div style="color:#374151;font-size:14px;line-height:1.6;">${chosen.why}</div>
+    </div>
+    <button id="next-btn" style="width:100%;background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 18px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;">
+      ${currentIndex < QUESTIONS.length - 1 ? 'Next Scenario →' : 'See Your Results →'}
+    </button>
+  `;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.addEventListener('mouseenter', () => { nextBtn.style.transform = 'translateY(-2px)'; nextBtn.style.boxShadow = '0 6px 20px rgba(85,200,232,0.4)'; });
+  nextBtn.addEventListener('mouseleave', () => { nextBtn.style.transform = 'translateY(0)'; nextBtn.style.boxShadow = 'none'; });
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    if (currentIndex < QUESTIONS.length) {
+      renderQuestion();
+    } else {
+      renderResults();
+    }
+  });
+}
+
+function updateStatusBar() {
+  document.getElementById('progress-text').textContent = `Question ${Math.min(currentIndex+1, QUESTIONS.length)} of ${QUESTIONS.length}`;
+  const pct = ((answered ? currentIndex + 1 : currentIndex) / QUESTIONS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('xp-text').textContent = totalXP;
+}
+
+function renderResults() {
+  const maxXP = POINTS_PER_CORRECT * QUESTIONS.length;
+  const pct = Math.round((totalXP / maxXP) * 100);
+  let message, emoji, color;
+  if (pct === 100) {
+    message = "Perfect detective work! You can spot a sub-problem from a mile away.";
+    emoji = "🏆"; color = "#C7922C";
+  } else if (pct >= 80) {
+    message = "Excellent! You've got the decomposition instinct — small, specific, doable pieces.";
+    emoji = "⭐"; color = "#76C043";
+  } else if (pct >= 60) {
+    message = "Solid start. Re-read the scenarios you missed — focus on what makes a sub-problem small enough to solve.";
+    emoji = "💪"; color = "#55C8E8";
+  } else {
+    message = "Keep going! Review the Week 20 reading — especially the four-step decomposition move — then try this again.";
+    emoji = "📚"; color = "#67308F";
+  }
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = 'Complete!';
+
+  document.getElementById('question-container').innerHTML = `
+    <div style="background:#ffffff;border:2px solid ${color};border-radius:14px;padding:36px 28px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+      <div style="font-size:72px;margin-bottom:12px;">${emoji}</div>
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:10px;">Activity Complete</div>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;color:#0E1C42;font-size:32px;font-weight:800;margin:0 0 8px;">${totalXP} / ${maxXP} XP</h2>
+      <div style="color:#6b7280;font-size:16px;margin-bottom:6px;">${correctCount} of ${QUESTIONS.length} correct · ${pct}%</div>
+      <p style="color:#374151;font-size:16px;line-height:1.55;max-width:520px;margin:16px auto 28px;">${message}</p>
+      <button id="retry-btn" style="background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 26px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">↻ Try Again</button>
+    </div>
+  `;
+
+  document.getElementById('retry-btn').addEventListener('click', () => {
+    currentIndex = 0; totalXP = 0; correctCount = 0;
+    renderQuestion();
+  });
+
+  try {
+    window.parent.postMessage({
+      type: 'canvas-grade',
+      score: totalXP,
+      maxScore: maxXP,
+      percent: pct,
+      correctCount: correctCount,
+      totalQuestions: QUESTIONS.length,
+      activity: 'week-20-activity'
+    }, '*');
+  } catch (e) { /* no-op */ }
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

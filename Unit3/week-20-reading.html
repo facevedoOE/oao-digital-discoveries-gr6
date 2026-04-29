@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 7.2 — Decomposition: Breaking Big Problems Down | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;font-family:'Wix Madefor Text',system-ui,sans-serif;font-size:16px;line-height:1.7;color:#374151;background:#f8f9fa;">
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header style="background:#0E1C42;color:#ffffff;box-shadow:0 4px 20px rgba(14,28,66,0.3);">
+  <div style="max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" height="40" width="200" style="height:40px;width:auto;flex-shrink:0;">
+        <circle cx="20" cy="20" r="18" fill="#3a4f7a"/>
+        <ellipse cx="20" cy="24" rx="11" ry="10" fill="#c8a87c"/>
+        <ellipse cx="20" cy="27" rx="6" ry="5.5" fill="#e8d5b7"/>
+        <ellipse cx="20" cy="16" rx="10" ry="8.5" fill="#c8a87c"/>
+        <polygon points="12,11 14.5,6 16,12" fill="#c8a87c"/>
+        <polygon points="28,11 25.5,6 24,12" fill="#c8a87c"/>
+        <circle cx="16" cy="16" r="4.2" fill="#ffffff"/>
+        <circle cx="24" cy="16" r="4.2" fill="#ffffff"/>
+        <circle cx="16" cy="16" r="2.5" fill="#0E1C42"/>
+        <circle cx="24" cy="16" r="2.5" fill="#0E1C42"/>
+        <polygon points="18.5,19 20,22.5 21.5,19" fill="#e8943a"/>
+        <ellipse cx="16.5" cy="33" rx="3" ry="1.5" fill="#e8943a"/>
+        <ellipse cx="23.5" cy="33" rx="3" ry="1.5" fill="#e8943a"/>
+        <text x="44" y="20" font-family="'Wix Madefor Display',sans-serif" font-weight="700" font-size="16" fill="#ffffff">Optima</text>
+        <text x="44" y="32" font-family="'Wix Madefor Display',sans-serif" font-weight="500" font-size="7" fill="rgba(255,255,255,0.7)" letter-spacing="2">ACADEMY ONLINE</text>
+      </svg>
+      <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);"></div>
+      <div>
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:14px;color:#55C8E8;font-weight:600;">Digital Discoveries</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.7);">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;background:#C7922C;color:#ffffff;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;font-family:'Wix Madefor Display',sans-serif;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      0 XP
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ BREADCRUMB ═══════════════ -->
+<nav style="background:#ffffff;border-bottom:1px solid #e5e7eb;">
+  <div style="max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:8px;font-size:14px;color:#6b7280;flex-wrap:wrap;">
+    <span style="color:#6b7280;">Course Home</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    <span style="color:#6b7280;">Unit 3: Programming</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    <span style="color:#0E1C42;font-weight:600;">Lesson 7.2: Decomposition — Breaking Big Problems Down</span>
+  </div>
+</nav>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main style="max-width:900px;margin:0 auto;padding:32px 24px 80px;">
+
+  <!-- LESSON HEADER -->
+  <div>
+    <div style="display:inline-block;padding:4px 14px;background:#55C8E8;color:#ffffff;font-size:13px;font-weight:700;font-family:'Wix Madefor Display',sans-serif;border-radius:20px;letter-spacing:0.5px;margin-bottom:16px;">UNIT 3 • LESSON 7.2</div>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:36px;font-weight:700;color:#0E1C42;line-height:1.2;margin:0 0 12px;">Decomposition: Breaking Big Problems Down</h1>
+    <p style="font-size:18px;color:#6b7280;margin:0 0 32px;line-height:1.6;">"Plan a birthday party." "Build a video game." "Clean the whole house." Some problems feel <em>impossibly</em> big — until you slice them into pieces small enough to actually solve. That's <strong>decomposition</strong>, the second pillar of computational thinking, and it's the single most powerful trick programmers use to tackle hard work.</p>
+  </div>
+
+  <!-- STANDARDS BOX -->
+  <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:14px;color:#6b7280;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;color:#0E1C42;font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Florida Standards Alignment</div>
+    SC.K12.CTR.1.1 — Apply critical thinking and problem-solving strategies. SC.K12.CTR.2.1 — Create and interpret representations (diagrams, flowcharts, pseudocode) for digital problems.
+  </div>
+
+  <!-- OBJECTIVES -->
+  <div style="background:linear-gradient(135deg,#eff6ff,#ecfeff);border:2px solid #55C8E8;border-radius:12px;padding:24px;margin-bottom:32px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#55C8E8"/></svg>
+      Learning Objectives
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
+      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span><strong>Define decomposition</strong> as the act of breaking a big problem into smaller, easier sub-problems.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
+      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span><strong>Decompose</strong> a real-world task into 3–6 sub-tasks and represent them as a tree or numbered outline.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
+      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span><strong>Recognize</strong> when a sub-problem is small enough to solve directly — and when it still needs to be broken down further.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;">
+      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <span><strong>Connect</strong> decomposition to algorithms — explain why programmers decompose <em>before</em> they write any code.</span>
+    </div>
+  </div>
+
+  <!-- HERO ILLUSTRATION -->
+  <div style="width:100%;background:linear-gradient(135deg,#0E1C42 0%,#0E5568 100%);border-radius:12px;margin-bottom:32px;padding:32px 24px;">
+    <svg width="100%" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;max-width:760px;">
+      <!-- Big problem -->
+      <rect x="320" y="10" width="160" height="60" rx="10" fill="#67308F" stroke="#b388d8" stroke-width="2"/>
+      <text x="400" y="38" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="13" font-weight="800" fill="#ffffff">BIG PROBLEM</text>
+      <text x="400" y="56" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="11" fill="#e8d5f5">"Plan a birthday party"</text>
+      <!-- Lines down -->
+      <path d="M 400 70 L 140 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
+      <path d="M 400 70 L 290 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
+      <path d="M 400 70 L 400 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
+      <path d="M 400 70 L 510 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
+      <path d="M 400 70 L 660 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
+      <!-- Five sub-problems -->
+      <rect x="60" y="110" width="160" height="50" rx="8" fill="#55C8E8" opacity="0.85"/>
+      <text x="140" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#0E1C42">Guest list</text>
+      <text x="140" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#0E1C42">Who is invited?</text>
+      <rect x="220" y="110" width="140" height="50" rx="8" fill="#76C043" opacity="0.85"/>
+      <text x="290" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#0E1C42">Food</text>
+      <text x="290" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#0E1C42">Cake + snacks</text>
+      <rect x="360" y="110" width="100" height="50" rx="8" fill="#C7922C" opacity="0.85"/>
+      <text x="410" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#ffffff">Place</text>
+      <text x="410" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#ffffff">Where?</text>
+      <rect x="460" y="110" width="120" height="50" rx="8" fill="#F78F1E" opacity="0.85"/>
+      <text x="520" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#0E1C42">Activities</text>
+      <text x="520" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#0E1C42">Games + music</text>
+      <rect x="580" y="110" width="160" height="50" rx="8" fill="#67308F" opacity="0.85"/>
+      <text x="660" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#ffffff">Decorations</text>
+      <text x="660" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#ffffff">Theme + colors</text>
+      <!-- Bottom label -->
+      <text x="400" y="200" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#55C8E8" letter-spacing="2">↓ FIVE SMALL PROBLEMS YOU CAN ACTUALLY SOLVE ↓</text>
+    </svg>
+  </div>
+
+  <!-- WATCH BLOCK -->
+  <div style="background:linear-gradient(135deg,#faf5ff,#fdf2f8);border:2px solid #67308F;border-radius:12px;padding:24px;margin-bottom:32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" fill="#67308F"/>
+        <polygon points="13,11 13,21 22,16" fill="#ffffff"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">🎬 Watch — Decomposition in 90 Seconds</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 12px;">Before you read the rest of this lesson, watch a short demo of decomposition in action — a programmer takes the goal "build a calculator app" and slices it into the small pieces a computer can actually handle.</p>
+      <p style="margin:0;font-size:14px;color:#6b7280;font-style:italic;">▶ Video link will be embedded by your teacher in Canvas.</p>
+    </div>
+  </div>
+
+  <!-- READ BLOCK 1 -->
+  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
+        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">What is decomposition?</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 16px;">Last week you met <strong>algorithms</strong> — clear, ordered, step-by-step recipes. But what do you do when the problem is too big to write a recipe for? You can't write a 10,000-step recipe for "build a video game" all at once. Your brain doesn't work that way, and a computer programmer's brain doesn't either.</p>
+      <p style="margin:0 0 16px;">That's where the second pillar of computational thinking comes in. <span style="background:rgba(199,146,44,0.15);padding:2px 6px;border-radius:4px;font-weight:600;color:#0E1C42;">Decomposition</span> is the act of taking one big problem and breaking it into smaller sub-problems — each one small enough that you (or a computer) can actually solve it. Then you solve the small ones one at a time, and the big one is solved automatically.</p>
+      <p style="margin:0;">It sounds simple. It is simple. But it's also the secret behind every app on your phone, every level in every video game, every movie special effect, every robot, and every search you've ever typed into Google. <strong>None of those exist without decomposition.</strong></p>
+    </div>
+  </div>
+
+  <!-- STAT CALLOUT -->
+  <div>
+    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#0E1C42;margin:0 0 16px;">Decomposition by the numbers</h2>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin:0 0 8px;">
+      <div style="flex:1;min-width:140px;background:#ffffff;border:2px solid #55C8E8;border-radius:12px;padding:20px;text-align:center;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:800;color:#55C8E8;line-height:1.2;">~10M</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:4px;">Lines of code in Minecraft — built by decomposition</div>
+      </div>
+      <div style="flex:1;min-width:140px;background:#ffffff;border:2px solid #C7922C;border-radius:12px;padding:20px;text-align:center;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:800;color:#C7922C;line-height:1.2;">2B+</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:4px;">Lines of code in all of Google — same trick, just bigger</div>
+      </div>
+      <div style="flex:1;min-width:140px;background:#ffffff;border:2px solid #F78F1E;border-radius:12px;padding:20px;text-align:center;">
+        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:800;color:#F78F1E;line-height:1.2;">0</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:4px;">Programmers who write big code without decomposing first</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:#9ca3af;margin:0 0 32px;">No exceptions. Every programmer in the world decomposes. They just don't always say the word.</p>
+  </div>
+
+  <!-- READ BLOCK 2 -->
+  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
+        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">You already do this — every day</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 16px;">When you "get ready for school" each morning, you don't think of it as one giant task. You break it into smaller ones without realizing: <em>get up, brush teeth, eat breakfast, get dressed, pack bag, leave</em>. That's decomposition. Six small problems, each easy. Strung together, they solve the giant one.</p>
+      <p style="margin:0 0 16px;">Look at how three different "big problems" decompose:</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;">
+        <div style="background:#f9fafb;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;">🎮 "Build a video game"</strong>
+          <div style="margin-top:6px;color:#374151;font-size:15px;">→ design characters · build levels · write rules · add sound · test for bugs · publish</div>
+        </div>
+        <div style="background:#f9fafb;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;">🍕 "Make dinner for 10 people"</strong>
+          <div style="margin-top:6px;color:#374151;font-size:15px;">→ pick the menu · check what's in the fridge · go shopping · prep ingredients · cook · serve</div>
+        </div>
+        <div style="background:#f9fafb;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;">🌎 "Write a book report"</strong>
+          <div style="margin-top:6px;color:#374151;font-size:15px;">→ pick the book · read it · take notes · plan the report · write the draft · revise · turn it in</div>
+        </div>
+      </div>
+      <p style="margin:0;">Notice the pattern: a vague, scary "big problem" turns into a list of small, specific tasks. Each task is something you could write an algorithm for. <strong>That's the magic.</strong></p>
+    </div>
+  </div>
+
+  <!-- DID YOU KNOW -->
+  <div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border-left:4px solid #55C8E8;border-radius:0 12px 12px 0;padding:24px;margin:0 0 32px;">
+    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:700;color:#55C8E8;margin-bottom:8px;">💡 Did You Know?</div>
+    <p style="margin:0;">When NASA flew astronauts to the moon in 1969, the entire mission was decomposed into thousands of sub-problems by a team of programmers — including <strong>Margaret Hamilton</strong>, who led the team that wrote the Apollo flight software. Their decomposed code was so reliable that when the lunar lander's computer started crashing during landing, the software <em>automatically</em> dropped the unimportant sub-problems and kept the critical ones running. The astronauts landed safely. Decomposition didn't just send people to the moon — it brought them home.</p>
+  </div>
+
+  <!-- READ BLOCK 3 -->
+  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
+        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">How to decompose — the four-step move</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 16px;">There's a reliable way to decompose any big problem. Practice it on small things first, and it'll save you on big things later.</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;">
+        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+            <span style="background:#55C8E8;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 1</span>
+            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Write down the big problem in one sentence.</strong>
+          </div>
+          <div style="color:#374151;font-size:15px;">If you can't say it in one sentence, you don't really understand it yet. <em>"Make my room look great for a sleepover."</em></div>
+        </div>
+        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+            <span style="background:#C7922C;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 2</span>
+            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">List the sub-problems you'd need to solve.</strong>
+          </div>
+          <div style="color:#374151;font-size:15px;">Don't worry about order yet — just list them. <em>Clean up · move furniture · set up the snacks · plan the games · pick the music.</em></div>
+        </div>
+        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+            <span style="background:#67308F;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 3</span>
+            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Check each piece — is it small enough to solve?</strong>
+          </div>
+          <div style="color:#374151;font-size:15px;">If a piece still feels overwhelming, decompose it again. <em>"Clean up"</em> might split into <em>pick up clothes · vacuum · make bed · clear desk.</em></div>
+        </div>
+        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+            <span style="background:#76C043;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 4</span>
+            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Solve the small pieces, one at a time.</strong>
+          </div>
+          <div style="color:#374151;font-size:15px;">Now each piece has a clear algorithm. The big problem solves itself as you finish the small ones.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY FACT BOX -->
+  <div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border:2px solid #55C8E8;border-radius:12px;padding:24px;margin-bottom:32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="13" stroke="#55C8E8" stroke-width="2" fill="rgba(85,200,232,0.15)"/>
+        <path d="M16 10v8M16 22v.01" stroke="#55C8E8" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">When do you stop decomposing?</h2>
+    </div>
+    <p style="margin:0 0 12px;color:#374151;line-height:1.8;">Stop when each sub-problem is small enough that you could write a clear algorithm for it — <strong>without breaking it down again</strong>. That's the test. If a piece still feels like "I'd need to think about that for a while," it's still too big. Cut it down once more.</p>
+    <p style="margin:0;color:#374151;line-height:1.8;">A good rule of thumb: each piece should be something you could solve in a few minutes, or write 5–10 algorithm steps for. If a sub-problem still feels like a project, it isn't decomposed enough.</p>
+  </div>
+
+  <!-- STANDARD SPOTLIGHT -->
+  <div style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border-left:4px solid #C7922C;border-radius:0 12px 12px 0;padding:24px;margin:0 0 32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C7922C" stroke-width="2">
+        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9l-11-6z"/>
+      </svg>
+      <span style="font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:700;color:#C7922C;">⚖️ Florida Standard Spotlight</span>
+    </div>
+    <p style="margin:0 0 8px;color:#374151;"><strong>SC.K12.CTR.2.1 — Create representations of digital problems.</strong></p>
+    <p style="margin:0;color:#374151;line-height:1.7;">Decomposing a big problem isn't just about <em>doing</em> it in your head — it's about <strong>showing</strong> it on paper, screen, or whiteboard. The most common visual is a <strong>tree</strong>: the big problem on top, sub-problems branching down, with each branch decomposed further if it's still too big. Diagrams like this turn invisible thinking into something you and your team can actually look at, edit, and improve. That's why every CS classroom in Florida teaches representations alongside the thinking itself.</p>
+  </div>
+
+  <!-- READ BLOCK 4 -->
+  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
+        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">Decomposition + Algorithms = Code</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 16px;">Here's why these two pillars belong together. <strong>Decomposition</strong> tells you <em>what</em> to solve. <strong>Algorithms</strong> tell you <em>how</em> to solve each piece. You can't really do one without the other.</p>
+      <p style="margin:0 0 16px;">Think back to last week's PB&amp;J algorithm. That was already a decomposition. "Make a sandwich" got broken into: <em>get bread · get peanut butter · get a knife · open jar · scoop · spread · stack · slice.</em> Then each of those tiny pieces became a clear, ordered step in the algorithm.</p>
+      <p style="margin:0;">When you start writing real Python code in Week 22, this is exactly how you'll work: decompose the program into small pieces, write a tiny algorithm for each piece, then translate each algorithm into code. Big software is built from many small algorithms — and decomposition is what tells you where one algorithm ends and the next one begins.</p>
+    </div>
+  </div>
+
+  <!-- VOCAB GRID -->
+  <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#0E1C42;margin:0 0 16px;">📘 Key Vocabulary</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:0 0 32px;">
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Decomposition</div>
+      <div style="font-size:14px;color:#6b7280;line-height:1.6;">Breaking a big problem into smaller, easier sub-problems you can actually solve.</div>
+    </div>
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Sub-problem</div>
+      <div style="font-size:14px;color:#6b7280;line-height:1.6;">One smaller piece that comes out of decomposing a bigger problem.</div>
+    </div>
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Decomposition tree</div>
+      <div style="font-size:14px;color:#6b7280;line-height:1.6;">A diagram showing the big problem on top with sub-problems branching down — a way to <em>see</em> your decomposition.</div>
+    </div>
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Top-down design</div>
+      <div style="font-size:14px;color:#6b7280;line-height:1.6;">A way of designing programs that starts with the big goal and decomposes downward into smaller pieces.</div>
+    </div>
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Module</div>
+      <div style="font-size:14px;color:#6b7280;line-height:1.6;">A small, complete piece of a larger program — usually the result of decomposing well.</div>
+    </div>
+    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
+      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Pattern recognition</div>
+      <div style="font-size:14px;color:#6b7280;line-height:1.6;">Spotting what repeats across sub-problems. The third pillar of computational thinking — coming next week.</div>
+    </div>
+  </div>
+
+  <!-- REFLECTION -->
+  <div style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border:2px solid #F78F1E;border-radius:12px;padding:24px;margin-bottom:32px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="12" r="8" stroke="#F78F1E" stroke-width="2"/>
+        <path d="M13 22h6M14 25h4" stroke="#F78F1E" stroke-width="2" stroke-linecap="round"/>
+        <path d="M16 8v2M12 10l1 1M20 10l-1 1" stroke="#F78F1E" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">💭 Weekly Reflection — Decompose Your Weekend</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 12px;">Pick <strong>one big task</strong> you want to get done this weekend. It can be anything — clean your room, finish a project, learn a new game, plan something for friends.</p>
+      <p style="margin:0 0 12px;">Now decompose it using the four-step move from this lesson:</p>
+      <ol style="margin:0 0 12px;padding-left:24px;">
+        <li style="margin-bottom:6px;">Write the big problem in one sentence.</li>
+        <li style="margin-bottom:6px;">List 4–6 sub-problems.</li>
+        <li style="margin-bottom:6px;">Check each one — if any still feels too big, break it down again.</li>
+        <li style="margin-bottom:6px;">Mark the order you'll tackle them in.</li>
+      </ol>
+      <p style="margin:0;font-size:14px;color:#9ca3af;font-style:italic;">Bring your decomposition to class — you'll use it as the input to next week's lesson on patterns.</p>
+    </div>
+  </div>
+
+  <!-- WHAT'S NEXT -->
+  <div style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #C7922C;border-radius:12px;padding:24px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 4l4 8 8 1.5-5.5 5.5 1 8.5L16 23.5 8.5 27.5l1-8.5L4 13.5 12 12z" stroke="#C7922C" stroke-width="2" fill="rgba(199,146,44,0.15)"/>
+      </svg>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">✅ Lesson Complete — What's Next?</h2>
+    </div>
+    <div style="color:#374151;line-height:1.8;">
+      <p style="margin:0 0 12px;">You've finished the reading for <strong>Lesson 7.2</strong>. Here's your path forward:</p>
+      <ol style="margin:0 0 12px;padding-left:24px;">
+        <li style="margin-bottom:8px;"><strong>Activity: Decomposition Detective</strong> — sort big problems into clean sub-problems and earn XP.</li>
+        <li style="margin-bottom:8px;"><strong>VR Activity:</strong> in ENGAGE, build a decomposition tree as a 3D mind-map.</li>
+        <li style="margin-bottom:8px;"><strong>Quiz:</strong> 5 questions on decomposition — three attempts.</li>
+        <li style="margin-bottom:8px;"><strong>Next week:</strong> Pattern Recognition — once you've decomposed into pieces, you start seeing which pieces are <em>secretly the same</em>.</li>
+      </ol>
+      <p style="margin:0;font-size:14px;color:#C7922C;font-weight:600;">+100 XP for completing this reading!</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer style="background:#0E1C42;padding:18px 24px;text-align:center;color:rgba(255,255,255,0.6);font-size:12px;">
+  Digital Discoveries · Optima Academy Online · Course 0200021 · Standards SC.K12.CTR.1.1, SC.K12.CTR.2.1
+</footer>
+
+</body>
+</html>
