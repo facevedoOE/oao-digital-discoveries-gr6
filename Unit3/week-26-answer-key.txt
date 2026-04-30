@@ -1,0 +1,144 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 26 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 26
+  Standards: SC.6.PE.3.5, SC.6.PE.3.6, SC.6.PE.4.1
+  Topic: Debugging & The Software Development Lifecycle
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → A
+  Q4 → C
+  Q5 → D
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. A student writes the line  if score > 90  (with no colon
+    at the end). Python refuses to run the program at all and
+    prints "SyntaxError: expected ':'". What KIND of bug is
+    this?
+───────────────────────────────────────────────────────────────
+  A) A logic error
+     ❌ Logic errors run all the way through and just give a
+        wrong answer. This program never even started.
+  B) A syntax error                                              ✓ CORRECT
+     ✅ Right. Missing colons, brackets, and quotes break the
+        GRAMMAR of the language. Python catches them before
+        running the code. (SC.6.PE.3.5)
+  C) A runtime error
+     ❌ Runtime errors crash a program WHILE it runs. This
+        program never started — that's a syntax problem.
+  D) A hardware error
+     ❌ The computer is fine. The bug is in the code itself.
+        Bad punctuation in the source = syntax error.
+
+───────────────────────────────────────────────────────────────
+Q2. A program runs without any error message and prints that
+    the average of 80, 90, and 100 is 203.33. What KIND of
+    bug is this?
+───────────────────────────────────────────────────────────────
+  A) A syntax error
+     ❌ The program ran fine — no error, no crash. Syntax
+        errors stop programs before they start.
+  B) A runtime error
+     ❌ The program didn't crash. It printed an answer. Wrong,
+        but not a crash. Runtime errors halt the program.
+  C) A logic error                                               ✓ CORRECT
+     ✅ Classic logic error — the math is wrong, but the
+        computer happily ran the code. (Likely missing
+        parentheses around the addition.) (SC.6.PE.3.5)
+  D) A network error
+     ❌ No network is involved. The mistake is in the math
+        itself — that's a logic problem.
+
+───────────────────────────────────────────────────────────────
+Q3. You run a program and it prints:
+        NameError: name 'scor' is not defined  —  line 14
+    What is the BEST first debugging step?
+───────────────────────────────────────────────────────────────
+  A) Read the error message — it tells you exactly what and
+     where the bug is                                            ✓ CORRECT
+     ✅ Always step 1. The message names the variable ('scor')
+        and the line (14). Looks like a typo — should be
+        'score'. Reading the error saves time. (SC.6.PE.3.6)
+  B) Delete the whole program and start over
+     ❌ Almost never the right move — you'd lose all the
+        working parts and probably make the same mistake again.
+  C) Add 100 print statements before reading anything
+     ❌ Save the prints for trickier bugs. When the error
+        message points right at the line, just read it!
+  D) Restart your computer
+     ❌ Restarting doesn't fix a code bug — the bug is in your
+        code, not in the machine.
+
+───────────────────────────────────────────────────────────────
+Q4. A team writes down: "Our app will help students track
+    homework. Audience: grades 6–8. Features: due-date
+    reminders, subject filter, streak counter." No code has
+    been written yet. Which lifecycle phase is this?
+───────────────────────────────────────────────────────────────
+  A) Code
+     ❌ No code is being written here — they're just deciding
+        what to build. Coding comes later.
+  B) Test
+     ❌ Testing happens after the code is written, not before.
+        Nothing exists yet to test.
+  C) Plan                                                        ✓ CORRECT
+     ✅ Right. Planning happens BEFORE design and code. The
+        team decides what problem they're solving, who they're
+        solving it for, and what features they need.
+        (SC.6.PE.4.1)
+  D) Maintain
+     ❌ Maintenance happens AFTER software has been deployed
+        and used. The team is at the very beginning here.
+
+───────────────────────────────────────────────────────────────
+Q5. Why is ITERATION such an important idea in software
+    development?
+───────────────────────────────────────────────────────────────
+  A) It guarantees a program will never have any bugs ever
+     ❌ Iteration doesn't eliminate bugs — every program has
+        them. Iteration helps us FIND and FIX bugs faster.
+  B) It means programmers only ever write code one time and
+     never touch it again
+     ❌ The opposite! Iteration means coming BACK to the same
+        program over and over to improve it.
+  C) It removes the need for a planning phase
+     ❌ Iteration loops THROUGH the planning phase, again and
+        again. Each iteration plans the next small improvement.
+  D) Real users always find new problems and the world keeps
+     changing, so software has to keep improving in small
+     cycles                                                      ✓ CORRECT
+     ✅ Exactly. No team can predict every problem in advance.
+        Iteration lets you ship small, learn from real users,
+        and improve — over and over. That's why software is
+        never really "done." (SC.6.PE.4.1)
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-26-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

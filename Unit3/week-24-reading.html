@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 24 — Loops: The Power of Repetition | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+.read-body code, .inline-code {
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  background: #eef2f7;
+  color: var(--binary-blue);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* Warning / bug callout (red) */
+.callout-warn {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-left-color: #ef4444;
+}
+.callout-warn .callout-label { color: #b91c1c; }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-num { color: var(--gamer-green); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-btn-danger {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+}
+.try-it-btn-danger:hover { box-shadow: 0 4px 12px rgba(239,68,68,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Loop count input */
+.loop-count-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.loop-count-row label {
+  font-size: 14.5px;
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.loop-count-row input[type="number"] {
+  width: 80px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  text-align: center;
+  background: white;
+}
+.loop-count-row input[type="number"]:focus {
+  outline: 2px solid var(--bitstream-blue);
+  border-color: var(--bitstream-blue);
+}
+
+/* Tracer (loop visualizer) */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 44px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+
+/* Loop output panel */
+.loop-output-panel {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: #1f4128;
+  min-height: 80px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.loop-output-panel .tracer-panel-label {
+  color: #3d6522;
+  margin-bottom: 8px;
+}
+.loop-output-line {
+  padding: 3px 8px;
+  margin: 2px 0;
+  background: white;
+  border-radius: 4px;
+  border-left: 3px solid var(--gamer-green);
+  font-weight: 600;
+  animation: outputSlide 0.3s ease;
+}
+.loop-output-line.fresh {
+  background: #fffbeb;
+  border-left-color: var(--gateway-gold);
+}
+.loop-output-empty {
+  font-style: italic;
+  color: #6b7280;
+  font-weight: 400;
+  padding: 6px 8px;
+}
+@keyframes outputSlide {
+  0% { transform: translateY(-6px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Pulse highlight on iteration */
+.iter-indicator {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.iter-indicator.pulsing {
+  background: var(--gateway-gold);
+  transform: scale(1.12);
+  box-shadow: 0 0 0 6px rgba(199,146,44,0.18);
+}
+.iter-indicator.idle {
+  background: #9ca3af;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 24
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 24: Loops &mdash; The Power of Repetition</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 24 • READING</div>
+  <h1 class="lesson-title">Loops &mdash; The Power of Repetition</h1>
+  <p class="lesson-description">Computers are unbelievably good at one boring thing: doing the exact same task over and over without complaining. That superpower has a name &mdash; the <em>loop</em>. This week you'll learn how loops work, where they break, and why every recommendation feed and AI you use depends on them.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Explain why loops exist</strong> &mdash; the kind of repetitive work computers handle effortlessly and humans cannot.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Read and predict</strong> the output of <code>for</code> and <code>while</code> loops, including how a loop variable changes from one iteration to the next.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Spot the two classic loop bugs</strong> &mdash; infinite loops and off-by-one errors &mdash; and explain how to fix them.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Connect loops to scale</strong> &mdash; the way a recommendation feed, a search engine, or an AI training run is just a loop that runs millions of times.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · Why Loops?</div>
+  </div>
+  <h2 class="section-title">Computers love repetition. Humans don't.</h2>
+  <div class="read-body">
+    <p>Imagine your teacher walks in tomorrow and says: <em>"Please write the numbers 1 through 1,000 on a sheet of paper. By hand. Carefully."</em> What happens? You start. You're focused for the first thirty numbers. By 200 you're glaring. By 600 your handwriting falls apart. By 950 you skip a number on accident, and now you have to start checking. The job is <strong>boring, repetitive, error-prone</strong> &mdash; everything humans are bad at.</p>
+    <p>Now imagine you ask a computer the same thing. Five lines of code. No yawning, no shaky handwriting, no mistakes. Done in less time than it took you to find a pen. That's the gap this whole week is about: a single instruction that says <em>"do this thing a thousand times"</em> turns a tedious week of human work into a half-second of computer work.</p>
+    <p>That instruction is called a <span class="key-term">loop</span>. A loop is a chunk of code that runs again and again, until you tell it to stop. Each time the loop runs is called an <span class="key-term">iteration</span>. Five iterations means the loop body ran five times. The body is just whatever code is "inside" the loop &mdash; the part that gets repeated.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <!-- Human side -->
+      <text x="120" y="28" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#b91c1c" letter-spacing="2">HUMAN</text>
+      <text x="120" y="62" text-anchor="middle" font-size="32">😩</text>
+      <text x="120" y="98" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="13" fill="#374151" font-weight="700">"1, 2, 3, 4, 5..."</text>
+      <text x="120" y="120" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">gets bored, makes typos,</text>
+      <text x="120" y="135" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">eventually quits</text>
+      <rect x="40" y="155" width="160" height="32" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+      <text x="120" y="175" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#b91c1c">~30 minutes, with errors</text>
+
+      <!-- Arrow -->
+      <line x1="240" y1="110" x2="320" y2="110" stroke="#C7922C" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="320,110 308,104 308,116" fill="#C7922C"/>
+      <text x="280" y="98" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">FOR LOOP</text>
+
+      <!-- Computer side -->
+      <text x="480" y="28" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#0E5568" letter-spacing="2">COMPUTER</text>
+      <text x="480" y="62" text-anchor="middle" font-size="32">🤖</text>
+      <text x="480" y="98" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="13" fill="#374151" font-weight="700">"1, 2, 3, ..., 1000"</text>
+      <text x="480" y="120" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">no errors, no boredom,</text>
+      <text x="480" y="135" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">never breaks a sweat</text>
+      <rect x="400" y="155" width="160" height="32" rx="6" fill="#f0fdf4" stroke="#76C043" stroke-width="2"/>
+      <text x="480" y="175" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">~0.001 seconds, perfect</text>
+
+      <text x="300" y="208" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#6b7280">A loop turns "tedious for a human" into "trivial for a computer."</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>Programmers reach for loops constantly. Anywhere you'd find yourself writing the words <em>"do the same thing for every…"</em> &mdash; for every student in the class, for every photo in the album, for every product in the cart, for every pixel on the screen &mdash; you're describing a loop.</p>
+    <p>That's the whole reason loops matter. They are the trick that lets a few lines of code handle situations <strong>far bigger</strong> than the programmer could handle by hand. Without loops, modern software would not exist.</p>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Loop</strong> &mdash; a section of code that runs more than once, until a condition tells it to stop.</p>
+      <p><strong>Iteration</strong> &mdash; one trip through the loop body. If a loop runs ten times, that's ten iterations.</p>
+      <p><strong>Loop body</strong> &mdash; the indented code inside the loop &mdash; the actual work that gets repeated each iteration.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Your phone runs <strong>billions</strong> of loop iterations every second just keeping the screen drawn. Every pixel you see, refreshed 60 or 120 times per second, lives inside a loop. If a human had to repaint your screen by hand, you'd see a single frame every few hours.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · The for Loop</div>
+  </div>
+  <h2 class="section-title">Doing N things in order</h2>
+  <div class="read-body">
+    <p>The first kind of loop you'll meet is called a <span class="key-term">for loop</span>. You use a <code>for</code> loop when you already know <em>how many times</em> you want to repeat. "Print my name 5 times." "Add up the first 100 numbers." "Visit each player on the team once." If you can put a number on it, a <code>for</code> loop is your tool.</p>
+    <p>In Python (the language you'll see most this year) a basic <code>for</code> loop looks like this:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">Python &mdash; a basic for loop</span>
+<span class="code-comment"># Print "Hello!" five times</span>
+<span class="code-keyword">for</span> count <span class="code-keyword">in</span> range(<span class="code-num">5</span>):
+    print(<span class="code-string">"Hello!"</span>, count)
+  </div>
+
+  <div class="read-body">
+    <p>Let's break that apart, because every piece is doing real work:</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title"><code>for</code> &mdash; the keyword</div>
+        <div class="step-body">This word tells Python: <em>"a counted loop is starting."</em> Every <code>for</code> loop begins with this.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title"><code>count</code> &mdash; the loop variable (also called the counter)</div>
+        <div class="step-body">A name <em>you</em> pick. On each iteration, Python automatically puts a new value into this variable. First it's <code>0</code>, then <code>1</code>, then <code>2</code>… You don't have to update it yourself &mdash; that's the <code>for</code> loop's job.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title"><code>range(5)</code> &mdash; the values to walk through</div>
+        <div class="step-body"><code>range(5)</code> generates the numbers <code>0, 1, 2, 3, 4</code> &mdash; five values, starting at zero. (Yes, zero. We'll come back to that quirk in Section 4 &mdash; it's the source of a famous bug.)</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">The indented line &mdash; the body</div>
+        <div class="step-body">Anything indented under the <code>for</code> is the loop body. <strong>Indentation is how Python knows what's "inside" the loop.</strong> Lines that aren't indented run after the loop is finished.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's how Python actually walks through the example, one iteration at a time:</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num" style="background:linear-gradient(135deg,var(--gateway-gold),#8a6620);">A</div>
+      <div>
+        <div class="step-title">Iteration 1: <code>count = 0</code></div>
+        <div class="step-body">Python puts <code>0</code> into <code>count</code>, runs the body. Output: <code>Hello! 0</code></div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background:linear-gradient(135deg,var(--gateway-gold),#8a6620);">B</div>
+      <div>
+        <div class="step-title">Iteration 2: <code>count = 1</code></div>
+        <div class="step-body">Updates <code>count</code> to <code>1</code>, runs the body. Output: <code>Hello! 1</code></div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background:linear-gradient(135deg,var(--gateway-gold),#8a6620);">C</div>
+      <div>
+        <div class="step-title">Iteration 3: <code>count = 2</code></div>
+        <div class="step-body">Output: <code>Hello! 2</code></div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background:linear-gradient(135deg,var(--gateway-gold),#8a6620);">D</div>
+      <div>
+        <div class="step-title">Iteration 4 &amp; 5: <code>count = 3</code>, then <code>4</code></div>
+        <div class="step-body">Two more times. Output: <code>Hello! 3</code>, then <code>Hello! 4</code>.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background:linear-gradient(135deg,var(--gamer-green),#3d6522);">✓</div>
+      <div>
+        <div class="step-title">Loop ends.</div>
+        <div class="step-body">There are no more values in <code>range(5)</code>, so Python exits the loop and continues with whatever comes next.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's the magic move: change <code>5</code> to <code>5000</code>, and the loop runs five thousand times instead. <strong>You didn't write more code. The code was already capable of any size.</strong> That's the real power of a <code>for</code> loop.</p>
+    <p>Want to see one in action with your own number? Try the visualizer below. Type a number, click <strong>Step</strong> to walk through one iteration at a time, or <strong>Run All</strong> to watch it churn.</p>
+  </div>
+
+  <!-- ========== TRY IT — LOOP COUNTER VISUALIZER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">⚡ Try It — Live</div>
+    <div class="try-it-title">Loop Counter Visualizer</div>
+    <p class="try-it-instructions">Pick any number from 1 to 10. Then click <strong>Step</strong> to advance the loop one iteration at a time, or <strong>Run All</strong> to auto-step. Watch how the <code>count</code> variable changes and how each <code>"Hello!"</code> line gets pushed into the output. The yellow highlight shows the line being executed right now.</p>
+
+    <div class="loop-count-row">
+      <label for="loop-n-input">Run a loop that says "Hello!" how many times?</label>
+      <input type="number" id="loop-n-input" min="1" max="10" value="5">
+      <span id="iter-indicator" class="iter-indicator idle">Idle</span>
+    </div>
+
+    <div class="tracer-grid">
+      <div class="tracer-code" aria-label="Pseudocode display">
+<span class="tracer-line" data-line="0"><span style="color:#9ca3af; font-style: italic;">// Loop count from 1 to N</span></span>
+<span class="tracer-line" data-line="1"><span style="color:#55C8E8; font-weight:600;">FOR</span> count <span style="color:#55C8E8; font-weight:600;">FROM</span> <span style="color:#76C043;">1</span> <span style="color:#55C8E8; font-weight:600;">TO</span> N:</span>
+<span class="tracer-line" data-line="2">    <span style="color:#55C8E8; font-weight:600;">PRINT</span> <span style="color:#C7922C;">"Hello!"</span>, count</span>
+<span class="tracer-line" data-line="3"><span style="color:#55C8E8; font-weight:600;">END FOR</span></span>
+      </div>
+
+      <div class="tracer-side">
+        <div class="tracer-vars">
+          <div class="tracer-panel-label">Variables</div>
+          <div class="tracer-var"><span class="tracer-var-name">N</span><span class="tracer-var-value" id="loop-var-n">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">count</span><span class="tracer-var-value" id="loop-var-count">—</span></div>
+        </div>
+        <div class="tracer-status" id="loop-status">Ready. Pick a number and click <strong>Step</strong> or <strong>Run All</strong>.</div>
+        <div class="loop-output-panel" id="loop-output">
+          <div class="tracer-panel-label">Output</div>
+          <div class="loop-output-empty" id="loop-output-empty">(nothing printed yet)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="loop-step">Step ▶</button>
+      <button class="try-it-btn try-it-btn-success" id="loop-run">Run All ⚡</button>
+      <button class="try-it-btn try-it-btn-danger" id="loop-stop" style="display:none;">⏹ Stop</button>
+      <button class="try-it-btn try-it-btn-secondary" id="loop-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice the rhythm: <strong>check the loop variable</strong>, <strong>run the body</strong>, <strong>increase the counter</strong>, <strong>repeat</strong>. Every <code>for</code> loop in every language follows that same heartbeat. Master one and you've basically met them all.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Without running it, predict what this loop prints:</p>
+      <p style="font-family:'Consolas',monospace; background:#eef2f7; padding:8px 12px; border-radius:6px;"><code>for</code> i <code>in</code> range(3):<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Bzzzt", i)</p>
+      <p>How many lines does it print? What's on each line? <em>(Answer: three lines &mdash; <code>Bzzzt 0</code>, <code>Bzzzt 1</code>, <code>Bzzzt 2</code>. The variable <code>i</code> starts at zero, just like Python's <code>range</code> always does.)</em></p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · The while Loop</div>
+  </div>
+  <h2 class="section-title">Repeat until something changes</h2>
+  <div class="read-body">
+    <p>Sometimes you don't know exactly how many times you need to repeat &mdash; you just need to keep going <em>until</em> some condition flips. Think about a video game: how long should the main game loop run? Until the player dies. How many times? Nobody knows. It depends on the player.</p>
+    <p>That's where the <span class="key-term">while loop</span> comes in. A <code>while</code> loop says: <em>"keep doing this body for as long as the condition is true."</em> The instant the condition becomes false, the loop stops.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">Python &mdash; the classic game loop</span>
+<span class="code-comment"># Keep playing while the player is alive</span>
+<span class="code-keyword">while</span> player_alive == <span class="code-keyword">True</span>:
+    move_player()
+    update_enemies()
+    draw_screen()
+    check_for_damage()
+  </div>
+
+  <div class="read-body">
+    <p>Read it out loud: <em>"While the player is alive, move the player, update the enemies, draw the screen, check for damage &mdash; and then come back and check again."</em> The body keeps repeating. The moment a hit drops <code>player_alive</code> to <code>False</code>, the loop ends and the game shows "Game Over."</p>
+    <p>Compare that to a <code>for</code> loop: a <code>for</code> loop says <em>"do this exactly N times."</em> A <code>while</code> loop says <em>"do this until something changes."</em> Use whichever one matches the question you're really asking.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">🔢 Use <code>for</code> when…</div>
+      <div class="compare-card-headline">You know the count up front</div>
+      <ul>
+        <li>"Send a reminder to all 30 students."</li>
+        <li>"Print every item in the shopping cart."</li>
+        <li>"Repeat the chorus 4 times."</li>
+        <li>"Walk through every pixel on the screen."</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">⏳ Use <code>while</code> when…</div>
+      <div class="compare-card-headline">You don't know how many tries it'll take</div>
+      <ul>
+        <li>"Keep asking until the user types a real password."</li>
+        <li>"Keep playing while the character has health."</li>
+        <li>"Keep flipping the coin until you get heads."</li>
+        <li>"Keep reading the file until you reach the end."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's an everyday <code>while</code> example you've probably already lived through &mdash; guessing a number:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">Python &mdash; a guess-the-number game</span>
+secret = <span class="code-num">7</span>
+guess = <span class="code-num">0</span>
+<span class="code-keyword">while</span> guess != secret:
+    guess = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Pick a number 1-10: "</span>))
+print(<span class="code-string">"You got it!"</span>)
+  </div>
+
+  <div class="read-body">
+    <p>Could be done in one guess. Could be done in nine. The <code>while</code> loop doesn't care &mdash; it keeps asking until the condition <code>guess != secret</code> is no longer true. The flexibility is the whole point.</p>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Every microwave is running a <code>while</code> loop right now. The body says <em>"heat the food and decrement the timer."</em> The condition says <em>"while time_left &gt; 0."</em> When the timer hits zero, the loop ends and you hear that familiar beep.</p>
+      <p>Traffic lights, elevators, washing machines, and the climate controls in your car &mdash; all of them are <code>while</code> loops dressed up in plastic and metal.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Look at the <strong>guess-the-number</strong> code above. What would happen if the player only ever typed numbers that aren't 7? The loop would keep asking <em>forever</em>. The condition never flips.</p>
+      <p>That's not a bug in the code &mdash; it's a property of how <code>while</code> loops work. They trust you to eventually make the condition false. When you don't, things go very wrong, very fast. That's the topic of the next section.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · When Loops Go Wrong</div>
+  </div>
+  <h2 class="section-title">The two classic loop bugs</h2>
+  <div class="read-body">
+    <p>Loops are the most useful tool in programming, and they are also the most likely place for things to go embarrassingly wrong. Almost every loop bug a beginner writes falls into one of two categories: <strong>infinite loops</strong> and <strong>off-by-one errors</strong>. Knowing them on sight will save you hours of head-scratching.</p>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; font-weight:700; color:var(--binary-blue); margin: 28px 0 6px;">Bug 1 &mdash; The Infinite Loop ♾️</h3>
+  <div class="read-body">
+    <p>An <span class="key-term">infinite loop</span> is a loop whose stop condition <em>never</em> becomes false. The body just keeps running, and running, and running. Your program freezes. Your fan kicks on. Eventually you have to slam the close button.</p>
+    <p>The single most common cause? <strong>Forgetting to update the loop variable.</strong> Look at this:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">⚠ Buggy code &mdash; do not run!</span>
+counter = <span class="code-num">0</span>
+<span class="code-keyword">while</span> counter &lt; <span class="code-num">5</span>:
+    print(<span class="code-string">"Counting…"</span>)
+    <span class="code-comment"># OOPS: we forgot to do counter = counter + 1</span>
+  </div>
+
+  <div class="read-body">
+    <p>What goes wrong? <code>counter</code> starts at <code>0</code>. The loop checks <code>0 &lt; 5</code> &mdash; true &mdash; runs the body, comes back, checks <code>0 &lt; 5</code> again &mdash; still true &mdash; and again, and again, and again. The variable never changes, so the condition never flips. <code>"Counting…"</code> prints forever.</p>
+    <p>The fix is one tiny line: add <code>counter = counter + 1</code> inside the loop body. That single act of <span class="key-term">incrementing</span> the loop variable is what gives the loop a chance to end. <strong>Every <code>while</code> loop you write should have a moment where the loop variable changes &mdash; otherwise you're writing an infinite loop on purpose.</strong></p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;">
+      <!-- Infinite loop circle -->
+      <circle cx="300" cy="90" r="60" fill="none" stroke="#ef4444" stroke-width="4" stroke-dasharray="8,4"/>
+      <text x="300" y="80" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="16" font-weight="800" fill="#b91c1c">counter = 0</text>
+      <text x="300" y="105" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#b91c1c">never changes!</text>
+      <!-- Arrow forming loop -->
+      <path d="M 360 90 Q 380 140 300 160" fill="none" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow-r)"/>
+      <path d="M 240 90 Q 220 40 300 20" fill="none" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow-r)"/>
+      <defs>
+        <marker id="arrow-r" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="#ef4444"/>
+        </marker>
+      </defs>
+      <text x="50" y="30" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#b91c1c">♾️ INFINITE</text>
+      <text x="500" y="170" text-anchor="end" font-family="Wix Madefor Text, sans-serif" font-size="11" font-style="italic" fill="#6b7280">condition is always true → loop never exits</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">⚠️ Watch Out</div>
+    <div class="callout-body">
+      <p>If you ever run a Python program and the prompt seems "stuck" with no output (or the same line printing endlessly), you've probably written an infinite loop. <strong>Press Ctrl + C</strong> in the terminal to stop it. No shame &mdash; every programmer alive has done this at least once. The trick is being able to recognize the bug, not avoid it forever.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; font-weight:700; color:var(--binary-blue); margin: 32px 0 6px;">Bug 2 &mdash; The Off-By-One Error 🐛</h3>
+  <div class="read-body">
+    <p>An <span class="key-term">off-by-one error</span> is when your loop runs <em>one more</em> or <em>one fewer</em> times than you actually wanted. It doesn't crash. It doesn't freeze. It just gives you the wrong answer &mdash; quietly &mdash; and you spend forty minutes wondering why your scoreboard shows nine players instead of ten.</p>
+    <p>This bug is so famous that it has its own joke: <em>"There are only two hard problems in computer science: cache invalidation, and naming things, and off-by-one errors."</em> (Yes, the joke itself is off by one.)</p>
+    <p>Here's a classic example. You want to print the numbers 1 through 10. You write:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">⚠ Looks right… but it's not</span>
+<span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-num">10</span>):
+    print(i)
+  </div>
+
+  <div class="read-body">
+    <p>What does this actually print? <strong><code>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</code></strong>. Ten numbers &mdash; but they're <em>off by one</em> from what you wanted. You said "1 through 10" and got "0 through 9." The fix:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">✓ Correct</span>
+<span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-num">1</span>, <span class="code-num">11</span>):
+    print(i)
+  </div>
+
+  <div class="read-body">
+    <p>Yes, <strong>11</strong> &mdash; not 10. Python's <code>range(start, end)</code> includes <code>start</code> but stops <em>before</em> <code>end</code>. That tiny rule is the source of probably half the off-by-one bugs ever written. Once you've internalized it, you'll catch the bug instantly. Until then, expect to write it accidentally a few times. Everyone does.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The Y2K bug, the Mars Climate Orbiter crash, NASA's Genesis probe parachute failure, and several real-world banking errors have all included off-by-one mistakes inside loops. A single missed "+1" can cost millions of dollars and entire space missions. Loops are powerful precisely <em>because</em> they're so unforgiving &mdash; one wrong number, repeated thousands of times, becomes thousands of wrong numbers.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Loops at Scale</div>
+  </div>
+  <h2 class="section-title">When a loop runs a billion times, it changes the world</h2>
+  <div class="read-body">
+    <p>So far we've talked about loops that run five times, or ten, or a few hundred. But the real reason loops matter &mdash; the reason you genuinely need to understand them &mdash; is because the apps you use every day are loops running on a scale your brain can barely picture.</p>
+    <p>Welcome to the idea of <span class="key-term">scalability</span>: writing one piece of code that can handle <em>more</em> data without you having to rewrite it. A loop is the fundamental scalability move. The same five-line loop that handled 10 students can handle 10,000 students &mdash; or 10 million users &mdash; without changing a thing. Just give it more inputs.</p>
+    <p>Here's where you've been quietly trusting loops to run your day:</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head">
+        <span style="font-size:22px;">📱</span>
+        <strong>TikTok / Instagram Reels &mdash; The Recommendation Feed</strong>
+      </div>
+      <div class="platform-card-body">
+        Your "For You" page is a loop. The body says: <em>"score this video for how likely THIS user is to watch it, then move to the next."</em> The loop runs over millions of candidate videos &mdash; for billions of users &mdash; every minute. Without that loop, there is no feed.
+      </div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head">
+        <span style="font-size:22px;">🎥</span>
+        <strong>YouTube Recommendations</strong>
+      </div>
+      <div class="platform-card-body">
+        Same idea. A loop walks every video in your watch history, every channel you follow, every comment you left, and uses that to score what you might watch next. Then another loop ranks the candidates. Loops inside loops, all the way down.
+      </div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head">
+        <span style="font-size:22px;">🔍</span>
+        <strong>Google Search</strong>
+      </div>
+      <div class="platform-card-body">
+        Type three words into Google, hit Enter. Behind the scenes a loop sweeps through an index of <em>hundreds of billions</em> of web pages, scoring each one for how well it matches your query. The whole process takes about a quarter of a second.
+      </div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <span style="font-size:22px;">🤖</span>
+        <strong>AI Training (ChatGPT, image generators, your camera's photo "magic")</strong>
+      </div>
+      <div class="platform-card-body">
+        An AI model "learns" by running a training loop millions or billions of times. Each iteration the loop says: <em>"make a guess, see how wrong it was, nudge the model a tiny bit closer to right."</em> The model that writes essays or makes art is just the result of an <em>enormous</em> loop.
+      </div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head">
+        <span style="font-size:22px;">🌍</span>
+        <strong>Online games &mdash; the world simulation</strong>
+      </div>
+      <div class="platform-card-body">
+        Every multiplayer game runs a "tick" loop on its servers, often 60 times per second. The body updates every player's position, every projectile, every door. When you and a friend both see the same explosion, that's the same loop iteration on a server somewhere drawing the same outcome for both of you.
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>None of these would be possible if a programmer had to write the steps once for each input. Imagine writing the YouTube ranking code <em>per video</em> &mdash; you'd never finish line one before another billion videos got uploaded. The loop is what makes "the entire internet" a workable problem.</p>
+    <p>That power has a flip side worth thinking about. When a recommendation loop runs across billions of items and decides what you see, the <em>person who wrote the loop</em> is making a choice that shapes the lives of billions. A small bias inside that loop body &mdash; an extra weight on one type of content, a missing check &mdash; gets repeated billions of times. The loop multiplies the choice. <strong>That's why programmers and the people who employ them are starting to be held responsible for what their loops do at scale.</strong></p>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>In 2023, several countries (including the EU and parts of the US) began passing laws that require companies to <strong>explain</strong> how their recommendation loops work and let users turn them off. Why? Because a loop running over a billion users isn't a "neutral" piece of code anymore &mdash; it's a force that shapes elections, mental health, and what entire generations think is true. Understanding loops isn't just a programming skill anymore; it's a citizenship skill.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary &mdash; Week 24</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Loop</div>
+      <div class="vocab-def">A section of code that runs more than once, repeating its body until a stop condition is reached.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Iteration</div>
+      <div class="vocab-def">A single trip through the body of a loop. Five iterations means the body ran five times.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">for loop</div>
+      <div class="vocab-def">A loop that runs a known number of times, walking through values like <code>range(N)</code> or items in a list.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">while loop</div>
+      <div class="vocab-def">A loop that keeps repeating as long as a condition is true and stops the moment the condition becomes false.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Infinite loop</div>
+      <div class="vocab-def">A loop whose stop condition never becomes false, so it runs forever and freezes the program.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Counter (loop variable)</div>
+      <div class="vocab-def">The variable a loop uses to keep track of how many times it has run, like <code>count</code> or <code>i</code>.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Increment</div>
+      <div class="vocab-def">To add 1 (or some amount) to a variable, usually a loop counter, so the loop can eventually end.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Scalability</div>
+      <div class="vocab-def">The property of code that handles bigger and bigger inputs without being rewritten. Loops are the simplest way to write scalable code.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Loops are everywhere in your day. Find one in yours.</div>
+    <p>Pick <strong>one</strong> thing in your daily life that's like a loop &mdash; practicing piano scales, walking laps at PE, scrolling a feed, brushing every tooth. Then write 4&ndash;6 sentences answering:</p>
+    <ul>
+      <li>What's the <strong>"loop body"</strong> &mdash; the thing that repeats each time?</li>
+      <li>What's the <strong>"stop condition"</strong> &mdash; when do you finally stop?</li>
+      <li>Could a computer do this faster &mdash; and what would be lost if it did?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 25</strong>, you'll learn <strong>functions</strong> &mdash; reusable mini-programs you can call by name. Functions are how programmers stay sane when their code gets long: write a thing once, use it forever. Once you have functions <em>and</em> loops together, you can build basically anything.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Loop Counter Visualizer ==========
+(function() {
+  const nInput = document.getElementById('loop-n-input');
+  const status = document.getElementById('loop-status');
+  const lines = document.querySelectorAll('.tracer-line');
+  const varN = document.getElementById('loop-var-n');
+  const varCount = document.getElementById('loop-var-count');
+  const outputPanel = document.getElementById('loop-output');
+  const outputEmpty = document.getElementById('loop-output-empty');
+  const stepBtn = document.getElementById('loop-step');
+  const runBtn = document.getElementById('loop-run');
+  const stopBtn = document.getElementById('loop-stop');
+  const resetBtn = document.getElementById('loop-reset');
+  const indicator = document.getElementById('iter-indicator');
+  if (!nInput || !lines.length) return;
+
+  // State machine:
+  //   phase = 'idle'    -> haven't started
+  //   phase = 'check'   -> about to evaluate the FOR condition (line 1)
+  //   phase = 'body'    -> about to run PRINT (line 2)
+  //   phase = 'done'    -> loop has finished
+  let phase = 'idle';
+  let N = 5;
+  let count = 0;
+  let isRunning = false;
+  let runTimer = null;
+
+  function pulse(el) {
+    el.classList.add('updated');
+    setTimeout(() => el.classList.remove('updated'), 600);
+  }
+
+  function pulseIndicator() {
+    indicator.classList.add('pulsing');
+    setTimeout(() => indicator.classList.remove('pulsing'), 500);
+  }
+
+  function highlightLine(idx) {
+    lines.forEach(l => l.classList.remove('active'));
+    if (idx >= 0 && idx < lines.length) {
+      lines[idx].classList.add('active');
+    }
+  }
+
+  function appendOutputLine(text) {
+    if (outputEmpty && outputEmpty.parentNode) outputEmpty.remove();
+    // Mark previous lines as no longer fresh
+    outputPanel.querySelectorAll('.loop-output-line.fresh').forEach(l => l.classList.remove('fresh'));
+    const div = document.createElement('div');
+    div.className = 'loop-output-line fresh';
+    div.textContent = text;
+    outputPanel.appendChild(div);
+    outputPanel.scrollTop = outputPanel.scrollHeight;
+  }
+
+  function clearOutput() {
+    outputPanel.querySelectorAll('.loop-output-line').forEach(l => l.remove());
+    if (!outputPanel.querySelector('#loop-output-empty')) {
+      const empty = document.createElement('div');
+      empty.className = 'loop-output-empty';
+      empty.id = 'loop-output-empty';
+      empty.textContent = '(nothing printed yet)';
+      outputPanel.appendChild(empty);
+    }
+  }
+
+  function setIndicator(text, mode) {
+    indicator.textContent = text;
+    indicator.classList.remove('idle', 'pulsing');
+    if (mode === 'idle') indicator.classList.add('idle');
+  }
+
+  function readN() {
+    let v = parseInt(nInput.value, 10);
+    if (isNaN(v) || v < 1) v = 1;
+    if (v > 10) v = 10;
+    nInput.value = v;
+    return v;
+  }
+
+  function executeStep() {
+    if (phase === 'done') return;
+
+    if (phase === 'idle') {
+      // Initialize
+      N = readN();
+      count = 0;
+      varN.textContent = N; pulse(varN);
+      varCount.textContent = '—';
+      highlightLine(0);
+      status.innerHTML = '<strong>Setting up.</strong> N = ' + N + '. The counter <code>count</code> hasn\'t taken its first value yet.';
+      phase = 'check';
+      setIndicator('Starting…', 'idle');
+      return;
+    }
+
+    if (phase === 'check') {
+      // Move count forward, check the condition
+      count = count + 1;
+      if (count > N) {
+        // Loop finished
+        highlightLine(3);
+        varCount.textContent = count - 1;
+        status.innerHTML = '<strong>Loop ends.</strong> count would be ' + count + ', which is past N (' + N + '). The FOR exits.';
+        phase = 'done';
+        setIndicator('Done ✓', 'idle');
+        return;
+      }
+      // Still in range
+      highlightLine(1);
+      varCount.textContent = count; pulse(varCount);
+      status.innerHTML = '<strong>FOR condition:</strong> count = ' + count + ', and ' + count + ' &le; ' + N + '. <span style="color:#3d6522;">Enter the body.</span>';
+      setIndicator('Iteration ' + count + ' of ' + N);
+      pulseIndicator();
+      phase = 'body';
+      return;
+    }
+
+    if (phase === 'body') {
+      highlightLine(2);
+      const text = 'Hello! ' + count;
+      appendOutputLine(text);
+      status.innerHTML = '<strong>PRINT runs.</strong> Output line added: <code>' + text + '</code>. Now back to the FOR check…';
+      phase = 'check';
+      return;
+    }
+  }
+
+  function reset(silent) {
+    stopRun();
+    lines.forEach(l => l.classList.remove('active', 'skipped'));
+    phase = 'idle';
+    N = readN();
+    count = 0;
+    varN.textContent = '—';
+    varCount.textContent = '—';
+    clearOutput();
+    setIndicator('Idle', 'idle');
+    if (!silent) {
+      status.innerHTML = 'Ready. Pick a number and click <strong>Step</strong> or <strong>Run All</strong>.';
+    }
+    runBtn.style.display = '';
+    stopBtn.style.display = 'none';
+  }
+
+  function startRun() {
+    if (isRunning) return;
+    if (phase === 'done') reset(true);
+    isRunning = true;
+    runBtn.style.display = 'none';
+    stopBtn.style.display = '';
+    function tick() {
+      if (!isRunning) return;
+      executeStep();
+      if (phase === 'done') { stopRun(); return; }
+      runTimer = setTimeout(tick, 600);
+    }
+    tick();
+  }
+
+  function stopRun() {
+    isRunning = false;
+    if (runTimer) { clearTimeout(runTimer); runTimer = null; }
+    runBtn.style.display = '';
+    stopBtn.style.display = 'none';
+  }
+
+  stepBtn.addEventListener('click', () => {
+    stopRun();
+    if (phase === 'done') reset(true);
+    executeStep();
+  });
+  runBtn.addEventListener('click', startRun);
+  stopBtn.addEventListener('click', stopRun);
+  resetBtn.addEventListener('click', () => reset(false));
+  nInput.addEventListener('input', () => reset(false));
+  nInput.addEventListener('change', () => reset(false));
+})();
+</script>
+
+</body>
+</html>

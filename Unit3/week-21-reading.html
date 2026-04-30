@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 21 — Python Basics: Data Types &amp; Variables | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-num { color: #F78F1E; }
+.code-block .code-bool { color: var(--gamer-green); font-weight: 600; }
+.code-block .code-fn { color: #A53E97; font-weight: 600; }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+.reflection-hero code {
+  background: rgba(0,0,0,0.25);
+  color: #fff7ed;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 13.5px;
+}
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Sortable list */
+.sortable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sortable-item {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid var(--gateway-gold);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.25s, border-color 0.25s;
+  font-size: 14.5px;
+  color: var(--binary-blue);
+}
+.sortable-item:hover { box-shadow: 0 4px 12px rgba(199,146,44,0.25); }
+.sortable-item.dragging { opacity: 0.4; cursor: grabbing; }
+.sortable-item.drag-over { border-color: var(--bitstream-blue); transform: scale(1.02); }
+.sortable-handle {
+  color: var(--gateway-gold);
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -2px;
+}
+.sortable-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gateway-gold);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.25s;
+}
+.sortable-text { flex: 1; line-height: 1.4; }
+.sortable-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.sortable-arrow {
+  width: 28px;
+  height: 22px;
+  border: none;
+  background: rgba(199,146,44,0.2);
+  color: var(--gateway-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  transition: background 0.15s, color 0.15s;
+}
+.sortable-arrow:hover:not(:disabled) { background: var(--gateway-gold); color: white; }
+.sortable-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.sortable-item.correct {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: var(--gamer-green);
+}
+.sortable-item.correct .sortable-num { background: var(--gamer-green); }
+.sortable-item.correct .sortable-handle { color: var(--gamer-green); }
+.sortable-item.incorrect {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-color: #ef4444;
+}
+.sortable-item.incorrect .sortable-num { background: #ef4444; }
+.sortable-item.incorrect .sortable-handle { color: #ef4444; }
+
+/* Tracer */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-inputs {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-inputs .tracer-panel-label { color: #6b7280; }
+.tracer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tracer-input-row:last-child { margin-bottom: 0; }
+.tracer-input-row label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  color: var(--binary-blue);
+  width: 18px;
+  font-size: 14px;
+}
+.tracer-input-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+}
+.tracer-input-row input:focus { outline: 2px solid var(--bitstream-blue); border-color: var(--bitstream-blue); }
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 44px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+.tracer-output {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f4128;
+  text-align: center;
+  display: none;
+  animation: outputPop 0.4s ease;
+}
+.tracer-output.show { display: block; }
+@keyframes outputPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== GUESS-TYPE WIDGET ========== */
+.gt-stage {
+  background: linear-gradient(135deg, #0E1C42, #1a2a5e);
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin: 8px 0 16px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.gt-prompt {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.gt-value {
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff7ed;
+  background: rgba(255,255,255,0.05);
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 10px;
+  border: 2px solid rgba(199,146,44,0.5);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.gt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 4px 0 6px;
+}
+.gt-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 16px;
+  border: 2px solid #d1d5db;
+  background: white;
+  color: var(--binary-blue);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.gt-btn small {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 11.5px;
+  color: #6b7280;
+  font-weight: 500;
+}
+.gt-btn:hover:not(:disabled) {
+  border-color: var(--bitstream-blue);
+  background: #eff6ff;
+  transform: translateY(-1px);
+}
+.gt-btn.right {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: var(--gamer-green);
+  color: #1f4128;
+}
+.gt-btn.right small { color: #3d6522; }
+.gt-btn.wrong {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-color: #ef4444;
+  color: #7f1d1d;
+}
+.gt-btn.wrong small { color: #991b1b; }
+.gt-btn.faded { opacity: 0.45; }
+.gt-btn:disabled { cursor: default; }
+.gt-scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 12px;
+}
+.gt-score-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+.gt-score-value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--binary-blue);
+}
+.gt-progress {
+  flex: 1;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 6px;
+}
+.gt-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bitstream-blue), var(--gamer-green));
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+  .gt-grid { grid-template-columns: 1fr; }
+  .gt-value { font-size: 28px; padding: 8px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 21
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 21: Python Basics — Data Types &amp; Variables</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 21 • READING</div>
+  <h1 class="lesson-title">Python Basics: Data Types &amp; Variables</h1>
+  <p class="lesson-description">This week, you stop sketching algorithms and start writing real code. Python is the friendliest first programming language out there — and by the end of this lesson, you'll know how to store information in <em>variables</em>, recognize the four core <em>data types</em>, and chat with a user using <code>print()</code> and <code>input()</code>.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Explain why Python</strong> is one of the most popular programming languages in the world — and where its goofy name actually comes from.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Create variables</strong> in Python using the <code>=</code> assignment operator and follow standard naming rules (lowercase_with_underscores).</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Identify the four core data types</strong> — <em>int</em>, <em>float</em>, <em>string</em>, and <em>bool</em> — and pick the right one for a piece of real-world information.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Use <code>print()</code>, <code>input()</code>, and <code>type()</code></strong> to display messages, ask the user questions, and inspect what kind of value Python is actually working with.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · Why Python?</div>
+  </div>
+  <h2 class="section-title">A friendly language that runs the world</h2>
+  <div class="read-body">
+    <p>Walk into the engineering building at Google, NASA, Netflix, Instagram, or Spotify and ask the people typing furiously at their keyboards what language they're writing in. A huge slice of them will answer the same thing: <span class="key-term">Python</span>. It powers Instagram's back end. It steers some of NASA's rovers. Netflix uses it to figure out what show you'll binge next. Even the AI tools you've been hearing about — they're mostly trained and run with Python.</p>
+    <p>So why does a language that beginners learn in middle school also run billion-dollar companies? Because Python was designed with one rule baked in: <strong>code is read more often than it is written</strong>. The point of Python is to be easy on human eyes. Compare these two ways of asking the same question — printing the word <em>Hello</em> to the screen:</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: #ef4444;">
+      <div class="compare-card-label" style="color: #ef4444;">😵 Older Language (C)</div>
+      <div class="compare-card-headline">Eight lines of ceremony</div>
+      <div class="code-block" style="margin: 8px 0 0; font-size: 12.5px; padding: 14px 16px;">
+<span class="code-keyword">#include</span> &lt;stdio.h&gt;
+<span class="code-keyword">int</span> <span class="code-fn">main</span>() {
+    <span class="code-fn">printf</span>(<span class="code-string">"Hello\n"</span>);
+    <span class="code-keyword">return</span> <span class="code-num">0</span>;
+}
+      </div>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--gamer-green);">
+      <div class="compare-card-label" style="color: #3d6522;">🐍 Python</div>
+      <div class="compare-card-headline">One line. Done.</div>
+      <div class="code-block" style="margin: 8px 0 0; font-size: 12.5px; padding: 14px 16px;">
+<span class="code-fn">print</span>(<span class="code-string">"Hello"</span>)
+      </div>
+      <p style="margin-top: 10px; color:#4b5563; font-size: 13.5px; line-height: 1.5;">No header files, no <code>main</code> function, no semicolons. Just say what you want — Python figures out the rest.</p>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>That readability is no accident. Python was created in 1991 by a Dutch programmer named Guido van Rossum, who wanted a language that felt almost like English. He called it the language for everyone — <em>kids, scientists, and grandmas alike</em> — and over thirty years later, that promise still holds.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Python is <strong>not named after the snake</strong>. Guido van Rossum was a huge fan of the British comedy show <em>Monty Python's Flying Circus</em>, and he named his new language after the show because he wanted something <em>"short, unique, and slightly mysterious."</em> The official Python documentation is sprinkled with Monty Python jokes to this day — including references to "spam," "eggs," and the Spanish Inquisition (which nobody expects).</p>
+      <p>The snake-themed logos came later, after the name stuck. Now most Python tutorials use a snake mascot, but the language itself? Pure comedy nerd.</p>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's the other reason Python runs the world: it's <strong>free</strong>. Anyone can download it. Anyone can use it. And there's a giant library of pre-written tools — millions of them — that other Python programmers have shared. Want to make a website? There's a Python tool for that. Want to make art with code? Yep. Want to teach a computer to recognize cats in photos? Three lines of Python and a lot of training data.</p>
+    <p>Throughout this unit, every example will be in Python. Don't worry — Python's whole job is to look obvious. Read along, and you'll be writing real code by the end of this lesson.</p>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>The Mars rovers <strong>Perseverance</strong> and <strong>Curiosity</strong> use Python in parts of their software. When NASA scientists in California want to plan tomorrow's drive across Mars — what to photograph, where to drill, how far to travel — they often write Python scripts to test the plan first.</p>
+      <p>The same language you're about to learn is being used to drive a robot on another planet. No pressure.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Variables — Labeled Boxes for Data</div>
+  </div>
+  <h2 class="section-title">A variable is a name with a value attached</h2>
+  <div class="read-body">
+    <p>Imagine your room has a shelf full of clear plastic boxes. Each box can hold one thing — a sticker, a coin, a sandwich. To find anything later, you slap a sticky label on the front: <strong>TOOTHBRUSH</strong>, <strong>HOMEWORK</strong>, <strong>BIRTHDAY MONEY</strong>. The label is how you find the box. The contents can change at any time — you might spend the birthday money next week — but as long as the label says <strong>BIRTHDAY MONEY</strong>, you know which box to check.</p>
+    <p>That's exactly what a <span class="key-term">variable</span> is in programming. A variable is a labeled box. The label is its <strong>name</strong>. Whatever's stored inside is its <strong>value</strong>. To put something into the box, you use the magic <span class="key-term">assignment operator</span> — a single equals sign:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">📝 Python — your first three variables</span>
+<span class="code-comment"># Each line creates a new variable</span>
+player_name = <span class="code-string">"Riley"</span>
+player_score = <span class="code-num">0</span>
+is_game_over = <span class="code-bool">False</span>
+
+<span class="code-comment"># Now let's look inside each box</span>
+<span class="code-fn">print</span>(player_name)      <span class="code-comment"># → Riley</span>
+<span class="code-fn">print</span>(player_score)     <span class="code-comment"># → 0</span>
+<span class="code-fn">print</span>(is_game_over)     <span class="code-comment"># → False</span>
+  </div>
+
+  <div class="read-body">
+    <p>Read the <code>=</code> in your head not as <em>"equals"</em> but as <em>"gets the value of"</em> or <em>"is set to."</em> The line <code>player_score = 0</code> says: <em>"the box labeled <strong>player_score</strong> gets the value 0."</em></p>
+    <p>It's a one-way arrow. The <strong>name on the left</strong> gets the <strong>value on the right</strong>. Doing it backwards (<code>0 = player_score</code>) makes Python angry. The label has to be on the left.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <!-- Box 1 -->
+      <rect x="30" y="50" width="160" height="120" rx="14" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2.5"/>
+      <rect x="40" y="40" width="140" height="20" rx="4" fill="#55C8E8"/>
+      <text x="110" y="55" text-anchor="middle" font-family="Consolas,monospace" font-size="11" font-weight="700" fill="white">player_name</text>
+      <text x="110" y="120" text-anchor="middle" font-family="Consolas,monospace" font-size="22" font-weight="700" fill="#0E5568">"Riley"</text>
+      <text x="110" y="155" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">a string</text>
+
+      <!-- Box 2 -->
+      <rect x="220" y="50" width="160" height="120" rx="14" fill="#C7922C" opacity="0.18" stroke="#C7922C" stroke-width="2.5"/>
+      <rect x="230" y="40" width="140" height="20" rx="4" fill="#C7922C"/>
+      <text x="300" y="55" text-anchor="middle" font-family="Consolas,monospace" font-size="11" font-weight="700" fill="white">player_score</text>
+      <text x="300" y="125" text-anchor="middle" font-family="Consolas,monospace" font-size="32" font-weight="700" fill="#8a6620">0</text>
+      <text x="300" y="155" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">an integer</text>
+
+      <!-- Box 3 -->
+      <rect x="410" y="50" width="160" height="120" rx="14" fill="#76C043" opacity="0.18" stroke="#76C043" stroke-width="2.5"/>
+      <rect x="420" y="40" width="140" height="20" rx="4" fill="#76C043"/>
+      <text x="490" y="55" text-anchor="middle" font-family="Consolas,monospace" font-size="11" font-weight="700" fill="#0E1C42">is_game_over</text>
+      <text x="490" y="125" text-anchor="middle" font-family="Consolas,monospace" font-size="22" font-weight="700" fill="#3d6522">False</text>
+      <text x="490" y="155" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">a boolean</text>
+
+      <text x="300" y="200" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#6b7280">Three labeled boxes — three variables. Each box holds a different kind of data.</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>You can also <strong>change</strong> what's inside a box later. The label stays. The contents update. That's why they're called <em>variables</em> — their values can vary over time:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🔁 Variables can change</span>
+player_score = <span class="code-num">0</span>          <span class="code-comment"># Start of game</span>
+<span class="code-fn">print</span>(player_score)        <span class="code-comment"># → 0</span>
+
+player_score = <span class="code-num">10</span>         <span class="code-comment"># Player scored!</span>
+<span class="code-fn">print</span>(player_score)        <span class="code-comment"># → 10</span>
+
+player_score = player_score + <span class="code-num">5</span>   <span class="code-comment"># Bonus points</span>
+<span class="code-fn">print</span>(player_score)        <span class="code-comment"># → 15</span>
+  </div>
+
+  <div class="read-body">
+    <p>Look closely at that last line: <code>player_score = player_score + 5</code>. To human eyes that looks confusing — how can a thing equal itself plus 5? But remember, the <code>=</code> isn't math. It's a one-way arrow. Python <strong>first</strong> calculates the right side (whatever's currently in the box, plus 5 → that's 15), and <strong>then</strong> stores that new total back into the box. The result: the score went up by 5.</p>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">Naming rules — the unwritten contract</h3>
+  <div class="read-body">
+    <p>Python doesn't care much what you name your variables, but other humans (including future-you) absolutely do. The whole Python community agrees on a style called <strong>snake_case</strong>: all lowercase, with underscores between words. Here's the contract:</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gamer-green);">✅ Good Names</div>
+      <div class="trait-body">
+        <code>player_name</code><br>
+        <code>high_score</code><br>
+        <code>is_logged_in</code><br>
+        <code>total_pizzas</code>
+        <p style="margin-top:8px; color:#6b7280; font-size: 13px;">Lowercase. Underscores between words. Describes the contents.</p>
+      </div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: #ef4444;">❌ Bad Names</div>
+      <div class="trait-body">
+        <code>x</code> &nbsp;<span style="color:#9ca3af;">— what does it hold?</span><br>
+        <code>PlayerName</code> &nbsp;<span style="color:#9ca3af;">— wrong case</span><br>
+        <code>2nd_score</code> &nbsp;<span style="color:#9ca3af;">— starts with digit</span><br>
+        <code>my variable</code> &nbsp;<span style="color:#9ca3af;">— spaces</span>
+        <p style="margin-top:8px; color:#6b7280; font-size: 13px;">Vague, mixed-case, or against Python's rules.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>The hard rules — the ones Python won't even let you break:</p>
+    <ul style="margin: 8px 0 16px 22px; line-height: 1.85;">
+      <li>A variable name <strong>cannot start with a number</strong>. <code>player_1</code> is fine; <code>1_player</code> is not.</li>
+      <li>No <strong>spaces</strong> ever. Use underscores.</li>
+      <li>You can use <strong>letters, digits, and underscores</strong> — nothing else (so no <code>!</code>, no <code>$</code>, no emoji).</li>
+      <li>Don't reuse <strong>reserved words</strong> like <code>print</code>, <code>if</code>, <code>True</code>. Python already uses those for itself.</li>
+    </ul>
+    <p>And the soft rule — the one nobody enforces but everyone follows: <strong>names should describe the contents</strong>. Six months from now, when you reread your own code, <code>x = 47</code> tells you nothing. <code>students_in_class = 47</code> tells you everything.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Which of these are <em>legal</em> Python variable names, and which would Python reject? Read each one and decide before peeking.</p>
+      <ol style="margin: 6px 0 0 20px; line-height: 1.85; font-family: 'Consolas', monospace; font-size: 14px;">
+        <li>favorite_color</li>
+        <li>3_strikes</li>
+        <li>HighScore</li>
+        <li>my-name</li>
+        <li>level2</li>
+        <li>print</li>
+      </ol>
+      <p style="margin-top:10px;"><em>(Hints: 1 and 5 follow every rule. 2 starts with a number. 3 is legal but breaks community style. 4 has a hyphen. 6 is reserved.)</em></p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · The Four Core Data Types</div>
+  </div>
+  <h2 class="section-title">Numbers, decimals, words, and yes-or-no</h2>
+  <div class="read-body">
+    <p>Every value in Python belongs to a <span class="key-term">data type</span>. Why does that matter? Because Python treats different types differently. You can do arithmetic on numbers — but not on words. You can glue two strings together with <code>+</code> — but the result is the two strings stuck side-by-side, not added up. Knowing the type tells you what moves are legal.</p>
+    <p>For now, the four types you'll meet over and over again are:</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <rect x="20" y="40" width="130" height="120" rx="14" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="85" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E5568">INT</text>
+      <text x="85" y="108" text-anchor="middle" font-size="32">🔢</text>
+      <text x="85" y="135" text-anchor="middle" font-family="Consolas,monospace" font-size="12" font-weight="700" fill="#0E1C42">42</text>
+      <text x="85" y="152" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">whole numbers</text>
+
+      <rect x="170" y="40" width="130" height="120" rx="14" fill="#F78F1E" opacity="0.18" stroke="#F78F1E" stroke-width="2"/>
+      <text x="235" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#b8590a">FLOAT</text>
+      <text x="235" y="108" text-anchor="middle" font-size="32">📊</text>
+      <text x="235" y="135" text-anchor="middle" font-family="Consolas,monospace" font-size="12" font-weight="700" fill="#0E1C42">3.14</text>
+      <text x="235" y="152" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">decimals</text>
+
+      <rect x="320" y="40" width="130" height="120" rx="14" fill="#67308F" opacity="0.18" stroke="#67308F" stroke-width="2"/>
+      <text x="385" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#67308F">STRING</text>
+      <text x="385" y="108" text-anchor="middle" font-size="32">📝</text>
+      <text x="385" y="135" text-anchor="middle" font-family="Consolas,monospace" font-size="12" font-weight="700" fill="#0E1C42">"hello"</text>
+      <text x="385" y="152" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">text in quotes</text>
+
+      <rect x="470" y="40" width="115" height="120" rx="14" fill="#76C043" opacity="0.18" stroke="#76C043" stroke-width="2"/>
+      <text x="527" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">BOOL</text>
+      <text x="527" y="108" text-anchor="middle" font-size="32">✅</text>
+      <text x="527" y="135" text-anchor="middle" font-family="Consolas,monospace" font-size="12" font-weight="700" fill="#0E1C42">True</text>
+      <text x="527" y="152" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">yes / no</text>
+
+      <text x="300" y="190" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#6b7280">The four core Python data types you'll use this week</text>
+    </svg>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">🔢 Integers (<code>int</code>) — whole numbers</h3>
+  <div class="read-body">
+    <p>An <span class="key-term">integer</span> — or <code>int</code> for short — is a whole number. No decimals. No fractions. It can be positive, negative, or zero. Anything you'd normally count with on your fingers (and a few your fingers run out for) is an integer.</p>
+  </div>
+  <div class="code-block">
+<span class="code-label">🔢 Integers</span>
+age = <span class="code-num">12</span>
+high_score = <span class="code-num">9001</span>
+temperature = -<span class="code-num">5</span>
+lives_remaining = <span class="code-num">3</span>
+  </div>
+  <p style="color:#4b5563; font-size: 14.5px; margin: -8px 0 16px;">Use ints whenever you're <strong>counting things</strong> — players in a match, levels in a game, days until summer break.</p>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">📊 Floats (<code>float</code>) — numbers with a decimal point</h3>
+  <div class="read-body">
+    <p>A <span class="key-term">float</span> is a number with a decimal in it — short for "floating-point number," because the decimal can <em>float</em> anywhere along the number. Use floats for measurements, money, or anything where <em>halves</em> and <em>fractions</em> matter.</p>
+  </div>
+  <div class="code-block">
+<span class="code-label">📊 Floats</span>
+height_meters = <span class="code-num">1.52</span>
+pi = <span class="code-num">3.14159</span>
+price = <span class="code-num">9.99</span>
+two_point_zero = <span class="code-num">2.0</span>   <span class="code-comment"># Still a float! The .0 makes it one.</span>
+  </div>
+  <p style="color:#4b5563; font-size: 14.5px; margin: -8px 0 16px;">Watch out: <code>2</code> is an int, but <code>2.0</code> is a float. The decimal point — even <code>.0</code> — flips it.</p>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">📝 Strings (<code>str</code>) — text wrapped in quotes</h3>
+  <div class="read-body">
+    <p>A <span class="key-term">string</span> — written <code>str</code> in Python — is a sequence of characters: letters, digits, spaces, punctuation, even emoji. The way Python knows you mean text and not code is the <strong>quotes</strong>. Single (<code>'</code>) or double (<code>"</code>) — Python is happy with either, as long as the opening and closing match.</p>
+  </div>
+  <div class="code-block">
+<span class="code-label">📝 Strings</span>
+greeting = <span class="code-string">"Hello, world!"</span>
+favorite_food = <span class="code-string">'pizza'</span>
+empty = <span class="code-string">""</span>          <span class="code-comment"># Yes, an empty string is still a string.</span>
+phone = <span class="code-string">"555-1234"</span>   <span class="code-comment"># Numbers in quotes are strings, not ints!</span>
+  </div>
+  <p style="color:#4b5563; font-size: 14.5px; margin: -8px 0 16px;">That last line is a famous beginner trap: <code>"555-1234"</code> looks like a number, but the quotes make it a string. You can't do math on it.</p>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">✅ Booleans (<code>bool</code>) — yes or no, true or false</h3>
+  <div class="read-body">
+    <p>A <span class="key-term">boolean</span> — <code>bool</code> for short — is the simplest data type of them all. It can hold exactly two values: <code>True</code> or <code>False</code>. That's it. Booleans show up everywhere, because programs are constantly making yes/no decisions: <em>is the door locked? Is the player alive? Did the user click the button?</em></p>
+  </div>
+  <div class="code-block">
+<span class="code-label">✅ Booleans</span>
+is_logged_in = <span class="code-bool">True</span>
+game_over = <span class="code-bool">False</span>
+has_homework = <span class="code-bool">True</span>
+is_weekend = <span class="code-bool">False</span>
+  </div>
+  <p style="color:#4b5563; font-size: 14.5px; margin: -8px 0 16px;">Capital <strong>T</strong> and capital <strong>F</strong>! <code>true</code> and <code>false</code> (lowercase) are <em>not</em> the same in Python — they'll trigger an error. And no quotes — <code>"True"</code> with quotes is a string, not a bool.</p>
+
+  <!-- ========== INTERACTIVE WIDGET — GUESS THE TYPE ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🎯 Try It</div>
+    <div class="try-it-title">Guess the Type</div>
+    <p class="try-it-instructions">A Python literal value will appear in the box below. Click the button for the data type you think it is. Each click reveals why you were right (or wrong) — and your score updates at the bottom. Try to ace all eight!</p>
+
+    <div class="gt-stage">
+      <div class="gt-prompt" id="gt-prompt">Value 1 of 8</div>
+      <div class="gt-value" id="gt-value">42</div>
+    </div>
+
+    <div class="gt-grid">
+      <button class="gt-btn try-it-btn-int" data-type="int">int <small>whole number</small></button>
+      <button class="gt-btn try-it-btn-float" data-type="float">float <small>has a decimal</small></button>
+      <button class="gt-btn try-it-btn-string" data-type="string">string <small>in quotes</small></button>
+      <button class="gt-btn try-it-btn-bool" data-type="bool">bool <small>True or False</small></button>
+    </div>
+
+    <div class="try-it-feedback" id="gt-feedback"></div>
+
+    <div class="gt-scoreboard">
+      <span class="gt-score-label">Score</span>
+      <div class="gt-progress"><div class="gt-progress-fill" id="gt-progress"></div></div>
+      <span class="gt-score-value" id="gt-score">0 of 0</span>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="gt-next" disabled>Next Value →</button>
+      <button class="try-it-btn try-it-btn-secondary" id="gt-reset">↻ Reset</button>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Why would Python treat <code>42</code> and <code>"42"</code> differently? They look the same on the screen.</p>
+      <p>Here's a hint: imagine your phone. Your <em>house number</em> is a string ("12B"). Your <em>age</em> is an int (12). The phone never adds your age to your house number — that would be nonsense. Python keeps types separate so the computer never accidentally adds two things that shouldn't be added.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Talking with the User</div>
+  </div>
+  <h2 class="section-title">print() shows things. input() listens.</h2>
+  <div class="read-body">
+    <p>A program that doesn't talk to the user is just doing math in a closet. To turn code into something a human can interact with, you need two friends from Python's standard toolkit: <span class="key-term">print()</span> and <span class="key-term">input()</span>. They're the mouth and ears of every Python program you'll write this year.</p>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">📢 print() — show something on the screen</h3>
+  <div class="read-body">
+    <p>You've seen <code>print()</code> already. You hand it something — a string, a number, a variable — and it displays it on the screen. That's the whole job.</p>
+  </div>
+  <div class="code-block">
+<span class="code-label">📢 print() — output</span>
+<span class="code-fn">print</span>(<span class="code-string">"Welcome to Game Quest!"</span>)
+<span class="code-fn">print</span>(<span class="code-num">9001</span>)
+<span class="code-fn">print</span>(<span class="code-bool">True</span>)
+
+<span class="code-comment"># You can also print several things at once,</span>
+<span class="code-comment"># separated by commas — Python adds spaces for you.</span>
+score = <span class="code-num">15</span>
+<span class="code-fn">print</span>(<span class="code-string">"Your score is"</span>, score, <span class="code-string">"points!"</span>)
+<span class="code-comment"># → Your score is 15 points!</span>
+  </div>
+
+  <div class="read-body">
+    <p>One of <code>print()</code>'s superpowers is that you can hand it variables instead of literal values, and it'll show whatever's currently inside. So your messages stay <em>fresh</em> — they always reflect the latest data.</p>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">🎤 input() — ask the user a question</h3>
+  <div class="read-body">
+    <p>Where <code>print()</code> talks <em>to</em> the user, <code>input()</code> listens <em>for</em> the user. Call <code>input()</code>, and Python pauses your program — the cursor blinks on the screen — until the human types something and presses Enter. Whatever they typed becomes a string, which you almost always want to capture into a variable.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🎤 input() — get a value from the user</span>
+name = <span class="code-fn">input</span>(<span class="code-string">"What's your name? "</span>)
+<span class="code-fn">print</span>(<span class="code-string">"Hi there,"</span>, name, <span class="code-string">"— welcome aboard!"</span>)
+
+<span class="code-comment"># Sample run:</span>
+<span class="code-comment"># What's your name? Riley</span>
+<span class="code-comment"># Hi there, Riley — welcome aboard!</span>
+  </div>
+
+  <div class="read-body">
+    <p>Two important truths about <code>input()</code>:</p>
+    <ol style="margin: 8px 0 16px 22px; line-height: 1.85;">
+      <li>The <em>thing in the parentheses</em> is the <strong>prompt</strong> — the message Python shows the user before they type. Always end your prompt with a space, so the cursor doesn't sit right on top of the question mark.</li>
+      <li><code>input()</code> <strong>always returns a string</strong>. Even if the user types <code>12</code>, what your program receives is the string <code>"12"</code>. If you want a number, you have to convert it — and you'll learn how to do that in a couple of weeks.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The very first interactive Python program almost every learner writes — going back decades — is exactly the snippet above. It's so traditional that programmers have a name for any first program of any language: <strong>"Hello, World!"</strong> — coined in a 1972 Bell Labs textbook by Brian Kernighan, the same engineer who later co-wrote <em>The C Programming Language</em>.</p>
+      <p>Now you've written its descendant. Welcome to the club.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: var(--font-display); font-size: 19px; color: var(--binary-blue); margin: 24px 0 10px;">🧪 Putting it together — a tiny program</h3>
+  <div class="read-body">
+    <p>Here's what a five-line Python program looks like — using everything from this section. Read it slowly. You can already understand every line.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🧪 Mini-program: greet the user</span>
+<span class="code-comment"># Step 1 — say hello</span>
+<span class="code-fn">print</span>(<span class="code-string">"Welcome to Digital Discoveries!"</span>)
+
+<span class="code-comment"># Step 2 — ask a question and store the answer</span>
+favorite_color = <span class="code-fn">input</span>(<span class="code-string">"What's your favorite color? "</span>)
+
+<span class="code-comment"># Step 3 — respond using the answer</span>
+<span class="code-fn">print</span>(<span class="code-string">"Nice choice —"</span>, favorite_color, <span class="code-string">"is a great color."</span>)
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Predict before you peek:</strong> The program above runs. The user types <code>blue</code> when prompted. What three things does the screen show, in order?</p>
+      <p style="font-style: italic; color: #6b7280;">(Answer: <code>Welcome to Digital Discoveries!</code>, then the prompt <code>What's your favorite color?</code> followed by the user typing <code>blue</code>, then <code>Nice choice — blue is a great color.</code>)</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · The type() Detective</div>
+  </div>
+  <h2 class="section-title">When you're not sure what kind of value you have, just ask</h2>
+  <div class="read-body">
+    <p>You'll meet code where you're not 100% sure what type a variable is. Maybe you wrote it last week. Maybe a friend handed it to you. Maybe it came from <code>input()</code>. Whatever the reason, Python has a built-in detective named <span class="key-term">type()</span> that will tell you, on the spot, exactly what kind of value something is.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🔍 type() — Python's built-in detective</span>
+<span class="code-fn">print</span>(<span class="code-fn">type</span>(<span class="code-num">42</span>))           <span class="code-comment"># → &lt;class 'int'&gt;</span>
+<span class="code-fn">print</span>(<span class="code-fn">type</span>(<span class="code-num">3.14</span>))         <span class="code-comment"># → &lt;class 'float'&gt;</span>
+<span class="code-fn">print</span>(<span class="code-fn">type</span>(<span class="code-string">"hello"</span>))      <span class="code-comment"># → &lt;class 'str'&gt;</span>
+<span class="code-fn">print</span>(<span class="code-fn">type</span>(<span class="code-bool">True</span>))         <span class="code-comment"># → &lt;class 'bool'&gt;</span>
+
+<span class="code-comment"># It works on variables too:</span>
+score = <span class="code-num">100</span>
+<span class="code-fn">print</span>(<span class="code-fn">type</span>(score))        <span class="code-comment"># → &lt;class 'int'&gt;</span>
+  </div>
+
+  <div class="read-body">
+    <p>That weird-looking output — <code>&lt;class 'int'&gt;</code> — is just Python's chatty way of saying <em>"this belongs to the int family."</em> The word inside the quotes (<code>'int'</code>, <code>'float'</code>, <code>'str'</code>, <code>'bool'</code>) is the type's actual name.</p>
+    <p>The <code>type()</code> function is your debugging best friend. When something in your code isn't behaving right, ask Python to show you what type each value really is. The mystery usually solves itself.</p>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>This is the kind of trick that catches a real-world bug. A programmer at a music app once spent three hours wondering why their <em>"Top 10 most-played songs"</em> sort was wrong. Numbers like <code>"7"</code>, <code>"40"</code>, and <code>"100"</code> were sorting in the order <code>"100"</code>, <code>"40"</code>, <code>"7"</code> — the way you'd sort words in a dictionary.</p>
+      <p>The problem? Those weren't numbers. They were strings. The play counts had been read in from a file as text, and nobody noticed. One quick <code>print(type(count))</code> would've found the bug in 10 seconds.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Python has way more than four data types. There are <strong>lists</strong>, <strong>tuples</strong>, <strong>dictionaries</strong>, <strong>sets</strong>, <strong>None</strong>, and a handful of others — and you can even make your own custom types with something called classes. But the four you learned today (int, float, str, bool) are the building blocks every other type is built on top of. You'll meet lists in Week 24, and the rest later in the course.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 21</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Python</div>
+      <div class="vocab-def">A beginner-friendly, general-purpose programming language created in 1991 by Guido van Rossum and named after Monty Python's Flying Circus.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Variable</div>
+      <div class="vocab-def">A labeled box that stores a value. The label is the variable's name; the contents (the value) can change as the program runs.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Data type</div>
+      <div class="vocab-def">The category a value belongs to — like int, float, string, or bool — which determines what operations are legal to do on it.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Integer (int)</div>
+      <div class="vocab-def">A whole number with no decimal point. Examples: <code>0</code>, <code>42</code>, <code>-7</code>. Used for counting things.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Float</div>
+      <div class="vocab-def">A number with a decimal point, like <code>3.14</code> or <code>2.0</code>. Used for measurements, money, and fractions.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">String (str)</div>
+      <div class="vocab-def">A sequence of characters wrapped in single or double quotes — <code>"hello"</code> or <code>'pizza'</code>. Used for text.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Boolean (bool)</div>
+      <div class="vocab-def">A type that holds exactly one of two values: <code>True</code> or <code>False</code>. Used for yes/no decisions.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Assignment operator</div>
+      <div class="vocab-def">The single equals sign <code>=</code>, which stores the value on its right into the variable on its left.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Invent variables for YOU.</div>
+    <p>Pick <strong>three</strong> pieces of information about yourself — for example, your favorite snack, the number of pets you have, and whether you're left-handed. Write each one as a Python variable: a clear lowercase_with_underscores name, the right data type, and the value.</p>
+    <p>Format each line like this:</p>
+    <p style="margin-left: 8px;"><code>favorite_snack = 'pretzels'  # string</code></p>
+    <p>Then answer:</p>
+    <ul>
+      <li>Which data type did you use most often, and why does it fit your facts?</li>
+      <li>Was there a piece of information that <em>could</em> have been more than one type? (For example, "shoe size" can be an int or a float — which would you pick and why?)</li>
+      <li>How would your variable names change if you wrote them as <code>x</code>, <code>y</code>, <code>z</code> instead of descriptive names? Would future-you still understand them next month?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 22</strong>, you'll zoom out from code and look at how technology shapes society — and how society pushes technology to change. From the printing press to AI, every big invention reshapes daily life. Bring everything you learned about variables back next unit; for one week, we step away from the keyboard and think big.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Guess the Type ==========
+(function() {
+  const VALUES = [
+    { display: '42',     type: 'int',    why: '<strong>42</strong> is a whole number with no decimal point and no quotes — that makes it an <strong>int</strong>.' },
+    { display: '"hello"', type: 'string', why: 'Anything wrapped in quotes is a <strong>string</strong> (str), even if the characters inside spell out a word.' },
+    { display: '3.14',   type: 'float',  why: '<strong>3.14</strong> has a decimal point, so Python calls it a <strong>float</strong> — short for floating-point number.' },
+    { display: 'True',   type: 'bool',   why: '<strong>True</strong> (with a capital T, no quotes) is one of only two values a <strong>bool</strong> can hold. The other is False.' },
+    { display: '"42"',   type: 'string', why: 'Sneaky! It looks like a number, but the quotes around it make it a <strong>string</strong>. You can\'t do math on "42".' },
+    { display: '0',      type: 'int',    why: 'Zero is still a whole number — that makes it an <strong>int</strong>. (Even negative whole numbers like -5 are ints.)' },
+    { display: 'False',  type: 'bool',   why: '<strong>False</strong> (capital F, no quotes) is the other valid <strong>bool</strong> value alongside True.' },
+    { display: '2.0',    type: 'float',  why: 'Even though it looks like a "round" number, the <strong>.0</strong> after the 2 makes it a <strong>float</strong> — not an int. The decimal point is what flips it.' }
+  ];
+
+  const stagePrompt = document.getElementById('gt-prompt');
+  const stageValue  = document.getElementById('gt-value');
+  const fb          = document.getElementById('gt-feedback');
+  const scoreEl     = document.getElementById('gt-score');
+  const progEl      = document.getElementById('gt-progress');
+  const nextBtn     = document.getElementById('gt-next');
+  const resetBtn    = document.getElementById('gt-reset');
+  const buttons     = document.querySelectorAll('.gt-btn');
+  if (!stageValue || !buttons.length) return;
+
+  let idx = 0;
+  let answered = false;
+  let correctCount = 0;
+  let attempted = 0;
+
+  function loadValue() {
+    answered = false;
+    const v = VALUES[idx];
+    stageValue.textContent = v.display;
+    stagePrompt.textContent = 'Value ' + (idx + 1) + ' of ' + VALUES.length;
+    buttons.forEach(b => {
+      b.disabled = false;
+      b.classList.remove('right', 'wrong', 'faded');
+    });
+    fb.classList.remove('show', 'success', 'warn');
+    fb.innerHTML = '';
+    nextBtn.disabled = true;
+    nextBtn.textContent = idx < VALUES.length - 1 ? 'Next Value →' : 'See Score →';
+  }
+
+  function updateScore() {
+    scoreEl.textContent = correctCount + ' of ' + attempted;
+    const pct = attempted === 0 ? 0 : (correctCount / VALUES.length) * 100;
+    progEl.style.width = pct + '%';
+  }
+
+  function handleGuess(btn) {
+    if (answered) return;
+    answered = true;
+    attempted++;
+    const guess = btn.getAttribute('data-type');
+    const v = VALUES[idx];
+    const isRight = guess === v.type;
+
+    buttons.forEach(b => {
+      b.disabled = true;
+      const t = b.getAttribute('data-type');
+      if (t === v.type) {
+        b.classList.add('right');
+      } else if (b === btn && !isRight) {
+        b.classList.add('wrong');
+      } else {
+        b.classList.add('faded');
+      }
+    });
+
+    if (isRight) correctCount++;
+    updateScore();
+
+    fb.classList.add('show');
+    if (isRight) {
+      fb.classList.add('success');
+      fb.classList.remove('warn');
+      fb.innerHTML = '✅ <strong>Correct!</strong> ' + v.why;
+    } else {
+      fb.classList.add('warn');
+      fb.classList.remove('success');
+      fb.innerHTML = '❌ <strong>Not quite — the answer is ' + v.type + '.</strong> ' + v.why;
+    }
+
+    nextBtn.disabled = false;
+  }
+
+  buttons.forEach(b => b.addEventListener('click', () => handleGuess(b)));
+
+  nextBtn.addEventListener('click', () => {
+    if (idx < VALUES.length - 1) {
+      idx++;
+      loadValue();
+    } else {
+      // Final summary
+      const pct = Math.round((correctCount / VALUES.length) * 100);
+      let msg;
+      if (pct === 100) msg = '🏆 <strong>Perfect score!</strong> You can spot any Python type at a glance — onto Section 4.';
+      else if (pct >= 75) msg = '⭐ <strong>Great work — ' + correctCount + ' of ' + VALUES.length + '!</strong> You\'ve got the core types down. Keep an eye on the sneaky strings.';
+      else if (pct >= 50) msg = '💪 <strong>' + correctCount + ' of ' + VALUES.length + ' — solid start.</strong> Reread the type definitions above and try Reset to lock it in.';
+      else msg = '📚 <strong>' + correctCount + ' of ' + VALUES.length + '.</strong> Reread Section 3, then click Reset and run it again — you\'ll be surprised how fast it clicks.';
+      fb.classList.remove('warn');
+      fb.classList.add('show', 'success');
+      fb.innerHTML = msg;
+      stagePrompt.textContent = 'Round complete';
+      stageValue.textContent = '🎯';
+      buttons.forEach(b => { b.disabled = true; b.classList.add('faded'); });
+      nextBtn.disabled = true;
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    idx = 0;
+    correctCount = 0;
+    attempted = 0;
+    updateScore();
+    loadValue();
+  });
+
+  // initial render
+  updateScore();
+  loadValue();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 22 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 22
+  Standards: SC.6.PE.1.2, SC.6.PE.1.3, SC.6.PE.2.1
+  Topic: Science, Technology & Society Connections
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → C
+  Q4 → D
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. In technology, what does ETHICS mostly mean?
+───────────────────────────────────────────────────────────────
+  A) Knowing how to fix a broken computer
+     ❌ That's tech support, not ethics. Ethics is about
+        right and wrong, not hardware repair.
+  B) Thinking about what is right and fair when our tech
+     choices affect other people                                ✓ CORRECT
+     ✅ Ethics is the careful thinking we do about how our
+        technology choices treat others — privacy, honesty,
+        fairness, respect. It's the heart of digital
+        citizenship. (SC.6.PE.2.1)
+  C) Memorizing all the rules of one programming language
+     ❌ That's syntax, not ethics. Programming languages
+        have rules — but ethics is about how we use them.
+  D) Building the fastest possible processor
+     ❌ That's hardware engineering. Ethics is a thinking
+        skill, not a speed competition.
+
+───────────────────────────────────────────────────────────────
+Q2. Which of the following is the BEST example of AUTOMATION?
+───────────────────────────────────────────────────────────────
+  A) A human cashier scanning items by hand
+     ❌ A human doing the work IS the work — that's not
+        automation. Automation replaces or assists with
+        the manual task.
+  B) A teacher grading every essay personally
+     ❌ A human grading by hand is the opposite of
+        automation. (Software that auto-flags spelling
+        errors WOULD be automation — but that's not the
+        option here.)
+  C) A self-checkout lane at the grocery store that scans
+     items and takes payment with no cashier                    ✓ CORRECT
+     ✅ Self-checkout is a textbook automation example: a
+        machine handles a task that a human used to do —
+        scanning, totaling, and accepting payment.
+        (SC.6.PE.1.2)
+  D) A friend texting you a reminder
+     ❌ A friend (a human) sending a text is regular
+        communication, not automation.
+
+───────────────────────────────────────────────────────────────
+Q3. What does the term DIGITAL DIVIDE describe?
+───────────────────────────────────────────────────────────────
+  A) The split between Apple and Android phone users
+     ❌ That's a brand preference, not a divide of
+        opportunity.
+  B) The difference between websites and mobile apps
+     ❌ That's a tech-format difference, not a fairness
+        gap.
+  C) The gap between people who have fast, reliable
+     internet and modern devices and people who don't —
+     and the unfair effects that gap creates                    ✓ CORRECT
+     ✅ The digital divide is about access. When school,
+        work, healthcare, and opportunity all happen
+        online, lacking reliable internet means lacking
+        opportunity. (SC.6.PE.1.3)
+  D) The line between online games and real-life sports
+     ❌ Game vs sport is a personal hobby choice, not a
+        societal access gap.
+
+───────────────────────────────────────────────────────────────
+Q4. Which of these is an ACCESSIBILITY tool?
+───────────────────────────────────────────────────────────────
+  A) A graphics card that makes games run faster
+     ❌ A faster GPU is a performance upgrade, not an
+        accessibility tool.
+  B) A high-end gaming mouse with extra buttons
+     ❌ A premium mouse is a comfort/style upgrade, not
+        a tool designed for users with different
+        abilities.
+  C) A 4K monitor for sharper movies
+     ❌ A nicer display is a quality upgrade — not an
+        accessibility-specific feature.
+  D) A screen reader that reads text aloud for people
+     who are blind or have low vision                           ✓ CORRECT
+     ✅ Screen readers are core accessibility technology.
+        Captions, voice control, and adjustable text size
+        are other classic examples that make tech usable
+        for more people. (SC.6.PE.1.3)
+
+───────────────────────────────────────────────────────────────
+Q5. Which statement BEST describes the relationship between
+    technology and society?
+───────────────────────────────────────────────────────────────
+  A) Technology controls society — society has no say
+     ❌ That's only half right. Yes, tech shapes how we
+        live — but society pushes back through laws,
+        purchases, and choices.
+  B) Society controls technology — technology has no
+     effect on us
+     ❌ Also only half right. Society does shape tech —
+        but tech genuinely changes daily life (look at
+        the smartphone in your pocket).
+  C) Technology and society shape each other in a
+     two-way relationship: tech changes how we live,
+     and our needs, laws, and choices change tech back          ✓ CORRECT
+     ✅ This is the heart of Week 22. Tech and society
+        are in a constant loop: an invention reshapes
+        daily life, and society responds with new
+        habits, laws, and demands that reshape the
+        next invention. (SC.6.PE.2.1)
+  D) Technology and society have nothing to do with
+     each other
+     ❌ That's the opposite of true. They are deeply
+        linked — every technology is invented by, used
+        by, and shaped by people.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-22-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════
