@@ -7,354 +7,964 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(85,200,232,0.4);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+<body>
 
-<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <!-- OAO logo -->
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 1 · WEEK 1
+    </div>
+  </div>
+</header>
 
-  <!-- ═══════════════ HEADER BAR ═══════════════ -->
-  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
-    <!-- OAO Owl logo (inline SVG) -->
-    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
-      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
-      <circle cx="24" cy="28" r="7" fill="#fff"/>
-      <circle cx="40" cy="28" r="7" fill="#fff"/>
-      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
-      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
-      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
-      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 1: Digital Foundations</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 1: Digital Communication Basics</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 1 • WEEK 1 • READING</div>
+  <h1 class="lesson-title">Digital Communication Basics</h1>
+  <p class="lesson-description">Every day you send messages across invisible networks. This week, you'll pull back the curtain and discover how — and why choosing the right tool is a skill worth mastering.</p>
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Define digital communication</strong> and identify at least four tools used to communicate online.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Compare digital platforms</strong> and explain why tool choice matters for different audiences and purposes.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Distinguish between synchronous and asynchronous</strong> communication with real examples from your own life.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Identify traits of effective communication</strong> and describe how digital messages travel through networks.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · What Is Digital Communication?</div>
+  </div>
+  <h2 class="section-title">Messages that travel at the speed of light</h2>
+  <div class="read-body">
+    <p>Think about the last message you sent. Maybe you texted a friend, posted a comment on Canvas, or sent a reaction emoji to your sibling. Every one of those moments was <span class="key-term">digital communication</span> — the exchange of information using electronic devices and networks.</p>
+    <p>At its heart, every act of communication — whether digital or face-to-face — has three ingredients:</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <circle cx="80" cy="70" r="44" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="80" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E5568">SENDER</text>
+      <text x="80" y="86" text-anchor="middle" font-size="28">👤</text>
+      <line x1="128" y1="70" x2="232" y2="70" stroke="#C7922C" stroke-width="2" stroke-dasharray="4,4"/>
+      <polygon points="232,70 222,65 222,75" fill="#C7922C"/>
+      <rect x="240" y="40" width="120" height="60" rx="10" fill="#C7922C" opacity="0.18" stroke="#C7922C" stroke-width="2"/>
+      <text x="300" y="62" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#8a6620">MESSAGE</text>
+      <text x="300" y="88" text-anchor="middle" font-size="22">✉️</text>
+      <line x1="368" y1="70" x2="472" y2="70" stroke="#C7922C" stroke-width="2" stroke-dasharray="4,4"/>
+      <polygon points="472,70 462,65 462,75" fill="#C7922C"/>
+      <circle cx="520" cy="70" r="44" fill="#76C043" opacity="0.18" stroke="#76C043" stroke-width="2"/>
+      <text x="520" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">RECEIVER</text>
+      <text x="520" y="86" text-anchor="middle" font-size="28">👥</text>
+      <text x="300" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="13" font-style="italic" fill="#6b7280">…carried by a CHANNEL (the technology)</text>
     </svg>
-    <div style="flex:1;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
-      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
-    </div>
-    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 1 · WEEK 1</div>
   </div>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <div style="background:linear-gradient(135deg,#0E1C42 0%,#1a2a5e 50%,#0E5568 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.28) 0%,rgba(85,200,232,0) 70%);"></div>
-    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(103,48,143,0.25) 0%,rgba(103,48,143,0) 70%);"></div>
-    <div style="position:relative;z-index:2;">
-      <div style="display:inline-block;background:rgba(85,200,232,0.15);border:1px solid #55C8E8;color:#55C8E8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lesson 1.1 · Standard SC.6.CC.1.1</div>
-      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Digital Communication Basics</h1>
-      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Every day you send messages across invisible networks. This week, you'll pull back the curtain and discover how — and why choosing the right tool is a skill worth mastering.</p>
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Digital communication</strong> — exchanging information using electronic devices connected to networks (phones, laptops, tablets, gaming consoles).</p>
+      <p><strong>Channel</strong> — the specific tool or platform that carries a message (email, chat, video call, discussion board).</p>
+      <p><strong>Platform</strong> — a service or app built for a particular kind of communication (Canvas, Gmail, Zoom, Discord).</p>
     </div>
   </div>
 
-  <!-- ═══════════════ LEARNING OBJECTIVES ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
-      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Define digital communication</strong> and identify at least four tools used to communicate online.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Compare digital platforms</strong> and explain why tool choice matters for different audiences and purposes.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Distinguish between synchronous and asynchronous</strong> communication with real examples from your own life.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Identify traits of effective communication</strong> and describe how digital messages travel through networks.</div>
-        </div>
-      </div>
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Types of Digital Platforms</div>
+  </div>
+  <h2 class="section-title">The right tool for the right message</h2>
+  <div class="read-body">
+    <p>A skilled carpenter doesn't grab a hammer when they need a saw. In the same way, a smart digital communicator matches the tool to the job. Here are the main families of digital platforms and what each one is built for:</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head"><span style="font-size:22px;">📧</span><strong>Email</strong></div>
+      <div class="platform-card-body"><em style="color: var(--bitstream-blue);">Examples:</em> Gmail, Outlook, Canvas Inbox. <em style="color: var(--bitstream-blue);">Best for:</em> formal messages, detailed questions to teachers, school communication.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head"><span style="font-size:22px;">💬</span><strong>Instant Messaging</strong></div>
+      <div class="platform-card-body"><em style="color: var(--odyssey-orange);">Examples:</em> text messages, WhatsApp, approved school chat. <em style="color: var(--odyssey-orange);">Best for:</em> quick, casual exchanges with people you already know well.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head"><span style="font-size:22px;">🎥</span><strong>Video Calling</strong></div>
+      <div class="platform-card-body"><em style="color: var(--portal-purple);">Examples:</em> Zoom, Google Meet, FaceTime. <em style="color: var(--portal-purple);">Best for:</em> live discussions, tutoring, group meetings, reading body language.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head"><span style="font-size:22px;">🗣️</span><strong>Discussion Boards</strong></div>
+      <div class="platform-card-body"><em style="color: var(--gateway-gold);">Examples:</em> Canvas Discussions, class forums. <em style="color: var(--gateway-gold);">Best for:</em> sharing ideas with a whole class, thoughtful written responses, building on others' thinking.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head"><span style="font-size:22px;">📄</span><strong>Collaborative Documents</strong></div>
+      <div class="platform-card-body"><em style="color: #3d6522;">Examples:</em> Google Docs, shared slide decks. <em style="color: #3d6522;">Best for:</em> working on the same project with classmates, leaving comments, editing together.</div>
     </div>
   </div>
 
-  <!-- ═══════════════ SECTION 1 ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · What Is Digital Communication?</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Messages that travel at the speed of light</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">Think about the last message you sent. Maybe you texted a friend, posted a comment on Canvas, or sent a reaction emoji to your sibling. Every one of those moments was <strong style="color:#ffffff;">digital communication</strong> — the exchange of information using electronic devices and networks.</p>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">At its heart, every act of communication — whether digital or face-to-face — has three ingredients:</p>
-
-    <!-- 3-part diagram (inline SVG) -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:28px;margin:0 0 24px;text-align:center;">
-      <svg width="100%" height="140" viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
-        <!-- Sender -->
-        <circle cx="80" cy="70" r="42" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
-        <text x="80" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#55C8E8">SENDER</text>
-        <text x="80" y="82" text-anchor="middle" font-size="28" fill="#55C8E8">👤</text>
-        <!-- Arrow + message -->
-        <line x1="128" y1="70" x2="232" y2="70" stroke="#C7922C" stroke-width="2" stroke-dasharray="4,4"/>
-        <polygon points="232,70 222,65 222,75" fill="#C7922C"/>
-        <!-- Message -->
-        <rect x="240" y="40" width="120" height="60" rx="10" fill="#C7922C" opacity="0.18" stroke="#C7922C" stroke-width="2"/>
-        <text x="300" y="62" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#C7922C">MESSAGE</text>
-        <text x="300" y="86" text-anchor="middle" font-size="22" fill="#C7922C">✉️</text>
-        <!-- Arrow 2 -->
-        <line x1="368" y1="70" x2="472" y2="70" stroke="#C7922C" stroke-width="2" stroke-dasharray="4,4"/>
-        <polygon points="472,70 462,65 462,75" fill="#C7922C"/>
-        <!-- Receiver -->
-        <circle cx="520" cy="70" r="42" fill="#76C043" opacity="0.18" stroke="#76C043" stroke-width="2"/>
-        <text x="520" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#76C043">RECEIVER</text>
-        <text x="520" y="82" text-anchor="middle" font-size="28" fill="#76C043">👥</text>
-        <!-- Channel label -->
-        <text x="300" y="128" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#8a9bb8">…carried by a CHANNEL (the technology)</text>
-      </svg>
-    </div>
-
-    <!-- VOCABULARY block -->
-    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
-      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Digital communication</strong> — exchanging information using electronic devices connected to networks (phones, laptops, tablets, gaming consoles).</p>
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Channel</strong> — the specific tool or platform that carries a message (email, chat, video call, discussion board).</p>
-        <p style="margin:0;"><strong style="color:#ffffff;">Platform</strong> — a service or app built for a particular kind of communication (Canvas, Gmail, Zoom, Discord).</p>
-      </div>
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and think:</strong> Your history teacher asks every student to share their favorite moment in ancient Greece and read others' answers too. Which platform would you choose — email, text, video call, or a discussion board? Why?</p>
+      <p style="font-style:italic; color:#6b7280;">(Hint: think about who needs to see the answers, and when.)</p>
     </div>
   </div>
 
-  <!-- ═══════════════ SECTION 2 ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · Types of Digital Platforms</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">The right tool for the right message</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">A skilled carpenter doesn't grab a hammer when they need a saw. In the same way, a smart digital communicator matches the tool to the job. Here are the main families of digital platforms and what each one is built for:</p>
-
-    <!-- Platform grid -->
-    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">📧</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Email</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#55C8E8;">Examples:</em> Gmail, Outlook, Canvas Inbox. <em style="color:#55C8E8;">Best for:</em> formal messages, detailed questions to teachers, school communication.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #F78F1E;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">💬</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Instant Messaging</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#F78F1E;">Examples:</em> text messages, WhatsApp, approved school chat. <em style="color:#F78F1E;">Best for:</em> quick, casual exchanges with people you already know well.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🎥</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Video Calling</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#b388d8;">Examples:</em> Zoom, Google Meet, FaceTime. <em style="color:#b388d8;">Best for:</em> live discussions, tutoring, group meetings, reading body language.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🗣️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Discussion Boards</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#C7922C;">Examples:</em> Canvas Discussions, class forums. <em style="color:#C7922C;">Best for:</em> sharing ideas with a whole class, thoughtful written responses, building on others' thinking.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">📄</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Collaborative Documents</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;"><em style="color:#76C043;">Examples:</em> Google Docs, shared slide decks. <em style="color:#76C043;">Best for:</em> working on the same project with classmates, leaving comments, editing together.</div>
-      </div>
-    </div>
-
-    <!-- CHECK FOR UNDERSTANDING -->
-    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
-      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;"><strong style="color:#ffffff;">Pause and think:</strong> Your history teacher asks every student to share their favorite moment in ancient Greece and read others' answers too. Which platform would you choose — email, text, video call, or a discussion board? Why?</p>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;font-style:italic;">(Hint: think about who needs to see the answers, and when.)</p>
-    </div>
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Synchronous vs. Asynchronous</div>
+  </div>
+  <h2 class="section-title">Real-time or take-your-time?</h2>
+  <div class="read-body">
+    <p>One of the most useful distinctions in digital communication is the difference between <strong>synchronous</strong> (real-time) and <strong>asynchronous</strong> (not real-time). The Greek prefix <em>syn-</em> means "together," and <em>a-</em> means "not" — so <em>asynchronous</em> literally means "not together in time."</p>
   </div>
 
-  <!-- ═══════════════ SECTION 3 ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · Synchronous vs. Asynchronous</div>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">⚡ Synchronous</div>
+      <div class="compare-card-headline">Real-time. Happening now.</div>
+      <ul>
+        <li>Everyone is online at the same moment</li>
+        <li>Like a phone call — you both show up</li>
+        <li>Examples: live video class, Zoom tutoring, voice chat in a game</li>
+        <li>Great for quick decisions and live collaboration</li>
+      </ul>
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Real-time or take-your-time?</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">One of the most useful distinctions in digital communication is the difference between <strong style="color:#ffffff;">synchronous</strong> (real-time) and <strong style="color:#ffffff;">asynchronous</strong> (not real-time). The Greek prefix <em>syn-</em> means "together," and <em>a-</em> means "not" — so <em>asynchronous</em> literally means "not together in time."</p>
-
-    <!-- Comparison cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #55C8E8;border-radius:10px;padding:20px;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#55C8E8;text-transform:uppercase;margin-bottom:10px;">⚡ Synchronous</div>
-        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;">Real-time. Happening now.</div>
-        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
-          <li>Everyone is online at the same moment</li>
-          <li>Like a phone call — you both show up</li>
-          <li>Examples: live video class, Zoom tutoring, voice chat in a game</li>
-          <li>Great for quick decisions and live collaboration</li>
-        </ul>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #C7922C;border-radius:10px;padding:20px;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#C7922C;text-transform:uppercase;margin-bottom:10px;">📬 Asynchronous</div>
-        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;">On your own schedule.</div>
-        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
-          <li>People respond when they can</li>
-          <li>Like leaving a note — read later</li>
-          <li>Examples: email, discussion post, a shared Google Doc comment</li>
-          <li>Great for thoughtful, carefully worded responses</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- THINK ABOUT IT -->
-    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">Classical philosophers taught the virtue of <strong style="color:#ffffff;">prudence</strong> — the wisdom to know the right action for the right moment. Digital communicators practice prudence every time they ask, <em>"Does this situation call for a quick text, or a careful email?"</em> Choosing the wrong channel can make a good message land badly.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════ SECTION 4 ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · How Messages Travel</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Behind the screen: packets and routers</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Have you ever wondered how a message crosses an entire country in less than a second? The secret is that your message doesn't travel as one big chunk. It's split into tiny pieces called <strong style="color:#ffffff;">data packets</strong> that race along different paths and get reassembled at the destination.</p>
-
-    <!-- Journey diagram -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
-      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">1</div>
-          <div style="flex:1;">
-            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Your device breaks the message into packets</div>
-            <div style="color:#c8d6e8;font-size:14px;">A 3-sentence text might become 5 or more packets — tiny envelopes each holding a chunk of the message plus an address label.</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">2</div>
-          <div style="flex:1;">
-            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Packets hop through routers</div>
-            <div style="color:#c8d6e8;font-size:14px;">A <strong style="color:#ffffff;">router</strong> is like a digital traffic cop — it reads each packet's destination and sends it on the fastest available road.</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:18px;">3</div>
-          <div style="flex:1;">
-            <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Packets are reassembled at the other end</div>
-            <div style="color:#c8d6e8;font-size:14px;">When every packet arrives, your friend's device puts them back in order — and the message shows up. All in under a second.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DID YOU KNOW -->
-    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">When you send a message from Florida to a friend in California, your packets might each travel a different physical path — some through Atlanta, some through Chicago, some even bouncing off a satellite. They can arrive <strong style="color:#ffffff;">out of order</strong>, and the receiving device quietly puts them back in the right sequence before you ever see them.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════ SECTION 5 ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · Traits of Effective Communication</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">What makes a message land well?</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">A great digital message isn't just about the tool you pick. It's also about <em>how</em> you write. Effective digital communicators share four traits:</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🎯 Clear</div>
-        <div style="color:#e2e8f0;font-size:14px;">Your reader knows exactly what you mean — no guessing.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">✂️ Concise</div>
-        <div style="color:#e2e8f0;font-size:14px;">No extra words. Respect your reader's time.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#67308F;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🎵 Right Tone</div>
-        <div style="color:#e2e8f0;font-size:14px;">Your tone matches the audience — formal for a teacher, playful with a friend.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🤝 Respectful</div>
-        <div style="color:#e2e8f0;font-size:14px;">Kind words and good manners — even when you disagree.</div>
-      </div>
-    </div>
-
-    <!-- REAL-WORLD CONNECTION -->
-    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
-      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Doctors, pilots, and emergency responders all depend on <strong style="color:#ffffff;">clear, concise</strong> communication every single day. When a surgeon asks a nurse for an instrument, there is no room for fuzzy language — lives depend on the message arriving fast and correct.</p>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;">The communication skills you build in 6th grade are the same skills that professionals rely on in high-stakes careers.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════ KEY VOCABULARY GRID ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 1</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Digital communication</div>
-        <div style="color:#c8d6e8;font-size:14px;">Exchanging information using electronic devices and networks.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Platform</div>
-        <div style="color:#c8d6e8;font-size:14px;">A specific service or app built for a kind of communication (Zoom, Canvas, Gmail).</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Synchronous</div>
-        <div style="color:#c8d6e8;font-size:14px;">Real-time communication where everyone is online at the same moment.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Asynchronous</div>
-        <div style="color:#c8d6e8;font-size:14px;">Communication where sender and receiver respond at different times.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Network</div>
-        <div style="color:#c8d6e8;font-size:14px;">A system of connected devices that can share information with each other.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Data packet</div>
-        <div style="color:#c8d6e8;font-size:14px;">A small chunk of a message that travels across a network and is reassembled at the destination.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Router</div>
-        <div style="color:#c8d6e8;font-size:14px;">A device that directs data packets along the correct path across a network.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Tone</div>
-        <div style="color:#c8d6e8;font-size:14px;">The feeling or attitude your words convey — can be formal, casual, urgent, or friendly.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════ REFLECTION PROMPT ═══════════════ -->
-  <div style="padding:40px 32px 32px;">
-    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Which digital communication tool do <em>you</em> use most?</div>
-      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Pick <strong>one</strong> tool you rely on every week — texting, Canvas, a video call app, whatever it is. Then answer in 4–6 sentences:</p>
-      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
-        <li>Is your use of that tool usually <strong>synchronous</strong> or <strong>asynchronous</strong>?</li>
-        <li>How does the timing change <em>how</em> you write your messages?</li>
-        <li>Would a different tool be better for some of the same conversations? Why?</li>
+    <div class="compare-card" style="border-top-color: var(--gateway-gold);">
+      <div class="compare-card-label" style="color: var(--gateway-gold);">📬 Asynchronous</div>
+      <div class="compare-card-headline">On your own schedule.</div>
+      <ul>
+        <li>People respond when they can</li>
+        <li>Like leaving a note — read later</li>
+        <li>Examples: email, discussion post, a shared Google Doc comment</li>
+        <li>Great for thoughtful, carefully worded responses</li>
       </ul>
     </div>
   </div>
 
-  <!-- ═══════════════ WHAT'S NEXT ═══════════════ -->
-  <div style="padding:0 32px 48px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
-      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 2</strong>, you'll zoom in on <em>how</em> to write well online — exploring tone, etiquette, and the classical virtues of <strong>prudence</strong> and <strong>temperance</strong> in digital conversation.</div>
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Classical philosophers taught the virtue of <strong>prudence</strong> — the wisdom to know the right action for the right moment. Digital communicators practice prudence every time they ask, <em>"Does this situation call for a quick text, or a careful email?"</em> Choosing the wrong channel can make a good message land badly.</p>
     </div>
   </div>
 
-  <!-- ═══════════════ FOOTER ═══════════════ -->
-  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
-    Digital Discoveries · Optima Academy Online · Course 0200021 · Standard SC.6.CC.1.1
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · How Messages Travel</div>
+  </div>
+  <h2 class="section-title">Behind the screen: packets and routers</h2>
+  <div class="read-body">
+    <p>Have you ever wondered how a message crosses an entire country in less than a second? The secret is that your message doesn't travel as one big chunk. It's split into tiny pieces called <span class="key-term">data packets</span> that race along different paths and get reassembled at the destination.</p>
   </div>
 
-</div>
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Your device breaks the message into packets</div>
+        <div class="step-body">A 3-sentence text might become 5 or more packets — tiny envelopes each holding a chunk of the message plus an address label.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Packets hop through routers</div>
+        <div class="step-body">A <strong style="color: var(--binary-blue);">router</strong> is like a digital traffic cop — it reads each packet's destination and sends it on the fastest available road.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Packets are reassembled at the other end</div>
+        <div class="step-body">When every packet arrives, your friend's device puts them back in order — and the message shows up. All in under a second.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>When you send a message from Florida to a friend in California, your packets might each travel a different physical path — some through Atlanta, some through Chicago, some even bouncing off a satellite. They can arrive <strong>out of order</strong>, and the receiving device quietly puts them back in the right sequence before you ever see them.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Traits of Effective Communication</div>
+  </div>
+  <h2 class="section-title">What makes a message land well?</h2>
+  <div class="read-body">
+    <p>A great digital message isn't just about the tool you pick. It's also about <em>how</em> you write. Effective digital communicators share four traits:</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">🎯 Clear</div>
+      <div class="trait-body">Your reader knows exactly what you mean — no guessing.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">✂️ Concise</div>
+      <div class="trait-body">No extra words. Respect your reader's time.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">🎵 Right Tone</div>
+      <div class="trait-body">Your tone matches the audience — formal for a teacher, playful with a friend.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: #3d6522;">🤝 Respectful</div>
+      <div class="trait-body">Kind words and good manners — even when you disagree.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Doctors, pilots, and emergency responders all depend on <strong>clear, concise</strong> communication every single day. When a surgeon asks a nurse for an instrument, there is no room for fuzzy language — lives depend on the message arriving fast and correct.</p>
+      <p>The communication skills you build in 6th grade are the same skills that professionals rely on in high-stakes careers.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 1</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Digital communication</div>
+      <div class="vocab-def">Exchanging information using electronic devices and networks.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Platform</div>
+      <div class="vocab-def">A specific service or app built for a kind of communication (Zoom, Canvas, Gmail).</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Synchronous</div>
+      <div class="vocab-def">Real-time communication where everyone is online at the same moment.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Asynchronous</div>
+      <div class="vocab-def">Communication where sender and receiver respond at different times.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Network</div>
+      <div class="vocab-def">A system of connected devices that can share information with each other.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Data packet</div>
+      <div class="vocab-def">A small chunk of a message that travels across a network and is reassembled at the destination.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Router</div>
+      <div class="vocab-def">A device that directs data packets along the correct path across a network.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Tone</div>
+      <div class="vocab-def">The feeling or attitude your words convey — can be formal, casual, urgent, or friendly.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Which digital communication tool do <em>you</em> use most?</div>
+    <p>Pick <strong>one</strong> tool you rely on every week — texting, Canvas, a video call app, whatever it is. Then answer in 4–6 sentences:</p>
+    <ul>
+      <li>Is your use of that tool usually <strong>synchronous</strong> or <strong>asynchronous</strong>?</li>
+      <li>How does the timing change <em>how</em> you write your messages?</li>
+      <li>Would a different tool be better for some of the same conversations? Why?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 2</strong>, you'll zoom in on <em>how</em> to write well online — exploring tone, etiquette, and the classical virtues of <strong>prudence</strong> and <strong>temperance</strong> in digital conversation.</p>
+    </div>
+  </div>
+
+  <!-- ========== BOTTOM NAV ========== -->
+  <div class="bottom-nav">
+    <a href="../index.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Course Home
+    </a>
+    <a href="week-01-activity.html" class="btn btn-primary">
+      Continue to Activity
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
 
 </body>
 </html>

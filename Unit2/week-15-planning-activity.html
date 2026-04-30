@@ -3,51 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 15 Planning Workbook — PSA Planner | Digital Discoveries</title>
+<title>Week 15 — PSA Planning Activity | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px; font-weight: 500; color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course { font-family: var(--font-display); font-size: 14px; color: var(--bitstream-blue); font-weight: 600; }
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--odyssey-orange); color: var(--binary-blue);
+  padding: 6px 14px; border-radius: 8px;
+  font-size: 13px; font-weight: 700;
+  font-family: var(--font-display); letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; color: #6b7280; flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block; padding: 4px 14px;
+  background: var(--odyssey-orange); color: var(--binary-blue);
+  font-size: 13px; font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 800;
+  color: var(--binary-blue); line-height: 1.2;
+  margin-bottom: 12px; letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== PROGRESS BAR ========== */
+.progress-bar-wrap {
+  background: white; border: 1px solid #e5e7eb; border-radius: 12px;
+  padding: 14px 20px; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.progress-meter { flex: 1; min-width: 220px; }
+.progress-meter-head {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
+}
+.progress-meter-label {
+  color: var(--dark-bitstream); font-family: var(--font-display);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.progress-meter-text {
+  color: var(--binary-blue); font-family: var(--font-display);
+  font-size: 13px; font-weight: 700;
+}
+.progress-meter-track {
+  background: #eef2f7; border-radius: 10px; height: 10px; overflow: hidden;
+}
+.progress-meter-fill {
+  background: linear-gradient(90deg, var(--bitstream-blue), var(--gamer-green));
+  height: 100%; width: 0%; transition: width 0.4s ease;
+}
+.progress-pill {
+  background: linear-gradient(135deg, var(--portal-purple), #3d1c59);
+  color: white; padding: 8px 16px; border-radius: 10px;
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+
+/* ========== STEP CARD ========== */
+.step-card {
+  background: white; border: 1px solid #e5e7eb;
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.step-card-head {
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 18px 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.step-tag {
+  color: var(--binary-blue);
+  padding: 4px 10px; border-radius: 10px;
+  font-family: var(--font-display); font-weight: 800; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+.step-card-body { padding: 24px; }
+.step-title-h2 {
+  color: var(--binary-blue); font-family: var(--font-display);
+  font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.25;
+}
+.step-prompt { color: #4b5563; font-size: 15px; line-height: 1.6; margin-bottom: 18px; }
+
+.step-input {
+  width: 100%; background: #f9fafb;
+  border: 2px solid #e5e7eb; border-radius: 10px;
+  padding: 14px 18px; color: #374151; font-family: inherit;
+  font-size: 15px; box-sizing: border-box; outline: none;
+  transition: border-color 0.2s;
+}
+.step-input:focus { border-color: var(--bitstream-blue); background: white; }
+
+.options-list { display: flex; flex-direction: column; gap: 10px; }
+.option-btn {
+  background: #f9fafb; border: 2px solid #e5e7eb;
+  border-radius: 10px; padding: 14px 18px;
+  color: #374151; font-family: inherit; font-size: 15px;
+  text-align: left; cursor: pointer; transition: all 0.2s ease;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.option-btn:hover { border-color: var(--bitstream-blue); background: #eff6ff; }
+.option-btn.selected { background: #eff6ff; border-color: var(--bitstream-blue); }
+.option-letter {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  background: #e5e7eb; color: var(--dark-bitstream);
+  font-family: var(--font-display); font-weight: 800; font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.option-btn.selected .option-letter { background: var(--bitstream-blue); color: var(--binary-blue); }
+.option-text { flex: 1; padding-top: 2px; }
+
+.tip-box {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left: 4px solid var(--bitstream-blue);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-top: 16px;
+}
+.tip-label {
+  color: var(--dark-bitstream); font-family: var(--font-display);
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 4px;
+}
+.tip-text { color: #4b5563; font-size: 13px; line-height: 1.5; }
+
+.step-nav { display: flex; gap: 10px; margin-top: 20px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 12px 22px; border-radius: 10px;
+  font-family: var(--font-display); font-weight: 700; font-size: 15px;
+  text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white; flex: 1;
+}
+.btn-primary:hover { box-shadow: 0 4px 16px rgba(85,200,232,0.4); transform: translateY(-1px); }
+.btn-secondary {
+  background: white; color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== SUMMARY ========== */
+.summary-card {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 32px rgba(118,192,67,0.18);
+}
+.summary-badge {
+  color: #3d6522; font-family: var(--font-display);
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 6px;
+}
+.summary-h2 {
+  font-family: var(--font-display); color: var(--binary-blue);
+  font-size: 26px; font-weight: 800; margin: 0 0 6px;
+}
+.plan-text {
+  background: white; border: 1px solid #e5e7eb;
+  border-radius: 10px; padding: 20px;
+  color: #374151; font-family: 'Courier New', monospace;
+  font-size: 13px; line-height: 1.55;
+  white-space: pre-wrap; word-wrap: break-word; margin: 16px 0 18px;
+}
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px; padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: space-between; gap: 16px;
+}
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue); color: rgba(255,255,255,0.7);
+  text-align: center; padding: 18px 24px; font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.6;min-height:100vh;">
+<body>
 
-<div id="app-root" style="max-width:820px;margin:0 auto;padding:20px;">
-
-  <!-- HEADER -->
-  <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-      <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">📝 PLANNING WORKBOOK</div>
-      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 2 · Week 15 · Cyber Safety PSA</div>
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
     </div>
-    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">PSA Planner</h1>
-    <p style="margin:0;color:#c8d6e8;font-size:14px;">6 guided steps to plan your Cyber Safety PSA. Your answers stay on this page (nothing is sent or saved). At the end, copy or screenshot your plan to use as you build.</p>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 2 · WEEK 15 · PROJECT
+    </div>
   </div>
+</header>
 
-  <!-- PROGRESS BAR -->
-  <div id="status-bar" style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:14px 20px;margin-bottom:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
-    <div style="flex:1;min-width:220px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-        <span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Progress</span>
-        <span id="progress-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:700;">Step 1 of 6</span>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 2: Data &amp; Cyber Safety</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 15: Cyber Safety PSA — Planning Activity</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 2 • WEEK 15 • PROJECT PLANNING</div>
+  <h1 class="lesson-title">PSA Planner</h1>
+  <p class="lesson-description">6 guided steps to plan your Cyber Safety PSA. Your answers stay on this page (nothing is sent or saved). At the end, copy or screenshot your plan to use as you build.</p>
+  <!-- Progress bar -->
+  <div id="status-bar" class="progress-bar-wrap">
+    <div class="progress-meter">
+      <div class="progress-meter-head">
+        <span class="progress-meter-label">Progress</span>
+        <span id="progress-text" class="progress-meter-text">Step 1 of 6</span>
       </div>
-      <div style="background:#0a0a14;border-radius:10px;height:10px;overflow:hidden;">
-        <div id="progress-fill" style="background:linear-gradient(90deg,#55C8E8,#76C043);height:100%;width:0%;transition:width 0.4s ease;"></div>
+      <div class="progress-meter-track">
+        <div id="progress-fill" class="progress-meter-fill"></div>
       </div>
     </div>
-    <div style="background:linear-gradient(135deg,#67308F,#3d1c59);padding:8px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;">
+    <div class="progress-pill">
       <span style="font-size:18px;">🧭</span>
-      <span style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">PSA Plan</span>
+      <span>PSA Plan</span>
     </div>
   </div>
 
   <!-- STEP CONTAINER -->
   <div id="step-container"></div>
 
-  <!-- FOOTER NOTE -->
-  <div style="text-align:center;color:#55687a;font-size:12px;margin-top:24px;padding:12px;">
-    Digital Discoveries · Optima Academy Online · Course 0200021
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="../index.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Course Home
+    </a>
+    <a href="week-15-project-guide.html" class="btn btn-primary">
+      Continue to Project Guide
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
   </div>
 
-</div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021 · Week 15 PSA Planning Activity
+</footer>
 
 <script>
 // ═══════════════════════════════════════════════════════════
@@ -56,14 +360,10 @@
 
 const STEPS = [
   {
-    id: 1,
-    tag: 'Topic',
-    tagColor: '#55C8E8',
-    icon: '🎯',
+    id: 1, tag: 'Topic', tagColor: '#55C8E8', icon: '🎯',
     title: 'Pick your topic',
     prompt: 'Which Unit 2 topic are you teaching? Pick the one a younger student really needs to hear.',
-    type: 'choice',
-    field: 'topic',
+    type: 'choice', field: 'topic',
     options: [
       'Week 9 · The Journey of Data',
       'Week 10 · Permissions & Sharing',
@@ -75,26 +375,18 @@ const STEPS = [
     tip: 'Pick what you feel strongly about — strong PSAs come from real conviction.'
   },
   {
-    id: 2,
-    tag: 'Audience',
-    tagColor: '#C7922C',
-    icon: '👥',
+    id: 2, tag: 'Audience', tagColor: '#C7922C', icon: '👥',
     title: 'Define your audience',
     prompt: 'Picture ONE specific person you\'re making this for — a younger sibling, a 4th-grader you know, your past self. Write their name or a description.',
-    type: 'text',
-    field: 'audience',
+    type: 'text', field: 'audience',
     placeholder: 'e.g., "My 9-year-old cousin Marcus, who got Roblox last month"',
     tip: 'A vague "kids" audience leads to a vague PSA. Specific audiences produce specific messages.'
   },
   {
-    id: 3,
-    tag: 'Format',
-    tagColor: '#67308F',
-    icon: '🎨',
+    id: 3, tag: 'Format', tagColor: '#67308F', icon: '🎨',
     title: 'Choose your format',
     prompt: 'How will you deliver the message? Pick the format that fits your topic AND that you can finish on time.',
-    type: 'choice',
-    field: 'format',
+    type: 'choice', field: 'format',
     options: [
       'Poster (1 page)',
       'Infographic',
@@ -105,52 +397,34 @@ const STEPS = [
     tip: 'There\'s no "best" format. Pick the one that serves YOUR message most clearly.'
   },
   {
-    id: 4,
-    tag: 'Hook',
-    tagColor: '#F78F1E',
-    icon: '🎣',
+    id: 4, tag: 'Hook', tagColor: '#F78F1E', icon: '🎣',
     title: 'Draft your hook',
     prompt: 'Write ONE sentence that would make your audience stop scrolling. A surprising fact, a sharp question, or a vivid image. Keep it under 15 words.',
-    type: 'text',
-    field: 'hook',
+    type: 'text', field: 'hook',
     placeholder: 'e.g., "It takes a computer 1 second to crack the password \'password123.\'"',
     tip: 'Strong hooks pose a question, share a surprising number, or paint a vivid picture. Avoid "Did you know that…?"'
   },
   {
-    id: 5,
-    tag: '3 Facts',
-    tagColor: '#76C043',
-    icon: '📊',
+    id: 5, tag: '3 Facts', tagColor: '#76C043', icon: '📊',
     title: 'Write 3 key facts (with sources)',
     prompt: 'List 3 accurate facts from your topic. Add where each one came from (lesson reading, a .gov source, an expert site). This is the heart of your PSA.',
-    type: 'multiline',
-    field: 'facts',
+    type: 'multiline', field: 'facts',
     placeholder: 'Fact 1: ___ (source: ___)\nFact 2: ___ (source: ___)\nFact 3: ___ (source: ___)',
     tip: 'Run each fact through CRAAP from Week 13. If you can\'t find a source, find a different fact.'
   },
   {
-    id: 6,
-    tag: 'Call-to-Action',
-    tagColor: '#ff6b6b',
-    icon: '🎯',
+    id: 6, tag: 'Call-to-Action', tagColor: '#A53E97', icon: '🎯',
     title: 'Write your call-to-action',
     prompt: 'In ONE sentence, what specific habit do you want your audience to start tomorrow? Concrete action, not vague advice.',
-    type: 'text',
-    field: 'cta',
+    type: 'text', field: 'cta',
     placeholder: 'e.g., "Plug your phone in across the room every night before bed."',
     tip: 'Bad: "Be safe online." Good: "Never click a link in a text from a number you don\'t know."'
   }
 ];
 
-// ═══════════════════════════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════════════════════════
 let currentIndex = 0;
 const answers = {};
 
-// ═══════════════════════════════════════════════════════════
-// RENDERING
-// ═══════════════════════════════════════════════════════════
 function renderStep() {
   const s = STEPS[currentIndex];
   updateStatusBar();
@@ -158,30 +432,30 @@ function renderStep() {
   const container = document.getElementById('step-container');
   let inputHTML = '';
   if (s.type === 'choice') {
-    inputHTML = `<div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>`;
+    inputHTML = `<div id="options-list" class="options-list"></div>`;
   } else if (s.type === 'text') {
-    inputHTML = `<input id="text-input" type="text" placeholder="${s.placeholder}" style="width:100%;background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;padding:14px 18px;color:#e2e8f0;font-family:inherit;font-size:15px;box-sizing:border-box;outline:none;transition:border-color 0.2s;" />`;
+    inputHTML = `<input id="text-input" type="text" placeholder="${s.placeholder}" class="step-input" />`;
   } else if (s.type === 'multiline') {
-    inputHTML = `<textarea id="text-input" placeholder="${s.placeholder}" rows="6" style="width:100%;background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;padding:14px 18px;color:#e2e8f0;font-family:inherit;font-size:14px;line-height:1.6;box-sizing:border-box;outline:none;resize:vertical;transition:border-color 0.2s;"></textarea>`;
+    inputHTML = `<textarea id="text-input" placeholder="${s.placeholder}" rows="6" class="step-input" style="line-height:1.6;resize:vertical;"></textarea>`;
   }
 
   container.innerHTML = `
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
-      <div style="background:linear-gradient(135deg,#0E1C42,#1a2a5e);padding:20px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #1e2a4a;">
-        <div style="background:${s.tagColor};color:#0E1C42;padding:4px 10px;border-radius:10px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;">Step ${s.id} · ${s.tag}</div>
+    <div class="step-card">
+      <div class="step-card-head">
+        <div class="step-tag" style="background:${s.tagColor};">Step ${s.id} · ${s.tag}</div>
         <div style="margin-left:auto;font-size:28px;">${s.icon}</div>
       </div>
-      <div style="padding:24px;">
-        <h2 style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:800;margin:0 0 10px;line-height:1.25;">${s.title}</h2>
-        <p style="color:#c8d6e8;font-size:15px;line-height:1.55;margin:0 0 18px;">${s.prompt}</p>
+      <div class="step-card-body">
+        <h2 class="step-title-h2">${s.title}</h2>
+        <p class="step-prompt">${s.prompt}</p>
         ${inputHTML}
-        <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:3px solid #55C8E8;border-radius:0 8px 8px 0;padding:12px 16px;margin-top:16px;">
-          <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:4px;">💡 Tip</div>
-          <div style="color:#c8d6e8;font-size:13px;line-height:1.5;">${s.tip}</div>
+        <div class="tip-box">
+          <div class="tip-label">💡 Tip</div>
+          <div class="tip-text">${s.tip}</div>
         </div>
-        <div style="display:flex;gap:10px;margin-top:20px;">
-          ${currentIndex > 0 ? `<button id="back-btn" style="background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;padding:12px 20px;color:#c8d6e8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;cursor:pointer;">← Back</button>` : ''}
-          <button id="next-btn" style="flex:1;background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 18px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:transform 0.2s;">${currentIndex < STEPS.length - 1 ? 'Next Step →' : 'See Your PSA Plan →'}</button>
+        <div class="step-nav">
+          ${currentIndex > 0 ? `<button id="back-btn" class="btn btn-secondary">← Back</button>` : ''}
+          <button id="next-btn" class="btn btn-primary">${currentIndex < STEPS.length - 1 ? 'Next Step →' : 'See Your PSA Plan →'}</button>
         </div>
       </div>
     </div>
@@ -192,23 +466,11 @@ function renderStep() {
     s.options.forEach((opt, idx) => {
       const btn = document.createElement('button');
       const isSelected = answers[s.field] === opt;
-      btn.style.cssText = `
-        background:${isSelected ? 'rgba(85,200,232,0.12)' : '#0a0a14'};
-        border:2px solid ${isSelected ? '#55C8E8' : '#1e2a4a'};
-        border-radius:10px;padding:14px 18px;color:#e2e8f0;font-family:inherit;font-size:15px;
-        text-align:left;cursor:pointer;transition:all 0.2s ease;
-        display:flex;gap:12px;align-items:flex-start;
-      `;
+      btn.className = 'option-btn' + (isSelected ? ' selected' : '');
       btn.innerHTML = `
-        <div style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:${isSelected ? '#55C8E8' : '#1e2a4a'};color:${isSelected ? '#0E1C42' : '#55C8E8'};font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">${isSelected ? '✓' : String.fromCharCode(65+idx)}</div>
-        <div style="flex:1;padding-top:2px;">${opt}</div>
+        <div class="option-letter">${isSelected ? '✓' : String.fromCharCode(65+idx)}</div>
+        <div class="option-text">${opt}</div>
       `;
-      btn.addEventListener('mouseenter', () => {
-        if (answers[s.field] !== opt) { btn.style.borderColor = '#55C8E8'; btn.style.background = '#111933'; }
-      });
-      btn.addEventListener('mouseleave', () => {
-        if (answers[s.field] !== opt) { btn.style.borderColor = '#1e2a4a'; btn.style.background = '#0a0a14'; }
-      });
       btn.addEventListener('click', () => {
         answers[s.field] = opt;
         renderStep();
@@ -218,8 +480,6 @@ function renderStep() {
   } else {
     const input = document.getElementById('text-input');
     input.value = answers[s.field] || '';
-    input.addEventListener('focus', () => input.style.borderColor = '#55C8E8');
-    input.addEventListener('blur', () => input.style.borderColor = '#1e2a4a');
     input.addEventListener('input', (e) => { answers[s.field] = e.target.value; });
   }
 
@@ -230,10 +490,7 @@ function renderStep() {
     });
   }
 
-  const nextBtn = document.getElementById('next-btn');
-  nextBtn.addEventListener('mouseenter', () => { nextBtn.style.transform = 'translateY(-2px)'; nextBtn.style.boxShadow = '0 6px 20px rgba(85,200,232,0.4)'; });
-  nextBtn.addEventListener('mouseleave', () => { nextBtn.style.transform = 'translateY(0)'; nextBtn.style.boxShadow = 'none'; });
-  nextBtn.addEventListener('click', () => {
+  document.getElementById('next-btn').addEventListener('click', () => {
     if (currentIndex < STEPS.length - 1) {
       currentIndex++;
       renderStep();
@@ -283,19 +540,19 @@ NEXT STEPS
   `.trim();
 
   document.getElementById('step-container').innerHTML = `
-    <div style="background:linear-gradient(135deg,#111122,#0E1C42);border:1px solid #76C043;border-radius:14px;padding:32px 28px;box-shadow:0 12px 48px rgba(0,0,0,0.5);">
-      <div style="text-align:center;margin-bottom:24px;">
+    <div class="summary-card">
+      <div style="text-align:center;margin-bottom:20px;">
         <div style="font-size:64px;margin-bottom:8px;">📋</div>
-        <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:6px;">Plan Complete</div>
-        <h2 style="font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:26px;font-weight:800;margin:0 0 6px;">Your PSA Plan</h2>
-        <p style="color:#c8d6e8;font-size:14px;margin:0;">Copy this plan or screenshot it. Use it as you build your PSA.</p>
+        <div class="summary-badge">Plan Complete</div>
+        <h2 class="summary-h2">Your PSA Plan</h2>
+        <p style="color:#4b5563;font-size:14px;margin:0;">Copy this plan or screenshot it. Use it as you build your PSA.</p>
       </div>
-      <pre id="plan-text" style="background:#0a0a14;border:1px solid #1e2a4a;border-radius:10px;padding:20px;color:#e2e8f0;font-family:'Courier New',monospace;font-size:13px;line-height:1.55;white-space:pre-wrap;word-wrap:break-word;margin:0 0 18px;">${summary.replace(/</g,'&lt;')}</pre>
+      <pre id="plan-text" class="plan-text">${summary.replace(/</g,'&lt;')}</pre>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button id="copy-btn" style="flex:1;min-width:140px;background:linear-gradient(135deg,#76C043,#3d6522);border:none;border-radius:10px;padding:14px 20px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:transform 0.2s;">📋 Copy Plan</button>
-        <button id="restart-btn" style="flex:1;min-width:140px;background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;padding:14px 20px;color:#c8d6e8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;cursor:pointer;">↻ Edit Plan</button>
+        <button id="copy-btn" class="btn btn-primary" style="background: linear-gradient(135deg, var(--gamer-green), #3d6522); flex:1; min-width:140px;">📋 Copy Plan</button>
+        <button id="restart-btn" class="btn btn-secondary" style="flex:1; min-width:140px;">↻ Edit Plan</button>
       </div>
-      <div id="copy-msg" style="text-align:center;color:#76C043;font-size:13px;margin-top:12px;height:18px;"></div>
+      <div id="copy-msg" style="text-align:center;color:#3d6522;font-size:13px;margin-top:12px;height:18px;font-weight:600;"></div>
     </div>
   `;
 
@@ -305,7 +562,6 @@ NEXT STEPS
       document.getElementById('copy-msg').textContent = '✓ Copied to clipboard!';
       setTimeout(() => { document.getElementById('copy-msg').textContent = ''; }, 2500);
     } catch (e) {
-      // Fallback: select the text
       const range = document.createRange();
       range.selectNode(document.getElementById('plan-text'));
       window.getSelection().removeAllRanges();
@@ -320,7 +576,6 @@ NEXT STEPS
   });
 }
 
-// Kick off
 renderStep();
 </script>
 

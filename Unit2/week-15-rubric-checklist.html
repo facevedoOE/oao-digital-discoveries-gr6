@@ -3,243 +3,509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 15 Rubric &amp; Submission Checklist | Digital Discoveries</title>
+<title>Week 15 — Rubric &amp; Submission Checklist | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue); color: white;
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: #ffffff; letter-spacing: -0.01em; }
+.oao-wordmark-sub { font-family: var(--font-display); font-size: 8px; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course { font-family: var(--font-display); font-size: 14px; color: var(--bitstream-blue); font-weight: 600; }
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--gamer-green); color: var(--binary-blue);
+  padding: 6px 14px; border-radius: 8px;
+  font-size: 13px; font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px; margin: 0 auto; padding: 16px 24px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; color: #6b7280; flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block; padding: 4px 14px;
+  background: var(--gamer-green); color: var(--binary-blue);
+  font-size: 13px; font-weight: 700; font-family: var(--font-display);
+  border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display); font-size: 36px; font-weight: 800;
+  color: var(--binary-blue); line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== PROJECT TOTAL CARD ========== */
+.project-total-card {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left: 5px solid var(--gateway-gold);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 24px; margin-bottom: 32px;
+}
+.project-total-row { display: flex; align-items: center; gap: 14px; }
+.project-total-label {
+  font-family: var(--font-display); color: var(--gateway-gold);
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.project-total-value {
+  margin-left: auto;
+  font-family: var(--font-display); color: var(--binary-blue);
+  font-size: 24px; font-weight: 800;
+}
+.project-total-desc { color: #6b7280; font-size: 14px; margin-top: 6px; }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--gamer-green); color: var(--binary-blue);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 16px; flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display); font-size: 11px; font-weight: 800;
+  letter-spacing: 0.22em; color: #3d6522; text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display); font-size: 26px; font-weight: 700;
+  color: var(--binary-blue); line-height: 1.2; margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+
+/* ========== RUBRIC CRITERION CARD ========== */
+.criterion-card {
+  background: white; border: 1px solid #e5e7eb;
+  border-radius: 14px; padding: 24px; margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.criterion-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.criterion-num {
+  width: 38px; height: 38px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 15px;
+  flex-shrink: 0;
+}
+.criterion-name {
+  color: var(--binary-blue); font-family: var(--font-display);
+  font-weight: 700; font-size: 18px;
+}
+.criterion-q { font-size: 13px; }
+.criterion-points {
+  margin-left: auto; font-family: var(--font-display);
+  color: var(--binary-blue); font-size: 18px; font-weight: 800;
+}
+
+.level-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.level-cell {
+  background: #f9fafb;
+  border-left: 3px solid; border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+}
+.level-label {
+  font-family: var(--font-display); font-size: 11px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;
+}
+.level-body { color: #4b5563; font-size: 13px; line-height: 1.5; }
+
+/* ========== CHECKLIST ========== */
+.checklist-card {
+  background: white; border: 1px solid #e5e7eb;
+  border-radius: 14px; padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+#checklist-items { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.check-row {
+  background: #f9fafb; border: 2px solid #e5e7eb;
+  border-radius: 10px; padding: 12px 16px; cursor: pointer;
+  display: flex; gap: 12px; align-items: flex-start;
+  transition: all 0.2s ease;
+}
+.check-row:hover { border-color: var(--bitstream-blue); background: #eff6ff; }
+.check-row.checked { background: #f0fdf4; border-color: var(--gamer-green); }
+.check-box {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px;
+  background: #e5e7eb; color: var(--dark-bitstream);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 14px;
+}
+.check-row.checked .check-box { background: var(--gamer-green); color: var(--binary-blue); }
+.check-text { flex: 1; color: #374151; font-size: 14px; line-height: 1.5; }
+.check-row.checked .check-text { color: #3d6522; text-decoration: line-through; opacity: 0.85; }
+
+.check-meter {
+  margin-top: 18px; padding-top: 14px; border-top: 1px solid #e5e7eb;
+  display: flex; align-items: center; gap: 14px;
+}
+.check-meter-track {
+  background: #eef2f7; border-radius: 8px; height: 8px; overflow: hidden;
+}
+.check-meter-fill {
+  background: linear-gradient(90deg, var(--bitstream-blue), var(--gamer-green));
+  height: 100%; width: 0%; transition: width 0.3s ease;
+}
+.check-meter-label {
+  color: var(--dark-bitstream); font-family: var(--font-display);
+  font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px;
+}
+.check-meter-count {
+  color: var(--binary-blue); font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+}
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid; border-radius: 0 12px 12px 0;
+  padding: 22px 26px; margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display); font-size: 11px; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px; padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: space-between; gap: 16px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: 10px;
+  font-family: var(--font-display); font-weight: 700; font-size: 15px;
+  text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
+}
+.btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.btn-primary:hover { box-shadow: 0 4px 16px rgba(85,200,232,0.4); transform: translateY(-1px); }
+.btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer { background: var(--binary-blue); color: rgba(255,255,255,0.7); text-align: center; padding: 18px 24px; font-size: 12px; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .level-grid { grid-template-columns: 1fr; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+<body>
 
-<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
-
-  <!-- HEADER BAR -->
-  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
-    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
-      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
-      <circle cx="24" cy="28" r="7" fill="#fff"/>
-      <circle cx="40" cy="28" r="7" fill="#fff"/>
-      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
-      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
-      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
-      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div style="flex:1;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
-      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
     </div>
-    <div style="background:#76C043;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 2 · WEEK 15 · RUBRIC</div>
-  </div>
-
-  <!-- HERO -->
-  <div style="background:linear-gradient(135deg,#0E1C42 0%,#3d6522 50%,#76C043 100%);padding:48px 32px 40px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(118,192,67,0.30) 0%,rgba(118,192,67,0) 70%);"></div>
-    <div style="position:relative;z-index:2;">
-      <div style="display:inline-block;background:rgba(118,192,67,0.18);border:1px solid #76C043;color:#76C043;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Project Rubric &amp; Submission Checklist</div>
-      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:36px;font-weight:800;color:#ffffff;margin:0 0 10px;line-height:1.1;letter-spacing:-0.02em;">Cyber Safety PSA — Rubric &amp; Checklist</h1>
-      <p style="font-size:17px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Use this page two ways: (1) read the rubric BEFORE you build, so you know exactly what "exemplary" looks like; (2) run the checklist BEFORE you submit, so you don't lose points on something fixable.</p>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 2 · WEEK 15 · RUBRIC
     </div>
   </div>
+</header>
 
-  <!-- PROJECT TOTAL -->
-  <div style="padding:36px 32px 8px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 12px 12px 0;padding:18px 24px;">
-      <div style="display:flex;align-items:center;gap:14px;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;color:#C7922C;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">Project Total</div>
-        <div style="margin-left:auto;font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:24px;font-weight:800;">40 points</div>
-      </div>
-      <div style="color:#c8d6e8;font-size:14px;margin-top:6px;">4 criteria × 10 points each. Weight is even — you can't make up a weak fact base with great visuals (or vice versa).</div>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 2: Data &amp; Cyber Safety</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 15: Cyber Safety PSA — Rubric &amp; Checklist</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 2 • WEEK 15 • PROJECT RUBRIC</div>
+  <h1 class="lesson-title">Cyber Safety PSA — Rubric &amp; Checklist</h1>
+  <p class="lesson-description">Use this page two ways: (1) read the rubric BEFORE you build, so you know exactly what "exemplary" looks like; (2) run the checklist BEFORE you submit, so you don't lose points on something fixable.</p>
+  <!-- Project Total -->
+  <div class="project-total-card">
+    <div class="project-total-row">
+      <div class="project-total-label">Project Total</div>
+      <div class="project-total-value">40 points</div>
     </div>
+    <div class="project-total-desc">4 criteria × 10 points each. Weight is even — you can't make up a weak fact base with great visuals (or vice versa).</div>
   </div>
 
-  <!-- RUBRIC TABLE -->
-  <div style="padding:36px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:18px;">📊 The Rubric — 4 Criteria × 4 Levels</div>
+  <!-- ========== SECTION 1 — RUBRIC ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · The Rubric — 4 Criteria × 4 Levels</div>
+  </div>
+  <h2 class="section-title">What "exemplary" actually looks like</h2>
 
-    <!-- Criterion 1: Content Accuracy -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">1</div>
-        <div>
-          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:18px;">Content Accuracy</div>
-          <div style="color:#55C8E8;font-size:13px;">Are your facts right? Tied to a real Unit 2 standard?</div>
-        </div>
-        <div style="margin-left:auto;font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:18px;font-weight:800;">/ 10</div>
+  <!-- Criterion 1 -->
+  <div class="criterion-card">
+    <div class="criterion-head">
+      <div class="criterion-num" style="background: var(--bitstream-blue); color: var(--binary-blue);">1</div>
+      <div>
+        <div class="criterion-name">Content Accuracy</div>
+        <div class="criterion-q" style="color: var(--bitstream-blue);">Are your facts right? Tied to a real Unit 2 standard?</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div style="background:#0a0a14;border-left:3px solid #76C043;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Exemplary · 9–10</div>
-          <div style="color:#c8d6e8;font-size:13px;">All 3 facts are accurate, well-explained, and clearly tied to a Unit 2 lesson or standard. No confusion about the topic.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #55C8E8;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Proficient · 7–8</div>
-          <div style="color:#c8d6e8;font-size:13px;">Facts are accurate but one or two are vague or only half-explained. Topic is still clear.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #C7922C;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Developing · 5–6</div>
-          <div style="color:#c8d6e8;font-size:13px;">One fact is incorrect or misleading. Topic is mostly clear but the message wobbles.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #ff6b6b;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#ff6b6b;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Beginning · 0–4</div>
-          <div style="color:#c8d6e8;font-size:13px;">Facts are missing or wrong. Topic is unclear or off-standard. PSA does not teach what it claims to teach.</div>
-        </div>
-      </div>
+      <div class="criterion-points">/ 10</div>
     </div>
-
-    <!-- Criterion 2: Craft & Clarity -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="width:38px;height:38px;border-radius:8px;background:#C7922C;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">2</div>
-        <div>
-          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:18px;">Craft &amp; Clarity</div>
-          <div style="color:#C7922C;font-size:13px;">Do visuals, language, and layout serve the message?</div>
-        </div>
-        <div style="margin-left:auto;font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:18px;font-weight:800;">/ 10</div>
+    <div class="level-grid">
+      <div class="level-cell" style="border-left-color: var(--gamer-green);">
+        <div class="level-label" style="color: #3d6522;">Exemplary · 9–10</div>
+        <div class="level-body">All 3 facts are accurate, well-explained, and clearly tied to a Unit 2 lesson or standard. No confusion about the topic.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div style="background:#0a0a14;border-left:3px solid #76C043;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Exemplary · 9–10</div>
-          <div style="color:#c8d6e8;font-size:13px;">All 4 PSA parts (hook/facts/story/CTA) are clearly present. Visuals and words work together. Polished, focused, easy to follow.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #55C8E8;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Proficient · 7–8</div>
-          <div style="color:#c8d6e8;font-size:13px;">All 4 parts present but one is weaker (e.g., a vague hook). Layout is mostly clean. Minor typos.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #C7922C;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Developing · 5–6</div>
-          <div style="color:#c8d6e8;font-size:13px;">One part is missing or hard to find. Visuals are present but cluttered or off-topic. Multiple typos.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #ff6b6b;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#ff6b6b;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Beginning · 0–4</div>
-          <div style="color:#c8d6e8;font-size:13px;">Multiple PSA parts missing. Layout is hard to read. Message gets lost.</div>
-        </div>
+      <div class="level-cell" style="border-left-color: var(--bitstream-blue);">
+        <div class="level-label" style="color: var(--bitstream-blue);">Proficient · 7–8</div>
+        <div class="level-body">Facts are accurate but one or two are vague or only half-explained. Topic is still clear.</div>
       </div>
-    </div>
-
-    <!-- Criterion 3: Audience Fit -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="width:38px;height:38px;border-radius:8px;background:#67308F;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">3</div>
-        <div>
-          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:18px;">Audience Fit</div>
-          <div style="color:#b388d8;font-size:13px;">Could a 4th-grader understand AND act on this?</div>
-        </div>
-        <div style="margin-left:auto;font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:18px;font-weight:800;">/ 10</div>
+      <div class="level-cell" style="border-left-color: var(--gateway-gold);">
+        <div class="level-label" style="color: var(--gateway-gold);">Developing · 5–6</div>
+        <div class="level-body">One fact is incorrect or misleading. Topic is mostly clear but the message wobbles.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div style="background:#0a0a14;border-left:3px solid #76C043;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Exemplary · 9–10</div>
-          <div style="color:#c8d6e8;font-size:13px;">Language is age-appropriate. CTA is one specific habit a 4th-grader could start tomorrow. Examples connect to their world.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #55C8E8;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Proficient · 7–8</div>
-          <div style="color:#c8d6e8;font-size:13px;">Language mostly fits the audience. CTA is clear but slightly generic. Examples are okay.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #C7922C;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Developing · 5–6</div>
-          <div style="color:#c8d6e8;font-size:13px;">Some language is too advanced or jargon-heavy. CTA is vague ("be safe online"). Examples don't connect.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #ff6b6b;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#ff6b6b;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Beginning · 0–4</div>
-          <div style="color:#c8d6e8;font-size:13px;">Language and examples don't fit a younger student. No clear call-to-action.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Criterion 4: Citation & Sourcing -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="width:38px;height:38px;border-radius:8px;background:#76C043;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">4</div>
-        <div>
-          <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:18px;">Citation &amp; Sourcing</div>
-          <div style="color:#76C043;font-size:13px;">Are facts cited with CRAAP-quality sources?</div>
-        </div>
-        <div style="margin-left:auto;font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:18px;font-weight:800;">/ 10</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div style="background:#0a0a14;border-left:3px solid #76C043;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Exemplary · 9–10</div>
-          <div style="color:#c8d6e8;font-size:13px;">All 3 facts have a clear, named source (lesson, .gov, expert). Sources pass the CRAAP test from Week 13.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #55C8E8;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Proficient · 7–8</div>
-          <div style="color:#c8d6e8;font-size:13px;">All 3 facts cited but one source is borderline (e.g., a .com you didn't lateral-read). Sourcing is mostly responsible.</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #C7922C;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Developing · 5–6</div>
-          <div style="color:#c8d6e8;font-size:13px;">Only some facts cited. Sources are weak (anonymous blog, no date) or vague ("the internet").</div>
-        </div>
-        <div style="background:#0a0a14;border-left:3px solid #ff6b6b;border-radius:0 8px 8px 0;padding:12px 14px;">
-          <div style="color:#ff6b6b;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;">Beginning · 0–4</div>
-          <div style="color:#c8d6e8;font-size:13px;">No citations at all. Facts could be made up — there's no way for a viewer to check.</div>
-        </div>
+      <div class="level-cell" style="border-left-color: var(--odyssey-orange);">
+        <div class="level-label" style="color: var(--odyssey-orange);">Beginning · 0–4</div>
+        <div class="level-body">Facts are missing or wrong. Topic is unclear or off-standard. PSA does not teach what it claims to teach.</div>
       </div>
     </div>
   </div>
 
-  <!-- SUBMISSION CHECKLIST -->
-  <div style="padding:36px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:18px;">✅ Submission Checklist — Run This BEFORE You Submit</div>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;">
-      <p style="color:#c8d6e8;font-size:14px;margin:0 0 14px;">Click each box to track your progress. Don't submit until every box is checked.</p>
-
-      <div id="checklist-items" style="display:grid;grid-template-columns:1fr;gap:10px;"></div>
-
-      <div style="margin-top:18px;padding-top:14px;border-top:1px solid #1e2a4a;display:flex;align-items:center;gap:14px;">
-        <div style="flex:1;">
-          <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:4px;">Checked</div>
-          <div style="background:#0a0a14;border-radius:8px;height:8px;overflow:hidden;"><div id="check-fill" style="background:linear-gradient(90deg,#55C8E8,#76C043);height:100%;width:0%;transition:width 0.3s ease;"></div></div>
-        </div>
-        <div id="check-count" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:800;">0 / 10</div>
+  <!-- Criterion 2 -->
+  <div class="criterion-card">
+    <div class="criterion-head">
+      <div class="criterion-num" style="background: var(--gateway-gold); color: var(--binary-blue);">2</div>
+      <div>
+        <div class="criterion-name">Craft &amp; Clarity</div>
+        <div class="criterion-q" style="color: var(--gateway-gold);">Do visuals, language, and layout serve the message?</div>
+      </div>
+      <div class="criterion-points">/ 10</div>
+    </div>
+    <div class="level-grid">
+      <div class="level-cell" style="border-left-color: var(--gamer-green);">
+        <div class="level-label" style="color: #3d6522;">Exemplary · 9–10</div>
+        <div class="level-body">All 4 PSA parts (hook/facts/story/CTA) are clearly present. Visuals and words work together. Polished, focused, easy to follow.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--bitstream-blue);">
+        <div class="level-label" style="color: var(--bitstream-blue);">Proficient · 7–8</div>
+        <div class="level-body">All 4 parts present but one is weaker (e.g., a vague hook). Layout is mostly clean. Minor typos.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--gateway-gold);">
+        <div class="level-label" style="color: var(--gateway-gold);">Developing · 5–6</div>
+        <div class="level-body">One part is missing or hard to find. Visuals are present but cluttered or off-topic. Multiple typos.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--odyssey-orange);">
+        <div class="level-label" style="color: var(--odyssey-orange);">Beginning · 0–4</div>
+        <div class="level-body">Multiple PSA parts missing. Layout is hard to read. Message gets lost.</div>
       </div>
     </div>
   </div>
 
-  <!-- DESIGNER'S NOTE -->
-  <div style="padding:36px 32px 8px;">
-    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">📝 Required: Designer's Note</div>
-      <p style="margin:0 0 8px;color:#e2e8f0;font-size:15px;line-height:1.6;">Submit a 3-sentence note with your PSA that answers:</p>
-      <ol style="margin:0;padding:0 0 0 22px;color:#c8d6e8;font-size:14px;line-height:1.8;">
+  <!-- Criterion 3 -->
+  <div class="criterion-card">
+    <div class="criterion-head">
+      <div class="criterion-num" style="background: var(--portal-purple); color: white;">3</div>
+      <div>
+        <div class="criterion-name">Audience Fit</div>
+        <div class="criterion-q" style="color: var(--portal-purple);">Could a 4th-grader understand AND act on this?</div>
+      </div>
+      <div class="criterion-points">/ 10</div>
+    </div>
+    <div class="level-grid">
+      <div class="level-cell" style="border-left-color: var(--gamer-green);">
+        <div class="level-label" style="color: #3d6522;">Exemplary · 9–10</div>
+        <div class="level-body">Language is age-appropriate. CTA is one specific habit a 4th-grader could start tomorrow. Examples connect to their world.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--bitstream-blue);">
+        <div class="level-label" style="color: var(--bitstream-blue);">Proficient · 7–8</div>
+        <div class="level-body">Language mostly fits the audience. CTA is clear but slightly generic. Examples are okay.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--gateway-gold);">
+        <div class="level-label" style="color: var(--gateway-gold);">Developing · 5–6</div>
+        <div class="level-body">Some language is too advanced or jargon-heavy. CTA is vague ("be safe online"). Examples don't connect.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--odyssey-orange);">
+        <div class="level-label" style="color: var(--odyssey-orange);">Beginning · 0–4</div>
+        <div class="level-body">Language and examples don't fit a younger student. No clear call-to-action.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Criterion 4 -->
+  <div class="criterion-card">
+    <div class="criterion-head">
+      <div class="criterion-num" style="background: var(--gamer-green); color: var(--binary-blue);">4</div>
+      <div>
+        <div class="criterion-name">Citation &amp; Sourcing</div>
+        <div class="criterion-q" style="color: #3d6522;">Are facts cited with CRAAP-quality sources?</div>
+      </div>
+      <div class="criterion-points">/ 10</div>
+    </div>
+    <div class="level-grid">
+      <div class="level-cell" style="border-left-color: var(--gamer-green);">
+        <div class="level-label" style="color: #3d6522;">Exemplary · 9–10</div>
+        <div class="level-body">All 3 facts have a clear, named source (lesson, .gov, expert). Sources pass the CRAAP test from Week 13.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--bitstream-blue);">
+        <div class="level-label" style="color: var(--bitstream-blue);">Proficient · 7–8</div>
+        <div class="level-body">All 3 facts cited but one source is borderline (e.g., a .com you didn't lateral-read). Sourcing is mostly responsible.</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--gateway-gold);">
+        <div class="level-label" style="color: var(--gateway-gold);">Developing · 5–6</div>
+        <div class="level-body">Only some facts cited. Sources are weak (anonymous blog, no date) or vague ("the internet").</div>
+      </div>
+      <div class="level-cell" style="border-left-color: var(--odyssey-orange);">
+        <div class="level-label" style="color: var(--odyssey-orange);">Beginning · 0–4</div>
+        <div class="level-body">No citations at all. Facts could be made up — there's no way for a viewer to check.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 — CHECKLIST ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--odyssey-orange);">02</div>
+    <div class="section-label" style="color: var(--odyssey-orange);">Section 2 · Submission Checklist — Run BEFORE You Submit</div>
+  </div>
+  <h2 class="section-title">Don't lose points on something fixable</h2>
+
+  <div class="checklist-card">
+    <p style="color: #4b5563; font-size: 14px; margin: 0 0 14px;">Click each box to track your progress. Don't submit until every box is checked.</p>
+
+    <div id="checklist-items"></div>
+
+    <div class="check-meter">
+      <div style="flex: 1;">
+        <div class="check-meter-label">Checked</div>
+        <div class="check-meter-track"><div id="check-fill" class="check-meter-fill"></div></div>
+      </div>
+      <div id="check-count" class="check-meter-count">0 / 10</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 — DESIGNER'S NOTE ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--portal-purple); color: white;">03</div>
+    <div class="section-label" style="color: var(--portal-purple);">Section 3 · Required: Designer's Note</div>
+  </div>
+  <h2 class="section-title">A 3-sentence note that frames your choices</h2>
+
+  <div class="callout callout-think">
+    <div class="callout-label">📝 Required: Designer's Note</div>
+    <div class="callout-body">
+      <p>Submit a 3-sentence note with your PSA that answers:</p>
+      <ol style="padding-left: 22px; line-height: 1.8;">
         <li>WHO is your audience?</li>
         <li>WHAT is the ONE behavior change you want from them?</li>
         <li>WHY did you pick this format over the others?</li>
       </ol>
-      <p style="margin:10px 0 0;color:#8a9bb8;font-size:13px;font-style:italic;">A clear designer's note makes grading fair and shows you thought about your choices.</p>
+      <p style="font-style: italic; color: #6b7280;">A clear designer's note makes grading fair and shows you thought about your choices.</p>
+    </div>
+  </div><!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 16</strong>, you'll review every Unit 2 standard in one place — and get ready for the Unit 2 Assessment in Week 17.</p>
     </div>
   </div>
 
-  <!-- STANDARDS ALIGNMENT -->
-  <div style="padding:36px 32px 8px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:14px;">📐 Standards Alignment</div>
-      <p style="margin:0 0 12px;color:#c8d6e8;font-size:14px;">This project synthesizes:</p>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li><strong style="color:#ffffff;">SC.6.CS.1.3</strong> — Identify and respond to digital safety threats (phishing, social engineering).</li>
-        <li><strong style="color:#ffffff;">SC.6.CS.1.4</strong> — Classify and protect public, private, and confidential information.</li>
-        <li><strong style="color:#ffffff;">SC.6.HS.1.1</strong> — Apply healthy and safe practices when using digital tools.</li>
-        <li><strong style="color:#ffffff;">SC.6.HS.2.2</strong> — Evaluate the impact of screen time on physical and mental health.</li>
-        <li><strong style="color:#ffffff;">ELA support</strong> — Effective communication: hook, evidence, story, call-to-action.</li>
-      </ul>
-    </div>
+  <!-- ========== BOTTOM NAV ========== -->
+  <div class="bottom-nav">
+    <a href="week-15-project-guide.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Project Guide
+    </a>
+    <a href="week-16-reading.html" class="btn btn-primary">
+      Continue to Week 16
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
   </div>
 
-  <!-- WHAT'S NEXT -->
-  <div style="padding:24px 32px 48px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
-      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 16</strong>, you'll review every Unit 2 standard in one place — and get ready for the Unit 2 Assessment in Week 17.</div>
-    </div>
-  </div>
+</main>
 
-  <!-- FOOTER -->
-  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
-    Digital Discoveries · Optima Academy Online · Course 0200021 · Cyber Safety PSA — Rubric &amp; Checklist
-  </div>
-
-</div>
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021 · Cyber Safety PSA — Rubric &amp; Checklist
+</footer>
 
 <script>
 const CHECKLIST = [
@@ -263,22 +529,11 @@ function renderChecklist() {
   CHECKLIST.forEach((item, idx) => {
     const row = document.createElement('div');
     const isChecked = checked[idx];
-    row.style.cssText = `
-      background:${isChecked ? 'rgba(118,192,67,0.10)' : '#0a0a14'};
-      border:2px solid ${isChecked ? '#76C043' : '#1e2a4a'};
-      border-radius:10px;padding:12px 16px;cursor:pointer;
-      display:flex;gap:12px;align-items:flex-start;transition:all 0.2s ease;
-    `;
+    row.className = 'check-row' + (isChecked ? ' checked' : '');
     row.innerHTML = `
-      <div style="flex-shrink:0;width:24px;height:24px;border-radius:6px;background:${isChecked ? '#76C043' : '#1e2a4a'};color:${isChecked ? '#0E1C42' : '#55C8E8'};display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">${isChecked ? '✓' : ''}</div>
-      <div style="flex:1;color:${isChecked ? '#76C043' : '#e2e8f0'};font-size:14px;line-height:1.5;${isChecked ? 'text-decoration:line-through;opacity:0.85;' : ''}">${item}</div>
+      <div class="check-box">${isChecked ? '✓' : ''}</div>
+      <div class="check-text">${item}</div>
     `;
-    row.addEventListener('mouseenter', () => {
-      if (!isChecked) { row.style.borderColor = '#55C8E8'; row.style.background = '#111933'; }
-    });
-    row.addEventListener('mouseleave', () => {
-      if (!isChecked) { row.style.borderColor = '#1e2a4a'; row.style.background = '#0a0a14'; }
-    });
     row.addEventListener('click', () => {
       checked[idx] = !checked[idx];
       renderChecklist();

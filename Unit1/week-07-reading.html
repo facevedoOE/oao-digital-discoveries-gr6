@@ -7,282 +7,987 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(85,200,232,0.4);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+<body>
 
-<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
-
-  <!-- HEADER BAR -->
-  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
-    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
-      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
-      <circle cx="24" cy="28" r="7" fill="#fff"/>
-      <circle cx="40" cy="28" r="7" fill="#fff"/>
-      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
-      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
-      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
-      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div style="flex:1;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
-      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
     </div>
-    <div style="background:#76C043;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 1 · WEEK 7 · REVIEW</div>
-  </div>
-
-  <!-- HERO -->
-  <div style="background:linear-gradient(135deg,#0E1C42 0%,#1a2a5e 50%,#76C043 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(118,192,67,0.32) 0%,rgba(118,192,67,0) 70%);"></div>
-    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.22) 0%,rgba(85,200,232,0) 70%);"></div>
-    <div style="position:relative;z-index:2;">
-      <div style="display:inline-block;background:rgba(118,192,67,0.18);border:1px solid #76C043;color:#76C043;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Unit 1 Review · All Unit 1 Standards</div>
-      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Unit 1 Review &amp; Mini-Project</h1>
-      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Six weeks. Three lessons. Dozens of new ideas. This week you'll bring it all together — review the big ideas, build a small multimedia project that combines every skill, and get ready for the Unit 1 Assessment.</p>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 1 · WEEK 7 · REVIEW
     </div>
   </div>
+</header>
 
-  <!-- BIG-IDEA RECAP -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ The Big Ideas of Unit 1</div>
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
-      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">If you remember just four things from Unit 1, make it these:</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Match the channel to the message.</strong> Synchronous vs asynchronous. Formal vs casual. The right tool for the right audience and moment.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Multimedia design starts with purpose and audience.</strong> Inform, persuade, or entertain — and design every choice for a real, specific viewer.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Files and folders are the bones of digital work.</strong> Right format, clear name, sensible folder. Future-you will thank you.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Tools have tradeoffs.</strong> Word vs Docs, cloud vs local, comment vs suggesting mode. Smart digital citizens think in tradeoffs.</div>
-        </div>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 1: Digital Foundations</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 7: Unit 1 Review &amp; Project</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 1 • WEEK 7 • READING</div>
+  <h1 class="lesson-title">Unit 1 Review &amp; Mini-Project</h1>
+  <p class="lesson-description">Six weeks. Three lessons. Dozens of new ideas. This week you'll bring it all together — review the big ideas, build a small multimedia project that combines every skill, and get ready for the Unit 1 Assessment.</p>
+  <!-- Big Ideas Recap → using objectives-box for the 4 big ideas -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      The Big Ideas of Unit 1
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">If you remember just four things from Unit 1, make it these:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Match the channel to the message.</strong> Synchronous vs asynchronous. Formal vs casual. The right tool for the right audience and moment.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Multimedia design starts with purpose and audience.</strong> Inform, persuade, or entertain — and design every choice for a real, specific viewer.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Files and folders are the bones of digital work.</strong> Right format, clear name, sensible folder. Future-you will thank you.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Tools have tradeoffs.</strong> Word vs Docs, cloud vs local, comment vs suggesting mode. Smart digital citizens think in tradeoffs.</div>
+    </div>
+  </div>
+
+  <!-- ========== LESSON 1 RECAP ========== -->
+  <div class="section-header">
+    <div class="section-num">L1</div>
+    <div class="section-label">Lesson 1 Recap · Digital Communication (Weeks 1–2)</div>
+  </div>
+  <h2 class="section-title">Channels, tone, and the wisdom to pause</h2>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📡 Communication Channels</div>
+    <div class="callout-body">
+      <p><strong>Synchronous</strong> = real time (video calls, live chats). <strong>Asynchronous</strong> = on your own time (email, discussion board). The Greek <em>a-</em> means "not."</p>
+      <p>Five tool families: <strong>email</strong>, <strong>messaging</strong>, <strong>video calls</strong>, <strong>discussion boards</strong>, <strong>collaborative documents</strong>. Each has a "best fit."</p>
+      <p>Messages travel as <strong>data packets</strong> through <strong>routers</strong>, getting reassembled at the destination — sometimes from different paths.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✏️ Writing Well Online</div>
+    <div class="callout-body">
+      <p>The <strong>3 C's</strong>: Clarity. Concision. Courtesy.</p>
+      <p>Tone matches audience — formal for teachers, casual with peers.</p>
+      <p>The <strong>Before You Send rubric</strong>: clarity check, concision check, tone check, courtesy check, emotion check.</p>
+      <p>Classical virtues: <strong>prudence</strong> (right action, right time) and <strong>temperance</strong> (self-control, especially when feelings run hot).</p>
+    </div>
+  </div>
+
+  <!-- ========== LESSON 2 RECAP ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--odyssey-orange);">L2</div>
+    <div class="section-label" style="color: var(--odyssey-orange);">Lesson 2 Recap · Multimedia Design (Weeks 3–4)</div>
+  </div>
+  <h2 class="section-title">Plan, build, integrate, share</h2>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">🎯 Purpose, Audience, Plan</div>
+    <div class="callout-body">
+      <p><strong>Multimedia</strong> = two or more media types (text, image, audio, video) on purpose.</p>
+      <p>Aristotle's three rhetorical purposes: <strong>inform, persuade, entertain</strong>.</p>
+      <p><strong>5 audience questions</strong>: age, prior knowledge, what they care about, where they'll see it, how much time they'll give it.</p>
+      <p><strong>Storyboard first.</strong> Sketches are cheap to change; finished work is expensive to redo.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">🎨 Build &amp; Critique</div>
+    <div class="callout-body">
+      <p><strong>Aesthetic unity</strong>: a 3–5 color palette + a 2-font pair + consistent layout, used across every page.</p>
+      <p><strong>Integration</strong>: text, visuals, and audio all support the SAME idea (not fighting each other).</p>
+      <p><strong>Collaboration protocols</strong>: divide pages by name, lock in design system first, comment instead of silently overwriting.</p>
+      <p><strong>Glow &amp; Grow</strong> peer feedback: name one specific strength, name one specific improvement.</p>
+      <p>The 6-point quality checklist before "shipping": purpose, audience, aesthetic unity, integration, proofread, credit.</p>
+    </div>
+  </div>
+
+  <!-- ========== LESSON 3 RECAP ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--portal-purple); color: white;">L3</div>
+    <div class="section-label" style="color: var(--portal-purple);">Lesson 3 Recap · Files &amp; Software (Weeks 5–6)</div>
+  </div>
+  <h2 class="section-title">The bones of digital work</h2>
+
+  <div class="callout callout-think">
+    <div class="callout-label">📁 Files</div>
+    <div class="callout-body">
+      <p><strong>5 file families</strong>: Documents (.docx, .pdf, .txt) · Images (.jpg, .png, .svg) · Audio (.mp3, .wav) · Video (.mp4, .mov) · 3D (.stl, .obj).</p>
+      <p>The <strong>file extension</strong> tells the computer what kind of file it is. Don't strip it.</p>
+      <p><strong>4 naming rules</strong>: be specific, no spaces (use hyphens), date/version it, keep the extension.</p>
+      <p>A <strong>folder hierarchy</strong> groups related files; saves future-you hours of searching.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">⚙️ Software</div>
+    <div class="callout-body">
+      <p><strong>Word</strong> = strong layout + offline. <strong>Google Docs</strong> = built-in real-time co-editing + cloud sync.</p>
+      <p><strong>Cloud storage</strong> lives in real data centers — and lets one file follow you across every device.</p>
+      <p><strong>4 collaboration features</strong>: real-time co-editing · comments · suggesting mode · version history (lifesaver after accidents).</p>
+      <p>Every tool has tradeoffs. The smart move is matching the tool to the job.</p>
+    </div>
+  </div>
+
+  <!-- ========== MINI-PROJECT BRIEF ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--gateway-gold); color: white;">★</div>
+    <div class="section-label" style="color: var(--gateway-gold);">Unit 1 Mini-Project</div>
+  </div>
+  <h2 class="section-title">The "Digital Foundations" Mini-Multimedia Project</h2>
+  <div class="read-body">
+    <p>Build a short multimedia piece — poster, slide deck, or infographic — that <strong>teaches a younger student (a 3rd or 4th grader) one thing you learned in Unit 1</strong>. You'll use every skill you've practiced.</p>
+  </div>
+
+  <div class="steps-card">
+    <div style="font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.22em; color: var(--bitstream-blue); text-transform:uppercase; margin-bottom:18px;">📋 Project Requirements</div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));">1</div>
+      <div>
+        <div class="step-title">Pick one Unit 1 topic.</div>
+        <div class="step-body">Examples: "What is a phishing email?" "How do messages travel?" "What is netiquette?" "What's the difference between a JPG and a PDF?"</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">2</div>
+      <div>
+        <div class="step-title">Identify your audience.</div>
+        <div class="step-body">A 3rd or 4th grader who has never heard of this topic.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--portal-purple), #3d1c59);">3</div>
+      <div>
+        <div class="step-title">Name your purpose.</div>
+        <div class="step-body">Mainly to <em>inform</em>, with a touch of <em>entertain</em> if you want.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--odyssey-orange), #b85e0e);">4</div>
+      <div>
+        <div class="step-title">Storyboard first.</div>
+        <div class="step-body">Sketch 3–5 panels on paper or in a doc before you build.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gamer-green), #3d6522);">5</div>
+      <div>
+        <div class="step-title">Build in Canva, Google Slides, or Word.</div>
+        <div class="step-body">Use a 3–5 color palette and 2-font pair throughout. <strong>Integrate</strong> at least 2 media types — text + visual at minimum.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));">6</div>
+      <div>
+        <div class="step-title">Name your file using all 4 naming rules. Export as a PDF.</div>
+        <div class="step-body">Specific name, no spaces, date/version, keep the extension.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">7</div>
+      <div>
+        <div class="step-title">Get peer feedback.</div>
+        <div class="step-body">Trade with a classmate or family member: one Glow, one Grow.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gamer-green), #3d6522);">8</div>
+      <div>
+        <div class="step-title">Run the 6-point quality checklist before submitting.</div>
+        <div class="step-body">Purpose, audience, aesthetic unity, integration, proofread, credit.</div>
       </div>
     </div>
   </div>
 
-  <!-- LESSON 1 RECAP -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">L1</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Lesson 1 Recap · Digital Communication (Weeks 1–2)</div>
+  <div class="diagram-card" style="text-align:left; padding:0; overflow:hidden;">
+    <div style="background: var(--binary-blue); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="color: var(--bitstream-blue); font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;">📊 Mini-Project Rubric</div>
+      <div style="color: var(--gateway-gold); font-family: var(--font-display); font-weight:800; font-size:14px;">100 pts total</div>
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:24px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.25;">Channels, tone, and the wisdom to pause</h2>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:22px;margin:0 0 16px;">
-      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">📡 Communication Channels</div>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li><strong style="color:#ffffff;">Synchronous</strong> = real time (video calls, live chats). <strong style="color:#ffffff;">Asynchronous</strong> = on your own time (email, discussion board). The Greek <em>a-</em> means "not."</li>
-        <li>Five tool families: <strong>email</strong>, <strong>messaging</strong>, <strong>video calls</strong>, <strong>discussion boards</strong>, <strong>collaborative documents</strong>. Each has a "best fit."</li>
-        <li>Messages travel as <strong>data packets</strong> through <strong>routers</strong>, getting reassembled at the destination — sometimes from different paths.</li>
-      </ul>
-    </div>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:22px;margin:0 0 16px;">
-      <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">✏️ Writing Well Online</div>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li>The <strong>3 C's</strong>: Clarity. Concision. Courtesy.</li>
-        <li>Tone matches audience — formal for teachers, casual with peers.</li>
-        <li>The <strong>Before You Send rubric</strong>: clarity check, concision check, tone check, courtesy check, emotion check.</li>
-        <li>Classical virtues: <strong>prudence</strong> (right action, right time) and <strong>temperance</strong> (self-control, especially when feelings run hot).</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- LESSON 2 RECAP -->
-  <div style="padding:30px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#F78F1E;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">L2</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;">Lesson 2 Recap · Multimedia Design (Weeks 3–4)</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:24px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.25;">Plan, build, integrate, share</h2>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:22px;margin:0 0 16px;">
-      <div style="color:#F78F1E;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">🎯 Purpose, Audience, Plan</div>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li><strong>Multimedia</strong> = two or more media types (text, image, audio, video) on purpose.</li>
-        <li>Aristotle's three rhetorical purposes: <strong>inform, persuade, entertain</strong>.</li>
-        <li><strong>5 audience questions</strong>: age, prior knowledge, what they care about, where they'll see it, how much time they'll give it.</li>
-        <li><strong>Storyboard first.</strong> Sketches are cheap to change; finished work is expensive to redo.</li>
-      </ul>
-    </div>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:22px;margin:0 0 16px;">
-      <div style="color:#67308F;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">🎨 Build &amp; Critique</div>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li><strong>Aesthetic unity</strong>: a 3–5 color palette + a 2-font pair + consistent layout, used across every page.</li>
-        <li><strong>Integration</strong>: text, visuals, and audio all support the SAME idea (not fighting each other).</li>
-        <li><strong>Collaboration protocols</strong>: divide pages by name, lock in design system first, comment instead of silently overwriting.</li>
-        <li><strong>Glow &amp; Grow</strong> peer feedback: name one specific strength, name one specific improvement.</li>
-        <li>The 6-point quality checklist before "shipping": purpose, audience, aesthetic unity, integration, proofread, credit.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- LESSON 3 RECAP -->
-  <div style="padding:30px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#67308F;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">L3</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;">Lesson 3 Recap · Files &amp; Software (Weeks 5–6)</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:24px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.25;">The bones of digital work</h2>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:22px;margin:0 0 16px;">
-      <div style="color:#b388d8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">📁 Files</div>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li><strong>5 file families</strong>: Documents (.docx, .pdf, .txt) · Images (.jpg, .png, .svg) · Audio (.mp3, .wav) · Video (.mp4, .mov) · 3D (.stl, .obj).</li>
-        <li>The <strong>file extension</strong> tells the computer what kind of file it is. Don't strip it.</li>
-        <li><strong>4 naming rules</strong>: be specific, no spaces (use hyphens), date/version it, keep the extension.</li>
-        <li>A <strong>folder hierarchy</strong> groups related files; saves future-you hours of searching.</li>
-      </ul>
-    </div>
-
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:22px;margin:0 0 16px;">
-      <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">⚙️ Software</div>
-      <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-        <li><strong>Word</strong> = strong layout + offline. <strong>Google Docs</strong> = built-in real-time co-editing + cloud sync.</li>
-        <li><strong>Cloud storage</strong> lives in real data centers — and lets one file follow you across every device.</li>
-        <li><strong>4 collaboration features</strong>: real-time co-editing · comments · suggesting mode · version history (lifesaver after accidents).</li>
-        <li>Every tool has tradeoffs. The smart move is matching the tool to the job.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ═══════════════ THE MINI-PROJECT BRIEF ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:18px;">🏆 Unit 1 Mini-Project</div>
-
-    <div style="background:linear-gradient(135deg,#1a2a5e,#0E1C42);border:1px solid #C7922C;border-radius:16px;padding:32px;box-shadow:0 8px 32px rgba(199,146,44,0.18);">
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 14px;line-height:1.2;">The "Digital Foundations" Mini-Multimedia Project</h2>
-      <p style="font-size:16px;color:#c8d6e8;margin:0 0 24px;">Build a short multimedia piece — poster, slide deck, or infographic — that <strong style="color:#C7922C;">teaches a younger student (a 3rd or 4th grader) one thing you learned in Unit 1</strong>. You'll use every skill you've practiced.</p>
-
-      <div style="background:rgba(85,200,232,0.06);border:1px solid rgba(85,200,232,0.3);border-radius:10px;padding:20px;margin-bottom:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">📋 Project Requirements</div>
-        <ul style="margin:0;padding:0 0 0 22px;color:#e2e8f0;font-size:14px;line-height:1.85;">
-          <li><strong style="color:#ffffff;">Pick one Unit 1 topic.</strong> Examples: "What is a phishing email?" "How do messages travel?" "What is netiquette?" "What's the difference between a JPG and a PDF?"</li>
-          <li><strong style="color:#ffffff;">Identify your audience.</strong> A 3rd or 4th grader who has never heard of this topic.</li>
-          <li><strong style="color:#ffffff;">Name your purpose.</strong> Mainly to <em>inform</em>, with a touch of <em>entertain</em> if you want.</li>
-          <li><strong style="color:#ffffff;">Storyboard first.</strong> Sketch 3–5 panels on paper or in a doc before you build.</li>
-          <li><strong style="color:#ffffff;">Build in Canva, Google Slides, or Word.</strong> Use a 3–5 color palette and 2-font pair throughout.</li>
-          <li><strong style="color:#ffffff;">Integrate</strong> at least 2 media types — text + visual at minimum.</li>
-          <li><strong style="color:#ffffff;">Name your file</strong> using all 4 naming rules. <strong style="color:#ffffff;">Export as a PDF</strong> for submission.</li>
-          <li><strong style="color:#ffffff;">Get peer feedback.</strong> Trade with a classmate or family member: one Glow, one Grow.</li>
-          <li><strong style="color:#ffffff;">Run the 6-point quality checklist</strong> before submitting.</li>
-        </ul>
+    <div style="padding:8px 14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(85,200,232,0.10); border-radius:6px; margin:8px 0;">
+        <span style="color:var(--binary-blue); font-weight:600;">Purpose &amp; Audience clarity</span>
+        <span style="color:var(--bitstream-blue); font-family:var(--font-display); font-weight:800;">15 pts</span>
       </div>
-
-      <div style="background:rgba(199,146,44,0.06);border:1px solid rgba(199,146,44,0.3);border-radius:10px;padding:20px;">
-        <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;">📊 Mini-Project Rubric (How Your Work Is Scored)</div>
-        <div style="display:grid;grid-template-columns:1fr;gap:8px;font-size:14px;color:#e2e8f0;">
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(85,200,232,0.08);border-radius:6px;"><span><strong style="color:#ffffff;">Purpose &amp; Audience clarity</strong></span><span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">15 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(247,143,30,0.08);border-radius:6px;"><span><strong style="color:#ffffff;">Storyboard submitted with project</strong></span><span style="color:#F78F1E;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">10 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(103,48,143,0.12);border-radius:6px;"><span><strong style="color:#ffffff;">Aesthetic unity (palette, fonts, layout)</strong></span><span style="color:#b388d8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">20 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(199,146,44,0.08);border-radius:6px;"><span><strong style="color:#ffffff;">Integration of 2+ media types</strong></span><span style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">15 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(118,192,67,0.08);border-radius:6px;"><span><strong style="color:#ffffff;">File named &amp; exported correctly</strong></span><span style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">10 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(85,200,232,0.08);border-radius:6px;"><span><strong style="color:#ffffff;">Peer feedback (Glow + Grow) included</strong></span><span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">15 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(247,143,30,0.08);border-radius:6px;"><span><strong style="color:#ffffff;">6-point quality checklist run</strong></span><span style="color:#F78F1E;font-family:'Wix Madefor Display',sans-serif;font-weight:800;">15 pts</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#0E1C42;border-radius:6px;border:1px solid #C7922C;"><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;">TOTAL</strong><strong style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">100 pts</strong></div>
-        </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(247,143,30,0.10); border-radius:6px; margin:8px 0;">
+        <span style="color:var(--binary-blue); font-weight:600;">Storyboard submitted with project</span>
+        <span style="color:var(--odyssey-orange); font-family:var(--font-display); font-weight:800;">10 pts</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(103,48,143,0.12); border-radius:6px; margin:8px 0;">
+        <span style="color:var(--binary-blue); font-weight:600;">Aesthetic unity (palette, fonts, layout)</span>
+        <span style="color:var(--portal-purple); font-family:var(--font-display); font-weight:800;">20 pts</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(199,146,44,0.12); border-radius:6px; margin:8px 0;">
+        <span style="color:var(--binary-blue); font-weight:600;">Integration of 2+ media types</span>
+        <span style="color:var(--gateway-gold); font-family:var(--font-display); font-weight:800;">15 pts</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(118,192,67,0.12); border-radius:6px; margin:8px 0;">
+        <span style="color:var(--binary-blue); font-weight:600;">File named &amp; exported correctly</span>
+        <span style="color:#3d6522; font-family:var(--font-display); font-weight:800;">10 pts</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(85,200,232,0.10); border-radius:6px; margin:8px 0;">
+        <span style="color:var(--binary-blue); font-weight:600;">Peer feedback (Glow + Grow) included</span>
+        <span style="color:var(--bitstream-blue); font-family:var(--font-display); font-weight:800;">15 pts</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(247,143,30,0.10); border-radius:6px; margin:8px 0 14px;">
+        <span style="color:var(--binary-blue); font-weight:600;">6-point quality checklist run</span>
+        <span style="color:var(--odyssey-orange); font-family:var(--font-display); font-weight:800;">15 pts</span>
       </div>
     </div>
   </div>
 
-  <!-- VOCAB SUMMARY -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Unit 1 Vocabulary at a Glance</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Synchronous</strong> · real-time</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Asynchronous</strong> · later</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Data packet</strong> · message chunk</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Router</strong> · packet director</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Netiquette</strong> · online manners</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Tone</strong> · feel of words</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Prudence</strong> · wise choice</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Temperance</strong> · self-control</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Multimedia</strong> · 2+ media types</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Rhetorical purpose</strong> · why</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Audience</strong> · who you design for</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Storyboard</strong> · panel-by-panel plan</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Aesthetic unity</strong> · same look</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Integration</strong> · same idea</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Glow &amp; Grow</strong> · feedback</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">File extension</strong> · type label</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">PDF</strong> · locked layout</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Cloud storage</strong> · servers far away</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Suggesting mode</strong> · proposed edits</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Version history</strong> · rewind</div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:8px;padding:12px;color:#c8d6e8;font-size:13px;"><strong style="color:#55C8E8;">Tradeoff</strong> · gain + give up</div>
+  <!-- ========== UNIT 1 VOCABULARY AT A GLANCE ========== -->
+  <h2 class="vocab-section-title">📚 Unit 1 Vocabulary at a Glance</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card"><div class="vocab-term">Synchronous</div><div class="vocab-def">Real-time communication.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Asynchronous</div><div class="vocab-def">On your own time — respond later.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Data packet</div><div class="vocab-def">A small chunk of a message.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Router</div><div class="vocab-def">Device that directs data packets.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Netiquette</div><div class="vocab-def">Online manners and respect.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Tone</div><div class="vocab-def">The feel or attitude of your words.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Prudence</div><div class="vocab-def">Wise choice at the right moment.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Temperance</div><div class="vocab-def">Self-control, especially under emotion.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Multimedia</div><div class="vocab-def">2+ media types combined on purpose.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Rhetorical purpose</div><div class="vocab-def">Inform, persuade, or entertain.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Audience</div><div class="vocab-def">Who you design for.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Storyboard</div><div class="vocab-def">A panel-by-panel plan.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Aesthetic unity</div><div class="vocab-def">Same look, vibe, palette across pages.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Integration</div><div class="vocab-def">All ingredients support the same idea.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Glow &amp; Grow</div><div class="vocab-def">Peer-feedback framework.</div></div>
+    <div class="vocab-card"><div class="vocab-term">File extension</div><div class="vocab-def">The .ext that names a file's type.</div></div>
+    <div class="vocab-card"><div class="vocab-term">PDF</div><div class="vocab-def">Locked layout, opens anywhere.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Cloud storage</div><div class="vocab-def">Files on remote servers.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Suggesting mode</div><div class="vocab-def">Edits proposed for approval.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Version history</div><div class="vocab-def">Rewind to a past version of a file.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Tradeoff</div><div class="vocab-def">A choice that gains and gives up.</div></div>
+  </div>
+
+  <!-- ========== READINESS SELF-CHECK ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--gamer-green); color: var(--binary-blue);">✓</div>
+    <div class="section-label" style="color: #3d6522;">Are You Ready for the Unit 1 Assessment?</div>
+  </div>
+  <div class="read-body">
+    <p>Use this self-check to know if you're ready for next week's Unit 1 Assessment. Be honest — if you can't say "yes" to all eight, go reread that week before the assessment.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); width:36px; height:36px; font-size:14px;">1</div>
+      <div><div class="step-body">I can give a real-life example of synchronous and asynchronous communication.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); width:36px; height:36px; font-size:14px;">2</div>
+      <div><div class="step-body">I can name the 3 C's of effective digital writing and explain why each matters.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); width:36px; height:36px; font-size:14px;">3</div>
+      <div><div class="step-body">I can define <em>prudence</em> and <em>temperance</em> in plain language and connect each to a digital example.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620); width:36px; height:36px; font-size:14px;">4</div>
+      <div><div class="step-body">I can name Aristotle's three rhetorical purposes and identify each in a real piece of media.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620); width:36px; height:36px; font-size:14px;">5</div>
+      <div><div class="step-body">I can explain why a storyboard is worth making before opening any software.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--portal-purple), #3d1c59); width:36px; height:36px; font-size:14px;">6</div>
+      <div><div class="step-body">I can match common file extensions (.pdf, .jpg, .mp3, .mp4, .docx) to their families.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gamer-green), #3d6522); width:36px; height:36px; font-size:14px;">7</div>
+      <div><div class="step-body">I can compare Word and Google Docs by interface, storage, and collaboration.</div></div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gamer-green), #3d6522); width:36px; height:36px; font-size:14px;">8</div>
+      <div><div class="step-body">I can name the 4 collaboration features and explain when to use each one.</div></div>
     </div>
   </div>
 
-  <!-- READINESS SELF-CHECK -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:18px;">☑️ Are You Ready for the Unit 1 Assessment?</div>
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Capstone Reflection</div>
+    <div class="reflection-q">Connect everything you've learned.</div>
+    <p>As you wrap up Unit 1, take a few minutes to reflect:</p>
+    <ul>
+      <li>Pick the <strong>one big idea</strong> from the unit that most changed how you think about technology. Write 2–3 sentences explaining why.</li>
+      <li>Name <strong>one habit</strong> from this unit that you've already started practicing in real life (better filenames, pausing before sending, etc.).</li>
+      <li>Identify <strong>one weak spot</strong> — a topic from the readiness self-check where you'd want to review again before the assessment.</li>
+      <li>Submit your <strong>mini-project file</strong> (with storyboard + peer feedback) before next week's assessment.</li>
+    </ul>
+  </div>
 
-    <div style="background:linear-gradient(135deg,#111122,#0E1C42);border:1px solid #76C043;border-radius:12px;padding:24px 28px;box-shadow:0 6px 24px rgba(118,192,67,0.15);">
-      <p style="margin:0 0 14px;color:#c8d6e8;font-size:15px;">Use this self-check to know if you're ready for next week's Unit 1 Assessment. Be honest — if you can't say "yes" to all eight, go reread that week before the assessment.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #55C8E8;border-radius:5px;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can give a real-life example of synchronous and asynchronous communication.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #55C8E8;border-radius:5px;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can name the 3 C's of effective digital writing and explain why each matters.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #55C8E8;border-radius:5px;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can define <em>prudence</em> and <em>temperance</em> in plain language and connect each to a digital example.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #C7922C;border-radius:5px;color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can name Aristotle's three rhetorical purposes and identify each in a real piece of media.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #C7922C;border-radius:5px;color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can explain why a storyboard is worth making before opening any software.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #67308F;border-radius:5px;color:#b388d8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can match common file extensions (.pdf, .jpg, .mp3, .mp4, .docx) to their families.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #76C043;border-radius:5px;color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can compare Word and Google Docs by interface, storage, and collaboration.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:24px;height:24px;border:2px solid #76C043;border-radius:5px;color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;">✓</div>
-          <div style="color:#e2e8f0;font-size:14px;">I can name the 4 collaboration features and explain when to use each one.</div>
-        </div>
-      </div>
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 8</strong>, you'll take the <em>Unit 1 Summative Assessment</em> — 15 questions covering everything from Lessons 1, 2, and 3. Then in <strong>Week 9</strong>, we shift to Unit 2: <em>Data &amp; Cyber Safety</em>.</p>
     </div>
   </div>
 
-  <!-- WHAT'S NEXT -->
-  <div style="padding:40px 32px 32px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
-      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 8</strong>, you'll take the <em>Unit 1 Summative Assessment</em> — 15 questions covering everything from Lessons 1, 2, and 3. Then in <strong style="color:#ffffff;">Week 9</strong>, we shift to Unit 2: <em>Data &amp; Cyber Safety</em>.</div>
-    </div>
+  <!-- ========== BOTTOM NAV ========== -->
+  <div class="bottom-nav">
+    <a href="../index.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Course Home
+    </a>
+    <a href="week-07-activity.html" class="btn btn-primary">
+      Continue to Activity
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
   </div>
 
-  <!-- FOOTER -->
-  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
-    Digital Discoveries · Optima Academy Online · Course 0200021 · Unit 1 Review · All Unit 1 Standards
-  </div>
+</main>
 
-</div>
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021 · Unit 1 Review
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,36 @@
+{
+  "_README": "Sanitized example of course-config.json. Copy this to course-config.json (which is gitignored) and fill in canvas_api_token, OR set the CANVAS_API_TOKEN env var. The deploy script reads from course-config.json (or env var) — never commit the real config.",
+  "course": {
+    "name": "6th Grade Digital Discoveries",
+    "course_code": "0200021",
+    "canvas_course_id": "REPLACE_WITH_CANVAS_COURSE_ID",
+    "canvas_base_url": "https://k12.instructure.com",
+    "github_pages_base_url": "https://YOUR-USER.github.io/YOUR-REPO",
+    "canvas_api_token": "REPLACE_OR_USE_CANVAS_API_TOKEN_ENV_VAR"
+  },
+  "github_pages": {
+    "base_url": "https://YOUR-USER.github.io/YOUR-REPO",
+    "branch": "main"
+  },
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "Unit 1: Digital Foundations",
+      "canvas_module_position": 1,
+      "unlock_after_unit": null,
+      "weeks": [
+        {
+          "id": "u1-w1",
+          "week_number": 1,
+          "title": "Week 1: Digital Communication Basics",
+          "standards": ["SC.6.CC.1.1"],
+          "items": [
+            { "type": "page", "subtype": "reading", "title": "Week 1 Reading: Digital Communication Basics", "file": "Unit1/week-01-reading.html", "completion_requirement": "must_view" },
+            { "type": "page", "subtype": "activity", "title": "Week 1 Activity: Digital Communication", "file": "Unit1/week-01-activity.html", "completion_requirement": "must_view" },
+            { "type": "quiz", "title": "Week 1 Quiz: Digital Communication Basics", "file": "Unit1/week-01-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+          ]
+        }
+      ]
+    }
+  ]
+}
