@@ -1,0 +1,36 @@
+# Claude/dev tooling
+/.claude
+
+# Local secrets — contains Canvas API token, never commit
+course-config.json
+.env
+*.secret.json
+canvas_secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Build artifacts (do NOT ignore the QTI zips — those are source content)
+build/
+dist/
+
+# Logs
+*.log
+deploy.log

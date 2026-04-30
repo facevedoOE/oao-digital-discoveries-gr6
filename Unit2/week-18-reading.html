@@ -7,251 +7,944 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(85,200,232,0.4);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+<body>
 
-<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
-
-  <!-- HEADER BAR -->
-  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
-    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
-      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
-      <circle cx="24" cy="28" r="7" fill="#fff"/>
-      <circle cx="40" cy="28" r="7" fill="#fff"/>
-      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
-      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
-      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
-      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div style="flex:1;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
-      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
     </div>
-    <div style="background:#67308F;color:#ffffff;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">SEMESTER 1 · WEEK 18</div>
-  </div>
-
-  <!-- HERO -->
-  <div style="background:linear-gradient(135deg,#0E1C42 0%,#3a1a4e 50%,#67308F 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(103,48,143,0.32) 0%,rgba(103,48,143,0) 70%);"></div>
-    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.22) 0%,rgba(85,200,232,0) 70%);"></div>
-    <div style="position:relative;z-index:2;">
-      <div style="display:inline-block;background:rgba(179,136,216,0.18);border:1px solid #b388d8;color:#b388d8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Semester 1 Reflection · ELA.K12.EE.1.1, 5.1</div>
-      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Semester 1 Reflection &amp; Midpoint Check</h1>
-      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">17 weeks. Two units. One PSA project. A lot of new ideas. This week you'll pause to look back at how far you've come — and look forward to the second half of the year.</p>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      SEMESTER 1 · WEEK 18
     </div>
   </div>
+</header>
 
-  <!-- WHY REFLECT -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#67308F;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;">Section 1 · Why Reflection Matters</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Looking back is how you grow forward</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">Athletes watch game film. Pilots run debriefs. Surgeons review every operation. They don't do it because they failed — they do it because <strong style="color:#ffffff;">reflection is how skilled people get better</strong>. Without it, you keep making the same mistakes and missing the same opportunities.</p>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">In school, this kind of thinking has a name: <strong style="color:#ffffff;">metacognition</strong> — "thinking about your own thinking." When you ask <em>"what did I learn? what was hard? what would I do differently?"</em> — you're not just remembering. You're building a more capable future you.</p>
-
-    <!-- VOCABULARY block -->
-    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Reflection Vocabulary</div>
-      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Reflection</strong> — pausing to think carefully about your learning and your choices.</p>
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Metacognition</strong> — thinking about your own thinking — what you know, how you learned it, and what's still unclear.</p>
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Portfolio</strong> — a curated collection of your best work that shows what you can do.</p>
-        <p style="margin:0;"><strong style="color:#ffffff;">Growth mindset</strong> — the belief that your skills get better with effort, practice, and good feedback.</p>
-      </div>
-    </div>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 2: Data &amp; Cyber Safety</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 18: Semester 1 Reflection</span>
   </div>
+</nav>
 
-  <!-- UNIT 1 RECAP -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">U1</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · Unit 1 Recap (Weeks 1–8)</div>
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 2 • WEEK 18 • REFLECTION</div>
+  <h1 class="lesson-title">Semester 1 Reflection &amp; Midpoint Check</h1>
+  <p class="lesson-description">17 weeks. Two units. One PSA project. A lot of new ideas. This week you'll pause to look back at how far you've come — and look forward to the second half of the year.</p>
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Communication, Multimedia &amp; Files</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Your first eight weeks built the foundation: <em>how to communicate well online, how to make multimedia that lands, and how to keep your digital work organized.</em></p>
-
-    <!-- Unit 1 cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Lesson 1 · Communication</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Synchronous vs asynchronous, channels, tone, packets and routers. The 3 C's: clarity, concision, courtesy.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Lesson 2 · Multimedia</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Purpose &amp; audience first, then design. Inform / persuade / entertain — and pick the format that serves the message.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#b388d8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Lesson 3 · Files &amp; Folders</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">File formats, naming conventions, folder structure, cloud vs local trade-offs. Future-you will thank present-you.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Project &amp; Assessment</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Multimedia mini-project + Unit 1 assessment. Your first time bringing skills together for a real audience.</div>
-      </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Reflect on your learning</strong> across 17 weeks of Digital Discoveries — what stuck, what was hard, what changed.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Build a portfolio checkpoint</strong> by gathering and organizing your best work from Semester 1.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Practice metacognition</strong> — thinking about your own thinking — using a guided self-assessment workbook.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Set the stage for Semester 2</strong> by previewing Units 3, 4, and 5.</div>
     </div>
   </div>
 
-  <!-- UNIT 2 RECAP -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#76C043;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">U2</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;">Section 3 · Unit 2 Recap (Weeks 9–17)</div>
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--portal-purple); color: white;">01</div>
+    <div class="section-label" style="color: var(--portal-purple);">Section 1 · Why Reflection Matters</div>
+  </div>
+  <h2 class="section-title">Looking back is how you grow forward</h2>
+  <div class="read-body">
+    <p>Athletes watch game film. Pilots run debriefs. Surgeons review every operation. They don't do it because they failed — they do it because <strong>reflection is how skilled people get better</strong>. Without it, you keep making the same mistakes and missing the same opportunities.</p>
+    <p>In school, this kind of thinking has a name: <span class="key-term">metacognition</span> — "thinking about your own thinking." When you ask <em>"what did I learn? what was hard? what would I do differently?"</em> — you're not just remembering. You're building a more capable future you.</p>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Reflection Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Reflection</strong> — pausing to think carefully about your learning and your choices.</p>
+      <p><strong>Metacognition</strong> — thinking about your own thinking — what you know, how you learned it, and what's still unclear.</p>
+      <p><strong>Portfolio</strong> — a curated collection of your best work that shows what you can do.</p>
+      <p><strong>Growth mindset</strong> — the belief that your skills get better with effort, practice, and good feedback.</p>
     </div>
+  </div>
 
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Data &amp; Cyber Safety</h2>
+  <!-- ========== SECTION 2 — UNIT 1 RECAP ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Unit 1 Recap (Weeks 1–8)</div>
+  </div>
+  <h2 class="section-title">Communication, Multimedia &amp; Files</h2>
+  <div class="read-body">
+    <p>Your first eight weeks built the foundation: <em>how to communicate well online, how to make multimedia that lands, and how to keep your digital work organized.</em></p>
+  </div>
 
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Your second unit went deeper: <em>where data lives, who can touch it, and how to protect yourself in a world full of phishers, scammers, and infinite scrolls.</em></p>
-
-    <!-- Unit 2 cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Lesson 4 · Data &amp; Permissions</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Three states of data. Local vs cloud. LAN/WAN/Internet. Roles, share scopes, and the principle of least privilege.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #ff6b6b;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#ff6b6b;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Lesson 5 · Safety &amp; Identity</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Phishing tells, social-engineering levers, public/private/confidential, strong passwords, MFA, encryption, HTTPS, footprint.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Lesson 6 · Sources &amp; Wellness</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">CRAAP test, TLDs, lateral reading, scam-spotting, active vs passive screen time, the 20-20-20 rule, balance habits.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #F78F1E;border-radius:0 10px 10px 0;padding:16px;">
-        <div style="color:#F78F1E;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;">Project &amp; Assessment</div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Cyber Safety PSA — you taught what you learned. Plus the 15-question Unit 2 Assessment.</div>
-      </div>
+  <div class="traits-grid">
+    <div class="trait-card" style="border-left: 4px solid var(--bitstream-blue);">
+      <div class="trait-label" style="color: var(--bitstream-blue);">Lesson 1 · Communication</div>
+      <div class="trait-body">Synchronous vs asynchronous, channels, tone, packets and routers. The 3 C's: clarity, concision, courtesy.</div>
     </div>
+    <div class="trait-card" style="border-left: 4px solid var(--gateway-gold);">
+      <div class="trait-label" style="color: var(--gateway-gold);">Lesson 2 · Multimedia</div>
+      <div class="trait-body">Purpose &amp; audience first, then design. Inform / persuade / entertain — and pick the format that serves the message.</div>
+    </div>
+    <div class="trait-card" style="border-left: 4px solid var(--portal-purple);">
+      <div class="trait-label" style="color: var(--portal-purple);">Lesson 3 · Files &amp; Folders</div>
+      <div class="trait-body">File formats, naming conventions, folder structure, cloud vs local trade-offs. Future-you will thank present-you.</div>
+    </div>
+    <div class="trait-card" style="border-left: 4px solid var(--gamer-green);">
+      <div class="trait-label" style="color: #3d6522;">Project &amp; Assessment</div>
+      <div class="trait-body">Multimedia mini-project + Unit 1 assessment. Your first time bringing skills together for a real audience.</div>
+    </div>
+  </div>
 
-    <!-- THINK ABOUT IT -->
-    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
-      <p style="margin:0 0 8px;color:#e2e8f0;font-size:15px;">Three classical virtues ran through both units:</p>
-      <ul style="margin:0;padding:0 0 0 22px;color:#c8d6e8;font-size:14px;line-height:1.8;">
-        <li><strong style="color:#ffffff;">Prudence</strong> — knowing when to send, what to share, who to trust.</li>
-        <li><strong style="color:#ffffff;">Justice</strong> — giving each person the right access, no more, no less.</li>
-        <li><strong style="color:#ffffff;">Temperance</strong> — self-control with screens, time, and your own attention.</li>
+  <!-- ========== SECTION 3 — UNIT 2 RECAP ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--gamer-green);">03</div>
+    <div class="section-label" style="color: #3d6522;">Section 3 · Unit 2 Recap (Weeks 9–17)</div>
+  </div>
+  <h2 class="section-title">Data &amp; Cyber Safety</h2>
+  <div class="read-body">
+    <p>Your second unit went deeper: <em>where data lives, who can touch it, and how to protect yourself in a world full of phishers, scammers, and infinite scrolls.</em></p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card" style="border-left: 4px solid var(--bitstream-blue);">
+      <div class="trait-label" style="color: var(--bitstream-blue);">Lesson 4 · Data &amp; Permissions</div>
+      <div class="trait-body">Three states of data. Local vs cloud. LAN/WAN/Internet. Roles, share scopes, and the principle of least privilege.</div>
+    </div>
+    <div class="trait-card" style="border-left: 4px solid var(--odyssey-orange);">
+      <div class="trait-label" style="color: var(--odyssey-orange);">Lesson 5 · Safety &amp; Identity</div>
+      <div class="trait-body">Phishing tells, social-engineering levers, public/private/confidential, strong passwords, MFA, encryption, HTTPS, footprint.</div>
+    </div>
+    <div class="trait-card" style="border-left: 4px solid var(--gamer-green);">
+      <div class="trait-label" style="color: #3d6522;">Lesson 6 · Sources &amp; Wellness</div>
+      <div class="trait-body">CRAAP test, TLDs, lateral reading, scam-spotting, active vs passive screen time, the 20-20-20 rule, balance habits.</div>
+    </div>
+    <div class="trait-card" style="border-left: 4px solid var(--odyssey-orange);">
+      <div class="trait-label" style="color: var(--odyssey-orange);">Project &amp; Assessment</div>
+      <div class="trait-body">Cyber Safety PSA — you taught what you learned. Plus the 15-question Unit 2 Assessment.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Three classical virtues ran through both units:</p>
+      <ul style="padding-left:22px; line-height:1.85;">
+        <li><strong>Prudence</strong> — knowing when to send, what to share, who to trust.</li>
+        <li><strong>Justice</strong> — giving each person the right access, no more, no less.</li>
+        <li><strong>Temperance</strong> — self-control with screens, time, and your own attention.</li>
       </ul>
-      <p style="margin:10px 0 0;color:#c8d6e8;font-size:14px;">Which one showed up most for <em>you</em> this semester?</p>
+      <p>Which one showed up most for <em>you</em> this semester?</p>
     </div>
   </div>
 
-  <!-- PORTFOLIO CHECKPOINT -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#C7922C;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">📁</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;">Section 4 · The Portfolio Checkpoint</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Save your best work — you'll want it later</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Real professionals keep <strong style="color:#ffffff;">portfolios</strong> — collections of their best work that show what they can do. You're going to start one this week. Future-you (applying to magnet schools, scholarships, or summer camps) will be glad you did.</p>
-
-    <!-- Portfolio checklist -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
-      <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">📁 What to Gather This Week</div>
-      <div style="display:grid;grid-template-columns:1fr;gap:10px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#0a0a14;padding:12px 16px;border-radius:8px;border:1px solid #1e2a4a;">
-          <div style="flex-shrink:0;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;width:32px;text-align:center;">1</div>
-          <div style="color:#e2e8f0;font-size:14px;"><strong style="color:#ffffff;">Your Unit 1 multimedia mini-project</strong> (Week 7)</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#0a0a14;padding:12px 16px;border-radius:8px;border:1px solid #1e2a4a;">
-          <div style="flex-shrink:0;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;width:32px;text-align:center;">2</div>
-          <div style="color:#e2e8f0;font-size:14px;"><strong style="color:#ffffff;">Your Unit 2 Cyber Safety PSA</strong> (Week 15)</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#0a0a14;padding:12px 16px;border-radius:8px;border:1px solid #1e2a4a;">
-          <div style="flex-shrink:0;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;width:32px;text-align:center;">3</div>
-          <div style="color:#e2e8f0;font-size:14px;"><strong style="color:#ffffff;">Your two best weekly reflections</strong> — pick the ones you're proudest of</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#0a0a14;padding:12px 16px;border-radius:8px;border:1px solid #1e2a4a;">
-          <div style="flex-shrink:0;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;width:32px;text-align:center;">4</div>
-          <div style="color:#e2e8f0;font-size:14px;"><strong style="color:#ffffff;">Your Semester 1 Reflection Summary</strong> from this week's self-assessment workbook</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;background:#0a0a14;padding:12px 16px;border-radius:8px;border:1px solid #1e2a4a;">
-          <div style="flex-shrink:0;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;width:32px;text-align:center;">5</div>
-          <div style="color:#e2e8f0;font-size:14px;"><strong style="color:#ffffff;">Optional</strong>: a screenshot of any activity score you're proud of</div>
-        </div>
-      </div>
-      <p style="color:#8a9bb8;font-size:13px;margin:16px 0 0;font-style:italic;">Save these in a folder named <code style="color:#76C043;">DigitalDiscoveries-Sem1-LASTNAME</code> following the file-naming rules from Unit 1, Lesson 3.</p>
-    </div>
-
-    <!-- DID YOU KNOW -->
-    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">Many magnet middle schools, summer programs, and even private high schools now ask for student <strong style="color:#ffffff;">work portfolios</strong> as part of admission. The 6th-grade habit of saving and organizing your best work is the same habit professional designers, programmers, and writers use throughout their careers.</p>
-    </div>
+  <!-- ========== SECTION 4 — PORTFOLIO CHECKPOINT ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--gateway-gold);">04</div>
+    <div class="section-label" style="color: var(--gateway-gold);">Section 4 · The Portfolio Checkpoint</div>
+  </div>
+  <h2 class="section-title">Save your best work — you'll want it later</h2>
+  <div class="read-body">
+    <p>Real professionals keep <span class="key-term">portfolios</span> — collections of their best work that show what they can do. You're going to start one this week. Future-you (applying to magnet schools, scholarships, or summer camps) will be glad you did.</p>
   </div>
 
-  <!-- LOOKING AHEAD -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#76C043;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;">→</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;">Section 5 · Looking Ahead to Semester 2</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Three more units, three more big jumps</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">In Semester 2 you'll move from <em>using</em> technology safely to <em>building</em> with it — and learning how computers think:</p>
-
-    <!-- Sem 2 preview -->
-    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">💻</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Unit 3 · Computational Thinking &amp; Coding Basics</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;">Algorithms, decomposition, pattern recognition, and your first lines of real code.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🤖</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Unit 4 · How Computers Think</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;">Hardware vs software, binary, the basics of AI, and why machines are different from minds.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🌐</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Unit 5 · Citizenship &amp; Capstone</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;">Ethics, copyright, careers in tech, and your year-end capstone project.</div>
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">1</div>
+      <div>
+        <div class="step-title">Your Unit 1 multimedia mini-project</div>
+        <div class="step-body">From Week 7.</div>
       </div>
     </div>
-
-    <!-- REAL-WORLD CONNECTION -->
-    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
-      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Every skill from Semester 1 keeps mattering in Semester 2. The communication habits from Unit 1 will help you explain your code. The cyber-safety habits from Unit 2 will keep your projects (and your accounts) protected. And the classical virtues — prudence, justice, temperance — are the same virtues that keep adult professionals trustworthy and thoughtful for entire careers.</p>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;">You're halfway through. The foundation is set. The fun part is just beginning.</p>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">2</div>
+      <div>
+        <div class="step-title">Your Unit 2 Cyber Safety PSA</div>
+        <div class="step-body">From Week 15.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">3</div>
+      <div>
+        <div class="step-title">Your two best weekly reflections</div>
+        <div class="step-body">Pick the ones you're proudest of.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">4</div>
+      <div>
+        <div class="step-title">Your Semester 1 Reflection Summary</div>
+        <div class="step-body">From this week's self-assessment workbook.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">5</div>
+      <div>
+        <div class="step-title">Optional bonus</div>
+        <div class="step-body">A screenshot of any activity score you're proud of.</div>
+      </div>
     </div>
   </div>
 
-  <!-- THIS WEEK'S WORKFLOW -->
-  <div style="padding:40px 32px 32px;">
-    <div style="background:linear-gradient(135deg,#67308F,#3d1c59);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(103,48,143,0.25);">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#ffffff;text-transform:uppercase;margin-bottom:10px;opacity:0.7;">🎯 Your Three Files for This Week</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Use these in order:</div>
-      <ol style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.85;">
-        <li><strong>This reflection guide</strong> — read it first to set the frame.</li>
-        <li><strong>Self-assessment workbook</strong> — open <code style="background:rgba(0,0,0,0.2);padding:2px 6px;border-radius:4px;">week-18-activity.html</code> and walk through 6 reflection prompts. Save the summary to your portfolio.</li>
-        <li><strong>Semester 1 review quiz</strong> — open <code style="background:rgba(0,0,0,0.2);padding:2px 6px;border-radius:4px;">week-18-quiz-canvas-import.zip</code> in Canvas: a low-stakes 5-question recap.</li>
-      </ol>
+  <div class="read-body">
+    <p style="font-style:italic; color:#6b7280;">Save these in a folder named <span class="key-term">DigitalDiscoveries-Sem1-LASTNAME</span> following the file-naming rules from Unit 1, Lesson 3.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Many magnet middle schools, summer programs, and even private high schools now ask for student <strong>work portfolios</strong> as part of admission. The 6th-grade habit of saving and organizing your best work is the same habit professional designers, programmers, and writers use throughout their careers.</p>
     </div>
   </div>
 
-  <!-- WHAT'S NEXT -->
-  <div style="padding:0 32px 48px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
-      <div style="color:#e2e8f0;font-size:15px;">Welcome to <strong style="color:#ffffff;">Semester 2</strong>. In <strong>Week 19</strong>, you'll begin <strong>Unit 3: Computational Thinking &amp; Coding Basics</strong> — your first taste of how programmers actually think.</div>
+  <!-- ========== SECTION 5 — LOOKING AHEAD ========== -->
+  <div class="section-header">
+    <div class="section-num" style="background: var(--gamer-green);">05</div>
+    <div class="section-label" style="color: #3d6522;">Section 5 · Looking Ahead to Semester 2</div>
+  </div>
+  <h2 class="section-title">Three more units, three more big jumps</h2>
+  <div class="read-body">
+    <p>In Semester 2 you'll move from <em>using</em> technology safely to <em>building</em> with it — and learning how computers think:</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head"><span style="font-size:22px;">💻</span><strong>Unit 3 · Computational Thinking &amp; Coding Basics</strong></div>
+      <div class="platform-card-body">Algorithms, decomposition, pattern recognition, and your first lines of real code.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head"><span style="font-size:22px;">🤖</span><strong>Unit 4 · How Computers Think</strong></div>
+      <div class="platform-card-body">Hardware vs software, binary, the basics of AI, and why machines are different from minds.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head"><span style="font-size:22px;">🌐</span><strong>Unit 5 · Citizenship &amp; Capstone</strong></div>
+      <div class="platform-card-body">Ethics, copyright, careers in tech, and your year-end capstone project.</div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
-    Digital Discoveries · Optima Academy Online · Course 0200021 · Standards ELA.K12.EE.1.1, ELA.K12.EE.5.1
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Every skill from Semester 1 keeps mattering in Semester 2. The communication habits from Unit 1 will help you explain your code. The cyber-safety habits from Unit 2 will keep your projects (and your accounts) protected. And the classical virtues — prudence, justice, temperance — are the same virtues that keep adult professionals trustworthy and thoughtful for entire careers.</p>
+      <p>You're halfway through. The foundation is set. The fun part is just beginning.</p>
+    </div>
   </div>
 
-</div>
+  <!-- ========== SECTION 6 — THIS WEEK'S WORKFLOW ========== -->
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-label">Section 6 · Your Three Files for This Week</div>
+  </div>
+  <h2 class="section-title">Use these in order</h2>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">This reflection guide</div>
+        <div class="step-body">Read it first to set the frame.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Self-assessment workbook</div>
+        <div class="step-body">Open <span class="key-term">week-18-activity.html</span> and walk through 6 reflection prompts. Save the summary to your portfolio.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Semester 1 review quiz</div>
+        <div class="step-body">Open <span class="key-term">week-18-quiz-canvas-import.zip</span> in Canvas: a low-stakes 5-question recap.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Semester 1 Reflection</div>
+    <div class="reflection-q">What kind of digital citizen are you becoming?</div>
+    <p>Look across all 17 weeks. In 5–7 sentences, answer:</p>
+    <ul>
+      <li>Which week or topic <strong>changed your mind</strong> the most?</li>
+      <li>What's <strong>one habit</strong> you've actually started because of this class?</li>
+      <li>Which classical virtue — <em>prudence</em>, <em>justice</em>, or <em>temperance</em> — showed up most for you this semester?</li>
+      <li>What's one goal you want to set for Semester 2?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>Welcome to <strong>Semester 2</strong>. In <strong>Week 19</strong>, you'll begin <strong>Unit 3: Computational Thinking &amp; Coding Basics</strong> — your first taste of how programmers actually think.</p>
+    </div>
+  </div>
+
+  <!-- ========== BOTTOM NAV ========== -->
+  <div class="bottom-nav">
+    <a href="../index.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Course Home
+    </a>
+    <a href="../Unit3/week-19-reading.html" class="btn btn-primary">
+      Continue to Week 19 (Unit 3)
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
 
 </body>
 </html>
