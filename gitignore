@@ -1,0 +1,13 @@
+# Canvas API credentials - never commit this
+course-config.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Node modules (if applicable)
+node_modules/
