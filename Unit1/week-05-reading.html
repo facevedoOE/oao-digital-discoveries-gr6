@@ -7,403 +7,999 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(85,200,232,0.4);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+<body>
 
-<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
-
-  <!-- ═══════════════ HEADER BAR ═══════════════ -->
-  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
-    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
-      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
-      <circle cx="24" cy="28" r="7" fill="#fff"/>
-      <circle cx="40" cy="28" r="7" fill="#fff"/>
-      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
-      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
-      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
-      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div style="flex:1;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
-      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
-    </div>
-    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 1 · WEEK 5</div>
-  </div>
-
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <div style="background:linear-gradient(135deg,#0E1C42 0%,#1a2a5e 50%,#0E5568 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.30) 0%,rgba(85,200,232,0) 70%);"></div>
-    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(118,192,67,0.18) 0%,rgba(118,192,67,0) 70%);"></div>
-    <div style="position:relative;z-index:2;">
-      <div style="display:inline-block;background:rgba(85,200,232,0.18);border:1px solid #55C8E8;color:#55C8E8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lesson 3.1 · Standard SC.6.CO.1.1</div>
-      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">File Types &amp; Digital Organization</h1>
-      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">Behind every file you open is a tiny three-letter clue — the <strong style="color:#55C8E8;">extension</strong> — that tells your computer what kind of thing it is. This week: cracking the code, picking the right format, and keeping your digital life tidy.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════ LEARNING OBJECTIVES ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
-      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Identify common file types</strong> across the five major families: documents, images, audio, video, and 3D.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Read a file extension</strong> and explain what kind of file it points to and what app opens it.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Choose the right file format</strong> for a project, balancing quality, size, and audience needs.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Organize files with folders and clear naming</strong> so future-you (and your collaborators) can find anything in seconds.</div>
-        </div>
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
       </div>
     </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 1 · WEEK 5
+    </div>
   </div>
+</header>
 
-  <!-- ═══════════════ SECTION 1 — WHAT IS A FILE ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · What Is a File?</div>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 1: Digital Foundations</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 5: File Types &amp; Digital Organization</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 1 • WEEK 5 • READING</div>
+  <h1 class="lesson-title">File Types &amp; Digital Organization</h1>
+  <p class="lesson-description">Behind every file you open is a tiny three-letter clue — the <strong>extension</strong> — that tells your computer what kind of thing it is. This week: cracking the code, picking the right format, and keeping your digital life tidy.</p>
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">A file is a labeled box of data</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">Everything on your computer — from your homework essay to your favorite song — is stored as a <strong style="color:#ffffff;">file</strong>. A file is just a labeled package of digital information. The label tells the computer two things: what to call it, and what kind of thing it is.</p>
-
-    <!-- Anatomy of a filename -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:14px;">🔍 Anatomy of a Filename</div>
-      <div style="text-align:center;background:#0a0a14;border-radius:10px;padding:28px 18px;border:1px dashed #55C8E8;margin-bottom:14px;">
-        <div style="font-family:monospace;font-size:32px;font-weight:700;color:#ffffff;letter-spacing:-0.5px;">
-          <span style="color:#55C8E8;">my-essay</span><span style="color:#8a9bb8;">.</span><span style="color:#C7922C;">docx</span>
-        </div>
-        <div style="display:flex;justify-content:center;gap:30px;margin-top:14px;font-size:11px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">
-          <div style="color:#55C8E8;">↑ Name</div>
-          <div style="color:#C7922C;">↑ Extension</div>
-        </div>
-      </div>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;line-height:1.65;">The <strong style="color:#55C8E8;">name</strong> is for you — describe what's inside. The <strong style="color:#C7922C;">extension</strong> (the dot + 3–4 letters at the end) is for the computer — it says "open me with this kind of app." Change the extension and the file may not open at all.</p>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Identify common file types</strong> across the five major families: documents, images, audio, video, and 3D.</div>
     </div>
-
-    <!-- VOCABULARY -->
-    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
-      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">File</strong> — a single named package of digital information stored on a device or in the cloud.</p>
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">File extension</strong> — the dot + letters at the end of a filename (.docx, .jpg, .mp3) that tell the computer what type of file it is.</p>
-        <p style="margin:0;"><strong style="color:#ffffff;">File format</strong> — the rules a file follows for how its data is arranged. Each extension matches one format.</p>
-      </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Read a file extension</strong> and explain what kind of file it points to and what app opens it.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Choose the right file format</strong> for a project, balancing quality, size, and audience needs.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Organize files with folders and clear naming</strong> so future-you (and your collaborators) can find anything in seconds.</div>
     </div>
   </div>
 
-  <!-- ═══════════════ SECTION 2 — FILE FAMILIES ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · The Five File Families</div>
-    </div>
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · What Is a File?</div>
+  </div>
+  <h2 class="section-title">A file is a labeled box of data</h2>
+  <div class="read-body">
+    <p>Everything on your computer — from your homework essay to your favorite song — is stored as a <strong>file</strong>. A file is just a labeled package of digital information. The label tells the computer two things: what to call it, and what kind of thing it is.</p>
+  </div>
 
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Meet the file families you'll work with</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Most files fall into one of five big families. Each family stores a different kind of content, and each family has a few common formats. You don't need to memorize every extension — just know the family it belongs to.</p>
-
-    <!-- Documents -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 14px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <span style="font-size:28px;">📄</span>
-        <div style="font-family:'Wix Madefor Display',sans-serif;color:#55C8E8;font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">Family 1</div>
+  <div class="diagram-card">
+    <div style="font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.22em; color: var(--odyssey-orange); text-transform:uppercase; margin-bottom:14px; text-align:left;">🔍 Anatomy of a Filename</div>
+    <div style="background:#f9fafb; border:1px dashed var(--bitstream-blue); border-radius:10px; padding:28px 18px;">
+      <div style="font-family:monospace; font-size:32px; font-weight:700; color:var(--binary-blue); letter-spacing:-0.5px;">
+        <span style="color:var(--bitstream-blue);">my-essay</span><span style="color:#9ca3af;">.</span><span style="color:var(--gateway-gold);">docx</span>
       </div>
-      <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;">Documents (text)</div>
-      <div style="color:#c8d6e8;font-size:14px;line-height:1.65;margin-bottom:10px;">Essays, reports, letters, slides — anything mostly made of words.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(85,200,232,0.15);color:#55C8E8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.docx</span>
-        <span style="background:rgba(85,200,232,0.15);color:#55C8E8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.pdf</span>
-        <span style="background:rgba(85,200,232,0.15);color:#55C8E8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.txt</span>
-        <span style="background:rgba(85,200,232,0.15);color:#55C8E8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.pptx</span>
-        <span style="background:rgba(85,200,232,0.15);color:#55C8E8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.gdoc</span>
+      <div style="display:flex; justify-content:center; gap:30px; margin-top:14px; font-size:11px; font-family: var(--font-display); font-weight:700; letter-spacing:0.15em; text-transform:uppercase;">
+        <div style="color:var(--bitstream-blue);">↑ Name</div>
+        <div style="color:var(--gateway-gold);">↑ Extension</div>
       </div>
     </div>
+    <p style="text-align:left; margin-top:14px; color:#4b5563; font-size:14px; line-height:1.65;">The <strong style="color:var(--bitstream-blue);">name</strong> is for you — describe what's inside. The <strong style="color:var(--gateway-gold);">extension</strong> (the dot + 3–4 letters at the end) is for the computer — it says "open me with this kind of app." Change the extension and the file may not open at all.</p>
+  </div>
 
-    <!-- Images -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 14px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <span style="font-size:28px;">🖼️</span>
-        <div style="font-family:'Wix Madefor Display',sans-serif;color:#F78F1E;font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">Family 2</div>
-      </div>
-      <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;">Images</div>
-      <div style="color:#c8d6e8;font-size:14px;line-height:1.65;margin-bottom:10px;">Photos, drawings, icons, screenshots, infographics.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(247,143,30,0.15);color:#F78F1E;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.jpg</span>
-        <span style="background:rgba(247,143,30,0.15);color:#F78F1E;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.png</span>
-        <span style="background:rgba(247,143,30,0.15);color:#F78F1E;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.gif</span>
-        <span style="background:rgba(247,143,30,0.15);color:#F78F1E;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.svg</span>
-        <span style="background:rgba(247,143,30,0.15);color:#F78F1E;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.webp</span>
-      </div>
-    </div>
-
-    <!-- Audio -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 14px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <span style="font-size:28px;">🔊</span>
-        <div style="font-family:'Wix Madefor Display',sans-serif;color:#b388d8;font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">Family 3</div>
-      </div>
-      <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;">Audio</div>
-      <div style="color:#c8d6e8;font-size:14px;line-height:1.65;margin-bottom:10px;">Music, podcasts, voice memos, sound effects.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(103,48,143,0.25);color:#b388d8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.mp3</span>
-        <span style="background:rgba(103,48,143,0.25);color:#b388d8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.wav</span>
-        <span style="background:rgba(103,48,143,0.25);color:#b388d8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.m4a</span>
-        <span style="background:rgba(103,48,143,0.25);color:#b388d8;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.aac</span>
-      </div>
-    </div>
-
-    <!-- Video -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 14px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <span style="font-size:28px;">🎬</span>
-        <div style="font-family:'Wix Madefor Display',sans-serif;color:#C7922C;font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">Family 4</div>
-      </div>
-      <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;">Video</div>
-      <div style="color:#c8d6e8;font-size:14px;line-height:1.65;margin-bottom:10px;">Movies, recorded lessons, animations, screen recordings.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(199,146,44,0.18);color:#C7922C;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.mp4</span>
-        <span style="background:rgba(199,146,44,0.18);color:#C7922C;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.mov</span>
-        <span style="background:rgba(199,146,44,0.18);color:#C7922C;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.webm</span>
-        <span style="background:rgba(199,146,44,0.18);color:#C7922C;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.avi</span>
-      </div>
-    </div>
-
-    <!-- 3D -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 24px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <span style="font-size:28px;">🧊</span>
-        <div style="font-family:'Wix Madefor Display',sans-serif;color:#76C043;font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">Family 5</div>
-      </div>
-      <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px;">3D Models &amp; CAD</div>
-      <div style="color:#c8d6e8;font-size:14px;line-height:1.65;margin-bottom:10px;">3D objects, game characters, 3D printer plans, engineering designs.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(118,192,67,0.18);color:#76C043;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.obj</span>
-        <span style="background:rgba(118,192,67,0.18);color:#76C043;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.stl</span>
-        <span style="background:rgba(118,192,67,0.18);color:#76C043;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.fbx</span>
-        <span style="background:rgba(118,192,67,0.18);color:#76C043;padding:4px 10px;border-radius:6px;font-family:monospace;font-size:13px;font-weight:700;">.glb</span>
-      </div>
-    </div>
-
-    <!-- DID YOU KNOW -->
-    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">There are <strong style="color:#ffffff;">over 5,000 file extensions</strong> in active use today — but you'll only meet about 20 in everyday school and personal life. The rest are specialized formats for engineers, scientists, designers, and game developers.</p>
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>File</strong> — a single named package of digital information stored on a device or in the cloud.</p>
+      <p><strong>File extension</strong> — the dot + letters at the end of a filename (.docx, .jpg, .mp3) that tell the computer what type of file it is.</p>
+      <p><strong>File format</strong> — the rules a file follows for how its data is arranged. Each extension matches one format.</p>
     </div>
   </div>
 
-  <!-- ═══════════════ SECTION 3 — CHOOSING THE RIGHT FORMAT ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · Choosing the Right Format</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Same content, different formats — why?</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Inside a single family, different formats trade off three things: <strong style="color:#ffffff;">quality, file size,</strong> and <strong style="color:#ffffff;">compatibility</strong> (which apps can open it). Smart choices depend on what you need most.</p>
-
-    <!-- Quick decision table -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;overflow:hidden;margin:0 0 24px;">
-      <div style="background:#0E1C42;padding:14px 20px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;">If you need…</div>
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;">Choose…</div>
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;">Why</div>
-      </div>
-      <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px;border-bottom:1px solid #1e2a4a;">
-        <div style="color:#ffffff;font-weight:600;font-size:14px;">A document anyone can open and that won't change layout</div>
-        <div style="color:#C7922C;font-family:monospace;font-weight:700;font-size:14px;">.pdf</div>
-        <div style="color:#c8d6e8;font-size:14px;">Locks in fonts and layout; opens on any device.</div>
-      </div>
-      <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px;border-bottom:1px solid #1e2a4a;">
-        <div style="color:#ffffff;font-weight:600;font-size:14px;">A photo for a website (small file size)</div>
-        <div style="color:#C7922C;font-family:monospace;font-weight:700;font-size:14px;">.jpg or .webp</div>
-        <div style="color:#c8d6e8;font-size:14px;">Compressed for fast loading; great for photographs.</div>
-      </div>
-      <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px;border-bottom:1px solid #1e2a4a;">
-        <div style="color:#ffffff;font-weight:600;font-size:14px;">A logo with a transparent background</div>
-        <div style="color:#C7922C;font-family:monospace;font-weight:700;font-size:14px;">.png or .svg</div>
-        <div style="color:#c8d6e8;font-size:14px;">Both support transparency. SVG also scales without blurring.</div>
-      </div>
-      <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px;border-bottom:1px solid #1e2a4a;">
-        <div style="color:#ffffff;font-weight:600;font-size:14px;">A song to share with friends</div>
-        <div style="color:#C7922C;font-family:monospace;font-weight:700;font-size:14px;">.mp3</div>
-        <div style="color:#c8d6e8;font-size:14px;">Small files, plays everywhere — the universal music format.</div>
-      </div>
-      <div style="padding:14px 20px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px;">
-        <div style="color:#ffffff;font-weight:600;font-size:14px;">A video to upload to YouTube or Canvas</div>
-        <div style="color:#C7922C;font-family:monospace;font-weight:700;font-size:14px;">.mp4</div>
-        <div style="color:#c8d6e8;font-size:14px;">Most-supported video format on the planet.</div>
-      </div>
-    </div>
-
-    <!-- THINK ABOUT IT -->
-    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">A photo saved as a giant .png might look beautiful — but if it's 30 MB, your teacher's email won't accept it. Choosing a format is a small act of <em>prudence</em>: thinking about your audience, the situation, and the right tool for the moment.</p>
-    </div>
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · The Five File Families</div>
+  </div>
+  <h2 class="section-title">Meet the file families you'll work with</h2>
+  <div class="read-body">
+    <p>Most files fall into one of five big families. Each family stores a different kind of content, and each family has a few common formats. You don't need to memorize every extension — just know the family it belongs to.</p>
   </div>
 
-  <!-- ═══════════════ SECTION 4 — DIGITAL ORGANIZATION ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · Digital Organization</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Future-you will thank you</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">A messy desktop full of files named <code style="background:#1e2a4a;color:#ff9b9b;padding:2px 6px;border-radius:4px;font-size:14px;">untitled (3) FINAL final v2.docx</code> is a problem waiting to happen. Strong digital citizens organize their files like a librarian organizes books — on purpose, with a system.</p>
-
-    <!-- Folder hierarchy SVG -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:14px;">📂 A Sample Folder Hierarchy</div>
-      <div style="font-family:monospace;font-size:14px;color:#e2e8f0;line-height:1.85;background:#0a0a14;border-radius:8px;padding:18px;border:1px solid #1e2a4a;">
-        <div style="color:#C7922C;">📁 6th Grade/</div>
-        <div style="padding-left:24px;color:#55C8E8;">├── 📁 Digital Discoveries/</div>
-        <div style="padding-left:48px;color:#76C043;">│   ├── 📁 Unit 1 — Foundations/</div>
-        <div style="padding-left:72px;color:#c8d6e8;">│   │   ├── 📄 week-01-reflection.docx</div>
-        <div style="padding-left:72px;color:#c8d6e8;">│   │   ├── 📄 week-03-storyboard.pdf</div>
-        <div style="padding-left:72px;color:#c8d6e8;">│   │   └── 🖼️ week-04-poster-final.png</div>
-        <div style="padding-left:48px;color:#76C043;">│   └── 📁 Unit 2 — Cyber Safety/</div>
-        <div style="padding-left:24px;color:#55C8E8;">├── 📁 ELA/</div>
-        <div style="padding-left:24px;color:#55C8E8;">└── 📁 Math/</div>
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head"><span style="font-size:24px;">📄</span><strong>Family 1 · Documents (text)</strong></div>
+      <div class="platform-card-body">Essays, reports, letters, slides — anything mostly made of words.<br>
+        <span style="display:inline-block; background:rgba(85,200,232,0.15); color:var(--dark-bitstream); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.docx</span>
+        <span style="display:inline-block; background:rgba(85,200,232,0.15); color:var(--dark-bitstream); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.pdf</span>
+        <span style="display:inline-block; background:rgba(85,200,232,0.15); color:var(--dark-bitstream); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.txt</span>
+        <span style="display:inline-block; background:rgba(85,200,232,0.15); color:var(--dark-bitstream); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.pptx</span>
+        <span style="display:inline-block; background:rgba(85,200,232,0.15); color:var(--dark-bitstream); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-top:6px;">.gdoc</span>
       </div>
     </div>
-
-    <!-- 4 Naming rules -->
-    <div style="background:linear-gradient(135deg,#111122,#0E1C42);border:1px solid #76C043;border-radius:12px;padding:24px 28px;margin:0 0 20px;box-shadow:0 6px 24px rgba(118,192,67,0.15);">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:14px;">📝 The 4 Rules of Good File Names</div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#55C8E8;color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">1</div>
-          <div style="color:#e2e8f0;font-size:14px;line-height:1.6;"><strong style="color:#ffffff;">Be specific.</strong> Not "essay.docx" — try <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">civil-war-essay-final.docx</code>.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#C7922C;color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">2</div>
-          <div style="color:#e2e8f0;font-size:14px;line-height:1.6;"><strong style="color:#ffffff;">No spaces.</strong> Use hyphens or underscores: <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">my-poster.png</code> beats <code style="background:#1e2a4a;color:#ff9b9b;padding:2px 6px;border-radius:4px;">my poster.png</code>.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#67308F;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">3</div>
-          <div style="color:#e2e8f0;font-size:14px;line-height:1.6;"><strong style="color:#ffffff;">Add a date or version.</strong> <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">notes-2026-04-27.docx</code> or <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">poster-v2.png</code>.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#76C043;color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">4</div>
-          <div style="color:#e2e8f0;font-size:14px;line-height:1.6;"><strong style="color:#ffffff;">Keep the extension.</strong> Don't rename <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">song.mp3</code> to <code style="background:#1e2a4a;color:#ff9b9b;padding:2px 6px;border-radius:4px;">song</code> — your computer needs the extension to know how to open it.</div>
-        </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head"><span style="font-size:24px;">🖼️</span><strong>Family 2 · Images</strong></div>
+      <div class="platform-card-body">Photos, drawings, icons, screenshots, infographics.<br>
+        <span style="display:inline-block; background:rgba(247,143,30,0.15); color:var(--odyssey-orange); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.jpg</span>
+        <span style="display:inline-block; background:rgba(247,143,30,0.15); color:var(--odyssey-orange); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.png</span>
+        <span style="display:inline-block; background:rgba(247,143,30,0.15); color:var(--odyssey-orange); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.gif</span>
+        <span style="display:inline-block; background:rgba(247,143,30,0.15); color:var(--odyssey-orange); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.svg</span>
+        <span style="display:inline-block; background:rgba(247,143,30,0.15); color:var(--odyssey-orange); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-top:6px;">.webp</span>
       </div>
     </div>
-
-    <!-- CHECK FOR UNDERSTANDING -->
-    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">Open your own downloads folder right now (mentally is fine!). How many files have unhelpful names like "Untitled" or "Document(7)"? What would you rename three of them to be more specific?</p>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head"><span style="font-size:24px;">🔊</span><strong>Family 3 · Audio</strong></div>
+      <div class="platform-card-body">Music, podcasts, voice memos, sound effects.<br>
+        <span style="display:inline-block; background:rgba(103,48,143,0.15); color:var(--portal-purple); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.mp3</span>
+        <span style="display:inline-block; background:rgba(103,48,143,0.15); color:var(--portal-purple); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.wav</span>
+        <span style="display:inline-block; background:rgba(103,48,143,0.15); color:var(--portal-purple); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.m4a</span>
+        <span style="display:inline-block; background:rgba(103,48,143,0.15); color:var(--portal-purple); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-top:6px;">.aac</span>
+      </div>
     </div>
-  </div>
-
-  <!-- ═══════════════ SECTION 5 — MEDIUM CHOICE & COMMUNICATION ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · Why Medium Matters</div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head"><span style="font-size:24px;">🎬</span><strong>Family 4 · Video</strong></div>
+      <div class="platform-card-body">Movies, recorded lessons, animations, screen recordings.<br>
+        <span style="display:inline-block; background:rgba(199,146,44,0.18); color:var(--gateway-gold); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.mp4</span>
+        <span style="display:inline-block; background:rgba(199,146,44,0.18); color:var(--gateway-gold); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.mov</span>
+        <span style="display:inline-block; background:rgba(199,146,44,0.18); color:var(--gateway-gold); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.webm</span>
+        <span style="display:inline-block; background:rgba(199,146,44,0.18); color:var(--gateway-gold); padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-top:6px;">.avi</span>
+      </div>
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">"The medium is the message"</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">In the 1960s, a thinker named <strong style="color:#ffffff;">Marshall McLuhan</strong> coined a famous line: <em>"the medium is the message."</em> He meant: how you deliver something changes how it lands. A handwritten letter feels different than the same words in a text. A printed photo feels different than the same image on a screen.</p>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Choosing a file format is a small version of that decision. The <em>same idea</em> sent as a glossy PDF lands differently than the same idea sent as a typo-ridden text. The format shapes how serious, how casual, how trustworthy your message feels.</p>
-
-    <!-- REAL-WORLD CONNECTION -->
-    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
-      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">When you apply for a job one day, you'll be asked for a <strong style="color:#ffffff;">resume in PDF format</strong> — not Word, not a screenshot, not a Google link. Why? PDFs lock the layout, work on every device, and signal professionalism. The format is part of the message.</p>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;">Doctors send X-rays in <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">.dcm</code>. Engineers send blueprints in <code style="background:#1e2a4a;color:#76C043;padding:2px 6px;border-radius:4px;">.dwg</code>. Every profession has format conventions — and learning to match the format to the situation is part of digital literacy.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════ KEY VOCABULARY GRID ═══════════════ -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 5</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">File</div>
-        <div style="color:#c8d6e8;font-size:14px;">A single named package of digital information stored on a device or in the cloud.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">File extension</div>
-        <div style="color:#c8d6e8;font-size:14px;">The dot + letters at the end of a filename that tell the computer the file's type.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">File format</div>
-        <div style="color:#c8d6e8;font-size:14px;">The rules a file follows for how its data is organized internally.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">PDF</div>
-        <div style="color:#c8d6e8;font-size:14px;">A document format that locks layout and fonts, opens on any device.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Compression</div>
-        <div style="color:#c8d6e8;font-size:14px;">Shrinking a file's size to save space or speed up sharing.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Folder hierarchy</div>
-        <div style="color:#c8d6e8;font-size:14px;">An organized tree of folders inside folders that groups related files.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Naming convention</div>
-        <div style="color:#c8d6e8;font-size:14px;">A consistent rule you follow when naming files — specific, no spaces, dated.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Cloud storage</div>
-        <div style="color:#c8d6e8;font-size:14px;">Storing files on remote servers (Google Drive, OneDrive) instead of just one device.</div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head"><span style="font-size:24px;">🧊</span><strong>Family 5 · 3D Models &amp; CAD</strong></div>
+      <div class="platform-card-body">3D objects, game characters, 3D printer plans, engineering designs.<br>
+        <span style="display:inline-block; background:rgba(118,192,67,0.18); color:#3d6522; padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.obj</span>
+        <span style="display:inline-block; background:rgba(118,192,67,0.18); color:#3d6522; padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.stl</span>
+        <span style="display:inline-block; background:rgba(118,192,67,0.18); color:#3d6522; padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-right:6px; margin-top:6px;">.fbx</span>
+        <span style="display:inline-block; background:rgba(118,192,67,0.18); color:#3d6522; padding:2px 10px; border-radius:6px; font-family:monospace; font-size:13px; font-weight:700; margin-top:6px;">.glb</span>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════ REFLECTION PROMPT ═══════════════ -->
-  <div style="padding:40px 32px 32px;">
-    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Audit and tidy your digital life.</div>
-      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Take 15 minutes this week to:</p>
-      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
-        <li>Open your downloads or documents folder. Count files with unhelpful names ("Untitled," "Document(3)").</li>
-        <li>Pick <strong>5 files</strong> and rename them following the 4 rules of good file names.</li>
-        <li>Create at least <strong>one new folder</strong> with a clear name and move related files into it.</li>
-        <li>In 3–4 sentences, describe what you changed and how the new system feels different from the old chaos.</li>
-      </ul>
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>There are <strong>over 5,000 file extensions</strong> in active use today — but you'll only meet about 20 in everyday school and personal life. The rest are specialized formats for engineers, scientists, designers, and game developers.</p>
     </div>
   </div>
 
-  <!-- ═══════════════ WHAT'S NEXT ═══════════════ -->
-  <div style="padding:0 32px 48px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
-      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 6</strong>, you'll compare <em>productivity software</em> like MS Word and Google Docs — diving into interface design, collaboration features, and how cloud tools changed work forever.</div>
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Choosing the Right Format</div>
+  </div>
+  <h2 class="section-title">Same content, different formats — why?</h2>
+  <div class="read-body">
+    <p>Inside a single family, different formats trade off three things: <strong>quality, file size,</strong> and <strong>compatibility</strong> (which apps can open it). Smart choices depend on what you need most.</p>
+  </div>
+
+  <div class="diagram-card" style="text-align:left; padding:0; overflow:hidden;">
+    <div style="background: var(--binary-blue); padding:14px 20px; display:grid; grid-template-columns:1fr 1.5fr 1.5fr; gap:14px;">
+      <div style="color: var(--bitstream-blue); font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;">If you need…</div>
+      <div style="color: var(--bitstream-blue); font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;">Choose…</div>
+      <div style="color: var(--bitstream-blue); font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;">Why</div>
+    </div>
+    <div style="padding:14px 20px; display:grid; grid-template-columns:1fr 1.5fr 1.5fr; gap:14px; border-bottom:1px solid #e5e7eb;">
+      <div style="color: var(--binary-blue); font-weight:600; font-size:14px;">A document anyone can open and that won't change layout</div>
+      <div style="color: var(--gateway-gold); font-family:monospace; font-weight:700; font-size:14px;">.pdf</div>
+      <div style="color:#4b5563; font-size:14px;">Locks in fonts and layout; opens on any device.</div>
+    </div>
+    <div style="padding:14px 20px; display:grid; grid-template-columns:1fr 1.5fr 1.5fr; gap:14px; border-bottom:1px solid #e5e7eb;">
+      <div style="color: var(--binary-blue); font-weight:600; font-size:14px;">A photo for a website (small file size)</div>
+      <div style="color: var(--gateway-gold); font-family:monospace; font-weight:700; font-size:14px;">.jpg or .webp</div>
+      <div style="color:#4b5563; font-size:14px;">Compressed for fast loading; great for photographs.</div>
+    </div>
+    <div style="padding:14px 20px; display:grid; grid-template-columns:1fr 1.5fr 1.5fr; gap:14px; border-bottom:1px solid #e5e7eb;">
+      <div style="color: var(--binary-blue); font-weight:600; font-size:14px;">A logo with a transparent background</div>
+      <div style="color: var(--gateway-gold); font-family:monospace; font-weight:700; font-size:14px;">.png or .svg</div>
+      <div style="color:#4b5563; font-size:14px;">Both support transparency. SVG also scales without blurring.</div>
+    </div>
+    <div style="padding:14px 20px; display:grid; grid-template-columns:1fr 1.5fr 1.5fr; gap:14px; border-bottom:1px solid #e5e7eb;">
+      <div style="color: var(--binary-blue); font-weight:600; font-size:14px;">A song to share with friends</div>
+      <div style="color: var(--gateway-gold); font-family:monospace; font-weight:700; font-size:14px;">.mp3</div>
+      <div style="color:#4b5563; font-size:14px;">Small files, plays everywhere — the universal music format.</div>
+    </div>
+    <div style="padding:14px 20px; display:grid; grid-template-columns:1fr 1.5fr 1.5fr; gap:14px;">
+      <div style="color: var(--binary-blue); font-weight:600; font-size:14px;">A video to upload to YouTube or Canvas</div>
+      <div style="color: var(--gateway-gold); font-family:monospace; font-weight:700; font-size:14px;">.mp4</div>
+      <div style="color:#4b5563; font-size:14px;">Most-supported video format on the planet.</div>
     </div>
   </div>
 
-  <!-- ═══════════════ FOOTER ═══════════════ -->
-  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
-    Digital Discoveries · Optima Academy Online · Course 0200021 · Standard SC.6.CO.1.1
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>A photo saved as a giant .png might look beautiful — but if it's 30 MB, your teacher's email won't accept it. Choosing a format is a small act of <em>prudence</em>: thinking about your audience, the situation, and the right tool for the moment.</p>
+    </div>
   </div>
 
-</div>
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Digital Organization</div>
+  </div>
+  <h2 class="section-title">Future-you will thank you</h2>
+  <div class="read-body">
+    <p>A messy desktop full of files named <code style="background:#f3f4f6; color:#b91c1c; padding:2px 6px; border-radius:4px; font-size:14px;">untitled (3) FINAL final v2.docx</code> is a problem waiting to happen. Strong digital citizens organize their files like a librarian organizes books — on purpose, with a system.</p>
+  </div>
+
+  <div class="diagram-card" style="text-align:left;">
+    <div style="font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.22em; color:#3d6522; text-transform:uppercase; margin-bottom:14px;">📂 A Sample Folder Hierarchy</div>
+    <div style="font-family:monospace; font-size:14px; color:#374151; line-height:1.85; background:#f9fafb; border-radius:8px; padding:18px; border:1px solid #e5e7eb;">
+      <div style="color: var(--gateway-gold);">📁 6th Grade/</div>
+      <div style="padding-left:24px; color: var(--bitstream-blue);">├── 📁 Digital Discoveries/</div>
+      <div style="padding-left:48px; color:#3d6522;">│   ├── 📁 Unit 1 — Foundations/</div>
+      <div style="padding-left:72px; color:#4b5563;">│   │   ├── 📄 week-01-reflection.docx</div>
+      <div style="padding-left:72px; color:#4b5563;">│   │   ├── 📄 week-03-storyboard.pdf</div>
+      <div style="padding-left:72px; color:#4b5563;">│   │   └── 🖼️ week-04-poster-final.png</div>
+      <div style="padding-left:48px; color:#3d6522;">│   └── 📁 Unit 2 — Cyber Safety/</div>
+      <div style="padding-left:24px; color: var(--bitstream-blue);">├── 📁 ELA/</div>
+      <div style="padding-left:24px; color: var(--bitstream-blue);">└── 📁 Math/</div>
+    </div>
+  </div>
+
+  <div class="steps-card">
+    <div style="font-family: var(--font-display); font-size:11px; font-weight:800; letter-spacing:0.22em; color:#3d6522; text-transform:uppercase; margin-bottom:18px;">📝 The 4 Rules of Good File Names</div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));">1</div>
+      <div>
+        <div class="step-title">Be specific.</div>
+        <div class="step-body">Not "essay.docx" — try <code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">civil-war-essay-final.docx</code>.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gateway-gold), #8a6620);">2</div>
+      <div>
+        <div class="step-title">No spaces.</div>
+        <div class="step-body">Use hyphens or underscores: <code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">my-poster.png</code> beats <code style="background:#f3f4f6; color:#b91c1c; padding:2px 6px; border-radius:4px;">my poster.png</code>.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--portal-purple), #3d1c59);">3</div>
+      <div>
+        <div class="step-title">Add a date or version.</div>
+        <div class="step-body"><code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">notes-2026-04-27.docx</code> or <code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">poster-v2.png</code>.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num" style="background: linear-gradient(135deg, var(--gamer-green), #3d6522);">4</div>
+      <div>
+        <div class="step-title">Keep the extension.</div>
+        <div class="step-body">Don't rename <code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">song.mp3</code> to <code style="background:#f3f4f6; color:#b91c1c; padding:2px 6px; border-radius:4px;">song</code> — your computer needs the extension to know how to open it.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p>Open your own downloads folder right now (mentally is fine!). How many files have unhelpful names like "Untitled" or "Document(7)"? What would you rename three of them to be more specific?</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Why Medium Matters</div>
+  </div>
+  <h2 class="section-title">"The medium is the message"</h2>
+  <div class="read-body">
+    <p>In the 1960s, a thinker named <strong>Marshall McLuhan</strong> coined a famous line: <em>"the medium is the message."</em> He meant: how you deliver something changes how it lands. A handwritten letter feels different than the same words in a text. A printed photo feels different than the same image on a screen.</p>
+    <p>Choosing a file format is a small version of that decision. The <em>same idea</em> sent as a glossy PDF lands differently than the same idea sent as a typo-ridden text. The format shapes how serious, how casual, how trustworthy your message feels.</p>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>When you apply for a job one day, you'll be asked for a <strong>resume in PDF format</strong> — not Word, not a screenshot, not a Google link. Why? PDFs lock the layout, work on every device, and signal professionalism. The format is part of the message.</p>
+      <p>Doctors send X-rays in <code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">.dcm</code>. Engineers send blueprints in <code style="background:#f3f4f6; color:#3d6522; padding:2px 6px; border-radius:4px;">.dwg</code>. Every profession has format conventions — and learning to match the format to the situation is part of digital literacy.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 5</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">File</div>
+      <div class="vocab-def">A single named package of digital information stored on a device or in the cloud.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">File extension</div>
+      <div class="vocab-def">The dot + letters at the end of a filename that tell the computer the file's type.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">File format</div>
+      <div class="vocab-def">The rules a file follows for how its data is organized internally.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">PDF</div>
+      <div class="vocab-def">A document format that locks layout and fonts, opens on any device.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Compression</div>
+      <div class="vocab-def">Shrinking a file's size to save space or speed up sharing.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Folder hierarchy</div>
+      <div class="vocab-def">An organized tree of folders inside folders that groups related files.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Naming convention</div>
+      <div class="vocab-def">A consistent rule you follow when naming files — specific, no spaces, dated.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Cloud storage</div>
+      <div class="vocab-def">Storing files on remote servers (Google Drive, OneDrive) instead of just one device.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Audit and tidy your digital life.</div>
+    <p>Take 15 minutes this week to:</p>
+    <ul>
+      <li>Open your downloads or documents folder. Count files with unhelpful names ("Untitled," "Document(3)").</li>
+      <li>Pick <strong>5 files</strong> and rename them following the 4 rules of good file names.</li>
+      <li>Create at least <strong>one new folder</strong> with a clear name and move related files into it.</li>
+      <li>In 3–4 sentences, describe what you changed and how the new system feels different from the old chaos.</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 6</strong>, you'll compare <em>productivity software</em> like MS Word and Google Docs — diving into interface design, collaboration features, and how cloud tools changed work forever.</p>
+    </div>
+  </div>
+
+  <!-- ========== BOTTOM NAV ========== -->
+  <div class="bottom-nav">
+    <a href="../index.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Course Home
+    </a>
+    <a href="week-05-activity.html" class="btn btn-primary">
+      Continue to Activity
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
 
 </body>
 </html>

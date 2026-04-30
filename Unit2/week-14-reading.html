@@ -7,351 +7,984 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== BOTTOM NAV ========== */
+.bottom-nav {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(85,200,232,0.4);
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn svg { width: 18px; height: 18px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav .btn { width: 100%; justify-content: center; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
 </head>
-<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.65;">
+<body>
 
-<div style="max-width:980px;margin:0 auto;background:#0a0a14;">
-
-  <!-- HEADER BAR -->
-  <div style="background:#0E1C42;padding:18px 28px;display:flex;align-items:center;gap:18px;border-bottom:3px solid #55C8E8;">
-    <svg width="52" height="52" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <circle cx="32" cy="32" r="30" fill="#55C8E8"/>
-      <ellipse cx="32" cy="36" rx="18" ry="20" fill="#0E1C42"/>
-      <circle cx="24" cy="28" r="7" fill="#fff"/>
-      <circle cx="40" cy="28" r="7" fill="#fff"/>
-      <circle cx="24" cy="28" r="3.5" fill="#0E1C42"/>
-      <circle cx="40" cy="28" r="3.5" fill="#0E1C42"/>
-      <polygon points="32,33 29,38 35,38" fill="#C7922C"/>
-      <path d="M 16 44 Q 22 50 28 46" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 36 46 Q 42 50 48 44" stroke="#55C8E8" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div style="flex:1;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-0.01em;">Digital Discoveries</div>
-      <div style="font-size:12px;color:#55C8E8;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Optima Academy Online · Grade 6 Computer Science</div>
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
     </div>
-    <div style="background:#C7922C;color:#0E1C42;padding:8px 16px;border-radius:20px;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;">UNIT 2 · WEEK 14</div>
-  </div>
-
-  <!-- HERO -->
-  <div style="background:linear-gradient(135deg,#0E1C42 0%,#3d6522 50%,#76C043 100%);padding:56px 32px 48px;position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(118,192,67,0.32) 0%,rgba(118,192,67,0) 70%);"></div>
-    <div style="position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(85,200,232,0.22) 0%,rgba(85,200,232,0) 70%);"></div>
-    <div style="position:relative;z-index:2;">
-      <div style="display:inline-block;background:rgba(85,200,232,0.18);border:1px solid #55C8E8;color:#55C8E8;padding:6px 14px;border-radius:16px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px;">Lessons 6.2 &amp; 6.3 · SC.6.HS.2.2</div>
-      <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:42px;font-weight:800;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;">Digital Wellness &amp; Screen Time</h1>
-      <p style="font-size:18px;color:#c8d6e8;margin:0;font-weight:400;max-width:680px;">For 13 weeks you've learned how the digital world works. This week, the focus turns inward: how screens affect <em>your</em> body, <em>your</em> mind, and <em>your</em> sleep — and how a 6th-grader can build a balance plan that actually sticks.</p>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 2 · WEEK 14
     </div>
   </div>
+</header>
 
-  <!-- LEARNING OBJECTIVES -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">◆ Learning Objectives</div>
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:26px 28px;">
-      <p style="margin:0 0 18px;color:#c8d6e8;font-size:15px;">By the end of this week, you will be able to:</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">1</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Distinguish active and passive screen time</strong> and explain why the difference matters.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C7922C,#8a6620);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">2</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Describe the physical effects</strong> of screens on sleep, eyes, posture, and movement.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#67308F,#3d1c59);color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">3</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Recognize mental and emotional effects</strong> of screens, especially comparison and doomscrolling.</div>
-        </div>
-        <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#76C043,#3d6522);color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">4</div>
-          <div style="font-size:15px;color:#e2e8f0;padding-top:6px;"><strong style="color:#ffffff;">Build a personal balance plan</strong> using concrete habits — not vague resolutions.</div>
-        </div>
-      </div>
-    </div>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 2: Data &amp; Cyber Safety</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 14: Digital Wellness &amp; Screen Time</span>
   </div>
+</nav>
 
-  <!-- SECTION 1 -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">01</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 1 · The Screen Time Question</div>
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 2 • WEEK 14 • READING</div>
+  <h1 class="lesson-title">Digital Wellness &amp; Screen Time</h1>
+  <p class="lesson-description">For 13 weeks you've learned how the digital world works. This week, the focus turns inward: how screens affect <em>your</em> body, <em>your</em> mind, and <em>your</em> sleep — and how a 6th-grader can build a balance plan that actually sticks.</p>
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Not all screen time is created equal</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 16px;">The average American 8–12-year-old spends about <strong style="color:#ffffff;">5.5 hours a day</strong> on screens — outside of school. That's roughly one third of waking hours. But the more useful question isn't <em>how many hours</em>; it's <em>what kind of hours</em>.</p>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Researchers split screen time into two big buckets: <strong style="color:#ffffff;">active</strong> and <strong style="color:#ffffff;">passive</strong>. The same 60 minutes can feel very different — and affect you very differently — depending on which bucket it falls into.</p>
-
-    <!-- Active vs passive -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #76C043;border-radius:10px;padding:20px;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#76C043;text-transform:uppercase;margin-bottom:10px;">⚡ Active Screen Time</div>
-        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">Creating, learning, connecting.</div>
-        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
-          <li>Coding a project, drawing in an art app</li>
-          <li>Doing schoolwork on Canvas</li>
-          <li>Video-calling Grandma</li>
-          <li>Writing a story, editing a video</li>
-        </ul>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-top:4px solid #C7922C;border-radius:10px;padding:20px;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.2em;color:#C7922C;text-transform:uppercase;margin-bottom:10px;">📺 Passive Screen Time</div>
-        <div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">Scrolling, watching, absorbing.</div>
-        <ul style="margin:0;padding:0 0 0 18px;color:#c8d6e8;font-size:14px;line-height:1.7;">
-          <li>Endless TikTok / Reels / Shorts scrolling</li>
-          <li>Background TV in your room</li>
-          <li>Auto-playing YouTube for hours</li>
-          <li>Doomscrolling through news headlines</li>
-        </ul>
-      </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Distinguish active and passive screen time</strong> and explain why the difference matters.</div>
     </div>
-
-    <!-- VOCABULARY block -->
-    <div style="background:linear-gradient(135deg,rgba(85,200,232,0.10),rgba(85,200,232,0.03));border-left:5px solid #55C8E8;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:12px;">📘 Vocabulary</div>
-      <div style="font-size:15px;color:#e2e8f0;line-height:1.7;">
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Screen time</strong> — the total time spent looking at a digital screen.</p>
-        <p style="margin:0 0 8px;"><strong style="color:#ffffff;">Active screen time</strong> — using screens to create, learn, or connect with people you know.</p>
-        <p style="margin:0;"><strong style="color:#ffffff;">Passive screen time</strong> — using screens mostly to consume content (watch, scroll) without producing or interacting.</p>
-      </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Describe the physical effects</strong> of screens on sleep, eyes, posture, and movement.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Recognize mental and emotional effects</strong> of screens, especially comparison and doomscrolling.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Build a personal balance plan</strong> using concrete habits — not vague resolutions.</div>
     </div>
   </div>
 
-  <!-- SECTION 2 -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">02</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 2 · What Screens Do to Your Body</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Sleep, eyes, posture, and movement</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Doctors and researchers around the world agree: heavy screen use changes how your body works. Most of the changes are small and reversible, but they add up — and four of them matter most for sixth-graders:</p>
-
-    <!-- 4 body effects -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:24px;">😴</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;">Sleep</strong></div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;"><strong style="color:#ffffff;">Blue light</strong> from screens tells your brain "it's daytime" and delays the sleep hormone melatonin. Phones in bed = trouble falling asleep AND lower-quality sleep.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:24px;">👀</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;">Eyes</strong></div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Long screen sessions cause <em>digital eye strain</em> — dry eyes, blurry vision, headaches. The fix is the <strong style="color:#ffffff;">20-20-20 rule</strong>: every 20 minutes, look 20 feet away for 20 seconds.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:24px;">🧍</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;">Posture</strong></div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;">Hunching over a phone for hours strains your neck — sometimes called <em>"tech neck."</em> Sitting at a desk with a screen at eye-level helps a lot.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:24px;">🏃</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;">Movement</strong></div>
-        <div style="color:#c8d6e8;font-size:13px;line-height:1.55;"><strong style="color:#ffffff;">Sedentary behavior</strong> means sitting still for long stretches. The CDC recommends kids get at least <strong>60 minutes</strong> of physical activity a day — screens often crowd that out.</div>
-      </div>
-    </div>
-
-    <!-- CHECK FOR UNDERSTANDING -->
-    <div style="background:linear-gradient(135deg,rgba(199,146,44,0.12),rgba(199,146,44,0.03));border-left:5px solid #C7922C;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#C7922C;text-transform:uppercase;margin-bottom:12px;">✅ Check for Understanding</div>
-      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;"><strong style="color:#ffffff;">Pause and think:</strong> You're falling asleep with your phone in your hand and you wake up groggy every morning. Which physical effect from this section is the most likely culprit?</p>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;font-style:italic;">(Hint: it has to do with light, hormones, and bedtime.)</p>
-    </div>
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · The Screen Time Question</div>
+  </div>
+  <h2 class="section-title">Not all screen time is created equal</h2>
+  <div class="read-body">
+    <p>The average American 8–12-year-old spends about <strong>5.5 hours a day</strong> on screens — outside of school. That's roughly one third of waking hours. But the more useful question isn't <em>how many hours</em>; it's <em>what kind of hours</em>.</p>
+    <p>Researchers split <span class="key-term">screen time</span> into two big buckets: <strong>active</strong> and <strong>passive</strong>. The same 60 minutes can feel very different — and affect you very differently — depending on which bucket it falls into.</p>
   </div>
 
-  <!-- SECTION 3 -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">03</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 3 · What Screens Do to Your Mind</div>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--gamer-green);">
+      <div class="compare-card-label" style="color: #3d6522;">⚡ Active Screen Time</div>
+      <div class="compare-card-headline">Creating, learning, connecting.</div>
+      <ul>
+        <li>Coding a project, drawing in an art app</li>
+        <li>Doing schoolwork on Canvas</li>
+        <li>Video-calling Grandma</li>
+        <li>Writing a story, editing a video</li>
+      </ul>
     </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Attention, mood, and the comparison trap</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">Screens don't just affect your body — they shape how you feel and what you pay attention to. Three patterns show up over and over in mental-health research:</p>
-
-    <!-- 3 mind effects -->
-    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🧠</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Attention &amp; Focus</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;">Notifications and infinite scroll train your brain to crave constant new things. After a lot of fast-cut video, longer tasks (reading, listening) can feel harder. The good news: attention is a muscle. Less scrolling = stronger focus.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">📉</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">The Comparison Trap</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;"><strong style="color:#ffffff;">Social comparison</strong> — measuring yourself against others — is normal. But scrolling shows you everyone's <em>highlight reel</em>: best vacations, best outfits, best moments. Feeling worse about your own life after social media is one of the most studied effects in teen psychology.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;"><span style="font-size:22px;">🌪️</span><strong style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Doomscrolling</strong></div>
-        <div style="color:#c8d6e8;font-size:14px;">Scrolling through one bad-news headline after another, often late at night. Your brain interprets each story as if it's happening to <em>you</em> — which can leave you feeling anxious without anything real being wrong.</div>
-      </div>
-    </div>
-
-    <!-- THINK ABOUT IT -->
-    <div style="background:linear-gradient(135deg,rgba(103,48,143,0.15),rgba(103,48,143,0.04));border-left:5px solid #67308F;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#b388d8;text-transform:uppercase;margin-bottom:12px;">💭 Think About It</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">The classical philosophers ranked <strong style="color:#ffffff;">temperance</strong> — self-control, the ability to enjoy a good thing in the right amount — as one of the four cardinal virtues. Screens aren't the enemy. They're a powerful good thing that needs measure. Asking "is this serving me, or am I serving it?" is temperance in 2025 form.</p>
-    </div>
-  </div>
-
-  <!-- SECTION 4 -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">04</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 4 · The Good Side of Screens</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Screens are also where you learn, create, and connect</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">It's easy to make this whole topic sound like "screens bad." But that's not what the research actually says. Used wisely, screens are responsible for some of the biggest opportunities in human history — and your generation has more access than any before it.</p>
-
-    <!-- Good side cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 24px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#76C043;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">📚 Learning</div>
-        <div style="color:#e2e8f0;font-size:14px;">Free Khan Academy. Wikipedia in 300+ languages. Coding tutorials. Documentaries. Online tutoring.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🎨 Creating</div>
-        <div style="color:#e2e8f0;font-size:14px;">Art apps, video editing, music production, writing tools, 3D design — all in your pocket.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#C7922C;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">💬 Connecting</div>
-        <div style="color:#e2e8f0;font-size:14px;">Video-calling family far away, group chats with close friends, classmates collaborating on projects.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#67308F;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🌍 Exploring</div>
-        <div style="color:#e2e8f0;font-size:14px;">Virtual museum tours, satellite views of any place on Earth, live nature cams from every continent.</div>
-      </div>
-    </div>
-
-    <!-- DID YOU KNOW -->
-    <div style="background:linear-gradient(135deg,rgba(247,143,30,0.15),rgba(247,143,30,0.04));border-left:5px solid #F78F1E;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#F78F1E;text-transform:uppercase;margin-bottom:12px;">💡 Did You Know?</div>
-      <p style="margin:0;color:#e2e8f0;font-size:15px;">Researchers find a "<strong style="color:#ffffff;">U-shaped curve</strong>" with screen time and well-being: a small amount can actually <em>raise</em> well-being (because it helps you connect and learn), but heavy use brings it back down. The sweet spot for most kids is moderate, intentional, mostly active screen time.</p>
-    </div>
-  </div>
-
-  <!-- SECTION 5 -->
-  <div style="padding:40px 32px 8px;">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-      <div style="width:38px;height:38px;border-radius:8px;background:#55C8E8;color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;">05</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;">Section 5 · Build YOUR Balance Plan</div>
-    </div>
-
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:26px;font-weight:700;color:#ffffff;margin:0 0 14px;line-height:1.2;">Concrete habits beat vague resolutions</h2>
-
-    <p style="font-size:16px;color:#c8d6e8;margin:0 0 20px;">"I'll use my phone less" is a wish — and wishes don't change behavior. <em>"I'll plug my phone in at 9 p.m. across the room"</em> is a habit. Six concrete habits beat any number of fuzzy intentions:</p>
-
-    <!-- 6 habits -->
-    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;padding:24px;margin:0 0 24px;">
-      <div style="display:grid;grid-template-columns:1fr;gap:14px;">
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;">1</div>
-          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;">Phone-free bedtime</div><div style="color:#c8d6e8;font-size:14px;">Plug it in <em>across the room</em> at least 30 minutes before sleep. Use a real alarm clock if you need to.</div></div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;">2</div>
-          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;">Phone-free meals</div><div style="color:#c8d6e8;font-size:14px;">Phones face-down or in another room during family meals. Eye contact and conversation matter.</div></div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;">3</div>
-          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;">20-20-20 for eyes</div><div style="color:#c8d6e8;font-size:14px;">Every 20 minutes, look 20 feet away for 20 seconds. Set a gentle timer to remind yourself.</div></div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;">4</div>
-          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;">Notification surgery</div><div style="color:#c8d6e8;font-size:14px;">Turn off all notifications you don't actually need. Keep messages from people; mute apps that just want your attention.</div></div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;">5</div>
-          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;">Move every hour</div><div style="color:#c8d6e8;font-size:14px;">Stand up, stretch, walk to another room. Aim for 60 minutes of physical activity total each day.</div></div>
-        </div>
-        <div style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,#55C8E8,#0E5568);color:#0E1C42;display:flex;align-items:center;justify-content:center;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:16px;">6</div>
-          <div style="flex:1;"><div style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px;">Active &gt; passive</div><div style="color:#c8d6e8;font-size:14px;">When you reach for a screen, ask: am I about to <em>create or connect</em>, or just consume? Not always wrong to consume — but notice the choice.</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- REAL-WORLD CONNECTION -->
-    <div style="background:linear-gradient(135deg,rgba(118,192,67,0.12),rgba(118,192,67,0.03));border-left:5px solid #76C043;border-radius:0 12px 12px 0;padding:22px 24px;margin:0 0 20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:12px;">🌎 Real-World Connection</div>
-      <p style="margin:0 0 10px;color:#e2e8f0;font-size:15px;">Many of the engineers who built today's most addictive apps now keep their own kids off them. They know exactly how the dopamine loop works — they designed it. Knowing how the system is built is the first step in choosing whether to play along.</p>
-      <p style="margin:0;color:#c8d6e8;font-size:14px;">Doctors, athletes, professional musicians, and elite students all share one habit: <em>protected, focused time without a screen</em>. Building that habit at 11 puts you years ahead.</p>
-    </div>
-  </div>
-
-  <!-- KEY VOCABULARY GRID -->
-  <div style="padding:40px 32px 8px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#55C8E8;text-transform:uppercase;margin-bottom:18px;">📚 Key Vocabulary — Week 14</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Screen time</div>
-        <div style="color:#c8d6e8;font-size:14px;">The total time spent looking at a digital screen.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Active screen time</div>
-        <div style="color:#c8d6e8;font-size:14px;">Using screens to create, learn, or genuinely connect.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Passive screen time</div>
-        <div style="color:#c8d6e8;font-size:14px;">Mostly consuming content (scrolling, watching) without producing or interacting.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Blue light</div>
-        <div style="color:#c8d6e8;font-size:14px;">Wavelength of light that screens emit; can suppress melatonin and delay sleep.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Sedentary behavior</div>
-        <div style="color:#c8d6e8;font-size:14px;">Sitting still for long stretches without physical activity.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">20-20-20 rule</div>
-        <div style="color:#c8d6e8;font-size:14px;">Every 20 minutes of screen use, look 20 feet away for 20 seconds.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Social comparison</div>
-        <div style="color:#c8d6e8;font-size:14px;">Measuring yourself against others — heightened by social media's highlight reels.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Doomscrolling</div>
-        <div style="color:#c8d6e8;font-size:14px;">Scrolling through one bad-news headline after another, often late at night.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Digital wellness</div>
-        <div style="color:#c8d6e8;font-size:14px;">The practice of using technology in ways that support your physical and mental health.</div>
-      </div>
-      <div style="background:#111122;border:1px solid #1e2a4a;border-radius:10px;padding:18px;">
-        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:700;font-size:15px;margin-bottom:6px;">Temperance</div>
-        <div style="color:#c8d6e8;font-size:14px;">Classical virtue of self-control — enjoying good things in the right amount.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- REFLECTION PROMPT -->
-  <div style="padding:40px 32px 32px;">
-    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);border-radius:14px;padding:28px 32px;box-shadow:0 8px 32px rgba(199,146,44,0.25);">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#0E1C42;text-transform:uppercase;margin-bottom:10px;">🪞 Weekly Reflection</div>
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:14px;line-height:1.3;">Audit one day of your screen time.</div>
-      <p style="margin:0 0 10px;color:#ffffff;font-size:15px;line-height:1.7;">Pick one weekday. Use Screen Time (iPhone) or Digital Wellbeing (Android) — or your best honest estimate. Then answer in 4–6 sentences:</p>
-      <ul style="margin:0;padding:0 0 0 22px;color:#ffffff;font-size:15px;line-height:1.8;">
-        <li>How many hours of screen time did you have outside of school?</li>
-        <li>How much was active (creating, learning, connecting) vs. passive (scrolling, watching)?</li>
-        <li>Pick one habit from Section 5 — which one will you actually try this week, and when?</li>
+    <div class="compare-card" style="border-top-color: var(--gateway-gold);">
+      <div class="compare-card-label" style="color: var(--gateway-gold);">📺 Passive Screen Time</div>
+      <div class="compare-card-headline">Scrolling, watching, absorbing.</div>
+      <ul>
+        <li>Endless TikTok / Reels / Shorts scrolling</li>
+        <li>Background TV in your room</li>
+        <li>Auto-playing YouTube for hours</li>
+        <li>Doomscrolling through news headlines</li>
       </ul>
     </div>
   </div>
 
-  <!-- WHAT'S NEXT -->
-  <div style="padding:0 32px 48px;">
-    <div style="background:#111122;border:1px solid #1e2a4a;border-left:4px solid #76C043;border-radius:0 12px 12px 0;padding:20px 24px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.22em;color:#76C043;text-transform:uppercase;margin-bottom:8px;">→ What's Next</div>
-      <div style="color:#e2e8f0;font-size:15px;">In <strong style="color:#ffffff;">Week 15</strong>, you'll put the last seven weeks together into a <strong>Cyber Safety PSA Project</strong> — a multimedia piece that teaches a younger student everything you wish you'd known a year ago.</div>
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Screen time</strong> — the total time spent looking at a digital screen.</p>
+      <p><strong>Active screen time</strong> — using screens to create, learn, or connect with people you know.</p>
+      <p><strong>Passive screen time</strong> — using screens mostly to consume content (watch, scroll) without producing or interacting.</p>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div style="background:#0E1C42;padding:18px 32px;text-align:center;color:#8a9bb8;font-size:12px;border-top:1px solid #1e2a4a;">
-    Digital Discoveries · Optima Academy Online · Course 0200021 · Standard SC.6.HS.2.2
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · What Screens Do to Your Body</div>
+  </div>
+  <h2 class="section-title">Sleep, eyes, posture, and movement</h2>
+  <div class="read-body">
+    <p>Doctors and researchers around the world agree: heavy screen use changes how your body works. Most of the changes are small and reversible, but they add up — and four of them matter most for sixth-graders:</p>
   </div>
 
-</div>
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">😴 Sleep</div>
+      <div class="trait-body"><strong style="color: var(--binary-blue);">Blue light</strong> from screens tells your brain "it's daytime" and delays the sleep hormone melatonin. Phones in bed = trouble falling asleep AND lower-quality sleep.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">👀 Eyes</div>
+      <div class="trait-body">Long screen sessions cause <em>digital eye strain</em> — dry eyes, blurry vision, headaches. The fix is the <strong style="color: var(--binary-blue);">20-20-20 rule</strong>: every 20 minutes, look 20 feet away for 20 seconds.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">🧍 Posture</div>
+      <div class="trait-body">Hunching over a phone for hours strains your neck — sometimes called <em>"tech neck."</em> Sitting at a desk with a screen at eye-level helps a lot.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: #3d6522;">🏃 Movement</div>
+      <div class="trait-body"><strong style="color: var(--binary-blue);">Sedentary behavior</strong> means sitting still for long stretches. The CDC recommends kids get at least <strong>60 minutes</strong> of physical activity a day — screens often crowd that out.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and think:</strong> You're falling asleep with your phone in your hand and you wake up groggy every morning. Which physical effect from this section is the most likely culprit?</p>
+      <p style="font-style:italic; color:#6b7280;">(Hint: it has to do with light, hormones, and bedtime.)</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · What Screens Do to Your Mind</div>
+  </div>
+  <h2 class="section-title">Attention, mood, and the comparison trap</h2>
+  <div class="read-body">
+    <p>Screens don't just affect your body — they shape how you feel and what you pay attention to. Three patterns show up over and over in mental-health research:</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head"><span style="font-size:22px;">🧠</span><strong>Attention &amp; Focus</strong></div>
+      <div class="platform-card-body">Notifications and infinite scroll train your brain to crave constant new things. After a lot of fast-cut video, longer tasks (reading, listening) can feel harder. The good news: attention is a muscle. Less scrolling = stronger focus.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head"><span style="font-size:22px;">📉</span><strong>The Comparison Trap</strong></div>
+      <div class="platform-card-body"><strong style="color: var(--binary-blue);">Social comparison</strong> — measuring yourself against others — is normal. But scrolling shows you everyone's <em>highlight reel</em>: best vacations, best outfits, best moments. Feeling worse about your own life after social media is one of the most studied effects in teen psychology.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head"><span style="font-size:22px;">🌪️</span><strong>Doomscrolling</strong></div>
+      <div class="platform-card-body">Scrolling through one bad-news headline after another, often late at night. Your brain interprets each story as if it's happening to <em>you</em> — which can leave you feeling anxious without anything real being wrong.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>The classical philosophers ranked <strong>temperance</strong> — self-control, the ability to enjoy a good thing in the right amount — as one of the four cardinal virtues. Screens aren't the enemy. They're a powerful good thing that needs measure. Asking "is this serving me, or am I serving it?" is temperance in 2025 form.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · The Good Side of Screens</div>
+  </div>
+  <h2 class="section-title">Screens are also where you learn, create, and connect</h2>
+  <div class="read-body">
+    <p>It's easy to make this whole topic sound like "screens bad." But that's not what the research actually says. Used wisely, screens are responsible for some of the biggest opportunities in human history — and your generation has more access than any before it.</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: #3d6522;">📚 Learning</div>
+      <div class="trait-body">Free Khan Academy. Wikipedia in 300+ languages. Coding tutorials. Documentaries. Online tutoring.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">🎨 Creating</div>
+      <div class="trait-body">Art apps, video editing, music production, writing tools, 3D design — all in your pocket.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">💬 Connecting</div>
+      <div class="trait-body">Video-calling family far away, group chats with close friends, classmates collaborating on projects.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">🌍 Exploring</div>
+      <div class="trait-body">Virtual museum tours, satellite views of any place on Earth, live nature cams from every continent.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Researchers find a "<strong>U-shaped curve</strong>" with screen time and well-being: a small amount can actually <em>raise</em> well-being (because it helps you connect and learn), but heavy use brings it back down. The sweet spot for most kids is moderate, intentional, mostly active screen time.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Build YOUR Balance Plan</div>
+  </div>
+  <h2 class="section-title">Concrete habits beat vague resolutions</h2>
+  <div class="read-body">
+    <p>"I'll use my phone less" is a wish — and wishes don't change behavior. <em>"I'll plug my phone in at 9 p.m. across the room"</em> is a habit. Six concrete habits beat any number of fuzzy intentions:</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Phone-free bedtime</div>
+        <div class="step-body">Plug it in <em>across the room</em> at least 30 minutes before sleep. Use a real alarm clock if you need to.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Phone-free meals</div>
+        <div class="step-body">Phones face-down or in another room during family meals. Eye contact and conversation matter.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">20-20-20 for eyes</div>
+        <div class="step-body">Every 20 minutes, look 20 feet away for 20 seconds. Set a gentle timer to remind yourself.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Notification surgery</div>
+        <div class="step-body">Turn off all notifications you don't actually need. Keep messages from people; mute apps that just want your attention.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-title">Move every hour</div>
+        <div class="step-body">Stand up, stretch, walk to another room. Aim for 60 minutes of physical activity total each day.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-title">Active &gt; passive</div>
+        <div class="step-body">When you reach for a screen, ask: am I about to <em>create or connect</em>, or just consume? Not always wrong to consume — but notice the choice.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Many of the engineers who built today's most addictive apps now keep their own kids off them. They know exactly how the dopamine loop works — they designed it. Knowing how the system is built is the first step in choosing whether to play along.</p>
+      <p>Doctors, athletes, professional musicians, and elite students all share one habit: <em>protected, focused time without a screen</em>. Building that habit at 11 puts you years ahead.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 14</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Screen time</div>
+      <div class="vocab-def">The total time spent looking at a digital screen.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Active screen time</div>
+      <div class="vocab-def">Using screens to create, learn, or genuinely connect.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Passive screen time</div>
+      <div class="vocab-def">Mostly consuming content (scrolling, watching) without producing or interacting.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Blue light</div>
+      <div class="vocab-def">Wavelength of light that screens emit; can suppress melatonin and delay sleep.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Sedentary behavior</div>
+      <div class="vocab-def">Sitting still for long stretches without physical activity.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">20-20-20 rule</div>
+      <div class="vocab-def">Every 20 minutes of screen use, look 20 feet away for 20 seconds.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Social comparison</div>
+      <div class="vocab-def">Measuring yourself against others — heightened by social media's highlight reels.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Doomscrolling</div>
+      <div class="vocab-def">Scrolling through one bad-news headline after another, often late at night.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Digital wellness</div>
+      <div class="vocab-def">The practice of using technology in ways that support your physical and mental health.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Temperance</div>
+      <div class="vocab-def">Classical virtue of self-control — enjoying good things in the right amount.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Audit one day of your screen time.</div>
+    <p>Pick one weekday. Use Screen Time (iPhone) or Digital Wellbeing (Android) — or your best honest estimate. Then answer in 4–6 sentences:</p>
+    <ul>
+      <li>How many hours of screen time did you have outside of school?</li>
+      <li>How much was active (creating, learning, connecting) vs. passive (scrolling, watching)?</li>
+      <li>Pick one habit from Section 5 — which one will you actually try this week, and when?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 15</strong>, you'll put the last seven weeks together into a <strong>Cyber Safety Applied Project</strong> — a multimedia piece that teaches a younger student everything you wish you'd known a year ago.</p>
+    </div>
+  </div>
+
+  <!-- ========== BOTTOM NAV ========== -->
+  <div class="bottom-nav">
+    <a href="../index.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Course Home
+    </a>
+    <a href="week-14-activity.html" class="btn btn-primary">
+      Continue to Activity
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
 
 </body>
 </html>
