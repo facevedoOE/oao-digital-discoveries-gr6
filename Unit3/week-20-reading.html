@@ -3,390 +3,1666 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 7.2 — Decomposition: Breaking Big Problems Down | Digital Discoveries</title>
+<title>Week 20 — Flowcharts &amp; Algorithm Design | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body style="margin:0;padding:0;font-family:'Wix Madefor Text',system-ui,sans-serif;font-size:16px;line-height:1.7;color:#374151;background:#f8f9fa;">
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
 
-<!-- ═══════════════ HEADER ═══════════════ -->
-<header style="background:#0E1C42;color:#ffffff;box-shadow:0 4px 20px rgba(14,28,66,0.3);">
-  <div style="max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;">
-    <div style="display:flex;align-items:center;gap:16px;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" height="40" width="200" style="height:40px;width:auto;flex-shrink:0;">
-        <circle cx="20" cy="20" r="18" fill="#3a4f7a"/>
-        <ellipse cx="20" cy="24" rx="11" ry="10" fill="#c8a87c"/>
-        <ellipse cx="20" cy="27" rx="6" ry="5.5" fill="#e8d5b7"/>
-        <ellipse cx="20" cy="16" rx="10" ry="8.5" fill="#c8a87c"/>
-        <polygon points="12,11 14.5,6 16,12" fill="#c8a87c"/>
-        <polygon points="28,11 25.5,6 24,12" fill="#c8a87c"/>
-        <circle cx="16" cy="16" r="4.2" fill="#ffffff"/>
-        <circle cx="24" cy="16" r="4.2" fill="#ffffff"/>
-        <circle cx="16" cy="16" r="2.5" fill="#0E1C42"/>
-        <circle cx="24" cy="16" r="2.5" fill="#0E1C42"/>
-        <polygon points="18.5,19 20,22.5 21.5,19" fill="#e8943a"/>
-        <ellipse cx="16.5" cy="33" rx="3" ry="1.5" fill="#e8943a"/>
-        <ellipse cx="23.5" cy="33" rx="3" ry="1.5" fill="#e8943a"/>
-        <text x="44" y="20" font-family="'Wix Madefor Display',sans-serif" font-weight="700" font-size="16" fill="#ffffff">Optima</text>
-        <text x="44" y="32" font-family="'Wix Madefor Display',sans-serif" font-weight="500" font-size="7" fill="rgba(255,255,255,0.7)" letter-spacing="2">ACADEMY ONLINE</text>
-      </svg>
-      <div style="width:1px;height:32px;background:rgba(255,255,255,0.2);"></div>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Sortable list */
+.sortable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sortable-item {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid var(--gateway-gold);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.25s, border-color 0.25s;
+  font-size: 14.5px;
+  color: var(--binary-blue);
+}
+.sortable-item:hover { box-shadow: 0 4px 12px rgba(199,146,44,0.25); }
+.sortable-item.dragging { opacity: 0.4; cursor: grabbing; }
+.sortable-item.drag-over { border-color: var(--bitstream-blue); transform: scale(1.02); }
+.sortable-handle {
+  color: var(--gateway-gold);
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -2px;
+}
+.sortable-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gateway-gold);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.25s;
+}
+.sortable-text { flex: 1; line-height: 1.4; }
+.sortable-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.sortable-arrow {
+  width: 28px;
+  height: 22px;
+  border: none;
+  background: rgba(199,146,44,0.2);
+  color: var(--gateway-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  transition: background 0.15s, color 0.15s;
+}
+.sortable-arrow:hover:not(:disabled) { background: var(--gateway-gold); color: white; }
+.sortable-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.sortable-item.correct {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: var(--gamer-green);
+}
+.sortable-item.correct .sortable-num { background: var(--gamer-green); }
+.sortable-item.correct .sortable-handle { color: var(--gamer-green); }
+.sortable-item.incorrect {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-color: #ef4444;
+}
+.sortable-item.incorrect .sortable-num { background: #ef4444; }
+.sortable-item.incorrect .sortable-handle { color: #ef4444; }
+
+/* Tracer */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-inputs {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-inputs .tracer-panel-label { color: #6b7280; }
+.tracer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tracer-input-row:last-child { margin-bottom: 0; }
+.tracer-input-row label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  color: var(--binary-blue);
+  width: 18px;
+  font-size: 14px;
+}
+.tracer-input-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+}
+.tracer-input-row input:focus { outline: 2px solid var(--bitstream-blue); border-color: var(--bitstream-blue); }
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 44px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+.tracer-output {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f4128;
+  text-align: center;
+  display: none;
+  animation: outputPop 0.4s ease;
+}
+.tracer-output.show { display: block; }
+@keyframes outputPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
       <div>
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:14px;color:#55C8E8;font-weight:600;">Digital Discoveries</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.7);">Grade 6 · Computer Science</div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
       </div>
     </div>
-    <div style="display:flex;align-items:center;gap:8px;background:#C7922C;color:#ffffff;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:700;font-family:'Wix Madefor Display',sans-serif;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      0 XP
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 20
     </div>
   </div>
 </header>
 
-<!-- ═══════════════ BREADCRUMB ═══════════════ -->
-<nav style="background:#ffffff;border-bottom:1px solid #e5e7eb;">
-  <div style="max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:8px;font-size:14px;color:#6b7280;flex-wrap:wrap;">
-    <span style="color:#6b7280;">Course Home</span>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    <span style="color:#6b7280;">Unit 3: Programming</span>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    <span style="color:#0E1C42;font-weight:600;">Lesson 7.2: Decomposition — Breaking Big Problems Down</span>
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 20: Flowcharts &amp; Algorithm Design</span>
   </div>
 </nav>
 
-<!-- ═══════════════ MAIN ═══════════════ -->
-<main style="max-width:900px;margin:0 auto;padding:32px 24px 80px;">
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
 
-  <!-- LESSON HEADER -->
-  <div>
-    <div style="display:inline-block;padding:4px 14px;background:#55C8E8;color:#ffffff;font-size:13px;font-weight:700;font-family:'Wix Madefor Display',sans-serif;border-radius:20px;letter-spacing:0.5px;margin-bottom:16px;">UNIT 3 • LESSON 7.2</div>
-    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:36px;font-weight:700;color:#0E1C42;line-height:1.2;margin:0 0 12px;">Decomposition: Breaking Big Problems Down</h1>
-    <p style="font-size:18px;color:#6b7280;margin:0 0 32px;line-height:1.6;">"Plan a birthday party." "Build a video game." "Clean the whole house." Some problems feel <em>impossibly</em> big — until you slice them into pieces small enough to actually solve. That's <strong>decomposition</strong>, the second pillar of computational thinking, and it's the single most powerful trick programmers use to tackle hard work.</p>
-  </div>
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 20 • READING</div>
+  <h1 class="lesson-title">Flowcharts &amp; Algorithm Design</h1>
+  <p class="lesson-description">Pseudocode is great — but sometimes a picture is faster than words. This week, you'll learn the visual language of <em>flowcharts</em>: five simple shapes that can sketch any algorithm in the world.</p>
 
-  <!-- STANDARDS BOX -->
-  <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px 20px;margin-bottom:32px;font-size:14px;color:#6b7280;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:600;color:#0E1C42;font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Florida Standards Alignment</div>
-    SC.K12.CTR.1.1 — Apply critical thinking and problem-solving strategies. SC.K12.CTR.2.1 — Create and interpret representations (diagrams, flowcharts, pseudocode) for digital problems.
-  </div>
-
-  <!-- OBJECTIVES -->
-  <div style="background:linear-gradient(135deg,#eff6ff,#ecfeff);border:2px solid #55C8E8;border-radius:12px;padding:24px;margin-bottom:32px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#55C8E8"/></svg>
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
       Learning Objectives
     </div>
-    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <span><strong>Define decomposition</strong> as the act of breaking a big problem into smaller, easier sub-problems.</span>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Identify the five core flowchart shapes</strong> — terminator, input/output, process, decision, and arrow — and explain what each one means.</div>
     </div>
-    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <span><strong>Decompose</strong> a real-world task into 3–6 sub-tasks and represent them as a tree or numbered outline.</span>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Read a flowchart</strong> by following the arrows from start to end, including branches at decision diamonds.</div>
     </div>
-    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <span><strong>Recognize</strong> when a sub-problem is small enough to solve directly — and when it still needs to be broken down further.</span>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Draw your own flowchart</strong> for a real-world routine, choosing the right shape for each step.</div>
     </div>
-    <div style="display:flex;align-items:flex-start;gap:12px;">
-      <div style="width:24px;height:24px;background:rgba(85,200,232,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#55C8E8" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <span><strong>Connect</strong> decomposition to algorithms — explain why programmers decompose <em>before</em> they write any code.</span>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Translate between</strong> flowchart, pseudocode, and code — they all describe the same algorithm in different forms.</div>
     </div>
   </div>
 
-  <!-- HERO ILLUSTRATION -->
-  <div style="width:100%;background:linear-gradient(135deg,#0E1C42 0%,#0E5568 100%);border-radius:12px;margin-bottom:32px;padding:32px 24px;">
-    <svg width="100%" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;max-width:760px;">
-      <!-- Big problem -->
-      <rect x="320" y="10" width="160" height="60" rx="10" fill="#67308F" stroke="#b388d8" stroke-width="2"/>
-      <text x="400" y="38" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="13" font-weight="800" fill="#ffffff">BIG PROBLEM</text>
-      <text x="400" y="56" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="11" fill="#e8d5f5">"Plan a birthday party"</text>
-      <!-- Lines down -->
-      <path d="M 400 70 L 140 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
-      <path d="M 400 70 L 290 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
-      <path d="M 400 70 L 400 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
-      <path d="M 400 70 L 510 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
-      <path d="M 400 70 L 660 110" stroke="#55C8E8" stroke-width="2" fill="none"/>
-      <!-- Five sub-problems -->
-      <rect x="60" y="110" width="160" height="50" rx="8" fill="#55C8E8" opacity="0.85"/>
-      <text x="140" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#0E1C42">Guest list</text>
-      <text x="140" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#0E1C42">Who is invited?</text>
-      <rect x="220" y="110" width="140" height="50" rx="8" fill="#76C043" opacity="0.85"/>
-      <text x="290" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#0E1C42">Food</text>
-      <text x="290" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#0E1C42">Cake + snacks</text>
-      <rect x="360" y="110" width="100" height="50" rx="8" fill="#C7922C" opacity="0.85"/>
-      <text x="410" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#ffffff">Place</text>
-      <text x="410" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#ffffff">Where?</text>
-      <rect x="460" y="110" width="120" height="50" rx="8" fill="#F78F1E" opacity="0.85"/>
-      <text x="520" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#0E1C42">Activities</text>
-      <text x="520" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#0E1C42">Games + music</text>
-      <rect x="580" y="110" width="160" height="50" rx="8" fill="#67308F" opacity="0.85"/>
-      <text x="660" y="132" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#ffffff">Decorations</text>
-      <text x="660" y="148" text-anchor="middle" font-family="'Wix Madefor Text',sans-serif" font-size="10" fill="#ffffff">Theme + colors</text>
-      <!-- Bottom label -->
-      <text x="400" y="200" text-anchor="middle" font-family="'Wix Madefor Display',sans-serif" font-size="12" font-weight="700" fill="#55C8E8" letter-spacing="2">↓ FIVE SMALL PROBLEMS YOU CAN ACTUALLY SOLVE ↓</text>
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · From Pseudocode to Pictures</div>
+  </div>
+  <h2 class="section-title">Why a flowchart, when you have words?</h2>
+  <div class="read-body">
+    <p>Last week, you learned to sketch algorithms in <span class="key-term">pseudocode</span> — English-flavored steps that humans can read at a glance. Pseudocode is a fantastic tool. But the moment your algorithm needs to <em>branch</em> ("if this, do A; otherwise, do B"), pseudocode starts to get tangled. The reader has to track indentation, follow nested IFs, and hold the whole shape in their head.</p>
+    <p>That's where <span class="key-term">flowcharts</span> shine. A flowchart is the same algorithm, drawn as a picture: shapes for the steps, arrows for the flow, diamonds for the decisions. The branching that was hidden inside indented text is now visible at a glance.</p>
+    <p>Programmers, doctors, factory engineers, and even chefs use flowcharts every day to plan, share, and debug processes. By the end of this week, you'll be drawing them too — and reading anyone else's like a map.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;">
+      <ellipse cx="300" cy="28" rx="60" ry="20" fill="#76C043" opacity="0.25" stroke="#3d6522" stroke-width="2"/>
+      <text x="300" y="32" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">START</text>
+      <line x1="300" y1="48" x2="300" y2="72" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="300,77 295,69 305,69" fill="#0E5568"/>
+      <polygon points="300,82 360,120 300,158 240,120" fill="#C7922C" opacity="0.25" stroke="#8a6620" stroke-width="2"/>
+      <text x="300" y="116" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">Is N even?</text>
+      <text x="300" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#8a6620">(N % 2 == 0)</text>
+      <line x1="240" y1="120" x2="170" y2="120" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="165,120 175,115 175,125" fill="#0E5568"/>
+      <text x="200" y="113" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#3d6522">YES</text>
+      <line x1="360" y1="120" x2="430" y2="120" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="435,120 425,115 425,125" fill="#0E5568"/>
+      <text x="400" y="113" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#dc2626">NO</text>
+      <rect x="105" y="105" width="65" height="32" rx="4" fill="#67308F" opacity="0.22" stroke="#67308F" stroke-width="2"/>
+      <text x="137" y="125" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#67308F">"Even"</text>
+      <rect x="430" y="105" width="65" height="32" rx="4" fill="#67308F" opacity="0.22" stroke="#67308F" stroke-width="2"/>
+      <text x="463" y="125" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#67308F">"Odd"</text>
+      <line x1="137" y1="137" x2="137" y2="190" stroke="#0E5568" stroke-width="2"/>
+      <line x1="463" y1="137" x2="463" y2="190" stroke="#0E5568" stroke-width="2"/>
+      <line x1="137" y1="190" x2="463" y2="190" stroke="#0E5568" stroke-width="2"/>
+      <line x1="300" y1="190" x2="300" y2="208" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="300,213 295,205 305,205" fill="#0E5568"/>
+      <ellipse cx="300" cy="222" rx="50" ry="15" fill="#67308F" opacity="0.25" stroke="#67308F" stroke-width="2"/>
+      <text x="300" y="226" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">END</text>
+    </svg>
+    <p style="margin-top:14px; font-size:13px; color:#6b7280; font-style:italic;">A simple flowchart: "Is the number even?" — start at the top, follow the arrows.</p>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Flowchart</strong> — a picture that shows the steps of an algorithm using shapes connected by arrows.</p>
+      <p><strong>Branch</strong> — a place in a flowchart (or any algorithm) where the path splits, usually because of a decision.</p>
+      <p><strong>Sequence</strong> — the order in which steps run. Flowchart arrows show the sequence visually.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · The Five Core Shapes</div>
+  </div>
+  <h2 class="section-title">Five shapes can sketch any algorithm</h2>
+  <div class="read-body">
+    <p>Flowcharts use a tiny vocabulary — just <strong>five shapes</strong> — and that's all you need to describe any program in the world. Each shape has a specific job:</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head"><span style="font-size:22px;">⬭</span><strong>Terminator (Oval)</strong></div>
+      <div class="platform-card-body"><em style="color: #3d6522;">Says:</em> "Start" or "End." Every flowchart begins and ends with one. <em style="color: #3d6522;">Example:</em> START, END.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head"><span style="font-size:22px;">▱</span><strong>Input/Output (Parallelogram)</strong></div>
+      <div class="platform-card-body"><em style="color: var(--bitstream-blue);">Says:</em> "Get something from the user" or "Show the user something." <em style="color: var(--bitstream-blue);">Example:</em> Get N, Print "Even".</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head"><span style="font-size:22px;">▭</span><strong>Process (Rectangle)</strong></div>
+      <div class="platform-card-body"><em style="color: var(--portal-purple);">Says:</em> "Do a step" — a calculation, an assignment, an action. <em style="color: var(--portal-purple);">Example:</em> SET total = a + b.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head"><span style="font-size:22px;">◇</span><strong>Decision (Diamond)</strong></div>
+      <div class="platform-card-body"><em style="color: var(--gateway-gold);">Says:</em> "Ask a yes/no question." Has TWO arrows leaving — one labeled YES, one labeled NO. <em style="color: var(--gateway-gold);">Example:</em> Is N &gt; 10?</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head"><span style="font-size:22px;">→</span><strong>Arrow (Connector)</strong></div>
+      <div class="platform-card-body"><em style="color: var(--odyssey-orange);">Says:</em> "Go this way next." Arrows connect every shape and show the order of the steps.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>The diamond is the only shape that has <strong>two arrows leaving</strong>. That's what makes it special — every other shape just leads to the next thing, but a diamond <em>splits the path</em> based on a question. Diamonds are where decisions happen.</p>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — SHAPE ID ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🔷 Try It</div>
+    <div class="try-it-title">Quick: Name That Shape</div>
+    <p class="try-it-instructions">Look at the shape below, then click the button for what it does. Get them all and you've mastered the flowchart vocabulary. <strong>Click "Next Shape"</strong> after each one.</p>
+    <div id="shape-stage" style="background:#f8f9fa; border:2px solid #e5e7eb; border-radius:12px; padding:26px; text-align:center; min-height:130px; margin-bottom:14px;">
+      <svg id="shape-svg" width="100%" height="80" viewBox="0 0 200 80" style="max-width:200px;"></svg>
+    </div>
+    <div id="shape-buttons" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+      <button class="try-it-btn try-it-btn-secondary" data-answer="terminator">Terminator (Start/End)</button>
+      <button class="try-it-btn try-it-btn-secondary" data-answer="io">Input / Output</button>
+      <button class="try-it-btn try-it-btn-secondary" data-answer="process">Process (Do a step)</button>
+      <button class="try-it-btn try-it-btn-secondary" data-answer="decision">Decision (Ask yes/no)</button>
+    </div>
+    <div class="try-it-feedback" id="shape-feedback"></div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:10px;">
+      <div style="font-family:var(--font-display); font-size:13px; font-weight:700; color:var(--binary-blue);">Score: <span id="shape-score">0</span> of <span id="shape-total">0</span></div>
+      <div style="display:flex; gap:8px;">
+        <button class="try-it-btn try-it-btn-primary" id="shape-next">Next Shape →</button>
+        <button class="try-it-btn try-it-btn-secondary" id="shape-reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Reading a Flowchart</div>
+  </div>
+  <h2 class="section-title">Follow the arrows, top to bottom</h2>
+  <div class="read-body">
+    <p>Reading a flowchart is the easiest part. You start at the <strong>terminator at the top</strong>, follow each arrow, do whatever the shape says, and stop when you hit the terminator at the bottom. Decisions split the path — pick the YES or NO arrow based on the answer.</p>
+    <p>Here's a flowchart for a question every Floridian asks at least once a week: <em>"Should I bring an umbrella?"</em></p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="320" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <ellipse cx="300" cy="25" rx="60" ry="18" fill="#76C043" opacity="0.25" stroke="#3d6522" stroke-width="2"/>
+      <text x="300" y="29" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">START</text>
+      <line x1="300" y1="43" x2="300" y2="65" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="300,70 295,62 305,62" fill="#0E5568"/>
+      <polygon points="200,75 400,75 410,107 190,107" fill="#55C8E8" opacity="0.25" stroke="#0E5568" stroke-width="2"/>
+      <text x="300" y="95" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">Check the weather forecast</text>
+      <line x1="300" y1="107" x2="300" y2="125" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="300,130 295,122 305,122" fill="#0E5568"/>
+      <polygon points="300,135 395,175 300,215 205,175" fill="#C7922C" opacity="0.25" stroke="#8a6620" stroke-width="2"/>
+      <text x="300" y="172" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#8a6620">Is rain in the</text>
+      <text x="300" y="186" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#8a6620">forecast?</text>
+      <line x1="205" y1="175" x2="115" y2="175" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="110,175 120,170 120,180" fill="#0E5568"/>
+      <text x="160" y="168" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#3d6522">YES</text>
+      <line x1="395" y1="175" x2="485" y2="175" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="490,175 480,170 480,180" fill="#0E5568"/>
+      <text x="440" y="168" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#dc2626">NO</text>
+      <rect x="35" y="160" width="80" height="35" rx="4" fill="#67308F" opacity="0.22" stroke="#67308F" stroke-width="2"/>
+      <text x="75" y="173" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#67308F">Bring</text>
+      <text x="75" y="186" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#67308F">umbrella</text>
+      <rect x="490" y="160" width="80" height="35" rx="4" fill="#67308F" opacity="0.22" stroke="#67308F" stroke-width="2"/>
+      <text x="530" y="173" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#67308F">Leave it</text>
+      <text x="530" y="186" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#67308F">at home</text>
+      <line x1="75" y1="195" x2="75" y2="255" stroke="#0E5568" stroke-width="2"/>
+      <line x1="530" y1="195" x2="530" y2="255" stroke="#0E5568" stroke-width="2"/>
+      <line x1="75" y1="255" x2="530" y2="255" stroke="#0E5568" stroke-width="2"/>
+      <line x1="300" y1="255" x2="300" y2="278" stroke="#0E5568" stroke-width="2"/>
+      <polygon points="300,283 295,275 305,275" fill="#0E5568"/>
+      <ellipse cx="300" cy="295" rx="60" ry="16" fill="#67308F" opacity="0.25" stroke="#67308F" stroke-width="2"/>
+      <text x="300" y="299" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#67308F">END</text>
     </svg>
   </div>
 
-  <!-- WATCH BLOCK -->
-  <div style="background:linear-gradient(135deg,#faf5ff,#fdf2f8);border:2px solid #67308F;border-radius:12px;padding:24px;margin-bottom:32px;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" fill="#67308F"/>
-        <polygon points="13,11 13,21 22,16" fill="#ffffff"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">🎬 Watch — Decomposition in 90 Seconds</h2>
-    </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 12px;">Before you read the rest of this lesson, watch a short demo of decomposition in action — a programmer takes the goal "build a calculator app" and slices it into the small pieces a computer can actually handle.</p>
-      <p style="margin:0;font-size:14px;color:#6b7280;font-style:italic;">▶ Video link will be embedded by your teacher in Canvas.</p>
+  <div class="read-body">
+    <p>Walk through it: you START → check the weather (input) → reach the diamond and ask "is rain in the forecast?" → if <strong>YES</strong> you bring the umbrella, if <strong>NO</strong> you leave it home → both paths merge → END. The whole algorithm fits in your head at a glance, even though it has a branch.</p>
+    <p>Notice all five shapes are here: a green oval (start), a blue parallelogram (input), a gold diamond (decision), two purple rectangles (processes), and a final purple oval (end). That's the entire flowchart vocabulary.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and trace:</strong> In the umbrella flowchart above, suppose the forecast says "60% chance of rain." Which path would you take, and which two shapes would you visit before reaching END?</p>
     </div>
   </div>
 
-  <!-- READ BLOCK 1 -->
-  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
-        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">What is decomposition?</h2>
-    </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 16px;">Last week you met <strong>algorithms</strong> — clear, ordered, step-by-step recipes. But what do you do when the problem is too big to write a recipe for? You can't write a 10,000-step recipe for "build a video game" all at once. Your brain doesn't work that way, and a computer programmer's brain doesn't either.</p>
-      <p style="margin:0 0 16px;">That's where the second pillar of computational thinking comes in. <span style="background:rgba(199,146,44,0.15);padding:2px 6px;border-radius:4px;font-weight:600;color:#0E1C42;">Decomposition</span> is the act of taking one big problem and breaking it into smaller sub-problems — each one small enough that you (or a computer) can actually solve it. Then you solve the small ones one at a time, and the big one is solved automatically.</p>
-      <p style="margin:0;">It sounds simple. It is simple. But it's also the secret behind every app on your phone, every level in every video game, every movie special effect, every robot, and every search you've ever typed into Google. <strong>None of those exist without decomposition.</strong></p>
-    </div>
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Drawing Your Own</div>
+  </div>
+  <h2 class="section-title">Four rules for clean flowcharts</h2>
+  <div class="read-body">
+    <p>Once you can read flowcharts, drawing them is just practice. Follow these four rules and your charts will be readable by anyone — including future you, three weeks from now when you've forgotten what you wrote.</p>
   </div>
 
-  <!-- STAT CALLOUT -->
-  <div>
-    <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#0E1C42;margin:0 0 16px;">Decomposition by the numbers</h2>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin:0 0 8px;">
-      <div style="flex:1;min-width:140px;background:#ffffff;border:2px solid #55C8E8;border-radius:12px;padding:20px;text-align:center;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:800;color:#55C8E8;line-height:1.2;">~10M</div>
-        <div style="font-size:13px;color:#6b7280;margin-top:4px;">Lines of code in Minecraft — built by decomposition</div>
-      </div>
-      <div style="flex:1;min-width:140px;background:#ffffff;border:2px solid #C7922C;border-radius:12px;padding:20px;text-align:center;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:800;color:#C7922C;line-height:1.2;">2B+</div>
-        <div style="font-size:13px;color:#6b7280;margin-top:4px;">Lines of code in all of Google — same trick, just bigger</div>
-      </div>
-      <div style="flex:1;min-width:140px;background:#ffffff;border:2px solid #F78F1E;border-radius:12px;padding:20px;text-align:center;">
-        <div style="font-family:'Wix Madefor Display',sans-serif;font-size:32px;font-weight:800;color:#F78F1E;line-height:1.2;">0</div>
-        <div style="font-size:13px;color:#6b7280;margin-top:4px;">Programmers who write big code without decomposing first</div>
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Always start and end with a terminator (oval)</div>
+        <div class="step-body">No exceptions. Every flowchart needs at least one START and one END. Some flowcharts have multiple ENDs if there are different ways out.</div>
       </div>
     </div>
-    <p style="font-size:14px;color:#9ca3af;margin:0 0 32px;">No exceptions. Every programmer in the world decomposes. They just don't always say the word.</p>
-  </div>
-
-  <!-- READ BLOCK 2 -->
-  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
-        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">You already do this — every day</h2>
-    </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 16px;">When you "get ready for school" each morning, you don't think of it as one giant task. You break it into smaller ones without realizing: <em>get up, brush teeth, eat breakfast, get dressed, pack bag, leave</em>. That's decomposition. Six small problems, each easy. Strung together, they solve the giant one.</p>
-      <p style="margin:0 0 16px;">Look at how three different "big problems" decompose:</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;">
-        <div style="background:#f9fafb;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;">🎮 "Build a video game"</strong>
-          <div style="margin-top:6px;color:#374151;font-size:15px;">→ design characters · build levels · write rules · add sound · test for bugs · publish</div>
-        </div>
-        <div style="background:#f9fafb;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;">🍕 "Make dinner for 10 people"</strong>
-          <div style="margin-top:6px;color:#374151;font-size:15px;">→ pick the menu · check what's in the fridge · go shopping · prep ingredients · cook · serve</div>
-        </div>
-        <div style="background:#f9fafb;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;">🌎 "Write a book report"</strong>
-          <div style="margin-top:6px;color:#374151;font-size:15px;">→ pick the book · read it · take notes · plan the report · write the draft · revise · turn it in</div>
-        </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Use diamonds <em>only</em> for yes/no questions</div>
+        <div class="step-body">A diamond always has two arrows leaving — labeled YES and NO. If your "decision" doesn't have two clean answers, it's not really a decision; it's a process step.</div>
       </div>
-      <p style="margin:0;">Notice the pattern: a vague, scary "big problem" turns into a list of small, specific tasks. Each task is something you could write an algorithm for. <strong>That's the magic.</strong></p>
     </div>
-  </div>
-
-  <!-- DID YOU KNOW -->
-  <div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border-left:4px solid #55C8E8;border-radius:0 12px 12px 0;padding:24px;margin:0 0 32px;">
-    <div style="font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:700;color:#55C8E8;margin-bottom:8px;">💡 Did You Know?</div>
-    <p style="margin:0;">When NASA flew astronauts to the moon in 1969, the entire mission was decomposed into thousands of sub-problems by a team of programmers — including <strong>Margaret Hamilton</strong>, who led the team that wrote the Apollo flight software. Their decomposed code was so reliable that when the lunar lander's computer started crashing during landing, the software <em>automatically</em> dropped the unimportant sub-problems and kept the critical ones running. The astronauts landed safely. Decomposition didn't just send people to the moon — it brought them home.</p>
-  </div>
-
-  <!-- READ BLOCK 3 -->
-  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
-        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">How to decompose — the four-step move</h2>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Arrows go in one direction</div>
+        <div class="step-body">Top-to-bottom is standard. Crossing arrows or arrows pointing backwards make charts hard to follow. (We'll relax this for loops in Week 24!)</div>
+      </div>
     </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 16px;">There's a reliable way to decompose any big problem. Practice it on small things first, and it'll save you on big things later.</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;">
-        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #55C8E8;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
-            <span style="background:#55C8E8;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 1</span>
-            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Write down the big problem in one sentence.</strong>
-          </div>
-          <div style="color:#374151;font-size:15px;">If you can't say it in one sentence, you don't really understand it yet. <em>"Make my room look great for a sleepover."</em></div>
-        </div>
-        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #C7922C;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
-            <span style="background:#C7922C;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 2</span>
-            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">List the sub-problems you'd need to solve.</strong>
-          </div>
-          <div style="color:#374151;font-size:15px;">Don't worry about order yet — just list them. <em>Clean up · move furniture · set up the snacks · plan the games · pick the music.</em></div>
-        </div>
-        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #67308F;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
-            <span style="background:#67308F;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 3</span>
-            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Check each piece — is it small enough to solve?</strong>
-          </div>
-          <div style="color:#374151;font-size:15px;">If a piece still feels overwhelming, decompose it again. <em>"Clean up"</em> might split into <em>pick up clothes · vacuum · make bed · clear desk.</em></div>
-        </div>
-        <div style="background:#f9fafb;border:2px solid #e5e7eb;border-left:4px solid #76C043;border-radius:0 10px 10px 0;padding:16px 20px;">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
-            <span style="background:#76C043;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;padding:3px 10px;border-radius:8px;">STEP 4</span>
-            <strong style="color:#0E1C42;font-family:'Wix Madefor Display',sans-serif;font-size:16px;">Solve the small pieces, one at a time.</strong>
-          </div>
-          <div style="color:#374151;font-size:15px;">Now each piece has a clear algorithm. The big problem solves itself as you finish the small ones.</div>
-        </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Keep each shape short — one verb, one noun</div>
+        <div class="step-body">"Add the totals," "Print the answer," "Get user's age." If a shape needs three sentences, break it into more shapes.</div>
       </div>
     </div>
   </div>
 
-  <!-- KEY FACT BOX -->
-  <div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border:2px solid #55C8E8;border-radius:12px;padding:24px;margin-bottom:32px;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="13" stroke="#55C8E8" stroke-width="2" fill="rgba(85,200,232,0.15)"/>
-        <path d="M16 10v8M16 22v.01" stroke="#55C8E8" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">When do you stop decomposing?</h2>
-    </div>
-    <p style="margin:0 0 12px;color:#374151;line-height:1.8;">Stop when each sub-problem is small enough that you could write a clear algorithm for it — <strong>without breaking it down again</strong>. That's the test. If a piece still feels like "I'd need to think about that for a while," it's still too big. Cut it down once more.</p>
-    <p style="margin:0;color:#374151;line-height:1.8;">A good rule of thumb: each piece should be something you could solve in a few minutes, or write 5–10 algorithm steps for. If a sub-problem still feels like a project, it isn't decomposed enough.</p>
-  </div>
-
-  <!-- STANDARD SPOTLIGHT -->
-  <div style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border-left:4px solid #C7922C;border-radius:0 12px 12px 0;padding:24px;margin:0 0 32px;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C7922C" stroke-width="2">
-        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9l-11-6z"/>
-      </svg>
-      <span style="font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:700;color:#C7922C;">⚖️ Florida Standard Spotlight</span>
-    </div>
-    <p style="margin:0 0 8px;color:#374151;"><strong>SC.K12.CTR.2.1 — Create representations of digital problems.</strong></p>
-    <p style="margin:0;color:#374151;line-height:1.7;">Decomposing a big problem isn't just about <em>doing</em> it in your head — it's about <strong>showing</strong> it on paper, screen, or whiteboard. The most common visual is a <strong>tree</strong>: the big problem on top, sub-problems branching down, with each branch decomposed further if it's still too big. Diagrams like this turn invisible thinking into something you and your team can actually look at, edit, and improve. That's why every CS classroom in Florida teaches representations alongside the thinking itself.</p>
-  </div>
-
-  <!-- READ BLOCK 4 -->
-  <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:32px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <rect x="4" y="4" width="24" height="24" rx="4" stroke="#55C8E8" stroke-width="2"/>
-        <path d="M16 8v16M10 12h12M10 16h12M10 20h8" stroke="#55C8E8" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">Decomposition + Algorithms = Code</h2>
-    </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 16px;">Here's why these two pillars belong together. <strong>Decomposition</strong> tells you <em>what</em> to solve. <strong>Algorithms</strong> tell you <em>how</em> to solve each piece. You can't really do one without the other.</p>
-      <p style="margin:0 0 16px;">Think back to last week's PB&amp;J algorithm. That was already a decomposition. "Make a sandwich" got broken into: <em>get bread · get peanut butter · get a knife · open jar · scoop · spread · stack · slice.</em> Then each of those tiny pieces became a clear, ordered step in the algorithm.</p>
-      <p style="margin:0;">When you start writing real Python code in Week 22, this is exactly how you'll work: decompose the program into small pieces, write a tiny algorithm for each piece, then translate each algorithm into code. Big software is built from many small algorithms — and decomposition is what tells you where one algorithm ends and the next one begins.</p>
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Hospitals use flowcharts called <strong>clinical pathways</strong> to standardize emergency treatment. When a patient arrives with chest pain, a nurse follows a flowchart with decision diamonds — "Is the pain on the left side?", "Is the patient over 50?", "Is the EKG abnormal?" — that routes the patient to the right care, fast.</p>
+      <p>The same kind of branching diagram you're learning to draw is saving lives in emergency rooms right now.</p>
     </div>
   </div>
 
-  <!-- VOCAB GRID -->
-  <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:22px;font-weight:700;color:#0E1C42;margin:0 0 16px;">📘 Key Vocabulary</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:0 0 32px;">
-    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Decomposition</div>
-      <div style="font-size:14px;color:#6b7280;line-height:1.6;">Breaking a big problem into smaller, easier sub-problems you can actually solve.</div>
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Three Forms, One Algorithm</div>
+  </div>
+  <h2 class="section-title">Flowchart → Pseudocode → Code</h2>
+  <div class="read-body">
+    <p>A flowchart, a piece of pseudocode, and a working program are all just <em>different ways</em> to express the same algorithm. Once you can move between them fluently, you can sketch on a whiteboard and translate it to code in minutes.</p>
+    <p>Here's the "Is N even?" algorithm in all three forms:</p>
+  </div>
+
+  <div class="compare-grid" style="grid-template-columns:1fr 1fr 1fr;">
+    <div class="compare-card" style="border-top-color: var(--gateway-gold);">
+      <div class="compare-card-label" style="color: var(--gateway-gold);">📊 Flowchart</div>
+      <div class="compare-card-headline">A picture</div>
+      <ul style="list-style:none; padding-left:0; line-height:1.9;">
+        <li>⬭ START</li>
+        <li>↓</li>
+        <li>▱ Get N</li>
+        <li>↓</li>
+        <li>◇ N % 2 == 0?</li>
+        <li>YES → "Even"</li>
+        <li>NO → "Odd"</li>
+        <li>↓</li>
+        <li>⬭ END</li>
+      </ul>
     </div>
-    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Sub-problem</div>
-      <div style="font-size:14px;color:#6b7280;line-height:1.6;">One smaller piece that comes out of decomposing a bigger problem.</div>
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">📝 Pseudocode</div>
+      <div class="compare-card-headline">Plain-English steps</div>
+      <ul style="list-style:none; padding-left:0; font-family:'Consolas',monospace; font-size:13px; line-height:1.9;">
+        <li>GET N</li>
+        <li>IF N % 2 == 0</li>
+        <li>&nbsp;&nbsp;PRINT "Even"</li>
+        <li>ELSE</li>
+        <li>&nbsp;&nbsp;PRINT "Odd"</li>
+      </ul>
     </div>
-    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Decomposition tree</div>
-      <div style="font-size:14px;color:#6b7280;line-height:1.6;">A diagram showing the big problem on top with sub-problems branching down — a way to <em>see</em> your decomposition.</div>
-    </div>
-    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Top-down design</div>
-      <div style="font-size:14px;color:#6b7280;line-height:1.6;">A way of designing programs that starts with the big goal and decomposes downward into smaller pieces.</div>
-    </div>
-    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Module</div>
-      <div style="font-size:14px;color:#6b7280;line-height:1.6;">A small, complete piece of a larger program — usually the result of decomposing well.</div>
-    </div>
-    <div style="background:#ffffff;border:2px solid #e5e7eb;border-radius:12px;padding:20px;">
-      <div style="font-family:'Wix Madefor Display',sans-serif;font-weight:700;color:#0E1C42;font-size:16px;margin-bottom:6px;">Pattern recognition</div>
-      <div style="font-size:14px;color:#6b7280;line-height:1.6;">Spotting what repeats across sub-problems. The third pillar of computational thinking — coming next week.</div>
+    <div class="compare-card" style="border-top-color: var(--gamer-green);">
+      <div class="compare-card-label" style="color: #3d6522;">🐍 Python</div>
+      <div class="compare-card-headline">Real code (Week 21!)</div>
+      <ul style="list-style:none; padding-left:0; font-family:'Consolas',monospace; font-size:13px; line-height:1.9;">
+        <li>n = int(input())</li>
+        <li>if n % 2 == 0:</li>
+        <li>&nbsp;&nbsp;print("Even")</li>
+        <li>else:</li>
+        <li>&nbsp;&nbsp;print("Odd")</li>
+      </ul>
     </div>
   </div>
 
-  <!-- REFLECTION -->
-  <div style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border:2px solid #F78F1E;border-radius:12px;padding:24px;margin-bottom:32px;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="12" r="8" stroke="#F78F1E" stroke-width="2"/>
-        <path d="M13 22h6M14 25h4" stroke="#F78F1E" stroke-width="2" stroke-linecap="round"/>
-        <path d="M16 8v2M12 10l1 1M20 10l-1 1" stroke="#F78F1E" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">💭 Weekly Reflection — Decompose Your Weekend</h2>
+  <div class="read-body">
+    <p>Same algorithm. Three different forms. The flowchart is best for sharing with non-coders. The pseudocode is best for thinking. The Python is best for actually running on a computer. Mastering the translation between them is one of the most useful skills a programmer has.</p>
+    <p>Now try it live: pick a number, watch the flowchart execute step by step, and see which path it takes:</p>
+  </div>
+
+  <!-- ========== TRY IT — LIVE FLOWCHART TRACER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">⚡ Try It — Live</div>
+    <div class="try-it-title">Trace the Flowchart</div>
+    <p class="try-it-instructions">Type a whole number, then click <strong>Step</strong> to walk through the flowchart one shape at a time. The active shape glows gold; visited shapes stay light blue. Try odd and even numbers — see how the path changes.</p>
+
+    <div class="tracer-grid">
+      <div style="background:#f8f9fa; border:1px solid #e5e7eb; border-radius:12px; padding:18px;">
+        <svg id="flow-svg" width="100%" height="360" viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg">
+          <ellipse id="fl-start" cx="160" cy="22" rx="55" ry="16" fill="#ffffff" stroke="#3d6522" stroke-width="2"/>
+          <text x="160" y="26" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#3d6522">START</text>
+          <line id="fl-arrow1" x1="160" y1="38" x2="160" y2="62" stroke="#cbd5e1" stroke-width="2"/>
+          <polygon id="fl-arrow1-tip" points="160,68 155,60 165,60" fill="#cbd5e1"/>
+          <polygon id="fl-input" points="80,72 240,72 250,104 70,104" fill="#ffffff" stroke="#0E5568" stroke-width="2"/>
+          <text x="160" y="92" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">Get N</text>
+          <line id="fl-arrow2" x1="160" y1="104" x2="160" y2="125" stroke="#cbd5e1" stroke-width="2"/>
+          <polygon id="fl-arrow2-tip" points="160,131 155,123 165,123" fill="#cbd5e1"/>
+          <polygon id="fl-decision" points="160,135 240,180 160,225 80,180" fill="#ffffff" stroke="#8a6620" stroke-width="2"/>
+          <text x="160" y="174" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">Is N even?</text>
+          <text x="160" y="190" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="9" fill="#8a6620">(N % 2 == 0)</text>
+          <line id="fl-yes-arrow" x1="80" y1="180" x2="40" y2="180" stroke="#cbd5e1" stroke-width="2"/>
+          <polygon id="fl-yes-tip" points="35,180 45,175 45,185" fill="#cbd5e1"/>
+          <text x="60" y="173" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#3d6522">YES</text>
+          <line id="fl-no-arrow" x1="240" y1="180" x2="280" y2="180" stroke="#cbd5e1" stroke-width="2"/>
+          <polygon id="fl-no-tip" points="285,180 275,175 275,185" fill="#cbd5e1"/>
+          <text x="260" y="173" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="700" fill="#dc2626">NO</text>
+          <rect id="fl-even" x="0" y="195" width="60" height="32" rx="4" fill="#ffffff" stroke="#67308F" stroke-width="2"/>
+          <text x="30" y="208" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="9" font-weight="700" fill="#67308F">Print</text>
+          <text x="30" y="220" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="9" font-weight="700" fill="#67308F">"Even"</text>
+          <rect id="fl-odd" x="260" y="195" width="60" height="32" rx="4" fill="#ffffff" stroke="#67308F" stroke-width="2"/>
+          <text x="290" y="208" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="9" font-weight="700" fill="#67308F">Print</text>
+          <text x="290" y="220" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="9" font-weight="700" fill="#67308F">"Odd"</text>
+          <line id="fl-mergeL" x1="30" y1="227" x2="30" y2="290" stroke="#cbd5e1" stroke-width="2"/>
+          <line id="fl-mergeR" x1="290" y1="227" x2="290" y2="290" stroke="#cbd5e1" stroke-width="2"/>
+          <line id="fl-mergeH" x1="30" y1="290" x2="290" y2="290" stroke="#cbd5e1" stroke-width="2"/>
+          <line id="fl-arrow3" x1="160" y1="290" x2="160" y2="313" stroke="#cbd5e1" stroke-width="2"/>
+          <polygon id="fl-arrow3-tip" points="160,318 155,310 165,310" fill="#cbd5e1"/>
+          <ellipse id="fl-end" cx="160" cy="335" rx="55" ry="16" fill="#ffffff" stroke="#67308F" stroke-width="2"/>
+          <text x="160" y="339" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#67308F">END</text>
+        </svg>
+      </div>
+
+      <div class="tracer-side">
+        <div class="tracer-inputs">
+          <div class="tracer-panel-label">Input</div>
+          <div class="tracer-input-row"><label for="flow-n">N</label><input type="number" id="flow-n" value="7" step="1"></div>
+        </div>
+        <div class="tracer-vars">
+          <div class="tracer-panel-label">Variables</div>
+          <div class="tracer-var"><span class="tracer-var-name">N</span><span class="tracer-var-value" id="flow-var-n">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">N % 2</span><span class="tracer-var-value" id="flow-var-mod">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">Even?</span><span class="tracer-var-value" id="flow-var-even">—</span></div>
+        </div>
+        <div class="tracer-status" id="flow-status">Ready. Click <strong>Step</strong> or <strong>Run All</strong> to follow the arrows.</div>
+        <div class="tracer-output" id="flow-output"></div>
+      </div>
     </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 12px;">Pick <strong>one big task</strong> you want to get done this weekend. It can be anything — clean your room, finish a project, learn a new game, plan something for friends.</p>
-      <p style="margin:0 0 12px;">Now decompose it using the four-step move from this lesson:</p>
-      <ol style="margin:0 0 12px;padding-left:24px;">
-        <li style="margin-bottom:6px;">Write the big problem in one sentence.</li>
-        <li style="margin-bottom:6px;">List 4–6 sub-problems.</li>
-        <li style="margin-bottom:6px;">Check each one — if any still feels too big, break it down again.</li>
-        <li style="margin-bottom:6px;">Mark the order you'll tackle them in.</li>
-      </ol>
-      <p style="margin:0;font-size:14px;color:#9ca3af;font-style:italic;">Bring your decomposition to class — you'll use it as the input to next week's lesson on patterns.</p>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="flow-step">Step ▶</button>
+      <button class="try-it-btn try-it-btn-success" id="flow-run">Run All ⚡</button>
+      <button class="try-it-btn try-it-btn-secondary" id="flow-reset">Reset</button>
     </div>
   </div>
 
-  <!-- WHAT'S NEXT -->
-  <div style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #C7922C;border-radius:12px;padding:24px;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <path d="M16 4l4 8 8 1.5-5.5 5.5 1 8.5L16 23.5 8.5 27.5l1-8.5L4 13.5 12 12z" stroke="#C7922C" stroke-width="2" fill="rgba(199,146,44,0.15)"/>
-      </svg>
-      <h2 style="font-family:'Wix Madefor Display',sans-serif;font-size:20px;font-weight:700;color:#0E1C42;margin:0;">✅ Lesson Complete — What's Next?</h2>
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The flowchart shapes you're using were standardized by the <strong>American National Standards Institute (ANSI)</strong> in 1970 — that's the same year the first floppy disk was released. The five shapes have stayed the same for over fifty years because they work. When you draw a flowchart in 2026, you're using a visual language that engineers have been sharing across the planet for half a century.</p>
     </div>
-    <div style="color:#374151;line-height:1.8;">
-      <p style="margin:0 0 12px;">You've finished the reading for <strong>Lesson 7.2</strong>. Here's your path forward:</p>
-      <ol style="margin:0 0 12px;padding-left:24px;">
-        <li style="margin-bottom:8px;"><strong>Activity: Decomposition Detective</strong> — sort big problems into clean sub-problems and earn XP.</li>
-        <li style="margin-bottom:8px;"><strong>VR Activity:</strong> in ENGAGE, build a decomposition tree as a 3D mind-map.</li>
-        <li style="margin-bottom:8px;"><strong>Quiz:</strong> 5 questions on decomposition — three attempts.</li>
-        <li style="margin-bottom:8px;"><strong>Next week:</strong> Pattern Recognition — once you've decomposed into pieces, you start seeing which pieces are <em>secretly the same</em>.</li>
-      </ol>
-      <p style="margin:0;font-size:14px;color:#C7922C;font-weight:600;">+100 XP for completing this reading!</p>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 20</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Flowchart</div>
+      <div class="vocab-def">A picture that shows the steps of an algorithm using shapes connected by arrows.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Terminator</div>
+      <div class="vocab-def">An oval shape that marks the start or end of a flowchart. Every flowchart begins and ends with one.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Input/Output</div>
+      <div class="vocab-def">A parallelogram shape used for getting information from the user or showing information back to them.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Process</div>
+      <div class="vocab-def">A rectangle shape used for "do a step" — a calculation, an assignment, or any normal action.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Decision</div>
+      <div class="vocab-def">A diamond shape that asks a yes/no question and splits the path into two branches.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Branch</div>
+      <div class="vocab-def">A point in a flowchart (or any algorithm) where the path splits, usually because of a decision.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Sequence</div>
+      <div class="vocab-def">The order in which steps run. In a flowchart, the arrows show the sequence.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Connector arrow</div>
+      <div class="vocab-def">An arrow pointing from one shape to the next, showing where the flow goes.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Draw a flowchart for something you do every day.</div>
+    <p>Pick <strong>one</strong> daily routine — making your bed, packing your lunch, walking the dog, getting your homework out of your bag. Then on a piece of paper or in a drawing app:</p>
+    <ul>
+      <li>Sketch a flowchart with at least <strong>one decision diamond</strong> (a yes/no question).</li>
+      <li>Make sure it starts and ends with a <strong>terminator</strong> oval.</li>
+      <li>Then answer in 4–6 sentences: where did you put the diamond, and what two paths come out of it? Was anything <em>easier to see</em> in the picture than in plain words?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 21</strong>, you'll meet <em>Python</em> — the real programming language we'll use for the rest of the unit. You'll learn about <strong>variables</strong> (labeled boxes for data) and the four <strong>data types</strong> Python uses to keep track of numbers, words, and yes/no answers.</p>
     </div>
   </div>
 
 </main>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer style="background:#0E1C42;padding:18px 24px;text-align:center;color:rgba(255,255,255,0.6);font-size:12px;">
-  Digital Discoveries · Optima Academy Online · Course 0200021 · Standards SC.K12.CTR.1.1, SC.K12.CTR.2.1
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
 </footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Shape ID Quiz ==========
+(function() {
+  const shapes = [
+    { type: 'terminator', svg: '<ellipse cx="100" cy="40" rx="60" ry="20" fill="#76C04340" stroke="#3d6522" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">START</text>', name: 'Terminator' },
+    { type: 'io', svg: '<polygon points="40,20 160,20 170,60 30,60" fill="#55C8E840" stroke="#0E5568" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">Get user age</text>', name: 'Input/Output' },
+    { type: 'process', svg: '<rect x="40" y="20" width="120" height="40" rx="4" fill="#67308F33" stroke="#67308F" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#67308F">total = a + b</text>', name: 'Process' },
+    { type: 'decision', svg: '<polygon points="100,8 175,40 100,72 25,40" fill="#C7922C33" stroke="#8a6620" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">Is N &gt; 10?</text>', name: 'Decision' },
+    { type: 'terminator', svg: '<ellipse cx="100" cy="40" rx="50" ry="18" fill="#67308F33" stroke="#67308F" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#67308F">END</text>', name: 'Terminator' },
+    { type: 'process', svg: '<rect x="40" y="20" width="120" height="40" rx="4" fill="#67308F33" stroke="#67308F" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#67308F">count = count + 1</text>', name: 'Process' },
+    { type: 'io', svg: '<polygon points="40,20 160,20 170,60 30,60" fill="#55C8E840" stroke="#0E5568" stroke-width="2"/><text x="100" y="44" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">Print "Done!"</text>', name: 'Input/Output' },
+    { type: 'decision', svg: '<polygon points="100,8 175,40 100,72 25,40" fill="#C7922C33" stroke="#8a6620" stroke-width="2"/><text x="100" y="38" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#8a6620">Is age</text><text x="100" y="50" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#8a6620">&gt;= 18?</text>', name: 'Decision' }
+  ];
+  const stage = document.getElementById('shape-svg');
+  const buttons = document.querySelectorAll('#shape-buttons button');
+  const feedback = document.getElementById('shape-feedback');
+  const scoreEl = document.getElementById('shape-score');
+  const totalEl = document.getElementById('shape-total');
+  const nextBtn = document.getElementById('shape-next');
+  const resetBtn = document.getElementById('shape-reset');
+  if (!stage || !buttons.length) return;
+  let order = [];
+  let idx = 0;
+  let score = 0;
+  let total = 0;
+  let answered = false;
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function showShape() {
+    answered = false;
+    feedback.classList.remove('show', 'success', 'warn');
+    feedback.innerHTML = '';
+    buttons.forEach(b => { b.disabled = false; b.style.opacity = '1'; });
+    const shape = order[idx % order.length];
+    stage.innerHTML = shape.svg;
+  }
+
+  function check(answer) {
+    if (answered) return;
+    answered = true;
+    const shape = order[idx % order.length];
+    total++;
+    totalEl.textContent = total;
+    if (answer === shape.type) {
+      score++;
+      scoreEl.textContent = score;
+      feedback.className = 'try-it-feedback show success';
+      feedback.innerHTML = '✅ <strong>Correct!</strong> That\'s a <strong>' + shape.name + '</strong> shape.';
+    } else {
+      feedback.className = 'try-it-feedback show warn';
+      feedback.innerHTML = '⚠️ Not quite — that was a <strong>' + shape.name + '</strong>. Look at the shape\'s edges next time.';
+    }
+    buttons.forEach(b => { b.disabled = true; if (b.dataset.answer !== shape.type) b.style.opacity = '0.5'; });
+  }
+
+  function next() {
+    idx++;
+    if (idx % order.length === 0) order = shuffle(shapes);
+    showShape();
+  }
+
+  function reset() {
+    score = 0; total = 0; idx = 0;
+    scoreEl.textContent = 0;
+    totalEl.textContent = 0;
+    order = shuffle(shapes);
+    showShape();
+  }
+
+  buttons.forEach(b => b.addEventListener('click', () => check(b.dataset.answer)));
+  nextBtn.addEventListener('click', next);
+  resetBtn.addEventListener('click', reset);
+  reset();
+})();
+
+// ========== Flowchart Tracer ==========
+(function() {
+  const inp = document.getElementById('flow-n');
+  const status = document.getElementById('flow-status');
+  const output = document.getElementById('flow-output');
+  const varN = document.getElementById('flow-var-n');
+  const varMod = document.getElementById('flow-var-mod');
+  const varEven = document.getElementById('flow-var-even');
+  const stepBtn = document.getElementById('flow-step');
+  const runBtn = document.getElementById('flow-run');
+  const resetBtn = document.getElementById('flow-reset');
+  if (!inp) return;
+
+  const allNodes = ['fl-start', 'fl-input', 'fl-decision', 'fl-even', 'fl-odd', 'fl-end'];
+  const allArrows = ['fl-arrow1', 'fl-arrow2', 'fl-yes-arrow', 'fl-no-arrow', 'fl-arrow3', 'fl-mergeL', 'fl-mergeR', 'fl-mergeH'];
+  const allTips = ['fl-arrow1-tip', 'fl-arrow2-tip', 'fl-yes-tip', 'fl-no-tip', 'fl-arrow3-tip'];
+
+  let pc = -1;
+  let n = 0;
+  let evenTaken = null;
+  let isRunning = false;
+  let runTimer = null;
+
+  function pulse(el) {
+    el.classList.add('updated');
+    setTimeout(() => el.classList.remove('updated'), 600);
+  }
+
+  function setNodeActive(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.fill = '#fef3c7';
+    el.style.strokeWidth = '4';
+    el.style.filter = 'drop-shadow(0 0 6px rgba(199,146,44,0.6))';
+  }
+  function setNodeVisited(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.fill = '#dbeafe';
+    el.style.strokeWidth = '2';
+    el.style.filter = 'none';
+  }
+  function setArrowActive(id) {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('stroke', '#0E5568');
+  }
+  function setTipActive(id) {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('fill', '#0E5568');
+  }
+  function clearAll() {
+    allNodes.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.fill = '#ffffff';
+        el.style.strokeWidth = '2';
+        el.style.filter = 'none';
+      }
+    });
+    allArrows.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.setAttribute('stroke', '#cbd5e1');
+    });
+    allTips.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.setAttribute('fill', '#cbd5e1');
+    });
+  }
+
+  function executeStep() {
+    if (pc < 0) return;
+    let msg = '';
+    switch (pc) {
+      case 0:
+        setNodeActive('fl-start');
+        msg = '<strong>START.</strong> Every flowchart begins with the terminator at the top.';
+        pc = 1;
+        break;
+      case 1:
+        setNodeVisited('fl-start');
+        setArrowActive('fl-arrow1'); setTipActive('fl-arrow1-tip');
+        setNodeActive('fl-input');
+        n = parseInt(inp.value, 10) || 0;
+        varN.textContent = n; pulse(varN);
+        msg = '<strong>Get N.</strong> Read the user\'s number: <em>' + n + '</em>.';
+        pc = 2;
+        break;
+      case 2:
+        setNodeVisited('fl-input');
+        setArrowActive('fl-arrow2'); setTipActive('fl-arrow2-tip');
+        setNodeActive('fl-decision');
+        var mod = ((n % 2) + 2) % 2;
+        varMod.textContent = mod; pulse(varMod);
+        evenTaken = (mod === 0);
+        varEven.textContent = evenTaken ? 'YES' : 'NO'; pulse(varEven);
+        msg = '<strong>Decision:</strong> Is N even? ' + n + ' % 2 = ' + mod + ', so <strong style="color:' + (evenTaken ? '#3d6522' : '#dc2626') + ';">' + (evenTaken ? 'YES' : 'NO') + '</strong>.';
+        pc = 3;
+        break;
+      case 3:
+        setNodeVisited('fl-decision');
+        if (evenTaken) {
+          setArrowActive('fl-yes-arrow'); setTipActive('fl-yes-tip');
+          setNodeActive('fl-even');
+          msg = '<strong>YES path.</strong> Print "Even".';
+        } else {
+          setArrowActive('fl-no-arrow'); setTipActive('fl-no-tip');
+          setNodeActive('fl-odd');
+          msg = '<strong>NO path.</strong> Print "Odd".';
+        }
+        pc = 4;
+        break;
+      case 4:
+        if (evenTaken) {
+          setNodeVisited('fl-even');
+          setArrowActive('fl-mergeL');
+        } else {
+          setNodeVisited('fl-odd');
+          setArrowActive('fl-mergeR');
+        }
+        setArrowActive('fl-mergeH');
+        setArrowActive('fl-arrow3'); setTipActive('fl-arrow3-tip');
+        setNodeActive('fl-end');
+        output.textContent = '"' + (evenTaken ? 'Even' : 'Odd') + '"';
+        output.classList.add('show');
+        msg = '<strong>END.</strong> Output: ' + (evenTaken ? '"Even"' : '"Odd"') + '. Done! ✨ Try a different number to see the other path.';
+        pc = -2;
+        break;
+    }
+    status.innerHTML = msg;
+    if (pc === -2) stopRun();
+  }
+
+  function step() {
+    if (pc === -2) return;
+    if (pc === -1) pc = 0;
+    executeStep();
+  }
+  function reset(silent) {
+    clearAll();
+    pc = -1;
+    n = 0;
+    evenTaken = null;
+    varN.textContent = '—';
+    varMod.textContent = '—';
+    varEven.textContent = '—';
+    output.classList.remove('show');
+    output.textContent = '';
+    stopRun();
+    if (!silent) status.innerHTML = 'Ready. Click <strong>Step</strong> or <strong>Run All</strong> to follow the arrows.';
+  }
+  function startRun() {
+    if (isRunning) return;
+    isRunning = true;
+    if (pc === -1) pc = 0;
+    function tick() {
+      if (!isRunning) return;
+      if (pc === -2) { stopRun(); return; }
+      executeStep();
+      if (pc === -2) { stopRun(); return; }
+      runTimer = setTimeout(tick, 1100);
+    }
+    tick();
+  }
+  function stopRun() {
+    isRunning = false;
+    if (runTimer) { clearTimeout(runTimer); runTimer = null; }
+  }
+
+  stepBtn.addEventListener('click', () => { stopRun(); step(); });
+  runBtn.addEventListener('click', () => { if (pc === -2) reset(true); startRun(); });
+  resetBtn.addEventListener('click', () => reset(false));
+  inp.addEventListener('input', () => reset(false));
+})();
+</script>
 
 </body>
 </html>

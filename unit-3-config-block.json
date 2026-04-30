@@ -1,0 +1,117 @@
+{
+  "_README": "Unit 3 block ready to splice into the `units` array of your course-config.json. Do NOT commit course-config.json — it holds your Canvas API token. This file (unit-3-config-block.json) is committed to the repo as a reference / snippet to merge.",
+  "id": "unit-3",
+  "title": "Unit 3: Programming Fundamentals",
+  "canvas_module_position": 3,
+  "unlock_after_unit": "unit-2",
+  "weeks": [
+    {
+      "id": "u3-w19",
+      "week_number": 19,
+      "title": "Week 19: Introduction to Computational Thinking",
+      "standards": ["SC.K12.CTR.1.1", "SC.K12.CTR.2.1", "SC.K12.CTR.5.1"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 19 Reading: Introduction to Computational Thinking", "file": "Unit3/week-19-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 19 Activity: Think Like a Programmer", "file": "Unit3/week-19-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 19 Quiz: Introduction to Computational Thinking", "file": "Unit3/week-19-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w20",
+      "week_number": 20,
+      "title": "Week 20: Flowcharts & Algorithm Design",
+      "standards": ["SC.K12.CTR.1.1", "SC.K12.CTR.2.1", "SC.K12.CTR.3.1"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 20 Reading: Flowcharts & Algorithm Design", "file": "Unit3/week-20-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 20 Activity: Flowchart Detective", "file": "Unit3/week-20-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 20 Quiz: Flowcharts & Algorithm Design", "file": "Unit3/week-20-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w21",
+      "week_number": 21,
+      "title": "Week 21: Python Basics — Data Types & Variables",
+      "standards": ["SC.6.PE.1.1"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 21 Reading: Python Basics — Data Types & Variables", "file": "Unit3/week-21-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 21 Activity: Type Detective", "file": "Unit3/week-21-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 21 Quiz: Python Basics", "file": "Unit3/week-21-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w22",
+      "week_number": 22,
+      "title": "Week 22: Science, Technology & Society Connections",
+      "standards": ["SC.6.PE.1.2", "SC.6.PE.1.3", "SC.6.PE.2.1"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 22 Reading: Science, Technology & Society", "file": "Unit3/week-22-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 22 Activity: Tech & Society — Make the Call", "file": "Unit3/week-22-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 22 Quiz: Science, Technology & Society", "file": "Unit3/week-22-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w23",
+      "week_number": 23,
+      "title": "Week 23: Logic — Conditionals & Making Programs Choose",
+      "standards": ["SC.6.PE.1.4"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 23 Reading: Logic — Conditionals", "file": "Unit3/week-23-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 23 Activity: Predict the Branch", "file": "Unit3/week-23-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 23 Quiz: Conditionals", "file": "Unit3/week-23-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w24",
+      "week_number": 24,
+      "title": "Week 24: Loops — The Power of Repetition",
+      "standards": ["SC.6.PE.1.9", "SC.6.PE.1.10", "SC.6.PE.1.11"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 24 Reading: Loops — The Power of Repetition", "file": "Unit3/week-24-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 24 Activity: Loop Logic", "file": "Unit3/week-24-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 24 Quiz: Loops", "file": "Unit3/week-24-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w25",
+      "week_number": 25,
+      "title": "Week 25: Functions & Modular Programming",
+      "standards": ["SC.6.PE.1.7", "SC.6.PE.1.8"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 25 Reading: Functions & Modular Programming", "file": "Unit3/week-25-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 25 Activity: Function Architect", "file": "Unit3/week-25-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 25 Quiz: Functions", "file": "Unit3/week-25-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w26",
+      "week_number": 26,
+      "title": "Week 26: Debugging & The Software Lifecycle",
+      "standards": ["SC.6.PE.3.5", "SC.6.PE.3.6", "SC.6.PE.4.1"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 26 Reading: Debugging & The Software Lifecycle", "file": "Unit3/week-26-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 26 Activity: Bug Hunter", "file": "Unit3/week-26-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 26 Quiz: Debugging & Lifecycle", "file": "Unit3/week-26-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w27",
+      "week_number": 27,
+      "title": "Week 27: Unit 3 Review & Coding Portfolio",
+      "standards": ["SC.K12.CTR.1.1", "SC.K12.CTR.2.1", "SC.K12.CTR.3.1", "SC.K12.CTR.5.1", "SC.6.PE.1.1", "SC.6.PE.1.2", "SC.6.PE.1.3", "SC.6.PE.1.4", "SC.6.PE.1.7", "SC.6.PE.1.8", "SC.6.PE.1.9", "SC.6.PE.1.10", "SC.6.PE.1.11", "SC.6.PE.2.1", "SC.6.PE.3.5", "SC.6.PE.3.6", "SC.6.PE.4.1"],
+      "items": [
+        { "type": "page", "subtype": "reading", "title": "Week 27 Reading: Unit 3 Review — From Idea to Code", "file": "Unit3/week-27-reading.html", "completion_requirement": "must_view" },
+        { "type": "page", "subtype": "activity", "title": "Week 27 Activity: Unit 3 Mixer", "file": "Unit3/week-27-activity.html", "completion_requirement": "must_view" },
+        { "type": "quiz", "title": "Week 27 Quiz: Unit 3 Review", "file": "Unit3/week-27-quiz-canvas-import.zip", "points_possible": 5, "allowed_attempts": 3, "completion_requirement": "must_score_at_least", "min_score": 3 }
+      ]
+    },
+    {
+      "id": "u3-w28",
+      "week_number": 28,
+      "title": "Week 28: Unit 3 Assessment",
+      "standards": ["SC.K12.CTR.1.1", "SC.K12.CTR.2.1", "SC.K12.CTR.3.1", "SC.K12.CTR.5.1", "SC.6.PE.1.1", "SC.6.PE.1.2", "SC.6.PE.1.3", "SC.6.PE.1.4", "SC.6.PE.1.7", "SC.6.PE.1.8", "SC.6.PE.1.9", "SC.6.PE.1.10", "SC.6.PE.1.11", "SC.6.PE.2.1", "SC.6.PE.3.5", "SC.6.PE.3.6", "SC.6.PE.4.1"],
+      "items": [
+        { "type": "quiz", "title": "Unit 3 Assessment — Programming Fundamentals", "file": "Unit3/week-28-assessment-canvas-import.zip", "points_possible": 15, "allowed_attempts": 2, "completion_requirement": "must_score_at_least", "min_score": 9 }
+      ]
+    }
+  ]
+}

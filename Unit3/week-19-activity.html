@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 20 Activity — Flowchart Detective | Digital Discoveries</title>
+<title>Week 19 Activity — Think Like a Programmer | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,10 +16,10 @@
   <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
       <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🎮 ACTIVITY</div>
-      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 20 · SC.K12.CTR.1.1 · 2.1 · 3.1</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 19 · SC.K12.CTR.1.1 · 2.1 · 5.1</div>
     </div>
-    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Flowchart Detective</h1>
-    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 scenarios about reading, drawing, and debugging flowcharts. Pick the right shape, predict the right path, spot the mistake. Earn XP — retry as much as you want.</p>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Think Like a Programmer</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 scenarios. Apply the four pillars of computational thinking — decompose, spot patterns, abstract, and write algorithms. Earn XP for every one you nail. Retry as many times as you want.</p>
   </div>
 
   <!-- PROGRESS + XP BAR -->
@@ -52,147 +52,147 @@
 
 <script>
 // ═════════════════════════════════════════════════════════════
-// QUESTION BANK — 10 flowchart scenarios
+// QUESTION BANK — 10 scenario-based items covering the 4 pillars
 // ═════════════════════════════════════════════════════════════
 const QUESTIONS = [
   {
     id: 1,
-    tag: 'Shape ID',
+    tag: 'Decomposition',
     tagColor: '#55C8E8',
     status: 'blue',
-    icon: '▱',
-    scenario: "You're drawing a flowchart for a guessing game. The first step is to ask the player to type a number. Which flowchart shape should you use?",
+    icon: '🧩',
+    scenario: "Your principal asks you to 'plan the school's spring dance.' That feels HUGE. Which choice shows the BEST use of decomposition?",
     options: [
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START or END — not getting input from the user." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! Parallelograms are for getting info FROM the user or showing info TO the user. Asking for a number = input." },
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for 'do a step' actions like calculations. Reading user input is its own special shape." },
-      { text: "Diamond (Decision)", correct: false, why: "Diamonds ask yes/no questions, not 'please type a number.' Wrong shape." }
+      { text: "Worry about it for 30 minutes, then give up", correct: false, why: "Stress isn't a strategy. Decomposition means breaking the giant problem into smaller jobs you can actually start." },
+      { text: "Break it into smaller jobs: venue, music, food, tickets, decorations, cleanup", correct: true, why: "That's textbook decomposition — one big problem becomes 6 small problems, each one solvable on its own." },
+      { text: "Ask your friend Jess to do the entire dance", correct: false, why: "That's delegation, not decomposition. The big problem still hasn't been broken down." },
+      { text: "Open a blank doc and start writing random ideas with no plan", correct: false, why: "Brainstorming with no structure isn't decomposition — you haven't identified the parts of the problem yet." }
     ]
   },
   {
     id: 2,
-    tag: 'Shape ID',
-    tagColor: '#C7922C',
-    status: 'gold',
-    icon: '◇',
-    scenario: "A step in your flowchart asks: 'Is the player's score greater than 100?' Which shape do you use?",
+    tag: 'Pattern Recognition',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '🔁',
+    scenario: "You already know how to solve 'I have $20, I spend $7 — how much is left?' Which NEW problem follows the SAME underlying pattern?",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for actions, not questions. 'Is X > Y?' is a yes/no question." },
-      { text: "Diamond (Decision)", correct: true, why: "Exactly. Any yes/no question goes in a diamond — and a diamond ALWAYS has two arrows leaving (YES and NO)." },
-      { text: "Parallelogram (Input/Output)", correct: false, why: "That's for input/output. The score check isn't reading or printing — it's deciding which path to take." },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals are only for START and END. Not a decision." }
+      { text: "What is 5 × 8?", correct: false, why: "Different pattern — that's multiplication, not subtraction-from-a-starting-amount." },
+      { text: "What's the capital of Florida?", correct: false, why: "That's factual recall, not a calculation. No matching pattern." },
+      { text: "I have 30 stickers. I give 12 away. How many do I have left?", correct: true, why: "Same exact shape: start amount − amount removed = answer. Different numbers, same pattern. That's pattern recognition!" },
+      { text: "How long is your foot in centimeters?", correct: false, why: "That's measurement — different kind of problem entirely." }
     ]
   },
   {
     id: 3,
-    tag: 'Reading Flow',
-    tagColor: '#76C043',
-    status: 'green',
+    tag: 'Abstraction',
+    tagColor: '#67308F',
+    status: 'purple',
     icon: '🔍',
-    scenario: "A flowchart has a diamond that asks 'Is N > 5?'. The user enters N = 7. Which arrow does the flow follow?",
+    scenario: "You're designing a school-bus app that helps kids find their stop. Which detail can you safely ABSTRACT AWAY (ignore) without breaking the app?",
     options: [
-      { text: "The NO arrow (because 7 is bigger than 5)", correct: false, why: "Read the question carefully — 'Is 7 > 5?' YES, so the YES arrow is taken." },
-      { text: "The YES arrow (because 7 is greater than 5)", correct: true, why: "Right! 7 > 5 is TRUE, so the YES arrow is taken." },
-      { text: "Both arrows at the same time", correct: false, why: "A flowchart only takes ONE branch from a diamond. The condition is either YES or NO — never both." },
-      { text: "Neither — the flow stops at the diamond", correct: false, why: "Flow always continues — diamonds split the path; they don't end it." }
+      { text: "The bus route number", correct: false, why: "Routes are essential — without them students wouldn't know which bus is theirs." },
+      { text: "The driver's favorite song", correct: true, why: "Exactly — that's a real-world detail that doesn't help solve the 'find my stop' problem. Abstraction throws it away." },
+      { text: "The pickup time at each stop", correct: false, why: "Pickup time is core to the app's purpose. Don't abstract that away!" },
+      { text: "The street address of each stop", correct: false, why: "The address IS the answer the app gives. Critical detail — keep it." }
     ]
   },
   {
     id: 4,
-    tag: 'Tracing',
-    tagColor: '#67308F',
-    status: 'purple',
-    icon: '🚦',
-    scenario: "In the umbrella flowchart from the reading, you check the weather, ask 'Is rain in the forecast?', and based on the answer either grab an umbrella or leave it home. The forecast says SUNNY. Which shape do you visit RIGHT before END?",
+    tag: 'Algorithm',
+    tagColor: '#76C043',
+    status: 'green',
+    icon: '📋',
+    scenario: "Your robot needs to make a slice of toast. Which set of steps is the CORRECT algorithm?",
     options: [
-      { text: "The diamond (Is rain in the forecast?)", correct: false, why: "You go THROUGH the diamond, but it's not the last shape before END." },
-      { text: "The 'Bring umbrella' rectangle", correct: false, why: "That branch is only taken if rain is forecast. Sunny means the OTHER branch." },
-      { text: "The 'Leave it at home' rectangle", correct: true, why: "Yes! Sunny → NO branch from the diamond → 'Leave it at home' rectangle → arrow → END." },
-      { text: "The Get-the-weather parallelogram", correct: false, why: "That's near the start, not just before END. The flow visits the rectangle on the chosen branch right before reaching END." }
+      { text: "Eat the toast → put bread in toaster → press the lever → take it out", correct: false, why: "The output (eating) is at the start! Algorithms must be in a sensible ORDER." },
+      { text: "Put bread in the toaster → press the lever → wait until it pops → take the toast out", correct: true, why: "Clear, ordered, finite, with a real output (toast). That's a proper algorithm." },
+      { text: "Press the lever → take the toast out → put the bread in → wait", correct: false, why: "The lever is pressed before there's any bread to toast. Order matters!" },
+      { text: "Open the toaster → put in bread → wait → eat the toast", correct: false, why: "Missing 'press the lever' — without that step the toaster never starts." }
     ]
   },
   {
     id: 5,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your friend's flowchart has a diamond labeled 'Is the user logged in?' — and THREE arrows are leaving the diamond. What's the problem?",
+    tag: 'Pseudocode',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '💻',
+    scenario: "Read this pseudocode carefully:<br><br><code style='display:block;background:#0a0a14;padding:14px 16px;border-radius:8px;border:1px solid #1e2a4a;color:#c8d6e8;font-family:Consolas,Menlo,monospace;font-size:13px;line-height:1.7;margin:10px 0 4px;'>SET score = 85<br>IF score &gt; 90 THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;PRINT 'A'<br>PRINT 'Done'</code>What does this program output?",
     options: [
-      { text: "Diamonds should have exactly 2 arrows leaving (one YES, one NO)", correct: true, why: "Exactly. Decisions are yes/no — two outcomes, two arrows. Three arrows means the question isn't really yes/no." },
-      { text: "Diamonds should have only 1 arrow leaving", correct: false, why: "If a decision had only 1 arrow, it wouldn't be a decision. There must be 2 paths." },
-      { text: "Diamonds should be replaced with rectangles", correct: false, why: "Rectangles are for actions, not yes/no questions. The diamond is the right shape — the bug is the THREE arrows." },
-      { text: "Nothing — diamonds can have any number of arrows", correct: false, why: "Diamonds always have exactly 2 outgoing arrows. That's the rule that makes them special." }
+      { text: "'A' followed by 'Done'", correct: false, why: "Look at the IF — score is 85, which is NOT greater than 90. The PRINT 'A' line gets SKIPPED." },
+      { text: "Just 'A'", correct: false, why: "Same trap — 85 is not greater than 90, so 'A' never prints. And 'Done' is outside the IF, so it always runs." },
+      { text: "Just 'Done'", correct: true, why: "Exactly! Since 85 is NOT greater than 90, the indented PRINT 'A' is skipped. The PRINT 'Done' line is OUTSIDE the IF, so it always runs." },
+      { text: "Nothing — there's an error", correct: false, why: "There's no error — the IF just chooses to skip its inside line when the condition is false." }
     ]
   },
   {
     id: 6,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your classmate's flowchart for 'add two numbers' has a parallelogram (Input), a rectangle (sum = a + b), and another parallelogram (Print sum) — but no oval anywhere. What's the problem?",
+    tag: 'Decomposition',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '🧩',
+    scenario: "Your science class is making a 3-minute YouTube short. Which approach BEST shows decomposition?",
     options: [
-      { text: "It needs at least one diamond", correct: false, why: "This algorithm doesn't have any decisions, so it doesn't need a diamond. The problem is elsewhere." },
-      { text: "It's missing the START and END terminator ovals", correct: true, why: "Right. Every flowchart needs an oval at the top (START) and an oval at the bottom (END). Without them, where does the flow start or stop?" },
-      { text: "Rectangles can't do math", correct: false, why: "Rectangles are EXACTLY where you put 'sum = a + b' calculations. That part is fine." },
-      { text: "It needs more arrows", correct: false, why: "We don't know how many arrows it has. The clear missing part is the terminator ovals." }
+      { text: "'Let's just turn on the camera and figure it out as we go.'", correct: false, why: "Zero decomposition — you've avoided breaking the project into parts." },
+      { text: "Write the script → storyboard the shots → film → edit → add titles", correct: true, why: "That's a clean decomposition — five smaller jobs, each one solvable on its own." },
+      { text: "Have one person do every single step from start to finish, alone", correct: false, why: "That's a workload question, not decomposition. The work hasn't been split into parts at all." },
+      { text: "Brainstorm for an hour, then panic-film everything the night before", correct: false, why: "Procrastination + chaos — there's no breakdown of the problem at all." }
     ]
   },
   {
     id: 7,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
-    status: 'blue',
-    icon: '🔄',
-    scenario: "You see this pseudocode line: <code style='display:inline-block;background:#0a0a14;padding:2px 8px;border-radius:4px;font-family:Consolas,monospace;color:#c8d6e8;font-size:13px;'>PRINT \"Hello!\"</code> — which flowchart shape does it become?",
+    tag: 'Pattern Recognition',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '🔁',
+    scenario: "Your phone's photo app automatically groups all your selfies, all your pet pictures, and all your food photos into separate folders. What is the app actually doing?",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for calculations and assignments. PRINT is showing something to the user — that's output." },
-      { text: "Diamond (Decision)", correct: false, why: "There's no yes/no question here — just a print." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! PRINT is showing info to the user — that's the output side of input/output. Parallelogram!" },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START and END — not normal print steps." }
+      { text: "Reading the captions you typed manually", correct: false, why: "Most photos don't have captions. The app sorts them even when you didn't type anything." },
+      { text: "Checking only the date and time you took each photo", correct: false, why: "Date wouldn't separate selfies from pet photos taken on the same day." },
+      { text: "Spotting visual features (eyes, fur, plates of food) that REPEAT across photos", correct: true, why: "Pure pattern recognition — the app is trained to spot the same shapes appearing again and again, then groups by those patterns." },
+      { text: "Asking your friends to vote on what each photo shows", correct: false, why: "That would be slow and weird. The app does it instantly — no humans involved." }
     ]
   },
   {
     id: 8,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
-    status: 'blue',
-    icon: '🔄',
-    scenario: "You're translating this pseudocode to a flowchart:<br><br><code style='display:block;background:#0a0a14;padding:14px 16px;border-radius:8px;border:1px solid #1e2a4a;color:#c8d6e8;font-family:Consolas,monospace;font-size:13px;line-height:1.7;margin:8px 0;'>IF age &gt;= 13<br>&nbsp;&nbsp;PRINT \"Welcome!\"<br>ELSE<br>&nbsp;&nbsp;PRINT \"Too young.\"</code>How many DIAMONDS does the flowchart need?",
+    tag: 'Abstraction',
+    tagColor: '#67308F',
+    status: 'purple',
+    icon: '🔍',
+    scenario: "You sketch a map of your school for a fire-drill plan. You include every classroom door and every exit. You leave OUT the color of each locker. Which CT pillar are you using?",
     options: [
-      { text: "Zero — IF/ELSE doesn't need a diamond", correct: false, why: "Every IF (or IF/ELSE) is a decision in flowchart-land. That's exactly what diamonds are for." },
-      { text: "One — the IF/ELSE is one yes/no question", correct: true, why: "Exactly. A single IF/ELSE is one decision: 'Is age >= 13?' YES or NO. One diamond, two paths out." },
-      { text: "Two — one for IF, one for ELSE", correct: false, why: "ELSE is just the 'NO' branch from the same diamond — not its own decision. Still one diamond." },
-      { text: "Three — one for IF, one for ELSE, one to merge", correct: false, why: "Merging isn't a decision; the two branches just rejoin with a plain arrow. Still one diamond." }
+      { text: "Decomposition", correct: false, why: "You're not breaking the school into smaller buildings — you're choosing what goes on the map and what doesn't. That's something else." },
+      { text: "Pattern recognition", correct: false, why: "Pattern recognition is about spotting things that repeat. Here you're filtering details, not finding repeats." },
+      { text: "Abstraction — keep what matters, ignore what doesn't", correct: true, why: "Exactly! Doors and exits matter for a fire drill. Locker colors don't. Keeping the essentials and dropping the noise = abstraction." },
+      { text: "Writing an algorithm", correct: false, why: "An algorithm is a list of steps. A map isn't steps — it's a simplified picture, which is abstraction." }
     ]
   },
   {
     id: 9,
-    tag: 'Reading Flow',
+    tag: 'Algorithm',
     tagColor: '#76C043',
     status: 'green',
-    icon: '🔍',
-    scenario: "A flowchart for the algorithm 'Is N even?' takes input N = 4. The diamond asks 'Is N % 2 == 0?'. Which output does the flowchart eventually print?",
+    icon: '📋',
+    scenario: "Which of these is NOT a trait of a good algorithm?",
     options: [
-      { text: "\"Even\"", correct: true, why: "Right! 4 % 2 = 0, so the YES branch is taken, which prints \"Even\"." },
-      { text: "\"Odd\"", correct: false, why: "4 is even — 4 % 2 = 0. The YES branch wins, not the NO branch." },
-      { text: "Both \"Even\" and \"Odd\"", correct: false, why: "A diamond only takes ONE branch — never both. The output is either-or." },
-      { text: "Nothing — the flowchart breaks", correct: false, why: "The flowchart works fine for 4. Trace it carefully: input 4 → diamond YES → print \"Even\" → END." }
+      { text: "It eventually stops — it's finite", correct: false, why: "Finite-ness is a REQUIRED trait. So this is a good trait, not the answer." },
+      { text: "Its steps are clear and in a sensible order", correct: false, why: "Clear ordered steps are a trait of every good algorithm. Not the answer." },
+      { text: "It runs forever and never produces an answer", correct: true, why: "Right — an algorithm that NEVER stops is broken. Real algorithms must finish in a finite number of steps." },
+      { text: "It produces an output (an answer, a result, an action)", correct: false, why: "Producing output is a trait of every algorithm. Not the answer." }
     ]
   },
   {
     id: 10,
-    tag: 'Big Picture',
+    tag: 'Synthesis',
     tagColor: '#C7922C',
     status: 'gold',
     icon: '🎯',
-    scenario: "Why might a programmer draw a FLOWCHART before writing pseudocode or real code?",
+    scenario: "You're building a 'study buddy' app that quizzes you on vocabulary. You decide each card needs three pieces (term, definition, example) and you ignore which font color the card uses. Which TWO pillars of CT are you using?",
     options: [
-      { text: "To save the file as a JPEG instead of code", correct: false, why: "File format isn't the reason. The flowchart is a thinking tool, not a deliverable." },
-      { text: "Because flowcharts run faster than code", correct: false, why: "Flowcharts don't 'run' at all — they're pictures. Code runs on a computer." },
-      { text: "To see the WHOLE shape of the algorithm at a glance — especially the branches", correct: true, why: "Exactly! Flowcharts make branching visible. You can spot missing paths or unclear decisions BEFORE you've written a single line of code." },
-      { text: "Because Canvas requires it", correct: false, why: "Canvas doesn't care about your tools. Programmers use flowcharts because they HELP, not because they're required." }
+      { text: "Decomposition + abstraction", correct: true, why: "Yes! Splitting the card into 3 pieces (term, definition, example) is decomposition. Ignoring font color is abstraction. Two pillars working together — exactly how real programmers think." },
+      { text: "Pattern recognition + algorithm design", correct: false, why: "You're not spotting repeating patterns and not writing steps. You're choosing parts and dropping noise — that's decomposition + abstraction." },
+      { text: "Algorithm design + pseudocode", correct: false, why: "Pseudocode and algorithms are both about WRITING STEPS. The question is about deciding what goes on the card — different work." },
+      { text: "None of these — you're just designing an app", correct: false, why: "App design is exactly when you use CT pillars. Two of them are clearly at work in this scenario." }
     ]
   }
 ];
@@ -206,6 +206,9 @@ let totalXP = 0;
 let correctCount = 0;
 let answered = false;
 
+// ═════════════════════════════════════════════════════════════
+// RENDERING
+// ═════════════════════════════════════════════════════════════
 const STATUS_COLORS = {
   red:    '#ff6b6b',
   amber:  '#F78F1E',
@@ -334,16 +337,16 @@ function renderResults() {
   const pct = Math.round((totalXP / maxXP) * 100);
   let message, emoji, color;
   if (pct === 100) {
-    message = "Flowchart Detective, badge earned. You can read, write, and debug any chart we throw at you.";
+    message = "Pattern recognized: you ARE a programmer. Every pillar of computational thinking is solid.";
     emoji = "🏆"; color = "#C7922C";
   } else if (pct >= 80) {
-    message = "Excellent work — you've got the five shapes and the flow logic locked in.";
+    message = "Excellent thinking. You can decompose, spot patterns, abstract, and write algorithms — the whole CT toolkit is yours.";
     emoji = "⭐"; color = "#76C043";
   } else if (pct >= 60) {
-    message = "Solid progress. Review the missed scenarios, re-read Week 20 (especially the Reading-a-Flowchart section), and try again.";
+    message = "Solid progress. Review the scenarios you missed, re-read Week 19, and try again to level up.";
     emoji = "💪"; color = "#55C8E8";
   } else {
-    message = "Keep going! Flowchart shapes take a little practice — re-read the Five Core Shapes section and try again.";
+    message = "Keep going! The four pillars take practice — re-read Week 19, especially the sections on the pillar(s) you missed, and try again.";
     emoji = "📚"; color = "#67308F";
   }
 
@@ -370,6 +373,7 @@ function renderResults() {
     renderQuestion();
   });
 
+  // Canvas grade passback via postMessage
   try {
     window.parent.postMessage({
       type: 'canvas-grade',
@@ -378,11 +382,12 @@ function renderResults() {
       percent: pct,
       correctCount: correctCount,
       totalQuestions: QUESTIONS.length,
-      activity: 'week-20-activity'
+      activity: 'week-19-activity'
     }, '*');
   } catch (e) { /* no-op */ }
 }
 
+// Kick off
 renderQuestion();
 </script>
 

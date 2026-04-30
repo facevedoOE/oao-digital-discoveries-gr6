@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 20 Activity — Flowchart Detective | Digital Discoveries</title>
+<title>Week 27 Activity — Unit 3 Mixer | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
 
   <!-- HEADER -->
   <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap;">
       <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🎮 ACTIVITY</div>
-      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 20 · SC.K12.CTR.1.1 · 2.1 · 3.1</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 27 · All Unit 3 Standards</div>
     </div>
-    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Flowchart Detective</h1>
-    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 scenarios about reading, drawing, and debugging flowcharts. Pick the right shape, predict the right path, spot the mistake. Earn XP — retry as much as you want.</p>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Unit 3 Mixer</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 cross-cutting questions touching every concept from Weeks 19–26: computational thinking, flowcharts, Python, conditionals, loops, functions, and debugging. Retry as many times as you want.</p>
   </div>
 
   <!-- PROGRESS + XP BAR -->
@@ -52,147 +52,147 @@
 
 <script>
 // ═════════════════════════════════════════════════════════════
-// QUESTION BANK — 10 flowchart scenarios
+// QUESTION BANK — 10 Unit 3 mixer items
 // ═════════════════════════════════════════════════════════════
 const QUESTIONS = [
   {
     id: 1,
-    tag: 'Shape ID',
+    tag: 'CT Pillars',
     tagColor: '#55C8E8',
     status: 'blue',
-    icon: '▱',
-    scenario: "You're drawing a flowchart for a guessing game. The first step is to ask the player to type a number. Which flowchart shape should you use?",
+    icon: '🧩',
+    scenario: "You're asked to plan the school talent show: book acts, build a schedule, sell tickets, decorate the stage, run the night-of show. You write each of those as its own to-do list. Which CT pillar are you using?",
     options: [
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START or END — not getting input from the user." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! Parallelograms are for getting info FROM the user or showing info TO the user. Asking for a number = input." },
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for 'do a step' actions like calculations. Reading user input is its own special shape." },
-      { text: "Diamond (Decision)", correct: false, why: "Diamonds ask yes/no questions, not 'please type a number.' Wrong shape." }
+      { text: 'Pattern recognition', correct: false, why: "Pattern recognition is spotting REPEATING similarities across problems. Here you're chopping ONE big problem into pieces — that's decomposition." },
+      { text: 'Decomposition', correct: true, why: "Exactly. Splitting one giant problem into smaller solvable problems is decomposition. (SC.K12.CTR.1.1)" },
+      { text: 'Abstraction', correct: false, why: "Abstraction is hiding details that don't matter. You're not hiding details here — you're listing them." },
+      { text: 'Algorithm design', correct: false, why: "Algorithm design is writing the actual ordered steps. That happens AFTER you decompose." }
     ]
   },
   {
     id: 2,
-    tag: 'Shape ID',
-    tagColor: '#C7922C',
-    status: 'gold',
-    icon: '◇',
-    scenario: "A step in your flowchart asks: 'Is the player's score greater than 100?' Which shape do you use?",
+    tag: 'Flowchart Shapes',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '🏗️',
+    scenario: "You're drawing a flowchart for a login screen. You need a shape that means 'check whether the password is correct' (the path then splits two ways). Which shape?",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for actions, not questions. 'Is X > Y?' is a yes/no question." },
-      { text: "Diamond (Decision)", correct: true, why: "Exactly. Any yes/no question goes in a diamond — and a diamond ALWAYS has two arrows leaving (YES and NO)." },
-      { text: "Parallelogram (Input/Output)", correct: false, why: "That's for input/output. The score check isn't reading or printing — it's deciding which path to take." },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals are only for START and END. Not a decision." }
+      { text: 'Rectangle (process)', correct: false, why: "Rectangles are for action steps like 'compute total' — they have one arrow in and one arrow out." },
+      { text: 'Oval (terminator)', correct: false, why: "Ovals are reserved for START and END markers." },
+      { text: 'Diamond (decision)', correct: true, why: "Right. The diamond is the decision shape. One arrow in, two labeled arrows out (Yes/No or True/False). (SC.6.PE.1.1)" },
+      { text: 'Parallelogram (input/output)', correct: false, why: "Parallelograms show data going IN or OUT (typing a password, printing a result) — not the comparison itself." }
     ]
   },
   {
     id: 3,
-    tag: 'Reading Flow',
-    tagColor: '#76C043',
-    status: 'green',
-    icon: '🔍',
-    scenario: "A flowchart has a diamond that asks 'Is N > 5?'. The user enters N = 7. Which arrow does the flow follow?",
+    tag: 'Python Statement Types',
+    tagColor: '#67308F',
+    status: 'blue',
+    icon: '🐍',
+    scenario: "Look at this Python line:  age == 13\nWhat kind of statement is this?",
     options: [
-      { text: "The NO arrow (because 7 is bigger than 5)", correct: false, why: "Read the question carefully — 'Is 7 > 5?' YES, so the YES arrow is taken." },
-      { text: "The YES arrow (because 7 is greater than 5)", correct: true, why: "Right! 7 > 5 is TRUE, so the YES arrow is taken." },
-      { text: "Both arrows at the same time", correct: false, why: "A flowchart only takes ONE branch from a diamond. The condition is either YES or NO — never both." },
-      { text: "Neither — the flow stops at the diamond", correct: false, why: "Flow always continues — diamonds split the path; they don't end it." }
+      { text: 'An assignment — it puts 13 into age', correct: false, why: "Assignment uses ONE equals sign (age = 13). Two equals signs do something different." },
+      { text: 'A comparison — it asks whether age equals 13 (True or False)', correct: true, why: "Right. == is the comparison operator. It returns True or False — it does NOT change anything. (SC.6.PE.1.7)" },
+      { text: 'A function call — it runs a function called age', correct: false, why: "Function calls have parentheses, like age(). No parentheses here." },
+      { text: 'A loop — it repeats while age is 13', correct: false, why: "Loops start with for or while. == on its own is just a question." }
     ]
   },
   {
     id: 4,
-    tag: 'Tracing',
-    tagColor: '#67308F',
-    status: 'purple',
-    icon: '🚦',
-    scenario: "In the umbrella flowchart from the reading, you check the weather, ask 'Is rain in the forecast?', and based on the answer either grab an umbrella or leave it home. The forecast says SUNNY. Which shape do you visit RIGHT before END?",
+    tag: 'Trace Mixed Code',
+    tagColor: '#76C043',
+    status: 'green',
+    icon: '🎯',
+    scenario: "What does this code print?\n\ndef tip(amount):\n    if amount >= 20:\n        return amount * 0.20\n    else:\n        return amount * 0.10\n\nprint(tip(15))\nprint(tip(40))",
     options: [
-      { text: "The diamond (Is rain in the forecast?)", correct: false, why: "You go THROUGH the diamond, but it's not the last shape before END." },
-      { text: "The 'Bring umbrella' rectangle", correct: false, why: "That branch is only taken if rain is forecast. Sunny means the OTHER branch." },
-      { text: "The 'Leave it at home' rectangle", correct: true, why: "Yes! Sunny → NO branch from the diamond → 'Leave it at home' rectangle → arrow → END." },
-      { text: "The Get-the-weather parallelogram", correct: false, why: "That's near the start, not just before END. The flow visits the rectangle on the chosen branch right before reaching END." }
+      { text: '3.0\\n4.0', correct: false, why: "Check the second call. tip(40) goes into the IF branch (40 >= 20 is True), so it's 40 * 0.20, not 40 * 0.10." },
+      { text: '1.5\\n8.0', correct: true, why: "Right! tip(15) → ELSE → 15 * 0.10 = 1.5. tip(40) → IF → 40 * 0.20 = 8.0. Function + conditional working together. (SC.6.PE.1.10)" },
+      { text: '1.5\\n4.0', correct: false, why: "tip(15) is right, but check tip(40): is 40 >= 20? Yes — so it uses 0.20, not 0.10." },
+      { text: '8.0\\n1.5', correct: false, why: "Right values, wrong order. tip(15) is called FIRST." }
     ]
   },
   {
     id: 5,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
+    tag: 'Loop Counting',
+    tagColor: '#C7922C',
     status: 'amber',
-    icon: '🐞',
-    scenario: "Your friend's flowchart has a diamond labeled 'Is the user logged in?' — and THREE arrows are leaving the diamond. What's the problem?",
+    icon: '🔁',
+    scenario: "How many times does the body of this loop run?\n\nfor i in range(2, 7):\n    print(i)",
     options: [
-      { text: "Diamonds should have exactly 2 arrows leaving (one YES, one NO)", correct: true, why: "Exactly. Decisions are yes/no — two outcomes, two arrows. Three arrows means the question isn't really yes/no." },
-      { text: "Diamonds should have only 1 arrow leaving", correct: false, why: "If a decision had only 1 arrow, it wouldn't be a decision. There must be 2 paths." },
-      { text: "Diamonds should be replaced with rectangles", correct: false, why: "Rectangles are for actions, not yes/no questions. The diamond is the right shape — the bug is the THREE arrows." },
-      { text: "Nothing — diamonds can have any number of arrows", correct: false, why: "Diamonds always have exactly 2 outgoing arrows. That's the rule that makes them special." }
+      { text: '7 times', correct: false, why: "range(2, 7) does NOT include 7. It stops just before it." },
+      { text: '6 times', correct: false, why: "Off by one. range(2, 7) starts at 2 and stops BEFORE 7." },
+      { text: '5 times', correct: true, why: "Correct. range(2, 7) gives 2, 3, 4, 5, 6 — that's 5 numbers, so 5 iterations. (SC.6.PE.1.9)" },
+      { text: '4 times', correct: false, why: "Count again: 2, 3, 4, 5, 6. That's five." }
     ]
   },
   {
     id: 6,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your classmate's flowchart for 'add two numbers' has a parallelogram (Input), a rectangle (sum = a + b), and another parallelogram (Print sum) — but no oval anywhere. What's the problem?",
+    tag: 'Bug Type',
+    tagColor: '#55C8E8',
+    status: 'red',
+    icon: '🐛',
+    scenario: "A student writes this line:  if age = 13:\nPython refuses to run the program at all and shows an error before anything executes. What KIND of bug is it?",
     options: [
-      { text: "It needs at least one diamond", correct: false, why: "This algorithm doesn't have any decisions, so it doesn't need a diamond. The problem is elsewhere." },
-      { text: "It's missing the START and END terminator ovals", correct: true, why: "Right. Every flowchart needs an oval at the top (START) and an oval at the bottom (END). Without them, where does the flow start or stop?" },
-      { text: "Rectangles can't do math", correct: false, why: "Rectangles are EXACTLY where you put 'sum = a + b' calculations. That part is fine." },
-      { text: "It needs more arrows", correct: false, why: "We don't know how many arrows it has. The clear missing part is the terminator ovals." }
+      { text: 'Logic error — the code runs but gives the wrong answer', correct: false, why: "Logic errors let the program FINISH. This program won't even start." },
+      { text: 'Runtime error — it crashes part way through', correct: false, why: "Runtime errors happen DURING execution. This one happens BEFORE the program runs at all." },
+      { text: 'Syntax error — Python can\'t parse the line as valid code', correct: true, why: "Right. = is assignment; == is comparison. Python rejects the line as malformed before running anything. (SC.6.PE.4.1)" },
+      { text: 'Hardware error — the computer is broken', correct: false, why: "If you got an error message, the computer is fine. The CODE has the typo." }
     ]
   },
   {
     id: 7,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
+    tag: 'Variable Types',
+    tagColor: '#F78F1E',
     status: 'blue',
-    icon: '🔄',
-    scenario: "You see this pseudocode line: <code style='display:inline-block;background:#0a0a14;padding:2px 8px;border-radius:4px;font-family:Consolas,monospace;color:#c8d6e8;font-size:13px;'>PRINT \"Hello!\"</code> — which flowchart shape does it become?",
+    icon: '📦',
+    scenario: "Which Python line creates a BOOLEAN variable?",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for calculations and assignments. PRINT is showing something to the user — that's output." },
-      { text: "Diamond (Decision)", correct: false, why: "There's no yes/no question here — just a print." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! PRINT is showing info to the user — that's the output side of input/output. Parallelogram!" },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START and END — not normal print steps." }
+      { text: 'name = "Maya"', correct: false, why: "Quotes around text make it a string (str)." },
+      { text: 'count = 12', correct: false, why: "A number with no decimal point and no quotes is an integer (int)." },
+      { text: 'is_open = True', correct: true, why: "True and False (capitalized, no quotes) are the only two boolean values in Python. (SC.6.PE.1.4)" },
+      { text: 'price = 4.99', correct: false, why: "A number with a decimal point is a float." }
     ]
   },
   {
     id: 8,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
-    status: 'blue',
-    icon: '🔄',
-    scenario: "You're translating this pseudocode to a flowchart:<br><br><code style='display:block;background:#0a0a14;padding:14px 16px;border-radius:8px;border:1px solid #1e2a4a;color:#c8d6e8;font-family:Consolas,monospace;font-size:13px;line-height:1.7;margin:8px 0;'>IF age &gt;= 13<br>&nbsp;&nbsp;PRINT \"Welcome!\"<br>ELSE<br>&nbsp;&nbsp;PRINT \"Too young.\"</code>How many DIAMONDS does the flowchart need?",
+    tag: 'Lifecycle Step',
+    tagColor: '#67308F',
+    status: 'green',
+    icon: '⚙️',
+    scenario: "You finished writing your program. You ran it once with one input and it worked. What's the BEST next step in the programming lifecycle?",
     options: [
-      { text: "Zero — IF/ELSE doesn't need a diamond", correct: false, why: "Every IF (or IF/ELSE) is a decision in flowchart-land. That's exactly what diamonds are for." },
-      { text: "One — the IF/ELSE is one yes/no question", correct: true, why: "Exactly. A single IF/ELSE is one decision: 'Is age >= 13?' YES or NO. One diamond, two paths out." },
-      { text: "Two — one for IF, one for ELSE", correct: false, why: "ELSE is just the 'NO' branch from the same diamond — not its own decision. Still one diamond." },
-      { text: "Three — one for IF, one for ELSE, one to merge", correct: false, why: "Merging isn't a decision; the two branches just rejoin with a plain arrow. Still one diamond." }
+      { text: 'Submit it — it works.', correct: false, why: "One test isn't enough. Real testing tries edge cases (zero, negatives, huge numbers, blank input)." },
+      { text: 'Test with several different inputs, including edge cases', correct: true, why: "Right. Testing with many inputs — especially edge cases — is how you actually trust your code. (SC.K12.CTR.5.1)" },
+      { text: 'Delete the comments to make the file smaller', correct: false, why: "Comments help future-you understand the code. Don't strip them." },
+      { text: 'Rewrite it in a different programming language for fun', correct: false, why: "Maybe later! Right now, the priority is making sure THIS version is solid." }
     ]
   },
   {
     id: 9,
-    tag: 'Reading Flow',
+    tag: 'Function Purpose',
     tagColor: '#76C043',
-    status: 'green',
-    icon: '🔍',
-    scenario: "A flowchart for the algorithm 'Is N even?' takes input N = 4. The diamond asks 'Is N % 2 == 0?'. Which output does the flowchart eventually print?",
+    status: 'blue',
+    icon: '✨',
+    scenario: "You catch yourself writing the same 4-line block of code in three different places. What's the BEST move?",
     options: [
-      { text: "\"Even\"", correct: true, why: "Right! 4 % 2 = 0, so the YES branch is taken, which prints \"Even\"." },
-      { text: "\"Odd\"", correct: false, why: "4 is even — 4 % 2 = 0. The YES branch wins, not the NO branch." },
-      { text: "Both \"Even\" and \"Odd\"", correct: false, why: "A diamond only takes ONE branch — never both. The output is either-or." },
-      { text: "Nothing — the flowchart breaks", correct: false, why: "The flowchart works fine for 4. Trace it carefully: input 4 → diamond YES → print \"Even\" → END." }
+      { text: 'Copy-paste it a fourth time when you need it again', correct: false, why: "That's the OPPOSITE of what programmers do. Repeated code is a flag, not a feature." },
+      { text: 'Wrap those 4 lines in a function and call the function in all three places', correct: true, why: "Exactly. Functions exist to name and reuse logic. One copy of the code, three calls — easier to read AND easier to fix later. (SC.6.PE.1.10)" },
+      { text: 'Delete two of the copies and hope it still works', correct: false, why: "Those copies are doing real work in their spots. You can't just remove them — you have to REPLACE them with calls." },
+      { text: 'Rename your variables to be different in each copy', correct: false, why: "That doesn't reduce duplication. You still have three copies of the same logic." }
     ]
   },
   {
     id: 10,
-    tag: 'Big Picture',
+    tag: 'Pattern Recognition',
     tagColor: '#C7922C',
-    status: 'gold',
-    icon: '🎯',
-    scenario: "Why might a programmer draw a FLOWCHART before writing pseudocode or real code?",
+    status: 'green',
+    icon: '⚖️',
+    scenario: "Last week you wrote a program that checks whether a number is even. This week you need to check whether a number is divisible by 5. You realize 'these are basically the same shape.' Which CT pillar are you using?",
     options: [
-      { text: "To save the file as a JPEG instead of code", correct: false, why: "File format isn't the reason. The flowchart is a thinking tool, not a deliverable." },
-      { text: "Because flowcharts run faster than code", correct: false, why: "Flowcharts don't 'run' at all — they're pictures. Code runs on a computer." },
-      { text: "To see the WHOLE shape of the algorithm at a glance — especially the branches", correct: true, why: "Exactly! Flowcharts make branching visible. You can spot missing paths or unclear decisions BEFORE you've written a single line of code." },
-      { text: "Because Canvas requires it", correct: false, why: "Canvas doesn't care about your tools. Programmers use flowcharts because they HELP, not because they're required." }
+      { text: 'Decomposition', correct: false, why: "Decomposition is breaking ONE problem into pieces. Here, you're recognizing that TWO problems share a structure." },
+      { text: 'Pattern recognition', correct: true, why: "Right. Spotting that two different problems share the same shape — so you can reuse the solution — is pattern recognition. (SC.K12.CTR.2.1)" },
+      { text: 'Abstraction', correct: false, why: "Abstraction is ignoring details that don't matter. You're not ignoring anything — you're noticing a similarity." },
+      { text: 'Debugging', correct: false, why: "Debugging is fixing broken code. Nothing is broken here." }
     ]
   }
 ];
@@ -206,13 +206,14 @@ let totalXP = 0;
 let correctCount = 0;
 let answered = false;
 
+// ═════════════════════════════════════════════════════════════
+// RENDERING
+// ═════════════════════════════════════════════════════════════
 const STATUS_COLORS = {
-  red:    '#ff6b6b',
-  amber:  '#F78F1E',
-  green:  '#76C043',
-  blue:   '#55C8E8',
-  purple: '#A78BFA',
-  gold:   '#C7922C'
+  red:   '#ff6b6b',
+  amber: '#F78F1E',
+  green: '#76C043',
+  blue:  '#55C8E8'
 };
 
 function renderQuestion() {
@@ -230,7 +231,7 @@ function renderQuestion() {
       </div>
       <div style="padding:24px;">
         <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Scenario ${q.id}</div>
-        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;white-space:pre-wrap;font-family:${/\bdef\b|range\(|print\(|==|if /.test(q.scenario) ? "'Consolas','Menlo',monospace" : 'inherit'};">${escapeHtml(q.scenario)}</p>
         <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
         <div id="feedback-zone" style="margin-top:18px;"></div>
       </div>
@@ -249,7 +250,7 @@ function renderQuestion() {
     `;
     btn.innerHTML = `
       <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#1e2a4a;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">${String.fromCharCode(65+idx)}</div>
-      <div style="flex:1;padding-top:4px;">${opt.text}</div>
+      <div style="flex:1;padding-top:4px;">${escapeHtml(opt.text)}</div>
     `;
     btn.addEventListener('mouseenter', () => {
       if (!answered) { btn.style.borderColor = '#55C8E8'; btn.style.background = '#111933'; }
@@ -260,6 +261,10 @@ function renderQuestion() {
     btn.addEventListener('click', () => handleAnswer(idx));
     list.appendChild(btn);
   });
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 function handleAnswer(selectedIdx) {
@@ -302,7 +307,7 @@ function handleAnswer(selectedIdx) {
   fb.innerHTML = `
     <div style="background:${bgColor};border:1px solid ${color};border-left:4px solid ${color};border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px;">
       <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:8px;">${label}</div>
-      <div style="color:#e2e8f0;font-size:14px;line-height:1.6;">${chosen.why}</div>
+      <div style="color:#e2e8f0;font-size:14px;line-height:1.6;">${escapeHtml(chosen.why)}</div>
     </div>
     <button id="next-btn" style="width:100%;background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 18px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;">
       ${currentIndex < QUESTIONS.length - 1 ? 'Next Scenario →' : 'See Your Results →'}
@@ -334,16 +339,16 @@ function renderResults() {
   const pct = Math.round((totalXP / maxXP) * 100);
   let message, emoji, color;
   if (pct === 100) {
-    message = "Flowchart Detective, badge earned. You can read, write, and debug any chart we throw at you.";
+    message = "Unit 3 mastered. You can move from idea to algorithm to working code without breaking stride.";
     emoji = "🏆"; color = "#C7922C";
   } else if (pct >= 80) {
-    message = "Excellent work — you've got the five shapes and the flow logic locked in.";
+    message = "Excellent. You've got the full Unit 3 toolkit — CT, flowcharts, Python, conditionals, loops, functions, debugging.";
     emoji = "⭐"; color = "#76C043";
   } else if (pct >= 60) {
-    message = "Solid progress. Review the missed scenarios, re-read Week 20 (especially the Reading-a-Flowchart section), and try again.";
+    message = "Solid base. Review the questions you missed — those are exactly the spots to firm up before the Unit 3 Assessment.";
     emoji = "💪"; color = "#55C8E8";
   } else {
-    message = "Keep going! Flowchart shapes take a little practice — re-read the Five Core Shapes section and try again.";
+    message = "Re-read the Week 27 lesson and revisit the weeks of the questions you missed. The assessment is coming — you've got this.";
     emoji = "📚"; color = "#67308F";
   }
 
@@ -370,6 +375,7 @@ function renderResults() {
     renderQuestion();
   });
 
+  // Canvas grade passback via postMessage
   try {
     window.parent.postMessage({
       type: 'canvas-grade',
@@ -378,11 +384,12 @@ function renderResults() {
       percent: pct,
       correctCount: correctCount,
       totalQuestions: QUESTIONS.length,
-      activity: 'week-20-activity'
+      activity: 'week-27-activity'
     }, '*');
   } catch (e) { /* no-op */ }
 }
 
+// Kick off
 renderQuestion();
 </script>
 

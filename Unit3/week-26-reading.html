@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 26 — Debugging &amp; The Software Lifecycle | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* ========== SPOT THE BUG WIDGET ========== */
+.bug-card {
+  background: var(--binary-blue);
+  border-radius: 12px;
+  padding: 18px 20px 16px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+  color: #e5e7eb;
+  margin-top: 4px;
+}
+.bug-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bug-counter {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bitstream-blue);
+}
+.bug-score {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gamer-green);
+  background: rgba(118,192,67,0.12);
+  padding: 4px 12px;
+  border-radius: 10px;
+}
+.bug-prompt {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin: 6px 0 12px;
+  line-height: 1.6;
+  font-family: var(--font-text);
+}
+.bug-pre {
+  margin: 0;
+  white-space: pre;
+}
+.bug-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: pre;
+}
+.bug-line:hover {
+  background: rgba(85,200,232,0.18);
+}
+.bug-line.bug-correct {
+  background: rgba(118,192,67,0.30);
+  color: #ffffff;
+  box-shadow: inset 3px 0 0 var(--gamer-green);
+}
+.bug-line.bug-wrong {
+  background: rgba(255,107,107,0.30);
+  color: #ffffff;
+  box-shadow: inset 3px 0 0 #ff6b6b;
+  animation: bugShake 0.4s ease;
+}
+.bug-line.bug-locked {
+  cursor: default;
+}
+.bug-line.bug-locked:hover {
+  background: transparent;
+}
+.bug-line.bug-locked.bug-correct:hover {
+  background: rgba(118,192,67,0.30);
+}
+@keyframes bugShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.bug-fix {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+  font-family: var(--font-text);
+  font-size: 14px;
+  line-height: 1.55;
+  display: none;
+}
+.bug-fix.show { display: block; }
+.bug-fix strong { color: #14532d; }
+.bug-fix code {
+  background: rgba(14,28,66,0.06);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 13.5px;
+  color: var(--binary-blue);
+}
+.bug-hint {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+  font-family: var(--font-text);
+  font-size: 14px;
+  line-height: 1.55;
+  display: none;
+}
+.bug-hint.show { display: block; }
+
+/* ========== LIFECYCLE DIAGRAM ========== */
+.lifecycle-diagram svg { max-width: 100%; height: auto; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .bug-card { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 26
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 26: Debugging &amp; The Software Lifecycle</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 26 • READING</div>
+  <h1 class="lesson-title">Debugging &amp; The Software Lifecycle</h1>
+  <p class="lesson-description">Every program ever written has had bugs — yes, every single one. This week you'll learn what bugs really are, how to hunt them down like a detective, and why the best programmers know that "done" is just the beginning of the cycle.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Define a bug</strong> and tell the difference between a <em>syntax error</em>, a <em>logic error</em>, and a <em>runtime error</em>.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Use four debugging strategies</strong> — read the error, add print statements, rubber-duck the problem, and comment out code to isolate the bug.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Name the six phases</strong> of the software development lifecycle: plan, design, code, test, deploy, and maintain.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Explain why iteration matters</strong> — why software is never really "done" and why every update is part of the same cycle.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · Bugs Are Inevitable</div>
+  </div>
+  <h2 class="section-title">A real moth, a real bug, and one very famous logbook</h2>
+  <div class="read-body">
+    <p>It's 1947. The Harvard Mark II computer — a giant, room-sized machine made of relays, switches, and miles of wire — has stopped working. A team of engineers, led by a Navy officer named <strong>Grace Hopper</strong>, starts hunting through the panels. After hours of poking around, they find the problem.</p>
+    <p>It's a moth. A real, actual moth, stuck inside one of the electromechanical relays. Someone carefully tapes the moth into the official logbook with a note: <em>"First actual case of bug being found."</em></p>
+    <p>People had been calling glitches "bugs" long before that night — engineers used the word in the 1800s. But Grace Hopper's moth made the joke famous. Today, every programmer in the world uses the same word: when a program does something wrong, we say it has a <span class="key-term">bug</span>. And the work of finding and fixing those bugs has its own name: <span class="key-term">debugging</span>.</p>
+    <p>Here's the truth no one tells beginners: <strong>every program ever written has had bugs.</strong> The phone in your pocket. The video game you played last night. The website that loaded this page. All of them ship with bugs, get patched, and then ship again. Bugs are not a sign that you're a bad programmer. Bugs are a sign that you're a <em>real</em> programmer.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Grace Hopper didn't just find the moth — she invented one of the first compilers (a tool that turns human-readable code into machine code) and helped design <strong>COBOL</strong>, a programming language still used by banks today. The U.S. Navy named a destroyer after her: the USS <em>Hopper</em>.</p>
+      <p>Her favorite saying? <em>"It's easier to ask forgiveness than it is to get permission."</em> A lot of programmers live by that one.</p>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>So if bugs are unavoidable, the real skill isn't avoiding them — it's <strong>finding them fast</strong>. That's what this week is about. We'll meet the three big families of bugs, learn four ways to hunt them down, and then zoom out to see how professional teams build software so that bugs get caught early instead of late.</p>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Bug</strong> — any mistake or unexpected behavior in a program. Some bugs are tiny typos; others change the answer the program gives.</p>
+      <p><strong>Debugging</strong> — the work of finding a bug, understanding what's causing it, and fixing it so the program does what you meant.</p>
+      <p><strong>Patch</strong> — a small update to a program that fixes a bug or adds a small change.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Three Kinds of Bugs</div>
+  </div>
+  <h2 class="section-title">Syntax, logic, runtime — meet the family</h2>
+  <div class="read-body">
+    <p>Not all bugs look the same. A misspelled word is a different problem than a math mistake, which is a different problem than a program that crashes only on Tuesdays. Programmers sort bugs into three big buckets so we know how to attack each one.</p>
+  </div>
+
+  <div class="compare-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="compare-card" style="border-top-color: var(--odyssey-orange);">
+      <div class="compare-card-label" style="color: var(--odyssey-orange);">📝 Syntax</div>
+      <div class="compare-card-headline">The grammar is wrong</div>
+      <ul>
+        <li>Missing colon, quote, or bracket</li>
+        <li>Misspelled keyword</li>
+        <li>Computer can't even <em>start</em></li>
+        <li>Easiest to spot</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">🧠 Logic</div>
+      <div class="compare-card-headline">Runs — but answer is wrong</div>
+      <ul>
+        <li>Wrong math operator</li>
+        <li>Off-by-one mistake</li>
+        <li>Computer happily lies to you</li>
+        <li>Hardest to spot</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: #ef4444;">
+      <div class="compare-card-label" style="color: #ef4444;">💥 Runtime</div>
+      <div class="compare-card-headline">Crashes mid-run</div>
+      <ul>
+        <li>Divide by zero</li>
+        <li>Item not in list</li>
+        <li>Works some of the time</li>
+        <li>Triggered by surprise input</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--font-display); color:var(--binary-blue); font-size:19px; margin-top:30px; margin-bottom:8px;">📝 Syntax errors — the spelling police</h3>
+  <div class="read-body">
+    <p>A <span class="key-term">syntax error</span> is what happens when you break the <em>grammar rules</em> of a programming language. Just like English, code has rules: every <code>if</code> in Python needs a colon at the end. Every string needs matching quotes. Every parenthesis you open, you have to close.</p>
+    <p>Computers are picky about this. If you forget the colon, the program doesn't try its best — it refuses to start. The good news? Syntax errors are usually the easiest to fix, because the computer tells you exactly which line is wrong.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">Syntax Error · Python</span>
+<span class="code-comment"># Missing the colon at the end of "if"</span>
+<span class="code-keyword">if</span> score &gt; 90
+    <span class="code-keyword">print</span>(<span class="code-string">"You got an A!"</span>)
+
+<span class="code-comment"># Python's response:</span>
+<span class="code-comment"># SyntaxError: expected ':'</span>
+  </div>
+
+  <h3 style="font-family:var(--font-display); color:var(--binary-blue); font-size:19px; margin-top:30px; margin-bottom:8px;">🧠 Logic errors — the sneaky liars</h3>
+  <div class="read-body">
+    <p>A <span class="key-term">logic error</span> is when your code runs <em>just fine</em> — no error messages, no crashes — but the answer is wrong. The computer did exactly what you said. The problem is that what you said wasn't what you <em>meant</em>.</p>
+    <p>These bugs are the trickiest to find, because the computer won't help you. It thinks everything is great. Only you (or a tester, or, eventually, an angry user) can spot that the answer is off.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">Logic Error · Python</span>
+<span class="code-comment"># Goal: average of three test scores</span>
+<span class="code-comment"># Bug: division should happen AFTER addition</span>
+average = 80 + 90 + 100 / 3
+<span class="code-keyword">print</span>(average)   <span class="code-comment"># prints 203.33 — yikes!</span>
+
+<span class="code-comment"># Fix: parentheses force the addition first</span>
+average = (80 + 90 + 100) / 3   <span class="code-comment"># 90.0 ✓</span>
+  </div>
+
+  <h3 style="font-family:var(--font-display); color:var(--binary-blue); font-size:19px; margin-top:30px; margin-bottom:8px;">💥 Runtime errors — the time bombs</h3>
+  <div class="read-body">
+    <p>A <span class="key-term">runtime error</span> happens <em>while</em> your program is running. The grammar was fine. The logic seemed fine. But then the program met a real-world input it couldn't handle — like dividing by zero, or asking for the 10th item in a list that only has 5 — and it crashed.</p>
+    <p>Runtime errors are tricky because they can hide. Your program might run perfectly 99 times… and then the 100th user types something weird, and it falls over.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">Runtime Error · Python</span>
+pizzas = 10
+people = 0
+slices_each = pizzas / people   <span class="code-comment"># crashes when people = 0</span>
+
+<span class="code-comment"># Python's response:</span>
+<span class="code-comment"># ZeroDivisionError: division by zero</span>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Imagine you wrote a program that adds up your weekly allowance. It runs without errors and prints <strong>"$700 this week!"</strong> You only get $7 a week. Did your program have a syntax error, a logic error, or a runtime error?</p>
+      <p>(Think about it before you peek: it ran fine — no crash — but the answer is wrong. That's the calling card of a <strong>logic error</strong>. Maybe you multiplied where you meant to add!)</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · The Debugger's Toolbox</div>
+  </div>
+  <h2 class="section-title">Four moves every great bug-hunter uses</h2>
+  <div class="read-body">
+    <p>Finding a bug is a little like being a detective. You don't randomly accuse suspects — you gather evidence, test your guesses, and narrow down the truth. Here are the four classic moves every programmer learns. The order matters: try them top to bottom, because the easy ones save the most time.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Read the error message — really read it</div>
+        <div class="step-body">When the computer prints an error, it's <em>helping</em> you. The message usually says <strong>what went wrong</strong> and <strong>which line caused it</strong>. Beginners panic and skip past the message. Pros stop, breathe, and read every word. The answer is often right there.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Add print statements — peek inside the program</div>
+        <div class="step-body">If you can't see why your variable is wrong, ask the computer to <em>show</em> you. Drop in <code>print(score)</code> right before the broken line. When you run the code, you'll see what value the program <em>actually</em> has — not the value you <em>think</em> it has. Magic.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Rubber-duck the problem — explain it out loud</div>
+        <div class="step-body">Grab any inanimate object — a rubber duck, a pencil, a stuffed animal — and explain your code to it, line by line. Halfway through your explanation, your brain often spots the mistake on its own. It sounds silly. It works <em>every time</em>. Real programmers keep ducks on their desks for this exact reason.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Comment-out isolation — turn off half at a time</div>
+        <div class="step-body">If you can't tell <em>which</em> line is broken, comment out half of your code with <code>#</code> and run again. Does the bug still happen? It's in the half that's still running. Comment out half of <em>that</em> half. Keep slicing. In a few rounds, you'll surround the bug.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">🦆 Did You Know? — The Rubber-Duck Story</div>
+    <div class="callout-body">
+      <p>The "rubber duck" technique comes from a 1999 book called <em>The Pragmatic Programmer</em>. In it, an old programmer carries a real rubber duck around the office. Whenever he's stuck, he sets the duck on his desk and explains his code to it.</p>
+      <p>Why does it work? Because explaining a problem out loud forces your brain to slow down. When you describe each line in plain English, you can't gloss over your assumptions — and that's exactly where bugs hide.</p>
+    </div>
+  </div>
+
+  <!-- ========== SPOT THE BUG INTERACTIVE WIDGET ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🐛 Try It — Spot the Bug</div>
+    <div class="try-it-title">Click the line where the bug lives</div>
+    <p class="try-it-instructions">Each snippet has <strong>exactly one bug</strong>. Read carefully, then click the line you think is broken. Green = correct (and you'll see the fix). Red flash = try again. Work through all six!</p>
+
+    <div class="bug-card">
+      <div class="bug-meta">
+        <span class="bug-counter" id="bug-counter">Bug 1 of 6</span>
+        <span class="bug-score" id="bug-score">Score: 0 / 0</span>
+      </div>
+      <div class="bug-prompt" id="bug-prompt"></div>
+      <pre class="bug-pre" id="bug-pre"></pre>
+      <div class="bug-fix" id="bug-fix"></div>
+      <div class="bug-hint" id="bug-hint"></div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="bug-next" disabled>Next Bug ▶</button>
+      <button class="try-it-btn try-it-btn-secondary" id="bug-reset">↻ Start Over</button>
+    </div>
+    <div class="try-it-feedback" id="bug-feedback"></div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice that none of the four moves above require special software. You don't need a fancy debugger or a computer-science degree. You need patience, curiosity, and the willingness to admit that the computer is probably doing exactly what you told it to do — even when "what you told it" wasn't what you meant.</p>
+    <p>Once you know how to chase a bug, you start to think differently while you're <em>writing</em> the code in the first place. You write smaller pieces. You test as you go. You add print statements before you need them. That's how professional programmers build software — and it's the bridge to our next section.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Your program is supposed to print "Hello!" but instead prints nothing. You haven't seen any error message at all. Which of the four debugging moves would you reach for first, and why?</p>
+      <p style="font-style:italic; color:#6b7280;">(Hint: if there's no error, the computer thinks everything is fine — so you need to <em>peek inside</em>.)</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · The Software Development Lifecycle</div>
+  </div>
+  <h2 class="section-title">Six phases that every real program goes through</h2>
+  <div class="read-body">
+    <p>So far we've talked about bugs as if they're surprises. But in the real world, software teams expect bugs — and they build their entire process around catching them. That process is called the <span class="key-term">software development lifecycle</span> (sometimes shortened to <strong>SDLC</strong>).</p>
+    <p>The lifecycle has six phases. Big companies follow it. Indie developers follow it. Even <em>you</em> follow it whenever you build a project — you might just not know the names yet.</p>
+  </div>
+
+  <div class="diagram-card lifecycle-diagram">
+    <svg width="100%" height="380" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#6b7280"/>
+        </marker>
+      </defs>
+
+      <!-- Center label -->
+      <circle cx="300" cy="190" r="58" fill="#0E1C42"/>
+      <text x="300" y="183" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#55C8E8" letter-spacing="2">SDLC</text>
+      <text x="300" y="202" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#ffffff">six phases</text>
+      <text x="300" y="218" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#ffffff">always cycling</text>
+
+      <!-- Phase nodes around the circle -->
+      <!-- 1 PLAN top -->
+      <circle cx="300" cy="58" r="38" fill="#55C8E8" opacity="0.92"/>
+      <text x="300" y="54" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#0E1C42">1 · PLAN</text>
+      <text x="300" y="70" text-anchor="middle" font-size="16">📋</text>
+
+      <!-- 2 DESIGN top-right -->
+      <circle cx="478" cy="120" r="38" fill="#C7922C" opacity="0.92"/>
+      <text x="478" y="116" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#ffffff">2 · DESIGN</text>
+      <text x="478" y="132" text-anchor="middle" font-size="16">📐</text>
+
+      <!-- 3 CODE bottom-right -->
+      <circle cx="478" cy="260" r="38" fill="#67308F" opacity="0.92"/>
+      <text x="478" y="256" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#ffffff">3 · CODE</text>
+      <text x="478" y="272" text-anchor="middle" font-size="16">💻</text>
+
+      <!-- 4 TEST bottom -->
+      <circle cx="300" cy="322" r="38" fill="#76C043" opacity="0.92"/>
+      <text x="300" y="318" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#0E1C42">4 · TEST</text>
+      <text x="300" y="334" text-anchor="middle" font-size="16">🔍</text>
+
+      <!-- 5 DEPLOY bottom-left -->
+      <circle cx="122" cy="260" r="38" fill="#F78F1E" opacity="0.92"/>
+      <text x="122" y="256" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#ffffff">5 · DEPLOY</text>
+      <text x="122" y="272" text-anchor="middle" font-size="16">🚀</text>
+
+      <!-- 6 MAINTAIN top-left -->
+      <circle cx="122" cy="120" r="38" fill="#0E5568" opacity="0.92"/>
+      <text x="122" y="116" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#ffffff">6 · MAINTAIN</text>
+      <text x="122" y="132" text-anchor="middle" font-size="16">🔧</text>
+
+      <!-- Connecting arrows around the cycle -->
+      <path d="M 338 70 A 200 200 0 0 1 444 96" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+      <path d="M 488 158 A 200 200 0 0 1 488 222" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+      <path d="M 444 284 A 200 200 0 0 1 338 310" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+      <path d="M 262 310 A 200 200 0 0 1 156 284" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+      <path d="M 112 222 A 200 200 0 0 1 112 158" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+      <path d="M 156 96 A 200 200 0 0 1 262 70" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <text x="300" y="370" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11.5" font-style="italic" fill="#6b7280">The cycle never really ends — that's the whole idea.</text>
+    </svg>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head"><strong>1 · Plan</strong></div>
+      <div class="platform-card-body"><em>What problem are we solving, and for whom?</em> The team writes down the goals, picks the audience, and lists the features. No code yet — just decisions on paper. <strong>Skipping this phase</strong> is the #1 reason projects go off the rails.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head"><strong>2 · Design</strong></div>
+      <div class="platform-card-body"><em>What will it look like, and how will it work?</em> The team sketches the screens, draws flowcharts (remember Week 20?), and plans how the data will move. Designers and programmers work together here. The goal: a blueprint clear enough to build from.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head"><strong>3 · Code</strong></div>
+      <div class="platform-card-body"><em>Now we build it.</em> Programmers turn the design into real, working code — variables, conditionals, loops, functions, all the things you've practiced this unit. This is the phase most people picture when they hear "software development," but it's only one slice of the cycle.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head"><strong>4 · Test</strong></div>
+      <div class="platform-card-body"><em>Does it actually work?</em> Testers (and sometimes real users) try to break the program on purpose. They feed it weird inputs, click in unexpected places, and look for bugs. <span class="key-term">Testing</span> is where most bugs get caught — <em>before</em> users see them.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head"><strong>5 · Deploy</strong></div>
+      <div class="platform-card-body"><em>Ship it!</em> The team puts the program out into the world — uploads it to the App Store, pushes it to a website, sends it to the school. Up to this point, only the team has seen the software. After deploy, the real users get their hands on it.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--dark-bitstream);">
+      <div class="platform-card-head"><strong>6 · Maintain</strong></div>
+      <div class="platform-card-body"><em>Keep it running, keep it improving.</em> Real users always find bugs the team missed. The world changes — new phones, new browsers, new needs. Maintenance means fixing those problems and adding new features. And then the cycle starts over.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>When your favorite game gets a "patch" or an "update," you're watching the lifecycle in action. Players reported a bug? <strong>Maintain</strong> phase. Studio added a new map? They're back in <strong>Plan → Design → Code → Test → Deploy</strong>. The whole loop runs again, sometimes in just a few weeks.</p>
+      <p>The same thing happens behind every app you use. Instagram, TikTok, YouTube — they're all running the lifecycle right now, even as you read this.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Iteration: Code Is Never "Done"</div>
+  </div>
+  <h2 class="section-title">Why "version 1.0" is just the beginning</h2>
+  <div class="read-body">
+    <p>Open the App Store on a phone right now. Look at the apps near the top of "Updates." Every one of them has a little message: <em>"Bug fixes and performance improvements."</em> "<em>New features added.</em>" Sometimes there's a long list of changes.</p>
+    <p>Why? Because software is never really finished. Each release is just a snapshot in an endless cycle. Programmers call this <span class="key-term">iteration</span> — the practice of building a small version, learning from it, and using what you learned to build a better version.</p>
+    <p>Iteration is one of the biggest mindset shifts in computer science. Beginners think: <em>"I'll plan everything, write the perfect code, ship it, and never touch it again."</em> Experienced programmers think: <em>"I'll ship something small, see what breaks, fix it, and ship again next week."</em> The second mindset wins, every time.</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card" style="border-color: var(--bitstream-blue);">
+      <div class="trait-label" style="color: var(--bitstream-blue);">🔁 Why iterate?</div>
+      <div class="trait-body">You can't predict every problem in advance. Real users do unexpected things. Iteration lets you respond quickly instead of guessing perfectly.</div>
+    </div>
+    <div class="trait-card" style="border-color: var(--gateway-gold);">
+      <div class="trait-label" style="color: var(--gateway-gold);">🎯 Smaller is safer</div>
+      <div class="trait-body">A tiny update has fewer places for bugs to hide. If something breaks, you know it's in the small change you just made.</div>
+    </div>
+    <div class="trait-card" style="border-color: var(--portal-purple);">
+      <div class="trait-label" style="color: var(--portal-purple);">📈 Learn from real users</div>
+      <div class="trait-body">No amount of planning beats watching a real person use your software. Each iteration teaches you something the planning phase couldn't.</div>
+    </div>
+    <div class="trait-card" style="border-color: var(--gamer-green);">
+      <div class="trait-label" style="color: #3d6522;">🧠 The same idea — applied</div>
+      <div class="trait-body">Iteration isn't just for software. Writers iterate on drafts. Athletes iterate on technique. Every artist you admire is iterating on their craft.</div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's a quick example. The first version of Minecraft was written by one person, in 2009, in less than a week. It had cubes, a world to walk in, and almost nothing else. Today, sixteen years and thousands of updates later, Minecraft has villages, the Nether, redstone, mobs, achievements, multiplayer, and dozens of biomes. None of that was in version 1. All of it came from <strong>iteration</strong> — small improvement after small improvement, lifecycle loop after lifecycle loop.</p>
+    <p>Every program you've ever loved followed the same path. Roblox. iMessage. Google Maps. They all started simple and grew through countless cycles of plan, design, code, test, deploy, maintain — over and over and over.</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Pull up any app you used today. Tap "About" or scroll down in the App Store entry. You'll see a <em>version number</em> like <strong>v8.2.4</strong>. That number isn't random — it's a record of how many times the lifecycle has run.</p>
+      <p>The bigger the first number (the "major version"), the more times the team has done a full re-think. Apps with <strong>v1.0</strong> were just deployed for the first time. Apps with <strong>v15.7</strong> have iterated for years. What's the highest version number on a piece of software you use?</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> A team builds a school cafeteria-ordering app. They <em>plan</em> it, <em>design</em> it, <em>code</em> it, <em>test</em> it, and <em>deploy</em> it. After two weeks, students complain that the menu is hard to read on small phones. The team adds a bigger-text option and ships an update.</p>
+      <p>Which lifecycle phase did the team go back to first to fix the issue? And why is what they did called <em>iteration</em>?</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 26</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Bug</div>
+      <div class="vocab-def">Any mistake in a program that causes it to behave in an unexpected or wrong way.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Syntax error</div>
+      <div class="vocab-def">A bug caused by breaking the grammar rules of a programming language — missing colons, brackets, quotes. The program won't run.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Logic error</div>
+      <div class="vocab-def">A bug where the program runs without crashing, but gives the wrong answer. The hardest kind to spot.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Runtime error</div>
+      <div class="vocab-def">A bug that crashes the program <em>while it is running</em>, often because of unexpected input — like dividing by zero.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Debugging</div>
+      <div class="vocab-def">The work of finding bugs, figuring out what is causing them, and fixing them.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Software development lifecycle</div>
+      <div class="vocab-def">The six-phase process every real software project follows: plan, design, code, test, deploy, and maintain.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Iteration</div>
+      <div class="vocab-def">Building a small version, learning from it, and using what you learned to build a better version — over and over.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Testing</div>
+      <div class="vocab-def">The phase of the lifecycle where you try to break your own program on purpose, so real users don't have to.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Think of a "bug" you've spotted in REAL life — a process at school, a routine at home.</div>
+    <p>Pick one annoying or broken thing you deal with regularly. Then answer in <strong>4–6 sentences</strong>:</p>
+    <ul>
+      <li>What's the bug? Describe it the way you'd describe it to a friend.</li>
+      <li>Is it a "<strong>syntax</strong>" bug (a typo or a missing step), a "<strong>logic</strong>" bug (the wrong outcome on purpose), or a "<strong>runtime</strong>" bug (only happens sometimes, with certain inputs)?</li>
+      <li>How would you debug it? Which of our four moves — read the error, print, rubber-duck, comment-out — would actually help?</li>
+      <li>If you were in charge, what's the smallest <em>iteration</em> you could ship to make it better?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 27</strong>, you'll review <em>everything</em> from Unit 3 — computational thinking, flowcharts, Python, conditionals, loops, functions, debugging — and prep for the unit assessment. Bring your favorite rubber duck.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Spot the Bug ==========
+(function() {
+  const BUGS = [
+    {
+      prompt: "This Python code should print a greeting if the score is above 90 — but Python won't even run it. Click the line where the syntax error lives.",
+      lines: [
+        '# Greeting program',
+        'score = 95',
+        'if score > 90',
+        '    print("Great job!")',
+        'print("Done.")'
+      ],
+      buggyIndex: 2,
+      hint: "🔍 Look closely at the line that starts with <code>if</code>. In Python, every <code>if</code> needs a special punctuation mark at the end before its block.",
+      fix: "<strong>Syntax error — missing colon.</strong> The line should be <code>if score &gt; 90:</code> — Python uses a colon to mark the start of a block. Without it, Python refuses to run the program at all."
+    },
+    {
+      prompt: "This program is supposed to check whether two numbers are equal — but it always changes <code>a</code>! Click the buggy line.",
+      lines: [
+        'a = 5',
+        'b = 5',
+        'if a = b:',
+        '    print("They match!")',
+        'print(a)'
+      ],
+      buggyIndex: 2,
+      hint: "🔍 There's a single sign that means <em>assign</em>, and a double sign that means <em>compare</em>. The line is using the wrong one.",
+      fix: "<strong>Syntax error — assignment vs comparison.</strong> A single <code>=</code> means \"assign\" (set <code>a</code> to <code>b</code>'s value). To <em>compare</em>, you need a double <code>==</code>. The fix: <code>if a == b:</code>"
+    },
+    {
+      prompt: "This loop should count from 1 to 5 — but it stops one short! Click the line with the off-by-one logic bug.",
+      lines: [
+        '# Count to 5',
+        'for i in range(1, 5):',
+        '    print(i)',
+        'print("Done counting.")'
+      ],
+      buggyIndex: 1,
+      hint: "🔍 In Python, <code>range(a, b)</code> stops <em>just before</em> <code>b</code>. To include 5, you need to push the upper number up by one.",
+      fix: "<strong>Logic error — off-by-one.</strong> <code>range(1, 5)</code> gives 1, 2, 3, 4 — it stops just before the second number. To count up to and including 5, write <code>range(1, 6)</code>."
+    },
+    {
+      prompt: "This program calculates a class's average score by dividing total points by number of students. It crashes when no one took the test. Click the dangerous line.",
+      lines: [
+        'total = 0',
+        'students = 0',
+        'average = total / students',
+        'print("Class average:", average)'
+      ],
+      buggyIndex: 2,
+      hint: "🔍 Math has one operation that the computer absolutely will not do — and one of these variables is set to a value that triggers it.",
+      fix: "<strong>Runtime error — divide by zero.</strong> When <code>students</code> is 0, Python crashes with a <code>ZeroDivisionError</code>. The fix is to check first: <code>if students &gt; 0:</code> before dividing."
+    },
+    {
+      prompt: "This Python function is supposed to print whether a number is positive — but it claims that 0 is positive too! Click the bug.",
+      lines: [
+        'def is_positive(n):',
+        '    if n >= 0:',
+        '        print("Positive!")',
+        '    else:',
+        '        print("Negative.")'
+      ],
+      buggyIndex: 1,
+      hint: "🔍 <em>Positive</em> means <em>greater than zero</em>, not <em>greater than or equal to zero</em>. Look at the comparison sign on the <code>if</code> line.",
+      fix: "<strong>Logic error — wrong comparison operator.</strong> <code>&gt;=</code> includes 0, but 0 is neither positive nor negative. The fix: <code>if n &gt; 0:</code> — strictly greater than."
+    },
+    {
+      prompt: "This program is supposed to print three messages, but Python complains the indentation is wrong. Click the bad line.",
+      lines: [
+        'print("Step 1: open the door")',
+        '   print("Step 2: walk inside")',
+        'print("Step 3: close the door")'
+      ],
+      buggyIndex: 1,
+      hint: "🔍 In Python, lines that aren't inside a block (like an <code>if</code> or a <code>for</code>) must start at the very left edge — no spaces in front.",
+      fix: "<strong>Syntax error — unexpected indentation.</strong> The middle line has spaces in front but isn't inside any block. Python throws <code>IndentationError: unexpected indent</code>. Fix: remove the leading spaces."
+    }
+  ];
+
+  const promptEl = document.getElementById('bug-prompt');
+  const preEl = document.getElementById('bug-pre');
+  const fixEl = document.getElementById('bug-fix');
+  const hintEl = document.getElementById('bug-hint');
+  const counterEl = document.getElementById('bug-counter');
+  const scoreEl = document.getElementById('bug-score');
+  const nextBtn = document.getElementById('bug-next');
+  const resetBtn = document.getElementById('bug-reset');
+  const feedbackEl = document.getElementById('bug-feedback');
+
+  if (!promptEl || !preEl) return;
+
+  let currentIdx = 0;
+  let solved = 0;
+  let attempts = 0;
+  let lockCurrent = false;
+
+  function renderBug() {
+    const bug = BUGS[currentIdx];
+    promptEl.innerHTML = bug.prompt;
+    preEl.innerHTML = '';
+    bug.lines.forEach((text, i) => {
+      const span = document.createElement('span');
+      span.className = 'bug-line';
+      span.dataset.lineIdx = i;
+      span.textContent = text;
+      span.addEventListener('click', () => handleClick(i, span));
+      preEl.appendChild(span);
+      // Add line break (newline preserved by white-space:pre)
+      preEl.appendChild(document.createTextNode('\n'));
+    });
+    fixEl.classList.remove('show');
+    fixEl.innerHTML = '';
+    hintEl.classList.remove('show');
+    hintEl.innerHTML = '';
+    feedbackEl.classList.remove('show');
+    feedbackEl.className = 'try-it-feedback';
+    nextBtn.disabled = true;
+    lockCurrent = false;
+    updateCounter();
+  }
+
+  function updateCounter() {
+    counterEl.textContent = 'Bug ' + (currentIdx + 1) + ' of ' + BUGS.length;
+    scoreEl.textContent = 'Score: ' + solved + ' / ' + BUGS.length;
+  }
+
+  function handleClick(idx, el) {
+    if (lockCurrent) return;
+    const bug = BUGS[currentIdx];
+    attempts++;
+    if (idx === bug.buggyIndex) {
+      el.classList.add('bug-correct', 'bug-locked');
+      // Lock all lines
+      preEl.querySelectorAll('.bug-line').forEach(line => line.classList.add('bug-locked'));
+      solved++;
+      fixEl.innerHTML = '✅ ' + bug.fix;
+      fixEl.classList.add('show');
+      hintEl.classList.remove('show');
+      lockCurrent = true;
+      nextBtn.disabled = (currentIdx >= BUGS.length - 1);
+      updateCounter();
+      if (currentIdx >= BUGS.length - 1) {
+        // All done
+        feedbackEl.className = 'try-it-feedback show success';
+        feedbackEl.innerHTML = '🎉 <strong>You debugged ' + solved + ' of ' + BUGS.length + ' programs!</strong> Click "Start Over" to try again, or move on to Section 4.';
+      }
+    } else {
+      el.classList.add('bug-wrong');
+      hintEl.innerHTML = bug.hint;
+      hintEl.classList.add('show');
+      setTimeout(() => {
+        el.classList.remove('bug-wrong');
+      }, 600);
+    }
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIdx < BUGS.length - 1) {
+      currentIdx++;
+      renderBug();
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    currentIdx = 0;
+    solved = 0;
+    attempts = 0;
+    renderBug();
+  });
+
+  renderBug();
+})();
+</script>
+
+</body>
+</html>

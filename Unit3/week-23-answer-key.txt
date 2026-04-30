@@ -1,0 +1,156 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 23 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 23
+  Standard: SC.6.PE.1.4
+  Topic: Logic — Conditionals & Making Programs Choose
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → B
+  Q4 → D
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. In pseudocode, what is the difference between == and = ?
+───────────────────────────────────────────────────────────────
+  A) They mean the same thing — both compare two values
+     ❌ They are NOT the same. Mixing them up is the most common
+        bug a new programmer writes.
+  B) == compares two values (asks "are they equal?");
+     = assigns a value (sets a variable)                       ✓ CORRECT
+     ✅ Right! Single = changes things (x = 5 puts 5 in x).
+        Double == checks things (x == 5 asks "is x equal to 5?").
+        (SC.6.PE.1.4)
+  C) = compares two values; == assigns a value
+     ❌ Backwards! Single = is assignment, double == is the
+        comparison operator.
+  D) == is only used for text; = is only used for numbers
+     ❌ Both operators work on any data type. The difference is
+        what they DO, not what type of value you're working with.
+
+───────────────────────────────────────────────────────────────
+Q2. Given age = 15, which branch of this code runs?
+
+      IF age >= 16 THEN
+          PRINT "can drive"
+      ELSE
+          PRINT "too young"
+      END IF
+───────────────────────────────────────────────────────────────
+  A) The IF branch runs — prints "can drive"
+     ❌ 15 is NOT >= 16, so the IF condition is false. The
+        program jumps to ELSE.
+  B) Both branches run, one after the other
+     ❌ An IF/ELSE always runs EXACTLY one branch — never both.
+        That's the whole point of having ELSE.
+  C) The ELSE branch runs — prints "too young"               ✓ CORRECT
+     ✅ 15 >= 16 is false, so the program skips the IF body and
+        runs the ELSE branch instead.
+        (SC.6.PE.1.4)
+  D) Neither branch runs because 15 doesn't equal 16
+     ❌ An IF/ELSE always runs ONE of its branches. If the IF
+        is false, the ELSE catches it — there's no "neither."
+
+───────────────────────────────────────────────────────────────
+Q3. Given n = 50, what does this code print?
+
+      IF n > 100 THEN
+          PRINT "huge"
+      ELIF n > 10 THEN
+          PRINT "medium"
+      ELSE
+          PRINT "small"
+      END IF
+───────────────────────────────────────────────────────────────
+  A) "huge"
+     ❌ 50 is not > 100, so the first IF is false and "huge"
+        is skipped.
+  B) "medium"                                                ✓ CORRECT
+     ✅ 50 is not > 100, but 50 IS > 10. The first ELIF that's
+        true wins, so "medium" prints — and "small" gets skipped
+        automatically.
+        (SC.6.PE.1.4)
+  C) "small"
+     ❌ ELSE only runs when EVERY IF and ELIF above it is false.
+        Here, the n > 10 ELIF is true, so the program never
+        reaches the ELSE.
+  D) Both "medium" and "small"
+     ❌ An IF/ELIF/ELSE chain runs at most ONE branch — the
+        first one that matches. Other branches are skipped.
+
+───────────────────────────────────────────────────────────────
+Q4. Why is ELIF useful instead of writing many separate IF
+    statements?
+───────────────────────────────────────────────────────────────
+  A) ELIF is faster — it skips to the answer instantly
+     ❌ Speed isn't the main reason. The real value of ELIF
+        is correctness: only one branch can run.
+  B) ELIF lets you check more conditions than IF allows
+     ❌ A single IF can have any condition you like. The
+        difference isn't HOW MANY conditions — it's whether
+        more than one branch can fire.
+  C) ELIF works even when conditions overlap, but separate
+     IFs do not
+     ❌ The opposite: when conditions overlap, separate IFs
+        fire MULTIPLE branches (the bug). ELIF guarantees
+        only one.
+  D) With ELIF, only the first true branch runs and the rest
+     are skipped — separate IFs would each be checked and
+     could all run                                           ✓ CORRECT
+     ✅ Exactly. With many separate IFs, every IF is tested
+        and any that are true will fire — possibly multiple
+        at once. ELIF makes the branches mutually exclusive:
+        the first match wins, the rest are skipped.
+        (SC.6.PE.1.4)
+
+───────────────────────────────────────────────────────────────
+Q5. In a flowchart, which shape represents a place where the
+    program has to make a yes/no decision (a "decision diamond")?
+───────────────────────────────────────────────────────────────
+  A) An oval (rounded ends)
+     ❌ Ovals mark the START or END of a flowchart, not a
+        decision.
+  B) A rectangle
+     ❌ Rectangles represent ACTIONS — like "print a message"
+        or "set x = 5" — not decisions.
+  C) A diamond (a square turned 45 degrees with a yes/no
+     question inside, with two arrows leading out)         ✓ CORRECT
+     ✅ Right! A decision diamond holds a yes/no condition.
+        One arrow leaves through the "YES" path, another
+        through the "NO" path — that's how the program
+        chooses a branch.
+        (SC.6.PE.1.4)
+  D) A circle with an arrow inside it
+     ❌ Circles are sometimes used as connectors between
+        flowchart pages, but never to represent a decision.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-23-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

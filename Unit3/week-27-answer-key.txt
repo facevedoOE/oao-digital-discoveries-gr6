@@ -1,0 +1,144 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 27 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Lesson 3.9
+  Standards: All Unit 3 (SC.K12.CTR.1.1, 2.1, 3.1, 5.1;
+             SC.6.PE.1.1-1.11, 2.1, 3.5, 3.6, 4.1)
+  Theme: Unit 3 Review — From Idea to Code
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → C
+  Q2 → B
+  Q3 → C
+  Q4 → B
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. (CT / Flowcharts) Which shape in a flowchart is used to ASK
+    a yes-or-no question that splits the path two ways?
+───────────────────────────────────────────────────────────────
+  A) Oval / pill
+     ❌ Ovals mark START and END — terminators, not decisions.
+  B) Rectangle
+     ❌ A rectangle holds a process step ("do this"), not a
+        question.
+  C) Diamond                                                    ✓ CORRECT
+     ✅ The diamond is the decision shape. It always has one
+        arrow in and two labeled arrows out (Yes/No or True/
+        False). (SC.6.PE.1.1)
+  D) Parallelogram
+     ❌ A parallelogram represents input or output, not a
+        decision.
+
+───────────────────────────────────────────────────────────────
+Q2. (Python data types / variables) Look at this Python line:
+        score = "100"
+    What TYPE is the variable score now?
+───────────────────────────────────────────────────────────────
+  A) int (integer)
+     ❌ The quotes around "100" mean Python is treating it as
+        text. It is NOT a number you can add to.
+  B) str (string)                                               ✓ CORRECT
+     ✅ Anything inside quotes is a string in Python — even if
+        the characters look like a number. score + 1 would crash
+        until you convert it with int(). (SC.6.PE.1.4)
+  C) bool (boolean)
+     ❌ Booleans are only True or False. "100" is a string.
+  D) float (decimal)
+     ❌ A float looks like 100.0 (no quotes). With quotes, it's
+        a string.
+
+───────────────────────────────────────────────────────────────
+Q3. (Conditionals / logic) A program runs:
+        IF age >= 13:
+            print("teen")
+        ELIF age >= 6:
+            print("kid")
+        ELSE:
+            print("little")
+    What does it print when age = 10?
+───────────────────────────────────────────────────────────────
+  A) teen
+     ❌ 10 is not >= 13, so the first branch is skipped.
+  B) teen and kid
+     ❌ Only ONE branch of an IF/ELIF/ELSE chain runs — never
+        two.
+  C) kid                                                        ✓ CORRECT
+     ✅ 10 fails the first check (10 >= 13 is False) but passes
+        the ELIF (10 >= 6 is True), so "kid" prints and the ELSE
+        is skipped. (SC.6.PE.1.7)
+  D) little
+     ❌ ELSE only fires if EVERY check above it failed. The ELIF
+        succeeded here, so we never reach ELSE.
+
+───────────────────────────────────────────────────────────────
+Q4. (Loops / functions) What does this Python code print?
+        def double(n):
+            return n * 2
+        for i in range(3):
+            print(double(i))
+───────────────────────────────────────────────────────────────
+  A) 2, 4, 6
+     ❌ Close, but range(3) starts at 0, not 1. Check the very
+        first value of i.
+  B) 0, 2, 4                                                    ✓ CORRECT
+     ✅ range(3) gives i = 0, 1, 2. The function returns 0*2=0,
+        then 1*2=2, then 2*2=4. The loop calls the function
+        once per iteration. (SC.6.PE.1.9, SC.6.PE.1.10)
+  C) 0, 1, 2
+     ❌ That's just i — but we're printing double(i), which
+        multiplies each value by 2.
+  D) 6
+     ❌ The print is INSIDE the loop, so it runs once per
+        iteration — not once at the end with the total.
+
+───────────────────────────────────────────────────────────────
+Q5. (Debugging) A student writes a Python program. It runs
+    without crashing, but it always prints the wrong total.
+    What kind of bug is this MOST LIKELY?
+───────────────────────────────────────────────────────────────
+  A) Syntax error
+     ❌ A syntax error stops the program from running at all.
+        This program runs — so syntax is fine.
+  B) Runtime error
+     ❌ Runtime errors crash the program partway through (like
+        dividing by zero). This program completes; it just gives
+        a wrong answer.
+  C) Logic error                                                ✓ CORRECT
+     ✅ A logic error means the code runs to the end but the
+        thinking is wrong — wrong formula, wrong comparison,
+        wrong order. The fix is rereading the algorithm, not
+        the syntax. (SC.6.PE.4.1)
+  D) Hardware error
+     ❌ Almost never the cause of a wrong total. If you're
+        getting consistent wrong answers, suspect your code.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-27-quiz-canvas-import.zip (after you zip the
+     contents of Unit3/_qti_build27/ at the directory root)
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

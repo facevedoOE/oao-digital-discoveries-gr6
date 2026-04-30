@@ -1,0 +1,143 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 24 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Lesson 3.6
+  Standards: SC.6.PE.1.9 · SC.6.PE.1.10 · SC.6.PE.1.11
+  Loops — The Power of Repetition
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → C
+  Q4 → C
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. What does a LOOP do that running a line of code once does
+    NOT do?
+───────────────────────────────────────────────────────────────
+  A) It runs faster than any other line of code
+     ❌ Loops aren't magically faster — a single instruction is
+        actually quicker. The point of a loop is REPETITION, not
+        raw speed.
+  B) It repeats a block of code multiple times until a condition
+     tells it to stop                                            ✓ CORRECT
+     ✅ That's the whole definition of a loop. The body runs
+        again and again until the loop's stop condition is met.
+        (SC.6.PE.1.9)
+  C) It deletes the code after running it once
+     ❌ Loops don't delete anything — that would defeat the
+        purpose, since the body needs to run again next iteration.
+  D) It turns words into numbers
+     ❌ That's data conversion, not looping. Loops are about
+        repeating instructions, not transforming data types.
+
+───────────────────────────────────────────────────────────────
+Q2. You're writing a program that should keep asking the user
+    for a password UNTIL they type the correct one. Which kind
+    of loop is the right tool?
+───────────────────────────────────────────────────────────────
+  A) A for loop with range(1) — exactly one try
+     ❌ The user only gets one shot. The whole point is "keep
+        asking until correct," which means more than one try.
+  B) A for loop with range(3) — exactly three tries
+     ❌ This caps it at three attempts. Closer, but you don't
+        actually know how many tries it'll take. A for loop
+        always runs a fixed number of times.
+  C) A while loop that repeats while the password is wrong       ✓ CORRECT
+     ✅ A while loop is the right tool for "repeat UNTIL a
+        condition flips." You don't know how many tries it'll
+        take — could be 1, could be 8 — so a while loop is
+        perfect. (SC.6.PE.1.10)
+  D) No loop — just write the question once
+     ❌ Then there's no repetition at all. The user gets one
+        try and the program quits.
+
+───────────────────────────────────────────────────────────────
+Q3. How many times does the body of this loop run?
+
+       for i in range(5):
+           print("hi")
+───────────────────────────────────────────────────────────────
+  A) 0 times — it never enters the loop
+     ❌ range(5) is non-empty, so the loop body absolutely runs.
+  B) 4 times
+     ❌ Off by one. range(5) gives 5 values: 0, 1, 2, 3, 4.
+  C) 5 times                                                     ✓ CORRECT
+     ✅ range(5) produces 0, 1, 2, 3, 4 — five values. The body
+        runs once for each value, so it runs 5 times.
+        (SC.6.PE.1.9)
+  D) 6 times
+     ❌ range(5) stops BEFORE 5, not at 5. It has 5 values, not 6.
+
+───────────────────────────────────────────────────────────────
+Q4. What is wrong with this code?
+
+       counter = 1
+       while counter < 5:
+           print("hello")
+───────────────────────────────────────────────────────────────
+  A) Nothing — it works perfectly.
+     ❌ Look closer. There's no line that updates counter, so
+        it stays at 1 forever and the condition never flips.
+  B) The word "while" should be "for"
+     ❌ The keyword isn't the problem. A while loop is fine
+        here — it's just missing the part that ends the loop.
+  C) It is an INFINITE LOOP — counter is never updated, so the
+     condition stays true forever                                ✓ CORRECT
+     ✅ The classic infinite-loop bug. The loop body never runs
+        counter = counter + 1, so counter stays at 1. The
+        condition counter < 5 is always true, and the loop
+        prints "hello" forever. (SC.6.PE.1.11)
+  D) It will print "hello" exactly 5 times
+     ❌ It will print "hello" forever, not 5 times. Without an
+        increment inside the body, the loop never ends.
+
+───────────────────────────────────────────────────────────────
+Q5. Which of these is the BEST example of a real-world LOOP
+    AT SCALE?
+───────────────────────────────────────────────────────────────
+  A) A calculator adding 2 + 2 a single time
+     ❌ One operation isn't a loop at all — there's no
+        repetition.
+  B) A recommendation feed (like TikTok or YouTube) scoring
+     millions of videos for each user                            ✓ CORRECT
+     ✅ Right! That's exactly "loops at scale." A loop body
+        ("score this video for THIS user") runs over millions
+        of candidate videos for billions of users. None of it
+        works without loops. (SC.6.PE.1.9)
+  C) A teacher writing one comment on one student's paper
+     ❌ One action, no repetition — not a loop.
+  D) A doorbell ringing once when a guest arrives
+     ❌ A single event, not a repeating one. A loop would be
+        a doorbell that kept ringing as long as someone held
+        the button.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-24-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

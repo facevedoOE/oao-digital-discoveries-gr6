@@ -1,0 +1,139 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 25 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 25
+  Topic: Functions & Modular Programming
+  Standards: SC.6.PE.1.7 · SC.6.PE.1.8
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → B
+  Q4 → B
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. In Python, what does the def keyword do?
+───────────────────────────────────────────────────────────────
+  A) It deletes a variable from memory.
+     ❌ That's what `del` does — not `def`. They sound alike but
+        do opposite things.
+  B) It defines a new function — telling Python the function's
+     name and what it does.                                 ✓ CORRECT
+     ✅ Right! `def` introduces a new function definition. Python
+        memorizes the recipe; it does not run it. (SC.6.PE.1.7)
+  C) It runs a function that has already been defined.
+     ❌ Running a function is called CALLING it, and is done with
+        the function name + parentheses, like greet("Maya").
+  D) It prints text to the screen.
+     ❌ Printing is `print()`. `def` is for definitions.
+
+───────────────────────────────────────────────────────────────
+Q2. In `def greet(name):` followed by `greet("Maya")`, which
+    statement correctly identifies `name` and `"Maya"`?
+───────────────────────────────────────────────────────────────
+  A) "Maya" is the parameter; name is the argument.
+     ❌ Reversed. The placeholder in the def line is the
+        PARAMETER. The actual value passed in is the ARGUMENT.
+  B) Both name and "Maya" are parameters.
+     ❌ Only the placeholder name in the function definition is
+        a parameter. The value at call time is the argument.
+  C) name is the parameter (the placeholder in the definition);
+     "Maya" is the argument (the actual value passed in when
+     calling).                                              ✓ CORRECT
+     ✅ Exactly. P for Placeholder = Parameter. A for Actual
+        value = Argument. (SC.6.PE.1.7)
+  D) There are no parameters or arguments — only variables.
+     ❌ Functions with values inside their parentheses always
+        have parameters and arguments.
+
+───────────────────────────────────────────────────────────────
+Q3. What does a `return` statement actually DO inside a function?
+───────────────────────────────────────────────────────────────
+  A) It prints the value to the screen for the user to see.
+     ❌ That's what `print` does. `return` does not display
+        anything by itself.
+  B) It hands a value back to whoever called the function and
+     ends the function immediately.                         ✓ CORRECT
+     ✅ Yes — `return` gives a value back to the caller, where it
+        can be stored, printed, or used in more code. The
+        function ends as soon as the return is reached.
+        (SC.6.PE.1.8)
+  C) It restarts the function from the beginning.
+     ❌ That would be a loop. Return ends the function, it
+        does not restart it.
+  D) It saves the function permanently to a file.
+     ❌ Saving to a file uses file functions like `open()` and
+        `write()`. Return is just for handing a value back.
+
+───────────────────────────────────────────────────────────────
+Q4. Why is the DRY principle (Don't Repeat Yourself) important
+    for programmers?
+───────────────────────────────────────────────────────────────
+  A) DRY makes programs feel more interesting to read.
+     ❌ Style preference isn't the reason. The real reason is
+        practical: maintenance.
+  B) When you write a piece of logic only once (inside a
+     function), there's only one place to fix it later, and far
+     less code to maintain.                                 ✓ CORRECT
+     ✅ Right — repetition multiplies bugs and edit work. A
+        function lets you write logic once and reuse it.
+        (SC.6.PE.1.8)
+  C) DRY is required by Python — the language refuses to run
+     programs with repetition.
+     ❌ Python will happily run repetitive code. DRY is a
+        professional guideline, not a Python rule.
+  D) DRY makes your code run hundreds of times faster
+     automatically.
+     ❌ DRY is about clarity and maintenance, not raw speed.
+
+───────────────────────────────────────────────────────────────
+Q5. Read this code:
+       def cheer():
+           print("Let's go!")
+    What is the difference between DEFINING and CALLING the
+    function?
+───────────────────────────────────────────────────────────────
+  A) There is no difference — defining and calling do the same
+     thing.
+     ❌ They are very different! Defining stores the recipe;
+        calling runs it.
+  B) Defining (def cheer():) tells Python the recipe but does
+     NOT run it; calling (cheer()) actually runs the body. ✓ CORRECT
+     ✅ Exactly — when Python sees `def`, it just memorizes the
+        function. The body only runs when you write `cheer()`
+        somewhere afterward. (SC.6.PE.1.7)
+  C) Defining runs the function once; calling runs it again.
+     ❌ Defining never runs the body — not even once.
+  D) Calling a function deletes its definition forever.
+     ❌ Calling a function does NOT delete it. You can call a
+        function as many times as you want.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-25-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════
