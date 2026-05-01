@@ -1,0 +1,250 @@
+═══════════════════════════════════════════════════════════════
+  UNIT 3 ASSESSMENT — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 28 · Summative
+  Standards: All Unit 3
+    (SC.K12.CTR.1.1, 2.1, 3.1, 5.1;
+     SC.6.PE.1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 1.10, 1.11,
+              2.1, 3.5, 3.6, 4.1)
+  Topic: Programming Fundamentals — full unit summative
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID  ·  15 questions  ·  1 point each (15 total)
+───────────────────────────────────────────────────────────────
+  Q1  → B          Q6  → B          Q11 → B
+  Q2  → B          Q7  → C          Q12 → A
+  Q3  → B          Q8  → B          Q13 → B
+  Q4  → C          Q9  → B          Q14 → A
+  Q5  → B          Q10 → B          Q15 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 15 multiple-choice questions, 1 point each (15 points total)
+  • 2 attempts allowed (assessment, not practice)
+  • Show feedback after submission
+  • Shuffle answers: your preference
+  • Time limit: optional (recommend 30–40 minutes)
+
+═══════════════════════════════════════════════════════════════
+  TOPIC COVERAGE
+═══════════════════════════════════════════════════════════════
+  Q1–Q3   Computational Thinking & its pillars        (Week 19)
+  Q4–Q6   Flowcharts: shapes, decisions, translation  (Week 20)
+  Q7      Python data types                           (Week 21)
+  Q8      Science, Tech & Society / digital divide    (Week 22)
+  Q9–Q10  Conditionals: == vs =, IF/ELSE branching    (Week 23)
+  Q11–Q12 Loops: range count, loops at scale          (Week 24)
+  Q13–Q14 Functions: def, parameter vs argument       (Week 25)
+  Q15     Debugging: bug type identification          (Week 26)
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which BEST describes computational thinking?
+───────────────────────────────────────────────────────────────
+  A) Memorizing programming languages
+     ❌ CT is a way of thinking, not memorization.
+  B) A four-pillar approach: decompose, find patterns, abstract,
+     write algorithms                                            ✓ CORRECT
+     ✅ The four pillars work together on any problem.
+  C) Building computer hardware
+     ❌ Hardware is engineering. CT is problem-solving.
+  D) Writing perfect code with no bugs
+     ❌ Even great programmers write bugs. CT is about thinking
+        clearly.
+
+───────────────────────────────────────────────────────────────
+Q2. Field-trip planning shows DECOMPOSITION when you...
+───────────────────────────────────────────────────────────────
+  A) Ask one teacher to handle every detail
+     ❌ Delegation, not decomposition.
+  B) Split into transportation, food, lodging, activities,
+     safety                                                      ✓ CORRECT
+     ✅ One big problem becomes five solvable ones.
+  C) Brainstorm randomly with no structure
+     ❌ No structure = no decomposition.
+  D) Improvise on the day
+     ❌ Improvising is the OPPOSITE of decomposition.
+
+───────────────────────────────────────────────────────────────
+Q3. Streaming-app "you might also like" — which CT pillar?
+───────────────────────────────────────────────────────────────
+  A) Decomposition
+     ❌ Decomposition breaks problems into parts.
+  B) Pattern recognition                                         ✓ CORRECT
+     ✅ The app finds patterns in your viewing and matches them
+        to other users' patterns.
+  C) Abstraction
+     ❌ Abstraction is hiding details.
+  D) Algorithm finite-ness
+     ❌ Finite-ness is a trait of algorithms, not a CT pillar.
+
+───────────────────────────────────────────────────────────────
+Q4. Which shape marks both START and END?
+───────────────────────────────────────────────────────────────
+  A) Diamond
+     ❌ Diamonds are for yes/no decisions.
+  B) Rectangle
+     ❌ Rectangles are for process steps.
+  C) Oval (terminator)                                           ✓ CORRECT
+     ✅ The terminator is the only shape used for START and END.
+  D) Parallelogram
+     ❌ Parallelograms are for input/output.
+
+───────────────────────────────────────────────────────────────
+Q5. A correct decision diamond MUST have...
+───────────────────────────────────────────────────────────────
+  A) Exactly one outgoing arrow
+     ❌ One arrow = no decision.
+  B) Exactly two outgoing arrows, labeled YES and NO            ✓ CORRECT
+     ✅ Diamonds split the path into two — that's their job.
+  C) Three or more outgoing arrows
+     ❌ Diamonds are yes/no — exactly two outcomes.
+  D) No outgoing arrows
+     ❌ The flow would dead-end.
+
+───────────────────────────────────────────────────────────────
+Q6. A flowchart and pseudocode for the same task...
+───────────────────────────────────────────────────────────────
+  A) Are completely different algorithms
+     ❌ Same algorithm, different forms.
+  B) Are two different ways to express the same algorithm        ✓ CORRECT
+     ✅ Flowchart, pseudocode, and code = three forms of one
+        algorithm.
+  C) Cannot be translated between
+     ❌ They CAN be translated.
+  D) Mean different things to a computer
+     ❌ Neither runs on a computer; only real code runs.
+
+───────────────────────────────────────────────────────────────
+Q7. Data type of `True` in Python?
+───────────────────────────────────────────────────────────────
+  A) Integer
+     ❌ Integers are whole numbers.
+  B) String
+     ❌ Strings have quotes ("True" with quotes is a string).
+  C) Boolean (bool)                                              ✓ CORRECT
+     ✅ Booleans hold True or False — the only two values.
+  D) Float
+     ❌ Floats are decimal numbers.
+
+───────────────────────────────────────────────────────────────
+Q8. Best example of the DIGITAL DIVIDE?
+───────────────────────────────────────────────────────────────
+  A) Texting a friend
+     ❌ Texting is using tech, not the divide.
+  B) Some students having reliable home internet, others not    ✓ CORRECT
+     ✅ The divide is unequal access to technology.
+  C) Apple vs Android
+     ❌ Platform choice, not access.
+  D) New computer faster than old computer
+     ❌ Speed differences ≠ digital divide.
+
+───────────────────────────────────────────────────────────────
+Q9. What does == do (different from =)?
+───────────────────────────────────────────────────────────────
+  A) Assigns a value to a variable
+     ❌ A SINGLE = assigns. DOUBLE == compares.
+  B) Compares two values for equality, returns True or False    ✓ CORRECT
+     ✅ == asks "are these equal?" and returns True or False.
+  C) Adds numbers together
+     ❌ + adds.
+  D) Divides numbers
+     ❌ / divides.
+
+───────────────────────────────────────────────────────────────
+Q10. Pseudocode: age=14, IF age>=13 THEN PRINT "Welcome!" ELSE
+     PRINT "Too young." — what prints?
+───────────────────────────────────────────────────────────────
+  A) "Too young."
+     ❌ 14 IS >= 13, so the YES branch runs.
+  B) "Welcome!"                                                  ✓ CORRECT
+     ✅ 14 >= 13 is TRUE, so the IF branch prints "Welcome!".
+  C) Both messages
+     ❌ IF/ELSE only takes ONE branch.
+  D) Nothing
+     ❌ One of the two branches always runs.
+
+───────────────────────────────────────────────────────────────
+Q11. for i in range(5): — body runs how many times?
+───────────────────────────────────────────────────────────────
+  A) 4 times
+     ❌ Off-by-one trap. range(5) = 0,1,2,3,4 = FIVE values.
+  B) 5 times                                                     ✓ CORRECT
+     ✅ range(5) gives 0,1,2,3,4 — exactly 5 iterations.
+  C) 6 times
+     ❌ range(5) STOPS before 5; it doesn't include 5.
+  D) 0 times
+     ❌ The loop runs at least once.
+
+───────────────────────────────────────────────────────────────
+Q12. TikTok endless feed — what core concept?
+───────────────────────────────────────────────────────────────
+  A) A loop running through a list of videos                     ✓ CORRECT
+     ✅ Endless feeds are loops — for every user, every session,
+        the app loops through millions of videos.
+  B) A single function call
+     ❌ A single call wouldn't keep showing more videos.
+  C) A flowchart drawn by an artist
+     ❌ Flowcharts are diagrams. The feed is code.
+  D) A debugger checking each video
+     ❌ Debuggers find bugs; they don't generate feeds.
+
+───────────────────────────────────────────────────────────────
+Q13. Which line correctly DEFINES a function in Python?
+───────────────────────────────────────────────────────────────
+  A) function add(a, b):
+     ❌ Other languages use 'function'; Python uses 'def'.
+  B) def add(a, b):                                              ✓ CORRECT
+     ✅ Python: def + name + (params) + colon.
+  C) define add(a, b)
+     ❌ It's 'def', not 'define', and needs a colon.
+  D) add(a, b) = function
+     ❌ Not how any common language defines functions.
+
+───────────────────────────────────────────────────────────────
+Q14. In `def greet(name): print("Hi", name)` and `greet("Maya")`,
+     what is `name` and what is `"Maya"`?
+───────────────────────────────────────────────────────────────
+  A) `name` is a parameter; `"Maya"` is an argument             ✓ CORRECT
+     ✅ Placeholder in def = parameter. Value passed in = argument.
+  B) Both are parameters
+     ❌ Only the placeholder in def is a parameter.
+  C) Both are arguments
+     ❌ Only the passed-in value is an argument.
+  D) `name` is the function call; `"Maya"` is the function name
+     ❌ The function name is `greet`, not `name`.
+
+───────────────────────────────────────────────────────────────
+Q15. `if x = 5:` won't run — what KIND of bug?
+───────────────────────────────────────────────────────────────
+  A) Logic error — wrong math
+     ❌ Logic errors run but get wrong answers. This refuses
+        to run.
+  B) Runtime error — happens only sometimes
+     ❌ Runtime errors happen DURING execution. This is caught
+        BEFORE running.
+  C) Syntax error — line breaks Python's grammar rules           ✓ CORRECT
+     ✅ Inside an IF, Python expects ==, not =. Grammar
+        violation = syntax error, caught before the program
+        runs.
+  D) Network error — internet is down
+     ❌ Bug is in the code, not the network.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-28-assessment-canvas-import.zip
+  4. Click Import. The assessment appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 2, points to 15.
+  7. Set as a unit assessment (count toward gradebook category).
+  8. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

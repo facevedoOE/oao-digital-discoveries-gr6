@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 20 Activity — Flowchart Detective | Digital Discoveries</title>
+<title>Week 23 Activity — Predict the Branch | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,10 +16,10 @@
   <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
       <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🎮 ACTIVITY</div>
-      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 20 · SC.K12.CTR.1.1 · 2.1 · 3.1</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 23 · SC.6.PE.1.4</div>
     </div>
-    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Flowchart Detective</h1>
-    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 scenarios about reading, drawing, and debugging flowcharts. Pick the right shape, predict the right path, spot the mistake. Earn XP — retry as much as you want.</p>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Predict the Branch</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 chunks of pseudocode. For each one, look at the input value and predict which branch will run. You can retry as many times as you want.</p>
   </div>
 
   <!-- PROGRESS + XP BAR -->
@@ -52,147 +52,157 @@
 
 <script>
 // ═════════════════════════════════════════════════════════════
-// QUESTION BANK — 10 flowchart scenarios
+// QUESTION BANK — 10 conditional-prediction items
 // ═════════════════════════════════════════════════════════════
 const QUESTIONS = [
   {
     id: 1,
-    tag: 'Shape ID',
+    tag: 'IF Only',
     tagColor: '#55C8E8',
     status: 'blue',
-    icon: '▱',
-    scenario: "You're drawing a flowchart for a guessing game. The first step is to ask the player to type a number. Which flowchart shape should you use?",
+    icon: '🔀',
+    scenario: "Given <code>score = 75</code>, what does this code print?",
+    code: "IF score >= 80 THEN\n    PRINT \"Great!\"\nEND IF\nPRINT \"Done\"",
     options: [
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START or END — not getting input from the user." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! Parallelograms are for getting info FROM the user or showing info TO the user. Asking for a number = input." },
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for 'do a step' actions like calculations. Reading user input is its own special shape." },
-      { text: "Diamond (Decision)", correct: false, why: "Diamonds ask yes/no questions, not 'please type a number.' Wrong shape." }
+      { text: '"Great!" then "Done"', correct: false, why: "75 is NOT >= 80, so the IF body is skipped. Only \"Done\" prints." },
+      { text: '"Great!" only', correct: false, why: "The IF body never runs because 75 < 80, and \"Done\" is OUTSIDE the IF, so it always runs." },
+      { text: '"Done" only', correct: true, why: "75 >= 80 is false, so the IF body is skipped. \"Done\" sits outside the IF, so it always prints." },
+      { text: 'Nothing — the program crashes', correct: false, why: "An IF that's false isn't an error — the program simply skips the body and keeps going." }
     ]
   },
   {
     id: 2,
-    tag: 'Shape ID',
-    tagColor: '#C7922C',
-    status: 'gold',
-    icon: '◇',
-    scenario: "A step in your flowchart asks: 'Is the player's score greater than 100?' Which shape do you use?",
+    tag: 'IF / ELSE',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '⚖️',
+    scenario: "Given <code>age = 13</code>, which branch runs?",
+    code: "IF age >= 18 THEN\n    PRINT \"adult\"\nELSE\n    PRINT \"minor\"\nEND IF",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for actions, not questions. 'Is X > Y?' is a yes/no question." },
-      { text: "Diamond (Decision)", correct: true, why: "Exactly. Any yes/no question goes in a diamond — and a diamond ALWAYS has two arrows leaving (YES and NO)." },
-      { text: "Parallelogram (Input/Output)", correct: false, why: "That's for input/output. The score check isn't reading or printing — it's deciding which path to take." },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals are only for START and END. Not a decision." }
+      { text: 'The IF branch — prints "adult"', correct: false, why: "13 is NOT >= 18, so the condition is false. The program jumps to ELSE." },
+      { text: 'The ELSE branch — prints "minor"', correct: true, why: "13 >= 18 is false, so the program skips the IF body and runs the ELSE branch." },
+      { text: 'Both branches run', correct: false, why: "An IF/ELSE always runs EXACTLY one branch — never both. That's the whole point of ELSE." },
+      { text: 'Neither branch runs', correct: false, why: "An IF/ELSE always runs ONE branch — if the condition is false, ELSE catches it." }
     ]
   },
   {
     id: 3,
-    tag: 'Reading Flow',
-    tagColor: '#76C043',
-    status: 'green',
-    icon: '🔍',
-    scenario: "A flowchart has a diamond that asks 'Is N > 5?'. The user enters N = 7. Which arrow does the flow follow?",
+    tag: 'IF / ELIF / ELSE',
+    tagColor: '#67308F',
+    status: 'blue',
+    icon: '🌳',
+    scenario: "Given <code>grade = 72</code>, what prints?",
+    code: "IF grade >= 90 THEN\n    PRINT \"A\"\nELIF grade >= 80 THEN\n    PRINT \"B\"\nELIF grade >= 70 THEN\n    PRINT \"C\"\nELSE\n    PRINT \"D or F\"\nEND IF",
     options: [
-      { text: "The NO arrow (because 7 is bigger than 5)", correct: false, why: "Read the question carefully — 'Is 7 > 5?' YES, so the YES arrow is taken." },
-      { text: "The YES arrow (because 7 is greater than 5)", correct: true, why: "Right! 7 > 5 is TRUE, so the YES arrow is taken." },
-      { text: "Both arrows at the same time", correct: false, why: "A flowchart only takes ONE branch from a diamond. The condition is either YES or NO — never both." },
-      { text: "Neither — the flow stops at the diamond", correct: false, why: "Flow always continues — diamonds split the path; they don't end it." }
+      { text: '"A"', correct: false, why: "72 is not >= 90, so the A branch is skipped." },
+      { text: '"B"', correct: false, why: "72 is not >= 80, so the B branch is also skipped." },
+      { text: '"C"', correct: true, why: "72 is not >= 90 or >= 80, but it IS >= 70 — so the C branch runs and the rest are skipped." },
+      { text: '"D or F"', correct: false, why: "ELSE only catches values that match none of the IF/ELIF tests above. 72 matches the >= 70 ELIF first." }
     ]
   },
   {
     id: 4,
-    tag: 'Tracing',
-    tagColor: '#67308F',
-    status: 'purple',
-    icon: '🚦',
-    scenario: "In the umbrella flowchart from the reading, you check the weather, ask 'Is rain in the forecast?', and based on the answer either grab an umbrella or leave it home. The forecast says SUNNY. Which shape do you visit RIGHT before END?",
+    tag: 'Operator Trip-Up',
+    tagColor: '#76C043',
+    status: 'red',
+    icon: '🎯',
+    scenario: "Given <code>height = 48</code>, what does the rider see? (The sign says: \"You must be at least 48 inches tall.\")",
+    code: "IF height > 48 THEN\n    PRINT \"You can ride!\"\nELSE\n    PRINT \"Sorry, too short.\"\nEND IF",
     options: [
-      { text: "The diamond (Is rain in the forecast?)", correct: false, why: "You go THROUGH the diamond, but it's not the last shape before END." },
-      { text: "The 'Bring umbrella' rectangle", correct: false, why: "That branch is only taken if rain is forecast. Sunny means the OTHER branch." },
-      { text: "The 'Leave it at home' rectangle", correct: true, why: "Yes! Sunny → NO branch from the diamond → 'Leave it at home' rectangle → arrow → END." },
-      { text: "The Get-the-weather parallelogram", correct: false, why: "That's near the start, not just before END. The flow visits the rectangle on the chosen branch right before reaching END." }
+      { text: '"You can ride!" — 48 is at least 48', correct: false, why: "Tricky! The code uses > (greater than), not >= (greater than or equal). 48 > 48 is FALSE — they're equal, not greater." },
+      { text: '"Sorry, too short." — because the operator is wrong', correct: true, why: "Exactly. 48 > 48 is false, so the ELSE runs. To match the sign's wording (\"at least 48\"), the code should use >= instead of >." },
+      { text: 'Both messages', correct: false, why: "An IF/ELSE never runs both branches. It runs exactly one." },
+      { text: 'The program crashes because 48 == 48', correct: false, why: "Comparing equal numbers isn't an error — it just produces false for >. The program keeps running fine." }
     ]
   },
   {
     id: 5,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your friend's flowchart has a diamond labeled 'Is the user logged in?' — and THREE arrows are leaving the diamond. What's the problem?",
+    tag: '== vs =',
+    tagColor: '#C7922C',
+    status: 'red',
+    icon: '❌',
+    scenario: "What's wrong with this line of code? <code>IF lives = 0 THEN</code>",
+    code: "IF lives = 0 THEN\n    PRINT \"Game Over\"\nEND IF",
     options: [
-      { text: "Diamonds should have exactly 2 arrows leaving (one YES, one NO)", correct: true, why: "Exactly. Decisions are yes/no — two outcomes, two arrows. Three arrows means the question isn't really yes/no." },
-      { text: "Diamonds should have only 1 arrow leaving", correct: false, why: "If a decision had only 1 arrow, it wouldn't be a decision. There must be 2 paths." },
-      { text: "Diamonds should be replaced with rectangles", correct: false, why: "Rectangles are for actions, not yes/no questions. The diamond is the right shape — the bug is the THREE arrows." },
-      { text: "Nothing — diamonds can have any number of arrows", correct: false, why: "Diamonds always have exactly 2 outgoing arrows. That's the rule that makes them special." }
+      { text: 'Nothing — single = is the right way to check equality', correct: false, why: "In code, a single = is ASSIGN, not COMPARE. To check equality you need ==." },
+      { text: 'It should use == instead of = — single = assigns, double == compares', correct: true, why: "Right! lives = 0 ASSIGNS 0 to lives (changing it!). To CHECK if lives equals 0, use ==." },
+      { text: 'It should use != instead of =', correct: false, why: "!= is \"not equal to\" — that's the OPPOSITE of what the programmer wants." },
+      { text: 'It should use >= instead of =', correct: false, why: ">= is \"greater than or equal to.\" The bug is about == vs =, not about > vs <." }
     ]
   },
   {
     id: 6,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your classmate's flowchart for 'add two numbers' has a parallelogram (Input), a rectangle (sum = a + b), and another parallelogram (Print sum) — but no oval anywhere. What's the problem?",
+    tag: 'IF / ELIF / ELSE',
+    tagColor: '#55C8E8',
+    status: 'green',
+    icon: '🚦',
+    scenario: "Given <code>n = 10</code>, what prints? (Watch the operator carefully!)",
+    code: "IF n > 100 THEN\n    PRINT \"huge\"\nELIF n > 10 THEN\n    PRINT \"medium\"\nELSE\n    PRINT \"small\"\nEND IF",
     options: [
-      { text: "It needs at least one diamond", correct: false, why: "This algorithm doesn't have any decisions, so it doesn't need a diamond. The problem is elsewhere." },
-      { text: "It's missing the START and END terminator ovals", correct: true, why: "Right. Every flowchart needs an oval at the top (START) and an oval at the bottom (END). Without them, where does the flow start or stop?" },
-      { text: "Rectangles can't do math", correct: false, why: "Rectangles are EXACTLY where you put 'sum = a + b' calculations. That part is fine." },
-      { text: "It needs more arrows", correct: false, why: "We don't know how many arrows it has. The clear missing part is the terminator ovals." }
+      { text: '"huge"', correct: false, why: "10 is not > 100." },
+      { text: '"medium"', correct: false, why: "Watch closely — 10 is NOT > 10 (greater than 10). They're equal. The condition uses > not >=, so this branch is skipped." },
+      { text: '"small"', correct: true, why: "Both IF and ELIF are false (10 is not > 100, and 10 is not > 10), so the ELSE catches it. \"small\" prints." },
+      { text: 'Nothing', correct: false, why: "ELSE always runs when every IF/ELIF above it is false — there's always exactly one branch that runs." }
     ]
   },
   {
     id: 7,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
+    tag: 'Nested IF',
+    tagColor: '#67308F',
     status: 'blue',
-    icon: '🔄',
-    scenario: "You see this pseudocode line: <code style='display:inline-block;background:#0a0a14;padding:2px 8px;border-radius:4px;font-family:Consolas,monospace;color:#c8d6e8;font-size:13px;'>PRINT \"Hello!\"</code> — which flowchart shape does it become?",
+    icon: '🧠',
+    scenario: "Given <code>age = 16</code> and <code>hasLicense = true</code>, what prints?",
+    code: "IF age >= 16 THEN\n    IF hasLicense == true THEN\n        PRINT \"Can drive\"\n    ELSE\n        PRINT \"Need license\"\n    END IF\nELSE\n    PRINT \"Too young\"\nEND IF",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for calculations and assignments. PRINT is showing something to the user — that's output." },
-      { text: "Diamond (Decision)", correct: false, why: "There's no yes/no question here — just a print." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! PRINT is showing info to the user — that's the output side of input/output. Parallelogram!" },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START and END — not normal print steps." }
+      { text: '"Can drive"', correct: true, why: "Outer IF: 16 >= 16 is true → enter. Inner IF: hasLicense == true → \"Can drive\" prints." },
+      { text: '"Need license"', correct: false, why: "That branch only runs if hasLicense is FALSE. Here it's true." },
+      { text: '"Too young"', correct: false, why: "That branch only runs when age < 16. Here age = 16, so the outer IF is true." },
+      { text: 'All three messages', correct: false, why: "Nested or not, IF/ELSE always runs exactly one branch at each level." }
     ]
   },
   {
     id: 8,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
-    status: 'blue',
-    icon: '🔄',
-    scenario: "You're translating this pseudocode to a flowchart:<br><br><code style='display:block;background:#0a0a14;padding:14px 16px;border-radius:8px;border:1px solid #1e2a4a;color:#c8d6e8;font-family:Consolas,monospace;font-size:13px;line-height:1.7;margin:8px 0;'>IF age &gt;= 13<br>&nbsp;&nbsp;PRINT \"Welcome!\"<br>ELSE<br>&nbsp;&nbsp;PRINT \"Too young.\"</code>How many DIAMONDS does the flowchart need?",
+    tag: '>= vs >',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '🎲',
+    scenario: "Given <code>x = 5</code>, which branch runs?",
+    code: "IF x >= 5 THEN\n    PRINT \"big enough\"\nELSE\n    PRINT \"too small\"\nEND IF",
     options: [
-      { text: "Zero — IF/ELSE doesn't need a diamond", correct: false, why: "Every IF (or IF/ELSE) is a decision in flowchart-land. That's exactly what diamonds are for." },
-      { text: "One — the IF/ELSE is one yes/no question", correct: true, why: "Exactly. A single IF/ELSE is one decision: 'Is age >= 13?' YES or NO. One diamond, two paths out." },
-      { text: "Two — one for IF, one for ELSE", correct: false, why: "ELSE is just the 'NO' branch from the same diamond — not its own decision. Still one diamond." },
-      { text: "Three — one for IF, one for ELSE, one to merge", correct: false, why: "Merging isn't a decision; the two branches just rejoin with a plain arrow. Still one diamond." }
+      { text: '"big enough"', correct: true, why: "5 >= 5 is TRUE (greater than OR equal to). The IF body runs." },
+      { text: '"too small"', correct: false, why: "Tricky! With >= the equal case is included. 5 >= 5 is true, so ELSE is skipped." },
+      { text: 'Both', correct: false, why: "IF/ELSE never runs both branches." },
+      { text: 'The program errors out', correct: false, why: "Comparing equal numbers with >= is perfectly valid — it returns true." }
     ]
   },
   {
     id: 9,
-    tag: 'Reading Flow',
+    tag: 'IF / ELIF / ELSE',
     tagColor: '#76C043',
     status: 'green',
     icon: '🔍',
-    scenario: "A flowchart for the algorithm 'Is N even?' takes input N = 4. The diamond asks 'Is N % 2 == 0?'. Which output does the flowchart eventually print?",
+    scenario: "Given <code>guess = 42</code> and <code>secret = 42</code>, what prints?",
+    code: "IF guess > secret THEN\n    PRINT \"too high\"\nELIF guess < secret THEN\n    PRINT \"too low\"\nELSE\n    PRINT \"got it!\"\nEND IF",
     options: [
-      { text: "\"Even\"", correct: true, why: "Right! 4 % 2 = 0, so the YES branch is taken, which prints \"Even\"." },
-      { text: "\"Odd\"", correct: false, why: "4 is even — 4 % 2 = 0. The YES branch wins, not the NO branch." },
-      { text: "Both \"Even\" and \"Odd\"", correct: false, why: "A diamond only takes ONE branch — never both. The output is either-or." },
-      { text: "Nothing — the flowchart breaks", correct: false, why: "The flowchart works fine for 4. Trace it carefully: input 4 → diamond YES → print \"Even\" → END." }
+      { text: '"too high"', correct: false, why: "42 is not > 42." },
+      { text: '"too low"', correct: false, why: "42 is not < 42 either." },
+      { text: '"got it!"', correct: true, why: "Both IF and ELIF are false (42 isn't greater or less than 42), so ELSE catches it. The ELSE handles the equal case." },
+      { text: '"too high" and "too low"', correct: false, why: "ELIF chains run AT MOST one branch — and the first one that's true wins." }
     ]
   },
   {
     id: 10,
-    tag: 'Big Picture',
-    tagColor: '#C7922C',
-    status: 'gold',
-    icon: '🎯',
-    scenario: "Why might a programmer draw a FLOWCHART before writing pseudocode or real code?",
+    tag: 'Putting It Together',
+    tagColor: '#55C8E8',
+    status: 'green',
+    icon: '✅',
+    scenario: "Given <code>temperature = 60</code>, what prints? (The boundary case!)",
+    code: "IF temperature > 80 THEN\n    PRINT \"shorts\"\nELIF temperature > 60 THEN\n    PRINT \"jeans\"\nELSE\n    PRINT \"coat\"\nEND IF",
     options: [
-      { text: "To save the file as a JPEG instead of code", correct: false, why: "File format isn't the reason. The flowchart is a thinking tool, not a deliverable." },
-      { text: "Because flowcharts run faster than code", correct: false, why: "Flowcharts don't 'run' at all — they're pictures. Code runs on a computer." },
-      { text: "To see the WHOLE shape of the algorithm at a glance — especially the branches", correct: true, why: "Exactly! Flowcharts make branching visible. You can spot missing paths or unclear decisions BEFORE you've written a single line of code." },
-      { text: "Because Canvas requires it", correct: false, why: "Canvas doesn't care about your tools. Programmers use flowcharts because they HELP, not because they're required." }
+      { text: '"shorts"', correct: false, why: "60 is not > 80." },
+      { text: '"jeans"', correct: false, why: "Sneaky! 60 is NOT > 60 (greater than 60). They're equal. Use >= if you want to include 60." },
+      { text: '"coat"', correct: true, why: "Both 60 > 80 and 60 > 60 are false, so the ELSE runs. To include 60 in \"jeans,\" the code would need ELIF temperature >= 60." },
+      { text: 'All three messages', correct: false, why: "An IF/ELIF/ELSE chain runs exactly one branch — the first one that matches, or ELSE." }
     ]
   }
 ];
@@ -206,13 +216,14 @@ let totalXP = 0;
 let correctCount = 0;
 let answered = false;
 
+// ═════════════════════════════════════════════════════════════
+// RENDERING
+// ═════════════════════════════════════════════════════════════
 const STATUS_COLORS = {
-  red:    '#ff6b6b',
-  amber:  '#F78F1E',
-  green:  '#76C043',
-  blue:   '#55C8E8',
-  purple: '#A78BFA',
-  gold:   '#C7922C'
+  red:   '#ff6b6b',
+  amber: '#F78F1E',
+  green: '#76C043',
+  blue:  '#55C8E8'
 };
 
 function renderQuestion() {
@@ -230,7 +241,8 @@ function renderQuestion() {
       </div>
       <div style="padding:24px;">
         <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Scenario ${q.id}</div>
-        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 14px;">${q.scenario}</p>
+        <pre style="background:#0a0a14;border:1px solid #1e2a4a;border-left:3px solid #55C8E8;border-radius:8px;padding:14px 16px;margin:0 0 22px;color:#e2e8f0;font-family:'Consolas','Menlo','Courier New',monospace;font-size:13.5px;line-height:1.7;overflow-x:auto;white-space:pre;"><code>${q.code}</code></pre>
         <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
         <div id="feedback-zone" style="margin-top:18px;"></div>
       </div>
@@ -334,16 +346,16 @@ function renderResults() {
   const pct = Math.round((totalXP / maxXP) * 100);
   let message, emoji, color;
   if (pct === 100) {
-    message = "Flowchart Detective, badge earned. You can read, write, and debug any chart we throw at you.";
+    message = "Branch master! You can read any conditional and predict the outcome — you're ready for loops next.";
     emoji = "🏆"; color = "#C7922C";
   } else if (pct >= 80) {
-    message = "Excellent work — you've got the five shapes and the flow logic locked in.";
+    message = "Excellent work! You've got the IF/ELIF/ELSE pattern down. Watch those > vs >= operators on the borderline cases.";
     emoji = "⭐"; color = "#76C043";
   } else if (pct >= 60) {
-    message = "Solid progress. Review the missed scenarios, re-read Week 20 (especially the Reading-a-Flowchart section), and try again.";
+    message = "Good progress. Review the scenarios you missed — most slip-ups are about > vs >= or skipping a branch by accident.";
     emoji = "💪"; color = "#55C8E8";
   } else {
-    message = "Keep going! Flowchart shapes take a little practice — re-read the Five Core Shapes section and try again.";
+    message = "Keep going! Re-read the Week 23 lesson on comparison operators and the conditional tracer, then try again.";
     emoji = "📚"; color = "#67308F";
   }
 
@@ -370,6 +382,7 @@ function renderResults() {
     renderQuestion();
   });
 
+  // Canvas grade passback via postMessage
   try {
     window.parent.postMessage({
       type: 'canvas-grade',
@@ -378,11 +391,12 @@ function renderResults() {
       percent: pct,
       correctCount: correctCount,
       totalQuestions: QUESTIONS.length,
-      activity: 'week-20-activity'
+      activity: 'week-23-activity'
     }, '*');
   } catch (e) { /* no-op */ }
 }
 
+// Kick off
 renderQuestion();
 </script>
 

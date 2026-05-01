@@ -1,0 +1,134 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 19 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 19
+  Standards: SC.K12.CTR.1.1, SC.K12.CTR.2.1, SC.K12.CTR.5.1
+  Topic: Introduction to Computational Thinking
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → B
+  Q3 → A
+  Q4 → B
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which of the following BEST describes COMPUTATIONAL THINKING?
+───────────────────────────────────────────────────────────────
+  A) A way to fix broken computers and replace hardware parts
+     ❌ That's computer repair. Computational thinking is a way
+        of thinking about problems, not a hardware skill.
+  B) A method for solving problems by decomposing them, finding
+     patterns, abstracting essentials, and writing clear steps   ✓ CORRECT
+     ✅ Computational thinking is the four-pillar problem-solving
+        toolkit — decomposition, pattern recognition, abstraction,
+        and algorithm design — that works in any language.
+        (SC.K12.CTR.1.1)
+  C) Memorizing the rules of a programming language like Python
+     ❌ Memorizing language rules is one small part of programming.
+        CT is broader — it works BEFORE you ever pick a language.
+  D) Building physical computer hardware in a workshop
+     ❌ Hardware engineering is a different field. CT is about
+        problem-solving, not building physical machines.
+
+───────────────────────────────────────────────────────────────
+Q2. Which scenario shows DECOMPOSITION at work?
+───────────────────────────────────────────────────────────────
+  A) Asking your friend to do the entire research project for you
+     ❌ That's delegation, not decomposition. The big problem
+        hasn't been broken into smaller parts — just handed off.
+  B) Splitting a research project into smaller jobs: pick a topic,
+     gather sources, write a draft, edit, format                  ✓ CORRECT
+     ✅ One big problem becomes five smaller ones, each one easy
+        to start. That's textbook decomposition. (SC.K12.CTR.1.1)
+  C) Writing a long paragraph about the topic without stopping
+     ❌ Writing without stopping isn't breaking the problem down.
+        No smaller pieces have been identified.
+  D) Reading a textbook from front to back without taking notes
+     ❌ Reading is gathering information, not breaking the project
+        into parts. No decomposition happened.
+
+───────────────────────────────────────────────────────────────
+Q3. Why is PATTERN RECOGNITION so useful in computer science?
+───────────────────────────────────────────────────────────────
+  A) It lets you reuse a solution that already works on similar
+     problems                                                     ✓ CORRECT
+     ✅ Once you've spotted the pattern in a problem, you can
+        reuse the same shape of solution on every similar problem
+        — saves time and reduces mistakes. (SC.K12.CTR.2.1)
+  B) It makes the computer's processor physically faster
+     ❌ Pattern recognition is a thinking skill, not a hardware
+        upgrade. Processor speed is a separate physical thing.
+  C) It removes the need to ever write algorithms
+     ❌ Pattern recognition HELPS us write algorithms — it doesn't
+        replace them. You still need clear, ordered steps.
+  D) It hides the bugs in your code so they don't show up
+     ❌ Pattern recognition has nothing to do with hiding bugs.
+        We track bugs by debugging — a different skill (Week 26).
+
+───────────────────────────────────────────────────────────────
+Q4. Which is the BEST example of ABSTRACTION?
+───────────────────────────────────────────────────────────────
+  A) A video game with every detail of a real city — every
+     leaf, brick, and stoplight
+     ❌ That's the OPPOSITE of abstraction — that's keeping every
+        detail. Abstraction throws unimportant details away.
+  B) A subway map that shows only the stations and lines, not
+     real distances or curves                                     ✓ CORRECT
+     ✅ A subway map is the classic example of abstraction: keep
+        the details that matter (lines, stops), drop the ones
+        that don't (real distances, curves). (SC.K12.CTR.5.1)
+  C) Counting every single leaf on a tree before drawing it
+     ❌ Counting every leaf is keeping all the details.
+        Abstraction would be drawing the tree as a green blob
+        and a brown trunk.
+  D) Memorizing every fact about every classmate before a test
+     ❌ Memorizing everything is the opposite of abstraction.
+        Abstraction means keeping only what matters for THIS task.
+
+───────────────────────────────────────────────────────────────
+Q5. Which is NOT a required trait of an algorithm?
+───────────────────────────────────────────────────────────────
+  A) It eventually stops — it is finite
+     ❌ Being finite IS a required trait — an algorithm must
+        eventually stop. So this is a real trait, not the answer.
+  B) It has clear, ordered steps
+     ❌ Clear ordered steps ARE a required trait of every
+        algorithm. So this is a real trait, not the answer.
+  C) It must be written in the Python programming language       ✓ CORRECT
+     ✅ Algorithms are language-INDEPENDENT — you can write the
+        same algorithm as plain steps, in pseudocode, in Python,
+        in JavaScript, or any language. The language is just
+        how we EXPRESS the algorithm. (SC.K12.CTR.1.1)
+  D) It produces an output (an answer, a result, or an action)
+     ❌ Producing an output IS a required trait. So this is a
+        real trait, not the answer.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-19-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 27 — Unit 3 Review: From Idea to Code | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+.objective-num.c5 { background: linear-gradient(135deg, var(--odyssey-orange), #b6660d); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== ARC DIAGRAM (idea → algorithm → code) ========== */
+.arc-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.arc-card svg { max-width: 100%; height: auto; }
+
+/* ========== STEPS / PILLAR CARDS ========== */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 22px 0;
+}
+.pillar-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 18px;
+}
+.pillar-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.pillar-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.pillar-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== COMPARE TWO COLS ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== TYPE-CHIP TABLE ========== */
+.type-table {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.type-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 1.6fr;
+  gap: 0;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px 18px;
+  align-items: center;
+}
+.type-row:last-child { border-bottom: none; }
+.type-row.head {
+  background: var(--binary-blue);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+.type-chip {
+  display: inline-block;
+  font-family: 'Consolas','Menlo',monospace;
+  font-weight: 700;
+  font-size: 14px;
+  background: rgba(85,200,232,0.18);
+  color: var(--dark-bitstream);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.type-example {
+  font-family: 'Consolas','Menlo',monospace;
+  color: var(--binary-blue);
+  font-size: 14px;
+}
+.type-when { color: #4b5563; font-size: 14px; }
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== TRY-IT WIDGET ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+
+/* ========== TRACER WIDGET ========== */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.defined {
+  background: rgba(156,163,175,0.18);
+  box-shadow: inset 3px 0 0 #9ca3af;
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-inputs {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-inputs .tracer-panel-label { color: #6b7280; }
+.tracer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tracer-input-row:last-child { margin-bottom: 0; }
+.tracer-input-row label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  color: var(--binary-blue);
+  width: 18px;
+  font-size: 14px;
+}
+.tracer-input-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+}
+.tracer-input-row input:focus { outline: 2px solid var(--bitstream-blue); border-color: var(--bitstream-blue); }
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 44px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+.tracer-output {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f4128;
+  text-align: center;
+  display: none;
+  animation: outputPop 0.4s ease;
+}
+.tracer-output.show { display: block; }
+@keyframes outputPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== UNIT MAP ========== */
+.unit-map {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.unit-map-row {
+  display: grid;
+  grid-template-columns: 90px 130px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 14px;
+}
+.unit-map-row:last-child { border-bottom: none; }
+.unit-map-week {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  background: var(--bitstream-blue);
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+}
+.unit-map-topic {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 14px;
+}
+.unit-map-take { color: #4b5563; font-size: 14px; line-height: 1.6; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+  .type-row { grid-template-columns: 1fr; gap: 6px; }
+  .unit-map-row { grid-template-columns: 1fr; gap: 4px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 27
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 27: Unit 3 Review — From Idea to Code</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 27 • READING</div>
+  <h1 class="lesson-title">Unit 3 Review — From Idea to Code</h1>
+  <p class="lesson-description">Eight weeks ago you didn't know what an algorithm was. Now you can decompose a problem, draw a flowchart, write Python, and even debug your own bugs. This week we zoom out and look at the whole arc — so you walk into next week's assessment with everything tied together.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Explain the arc</strong> from a real-world idea to an algorithm to running code, naming the major step at each stage.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Apply computational thinking and flowcharts</strong> to break down and diagram a small problem (Weeks 19–20).</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Recognize Python data types, variables, and conditionals</strong> in mixed code (Weeks 21, 23).</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Trace a function call combined with a loop</strong> and predict its output (Weeks 24–25).</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c5">5</div>
+      <div><strong style="color:var(--binary-blue);">Identify the bug type</strong> (syntax, runtime, or logic) and explain the next step in the programming lifecycle (Week 26).</div>
+    </div>
+  </div>
+
+  <!-- ========== UNIT MAP ========== -->
+  <div class="unit-map">
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 19</div>
+      <div class="unit-map-topic">Computational Thinking</div>
+      <div class="unit-map-take">Decompose · Patterns · Abstract · Algorithm — the four moves a programmer makes <em>before</em> writing any code.</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 20</div>
+      <div class="unit-map-topic">Flowcharts</div>
+      <div class="unit-map-take">Ovals (start/end), rectangles (do this), diamonds (decide), parallelograms (in/out). One picture, every path.</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 21</div>
+      <div class="unit-map-topic">Python Variables &amp; Types</div>
+      <div class="unit-map-take">int, float, str, bool. A variable is a labeled box; the TYPE is what fits in the box.</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 22</div>
+      <div class="unit-map-topic">Input &amp; Output</div>
+      <div class="unit-map-take"><code>input()</code> reads text from the user. <code>print()</code> shows a result. Together they let your program talk to a human.</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 23</div>
+      <div class="unit-map-topic">Conditionals (IF / ELIF / ELSE)</div>
+      <div class="unit-map-take">Branches let your code choose. Indentation tells Python what belongs to which branch.</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 24</div>
+      <div class="unit-map-topic">Loops (for &amp; while)</div>
+      <div class="unit-map-take">Loops let your code repeat without copy-pasting. <code>for</code> for known counts, <code>while</code> for "until something happens."</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 25</div>
+      <div class="unit-map-topic">Functions</div>
+      <div class="unit-map-take">A function is a named, reusable block. Define once, call as many times as you want — with different inputs.</div>
+    </div>
+    <div class="unit-map-row">
+      <div class="unit-map-week">WEEK 26</div>
+      <div class="unit-map-topic">Debugging &amp; Lifecycle</div>
+      <div class="unit-map-take">Plan → write → test → fix → repeat. Bugs aren't failure — they're information.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · The Big Picture</div>
+  </div>
+  <h2 class="section-title">From Idea to Algorithm to Code</h2>
+  <div class="read-body">
+    <p>Every programmer — your favorite app developer, the person who built the game you played last night, you — follows the same arc. It starts with a fuzzy idea in someone's head and ends with running code on a screen. The trip in between is what this whole unit was about.</p>
+    <p>The arc has three big stages. You learned them as separate weeks, but they're really one continuous motion:</p>
+  </div>
+
+  <div class="arc-card">
+    <svg width="100%" height="220" viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" style="max-width:720px;">
+      <!-- Stage 1 -->
+      <rect x="20" y="50" width="180" height="120" rx="14" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="110" y="78" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E5568">IDEA</text>
+      <text x="110" y="120" text-anchor="middle" font-size="36">💡</text>
+      <text x="110" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Real-world problem,</text>
+      <text x="110" y="162" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">fuzzy in your head</text>
+
+      <!-- Arrow 1 -->
+      <line x1="210" y1="110" x2="260" y2="110" stroke="#0E1C42" stroke-width="2.5"/>
+      <polygon points="258,103 268,110 258,117" fill="#0E1C42"/>
+      <text x="235" y="98" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="9" font-weight="700" fill="#0E1C42">CT</text>
+
+      <!-- Stage 2 -->
+      <rect x="270" y="50" width="180" height="120" rx="14" fill="#C7922C" opacity="0.18" stroke="#C7922C" stroke-width="2"/>
+      <text x="360" y="78" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#8a6620">ALGORITHM</text>
+      <text x="360" y="120" text-anchor="middle" font-size="36">📋</text>
+      <text x="360" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Pseudocode + flowchart,</text>
+      <text x="360" y="162" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">clear ordered steps</text>
+
+      <!-- Arrow 2 -->
+      <line x1="460" y1="110" x2="510" y2="110" stroke="#0E1C42" stroke-width="2.5"/>
+      <polygon points="508,103 518,110 508,117" fill="#0E1C42"/>
+      <text x="485" y="98" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="9" font-weight="700" fill="#0E1C42">PYTHON</text>
+
+      <!-- Stage 3 -->
+      <rect x="520" y="50" width="180" height="120" rx="14" fill="#76C043" opacity="0.18" stroke="#76C043" stroke-width="2"/>
+      <text x="610" y="78" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">CODE</text>
+      <text x="610" y="120" text-anchor="middle" font-size="36">🐍</text>
+      <text x="610" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Real Python the</text>
+      <text x="610" y="162" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">computer can run</text>
+
+      <text x="360" y="210" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#6b7280">The arc every programmer follows — every single time.</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>Stage 1 — <strong>Idea</strong> — is messy. "I want a program that quizzes me on Spanish vocab." That sentence is too vague for a computer. So you use <span class="key-term">computational thinking</span> to break it apart.</p>
+    <p>Stage 2 — <strong>Algorithm</strong> — is where the idea becomes concrete: ordered steps, written in pseudocode or drawn as a flowchart. Anyone (even a robot) could follow your algorithm and get the same result. Real programmers spend a <em>huge</em> amount of time here. The cleaner this stage, the easier the next one is.</p>
+    <p>Stage 3 — <strong>Code</strong> — is where you translate the algorithm into a real programming language like Python. If your algorithm is solid, this is mostly translation. If your algorithm is shaky, this is where you discover that and have to go back. (That round-trip is normal — we'll cover it in Section 5.)</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">🤔 Think About It</div>
+    <div class="callout-body">
+      <p>Pick something you do most days — like brushing your teeth, packing your lunch, or starting a video game. Right now, that's a Stage 1 idea sitting in your head. What would Stage 2 look like for it? Roughly how many steps would the algorithm have? Where would the first <em>decision</em> happen?</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Computational Thinking + Flowcharts</div>
+  </div>
+  <h2 class="section-title">Stage 1 → Stage 2: turning a fuzzy idea into a clear plan</h2>
+  <div class="read-body">
+    <p>Way back in <strong>Week 19</strong> you met the <span class="key-term">four pillars of computational thinking</span>. They are the four moves your brain makes to turn "I want a program that…" into "here are the steps." Quick refresher:</p>
+  </div>
+
+  <div class="pillar-grid">
+    <div class="pillar-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="pillar-label" style="color: var(--dark-bitstream);">PILLAR 1 · 🧩</div>
+      <div class="pillar-headline">Decomposition</div>
+      <div class="pillar-body">Break a big problem into smaller pieces you can solve one at a time. "Build a quiz app" → guest list of features: questions, answers, scoring, results screen.</div>
+    </div>
+    <div class="pillar-card" style="border-top-color: var(--gateway-gold);">
+      <div class="pillar-label" style="color: var(--gateway-gold);">PILLAR 2 · 🔁</div>
+      <div class="pillar-headline">Pattern Recognition</div>
+      <div class="pillar-body">Notice when two pieces look the same. "Show one question and check the answer" repeats for every question — that's a pattern, and patterns become loops.</div>
+    </div>
+    <div class="pillar-card" style="border-top-color: var(--portal-purple);">
+      <div class="pillar-label" style="color: var(--portal-purple);">PILLAR 3 · 🔍</div>
+      <div class="pillar-headline">Abstraction</div>
+      <div class="pillar-body">Keep what matters, ignore what doesn't. The color of the question text doesn't matter for grading — so don't worry about it yet. Focus on the logic.</div>
+    </div>
+    <div class="pillar-card" style="border-top-color: var(--gamer-green);">
+      <div class="pillar-label" style="color: #3d6522;">PILLAR 4 · 📋</div>
+      <div class="pillar-headline">Algorithm Design</div>
+      <div class="pillar-body">Write the actual ordered steps. This is what a flowchart and pseudocode capture. By now the problem is small enough that the steps almost write themselves.</div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>In <strong>Week 20</strong> you learned how to draw those steps as a <span class="key-term">flowchart</span>. Flowcharts use four simple shapes — and once you know them, you can read or draw a flowchart for any algorithm:</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--dark-bitstream);">SHAPES THAT GO STRAIGHT THROUGH</div>
+      <div class="compare-card-headline">Oval, Rectangle, Parallelogram</div>
+      <ul>
+        <li><strong>Oval</strong> — START or END. Every flowchart has one of each.</li>
+        <li><strong>Rectangle</strong> — a process step. "Add 1 to score." One arrow in, one arrow out.</li>
+        <li><strong>Parallelogram</strong> — input or output. "Get age from user." "Print the result."</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">SHAPE THAT SPLITS THE PATH</div>
+      <div class="compare-card-headline">Diamond</div>
+      <ul>
+        <li><strong>Diamond</strong> — a decision (a yes/no question).</li>
+        <li>Always has <strong>one arrow in</strong> and <strong>two labeled arrows out</strong> (Yes/No or True/False).</li>
+        <li>Diamonds become <code>if</code> statements when you turn the flowchart into Python.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Flowcharts aren't just for programmers. Doctors, pilots, and emergency dispatchers use them every day. When a 911 dispatcher answers a call, they're literally walking down a flowchart: "Is anyone hurt? Yes → ambulance branch. No → next question." The shapes you learned in Week 20 are part of how the world stays organized.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Quick Check</div>
+    <div class="callout-body">
+      <p>You're flowcharting "Buy a snack from the vending machine." Which shape would you use for each of these steps?</p>
+      <ol style="margin-top: 6px; padding-left: 22px;">
+        <li>"Begin" at the top of the chart</li>
+        <li>"Insert dollar bill"</li>
+        <li>"Is enough money inserted?"</li>
+        <li>"Print 'Enjoy your snack!'"</li>
+      </ol>
+      <p style="margin-top:8px; font-style: italic; color: #6b7280;">Answers: 1 — oval, 2 — parallelogram (input), 3 — diamond, 4 — parallelogram (output).</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Python Basics + Logic</div>
+  </div>
+  <h2 class="section-title">Stage 3, Part 1: variables, types, and IF/ELIF/ELSE</h2>
+  <div class="read-body">
+    <p>Once your algorithm is solid, you translate it into Python. The most important things you learned about Python live in two weeks: <strong>Week 21</strong> (variables and types) and <strong>Week 23</strong> (conditionals).</p>
+    <p>A <span class="key-term">variable</span> is a labeled box that holds a value. The label is whatever you choose; the box's <strong>type</strong> tells Python what KIND of thing fits inside it. Types matter — they decide what operations make sense. You can add <code>5 + 3</code>, but you can't add <code>"hello" + 3</code>; one is a number and one is text.</p>
+  </div>
+
+  <div class="type-table">
+    <div class="type-row head">
+      <div>TYPE</div>
+      <div>EXAMPLE</div>
+      <div>USE IT WHEN…</div>
+    </div>
+    <div class="type-row">
+      <div><span class="type-chip">int</span></div>
+      <div class="type-example">age = 12</div>
+      <div class="type-when">…you have a whole number — counts, scores, ages, level numbers.</div>
+    </div>
+    <div class="type-row">
+      <div><span class="type-chip">float</span></div>
+      <div class="type-example">price = 4.99</div>
+      <div class="type-when">…you need a decimal — money, averages, weights, distances.</div>
+    </div>
+    <div class="type-row">
+      <div><span class="type-chip">str</span></div>
+      <div class="type-example">name = "Maya"</div>
+      <div class="type-when">…you have text — anything in quotes, even "100" (a string that LOOKS like a number).</div>
+    </div>
+    <div class="type-row">
+      <div><span class="type-chip">bool</span></div>
+      <div class="type-example">is_open = True</div>
+      <div class="type-when">…you only need True or False — flags, yes/no answers, on/off switches.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The <code>bool</code> type is named after George Boole, an English mathematician from the 1800s. He wrote a book called <em>The Laws of Thought</em> that worked out the math of TRUE and FALSE — almost a hundred years before anyone built a computer. Every <code>if</code> statement you write traces back to him.</p>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>In <strong>Week 23</strong> you learned how to make your code <strong>choose</strong> between paths using <code>if</code>, <code>elif</code>, and <code>else</code>. Here's the rule that trips students up most often: in an <code>if/elif/else</code> chain, <strong>only ONE branch ever runs</strong>. Python checks them top to bottom and stops at the first <code>True</code>. The rest are skipped.</p>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">▶ Conditional review (Week 23)</span>
+<span class="code-comment"># Tells you which lunch line to use based on grade</span>
+grade = 6
+<span class="code-keyword">if</span> grade &lt;= 5:
+    <span class="code-keyword">print</span>(<span class="code-string">"Elementary line"</span>)
+<span class="code-keyword">elif</span> grade &lt;= 8:
+    <span class="code-keyword">print</span>(<span class="code-string">"Middle school line"</span>)
+<span class="code-keyword">else</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"High school line"</span>)
+  </div>
+
+  <div class="read-body">
+    <p>For <code>grade = 6</code>: the first check (<code>grade &lt;= 5</code>) is False, so we skip to the <code>elif</code>. <code>6 &lt;= 8</code> is True — so we print <em>"Middle school line"</em> and the <code>else</code> never runs. If grade had been 11, BOTH the <code>if</code> and <code>elif</code> would fail and the <code>else</code> would catch it.</p>
+    <p>One more thing about logic: notice the difference between <code>=</code> (one equals — <em>assignment</em>, "put this in the box") and <code>==</code> (two equals — <em>comparison</em>, "are these the same?"). Mixing them up is one of the most common bugs in any programmer's life.</p>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Quick Vocab Recap</div>
+    <div class="callout-body">
+      <p><strong>Assignment (<code>=</code>)</strong> — puts a value into a variable. Always changes something.</p>
+      <p><strong>Comparison (<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>)</strong> — asks a question. Always returns a bool (True or False), never changes anything.</p>
+      <p><strong>Indentation</strong> — in Python, the spaces at the start of a line tell Python what code BELONGS to which block. Lining things up isn't decoration; it's structure.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Loops + Functions</div>
+  </div>
+  <h2 class="section-title">Stage 3, Part 2: making code repeat and reusing it</h2>
+  <div class="read-body">
+    <p>By the time you reached <strong>Week 24</strong>, you'd noticed something: a lot of code wants to repeat. Print every score in a list. Ask the user three times. Loop a game until they quit. So you learned <span class="key-term">loops</span> — a way to write a block of code <em>once</em> and tell Python "do that again."</p>
+    <p>You met two kinds: <code>for</code> loops (when you know how many times to repeat) and <code>while</code> loops (when you repeat until something happens). The <code>for</code> loop with <code>range()</code> is the workhorse of beginner Python:</p>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">▶ for loop with range (Week 24)</span>
+<span class="code-keyword">for</span> i <span class="code-keyword">in</span> <span class="code-keyword">range</span>(1, 4):
+    <span class="code-keyword">print</span>(<span class="code-string">"Round"</span>, i)
+<span class="code-comment"># Prints:  Round 1   Round 2   Round 3</span>
+<span class="code-comment"># range(1, 4) gives 1, 2, 3 — STOPS BEFORE 4.</span>
+  </div>
+
+  <div class="read-body">
+    <p>Then in <strong>Week 25</strong> you met <span class="key-term">functions</span>. A function is a named, reusable block of code. You define it once with <code>def</code>; then you can <em>call</em> it as many times as you want — with different inputs each time. The big idea: <strong>defining</strong> a function does NOT run the code inside it. It's like saving a recipe in a cookbook. The recipe doesn't cook anything until somebody actually opens the book and uses it.</p>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">▶ Function definition + call (Week 25)</span>
+<span class="code-keyword">def</span> greet(name):                <span class="code-comment"># DEFINE — doesn't run yet</span>
+    <span class="code-keyword">return</span> <span class="code-string">"Hello, "</span> + name
+
+<span class="code-comment"># Now CALL it three times with different inputs:</span>
+<span class="code-keyword">print</span>(greet(<span class="code-string">"Maya"</span>))           <span class="code-comment"># Hello, Maya</span>
+<span class="code-keyword">print</span>(greet(<span class="code-string">"Sam"</span>))            <span class="code-comment"># Hello, Sam</span>
+<span class="code-keyword">print</span>(greet(<span class="code-string">"You"</span>))            <span class="code-comment"># Hello, You</span>
+  </div>
+
+  <div class="read-body">
+    <p>The real power shows up when you <strong>combine</strong> them — a function that contains a loop, called from another loop. That's how grown-up programs are built. The widget below lets you watch exactly that happen.</p>
+  </div>
+
+  <!-- ========== TRY IT — MINI SYNTHESIS TRACER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">⚡ Try It — Live</div>
+    <div class="try-it-title">Mini Synthesis Tracer — function + loop together</div>
+    <p class="try-it-instructions">Pick a value of <strong>N</strong> (1–10). Then click <strong>Step</strong> to walk through one line at a time. The function-definition lines highlight <span style="color:#6b7280;">gray</span> when Python sees them — defined, but not running. When the program <em>calls</em> <code>sum_to(N)</code>, the gold highlight jumps INTO the function, the loop body repeats N times, and finally the return value flows back to <code>answer</code>. Watch <code>i</code> and <code>total</code> change in the side panel.</p>
+
+    <div class="tracer-grid">
+      <div class="tracer-code" aria-label="Pseudocode display">
+<span class="tracer-line" data-line="0"><span style="color:#55C8E8; font-weight:600;">DEFINE</span> sum_to(n):</span>
+<span class="tracer-line" data-line="1">    <span style="color:#55C8E8; font-weight:600;">SET</span> total = 0</span>
+<span class="tracer-line" data-line="2">    <span style="color:#55C8E8; font-weight:600;">FOR</span> i <span style="color:#55C8E8; font-weight:600;">FROM</span> 1 <span style="color:#55C8E8; font-weight:600;">TO</span> n:</span>
+<span class="tracer-line" data-line="3">        <span style="color:#55C8E8; font-weight:600;">SET</span> total = total + i</span>
+<span class="tracer-line" data-line="4">    <span style="color:#55C8E8; font-weight:600;">RETURN</span> total</span>
+<span class="tracer-line" data-line="5"><span style="color:#55C8E8; font-weight:600;">SET</span> answer = sum_to(N)</span>
+<span class="tracer-line" data-line="6"><span style="color:#55C8E8; font-weight:600;">PRINT</span> answer</span>
+      </div>
+
+      <div class="tracer-side">
+        <div class="tracer-inputs">
+          <div class="tracer-panel-label">Input</div>
+          <div class="tracer-input-row"><label for="tracer-n">N</label><input type="number" id="tracer-n" min="1" max="10" value="4"></div>
+        </div>
+        <div class="tracer-vars">
+          <div class="tracer-panel-label">Variables</div>
+          <div class="tracer-var"><span class="tracer-var-name">N</span><span class="tracer-var-value" id="var-n">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">i</span><span class="tracer-var-value" id="var-i">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">total</span><span class="tracer-var-value" id="var-total">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">answer</span><span class="tracer-var-value" id="var-answer">—</span></div>
+        </div>
+        <div class="tracer-status" id="tracer-status">Ready. Click <strong>Step</strong> or <strong>Run All</strong> to start.</div>
+        <div class="tracer-output" id="tracer-output"></div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="tracer-step">Step ▶</button>
+      <button class="try-it-btn try-it-btn-success" id="tracer-run">Run All ⚡</button>
+      <button class="try-it-btn try-it-btn-secondary" id="tracer-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Try N = 5 and step through it. Watch how the gold highlight <em>enters</em> the function on the call line, runs the loop body 5 times, then jumps BACK out to line 5 carrying the return value. That's the whole reason functions exist: a chunk of work happens "over there," and you only deal with what goes in and what comes out.</p>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Debugging + The Lifecycle</div>
+  </div>
+  <h2 class="section-title">When (not if) something breaks: the programming lifecycle</h2>
+  <div class="read-body">
+    <p>One of the most important things you learned in <strong>Week 26</strong> wasn't a syntax rule — it was a mindset. Real programs almost never work the first time. <span class="key-term">Debugging</span> isn't a sign of failure; it's just part of the job. Every professional programmer in the world spends a huge chunk of their day tracking down bugs.</p>
+    <p>The good news: bugs come in three big flavors, and once you can name the flavor, you usually know how to fix it.</p>
+  </div>
+
+  <div class="pillar-grid">
+    <div class="pillar-card" style="border-top-color: #ef4444;">
+      <div class="pillar-label" style="color: #b91c1c;">BUG TYPE 1 · ⛔</div>
+      <div class="pillar-headline">Syntax Error</div>
+      <div class="pillar-body">Python can't even read your code. You see a red error before anything runs. Usually a typo, a missing colon, mixed-up <code>=</code> vs <code>==</code>, or wrong indentation. The error message tells you the line.</div>
+    </div>
+    <div class="pillar-card" style="border-top-color: var(--odyssey-orange);">
+      <div class="pillar-label" style="color: var(--odyssey-orange);">BUG TYPE 2 · 💥</div>
+      <div class="pillar-headline">Runtime Error</div>
+      <div class="pillar-body">Python starts running, then crashes mid-program. Common causes: dividing by zero, using a variable that doesn't exist yet, or trying to add a string and a number. Read the traceback — it points to the crash line.</div>
+    </div>
+    <div class="pillar-card" style="border-top-color: var(--portal-purple);">
+      <div class="pillar-label" style="color: var(--portal-purple);">BUG TYPE 3 · 🤔</div>
+      <div class="pillar-headline">Logic Error</div>
+      <div class="pillar-body">The trickiest. The program runs all the way to the end with no error — but the answer is WRONG. Python can't help you here; you have to re-read your algorithm. Did you compare with <code>&gt;</code> when you meant <code>&gt;=</code>?</div>
+    </div>
+    <div class="pillar-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="pillar-label" style="color: var(--dark-bitstream);">FIX MOVE · 🛠️</div>
+      <div class="pillar-headline">Print to Investigate</div>
+      <div class="pillar-body">When stuck, drop in <code>print()</code> statements that show the value of variables at key points. You're not "fixing" yet — you're <em>looking</em>. Most bugs reveal themselves once you can see what your variables actually hold.</div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Debugging plugs into a bigger pattern called the <span class="key-term">programming lifecycle</span>. It's not a straight line; it's a loop you walk every time you build something:</p>
+  </div>
+
+  <div class="arc-card">
+    <svg width="100%" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <!-- Plan -->
+      <circle cx="100" cy="60" r="36" fill="#55C8E8" opacity="0.25" stroke="#55C8E8" stroke-width="2"/>
+      <text x="100" y="56" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#0E5568">PLAN</text>
+      <text x="100" y="72" text-anchor="middle" font-size="14">📝</text>
+      <!-- Write -->
+      <circle cx="300" cy="60" r="36" fill="#76C043" opacity="0.25" stroke="#76C043" stroke-width="2"/>
+      <text x="300" y="56" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">WRITE</text>
+      <text x="300" y="72" text-anchor="middle" font-size="14">⌨️</text>
+      <!-- Test -->
+      <circle cx="500" cy="60" r="36" fill="#C7922C" opacity="0.25" stroke="#C7922C" stroke-width="2"/>
+      <text x="500" y="56" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">TEST</text>
+      <text x="500" y="72" text-anchor="middle" font-size="14">🧪</text>
+      <!-- Fix -->
+      <circle cx="500" cy="180" r="36" fill="#F78F1E" opacity="0.25" stroke="#F78F1E" stroke-width="2"/>
+      <text x="500" y="176" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#b6660d">FIX</text>
+      <text x="500" y="192" text-anchor="middle" font-size="14">🔧</text>
+      <!-- Repeat back to plan -->
+      <circle cx="100" cy="180" r="36" fill="#67308F" opacity="0.25" stroke="#67308F" stroke-width="2"/>
+      <text x="100" y="176" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">REPEAT</text>
+      <text x="100" y="192" text-anchor="middle" font-size="14">🔁</text>
+
+      <!-- arrows -->
+      <line x1="140" y1="60" x2="260" y2="60" stroke="#0E1C42" stroke-width="2"/>
+      <polygon points="258,53 268,60 258,67" fill="#0E1C42"/>
+      <line x1="340" y1="60" x2="460" y2="60" stroke="#0E1C42" stroke-width="2"/>
+      <polygon points="458,53 468,60 458,67" fill="#0E1C42"/>
+      <line x1="500" y1="100" x2="500" y2="140" stroke="#0E1C42" stroke-width="2"/>
+      <polygon points="493,138 500,148 507,138" fill="#0E1C42"/>
+      <line x1="460" y1="180" x2="140" y2="180" stroke="#0E1C42" stroke-width="2"/>
+      <polygon points="142,173 132,180 142,187" fill="#0E1C42"/>
+      <line x1="100" y1="140" x2="100" y2="100" stroke="#0E1C42" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="93,102 100,92 107,102" fill="#0E1C42"/>
+
+      <text x="300" y="225" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#6b7280">The lifecycle is a loop, not a straight line — every time you fix something, you go back to test.</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>The first computer "bug" was a real bug. In 1947, a moth got trapped in a giant computer at Harvard called the Mark II — and stopped it from working. Engineers taped the moth into the logbook and wrote "first actual case of bug being found." From that moment on, "debugging" became programmer lingo. (The logbook is still on display at the Smithsonian.)</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p>Match each scenario to the bug type:</p>
+      <ol style="margin-top: 6px; padding-left: 22px;">
+        <li>Your code has <code>if x = 5</code> and Python refuses to run it.</li>
+        <li>Your program runs fine, but tells you that the average of 80, 90, and 100 is 30.</li>
+        <li>Halfway through, your program crashes with "ZeroDivisionError."</li>
+      </ol>
+      <p style="margin-top:8px; font-style: italic; color: #6b7280;">Answers: 1 — syntax error, 2 — logic error, 3 — runtime error.</p>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Putting it all together: that arc from Idea → Algorithm → Code, plus the Plan → Write → Test → Fix → Repeat lifecycle on top, IS Unit 3. Everything else — the syntax of <code>for</code>, the rules of indentation, the difference between <code>=</code> and <code>==</code> — are details that fit inside this big shape. Once you can hold the shape in your head, the details click into place.</p>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Unit 3 Review</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Computational thinking</div>
+      <div class="vocab-def">A way of solving problems by decomposing them, finding patterns, abstracting essentials, and writing clear steps.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Algorithm</div>
+      <div class="vocab-def">A finite, ordered list of steps that solves a problem when followed exactly. The bridge between idea and code.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Flowchart</div>
+      <div class="vocab-def">A picture of an algorithm using ovals, rectangles, diamonds, and parallelograms connected by arrows.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Variable</div>
+      <div class="vocab-def">A labeled box that holds a value. Set with <code>=</code>; you can read or change it as the program runs.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Conditional</div>
+      <div class="vocab-def">An <code>if/elif/else</code> structure that lets a program choose between paths. Only one branch runs.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Loop</div>
+      <div class="vocab-def">A way to repeat a block of code. <code>for</code> loops repeat a known number of times; <code>while</code> loops repeat until a condition becomes false.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Function</div>
+      <div class="vocab-def">A named, reusable block of code. Define once with <code>def</code>, then call it as many times as you want with different inputs.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Debugging</div>
+      <div class="vocab-def">The process of finding and fixing errors in code. Bugs come in three flavors: syntax, runtime, and logic.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Look back at Weeks 19–26. Pick the ONE concept that "clicked" for you the most.</div>
+    <p>Write 4–6 sentences answering all three:</p>
+    <ul>
+      <li>Why did that one stick? What about it actually <strong>made sense</strong> when other things felt slippery?</li>
+      <li>Where might you <strong>USE it outside class</strong> — in a game, a hobby, a chore, a sport, anywhere?</li>
+      <li>If you had to teach a younger sibling first — and could only explain ONE thing about programming — what would it be, and how would you say it?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>Next up: the <strong>Unit 3 Assessment</strong> — 15 questions covering everything you've learned. Bring your computational thinking, your flowcharts, your Python, your loops, and your debugging instincts. You've got this.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Mini Synthesis Tracer (function + loop) ==========
+(function() {
+  const lines = document.querySelectorAll('#tracer-step ~ * .tracer-line, .tracer-line');
+  // Use a stable selector — only this widget's lines:
+  const allLines = document.querySelectorAll('.tracer-code .tracer-line');
+  const status = document.getElementById('tracer-status');
+  const output = document.getElementById('tracer-output');
+  const nInput = document.getElementById('tracer-n');
+  const varN = document.getElementById('var-n');
+  const varI = document.getElementById('var-i');
+  const varTotal = document.getElementById('var-total');
+  const varAnswer = document.getElementById('var-answer');
+  if (!nInput || !allLines.length) return;
+
+  // PROGRAM COUNTER STATES
+  // -1 = not started
+  // 'def' = highlighting function-definition lines (gray) before call
+  // 'call' = at line 5 (the call site)
+  // 'in_fn_init' = inside fn, line 1 (set total=0)
+  // 'in_fn_for_check' = inside fn, line 2 (loop check)
+  // 'in_fn_body' = inside fn, line 3 (total += i)
+  // 'in_fn_return' = inside fn, line 4 (return)
+  // 'after_call' = back to line 5, finishing assignment
+  // 'print' = line 6 (print answer)
+  // 'done'
+
+  let phase = -1;
+  let defStep = 0;
+  let N = 0;
+  let i = 0;
+  let total = 0;
+  let answer = null;
+  let isRunning = false;
+  let runTimer = null;
+
+  function pulse(el) {
+    el.classList.add('updated');
+    setTimeout(() => el.classList.remove('updated'), 600);
+  }
+
+  function clearHighlights() {
+    allLines.forEach(l => l.classList.remove('active', 'defined'));
+  }
+
+  function highlightActive(idx) {
+    clearHighlights();
+    if (allLines[idx]) allLines[idx].classList.add('active');
+  }
+
+  function highlightDefined(idx) {
+    if (allLines[idx]) allLines[idx].classList.add('defined');
+  }
+
+  function executeStep() {
+    let msg = '';
+
+    if (phase === -1) {
+      // First step — read N
+      N = parseInt(nInput.value, 10);
+      if (isNaN(N) || N < 1) N = 1;
+      if (N > 10) N = 10;
+      varN.textContent = N; pulse(varN);
+      // Begin def-highlight phase
+      phase = 'def';
+      defStep = 0;
+      clearHighlights();
+      highlightDefined(0);
+      msg = '<strong>Python sees the function definition.</strong> Lines 1–5 of <code>sum_to</code> are now <em>defined</em> (gray) — but nothing inside them runs yet. We\'re just storing the recipe.';
+    }
+    else if (phase === 'def') {
+      // Walk through gray-highlighting each definition line
+      defStep++;
+      if (defStep <= 4) {
+        highlightDefined(defStep);
+        const labels = [
+          'Line 0: <strong>DEFINE sum_to(n)</strong> — recipe registered.',
+          'Line 1: <strong>SET total = 0</strong> — defined inside the function (gray = not running yet).',
+          'Line 2: <strong>FOR i FROM 1 TO n</strong> — defined (still not running).',
+          'Line 3: <strong>SET total = total + i</strong> — defined (still not running).',
+          'Line 4: <strong>RETURN total</strong> — defined. The recipe is fully stored.'
+        ];
+        msg = labels[defStep];
+      } else {
+        // Move to call site
+        phase = 'call';
+        highlightActive(5);
+        msg = '<strong>Now Python reaches line 5 — the function CALL.</strong> Gold highlight = actually running. We\'re about to jump <em>into</em> sum_to with n = ' + N + '.';
+      }
+    }
+    else if (phase === 'call') {
+      // Jump into the function — first executing line is line 1 (SET total = 0)
+      phase = 'in_fn_init';
+      total = 0;
+      i = 0; // not used yet
+      varTotal.textContent = total; pulse(varTotal);
+      highlightActive(1);
+      msg = '<strong>Inside sum_to.</strong> Line 1: SET total = 0. The function\'s helper variable starts at zero.';
+    }
+    else if (phase === 'in_fn_init') {
+      // Move to loop check, first iteration — i = 1
+      i = 1;
+      varI.textContent = i; pulse(varI);
+      highlightActive(2);
+      phase = 'in_fn_for_check';
+      msg = '<strong>Line 2: FOR i FROM 1 TO ' + N + '.</strong> First iteration — i = 1. Loop runs as long as i &le; ' + N + '.';
+    }
+    else if (phase === 'in_fn_for_check') {
+      // Execute body (line 3)
+      highlightActive(3);
+      total = total + i;
+      varTotal.textContent = total; pulse(varTotal);
+      phase = 'in_fn_body';
+      msg = '<strong>Line 3 (iteration ' + i + ' of ' + N + '): SET total = total + i.</strong> total is now ' + total + '.';
+    }
+    else if (phase === 'in_fn_body') {
+      // Either go back to loop with i+1 or fall out to RETURN
+      if (i < N) {
+        i = i + 1;
+        varI.textContent = i; pulse(varI);
+        highlightActive(2);
+        phase = 'in_fn_for_check';
+        msg = '<strong>Loop check: i is now ' + i + '. Still &le; ' + N + ', so we run the body again.</strong> (Iteration ' + i + ' of ' + N + ').';
+      } else {
+        // Loop done — go to RETURN
+        highlightActive(4);
+        phase = 'in_fn_return';
+        msg = '<strong>Loop finished after ' + N + ' iteration' + (N === 1 ? '' : 's') + '.</strong> Falling through to line 4: RETURN total.';
+      }
+    }
+    else if (phase === 'in_fn_return') {
+      // Return value carried back to line 5
+      const returned = total;
+      answer = returned;
+      varAnswer.textContent = answer; pulse(varAnswer);
+      highlightActive(5);
+      phase = 'after_call';
+      msg = '<strong>RETURN ' + returned + '.</strong> Jumping back out of the function. The return value flows into <code>answer</code>. answer = ' + answer + '.';
+    }
+    else if (phase === 'after_call') {
+      // Move to print line
+      highlightActive(6);
+      phase = 'print';
+      msg = '<strong>Line 6: PRINT answer.</strong> About to display the result.';
+    }
+    else if (phase === 'print') {
+      output.textContent = String(answer);
+      output.classList.add('show');
+      phase = 'done';
+      msg = '<strong>Done! ✨</strong> sum_to(' + N + ') = ' + answer + '. Try a different N — watch how the loop body repeats more or fewer times.';
+      stopRun();
+    }
+
+    status.innerHTML = msg;
+  }
+
+  function step() {
+    if (phase === 'done') return;
+    executeStep();
+  }
+
+  function reset(silent) {
+    clearHighlights();
+    phase = -1;
+    defStep = 0;
+    N = 0; i = 0; total = 0; answer = null;
+    varN.textContent = '—';
+    varI.textContent = '—';
+    varTotal.textContent = '—';
+    varAnswer.textContent = '—';
+    output.classList.remove('show');
+    output.textContent = '';
+    stopRun();
+    if (!silent) {
+      status.innerHTML = 'Ready. Click <strong>Step</strong> or <strong>Run All</strong> to start.';
+    }
+  }
+
+  function startRun() {
+    if (isRunning) return;
+    isRunning = true;
+    function tick() {
+      if (!isRunning) return;
+      if (phase === 'done') { stopRun(); return; }
+      executeStep();
+      if (phase === 'done') { stopRun(); return; }
+      runTimer = setTimeout(tick, 700);
+    }
+    tick();
+  }
+
+  function stopRun() {
+    isRunning = false;
+    if (runTimer) { clearTimeout(runTimer); runTimer = null; }
+  }
+
+  document.getElementById('tracer-step').addEventListener('click', () => {
+    stopRun();
+    step();
+  });
+  document.getElementById('tracer-run').addEventListener('click', () => {
+    if (phase === 'done') reset(true);
+    startRun();
+  });
+  document.getElementById('tracer-reset').addEventListener('click', () => reset(false));
+  nInput.addEventListener('input', () => reset(false));
+})();
+</script>
+
+</body>
+</html>

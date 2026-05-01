@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 19 — Introduction to Computational Thinking | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Sortable list */
+.sortable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sortable-item {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid var(--gateway-gold);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.25s, border-color 0.25s;
+  font-size: 14.5px;
+  color: var(--binary-blue);
+}
+.sortable-item:hover { box-shadow: 0 4px 12px rgba(199,146,44,0.25); }
+.sortable-item.dragging { opacity: 0.4; cursor: grabbing; }
+.sortable-item.drag-over { border-color: var(--bitstream-blue); transform: scale(1.02); }
+.sortable-handle {
+  color: var(--gateway-gold);
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -2px;
+}
+.sortable-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gateway-gold);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.25s;
+}
+.sortable-text { flex: 1; line-height: 1.4; }
+.sortable-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.sortable-arrow {
+  width: 28px;
+  height: 22px;
+  border: none;
+  background: rgba(199,146,44,0.2);
+  color: var(--gateway-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  transition: background 0.15s, color 0.15s;
+}
+.sortable-arrow:hover:not(:disabled) { background: var(--gateway-gold); color: white; }
+.sortable-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.sortable-item.correct {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: var(--gamer-green);
+}
+.sortable-item.correct .sortable-num { background: var(--gamer-green); }
+.sortable-item.correct .sortable-handle { color: var(--gamer-green); }
+.sortable-item.incorrect {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-color: #ef4444;
+}
+.sortable-item.incorrect .sortable-num { background: #ef4444; }
+.sortable-item.incorrect .sortable-handle { color: #ef4444; }
+
+/* Tracer */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-inputs {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-inputs .tracer-panel-label { color: #6b7280; }
+.tracer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tracer-input-row:last-child { margin-bottom: 0; }
+.tracer-input-row label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  color: var(--binary-blue);
+  width: 18px;
+  font-size: 14px;
+}
+.tracer-input-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+}
+.tracer-input-row input:focus { outline: 2px solid var(--bitstream-blue); border-color: var(--bitstream-blue); }
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 44px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+.tracer-output {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f4128;
+  text-align: center;
+  display: none;
+  animation: outputPop 0.4s ease;
+}
+.tracer-output.show { display: block; }
+@keyframes outputPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 19
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 19: Introduction to Computational Thinking</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 19 • READING</div>
+  <h1 class="lesson-title">Introduction to Computational Thinking</h1>
+  <p class="lesson-description">Computers are fast, but they are not clever. They only know how to follow steps. This week, you'll learn the four moves a programmer uses to turn any messy real-world problem into something a computer can actually solve.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Define computational thinking</strong> and name its four pillars: decomposition, pattern recognition, abstraction, and algorithm design.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Decompose</strong> a real-world problem into smaller, manageable parts that can be solved one at a time.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Identify patterns and apply abstraction</strong> to focus on the details that matter and ignore the ones that don't.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Write a simple algorithm</strong> as numbered steps and as <em>pseudocode</em> — the bridge between plain English and real code.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · What Is Computational Thinking?</div>
+  </div>
+  <h2 class="section-title">Thinking like a problem-solver, not a computer</h2>
+  <div class="read-body">
+    <p>Imagine you walked into the kitchen and asked a robot to make you a peanut-butter sandwich. The robot is fast, strong, and follows orders perfectly — but it has never made one before. If you said <em>"just make me a sandwich,"</em> it would freeze. It needs every step spelled out: <em>open the bag, pull out one slice, set it on the plate, pick up the knife…</em></p>
+    <p>That is what programming is like. Computers don't <em>understand</em> problems — they only execute steps you give them. <span class="key-term">Computational thinking</span> is the skill of taking a real-world problem and reshaping it into a form a computer (or any careful step-follower) can actually solve.</p>
+    <p>Computational thinking has <strong>four pillars</strong>. You'll meet them in the sections below — and then use them in everything you build for the rest of this course.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <rect x="20" y="40" width="130" height="120" rx="14" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="85" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E5568">DECOMPOSE</text>
+      <text x="85" y="108" text-anchor="middle" font-size="32">🧩</text>
+      <text x="85" y="142" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Break it down</text>
+
+      <rect x="170" y="40" width="130" height="120" rx="14" fill="#C7922C" opacity="0.18" stroke="#C7922C" stroke-width="2"/>
+      <text x="235" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#8a6620">PATTERNS</text>
+      <text x="235" y="108" text-anchor="middle" font-size="32">🔁</text>
+      <text x="235" y="142" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Spot repetition</text>
+
+      <rect x="320" y="40" width="130" height="120" rx="14" fill="#67308F" opacity="0.18" stroke="#67308F" stroke-width="2"/>
+      <text x="385" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#67308F">ABSTRACT</text>
+      <text x="385" y="108" text-anchor="middle" font-size="32">🔍</text>
+      <text x="385" y="142" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Focus on essentials</text>
+
+      <rect x="470" y="40" width="115" height="120" rx="14" fill="#76C043" opacity="0.18" stroke="#76C043" stroke-width="2"/>
+      <text x="527" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">ALGORITHM</text>
+      <text x="527" y="108" text-anchor="middle" font-size="32">📋</text>
+      <text x="527" y="142" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">Write the steps</text>
+
+      <text x="300" y="190" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-style="italic" fill="#6b7280">The four pillars of computational thinking</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Computational thinking</strong> — a way of solving problems by breaking them down, spotting patterns, focusing on what matters, and writing clear steps.</p>
+      <p><strong>Problem</strong> — the gap between where you are and where you want to be. In computing, the problem is what you're trying to make the computer do.</p>
+      <p><strong>Pillar</strong> — one of the four core skills of computational thinking; you usually need all four together.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Pillar 1 — Decomposition</div>
+  </div>
+  <h2 class="section-title">Big problems are just small problems stacked up</h2>
+  <div class="read-body">
+    <p>Your friend tells you, <em>"Help me plan my birthday party!"</em> If you tried to solve <em>that</em> sentence in one move, your brain would short-circuit. There are too many decisions hiding inside it.</p>
+    <p>So you do what every good problem-solver does — you split it into <span class="key-term">decomposition</span>: smaller pieces you can actually answer one at a time.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Who is coming?</div>
+        <div class="step-body">Make the guest list. This is its own little problem — names, contact info, max number.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Where will it happen?</div>
+        <div class="step-body">Backyard? Bowling alley? Pick a spot, then figure out how to get everyone there.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">What will you eat?</div>
+        <div class="step-body">Pizza? Tacos? Cake flavor? Each food choice is a tiny decision of its own.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">What will you actually do?</div>
+        <div class="step-body">Games, music, movie? Pick one and plan it. Then pick the next one.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>"Plan a birthday party" sounded gigantic. Once you decompose it into <strong>guests, place, food, activities</strong>, each piece is solvable in a few minutes. That's the whole magic of decomposition: it turns the impossible into a checklist.</p>
+    <p>Programmers use the same trick every day. Building a video game? Decompose it into: <em>player movement, enemies, scoring, levels, sounds, save system</em>. Each piece becomes its own small program — and the whole thing becomes possible.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> You've been asked to "make the school cafeteria work better." That's a giant problem. Decompose it into at least <strong>four smaller problems</strong> someone could actually start working on.</p>
+      <p style="font-style:italic; color:#6b7280;">(Hint: think about lines, food choices, seating, cleanup…)</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Pillar 2 — Pattern Recognition</div>
+  </div>
+  <h2 class="section-title">If you've solved one, you can solve a hundred</h2>
+  <div class="read-body">
+    <p>Here's a math word problem: <em>"Maria has 12 apples and gives 4 to her brother. How many does she have left?"</em> Easy — 8.</p>
+    <p>Here's another: <em>"A jar holds 30 marbles. Tomás takes out 11. How many remain?"</em> Easy — 19.</p>
+    <p>The numbers are different. The story is different. But the <span class="key-term">pattern</span> is identical: <strong>start amount − amount removed = answer</strong>. Once you've spotted the pattern, you can solve <em>every</em> problem of that shape — even ones you've never seen before.</p>
+    <p>That move is called <span class="key-term">pattern recognition</span>, and it is everywhere in computer science. Why? Because computers are champions at doing the same thing over and over. If you can describe the pattern <em>once</em>, the computer can run it on a million inputs without breaking a sweat.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">🔍 Same pattern</div>
+      <div class="compare-card-headline">Different stories, same shape</div>
+      <ul>
+        <li>"How many minutes until 3:00?" — same as "subtract current time"</li>
+        <li>"Sort my contacts" — same as "sort my songs"</li>
+        <li>"Find the cheapest sneaker under $50" — same as "find the cheapest pizza"</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--gateway-gold);">
+      <div class="compare-card-label" style="color: var(--gateway-gold);">⚡ Why it matters</div>
+      <div class="compare-card-headline">Reuse beats reinventing</div>
+      <ul>
+        <li>One pattern → many problems solved</li>
+        <li>Less code, fewer mistakes</li>
+        <li>You spot what's <em>really</em> being asked</li>
+        <li>The basis of every loop and function you'll write</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Doctors use pattern recognition every shift. When a patient describes symptoms — fever, sore throat, swollen glands — the doctor isn't seeing it for the first time. They've seen the <strong>shape</strong> of that combination before, and recognizing the pattern lets them act fast.</p>
+      <p>Programmers, doctors, mechanics, and chess masters all share this superpower: they've trained their brains to see the shape underneath the surface details.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Pillar 3 — Abstraction</div>
+  </div>
+  <h2 class="section-title">Throw out the noise, keep the signal</h2>
+  <div class="read-body">
+    <p>Pull up a subway map on your phone. The lines are perfectly straight. The stations are evenly spaced. The whole city is squished into one neat diagram.</p>
+    <p>That map is a lie — and on purpose. A real subway tunnel curves and dips and runs different distances between stops. But for someone trying to get from <em>Station A</em> to <em>Station B</em>, none of that matters. What matters is: <strong>which line do I take, and where do I switch?</strong> The map throws away every detail that doesn't help, and keeps only the ones that do.</p>
+    <p>That move is called <span class="key-term">abstraction</span> — keeping what matters for <em>this</em> problem, and ignoring the rest.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="170" viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <text x="120" y="28" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#6b7280" letter-spacing="2">REAL WORLD</text>
+      <path d="M 30 80 Q 60 50 90 90 T 150 70 T 210 100" fill="none" stroke="#9ca3af" stroke-width="3"/>
+      <circle cx="30" cy="80" r="6" fill="#374151"/>
+      <circle cx="90" cy="90" r="6" fill="#374151"/>
+      <circle cx="150" cy="70" r="6" fill="#374151"/>
+      <circle cx="210" cy="100" r="6" fill="#374151"/>
+      <text x="120" y="135" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">curves, hills, traffic, weather</text>
+      <text x="120" y="151" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">…lots of messy detail</text>
+
+      <line x1="270" y1="85" x2="330" y2="85" stroke="#C7922C" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="330,85 318,79 318,91" fill="#C7922C"/>
+      <text x="300" y="72" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">abstract</text>
+
+      <text x="480" y="28" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#0E5568" letter-spacing="2">SUBWAY MAP</text>
+      <line x1="380" y1="80" x2="580" y2="80" stroke="#55C8E8" stroke-width="4"/>
+      <circle cx="400" cy="80" r="8" fill="white" stroke="#0E5568" stroke-width="2"/>
+      <circle cx="460" cy="80" r="8" fill="white" stroke="#0E5568" stroke-width="2"/>
+      <circle cx="520" cy="80" r="8" fill="white" stroke="#0E5568" stroke-width="2"/>
+      <circle cx="570" cy="80" r="8" fill="white" stroke="#0E5568" stroke-width="2"/>
+      <text x="480" y="135" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">lines, stops, transfers</text>
+      <text x="480" y="151" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">…only what helps you ride</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>You already use abstraction every day. When you ask a friend, <em>"Want to come over?"</em> you abstract away their address, their bus schedule, their parents' work hours — you focus on the one thing that matters for the question: <em>yes or no?</em></p>
+    <p>In programming, abstraction means: when you write a chunk of code called <code>add_to_cart</code>, the rest of your program doesn't need to know <em>how</em> it works inside. It only needs to know what to put in and what to expect out. The messy details stay hidden.</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>An emoji is abstraction in your pocket. The 😂 face stands in for "I think that's hilarious," "I'm laughing nervously," or "I want to keep this conversation light." A real human face has thousands of tiny details — eyebrows, wrinkles, eye color — and the emoji throws nearly all of it away. Yet you understand it instantly.</p>
+      <p>Where else have you noticed abstraction making complicated things simple today?</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Pillar 4 — Algorithms &amp; Pseudocode</div>
+  </div>
+  <h2 class="section-title">Step-by-step: the language of getting things done</h2>
+  <div class="read-body">
+    <p>Once you've decomposed the problem, recognized its pattern, and abstracted away the noise, the last move is to write down a clear set of steps. That's an <span class="key-term">algorithm</span> — a finite list of instructions that, if followed exactly, solves the problem.</p>
+    <p>You already follow algorithms all the time. A recipe is an algorithm. Brushing your teeth is an algorithm. The morning routine to get out the door for school is an algorithm. They all share the same four traits:</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">📥 Input</div>
+      <div class="trait-body">What you start with — ingredients, numbers, a player's name.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">⚙️ Steps</div>
+      <div class="trait-body">A clear, ordered list. No skipping. No guessing.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">📤 Output</div>
+      <div class="trait-body">What you end up with — the cake, the answer, the high score.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: #3d6522;">🛑 Finite</div>
+      <div class="trait-body">It eventually <em>stops</em>. An algorithm that runs forever is broken.</div>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — SANDWICH SORTABLE ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🧩 Try It</div>
+    <div class="try-it-title">Sort the Sandwich Algorithm</div>
+    <p class="try-it-instructions">Remember our robot from Section 1? Here are the steps it needs to make a peanut-butter sandwich — but they've been scrambled. <strong>Drag the cards</strong> (or use the ▲▼ arrows) to put them in the right order, then click <strong>Check My Order</strong>.</p>
+    <ol id="sandwich-list" class="sortable-list"></ol>
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="check-sandwich">Check My Order</button>
+      <button class="try-it-btn try-it-btn-secondary" id="shuffle-sandwich">Shuffle &amp; Try Again</button>
+    </div>
+    <div class="try-it-feedback" id="sandwich-feedback"></div>
+  </div>
+
+  <div class="read-body">
+    <p>Nice — you just wrote (well, ordered) your first algorithm. Programmers don't usually jump straight from <em>"I have an idea"</em> to <em>"here is the working code,"</em> though. That gap is too wide. Instead they pause in the middle and write <span class="key-term">pseudocode</span> — an English-flavored sketch of the algorithm. Pseudocode isn't real code. It won't run on a computer. Its only job is to let <em>you</em> think clearly before you start typing.</p>
+    <p>Here's pseudocode for an algorithm that finds the largest of three numbers — and the cool part? <strong>You can run it yourself</strong>, line by line, right below.</p>
+  </div>
+
+  <!-- ========== TRY IT — LIVE PSEUDOCODE TRACER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">⚡ Try It — Live</div>
+    <div class="try-it-title">Run the Algorithm Yourself</div>
+    <p class="try-it-instructions">Pick three numbers, then click <strong>Step</strong> to walk through one line at a time — or <strong>Run All</strong> to watch it go on its own. The yellow highlight shows the current line. The side panel shows what each variable holds <em>right now</em>. When an <code>IF</code> is false, the next line gets crossed out — because the computer skips it.</p>
+
+    <div class="tracer-grid">
+      <div class="tracer-code" aria-label="Pseudocode display">
+<span class="tracer-line" data-line="0"><span style="color:#9ca3af; font-style: italic;">// Inputs: three numbers a, b, c</span></span>
+<span class="tracer-line" data-line="1"><span style="color:#55C8E8; font-weight:600;">SET</span> largest = a</span>
+<span class="tracer-line" data-line="2"><span style="color:#55C8E8; font-weight:600;">IF</span> b &gt; largest <span style="color:#55C8E8; font-weight:600;">THEN</span></span>
+<span class="tracer-line" data-line="3">    <span style="color:#55C8E8; font-weight:600;">SET</span> largest = b</span>
+<span class="tracer-line" data-line="4"><span style="color:#55C8E8; font-weight:600;">IF</span> c &gt; largest <span style="color:#55C8E8; font-weight:600;">THEN</span></span>
+<span class="tracer-line" data-line="5">    <span style="color:#55C8E8; font-weight:600;">SET</span> largest = c</span>
+<span class="tracer-line" data-line="6"><span style="color:#55C8E8; font-weight:600;">PRINT</span> <span style="color:#C7922C;">"The biggest number is"</span>, largest</span>
+      </div>
+
+      <div class="tracer-side">
+        <div class="tracer-inputs">
+          <div class="tracer-panel-label">Inputs</div>
+          <div class="tracer-input-row"><label for="tracer-a">a</label><input type="number" id="tracer-a" value="7"></div>
+          <div class="tracer-input-row"><label for="tracer-b">b</label><input type="number" id="tracer-b" value="12"></div>
+          <div class="tracer-input-row"><label for="tracer-c">c</label><input type="number" id="tracer-c" value="4"></div>
+        </div>
+        <div class="tracer-vars">
+          <div class="tracer-panel-label">Variables</div>
+          <div class="tracer-var"><span class="tracer-var-name">a</span><span class="tracer-var-value" id="var-a">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">b</span><span class="tracer-var-value" id="var-b">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">c</span><span class="tracer-var-value" id="var-c">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">largest</span><span class="tracer-var-value" id="var-largest">—</span></div>
+        </div>
+        <div class="tracer-status" id="tracer-status">Ready. Click <strong>Step</strong> or <strong>Run All</strong> to start.</div>
+        <div class="tracer-output" id="tracer-output"></div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="tracer-step">Step ▶</button>
+      <button class="try-it-btn try-it-btn-success" id="tracer-run">Run All ⚡</button>
+      <button class="try-it-btn try-it-btn-secondary" id="tracer-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice — you don't need to know any real programming language to read that. The capitalized words (<strong>SET, IF, THEN, PRINT</strong>) just stand for "this is a command." Once you have pseudocode this clean, translating it into Python or JavaScript is the easy part. <strong>Try changing the inputs above</strong> — what happens when all three numbers are the same? When <em>a</em> is biggest? See if you can predict the path before you click Run.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The word <strong>algorithm</strong> comes from the name of a 9th-century Persian mathematician — al-Khwārizmī — who wrote one of the first systematic books on solving problems with steps. His name was Latinized into <em>Algorithmi</em>, and the word stuck for over a thousand years.</p>
+      <p>Every time you say "algorithm," you're quietly honoring a scholar who lived more than 1,200 years before the first computer was even imagined.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 19</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Computational thinking</div>
+      <div class="vocab-def">A way of solving problems by decomposing them, finding patterns, abstracting essentials, and writing clear steps.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Decomposition</div>
+      <div class="vocab-def">Breaking a big problem into smaller parts that can each be solved on their own.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Pattern recognition</div>
+      <div class="vocab-def">Spotting similarities between different problems so you can reuse a solution that already works.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Abstraction</div>
+      <div class="vocab-def">Keeping the details that matter for the problem and ignoring the ones that don't.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Algorithm</div>
+      <div class="vocab-def">A finite, ordered list of steps that solves a problem when followed exactly.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Pseudocode</div>
+      <div class="vocab-def">A plain-English sketch of an algorithm — easy for humans to read, not yet a real programming language.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Input</div>
+      <div class="vocab-def">The information an algorithm starts with — like the numbers, names, or text you feed in.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Output</div>
+      <div class="vocab-def">The result an algorithm produces after the steps are followed — the answer, the picture, the score.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Pick a daily routine you already do — and decompose it.</div>
+    <p>Choose <strong>one</strong> thing you do almost every day (getting ready for school, packing your backpack, making a snack — your call). Then answer in 4–6 sentences:</p>
+    <ul>
+      <li>Decompose the routine into <strong>at least four smaller steps</strong>.</li>
+      <li>What detail do you usually <strong>abstract away</strong> because it doesn't matter?</li>
+      <li>Where does a <strong>pattern</strong> in your routine repeat from one day to the next?</li>
+      <li>If a robot had to do this routine for you, which step do you think would trip it up the most?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 20</strong>, you'll turn your written algorithms into <em>flowcharts</em> — pictures with arrows, diamonds, and rectangles that show exactly how a program flows from one step to the next. They're the bridge between an idea on paper and real code.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Sandwich Sortable ==========
+(function() {
+  const correctSteps = [
+    "Open the bread bag",
+    "Take out two slices of bread",
+    "Open the peanut butter jar",
+    "Spread peanut butter on one slice",
+    "Press the two slices together",
+    "Eat your sandwich!"
+  ];
+  const list = document.getElementById('sandwich-list');
+  const feedback = document.getElementById('sandwich-feedback');
+  if (!list || !feedback) return;
+  let order = [];
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    if (a.every((v, i) => v === arr[i])) {
+      [a[0], a[1]] = [a[1], a[0]];
+    }
+    return a;
+  }
+
+  function render() {
+    list.innerHTML = '';
+    order.forEach((text, idx) => {
+      const li = document.createElement('li');
+      li.className = 'sortable-item';
+      li.draggable = true;
+      const handle = document.createElement('span');
+      handle.className = 'sortable-handle';
+      handle.setAttribute('aria-hidden', 'true');
+      handle.textContent = '⋮⋮';
+      const num = document.createElement('span');
+      num.className = 'sortable-num';
+      num.textContent = (idx + 1);
+      const txt = document.createElement('span');
+      txt.className = 'sortable-text';
+      txt.textContent = text;
+      const arrows = document.createElement('span');
+      arrows.className = 'sortable-arrows';
+      const upBtn = document.createElement('button');
+      upBtn.className = 'sortable-arrow';
+      upBtn.dataset.dir = 'up';
+      upBtn.setAttribute('aria-label', 'Move up');
+      upBtn.textContent = '▲';
+      const downBtn = document.createElement('button');
+      downBtn.className = 'sortable-arrow';
+      downBtn.dataset.dir = 'down';
+      downBtn.setAttribute('aria-label', 'Move down');
+      downBtn.textContent = '▼';
+      arrows.appendChild(upBtn);
+      arrows.appendChild(downBtn);
+      li.appendChild(handle);
+      li.appendChild(num);
+      li.appendChild(txt);
+      li.appendChild(arrows);
+      list.appendChild(li);
+    });
+    attachHandlers();
+    updateArrowDisabled();
+  }
+
+  function updateArrowDisabled() {
+    const items = list.querySelectorAll('.sortable-item');
+    items.forEach((item, i) => {
+      item.querySelector('[data-dir="up"]').disabled = (i === 0);
+      item.querySelector('[data-dir="down"]').disabled = (i === items.length - 1);
+    });
+  }
+
+  let dragSrc = null;
+
+  function attachHandlers() {
+    const items = list.querySelectorAll('.sortable-item');
+    items.forEach(item => {
+      item.addEventListener('dragstart', (e) => {
+        dragSrc = item;
+        item.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      item.addEventListener('dragend', () => {
+        item.classList.remove('dragging');
+        list.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+      });
+      item.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        if (item !== dragSrc) item.classList.add('drag-over');
+      });
+      item.addEventListener('dragleave', () => item.classList.remove('drag-over'));
+      item.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (item !== dragSrc && dragSrc) {
+          const items2 = Array.from(list.querySelectorAll('.sortable-item'));
+          const srcIdx = items2.indexOf(dragSrc);
+          const tgtIdx = items2.indexOf(item);
+          const moved = order.splice(srcIdx, 1)[0];
+          order.splice(tgtIdx, 0, moved);
+          feedback.classList.remove('show');
+          render();
+        }
+      });
+      item.querySelector('[data-dir="up"]').addEventListener('click', () => {
+        const idx = Array.from(list.children).indexOf(item);
+        if (idx > 0) {
+          [order[idx], order[idx - 1]] = [order[idx - 1], order[idx]];
+          feedback.classList.remove('show');
+          render();
+        }
+      });
+      item.querySelector('[data-dir="down"]').addEventListener('click', () => {
+        const idx = Array.from(list.children).indexOf(item);
+        if (idx < order.length - 1) {
+          [order[idx], order[idx + 1]] = [order[idx + 1], order[idx]];
+          feedback.classList.remove('show');
+          render();
+        }
+      });
+    });
+  }
+
+  function check() {
+    const items = list.querySelectorAll('.sortable-item');
+    let allCorrect = true;
+    let correctCount = 0;
+    items.forEach((item, i) => {
+      item.classList.remove('correct', 'incorrect');
+      if (order[i] === correctSteps[i]) {
+        item.classList.add('correct');
+        correctCount++;
+      } else {
+        item.classList.add('incorrect');
+        allCorrect = false;
+      }
+    });
+    feedback.classList.add('show');
+    if (allCorrect) {
+      feedback.className = 'try-it-feedback show success';
+      feedback.innerHTML = '🎉 <strong>Perfect!</strong> Every step is in the right place. Your robot can finally make the sandwich — and you just wrote your first algorithm.';
+    } else {
+      feedback.className = 'try-it-feedback show warn';
+      feedback.innerHTML = '⚠️ <strong>Not quite — ' + correctCount + ' of 6 in the right spot.</strong> Green cards are correct. Move the red ones around and try again.';
+    }
+  }
+
+  function reset() {
+    order = shuffle(correctSteps);
+    render();
+    feedback.classList.remove('show');
+  }
+
+  document.getElementById('check-sandwich').addEventListener('click', check);
+  document.getElementById('shuffle-sandwich').addEventListener('click', reset);
+  reset();
+})();
+
+// ========== Pseudocode Tracer ==========
+(function() {
+  const aInput = document.getElementById('tracer-a');
+  const bInput = document.getElementById('tracer-b');
+  const cInput = document.getElementById('tracer-c');
+  const status = document.getElementById('tracer-status');
+  const output = document.getElementById('tracer-output');
+  const lines = document.querySelectorAll('.tracer-line');
+  const varA = document.getElementById('var-a');
+  const varB = document.getElementById('var-b');
+  const varC = document.getElementById('var-c');
+  const varLargest = document.getElementById('var-largest');
+  if (!aInput || !lines.length) return;
+
+  let pc = -1;          // -1 = not started, -2 = done; otherwise = line index to execute
+  let largest = null;
+  let a, b, c;
+  let isRunning = false;
+  let runTimer = null;
+
+  function pulse(el) {
+    el.classList.add('updated');
+    setTimeout(() => el.classList.remove('updated'), 600);
+  }
+
+  function highlightLine(idx) {
+    lines.forEach(l => l.classList.remove('active'));
+    if (idx >= 0 && idx < lines.length) {
+      lines[idx].classList.add('active');
+    }
+  }
+
+  function executeCurrentLine() {
+    if (pc < 0) return;
+    highlightLine(pc);
+    let msg = '';
+    let nextPc;
+    switch (pc) {
+      case 0:
+        a = parseInt(aInput.value, 10) || 0;
+        b = parseInt(bInput.value, 10) || 0;
+        c = parseInt(cInput.value, 10) || 0;
+        varA.textContent = a; pulse(varA);
+        varB.textContent = b; pulse(varB);
+        varC.textContent = c; pulse(varC);
+        msg = '<strong>Reading the inputs.</strong> a = ' + a + ', b = ' + b + ', c = ' + c + '. Time to find the biggest!';
+        nextPc = 1;
+        break;
+      case 1:
+        largest = a;
+        varLargest.textContent = largest; pulse(varLargest);
+        msg = '<strong>SET largest = a.</strong> Start by guessing <em>a</em> (' + a + ') is the biggest. We can change our mind if we see something bigger.';
+        nextPc = 2;
+        break;
+      case 2:
+        if (b > largest) {
+          msg = '<strong>IF b &gt; largest:</strong> is ' + b + ' &gt; ' + largest + '? <strong style="color:#3d6522;">YES</strong> — run the next line.';
+          nextPc = 3;
+        } else {
+          msg = '<strong>IF b &gt; largest:</strong> is ' + b + ' &gt; ' + largest + '? <strong style="color:#dc2626;">NO</strong> — skip the next line.';
+          lines[3].classList.add('skipped');
+          nextPc = 4;
+        }
+        break;
+      case 3:
+        largest = b;
+        varLargest.textContent = largest; pulse(varLargest);
+        msg = '<strong>SET largest = b.</strong> Updated! Largest is now ' + largest + '.';
+        nextPc = 4;
+        break;
+      case 4:
+        if (c > largest) {
+          msg = '<strong>IF c &gt; largest:</strong> is ' + c + ' &gt; ' + largest + '? <strong style="color:#3d6522;">YES</strong> — run the next line.';
+          nextPc = 5;
+        } else {
+          msg = '<strong>IF c &gt; largest:</strong> is ' + c + ' &gt; ' + largest + '? <strong style="color:#dc2626;">NO</strong> — skip the next line.';
+          lines[5].classList.add('skipped');
+          nextPc = 6;
+        }
+        break;
+      case 5:
+        largest = c;
+        varLargest.textContent = largest; pulse(varLargest);
+        msg = '<strong>SET largest = c.</strong> Updated! Largest is now ' + largest + '.';
+        nextPc = 6;
+        break;
+      case 6:
+        output.textContent = '"The biggest number is ' + largest + '"';
+        output.classList.add('show');
+        msg = '<strong>PRINT the answer.</strong> Done! ✨ Try different inputs and watch the path change.';
+        nextPc = -2;
+        break;
+    }
+    status.innerHTML = msg;
+    pc = nextPc;
+    if (pc === -2) stopRun();
+  }
+
+  function step() {
+    if (pc === -2) return;
+    if (pc === -1) pc = 0;
+    executeCurrentLine();
+  }
+
+  function reset(silent) {
+    lines.forEach(l => l.classList.remove('active', 'skipped'));
+    pc = -1;
+    largest = null;
+    varA.textContent = '—';
+    varB.textContent = '—';
+    varC.textContent = '—';
+    varLargest.textContent = '—';
+    output.classList.remove('show');
+    output.textContent = '';
+    stopRun();
+    if (!silent) {
+      status.innerHTML = 'Ready. Click <strong>Step</strong> or <strong>Run All</strong> to start.';
+    }
+  }
+
+  function startRun() {
+    if (isRunning) return;
+    isRunning = true;
+    if (pc === -1) pc = 0;
+    function tick() {
+      if (!isRunning) return;
+      if (pc === -2) { stopRun(); return; }
+      executeCurrentLine();
+      if (pc === -2) { stopRun(); return; }
+      runTimer = setTimeout(tick, 900);
+    }
+    tick();
+  }
+
+  function stopRun() {
+    isRunning = false;
+    if (runTimer) { clearTimeout(runTimer); runTimer = null; }
+  }
+
+  document.getElementById('tracer-step').addEventListener('click', () => {
+    stopRun();
+    step();
+  });
+  document.getElementById('tracer-run').addEventListener('click', () => {
+    if (pc === -2) reset(true);
+    startRun();
+  });
+  document.getElementById('tracer-reset').addEventListener('click', () => reset(false));
+  [aInput, bInput, cInput].forEach(inp => inp.addEventListener('input', () => reset(false)));
+})();
+</script>
+
+</body>
+</html>

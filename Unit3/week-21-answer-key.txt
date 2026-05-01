@@ -1,0 +1,129 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 21 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 3 · Week 21
+  Standard: SC.6.PE.1.1 — Python Basics: Data Types & Variables
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → C
+  Q4 → A
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. In Python, what is a VARIABLE?
+───────────────────────────────────────────────────────────────
+  A) A math problem the computer has to solve
+     ❌ Variables don't run calculations on their own — they
+        store values for later use.
+  B) A labeled box that stores a value the program can use later  ✓ CORRECT
+     ✅ A variable is a name (the label) attached to a value
+        (the contents). The contents can change as the program
+        runs. (SC.6.PE.1.1)
+  C) A built-in Python function for printing text
+     ❌ That describes print(), not a variable.
+  D) Another word for a comment in the code
+     ❌ Comments start with # and are ignored by Python — that's
+        not a variable.
+
+───────────────────────────────────────────────────────────────
+Q2. In Python, what does the ASSIGNMENT OPERATOR (=) do?
+───────────────────────────────────────────────────────────────
+  A) It checks whether two values are equal
+     ❌ That's the EQUALITY operator, written ==. The single =
+        is different.
+  B) It performs subtraction
+     ❌ That's the - operator. The = sign isn't math.
+  C) It stores the value on the right into the variable on the left  ✓ CORRECT
+     ✅ Read = as "gets the value of." score = 10 means "the
+        variable score gets the value 10." (SC.6.PE.1.1)
+  D) It deletes the variable
+     ❌ Python doesn't delete a variable just by writing =. The
+        del keyword is for that — but you don't need it yet.
+
+───────────────────────────────────────────────────────────────
+Q3. What data type is the literal value "3.14" in Python?
+    (Pay close attention to the quotes!)
+───────────────────────────────────────────────────────────────
+  A) float
+     ❌ Without quotes, 3.14 would be a float. With quotes, it's
+        text — Python doesn't peek inside the quotes to check.
+  B) int
+     ❌ ints are whole numbers. "3.14" has a decimal point AND
+        is wrapped in quotes — neither fits int.
+  C) string (str)                                                 ✓ CORRECT
+     ✅ Anything wrapped in quotes is a string, even if the
+        characters inside happen to look like a number.
+        (SC.6.PE.1.1)
+  D) bool
+     ❌ Booleans only hold True or False. "3.14" is neither.
+
+───────────────────────────────────────────────────────────────
+Q4. Python runs:
+        x = "Code"
+        y = "Quest"
+        print(x + y)
+    What appears on the screen?
+───────────────────────────────────────────────────────────────
+  A) CodeQuest                                                    ✓ CORRECT
+     ✅ When + is used between two strings, Python CONCATENATES
+        them — sticks them end-to-end with no space. The result
+        is a string. (SC.6.PE.1.1)
+  B) Code Quest (with a space between)
+     ❌ Python doesn't add a space when you use +. The strings
+        join exactly as they are.
+  C) An error — you can't add strings
+     ❌ You can. For strings, + means "join together" rather
+        than "add up numerically."
+  D) Code+Quest
+     ❌ The + is the instruction, not part of the result. It
+        disappears when Python builds the joined string.
+
+───────────────────────────────────────────────────────────────
+Q5. Why do programmers use DESCRIPTIVE variable names like
+    high_score instead of single letters like x?
+───────────────────────────────────────────────────────────────
+  A) Python runs descriptive names faster
+     ❌ Variable names don't change how fast the code runs.
+        Python treats x and high_score the same speed-wise.
+  B) Single-letter names break the assignment operator
+     ❌ Single letters like x are perfectly LEGAL in Python —
+        they're just hard for humans to read.
+  C) Descriptive names make code easier to read and understand
+     later for yourself and others                                ✓ CORRECT
+     ✅ Code is read way more often than it's written. A name
+        like high_score tells future-you (and your teammates)
+        exactly what's in the box. (SC.6.PE.1.1)
+  D) Python won't accept variable names shorter than three letters
+     ❌ Python is fine with one-letter names. The community
+        just discourages them because they're unclear.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-21-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

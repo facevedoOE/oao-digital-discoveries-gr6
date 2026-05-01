@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 25 — Functions &amp; Modular Programming | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Sortable list */
+.sortable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sortable-item {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid var(--gateway-gold);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.25s, border-color 0.25s;
+  font-size: 14.5px;
+  color: var(--binary-blue);
+}
+.sortable-item:hover { box-shadow: 0 4px 12px rgba(199,146,44,0.25); }
+.sortable-item.dragging { opacity: 0.4; cursor: grabbing; }
+.sortable-item.drag-over { border-color: var(--bitstream-blue); transform: scale(1.02); }
+.sortable-handle {
+  color: var(--gateway-gold);
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -2px;
+}
+.sortable-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gateway-gold);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.25s;
+}
+.sortable-text { flex: 1; line-height: 1.4; }
+.sortable-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.sortable-arrow {
+  width: 28px;
+  height: 22px;
+  border: none;
+  background: rgba(199,146,44,0.2);
+  color: var(--gateway-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  transition: background 0.15s, color 0.15s;
+}
+.sortable-arrow:hover:not(:disabled) { background: var(--gateway-gold); color: white; }
+.sortable-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.sortable-item.correct {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: var(--gamer-green);
+}
+.sortable-item.correct .sortable-num { background: var(--gamer-green); }
+.sortable-item.correct .sortable-handle { color: var(--gamer-green); }
+.sortable-item.incorrect {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-color: #ef4444;
+}
+.sortable-item.incorrect .sortable-num { background: #ef4444; }
+.sortable-item.incorrect .sortable-handle { color: #ef4444; }
+
+/* Tracer */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-inputs {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-inputs .tracer-panel-label { color: #6b7280; }
+.tracer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tracer-input-row:last-child { margin-bottom: 0; }
+.tracer-input-row label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  color: var(--binary-blue);
+  width: 18px;
+  font-size: 14px;
+}
+.tracer-input-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+}
+.tracer-input-row input:focus { outline: 2px solid var(--bitstream-blue); border-color: var(--bitstream-blue); }
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 44px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+.tracer-output {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f4128;
+  text-align: center;
+  display: none;
+  animation: outputPop 0.4s ease;
+}
+.tracer-output.show { display: block; }
+@keyframes outputPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== FUNCTION CALLER WIDGET ========== */
+.fc-stage {
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 6px;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+.fc-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.fc-select, .fc-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+  min-width: 70px;
+}
+.fc-select { font-family: var(--font-text); min-width: 200px; font-weight: 600; }
+.fc-input:focus, .fc-select:focus {
+  outline: 2px solid var(--bitstream-blue);
+  border-color: var(--bitstream-blue);
+}
+.fc-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fc-input-label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--binary-blue);
+}
+.fc-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 4px;
+}
+.fc-zone {
+  background: white;
+  border: 2px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 14px 10px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+}
+.fc-zone-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.fc-arrow {
+  font-size: 22px;
+  color: #9ca3af;
+  font-weight: 700;
+  transition: color 0.3s, transform 0.3s;
+}
+.fc-arrow.lit { color: var(--gateway-gold); transform: scale(1.25); }
+.fc-box {
+  background: linear-gradient(135deg, var(--portal-purple), #3d1c59);
+  color: white;
+  border-radius: 12px;
+  padding: 18px 12px;
+  text-align: center;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 6px 18px rgba(103,48,143,0.30);
+  position: relative;
+  transition: transform 0.25s;
+}
+.fc-box.thinking { animation: fcPulse 0.9s ease-in-out infinite; }
+@keyframes fcPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 6px 18px rgba(103,48,143,0.30); }
+  50% { transform: scale(1.04); box-shadow: 0 10px 28px rgba(103,48,143,0.55); }
+}
+.fc-box-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+.fc-box-name {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  word-break: break-all;
+}
+.fc-token {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(85,200,232,0.30);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.fc-token.return-token {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  box-shadow: 0 3px 10px rgba(118,192,67,0.30);
+}
+.fc-zone.return-zone {
+  border-color: var(--gamer-green);
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
+.fc-zone.input-zone {
+  border-color: var(--bitstream-blue);
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+}
+.fc-signature {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 13.5px;
+  background: var(--binary-blue);
+  color: var(--bitstream-blue);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.fc-signature .fc-kw { color: var(--bitstream-blue); font-weight: 700; }
+.fc-signature .fc-fn { color: var(--gateway-gold); font-weight: 700; }
+.fc-signature .fc-arg { color: white; }
+.fc-status-line {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-top: 12px;
+  min-height: 40px;
+}
+.fc-status-line strong { color: var(--binary-blue); }
+@keyframes fcFlyRight {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(calc(50% + 90px)); opacity: 0; }
+}
+@keyframes fcFlyOut {
+  0% { transform: translateX(0) scale(0.8); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(calc(50% + 90px)) scale(1); opacity: 1; }
+}
+.fc-token.flying { animation: fcFlyRight 0.7s ease forwards; }
+.fc-token.flying-out { animation: fcFlyOut 0.7s ease forwards; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+  .fc-flow { grid-template-columns: 1fr; }
+  .fc-arrow { transform: rotate(90deg); }
+  .fc-arrow.lit { transform: rotate(90deg) scale(1.25); }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 25
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 25: Functions &amp; Modular Programming</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 25 • READING</div>
+  <h1 class="lesson-title">Functions &amp; Modular Programming</h1>
+  <p class="lesson-description">If you ever find yourself copy-pasting the same chunk of code over and over, your computer is trying to tell you something: <em>stop</em>. There is a smarter way to write programs — and its name is the <strong>function</strong>. This week, you'll learn how to package up a job once and use it forever.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Define a function</strong> in Python using the <code>def</code> keyword, give it a name, and write its body.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Pass data into a function</strong> using parameters and arguments — and tell the difference between the two.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Get data out of a function</strong> with a <code>return</code> statement, and explain why <em>print</em> and <em>return</em> are <em>not</em> the same.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Apply the DRY principle</strong> ("Don't Repeat Yourself") to break a long program into reusable, modular pieces.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · Why Functions? — Don't Repeat Yourself</div>
+  </div>
+  <h2 class="section-title">If you've written it twice, you've written it once too many</h2>
+  <div class="read-body">
+    <p>Imagine your teacher asks you to greet three new students by name. You sit down and type:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">📝 The "copy-paste" way</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Maya! Welcome to class."</span>)
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Maya! It's great to have you."</span>)
+
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Lin! Welcome to class."</span>)
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Lin! It's great to have you."</span>)
+
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Theo! Welcome to class."</span>)
+<span class="code-keyword">print</span>(<span class="code-string">"Hello, Theo! It's great to have you."</span>)
+  </div>
+
+  <div class="read-body">
+    <p>It works! It also <em>stinks</em>. Look at what just happened: the same two sentences appeared three times, with only the name swapped. If your teacher tomorrow asks for thirty greetings instead of three, you'd be copy-pasting until the bell rings. And if you ever decide to change the wording — say, to <em>"Welcome aboard"</em> instead of <em>"Welcome to class"</em> — you'd have to find and edit it in <strong>every single place</strong>.</p>
+    <p>Programmers learned this lesson the painful way decades ago, and they wrapped the lesson into a single rule: <span class="key-term">DRY</span> — <strong>Don't Repeat Yourself</strong>. If a piece of logic shows up more than once, package it up so you can use it everywhere with a single name.</p>
+    <p>That package is called a <span class="key-term">function</span>. A function is a named, reusable block of code that does one specific job. You write the steps <em>once</em>, and from then on, every time you need that job done, you just say its name and the computer runs the steps for you.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <text x="120" y="26" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#dc2626" letter-spacing="2">WITHOUT A FUNCTION</text>
+      <rect x="20" y="42" width="200" height="22" rx="4" fill="#fee2e2" stroke="#ef4444"/>
+      <text x="120" y="58" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#7c1d1d">greet Maya (3 lines)</text>
+      <rect x="20" y="72" width="200" height="22" rx="4" fill="#fee2e2" stroke="#ef4444"/>
+      <text x="120" y="88" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#7c1d1d">greet Lin (3 lines)</text>
+      <rect x="20" y="102" width="200" height="22" rx="4" fill="#fee2e2" stroke="#ef4444"/>
+      <text x="120" y="118" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#7c1d1d">greet Theo (3 lines)</text>
+      <rect x="20" y="132" width="200" height="22" rx="4" fill="#fee2e2" stroke="#ef4444"/>
+      <text x="120" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#7c1d1d">greet Sam (3 lines)</text>
+      <text x="120" y="178" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">12+ lines that say almost the same thing</text>
+
+      <line x1="260" y1="100" x2="320" y2="100" stroke="#C7922C" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="320,100 308,94 308,106" fill="#C7922C"/>
+      <text x="290" y="88" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">DRY</text>
+
+      <text x="480" y="26" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#3d6522" letter-spacing="2">WITH A FUNCTION</text>
+      <rect x="380" y="48" width="200" height="56" rx="8" fill="#dcfce7" stroke="#76C043" stroke-width="2"/>
+      <text x="480" y="68" text-anchor="middle" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#1f4128">def greet(name):</text>
+      <text x="480" y="84" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#3d6522">    print("Hello, " + name)</text>
+      <text x="480" y="98" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="9" font-style="italic" fill="#6b7280">written once</text>
+
+      <rect x="380" y="116" width="60" height="20" rx="4" fill="white" stroke="#55C8E8"/>
+      <text x="410" y="130" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#0E5568">greet("Maya")</text>
+      <rect x="450" y="116" width="60" height="20" rx="4" fill="white" stroke="#55C8E8"/>
+      <text x="480" y="130" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#0E5568">greet("Lin")</text>
+      <rect x="520" y="116" width="60" height="20" rx="4" fill="white" stroke="#55C8E8"/>
+      <text x="550" y="130" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#0E5568">greet("Theo")</text>
+      <text x="480" y="178" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">3 short calls — the function does the rest</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Function</strong> — a named block of code that does one job and can be re-used anywhere in your program.</p>
+      <p><strong>DRY</strong> — short for "Don't Repeat Yourself." A core programmer rule: never write the same logic twice. Bundle it into a function instead.</p>
+      <p><strong>Reusable</strong> — code you can run again and again with different inputs, without rewriting it.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>A microwave's "popcorn" button is a function. Somebody, once, figured out the perfect time and power level for popcorn — and then bundled all those settings under one button. Now <em>you</em> push it without thinking. You don't care <em>how</em> it works inside; you just trust that pressing the button gets you popcorn.</p>
+      <p>Functions in programming work the same way. The hard thinking happens once, when the function is written. After that, anyone can use it — including the future <em>you</em> who has forgotten the details.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Defining a Function</div>
+  </div>
+  <h2 class="section-title">The four parts of every Python function</h2>
+  <div class="read-body">
+    <p>Writing a function is called <strong>defining</strong> it. In Python, you do that with one little keyword: <span class="key-term">def</span>. Think of <code>def</code> as standing for "definition." It tells Python: <em>"Hey, I'm about to teach you a new word — pay attention."</em></p>
+    <p>Here's the simplest possible function — one that says hello.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🧩 Anatomy of a function</span>
+<span class="code-keyword">def</span> say_hello():
+    <span class="code-keyword">print</span>(<span class="code-string">"Hello, world!"</span>)
+  </div>
+
+  <div class="read-body">
+    <p>Just two lines, but each piece matters. Let's slow down and look at the four parts of a Python function definition:</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">The <code>def</code> keyword</div>
+        <div class="step-body">This is Python's signal that you are <em>defining</em> something new. Every function definition starts with <code>def</code>, no exceptions.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">The function name</div>
+        <div class="step-body">In our example, that's <code>say_hello</code>. Pick a clear, lowercase name with underscores between words. Names like <code>x</code> or <code>do_thing</code> are bad; <code>say_hello</code>, <code>add_two_numbers</code>, and <code>is_even</code> are good.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">The parentheses <code>( )</code> and the colon <code>:</code></div>
+        <div class="step-body">The parentheses are where you'll list anything the function needs as input (we'll get to that next section). For now they're empty. The colon at the end says: <em>"the body is about to start."</em></div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">The body — indented!</div>
+        <div class="step-body">Every line that belongs to the function is pushed to the right by 4 spaces (an "indent"). Python uses indentation to know what's inside the function and what's outside. If you forget the indent, your function won't work.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's the same function with the four parts labeled inline. Notice how the body sits underneath the colon, indented:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🔧 The four parts in one picture</span>
+<span style="color:#F78F1E;">┌── 1. keyword</span>
+<span style="color:#F78F1E;">│       ┌── 2. function name</span>
+<span style="color:#F78F1E;">│       │           ┌── 3. parentheses + colon</span>
+<span style="color:#F78F1E;">▼       ▼           ▼</span>
+<span class="code-keyword">def</span> say_hello():
+    <span class="code-keyword">print</span>(<span class="code-string">"Hello, world!"</span>)  <span class="code-comment">  &lt;── 4. body (indented)</span>
+  </div>
+
+  <div class="read-body">
+    <p>One critical thing to notice: <strong>defining a function is NOT the same as running it</strong>. When Python sees <code>def say_hello():</code>, it just memorizes the recipe — it does <em>not</em> cook the meal. Nothing prints to the screen yet. The function is sitting there, ready, waiting for someone to <em>call</em> it. To actually run it, you write the function's name followed by parentheses:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">▶ Define vs. Call</span>
+<span class="code-comment"># Step 1 — DEFINE the function (Python memorizes it)</span>
+<span class="code-keyword">def</span> say_hello():
+    <span class="code-keyword">print</span>(<span class="code-string">"Hello, world!"</span>)
+
+<span class="code-comment"># At this point, NOTHING has printed yet. ⚠️</span>
+
+<span class="code-comment"># Step 2 — CALL the function (Python runs it)</span>
+say_hello()           <span class="code-comment"># prints: Hello, world!</span>
+say_hello()           <span class="code-comment"># prints it again</span>
+say_hello()           <span class="code-comment"># and again</span>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>A recipe in a cookbook is a <em>definition</em>. The cake is what you get when somebody actually <em>uses</em> the recipe — that's the call. Writing <code>def</code> is like opening the cookbook and writing a new page. Calling the function is like turning to that page and following the steps. <strong>One book, many cakes.</strong></p>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The word <strong>function</strong> in programming was borrowed from math. In math class, <em>f(x) = x + 2</em> is a function: it takes <em>x</em> in, does something to it, and gives a result back. Python's functions work exactly that way — only they can do far more than arithmetic. They can print messages, talk to the internet, draw pictures, even play sounds.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Without writing any code, answer these in your head:</p>
+      <p>1. Which keyword starts a function definition in Python?</p>
+      <p>2. After you write the function definition, will the body run automatically?</p>
+      <p>3. What two characters always end the first line of a function definition? <em>(Hint: one is round, one is straight.)</em></p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Parameters and Arguments</div>
+  </div>
+  <h2 class="section-title">Passing data <em>into</em> the function</h2>
+  <div class="read-body">
+    <p>Our <code>say_hello</code> function works, but it's stuck. It always prints the same line, every time. That's not very useful — we wanted to greet <em>different</em> people: Maya, Lin, Theo, and whoever shows up next. The function needs a way to say: <em>"Tell me whose name to use, and I'll do the rest."</em></p>
+    <p>The way you slide a piece of information into a function is with a <span class="key-term">parameter</span>. A parameter is a placeholder name you list inside the parentheses when you define the function. It acts like a labeled box that gets filled in <em>later</em>, when someone calls the function.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">📥 Adding a parameter</span>
+<span class="code-keyword">def</span> greet(name):           <span class="code-comment"># 'name' is the PARAMETER (the placeholder)</span>
+    <span class="code-keyword">print</span>(<span class="code-string">"Hello, "</span> + name + <span class="code-string">"!"</span>)
+
+greet(<span class="code-string">"Maya"</span>)              <span class="code-comment"># "Maya" is the ARGUMENT (the real value)</span>
+greet(<span class="code-string">"Lin"</span>)               <span class="code-comment"># "Lin"  is the ARGUMENT this time</span>
+greet(<span class="code-string">"Theo"</span>)              <span class="code-comment"># "Theo" is the ARGUMENT this time</span>
+  </div>
+
+  <div class="read-body">
+    <p>Run that, and you get three different greetings — from <strong>one</strong> function. That's the magic. The function is general; the data is specific.</p>
+    <p>Now let's get the vocabulary right, because students mix these up <em>all</em> the time:</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">📥 Parameter</div>
+      <div class="compare-card-headline">The placeholder name</div>
+      <ul>
+        <li>Lives inside the function's <strong>definition</strong> — the line with <code>def</code>.</li>
+        <li>Acts like a labeled empty box.</li>
+        <li>Doesn't have a real value yet — that comes from the caller.</li>
+        <li>Example: in <code>def greet(name):</code>, the parameter is <code>name</code>.</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--gateway-gold);">
+      <div class="compare-card-label" style="color: var(--gateway-gold);">📦 Argument</div>
+      <div class="compare-card-headline">The real value passed in</div>
+      <ul>
+        <li>Lives inside the function <strong>call</strong> — the line that uses the function.</li>
+        <li>Is a real, specific value: a string, a number, a list…</li>
+        <li>Gets <em>copied</em> into the parameter when the function runs.</li>
+        <li>Example: in <code>greet("Maya")</code>, the argument is <code>"Maya"</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>A way to remember: <strong>P</strong>arameter = <strong>P</strong>laceholder. <strong>A</strong>rgument = the <strong>A</strong>ctual value you pass in. The placeholder lives in the recipe; the actual value lives in the meal you're cooking <em>right now</em>.</p>
+    <p>Functions can take more than one parameter. Just separate them with commas:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">📦 Two parameters, two arguments</span>
+<span class="code-keyword">def</span> add(a, b):                   <span class="code-comment"># two parameters: a and b</span>
+    <span class="code-keyword">print</span>(a + b)
+
+add(3, 4)                         <span class="code-comment"># two arguments: 3 and 4 → prints 7</span>
+add(10, 90)                       <span class="code-comment"># prints 100</span>
+add(<span class="code-string">"Hello, "</span>, <span class="code-string">"world!"</span>)        <span class="code-comment"># works with strings too — prints "Hello, world!"</span>
+  </div>
+
+  <div class="read-body">
+    <p>Order matters! When Python sees <code>add(3, 4)</code>, it puts <code>3</code> into <code>a</code> and <code>4</code> into <code>b</code>. If you swap them and write <code>add(4, 3)</code>, the values swap too. For addition the answer is the same — but for something like subtraction, that's a totally different result.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Spot the difference.</strong> In this code:</p>
+      <p style="font-family:'Consolas',monospace; background:#0E1C42; color:#e5e7eb; padding:8px 12px; border-radius:6px; font-size:14px;">
+        <span style="color:#55C8E8;">def</span> shout(message):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#55C8E8;">print</span>(message.upper() + <span style="color:#C7922C;">"!!!"</span>)<br><br>
+        shout(<span style="color:#C7922C;">"go team"</span>)
+      </p>
+      <p>Which word is the <strong>parameter</strong>? Which is the <strong>argument</strong>? <em>(Answers: parameter is <code>message</code>; argument is <code>"go team"</code>.)</em></p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Return Values</div>
+  </div>
+  <h2 class="section-title">Getting data <em>out</em> of the function</h2>
+  <div class="read-body">
+    <p>Parameters let us slide data <em>into</em> a function. But how do we get an answer <em>back out</em>?</p>
+    <p>Up to now, our functions have only used <code>print</code>. Printing is great when you just want a human to see something on the screen. But often, the rest of your program needs to <em>do something</em> with the answer — store it, math it, send it to another function. For that, you need <span class="key-term">return</span>.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">📤 The return statement</span>
+<span class="code-keyword">def</span> add(a, b):
+    <span class="code-keyword">return</span> a + b           <span class="code-comment"># hands the result back to whoever called us</span>
+
+answer = add(3, 4)         <span class="code-comment"># the returned value (7) is stored in 'answer'</span>
+<span class="code-keyword">print</span>(answer)              <span class="code-comment"># prints 7</span>
+<span class="code-keyword">print</span>(add(10, 90) * 2)     <span class="code-comment"># works inside expressions too — prints 200</span>
+  </div>
+
+  <div class="read-body">
+    <p>The line <code>return a + b</code> says: <em>"Calculate <code>a + b</code>, then hand that value back to whoever called this function."</em> The function ends instantly when the <code>return</code> hits — no more lines after it will run.</p>
+    <p>This is the difference everyone has to figure out at some point:</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">🖨️ print</div>
+      <div class="compare-card-headline">Shows it on the screen</div>
+      <ul>
+        <li>Sends text to the human who's watching.</li>
+        <li>The function does <strong>not</strong> hand a value back.</li>
+        <li>Other code can't use the result.</li>
+        <li>Best when: a human needs to see something.</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--gamer-green);">
+      <div class="compare-card-label" style="color: #3d6522;">📤 return</div>
+      <div class="compare-card-headline">Hands the value back</div>
+      <ul>
+        <li>Gives the value to whoever called the function.</li>
+        <li>The result can be stored, printed, math'd, passed on.</li>
+        <li>Doesn't display anything by itself.</li>
+        <li>Best when: another part of the program needs the value.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>You can absolutely do both — return a value <em>and</em> print it later — but the function itself should usually <em>return</em>, not print. That keeps it flexible. Watch:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">⚡ Returns chain together</span>
+<span class="code-keyword">def</span> double(n):
+    <span class="code-keyword">return</span> n * 2
+
+<span class="code-keyword">def</span> add_one(n):
+    <span class="code-keyword">return</span> n + 1
+
+result = double(add_one(4))      <span class="code-comment"># add_one(4) → 5, then double(5) → 10</span>
+<span class="code-keyword">print</span>(result)                    <span class="code-comment"># prints 10</span>
+  </div>
+
+  <div class="read-body">
+    <p>Because each function <em>returns</em> a value, you can plug one function's output straight into another's input. That is the secret of how big programs are built — small functions feeding each other.</p>
+    <p>Now it's your turn. Below is the <strong>Function Caller</strong>, a live machine you can play with. Pick one of three real Python functions, fill in the inputs, and watch the data fly into the function box and the answer fly back out. The JavaScript runs the actual computation — what you see on screen is exactly what Python would do.</p>
+  </div>
+
+  <!-- ========== TRY IT — FUNCTION CALLER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🎯 Try It — Live</div>
+    <div class="try-it-title">Function Caller — see arguments fly in &amp; values fly out</div>
+    <p class="try-it-instructions">Choose a function from the dropdown. Fill in the input boxes. Click <strong>Call ▶</strong> and watch: the arguments animate <em>into</em> the function box, the function thinks for a moment, then the return value animates <em>out</em> to the result panel.</p>
+
+    <div class="fc-stage">
+
+      <div class="fc-controls-row">
+        <select class="fc-select" id="fc-fn-select" aria-label="Choose a function">
+          <option value="greet">greet(name) — returns a greeting</option>
+          <option value="add">add(a, b) — returns the sum</option>
+          <option value="is_even">is_even(n) — returns True or False</option>
+        </select>
+      </div>
+
+      <div class="fc-signature" id="fc-signature">
+        <span class="fc-kw">def</span> <span class="fc-fn">greet</span>(<span class="fc-arg">name</span>):
+      </div>
+
+      <div class="fc-controls-row" id="fc-input-controls">
+        <!-- Dynamic inputs injected here -->
+      </div>
+
+      <div class="fc-flow">
+        <div class="fc-zone input-zone" id="fc-zone-args">
+          <div class="fc-zone-label">📥 Arguments</div>
+          <div id="fc-args-tokens" style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;"></div>
+        </div>
+        <div class="fc-arrow" id="fc-arrow-in">▶</div>
+        <div class="fc-box" id="fc-box">
+          <div class="fc-box-label">FUNCTION</div>
+          <div class="fc-box-name" id="fc-box-name">greet()</div>
+        </div>
+        <div class="fc-arrow" id="fc-arrow-out">▶</div>
+        <div class="fc-zone return-zone" id="fc-zone-return">
+          <div class="fc-zone-label">📤 Return</div>
+          <div id="fc-return-tokens" style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;"></div>
+        </div>
+      </div>
+
+      <div class="fc-status-line" id="fc-status">Pick a function, fill the inputs, then click <strong>Call ▶</strong>.</div>
+
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="fc-call">Call ▶</button>
+      <button class="try-it-btn try-it-btn-secondary" id="fc-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p><strong>Try this:</strong> pick <code>is_even(n)</code> and try it with <code>4</code>, then with <code>5</code>, then with <code>0</code>. Notice how the same function gives <em>different</em> return values for different arguments — same recipe, different ingredients, different result.</p>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Calling Functions Across Your Code</div>
+  </div>
+  <h2 class="section-title">Modular programming — small parts, huge programs</h2>
+  <div class="read-body">
+    <p>Once you know how to define and call functions, something amazing becomes possible: you can stop thinking of your program as one giant wall of code, and start thinking of it as a <em>team</em> of small specialists. Each function is a worker that does one thing well. Your main code is the manager — it just calls each worker by name when needed.</p>
+    <p>This style is called <span class="key-term">modular programming</span>, from the word <em>module</em>, meaning a self-contained piece. The opposite of modular is "spaghetti" — one tangled blob where everything is mixed up with everything else.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <text x="120" y="22" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#dc2626" letter-spacing="2">SPAGHETTI</text>
+      <path d="M 30 50 Q 60 80 90 60 T 150 80 T 210 60 T 30 100 T 200 130 T 50 150 T 200 180 T 70 200" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.7"/>
+      <text x="120" y="215" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280" font-style="italic">tangled, hard to fix</text>
+
+      <line x1="260" y1="115" x2="320" y2="115" stroke="#C7922C" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="320,115 308,109 308,121" fill="#C7922C"/>
+      <text x="290" y="103" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#8a6620">modular</text>
+
+      <text x="480" y="22" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#3d6522" letter-spacing="2">MODULAR</text>
+      <rect x="380" y="40" width="200" height="32" rx="6" fill="#dcfce7" stroke="#76C043" stroke-width="2"/>
+      <text x="480" y="60" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#1f4128">login_user()</text>
+      <rect x="380" y="80" width="200" height="32" rx="6" fill="#e0f2fe" stroke="#55C8E8" stroke-width="2"/>
+      <text x="480" y="100" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#0E5568">load_player_data()</text>
+      <rect x="380" y="120" width="200" height="32" rx="6" fill="#fef3c7" stroke="#C7922C" stroke-width="2"/>
+      <text x="480" y="140" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#8a6620">draw_screen()</text>
+      <rect x="380" y="160" width="200" height="32" rx="6" fill="#f3e8ff" stroke="#67308F" stroke-width="2"/>
+      <text x="480" y="180" text-anchor="middle" font-family="Consolas, monospace" font-size="12" font-weight="700" fill="#67308F">save_game()</text>
+      <text x="480" y="215" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280" font-style="italic">organized, fixable, reusable</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>Suppose you're writing a game. The <em>spaghetti</em> way is one 800-line file where login, drawing, scoring, sound, and saving all run on top of each other. The modular way splits the same job into a handful of named functions:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🏗️ A modular game loop</span>
+<span class="code-keyword">def</span> login_user(username):
+    <span class="code-comment"># … checks the password and loads the profile</span>
+    <span class="code-keyword">return</span> profile
+
+<span class="code-keyword">def</span> draw_screen(player, score):
+    <span class="code-comment"># … paints the player and the score on screen</span>
+
+<span class="code-keyword">def</span> handle_keypress(player, key):
+    <span class="code-comment"># … moves the player when an arrow key is pressed</span>
+
+<span class="code-keyword">def</span> save_game(player, score):
+    <span class="code-comment"># … writes the score to a file</span>
+
+<span class="code-comment"># Main game loop — clean and readable!</span>
+profile = login_user(<span class="code-string">"avery"</span>)
+<span class="code-keyword">while</span> playing:
+    handle_keypress(profile, get_key())
+    draw_screen(profile, profile.score)
+
+save_game(profile, profile.score)
+  </div>
+
+  <div class="read-body">
+    <p>Even without knowing the inside of any function, you can <em>read</em> that main loop and understand what the game does. That is modular programming's superpower: you can think about the <strong>whole</strong> without drowning in the <strong>details</strong>.</p>
+    <p>One last idea before you wrap up: where do variables go? Each function has its own little workspace called its <span class="key-term">scope</span>. Variables created inside a function exist only inside that function. They disappear when the function ends. That's a <em>good</em> thing — it means a variable named <code>name</code> inside <code>greet()</code> can't accidentally clobber a variable also named <code>name</code> somewhere else. Each function lives in its own bubble.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">🫧 Scope in action</span>
+<span class="code-keyword">def</span> greet(name):
+    message = <span class="code-string">"Hi, "</span> + name      <span class="code-comment"># 'message' lives ONLY inside greet</span>
+    <span class="code-keyword">print</span>(message)
+
+greet(<span class="code-string">"Maya"</span>)
+<span class="code-keyword">print</span>(message)                    <span class="code-comment"># ❌ NameError — message doesn't exist out here!</span>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Imagine if every grocery store cashier shared the same drawer of cash. One mistake and the whole system crashes. Instead, each cashier has their <em>own</em> drawer — their own <em>scope</em>. They can do their job in peace, and the store as a whole keeps running. Functions work the same way: each one gets its own private workspace, and that's exactly why programs with lots of functions stay calm under pressure.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The Python <strong>standard library</strong> — the set of functions that come built in when you install Python — contains over <strong>200,000 lines of code</strong> bundled into thousands of pre-written functions. Every time you write <code>print()</code> or <code>len()</code> or <code>input()</code>, you're standing on the shoulders of programmers who wrote those functions decades ago so you wouldn't have to.</p>
+      <p>That's the DRY principle at planet scale — and it's why Python is one of the most popular languages on Earth.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 25</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Function</div>
+      <div class="vocab-def">A named, reusable block of code that does one specific job. Defined once, called many times.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">def</div>
+      <div class="vocab-def">The Python keyword that starts a function definition. Tells Python: "I'm about to teach you a new word."</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Parameter</div>
+      <div class="vocab-def">A placeholder name listed inside the parentheses of a function <em>definition</em>. It receives a value when the function is called.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Argument</div>
+      <div class="vocab-def">The actual value passed into a function when it is <em>called</em>. Arguments fill the parameter slots.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Return</div>
+      <div class="vocab-def">A statement that hands a value back from a function to whoever called it. Ends the function immediately.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Scope</div>
+      <div class="vocab-def">The "bubble" a variable lives in. Variables created inside a function exist only there and disappear when the function ends.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Modular programming</div>
+      <div class="vocab-def">Building a program from many small, focused functions instead of one giant blob. Easier to read, fix, and reuse.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Function call</div>
+      <div class="vocab-def">A line that runs a function — the function's name followed by parentheses and any arguments, e.g. <code>greet("Maya")</code>.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Design a function for something you do every day.</div>
+    <p>Pick a routine you do almost every day — making breakfast, getting ready for school, packing your bag, walking the dog — and turn it into a function. Write 4–6 sentences answering:</p>
+    <ul>
+      <li>Give your function a clear, lowercase name with underscores.</li>
+      <li>List its <strong>parameters</strong> (the inputs it would need each time).</li>
+      <li>Describe its <strong>return value</strong> (what comes back out at the end).</li>
+      <li>Show what your function definition would look like, like this example:<br>
+        <code style="background:rgba(0,0,0,0.18); padding:4px 8px; border-radius:4px;">def make_sandwich(bread, filling, toasted=False):</code><br>
+        … returns a finished sandwich.</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 26</strong>, you'll learn how to find and FIX bugs — the inevitable problems every programmer hits. We'll cover the three kinds of bugs and the strategies pros use to track them down.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Function Caller ==========
+(function() {
+  const fnSelect    = document.getElementById('fc-fn-select');
+  const sigEl       = document.getElementById('fc-signature');
+  const inputCtrls  = document.getElementById('fc-input-controls');
+  const argsTokens  = document.getElementById('fc-args-tokens');
+  const returnTokens= document.getElementById('fc-return-tokens');
+  const boxNameEl   = document.getElementById('fc-box-name');
+  const boxEl       = document.getElementById('fc-box');
+  const arrowIn     = document.getElementById('fc-arrow-in');
+  const arrowOut    = document.getElementById('fc-arrow-out');
+  const status      = document.getElementById('fc-status');
+  const callBtn     = document.getElementById('fc-call');
+  const resetBtn    = document.getElementById('fc-reset');
+  if (!fnSelect || !callBtn) return;
+
+  // Function specs — real JS computation underneath
+  const FUNCS = {
+    greet: {
+      sig: '<span class="fc-kw">def</span> <span class="fc-fn">greet</span>(<span class="fc-arg">name</span>):',
+      name: 'greet()',
+      params: [{ key: 'name', label: 'name', type: 'text', placeholder: 'Maya', defaultValue: 'Maya' }],
+      run: (vals) => {
+        const name = String(vals.name);
+        return '"Hello, ' + name + '!"';
+      },
+      formatArg: (vals) => ['"' + vals.name + '"']
+    },
+    add: {
+      sig: '<span class="fc-kw">def</span> <span class="fc-fn">add</span>(<span class="fc-arg">a</span>, <span class="fc-arg">b</span>):',
+      name: 'add()',
+      params: [
+        { key: 'a', label: 'a', type: 'number', placeholder: '3', defaultValue: '3' },
+        { key: 'b', label: 'b', type: 'number', placeholder: '4', defaultValue: '4' }
+      ],
+      run: (vals) => {
+        const a = Number(vals.a) || 0;
+        const b = Number(vals.b) || 0;
+        return String(a + b);
+      },
+      formatArg: (vals) => [String(Number(vals.a) || 0), String(Number(vals.b) || 0)]
+    },
+    is_even: {
+      sig: '<span class="fc-kw">def</span> <span class="fc-fn">is_even</span>(<span class="fc-arg">n</span>):',
+      name: 'is_even()',
+      params: [{ key: 'n', label: 'n', type: 'number', placeholder: '4', defaultValue: '4' }],
+      run: (vals) => {
+        const n = parseInt(vals.n, 10);
+        if (isNaN(n)) return 'False';
+        return (n % 2 === 0) ? 'True' : 'False';
+      },
+      formatArg: (vals) => [String(parseInt(vals.n, 10) || 0)]
+    }
+  };
+
+  let isAnimating = false;
+
+  function readVals(spec) {
+    const out = {};
+    spec.params.forEach(p => {
+      const inp = document.getElementById('fc-arg-' + p.key);
+      out[p.key] = inp ? inp.value : p.defaultValue;
+    });
+    return out;
+  }
+
+  function renderInputs(specKey) {
+    const spec = FUNCS[specKey];
+    sigEl.innerHTML = spec.sig;
+    boxNameEl.textContent = spec.name;
+    inputCtrls.innerHTML = '';
+    spec.params.forEach(p => {
+      const group = document.createElement('div');
+      group.className = 'fc-input-group';
+      const lab = document.createElement('span');
+      lab.className = 'fc-input-label';
+      lab.textContent = p.label + ' =';
+      const input = document.createElement('input');
+      input.className = 'fc-input';
+      input.id = 'fc-arg-' + p.key;
+      input.type = p.type;
+      input.value = p.defaultValue;
+      input.placeholder = p.placeholder;
+      input.style.width = (p.type === 'number') ? '90px' : '160px';
+      group.appendChild(lab);
+      group.appendChild(input);
+      inputCtrls.appendChild(group);
+    });
+    clearTokens();
+    status.innerHTML = 'Function <strong>' + spec.name + '</strong> is <em>defined</em> (Python has memorized it). Click <strong>Call ▶</strong> to actually run it.';
+  }
+
+  function clearTokens() {
+    argsTokens.innerHTML = '';
+    returnTokens.innerHTML = '';
+    arrowIn.classList.remove('lit');
+    arrowOut.classList.remove('lit');
+    boxEl.classList.remove('thinking');
+  }
+
+  function placeArgTokens(argStrs) {
+    argsTokens.innerHTML = '';
+    argStrs.forEach(a => {
+      const t = document.createElement('span');
+      t.className = 'fc-token';
+      t.textContent = a;
+      argsTokens.appendChild(t);
+    });
+  }
+
+  function flyArgsIn() {
+    const tokens = argsTokens.querySelectorAll('.fc-token');
+    tokens.forEach(t => t.classList.add('flying'));
+    arrowIn.classList.add('lit');
+  }
+
+  function placeReturnToken(retStr) {
+    returnTokens.innerHTML = '';
+    const t = document.createElement('span');
+    t.className = 'fc-token return-token flying-out';
+    t.textContent = retStr;
+    returnTokens.appendChild(t);
+    arrowOut.classList.add('lit');
+  }
+
+  function callFunction() {
+    if (isAnimating) return;
+    const specKey = fnSelect.value;
+    const spec = FUNCS[specKey];
+    const vals = readVals(spec);
+    const argStrs = spec.formatArg(vals);
+    isAnimating = true;
+    callBtn.disabled = true;
+    status.innerHTML = '<strong>Step 1.</strong> Sending arguments <code>(' + argStrs.join(', ') + ')</code> into <code>' + spec.name + '</code>…';
+
+    // 1) place argument tokens
+    placeArgTokens(argStrs);
+
+    // 2) animate them flying into the box
+    setTimeout(() => {
+      flyArgsIn();
+      status.innerHTML = '<strong>Step 2.</strong> Arguments are inside <code>' + spec.name + '</code>. The function is now thinking…';
+    }, 250);
+
+    // 3) function box "thinks"
+    setTimeout(() => {
+      boxEl.classList.add('thinking');
+      argsTokens.innerHTML = '';
+    }, 850);
+
+    // 4) compute and show the return value
+    setTimeout(() => {
+      let result;
+      try {
+        result = spec.run(vals);
+      } catch (err) {
+        result = 'Error';
+      }
+      boxEl.classList.remove('thinking');
+      placeReturnToken(result);
+      status.innerHTML = '<strong>Step 3.</strong> <code>' + spec.name + '</code> <strong>returned</strong> <code>' + result + '</code>. The value is now available to the rest of your program.';
+      isAnimating = false;
+      callBtn.disabled = false;
+    }, 1850);
+  }
+
+  function reset() {
+    isAnimating = false;
+    callBtn.disabled = false;
+    renderInputs(fnSelect.value);
+  }
+
+  fnSelect.addEventListener('change', () => {
+    isAnimating = false;
+    callBtn.disabled = false;
+    renderInputs(fnSelect.value);
+  });
+  callBtn.addEventListener('click', callFunction);
+  resetBtn.addEventListener('click', reset);
+
+  // initialize
+  renderInputs(fnSelect.value);
+})();
+</script>
+
+</body>
+</html>

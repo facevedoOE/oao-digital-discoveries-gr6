@@ -1,9 +1,8 @@
 ═══════════════════════════════════════════════════════════════
   WEEK 20 QUIZ — ANSWER KEY
-  Digital Discoveries · Unit 3 · Lesson 7.2
-  Standards: SC.K12.CTR.1.1 (problem-solving) and
-             SC.K12.CTR.2.1 (creating representations)
-  Topic: Decomposition — Breaking Big Problems Down
+  Digital Discoveries · Unit 3 · Week 20
+  Standards: SC.K12.CTR.1.1, SC.K12.CTR.2.1, SC.K12.CTR.3.1
+  Topic: Flowcharts & Algorithm Design
 ═══════════════════════════════════════════════════════════════
 
 MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
@@ -12,10 +11,10 @@ correct answers in Canvas):
 ───────────────────────────────────────────────────────────────
 QUICK-ANSWER GRID
 ───────────────────────────────────────────────────────────────
-  Q1 → B
-  Q2 → C
-  Q3 → B
-  Q4 → C
+  Q1 → C
+  Q2 → D
+  Q3 → A
+  Q4 → B
   Q5 → C
 ───────────────────────────────────────────────────────────────
 
@@ -31,171 +30,96 @@ Quiz settings to verify in Canvas:
 ═══════════════════════════════════════════════════════════════
 
 ───────────────────────────────────────────────────────────────
-Q1. Which of these is the BEST definition of decomposition in
-    computer science?
+Q1. Which flowchart shape marks the START or END of an algorithm?
 ───────────────────────────────────────────────────────────────
-  A) Removing parts of a problem you don't want to solve
-     ❌ Decomposition doesn't skip parts — it breaks the WHOLE
-        problem into smaller pieces so every part still gets
-        solved.
-  B) Breaking a big problem into smaller, easier sub-problems
-     you can solve one at a time                              ✓ CORRECT
-     ✅ Decomposition takes one giant task and splits it into
-        pieces small enough that you (or a computer) can
-        actually solve each one.
+  A) Rectangle
+     ❌ Rectangles are for process steps (calculations, actions).
+        Not for start or end.
+  B) Diamond
+     ❌ Diamonds ask yes/no questions and split the path.
+  C) Oval (terminator)                                            ✓ CORRECT
+     ✅ The oval ("terminator") is the only shape used for START
+        and END. Every flowchart begins and ends with one.
         (SC.K12.CTR.1.1)
-  C) Writing the answer to a problem before you understand it
-     ❌ That's guessing. Decomposition happens BEFORE you solve
-        anything — it's the planning step where you organize
-        the problem.
-  D) A type of computer error that crashes your program
-     ❌ Decomposition isn't an error — it's a problem-solving
-        strategy. Every programmer uses it on every project.
+  D) Parallelogram
+     ❌ Parallelograms are for getting input or showing output —
+        not for start or end.
 
 ───────────────────────────────────────────────────────────────
-Q2. Carlos is decomposing the big task "Plan a class field trip."
-    Which of these is the BEST sub-problem from his decomposition?
+Q2. What is a DIAMOND shape used for in a flowchart?
 ───────────────────────────────────────────────────────────────
-  A) "Plan a class field trip"
-     ❌ That's the WHOLE big problem, not a sub-problem. A
-        sub-problem is a smaller piece you'd get after
-        decomposing.
-  B) "Make everyone happy"
-     ❌ "Make everyone happy" is a feeling, not a concrete
-        task. Sub-problems should be specific, doable actions.
-  C) "Pick a date when the buses are available"             ✓ CORRECT
-     ✅ That's a small, specific sub-problem with a clear
-        answer (a date). You could solve this one in a few
-        minutes by checking the bus schedule.
-        (SC.K12.CTR.1.1)
-  D) "Be a great class president"
-     ❌ That's a value or identity goal, not a problem to
-        solve. Sub-problems are concrete tasks with a clear
-        finish.
-
-───────────────────────────────────────────────────────────────
-Q3. When should you STOP decomposing a sub-problem and start
-    solving it directly?
-───────────────────────────────────────────────────────────────
-  A) When the sub-problem has fewer than 5 letters in its name
-     ❌ The length of the name doesn't tell you anything about
-        the size of the problem. Stop based on whether you can
-        SOLVE it directly.
-  B) When the sub-problem is small enough that you could write
-     a clear algorithm for it without breaking it down again ✓ CORRECT
-     ✅ That's the test. If a piece is small enough to write
-        5–10 clear algorithm steps for, it's ready to solve.
-        No need to decompose further.
-        (SC.K12.CTR.1.1)
-  C) You should never stop — keep decomposing forever
-     ❌ Decomposing forever means you never solve anything.
-        There's a clear stopping point: when each piece is
-        small enough to solve directly.
-  D) When you get tired of thinking about it
-     ❌ Tiredness isn't the test. Pieces that are still too big
-        will trip you up later — push through and break them
-        down further.
-
-───────────────────────────────────────────────────────────────
-Q4. Why is decomposition especially important when many
-    programmers work together on a huge project (Minecraft,
-    Google, NASA's moon mission)?
-───────────────────────────────────────────────────────────────
-  A) It makes the project slower on purpose
-     ❌ Decomposition makes huge projects FASTER, not slower —
-        work happens in parallel and bugs are easier to find.
-  B) Decomposition diagrams look impressive in presentations
-     ❌ Diagrams do look cool, but the real reason is
-        functional. Without decomposition the work would be
-        impossible to coordinate.
-  C) It splits the work into pieces so different people can
-     work on different sub-problems at the same time        ✓ CORRECT
-     ✅ The navigation team works on navigation while the
-        life-support team works on life support — in parallel.
-        That's only possible because the big mission was
-        decomposed into independent sub-problems first.
+  A) Showing information to the user (output)
+     ❌ That's the parallelogram's job (Input/Output shape).
+  B) Marking the start of the program
+     ❌ That's the oval's job (terminator).
+  C) Connecting two arrows together
+     ❌ Plain arrows connect shapes — diamonds are not connectors.
+  D) Asking a yes/no question that splits the path                ✓ CORRECT
+     ✅ Every diamond holds a yes/no question. It always has TWO
+        arrows leaving — one for YES, one for NO.
         (SC.K12.CTR.2.1)
-  D) It removes the need to write any code at all
-     ❌ Decomposition organizes the code that gets written —
-        it doesn't replace it. You still have to solve every
-        sub-problem.
 
 ───────────────────────────────────────────────────────────────
-Q5. How do decomposition and algorithms work together when you
-    build software?
+Q3. How many arrows should leave a single DECISION DIAMOND?
 ───────────────────────────────────────────────────────────────
-  A) They are the same thing — just two different words for it
-     ❌ They're related but different. Decomposition organizes
-        the problem; algorithms solve each piece.
-  B) You only need decomposition — algorithms are optional
-     ❌ Decomposition gives you the pieces, but each piece
-        still needs a clear algorithm or nothing actually
-        gets done.
-  C) Decomposition decides WHAT to solve. Algorithms decide
-     HOW to solve each piece.                                ✓ CORRECT
-     ✅ First decompose the big problem into small ones (the
-        WHAT), then write a clear algorithm for each small
-        piece (the HOW). Together they turn impossible
-        problems into doable ones.
-        (SC.K12.CTR.1.1, CTR.2.1)
-  D) Algorithms are for computers, decomposition is for
-     humans only
-     ❌ Both are for humans AND computers. Decomposition
-        organizes the problem for whoever or whatever will
-        solve it.
+  A) Exactly two — one for YES, one for NO                        ✓ CORRECT
+     ✅ A diamond ALWAYS has exactly two arrows leaving — labeled
+        YES and NO. That's what makes it a "decision."
+        (SC.K12.CTR.2.1)
+  B) Exactly one — flowcharts always have a single path
+     ❌ Flowcharts can branch — that's the whole point of a
+        diamond. One outgoing arrow = no decision.
+  C) Three or more, one for each possible answer
+     ❌ A diamond is for yes/no questions only — exactly two
+        outcomes.
+  D) None — the diamond only receives arrows
+     ❌ Diamonds receive AND send arrows. Without outgoing arrows
+        the flow would dead-end at the question.
+
+───────────────────────────────────────────────────────────────
+Q4. Translating "IF temperature > 80 THEN PRINT 'It's hot!'" to
+    a flowchart, how many shapes (besides terminators and arrows)?
+───────────────────────────────────────────────────────────────
+  A) Just one — only the IF
+     ❌ The PRINT is its own step on the YES branch — needs its
+        own shape.
+  B) Two — a diamond for the IF and a parallelogram for the PRINT ✓ CORRECT
+     ✅ One diamond for the IF condition ("temperature > 80?"),
+        one parallelogram for PRINT (output). Each step needs its
+        matching shape. (SC.K12.CTR.3.1)
+  C) Three — two diamonds and one rectangle
+     ❌ Only ONE decision here, not two. And PRINT is a
+        parallelogram, not a rectangle.
+  D) None — pseudocode and flowcharts can't be translated
+     ❌ Pseudocode and flowcharts ARE translatable — they describe
+        the same algorithm in different forms.
+
+───────────────────────────────────────────────────────────────
+Q5. Why does every flowchart need a TERMINATOR (oval) at the
+    start AND at the end?
+───────────────────────────────────────────────────────────────
+  A) Because flowcharts crash without ovals
+     ❌ Flowcharts don't "crash" — they're pictures, not running
+        programs.
+  B) Because Canvas requires it as a file format
+     ❌ Canvas doesn't enforce flowchart shapes.
+  C) Because terminators show where to begin reading the chart
+     and where the algorithm ends                                 ✓ CORRECT
+     ✅ Without START and END terminators, a reader has no idea
+        where the algorithm begins or finishes. Terminators are
+        the bookends of every flowchart. (SC.K12.CTR.1.1)
+  D) Because diamonds need ovals to work properly
+     ❌ Diamonds work fine on their own — they don't depend on
+        ovals. Terminators serve a different role.
 
 ═══════════════════════════════════════════════════════════════
-  CANVAS IMPORT INSTRUCTIONS
+  IMPORT INSTRUCTIONS — Canvas
 ═══════════════════════════════════════════════════════════════
-
-1. In Canvas, navigate to your course → Settings → Import
-   Course Content.
-2. Content Type: "QTI .zip file"
-3. Source: select  week-20-quiz-canvas-import.zip
-4. Click "Import" and wait for the job to finish.
-5. The quiz will appear in your Quizzes list as
-   "Week 20 Quiz — Decomposition."
-6. Open the quiz, click EDIT, and verify:
-     • All 5 questions imported with 4 options each
-     • Correct answer marked on each (use the GRID above)
-     • Per-option feedback present on all 4 options
-     • Points: 1 per question, 5 total
-     • Attempts: 3
-7. If correct answers did NOT auto-populate, manually mark them
-   using the QUICK-ANSWER GRID at the top of this file.
-8. Publish the quiz when ready.
-
-═══════════════════════════════════════════════════════════════
-  TEACHER NOTES
-═══════════════════════════════════════════════════════════════
-
-This is the SECOND week of Unit 3 (Programming) — the
-decomposition pillar of computational thinking, building
-directly on Week 19's introduction to algorithms.
-
-Students who struggle with this quiz often need help with:
-  • Distinguishing the BIG problem from a SUB-problem (Q2).
-    Drill this with a quick game: shout a big task ("clean
-    your room"), have students name 3 sub-problems out loud.
-  • Knowing when to STOP decomposing (Q3). Use the rule of
-    thumb: "Could you write a clear 5-10 step algorithm for it?
-    If yes, stop. If no, decompose again."
-  • The connection between decomposition and algorithms (Q5).
-    Walk through the PB&J algorithm from Week 19 — point out
-    that "Make a sandwich" was already a decomposition
-    (bread + PB + knife + spread + stack) before it became an
-    algorithm.
-
-The reflection assignment (decompose your weekend) and the VR
-Decomposition Tree Builder are the best assessments of mastery
-this week. Look for:
-  • A clearly stated big problem at the top
-  • 4-6 sub-problems on the first level
-  • At least one sub-problem decomposed to a second level
-  • No vague labels like "make it good" or "do the rest"
-
-NEXT WEEK (Week 21): Pattern Recognition. Students will start
-spotting WHICH of their decomposed pieces are secretly the same
-across different problems — the third pillar.
-
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-20-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
 ═══════════════════════════════════════════════════════════════

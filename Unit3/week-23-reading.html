@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 23 — Logic: Conditionals &amp; Making Programs Choose | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.oao-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.oao-wordmark {
+  line-height: 1.1;
+}
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.2);
+}
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current {
+  color: var(--binary-blue);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #9ca3af;
+  stroke-width: 2;
+}
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 48px 0 20px;
+}
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.read-body code {
+  background: rgba(14,28,66,0.06);
+  border: 1px solid rgba(14,28,66,0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+}
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+.callout-body code {
+  background: rgba(14,28,66,0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas','Menlo',monospace;
+  font-size: 13.5px;
+  color: var(--binary-blue);
+}
+
+/* Vocabulary callout (blue) */
+.callout-vocab {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-left-color: var(--bitstream-blue);
+}
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+
+/* Check For Understanding (gold) */
+.callout-check {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-check .callout-label { color: var(--gateway-gold); }
+
+/* Think About It (purple) */
+.callout-think {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-left-color: var(--portal-purple);
+}
+.callout-think .callout-label { color: var(--portal-purple); }
+
+/* Did You Know (orange) */
+.callout-fact {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left-color: var(--odyssey-orange);
+}
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+
+/* Real-World Connection (green) */
+.callout-realworld {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left-color: var(--gamer-green);
+}
+.callout-realworld .callout-label { color: #3d6522; }
+
+/* What's Next (achievement / gold gradient bg) */
+.callout-next {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left-color: var(--gateway-gold);
+}
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== PLATFORM / CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.platform-card-body em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ========== TWO-COLUMN COMPARISON ========== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* ========== STEPS DIAGRAM ========== */
+.steps-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body {
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+.trait-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body {
+  color: #374151;
+  font-size: 14.5px;
+}
+
+/* ========== OPERATOR TABLE ========== */
+.op-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin: 20px 0;
+  font-size: 14.5px;
+}
+.op-table th {
+  background: var(--binary-blue);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 12px 14px;
+  text-align: left;
+}
+.op-table td {
+  padding: 12px 14px;
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+}
+.op-table td.op-symbol {
+  font-family: 'Consolas','Menlo',monospace;
+  font-weight: 700;
+  color: var(--portal-purple);
+  font-size: 16px;
+  white-space: nowrap;
+}
+.op-table td.op-example {
+  font-family: 'Consolas','Menlo',monospace;
+  font-size: 13.5px;
+  color: var(--dark-bitstream);
+}
+.op-table tr:nth-child(even) td { background: #fafafa; }
+
+/* ========== VOCAB GRID ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover {
+  border-color: var(--bitstream-blue);
+  box-shadow: 0 4px 12px rgba(85,200,232,0.15);
+}
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-block {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.code-block .code-comment { color: #9ca3af; font-style: italic; }
+.code-block .code-keyword { color: var(--bitstream-blue); font-weight: 600; }
+.code-block .code-string { color: var(--gateway-gold); }
+.code-block .code-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ========== REFLECTION HERO ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+.reflection-hero code {
+  background: rgba(14,28,66,0.35);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas','Menlo',monospace;
+  font-size: 13.5px;
+  color: #fff7ed;
+}
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions {
+  color: #4b5563;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.try-it-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary {
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+}
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary {
+  background: white;
+  color: var(--binary-blue);
+  border: 2px solid #d1d5db;
+}
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success {
+  background: linear-gradient(135deg, var(--gamer-green), #3d6522);
+  color: white;
+}
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Tracer */
+.tracer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+.tracer-code {
+  background: var(--binary-blue);
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  line-height: 1.95;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px rgba(14,28,66,0.18);
+}
+.tracer-line {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 -8px;
+  transition: background 0.25s, opacity 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.tracer-line.active {
+  background: rgba(199,146,44,0.4);
+  box-shadow: inset 3px 0 0 var(--gateway-gold);
+}
+.tracer-line.skipped {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+.tracer-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tracer-inputs {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-panel-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.tracer-inputs .tracer-panel-label { color: #6b7280; }
+.tracer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.tracer-input-row:last-child { margin-bottom: 0; }
+.tracer-input-row label {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  color: var(--binary-blue);
+  width: 18px;
+  font-size: 14px;
+}
+.tracer-input-row input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  color: var(--binary-blue);
+  background: white;
+}
+.tracer-input-row input:focus { outline: 2px solid var(--bitstream-blue); border-color: var(--bitstream-blue); }
+.tracer-vars {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.tracer-vars .tracer-panel-label { color: var(--dark-bitstream); }
+.tracer-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  padding: 4px 0;
+  color: var(--binary-blue);
+}
+.tracer-var-name { font-weight: 700; }
+.tracer-var-value {
+  background: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  min-width: 64px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+  font-weight: 600;
+}
+.tracer-var-value.updated {
+  background: var(--gateway-gold);
+  color: white;
+  border-color: var(--gateway-gold);
+  transform: scale(1.18);
+}
+.tracer-status {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  min-height: 56px;
+}
+.tracer-status strong { color: var(--binary-blue); }
+.tracer-output {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid var(--gamer-green);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f4128;
+  text-align: center;
+  display: none;
+  animation: outputPop 0.4s ease;
+}
+.tracer-output.show { display: block; }
+@keyframes outputPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .tracer-grid { grid-template-columns: 1fr; }
+  .tracer-code { font-size: 12.5px; }
+  .op-table { font-size: 13px; }
+  .op-table th, .op-table td { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 3 · WEEK 23
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 3: Programming Fundamentals</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 23: Logic — Conditionals &amp; Making Programs Choose</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 3 • WEEK 23 • READING</div>
+  <h1 class="lesson-title">Logic: Conditionals — Making Programs Choose</h1>
+  <p class="lesson-description">A program that always does the same thing is boring. A program that <em>chooses</em> what to do next based on the situation is alive. This week you'll meet conditionals — the tiny words <code>IF</code>, <code>ELSE</code>, and <code>ELIF</code> — and learn how they let your code react to the world.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Use the six comparison operators</strong> (<code>==, !=, &lt;, &gt;, &lt;=, &gt;=</code>) to build true/false expressions about numbers and text.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Write IF and IF/ELSE statements</strong> that pick between two possible paths through a program.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Extend IF/ELSE with ELIF</strong> to handle three or more branches without messy nested code.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Translate a flowchart with decision diamonds into pseudocode</strong> and predict which branch will run for a given input.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · Decisions, Decisions</div>
+  </div>
+  <h2 class="section-title">Programs that choose what to do next</h2>
+  <div class="read-body">
+    <p>Stop and notice your morning. Your alarm goes off and a tiny chain of decisions begins. <em>Is it a school day?</em> If yes, get out of bed. If no, go back to sleep. <em>Is it raining?</em> If yes, grab a jacket. If no, leave it. <em>Did you eat breakfast?</em> If yes, head to the bus. If no, grab a granola bar first.</p>
+    <p>You don't think of it this way, but every <em>"if this, then that"</em> is a tiny <span class="key-term">conditional</span>. You're constantly choosing one path or another based on what's true right now. The whole reason your day flows smoothly is that your brain is silently checking conditions and picking branches all morning long.</p>
+    <p>Computers do exactly the same thing — except they need you to <em>spell out the rules</em>. A program with no conditionals is like a script: it does the exact same thing every time you run it, no matter what's going on. That's almost never what you want. A program <em>with</em> conditionals can react to inputs, to the time of day, to what the user just clicked, to the score in a game. That's what makes it feel smart.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <text x="300" y="22" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E1C42">A program that has to CHOOSE</text>
+
+      <!-- Start -->
+      <ellipse cx="300" cy="55" rx="50" ry="20" fill="#55C8E8" opacity="0.25" stroke="#55C8E8" stroke-width="2"/>
+      <text x="300" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">START</text>
+
+      <line x1="300" y1="75" x2="300" y2="100" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="300,100 295,93 305,93" fill="#9ca3af"/>
+
+      <!-- Diamond -->
+      <polygon points="300,105 380,150 300,195 220,150" fill="#C7922C" opacity="0.20" stroke="#C7922C" stroke-width="2.5"/>
+      <text x="300" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-weight="700" fill="#8a6620">Is it raining?</text>
+      <text x="300" y="164" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#8a6620" font-style="italic">condition</text>
+
+      <!-- YES branch -->
+      <line x1="380" y1="150" x2="470" y2="150" stroke="#76C043" stroke-width="2"/>
+      <polygon points="470,150 463,145 463,155" fill="#76C043"/>
+      <text x="425" y="142" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">YES</text>
+      <rect x="470" y="130" width="120" height="40" rx="6" fill="#76C043" opacity="0.20" stroke="#76C043" stroke-width="2"/>
+      <text x="530" y="155" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#3d6522">grab a jacket</text>
+
+      <!-- NO branch -->
+      <line x1="220" y1="150" x2="130" y2="150" stroke="#67308F" stroke-width="2"/>
+      <polygon points="130,150 137,145 137,155" fill="#67308F"/>
+      <text x="175" y="142" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">NO</text>
+      <rect x="10" y="130" width="120" height="40" rx="6" fill="#67308F" opacity="0.20" stroke="#67308F" stroke-width="2"/>
+      <text x="70" y="155" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#67308F">leave it home</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>That diamond shape in the middle is called a <span class="key-term">decision diamond</span>, and it's where the program asks a yes-or-no question. Whichever way the answer comes out, the program follows that arrow. The two arrows lead to two different futures — and only one of them happens on any single run.</p>
+    <p>Conditionals are everywhere in software. Look at three places you use them every day:</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head">
+        <span style="font-size:20px;">🎮</span>
+        <strong>Video games</strong>
+      </div>
+      <div class="platform-card-body">If your health drops to zero, the game ends. If you collect 100 coins, you get an extra life. If the boss is below half HP, it switches attack patterns. <em>Every single rule in a video game is a conditional.</em></div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head">
+        <span style="font-size:20px;">☔</span>
+        <strong>Weather apps</strong>
+      </div>
+      <div class="platform-card-body">If the chance of rain is over 50%, the app shows an umbrella icon. If the temperature is below freezing, it shows a snowflake. If there's a tornado warning in your area, it screams an alert at your phone.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <span style="font-size:20px;">📱</span>
+        <strong>Your phone's lock screen</strong>
+      </div>
+      <div class="platform-card-body">If you typed the right passcode, unlock. If wrong, count it as a failed attempt. If you've failed five times in a row, lock the phone for one minute. Conditionals all the way down.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Conditional</strong> — a piece of code that asks a yes/no question and runs different instructions depending on the answer.</p>
+      <p><strong>Branch</strong> — one of the possible paths a conditional can take. Every conditional has at least two branches.</p>
+      <p><strong>Decision diamond</strong> — the diamond shape used in flowcharts to mark a place where the program has to choose.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Comparisons — ==, &lt;, &gt;, and Friends</div>
+  </div>
+  <h2 class="section-title">The six little symbols that ask yes-or-no questions</h2>
+  <div class="read-body">
+    <p>Before a program can <em>act</em> on a condition, it has to <em>ask</em> one. The way you ask a yes/no question in code is with a <span class="key-term">comparison operator</span>. Each operator takes two values, compares them, and produces one of two answers: <strong>true</strong> or <strong>false</strong>. That answer is called a <span class="key-term">boolean expression</span>, after the mathematician George Boole.</p>
+    <p>There are six comparison operators you'll meet over and over. They look almost like math, with one important twist:</p>
+  </div>
+
+  <table class="op-table">
+    <thead>
+      <tr>
+        <th style="width:90px;">Operator</th>
+        <th>Means</th>
+        <th>Example</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="op-symbol">==</td>
+        <td>equal to</td>
+        <td class="op-example">5 == 5</td>
+        <td><strong style="color:#3d6522;">true</strong></td>
+      </tr>
+      <tr>
+        <td class="op-symbol">!=</td>
+        <td>not equal to</td>
+        <td class="op-example">5 != 7</td>
+        <td><strong style="color:#3d6522;">true</strong></td>
+      </tr>
+      <tr>
+        <td class="op-symbol">&lt;</td>
+        <td>less than</td>
+        <td class="op-example">3 &lt; 10</td>
+        <td><strong style="color:#3d6522;">true</strong></td>
+      </tr>
+      <tr>
+        <td class="op-symbol">&gt;</td>
+        <td>greater than</td>
+        <td class="op-example">9 &gt; 9</td>
+        <td><strong style="color:#dc2626;">false</strong></td>
+      </tr>
+      <tr>
+        <td class="op-symbol">&lt;=</td>
+        <td>less than or equal to</td>
+        <td class="op-example">9 &lt;= 9</td>
+        <td><strong style="color:#3d6522;">true</strong></td>
+      </tr>
+      <tr>
+        <td class="op-symbol">&gt;=</td>
+        <td>greater than or equal to</td>
+        <td class="op-example">2 &gt;= 8</td>
+        <td><strong style="color:#dc2626;">false</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="read-body">
+    <p>Three of those need a closer look — they trip up almost every new programmer.</p>
+    <p>First: <code>==</code> versus <code>=</code>. In math class, you've used <code>=</code> your whole life to mean "is equal to." But in code, <code>=</code> means something completely different — it <strong>assigns</strong> a value. Writing <code>x = 5</code> means "put the number 5 into the box called x." If you want to <em>ask</em> "is x equal to 5?" you have to use the doubled-up version: <code>x == 5</code>. Mixing them up is the most common bug a new programmer writes. Even pro programmers slip on it.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">⚠️ Common Bug</div>
+    <div class="callout-body">
+      <p>If you write <code>IF x = 5</code> when you meant <code>IF x == 5</code>, your code will not ask a question — it will <em>change</em> x to 5 and then act like the answer is always "yes." Suddenly your character has 5 health forever and you can't figure out why.</p>
+      <p>The rule: a single <code>=</code> <strong>changes</strong> things. A double <code>==</code> <strong>checks</strong> things.</p>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Second: <code>&lt;=</code> and <code>&gt;=</code>. The "or equal to" part matters. <code>9 &lt; 9</code> is <strong>false</strong> (9 is not less than itself), but <code>9 &lt;= 9</code> is <strong>true</strong>. When you're writing a rule like "10 points or more wins a prize," the right operator is <code>&gt;=</code>, not <code>&gt;</code> — otherwise a player with exactly 10 points goes home empty-handed.</p>
+    <p>Third: <code>!=</code>. The exclamation point in code often means "not." So <code>!=</code> is "not equal to." It's incredibly useful for things like <em>"keep playing as long as the player isn't dead"</em> or <em>"only show the warning if the username is not empty."</em></p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Imagine you're writing the code for a roller coaster height check. The sign says <strong>"You must be at least 48 inches tall."</strong></p>
+      <p>Which operator should you use to test a rider's height — <code>&gt;</code> or <code>&gt;=</code>? What happens to a kid who is exactly 48 inches if you pick wrong?</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · IF and ELSE</div>
+  </div>
+  <h2 class="section-title">The two-path fork in the road</h2>
+  <div class="read-body">
+    <p>Once you can <em>ask</em> a yes/no question, you need a way to <em>act</em> on the answer. That's what <span class="key-term">IF statements</span> do. An IF statement says: <em>"check this condition, and if it's true, run these instructions."</em> If the condition is false, the program just skips those instructions and keeps going.</p>
+    <p>In pseudocode, a basic IF looks like this:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">PSEUDOCODE — IF only</span>
+<span class="code-comment">// Check if the player won</span>
+<span class="code-keyword">IF</span> score &gt;= 100 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"You win!"</span>
+<span class="code-keyword">END IF</span>
+  </div>
+
+  <div class="read-body">
+    <p>Read it like English. <em>"If score is at least 100, print 'You win!'"</em> If the score is 99, the PRINT line never runs and the program moves on like nothing happened.</p>
+    <p>That's a one-branch conditional. But often you want a <em>different</em> thing to happen when the answer is no. That's what <span class="key-term">ELSE</span> is for. ELSE means "otherwise" — it gives you a second branch for the false case:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">PSEUDOCODE — IF / ELSE</span>
+<span class="code-comment">// Decide whether to grab an umbrella</span>
+<span class="code-keyword">IF</span> chanceOfRain &gt;= 50 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"Bring an umbrella."</span>
+<span class="code-keyword">ELSE</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"Leave it at home."</span>
+<span class="code-keyword">END IF</span>
+  </div>
+
+  <div class="read-body">
+    <p>Now there are exactly two possible outcomes, and <em>one of them must happen</em>. There is no situation where neither line prints. That's the magic of IF/ELSE: it splits the program into two paths and guarantees the program takes exactly one.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <text x="300" y="22" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E1C42">IF / ELSE: two paths, one outcome</text>
+
+      <ellipse cx="300" cy="55" rx="50" ry="20" fill="#55C8E8" opacity="0.25" stroke="#55C8E8" stroke-width="2"/>
+      <text x="300" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">START</text>
+
+      <line x1="300" y1="75" x2="300" y2="100" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="300,100 295,93 305,93" fill="#9ca3af"/>
+
+      <polygon points="300,105 380,145 300,185 220,145" fill="#C7922C" opacity="0.20" stroke="#C7922C" stroke-width="2.5"/>
+      <text x="300" y="143" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-weight="700" fill="#8a6620">chanceOfRain</text>
+      <text x="300" y="160" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-weight="700" fill="#8a6620">&gt;= 50 ?</text>
+
+      <line x1="380" y1="145" x2="465" y2="145" stroke="#76C043" stroke-width="2"/>
+      <polygon points="465,145 458,140 458,150" fill="#76C043"/>
+      <text x="422" y="138" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">YES (true)</text>
+      <rect x="465" y="125" width="125" height="40" rx="6" fill="#76C043" opacity="0.20" stroke="#76C043" stroke-width="2"/>
+      <text x="527" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#3d6522">"Bring an umbrella"</text>
+
+      <line x1="220" y1="145" x2="135" y2="145" stroke="#67308F" stroke-width="2"/>
+      <polygon points="135,145 142,140 142,150" fill="#67308F"/>
+      <text x="178" y="138" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">NO (false)</text>
+      <rect x="10" y="125" width="125" height="40" rx="6" fill="#67308F" opacity="0.20" stroke="#67308F" stroke-width="2"/>
+      <text x="72" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#67308F">"Leave it home"</text>
+
+      <line x1="527" y1="165" x2="527" y2="205" stroke="#9ca3af" stroke-width="2"/>
+      <line x1="72" y1="165" x2="72" y2="205" stroke="#9ca3af" stroke-width="2"/>
+      <line x1="72" y1="205" x2="527" y2="205" stroke="#9ca3af" stroke-width="2"/>
+      <line x1="300" y1="205" x2="300" y2="220" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="300,220 295,213 305,213" fill="#9ca3af"/>
+      <ellipse cx="300" cy="232" rx="46" ry="6" fill="none" stroke="#6b7280" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>The login screen on every app you've ever used is just a giant IF/ELSE. <em>If</em> the password matches, let the user in. <em>Else</em>, show the angry red error message. There's nothing in between — you're either logged in or you're not. The whole "is this person who they say they are" question collapses into one boolean expression.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · ELIF — When Two Paths Aren't Enough</div>
+  </div>
+  <h2 class="section-title">More than two roads? Use ELIF.</h2>
+  <div class="read-body">
+    <p>IF/ELSE handles two outcomes. But what if there are three? Or four? Or seven? Picture how grades work: an A is 90 or above, a B is 80–89, a C is 70–79, a D is 60–69, and anything lower is an F. That's <em>five</em> different paths — way more than IF/ELSE can do on its own.</p>
+    <p>The clean answer is <span class="key-term">ELIF</span> — short for "else if." ELIF lets you stack up extra conditions <em>between</em> the IF and the ELSE. The program walks down the list from top to bottom, and the <strong>first</strong> condition that turns out true is the one that wins. Everything below it gets skipped.</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">PSEUDOCODE — IF / ELIF / ELSE</span>
+<span class="code-comment">// Turn a number grade into a letter grade</span>
+<span class="code-keyword">IF</span> grade &gt;= 90 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"A"</span>
+<span class="code-keyword">ELIF</span> grade &gt;= 80 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"B"</span>
+<span class="code-keyword">ELIF</span> grade &gt;= 70 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"C"</span>
+<span class="code-keyword">ELIF</span> grade &gt;= 60 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"D"</span>
+<span class="code-keyword">ELSE</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"F"</span>
+<span class="code-keyword">END IF</span>
+  </div>
+
+  <div class="read-body">
+    <p>Trace through it with <code>grade = 85</code>. The first check (<code>85 &gt;= 90</code>) is false, so the program moves on. The second (<code>85 &gt;= 80</code>) is true, so it prints <code>"B"</code> — and immediately jumps past every line below. The C, D, and F branches never even get tested. That's important: order matters in an ELIF chain, because <em>only the first match runs</em>.</p>
+    <p>You might wonder: <em>why not just use a bunch of separate IFs, one for each grade?</em> You could. But it would be longer, slower, and dangerously buggy — because if your conditions overlap (say, "grade &gt;= 60" and "grade &gt;= 70" are both true for an 85), more than one IF would fire and you'd print "B" and "C" and "D" all at once. ELIF makes it impossible for two branches to run.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--gamer-green);">
+      <div class="compare-card-label" style="color: var(--gamer-green);">✅ With ELIF</div>
+      <div class="compare-card-headline">Exactly one branch runs</div>
+      <ul>
+        <li>Conditions are checked top to bottom</li>
+        <li>The first one that's true wins</li>
+        <li>The rest are skipped automatically</li>
+        <li>Easy to read — one block, one outcome</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: #ff6b6b;">
+      <div class="compare-card-label" style="color: #b91c1c;">⚠️ With many separate IFs</div>
+      <div class="compare-card-headline">Branches can stomp on each other</div>
+      <ul>
+        <li>Every IF is checked, even after one is true</li>
+        <li>Multiple branches may fire on one input</li>
+        <li>Conditions must never overlap or you'll get bugs</li>
+        <li>Easy to forget a case and miss inputs entirely</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · From Flowchart to Code</div>
+  </div>
+  <h2 class="section-title">A worked example — "Guess my number"</h2>
+  <div class="read-body">
+    <p>Here's how a real programmer goes from an idea to working pseudocode. Imagine you want to write a tiny game: the computer is thinking of the number <strong>42</strong>, the player guesses, and the program responds with <em>"too low,"</em> <em>"too high,"</em> or <em>"got it!"</em></p>
+    <p>You start with a flowchart. Each diamond is a place where the program has to choose. Each rectangle is something the program <em>does</em> (printing a message, in this case). Arrows show the path the program takes.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="380" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <text x="300" y="22" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E1C42">Flowchart: Guess my number (secret = 42)</text>
+
+      <ellipse cx="300" cy="55" rx="60" ry="20" fill="#55C8E8" opacity="0.25" stroke="#55C8E8" stroke-width="2"/>
+      <text x="300" y="60" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="700" fill="#0E5568">read guess</text>
+
+      <line x1="300" y1="75" x2="300" y2="98" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="300,98 295,91 305,91" fill="#9ca3af"/>
+
+      <!-- First diamond -->
+      <polygon points="300,103 380,143 300,183 220,143" fill="#C7922C" opacity="0.20" stroke="#C7922C" stroke-width="2.5"/>
+      <text x="300" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-weight="700" fill="#8a6620">guess &gt; 42 ?</text>
+
+      <!-- YES too high -->
+      <line x1="380" y1="143" x2="475" y2="143" stroke="#76C043" stroke-width="2"/>
+      <polygon points="475,143 468,138 468,148" fill="#76C043"/>
+      <text x="427" y="135" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">YES</text>
+      <rect x="475" y="125" width="115" height="40" rx="6" fill="#76C043" opacity="0.20" stroke="#76C043" stroke-width="2"/>
+      <text x="532" y="148" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#3d6522">"too high"</text>
+
+      <!-- NO -> next diamond -->
+      <line x1="300" y1="183" x2="300" y2="210" stroke="#67308F" stroke-width="2"/>
+      <polygon points="300,210 295,203 305,203" fill="#67308F"/>
+      <text x="313" y="200" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">NO</text>
+
+      <polygon points="300,215 380,255 300,295 220,255" fill="#C7922C" opacity="0.20" stroke="#C7922C" stroke-width="2.5"/>
+      <text x="300" y="260" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-weight="700" fill="#8a6620">guess &lt; 42 ?</text>
+
+      <!-- YES too low -->
+      <line x1="220" y1="255" x2="135" y2="255" stroke="#76C043" stroke-width="2"/>
+      <polygon points="135,255 142,250 142,260" fill="#76C043"/>
+      <text x="178" y="248" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">YES</text>
+      <rect x="20" y="235" width="115" height="40" rx="6" fill="#76C043" opacity="0.20" stroke="#76C043" stroke-width="2"/>
+      <text x="77" y="258" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" fill="#3d6522">"too low"</text>
+
+      <!-- NO -> got it -->
+      <line x1="380" y1="255" x2="475" y2="255" stroke="#67308F" stroke-width="2"/>
+      <polygon points="475,255 468,250 468,260" fill="#67308F"/>
+      <text x="427" y="248" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#67308F">NO</text>
+      <rect x="475" y="235" width="115" height="40" rx="6" fill="#F78F1E" opacity="0.25" stroke="#F78F1E" stroke-width="2"/>
+      <text x="532" y="258" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="12" font-weight="700" fill="#8a4a0a">"got it!"</text>
+
+      <line x1="77" y1="275" x2="77" y2="335" stroke="#9ca3af" stroke-width="2"/>
+      <line x1="532" y1="275" x2="532" y2="335" stroke="#9ca3af" stroke-width="2"/>
+      <line x1="77" y1="335" x2="532" y2="335" stroke="#9ca3af" stroke-width="2"/>
+      <line x1="300" y1="335" x2="300" y2="350" stroke="#9ca3af" stroke-width="2"/>
+      <polygon points="300,350 295,343 305,343" fill="#9ca3af"/>
+      <ellipse cx="300" cy="365" rx="46" ry="8" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+      <text x="300" y="368" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#6b7280">END</text>
+    </svg>
+  </div>
+
+  <div class="read-body">
+    <p>Now translate it. Each diamond becomes one IF or ELIF. Each rectangle becomes a PRINT line. The result:</p>
+  </div>
+
+  <div class="code-block">
+<span class="code-label">PSEUDOCODE — Guess my number</span>
+<span class="code-comment">// secret is 42; guess comes from the player</span>
+<span class="code-keyword">IF</span> guess &gt; 42 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"too high"</span>
+<span class="code-keyword">ELIF</span> guess &lt; 42 <span class="code-keyword">THEN</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"too low"</span>
+<span class="code-keyword">ELSE</span>
+    <span class="code-keyword">PRINT</span> <span class="code-string">"got it!"</span>
+<span class="code-keyword">END IF</span>
+  </div>
+
+  <div class="read-body">
+    <p>Three diamonds in the picture, three branches in the code. Notice the third path doesn't need its own comparison — by the time the program reaches <code>ELSE</code>, the only remaining possibility is that <code>guess</code> equals 42. The ELSE catches everything the IFs above didn't.</p>
+    <p>Below, you can run a similar piece of pseudocode line by line. Type a value for <code>n</code>, then click <strong>Step</strong> to walk through it — or <strong>Run All</strong> to watch the program pick its branch on its own. Try numbers from each of the three ranges and watch the highlighted line jump.</p>
+  </div>
+
+  <!-- ========== TRY IT — CONDITIONAL TRACER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">⚡ Try It — Live</div>
+    <div class="try-it-title">Walk Through a Conditional</div>
+    <p class="try-it-instructions">Pick a number for <code>n</code>, then step through the code one line at a time. The yellow highlight is the line the computer is running <em>right now</em>. Branches the program <em>doesn't</em> pick get crossed out. Watch the <code>result</code> variable change in the side panel — and the printed message appear at the bottom.</p>
+
+    <div class="tracer-grid">
+      <div class="tracer-code" aria-label="Pseudocode display">
+<span class="tracer-line" data-line="0"><span style="color:#9ca3af; font-style: italic;">// Categorize a number n</span></span>
+<span class="tracer-line" data-line="1"><span style="color:#55C8E8; font-weight:600;">SET</span> n = (input)</span>
+<span class="tracer-line" data-line="2"><span style="color:#55C8E8; font-weight:600;">IF</span> n &gt; 100 <span style="color:#55C8E8; font-weight:600;">THEN</span></span>
+<span class="tracer-line" data-line="3">    <span style="color:#55C8E8; font-weight:600;">PRINT</span> <span style="color:#C7922C;">"huge"</span></span>
+<span class="tracer-line" data-line="4"><span style="color:#55C8E8; font-weight:600;">ELIF</span> n &gt; 10 <span style="color:#55C8E8; font-weight:600;">THEN</span></span>
+<span class="tracer-line" data-line="5">    <span style="color:#55C8E8; font-weight:600;">PRINT</span> <span style="color:#C7922C;">"medium"</span></span>
+<span class="tracer-line" data-line="6"><span style="color:#55C8E8; font-weight:600;">ELSE</span></span>
+<span class="tracer-line" data-line="7">    <span style="color:#55C8E8; font-weight:600;">PRINT</span> <span style="color:#C7922C;">"small"</span></span>
+      </div>
+
+      <div class="tracer-side">
+        <div class="tracer-inputs">
+          <div class="tracer-panel-label">Input</div>
+          <div class="tracer-input-row"><label for="tracer-n">n</label><input type="number" id="tracer-n" value="42"></div>
+        </div>
+        <div class="tracer-vars">
+          <div class="tracer-panel-label">Variables</div>
+          <div class="tracer-var"><span class="tracer-var-name">n</span><span class="tracer-var-value" id="var-n">—</span></div>
+          <div class="tracer-var"><span class="tracer-var-name">result</span><span class="tracer-var-value" id="var-result">—</span></div>
+        </div>
+        <div class="tracer-status" id="tracer-status">Ready. Click <strong>Step</strong> or <strong>Run All</strong> to start.</div>
+        <div class="tracer-output" id="tracer-output"></div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="tracer-step">Step ▶</button>
+      <button class="try-it-btn try-it-btn-success" id="tracer-run">Run All ⚡</button>
+      <button class="try-it-btn try-it-btn-secondary" id="tracer-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p>Predict before you click! For each value of <code>n</code>, what will the program print, and which lines will get crossed out?</p>
+      <ul style="margin-left:22px; margin-top:8px;">
+        <li><code>n = 250</code></li>
+        <li><code>n = 11</code></li>
+        <li><code>n = 5</code></li>
+        <li><code>n = 10</code> (sneaky! 10 is not greater than 10)</li>
+      </ul>
+      <p style="margin-top:10px;">Then run each one in the tracer above and check whether you were right.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The boolean values <strong>true</strong> and <strong>false</strong> are named after George Boole, a 19th-century English mathematician. He invented an entire algebra of logic that uses just those two values — no numbers in sight. At the time it was a curiosity. A century later, electrical engineers realized that <strong>on/off</strong> switches inside a computer behave exactly like Boole's true/false, and his system became the foundation of every digital chip you've ever used.</p>
+      <p>Every IF you write is, deep down, asking the chip a Boolean question — and the chip answers in the same two-value language Boole sketched out 175 years ago.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 23</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Conditional</div>
+      <div class="vocab-def">A piece of code that asks a yes/no question and runs different instructions depending on the answer.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">If statement</div>
+      <div class="vocab-def">The simplest conditional — runs a block of code only when its condition is true.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Else clause</div>
+      <div class="vocab-def">The "otherwise" path attached to an IF — runs when the IF's condition is false.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Elif</div>
+      <div class="vocab-def">Short for "else if." Adds extra branches between an IF and an ELSE so a program can choose among three or more outcomes.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Comparison operator</div>
+      <div class="vocab-def">A symbol like <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, or <code>&gt;=</code> that compares two values and returns true or false.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Boolean expression</div>
+      <div class="vocab-def">Any expression that evaluates to one of two values — true or false. The thing an IF actually checks.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Branch</div>
+      <div class="vocab-def">One of the possible paths a conditional can take. Every IF has at least two; ELIF chains have more.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Decision diamond</div>
+      <div class="vocab-def">The diamond shape in a flowchart that marks where the program has to make a yes/no choice.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Write IF/ELSE pseudocode for a real-life decision YOU make.</div>
+    <p>Pick something simple — what to wear based on weather, what to eat for breakfast, whether to bring an umbrella. Use clear comparison operators and at least one ELIF.</p>
+    <p>For example:</p>
+    <p><code>IF temperature &gt; 80 THEN wear shorts ELIF temperature &gt; 60 THEN wear jeans ELSE wear a coat</code></p>
+    <p>In your reflection, also answer:</p>
+    <ul>
+      <li>What is your <strong>input</strong>? (the value the program checks)</li>
+      <li>How many <strong>branches</strong> does your conditional have, and what does each one do?</li>
+      <li>Where did you have to choose between <code>&gt;</code> and <code>&gt;=</code> — and why did you pick the one you did?</li>
+      <li>What would happen if someone wrote <code>=</code> instead of <code>==</code> in your code?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 24</strong>, you'll meet <em>loops</em> — the part of programming that lets a computer do something a million times without breaking a sweat. We'll also see how loops scale up to power your TikTok feed and AI.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Conditional Tracer ==========
+(function() {
+  const nInput = document.getElementById('tracer-n');
+  const status = document.getElementById('tracer-status');
+  const output = document.getElementById('tracer-output');
+  const lines = document.querySelectorAll('.tracer-line');
+  const varN = document.getElementById('var-n');
+  const varResult = document.getElementById('var-result');
+  if (!nInput || !lines.length) return;
+
+  // pc state: -1 = not started, -2 = done; otherwise index of next line to execute
+  let pc = -1;
+  let n = null;
+  let result = null;
+  let isRunning = false;
+  let runTimer = null;
+
+  function pulse(el) {
+    el.classList.add('updated');
+    setTimeout(() => el.classList.remove('updated'), 600);
+  }
+
+  function highlightLine(idx) {
+    lines.forEach(l => l.classList.remove('active'));
+    if (idx >= 0 && idx < lines.length) {
+      lines[idx].classList.add('active');
+    }
+  }
+
+  function skipLine(idx) {
+    if (idx >= 0 && idx < lines.length) {
+      lines[idx].classList.add('skipped');
+    }
+  }
+
+  function executeCurrentLine() {
+    if (pc < 0) return;
+    highlightLine(pc);
+    let msg = '';
+    let nextPc;
+    switch (pc) {
+      case 0:
+        msg = '<strong>Comment line.</strong> The computer ignores comments — they\'re notes for humans.';
+        nextPc = 1;
+        break;
+      case 1:
+        n = parseInt(nInput.value, 10);
+        if (isNaN(n)) n = 0;
+        varN.textContent = n; pulse(varN);
+        msg = '<strong>SET n = ' + n + '.</strong> The program reads your input. Now it can start asking questions about it.';
+        nextPc = 2;
+        break;
+      case 2:
+        if (n > 100) {
+          msg = '<strong>IF n &gt; 100:</strong> is ' + n + ' &gt; 100? <strong style="color:#3d6522;">YES</strong> — run the "huge" branch and skip the rest.';
+          nextPc = 3;
+        } else {
+          msg = '<strong>IF n &gt; 100:</strong> is ' + n + ' &gt; 100? <strong style="color:#dc2626;">NO</strong> — skip "huge" and try the next condition.';
+          skipLine(3);
+          nextPc = 4;
+        }
+        break;
+      case 3:
+        result = 'huge';
+        varResult.textContent = '"huge"'; pulse(varResult);
+        output.textContent = '"huge"';
+        output.classList.add('show');
+        msg = '<strong>PRINT "huge".</strong> n is over 100 — that\'s big! Now skip every other branch (they\'re for smaller numbers).';
+        skipLine(4); skipLine(5); skipLine(6); skipLine(7);
+        nextPc = -2;
+        break;
+      case 4:
+        if (n > 10) {
+          msg = '<strong>ELIF n &gt; 10:</strong> is ' + n + ' &gt; 10? <strong style="color:#3d6522;">YES</strong> — run the "medium" branch and skip the rest.';
+          nextPc = 5;
+        } else {
+          msg = '<strong>ELIF n &gt; 10:</strong> is ' + n + ' &gt; 10? <strong style="color:#dc2626;">NO</strong> — skip "medium" and fall through to ELSE.';
+          skipLine(5);
+          nextPc = 6;
+        }
+        break;
+      case 5:
+        result = 'medium';
+        varResult.textContent = '"medium"'; pulse(varResult);
+        output.textContent = '"medium"';
+        output.classList.add('show');
+        msg = '<strong>PRINT "medium".</strong> n is between 11 and 100. The ELSE branch never runs — skip it.';
+        skipLine(6); skipLine(7);
+        nextPc = -2;
+        break;
+      case 6:
+        msg = '<strong>ELSE:</strong> nothing else matched, so this branch catches it. Run the "small" line.';
+        nextPc = 7;
+        break;
+      case 7:
+        result = 'small';
+        varResult.textContent = '"small"'; pulse(varResult);
+        output.textContent = '"small"';
+        output.classList.add('show');
+        msg = '<strong>PRINT "small".</strong> Done — n was 10 or less, so it lands in the catch-all branch.';
+        nextPc = -2;
+        break;
+    }
+    status.innerHTML = msg;
+    pc = nextPc;
+    if (pc === -2) stopRun();
+  }
+
+  function step() {
+    if (pc === -2) return;
+    if (pc === -1) pc = 0;
+    executeCurrentLine();
+  }
+
+  function reset(silent) {
+    lines.forEach(l => l.classList.remove('active', 'skipped'));
+    pc = -1;
+    n = null;
+    result = null;
+    varN.textContent = '—';
+    varResult.textContent = '—';
+    output.classList.remove('show');
+    output.textContent = '';
+    stopRun();
+    if (!silent) {
+      status.innerHTML = 'Ready. Click <strong>Step</strong> or <strong>Run All</strong> to start.';
+    }
+  }
+
+  function startRun() {
+    if (isRunning) return;
+    isRunning = true;
+    if (pc === -1) pc = 0;
+    function tick() {
+      if (!isRunning) return;
+      if (pc === -2) { stopRun(); return; }
+      executeCurrentLine();
+      if (pc === -2) { stopRun(); return; }
+      runTimer = setTimeout(tick, 900);
+    }
+    tick();
+  }
+
+  function stopRun() {
+    isRunning = false;
+    if (runTimer) { clearTimeout(runTimer); runTimer = null; }
+  }
+
+  document.getElementById('tracer-step').addEventListener('click', () => {
+    stopRun();
+    step();
+  });
+  document.getElementById('tracer-run').addEventListener('click', () => {
+    if (pc === -2) reset(true);
+    startRun();
+  });
+  document.getElementById('tracer-reset').addEventListener('click', () => reset(false));
+  nInput.addEventListener('input', () => reset(false));
+})();
+</script>
+
+</body>
+</html>

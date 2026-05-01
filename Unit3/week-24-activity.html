@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 20 Activity — Flowchart Detective | Digital Discoveries</title>
+<title>Week 24 Activity — Loop Logic | Digital Discoveries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
 
   <!-- HEADER -->
   <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-      <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🎮 ACTIVITY</div>
-      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 20 · SC.K12.CTR.1.1 · 2.1 · 3.1</div>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap;">
+      <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🔁 ACTIVITY</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 3 · Week 24 · SC.6.PE.1.9 · 1.10 · 1.11</div>
     </div>
-    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Flowchart Detective</h1>
-    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 scenarios about reading, drawing, and debugging flowcharts. Pick the right shape, predict the right path, spot the mistake. Earn XP — retry as much as you want.</p>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Loop Logic</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 loop puzzles. Predict outputs, spot bugs, pick the right loop, and recognize loops at scale. You can retry as many times as you want.</p>
   </div>
 
   <!-- PROGRESS + XP BAR -->
@@ -52,147 +52,147 @@
 
 <script>
 // ═════════════════════════════════════════════════════════════
-// QUESTION BANK — 10 flowchart scenarios
+// QUESTION BANK — 10 loop scenarios
 // ═════════════════════════════════════════════════════════════
 const QUESTIONS = [
   {
     id: 1,
-    tag: 'Shape ID',
+    tag: 'Predict the Count',
     tagColor: '#55C8E8',
     status: 'blue',
-    icon: '▱',
-    scenario: "You're drawing a flowchart for a guessing game. The first step is to ask the player to type a number. Which flowchart shape should you use?",
+    icon: '🔢',
+    scenario: "Predict the output of this loop. How many lines does it print?<br><br><code style=\"display:block;background:#0a0a14;border:1px solid #1e2a4a;border-radius:8px;padding:12px 14px;color:#55C8E8;font-family:Consolas,monospace;font-size:14px;line-height:1.7;margin-top:8px;\">for i in range(7):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(\"hi\")</code>",
     options: [
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START or END — not getting input from the user." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! Parallelograms are for getting info FROM the user or showing info TO the user. Asking for a number = input." },
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for 'do a step' actions like calculations. Reading user input is its own special shape." },
-      { text: "Diamond (Decision)", correct: false, why: "Diamonds ask yes/no questions, not 'please type a number.' Wrong shape." }
+      { text: '6 lines', correct: false, why: "Close, but range(7) gives the values 0,1,2,3,4,5,6 — that's seven numbers, so the body runs seven times." },
+      { text: '7 lines', correct: true, why: "Right! range(7) produces 7 values (0 through 6). The body runs once for each value, so you see 'hi' seven times." },
+      { text: '8 lines', correct: false, why: "range(7) stops BEFORE 7, not at 7. It produces 0,1,2,3,4,5,6 — seven numbers." },
+      { text: '0 lines (it never runs)', correct: false, why: "range(7) is non-empty, so the loop body absolutely does run." }
     ]
   },
   {
     id: 2,
-    tag: 'Shape ID',
-    tagColor: '#C7922C',
-    status: 'gold',
-    icon: '◇',
-    scenario: "A step in your flowchart asks: 'Is the player's score greater than 100?' Which shape do you use?",
+    tag: 'For or While?',
+    tagColor: '#F78F1E',
+    status: 'amber',
+    icon: '⏱️',
+    scenario: "You're writing code for an online quiz that should keep asking the student until they finally type the correct answer. Which loop type is the right tool?",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for actions, not questions. 'Is X > Y?' is a yes/no question." },
-      { text: "Diamond (Decision)", correct: true, why: "Exactly. Any yes/no question goes in a diamond — and a diamond ALWAYS has two arrows leaving (YES and NO)." },
-      { text: "Parallelogram (Input/Output)", correct: false, why: "That's for input/output. The score check isn't reading or printing — it's deciding which path to take." },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals are only for START and END. Not a decision." }
+      { text: 'A for loop with range(1)', correct: false, why: "range(1) only runs ONCE. The student would get exactly one try — not what 'until they get it right' means." },
+      { text: 'A for loop with range(100)', correct: false, why: "This caps it at 100 attempts. Better, but the student might get it on attempt 1 (wasted) or need more than 100 (cut off). The number is unknown." },
+      { text: 'A while loop that keeps going until the answer is correct', correct: true, why: "Exactly. You don't know how many tries it'll take, so a while loop is right — it keeps repeating until the condition (answer correct) becomes true." },
+      { text: 'No loop — just write the question once', correct: false, why: "Then the student only gets one shot. The whole point is to repeat until they're right." }
     ]
   },
   {
     id: 3,
-    tag: 'Reading Flow',
-    tagColor: '#76C043',
-    status: 'green',
-    icon: '🔍',
-    scenario: "A flowchart has a diamond that asks 'Is N > 5?'. The user enters N = 7. Which arrow does the flow follow?",
+    tag: 'Bug Spotter',
+    tagColor: '#67308F',
+    status: 'red',
+    icon: '♾️',
+    scenario: "What's wrong with this code?<br><br><code style=\"display:block;background:#0a0a14;border:1px solid #1e2a4a;border-radius:8px;padding:12px 14px;color:#55C8E8;font-family:Consolas,monospace;font-size:14px;line-height:1.7;margin-top:8px;\">n = 1<br>while n &lt; 10:<br>&nbsp;&nbsp;&nbsp;&nbsp;print(n)</code>",
     options: [
-      { text: "The NO arrow (because 7 is bigger than 5)", correct: false, why: "Read the question carefully — 'Is 7 > 5?' YES, so the YES arrow is taken." },
-      { text: "The YES arrow (because 7 is greater than 5)", correct: true, why: "Right! 7 > 5 is TRUE, so the YES arrow is taken." },
-      { text: "Both arrows at the same time", correct: false, why: "A flowchart only takes ONE branch from a diamond. The condition is either YES or NO — never both." },
-      { text: "Neither — the flow stops at the diamond", correct: false, why: "Flow always continues — diamonds split the path; they don't end it." }
+      { text: 'Nothing — it prints 1 through 9.', correct: false, why: "Look again — there is no line that changes n. It stays at 1 forever. The condition n < 10 is always true." },
+      { text: 'It is an infinite loop — n is never updated, so the condition never becomes false.', correct: true, why: "Exactly. The loop body never runs n = n + 1 (or anything that changes n), so n stays at 1 and the loop prints '1' forever. Classic infinite-loop bug." },
+      { text: 'range() is missing.', correct: false, why: "range() is a for-loop tool. This is a while loop and doesn't need range() — it needs an increment." },
+      { text: 'It will print 0 through 9.', correct: false, why: "n starts at 1, not 0 — and even if it printed correctly, it never changes, so it just prints 1 over and over." }
     ]
   },
   {
     id: 4,
-    tag: 'Tracing',
-    tagColor: '#67308F',
-    status: 'purple',
-    icon: '🚦',
-    scenario: "In the umbrella flowchart from the reading, you check the weather, ask 'Is rain in the forecast?', and based on the answer either grab an umbrella or leave it home. The forecast says SUNNY. Which shape do you visit RIGHT before END?",
+    tag: 'Off-By-One',
+    tagColor: '#76C043',
+    status: 'amber',
+    icon: '🐛',
+    scenario: "You want a loop that prints the numbers 1 through 5. Which version is CORRECT?",
     options: [
-      { text: "The diamond (Is rain in the forecast?)", correct: false, why: "You go THROUGH the diamond, but it's not the last shape before END." },
-      { text: "The 'Bring umbrella' rectangle", correct: false, why: "That branch is only taken if rain is forecast. Sunny means the OTHER branch." },
-      { text: "The 'Leave it at home' rectangle", correct: true, why: "Yes! Sunny → NO branch from the diamond → 'Leave it at home' rectangle → arrow → END." },
-      { text: "The Get-the-weather parallelogram", correct: false, why: "That's near the start, not just before END. The flow visits the rectangle on the chosen branch right before reaching END." }
+      { text: 'for i in range(5): print(i)', correct: false, why: "This prints 0,1,2,3,4 — off by one on BOTH ends. Starts too early, ends too early." },
+      { text: 'for i in range(1, 5): print(i)', correct: false, why: "Close! But range(1, 5) stops BEFORE 5 — so this prints 1,2,3,4. Missing the 5." },
+      { text: 'for i in range(1, 6): print(i)', correct: true, why: "Right! range(1, 6) gives 1,2,3,4,5 — Python includes the start (1) but stops before the end (6). The classic off-by-one fix." },
+      { text: 'for i in range(0, 5): print(i)', correct: false, why: "This is the same as range(5) — it prints 0,1,2,3,4. Wrong start, wrong end." }
     ]
   },
   {
     id: 5,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your friend's flowchart has a diamond labeled 'Is the user logged in?' — and THREE arrows are leaving the diamond. What's the problem?",
+    tag: 'Loops at Scale',
+    tagColor: '#C7922C',
+    status: 'blue',
+    icon: '📱',
+    scenario: "Your TikTok 'For You' page works because behind the scenes a loop ___.",
     options: [
-      { text: "Diamonds should have exactly 2 arrows leaving (one YES, one NO)", correct: true, why: "Exactly. Decisions are yes/no — two outcomes, two arrows. Three arrows means the question isn't really yes/no." },
-      { text: "Diamonds should have only 1 arrow leaving", correct: false, why: "If a decision had only 1 arrow, it wouldn't be a decision. There must be 2 paths." },
-      { text: "Diamonds should be replaced with rectangles", correct: false, why: "Rectangles are for actions, not yes/no questions. The diamond is the right shape — the bug is the THREE arrows." },
-      { text: "Nothing — diamonds can have any number of arrows", correct: false, why: "Diamonds always have exactly 2 outgoing arrows. That's the rule that makes them special." }
+      { text: 'is hand-coded once for every single video that gets uploaded', correct: false, why: "Impossible at TikTok's scale — millions of videos go up daily. Hand-coding per video would never finish." },
+      { text: 'walks through millions of candidate videos and scores each one for how likely you are to watch it', correct: true, why: "Right. The body — 'score this video for THIS user' — runs over millions of candidates. That's loops at scale: one piece of code, gigantic data." },
+      { text: 'shows everyone the same single video each day', correct: false, why: "The whole point of the For You feed is that it's personalized — different videos for different users." },
+      { text: 'asks a human to pick what you should see next', correct: false, why: "There aren't enough humans on Earth to pick videos for every user every minute. That's exactly the problem loops solve." }
     ]
   },
   {
     id: 6,
-    tag: 'Spot the Bug',
-    tagColor: '#F78F1E',
-    status: 'amber',
-    icon: '🐞',
-    scenario: "Your classmate's flowchart for 'add two numbers' has a parallelogram (Input), a rectangle (sum = a + b), and another parallelogram (Print sum) — but no oval anywhere. What's the problem?",
+    tag: 'Read the Output',
+    tagColor: '#55C8E8',
+    status: 'green',
+    icon: '🔁',
+    scenario: "What does this loop print?<br><br><code style=\"display:block;background:#0a0a14;border:1px solid #1e2a4a;border-radius:8px;padding:12px 14px;color:#55C8E8;font-family:Consolas,monospace;font-size:14px;line-height:1.7;margin-top:8px;\">total = 0<br>for x in range(1, 4):<br>&nbsp;&nbsp;&nbsp;&nbsp;total = total + x<br>print(total)</code>",
     options: [
-      { text: "It needs at least one diamond", correct: false, why: "This algorithm doesn't have any decisions, so it doesn't need a diamond. The problem is elsewhere." },
-      { text: "It's missing the START and END terminator ovals", correct: true, why: "Right. Every flowchart needs an oval at the top (START) and an oval at the bottom (END). Without them, where does the flow start or stop?" },
-      { text: "Rectangles can't do math", correct: false, why: "Rectangles are EXACTLY where you put 'sum = a + b' calculations. That part is fine." },
-      { text: "It needs more arrows", correct: false, why: "We don't know how many arrows it has. The clear missing part is the terminator ovals." }
+      { text: '3', correct: false, why: "That would be just the last x value (3), not the sum. The loop ADDS each x to total." },
+      { text: '6', correct: true, why: "Correct! range(1,4) gives 1,2,3. The loop adds them up: 0+1=1, then +2=3, then +3=6. Final print: 6." },
+      { text: '10', correct: false, why: "1+2+3+4 = 10, but range(1,4) stops BEFORE 4. So 4 isn't included. It's just 1+2+3 = 6." },
+      { text: '0', correct: false, why: "total starts at 0 but the loop adds to it three times. It doesn't stay 0." }
     ]
   },
   {
     id: 7,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
+    tag: 'Pick the Right Loop',
+    tagColor: '#F78F1E',
     status: 'blue',
-    icon: '🔄',
-    scenario: "You see this pseudocode line: <code style='display:inline-block;background:#0a0a14;padding:2px 8px;border-radius:4px;font-family:Consolas,monospace;color:#c8d6e8;font-size:13px;'>PRINT \"Hello!\"</code> — which flowchart shape does it become?",
+    icon: '🚦',
+    scenario: "Which task is the BEST fit for a for loop (not a while loop)?",
     options: [
-      { text: "Rectangle (Process)", correct: false, why: "Rectangles are for calculations and assignments. PRINT is showing something to the user — that's output." },
-      { text: "Diamond (Decision)", correct: false, why: "There's no yes/no question here — just a print." },
-      { text: "Parallelogram (Input/Output)", correct: true, why: "Right! PRINT is showing info to the user — that's the output side of input/output. Parallelogram!" },
-      { text: "Oval (Terminator)", correct: false, why: "Ovals only mark START and END — not normal print steps." }
+      { text: 'Keep flipping a coin until you get heads', correct: false, why: "You don't know how many flips it'll take — could be 1, could be 50. That's a while-loop job." },
+      { text: 'Greet every one of the 30 students on a class roster', correct: true, why: "Right — 30 students, known up front. 'Do this once for each item' is exactly what a for loop is built for." },
+      { text: 'Keep playing the game while the player has health', correct: false, why: "Unknown number of iterations — depends on how the game goes. That's while-loop territory." },
+      { text: 'Keep asking for a password until the user types it correctly', correct: false, why: "Unknown number of tries — could be 1, could be 8. while loop is the right tool." }
     ]
   },
   {
     id: 8,
-    tag: 'Translate',
-    tagColor: '#55C8E8',
-    status: 'blue',
-    icon: '🔄',
-    scenario: "You're translating this pseudocode to a flowchart:<br><br><code style='display:block;background:#0a0a14;padding:14px 16px;border-radius:8px;border:1px solid #1e2a4a;color:#c8d6e8;font-family:Consolas,monospace;font-size:13px;line-height:1.7;margin:8px 0;'>IF age &gt;= 13<br>&nbsp;&nbsp;PRINT \"Welcome!\"<br>ELSE<br>&nbsp;&nbsp;PRINT \"Too young.\"</code>How many DIAMONDS does the flowchart need?",
+    tag: 'AI Training',
+    tagColor: '#67308F',
+    status: 'green',
+    icon: '🤖',
+    scenario: "How does a tool like an AI image generator 'learn'?",
     options: [
-      { text: "Zero — IF/ELSE doesn't need a diamond", correct: false, why: "Every IF (or IF/ELSE) is a decision in flowchart-land. That's exactly what diamonds are for." },
-      { text: "One — the IF/ELSE is one yes/no question", correct: true, why: "Exactly. A single IF/ELSE is one decision: 'Is age >= 13?' YES or NO. One diamond, two paths out." },
-      { text: "Two — one for IF, one for ELSE", correct: false, why: "ELSE is just the 'NO' branch from the same diamond — not its own decision. Still one diamond." },
-      { text: "Three — one for IF, one for ELSE, one to merge", correct: false, why: "Merging isn't a decision; the two branches just rejoin with a plain arrow. Still one diamond." }
+      { text: 'A programmer hand-codes one rule per image, forever', correct: false, why: "Impossible — there are billions of possible images. Hand-coding rules would take longer than the universe has existed." },
+      { text: 'It runs a training loop millions or billions of times: guess, measure how wrong, adjust', correct: true, why: "Exactly. Each iteration the model guesses, sees the error, and nudges itself a tiny bit closer to right. Repeat at scale = a smart model." },
+      { text: 'It memorizes one perfect image and reuses it forever', correct: false, why: "If that were true, every image generator would output the same thing. Their power comes from learning patterns through loops, not memorizing one example." },
+      { text: 'It uses no loops at all — it just knows', correct: false, why: "All AI training is loops at scale. Without loops there is no AI as we know it." }
     ]
   },
   {
     id: 9,
-    tag: 'Reading Flow',
+    tag: 'Iteration Count',
     tagColor: '#76C043',
-    status: 'green',
-    icon: '🔍',
-    scenario: "A flowchart for the algorithm 'Is N even?' takes input N = 4. The diamond asks 'Is N % 2 == 0?'. Which output does the flowchart eventually print?",
+    status: 'amber',
+    icon: '🎰',
+    scenario: "How many times does the body of THIS loop run?<br><br><code style=\"display:block;background:#0a0a14;border:1px solid #1e2a4a;border-radius:8px;padding:12px 14px;color:#55C8E8;font-family:Consolas,monospace;font-size:14px;line-height:1.7;margin-top:8px;\">for i in range(2, 8):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(\"spin!\")</code>",
     options: [
-      { text: "\"Even\"", correct: true, why: "Right! 4 % 2 = 0, so the YES branch is taken, which prints \"Even\"." },
-      { text: "\"Odd\"", correct: false, why: "4 is even — 4 % 2 = 0. The YES branch wins, not the NO branch." },
-      { text: "Both \"Even\" and \"Odd\"", correct: false, why: "A diamond only takes ONE branch — never both. The output is either-or." },
-      { text: "Nothing — the flowchart breaks", correct: false, why: "The flowchart works fine for 4. Trace it carefully: input 4 → diamond YES → print \"Even\" → END." }
+      { text: '8 times', correct: false, why: "range(2, 8) doesn't include 8 — it stops before. And it starts at 2, not 0." },
+      { text: '7 times', correct: false, why: "Try counting: 2, 3, 4, 5, 6, 7 — that's six values, not seven." },
+      { text: '6 times', correct: true, why: "Right! range(2, 8) produces 2,3,4,5,6,7 — six values, six iterations. Subtract: 8 − 2 = 6 is a quick way to check." },
+      { text: '5 times', correct: false, why: "Off by one. It's 6 values: 2,3,4,5,6,7. The trick is range stops BEFORE the end value, but it INCLUDES the start." }
     ]
   },
   {
     id: 10,
-    tag: 'Big Picture',
+    tag: 'Loops Everywhere',
     tagColor: '#C7922C',
-    status: 'gold',
-    icon: '🎯',
-    scenario: "Why might a programmer draw a FLOWCHART before writing pseudocode or real code?",
+    status: 'green',
+    icon: '🌍',
+    scenario: "Which of these everyday systems is NOT secretly running a loop?",
     options: [
-      { text: "To save the file as a JPEG instead of code", correct: false, why: "File format isn't the reason. The flowchart is a thinking tool, not a deliverable." },
-      { text: "Because flowcharts run faster than code", correct: false, why: "Flowcharts don't 'run' at all — they're pictures. Code runs on a computer." },
-      { text: "To see the WHOLE shape of the algorithm at a glance — especially the branches", correct: true, why: "Exactly! Flowcharts make branching visible. You can spot missing paths or unclear decisions BEFORE you've written a single line of code." },
-      { text: "Because Canvas requires it", correct: false, why: "Canvas doesn't care about your tools. Programmers use flowcharts because they HELP, not because they're required." }
+      { text: 'A microwave timer counting down', correct: false, why: "It IS a loop! Body: heat + decrement timer. Condition: while time_left > 0." },
+      { text: 'YouTube building your home page recommendations', correct: false, why: "It IS a loop! It walks through every video in your history scoring candidates. That's classic loops at scale." },
+      { text: 'An elevator deciding what floor to visit next', correct: false, why: "It IS a loop! While there are pending floor requests, keep moving — same shape as a while loop." },
+      { text: 'None of the above — they ALL secretly use loops', correct: true, why: "Trick question, but it's the truth! Microwaves, recommendation feeds, elevators — almost any 'do this until something changes' system is a loop in disguise. Loops are the engine of modern life." }
     ]
   }
 ];
@@ -206,13 +206,14 @@ let totalXP = 0;
 let correctCount = 0;
 let answered = false;
 
+// ═════════════════════════════════════════════════════════════
+// RENDERING
+// ═════════════════════════════════════════════════════════════
 const STATUS_COLORS = {
-  red:    '#ff6b6b',
-  amber:  '#F78F1E',
-  green:  '#76C043',
-  blue:   '#55C8E8',
-  purple: '#A78BFA',
-  gold:   '#C7922C'
+  red:   '#ff6b6b',
+  amber: '#F78F1E',
+  green: '#76C043',
+  blue:  '#55C8E8'
 };
 
 function renderQuestion() {
@@ -230,7 +231,7 @@ function renderQuestion() {
       </div>
       <div style="padding:24px;">
         <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Scenario ${q.id}</div>
-        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <div style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</div>
         <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
         <div id="feedback-zone" style="margin-top:18px;"></div>
       </div>
@@ -334,16 +335,16 @@ function renderResults() {
   const pct = Math.round((totalXP / maxXP) * 100);
   let message, emoji, color;
   if (pct === 100) {
-    message = "Flowchart Detective, badge earned. You can read, write, and debug any chart we throw at you.";
+    message = "Loop master! You can predict, debug, and recognize loops at any scale.";
     emoji = "🏆"; color = "#C7922C";
   } else if (pct >= 80) {
-    message = "Excellent work — you've got the five shapes and the flow logic locked in.";
+    message = "Excellent — you understand how loops run, where they break, and why they matter.";
     emoji = "⭐"; color = "#76C043";
   } else if (pct >= 60) {
-    message = "Solid progress. Review the missed scenarios, re-read Week 20 (especially the Reading-a-Flowchart section), and try again.";
+    message = "Good progress. Review the off-by-one and infinite-loop bugs and try again.";
     emoji = "💪"; color = "#55C8E8";
   } else {
-    message = "Keep going! Flowchart shapes take a little practice — re-read the Five Core Shapes section and try again.";
+    message = "Keep going! Re-read Sections 2–4 of the Week 24 lesson, then loop back here.";
     emoji = "📚"; color = "#67308F";
   }
 
@@ -370,6 +371,7 @@ function renderResults() {
     renderQuestion();
   });
 
+  // Canvas grade passback via postMessage
   try {
     window.parent.postMessage({
       type: 'canvas-grade',
@@ -378,11 +380,12 @@ function renderResults() {
       percent: pct,
       correctCount: correctCount,
       totalQuestions: QUESTIONS.length,
-      activity: 'week-20-activity'
+      activity: 'week-24-activity'
     }, '*');
   } catch (e) { /* no-op */ }
 }
 
+// Kick off
 renderQuestion();
 </script>
 
