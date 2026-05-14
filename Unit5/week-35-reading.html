@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 35 — Careers in Computing &amp; Digital Citizenship | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== CARD GRID ========== */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 8px; }
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== STEPS ========== */
+.steps-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.step-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TRAITS ========== */
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.trait-card { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px; }
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body { color: #374151; font-size: 14.5px; }
+
+/* ========== VOCAB ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* ========== REFLECTION ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* ========== CAREER MATCH WIDGET ========== */
+.cm-pool {
+  background: #f8f9fa;
+  border: 1px dashed #c5cdd6;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 70px;
+  margin-bottom: 14px;
+}
+.cm-pool-empty {
+  width: 100%;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+  padding: 8px 0;
+}
+.cm-card {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  color: var(--binary-blue);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  cursor: grab;
+  user-select: none;
+  transition: all 0.15s;
+  font-weight: 500;
+  max-width: 100%;
+}
+.cm-card:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.25); transform: translateY(-1px); }
+.cm-card.selected {
+  background: var(--bitstream-blue);
+  color: white;
+  border-color: var(--dark-bitstream);
+}
+.cm-card.dragging { opacity: 0.5; cursor: grabbing; }
+.cm-card.correct { border-color: var(--gamer-green); background: #f0fdf4; }
+.cm-card.wrong   { border-color: #ef4444; background: #fef2f2; }
+.cm-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.cm-col {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.cm-col.drop-target { border-color: var(--gateway-gold); background: #fffbeb; }
+.cm-col.col-design  { border-top: 5px solid var(--pixel-pink); }
+.cm-col.col-data    { border-top: 5px solid var(--bitstream-blue); }
+.cm-col.col-security{ border-top: 5px solid var(--gateway-gold); }
+.cm-col.col-build   { border-top: 5px solid var(--gamer-green); }
+.cm-col.col-people  { border-top: 5px solid var(--portal-purple); }
+.cm-col.col-ai      { border-top: 5px solid var(--odyssey-orange); }
+.cm-col-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.cm-col-sub {
+  font-family: var(--font-text);
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+  margin-top: -3px;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+.cm-col.col-design   .cm-col-label { color: var(--pixel-pink); }
+.cm-col.col-data     .cm-col-label { color: var(--dark-bitstream); }
+.cm-col.col-security .cm-col-label { color: var(--gateway-gold); }
+.cm-col.col-build    .cm-col-label { color: #3d6522; }
+.cm-col.col-people   .cm-col-label { color: var(--portal-purple); }
+.cm-col.col-ai       .cm-col-label { color: var(--odyssey-orange); }
+.cm-feedback-list {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #374151;
+  display: none;
+}
+.cm-feedback-list.show { display: block; }
+.cm-feedback-list strong { color: var(--binary-blue); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .cm-cols { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .cm-cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 5 · WEEK 35
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 5: Careers, Ethics &amp; Capstone</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 35: Careers in Computing &amp; Digital Citizenship</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 5 • WEEK 35 • READING</div>
+  <h1 class="lesson-title">Careers in Computing &amp; Digital Citizenship</h1>
+  <p class="lesson-description">Every app you opened today, every traffic light you passed, every game you played — someone built it. Computer science isn't one career. It's a family of careers, each with its own kind of work, its own kind of training, and its own kind of responsibility. This week you'll meet that family — and you'll see why being a good <em>citizen</em> of the digital world is the most important "career skill" of all.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Identify</strong> at least six different careers in computing and describe what each one does day to day.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Recognize</strong> multiple paths into the field — degree, bootcamp, self-teaching, mentorship, apprenticeship — and the common thread that runs through all of them.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Name an ethical responsibility</strong> unique to each major CS field — not just AI, but accessibility, security, and honest data work.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Apply the four cardinal virtues</strong> — prudence, justice, fortitude, temperance — to your own life online.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · The Hidden Engineers Of Your Day</div>
+  </div>
+  <h2 class="section-title">Someone built every machine you touched today</h2>
+  <div class="read-body">
+    <p>Stop and trace one ordinary morning. The alarm on your phone? A programmer wrote that. The icon you tapped to turn it off? Designed by a person who thought hard about what your tired thumb would look for first. The data that flowed when your weather app showed today's forecast? Routed across the planet by routers programmed by network engineers. The car your family drove past? Its anti-lock brakes ran software written and tested by a team of engineers you'll never meet.</p>
+    <p>None of these tools made themselves. Behind every one of them is a person — sometimes a single person, often a team — whose <span class="key-term">vocation</span> is computer science. <em>Vocation</em> is a classical word for a <strong>calling</strong>: not just a job that pays the bills, but work that suits who you are and serves others. The hidden engineers of your day chose this calling. Many of them are the people who built the world you take for granted.</p>
+    <p>This week we're going to make that hidden work visible. Some of you reading this <em>will</em> become one of those people. All of you will spend the rest of your lives using what they build. Either way, you should know the family you're meeting.</p>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Vocation</strong> — work you feel called to do, not just paid to do. From the Latin <em>vocare</em>, "to call."</p>
+      <p><strong>Computer science (CS)</strong> — the field of work that designs and builds the software, data, and systems that run modern life.</p>
+      <p><strong>Career path</strong> — the route you take to grow from beginner to skilled practitioner of a vocation.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · The Map Of CS Careers</div>
+  </div>
+  <h2 class="section-title">Eight callings under one big tent</h2>
+  <div class="read-body">
+    <p>"Computer science career" isn't one job — it's a family of jobs, each with a different feel. Some are deeply visual. Some are mostly math. Some are about catching bad actors. Some are about helping people who otherwise can't use what the rest of us use easily. Here's the map.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <strong>🛠️ Software Engineer</strong>
+      </div>
+      <div class="platform-card-body">Builds the apps, websites, and tools you use every day. Writes code, fixes bugs, works with teammates to ship features. The "backbone" career — most large companies have many of them.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head">
+        <strong>📊 Data Scientist</strong>
+      </div>
+      <div class="platform-card-body">Finds patterns in big piles of data. Helps companies, hospitals, and cities answer "what's happening?" and "what might happen next?" Heavy on math, statistics, and curiosity.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--pixel-pink);">
+      <div class="platform-card-head">
+        <strong>🎨 UX Designer</strong>
+      </div>
+      <div class="platform-card-body">UX = "user experience." Designs <em>how</em> an app or website feels to use. Thinks about every button, every word, every step a user takes. Half psychology, half design, all about empathy.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head">
+        <strong>🔒 Cybersecurity Analyst</strong>
+      </div>
+      <div class="platform-card-body">Protects systems from being broken into or stolen from. Hunts vulnerabilities, watches for attacks, and patches the holes before bad actors find them. Detective work for the digital age.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head">
+        <strong>🤖 AI / ML Engineer</strong>
+      </div>
+      <div class="platform-card-body">Builds the AI models that recommend videos, recognize faces, transcribe speech, and drive cars. Knows the math behind machine learning and the ethics behind deploying it.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head">
+        <strong>🦾 Robotics Engineer</strong>
+      </div>
+      <div class="platform-card-body">Builds machines that move in the physical world — surgical robots, factory arms, warehouse rovers, planetary explorers. Combines code with mechanical and electrical engineering.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <strong>🎮 Game Developer</strong>
+      </div>
+      <div class="platform-card-body">Designs and builds the games you play. A mix of programmer, storyteller, artist, and physics teacher — depending on the role. Teams range from one indie maker to studios of thousands.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--dark-bitstream);">
+      <div class="platform-card-head">
+        <strong>🌐 IT / Network Administrator</strong>
+      </div>
+      <div class="platform-card-body">Keeps an organization's computers, networks, and servers running. Every company has someone on this — when the Wi-Fi works at school, it's because someone like this is doing their job well.</div>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — CAREER MATCH SORTABLE ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🧭 Try It — Career Match</div>
+    <div class="try-it-title">Match the Person to the Career</div>
+    <p class="try-it-instructions">Below are six made-up sixth graders, each with a different mix of interests. Drag each person's card into the CS career column that fits them best. (No drag? Click a card to select it, then click a column.) When every card is placed, tap <strong>Score</strong> to see how well you read each match — and why.</p>
+
+    <div id="cm-pool" class="cm-pool" data-zone="pool">
+      <div class="cm-pool-empty">Cards waiting here — drag or click to assign.</div>
+    </div>
+
+    <div class="cm-cols">
+      <div class="cm-col col-design" data-zone="design">
+        <div class="cm-col-label">🎨 UX Designer</div>
+        <div class="cm-col-sub">design &amp; feel</div>
+      </div>
+      <div class="cm-col col-data" data-zone="data">
+        <div class="cm-col-label">📊 Data Scientist</div>
+        <div class="cm-col-sub">patterns &amp; math</div>
+      </div>
+      <div class="cm-col col-security" data-zone="security">
+        <div class="cm-col-label">🔒 Cybersecurity</div>
+        <div class="cm-col-sub">defense &amp; puzzles</div>
+      </div>
+      <div class="cm-col col-build" data-zone="build">
+        <div class="cm-col-label">🛠️ Software Engineer</div>
+        <div class="cm-col-sub">building things</div>
+      </div>
+      <div class="cm-col col-people" data-zone="people">
+        <div class="cm-col-label">🦾 Robotics</div>
+        <div class="cm-col-sub">moving machines</div>
+      </div>
+      <div class="cm-col col-ai" data-zone="ai">
+        <div class="cm-col-label">🤖 AI / ML</div>
+        <div class="cm-col-sub">teaching machines</div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-secondary" id="cm-reset">Reset</button>
+      <button class="try-it-btn try-it-btn-success" id="cm-score">✨ Score</button>
+    </div>
+
+    <div class="try-it-feedback" id="cm-feedback"></div>
+    <div class="cm-feedback-list" id="cm-feedback-list"></div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice that no person fits perfectly into one box. Real careers blur. A UX designer might know some code. A data scientist might end up specializing in AI. The map is a starting point, not a cage. The point isn't to pick your career right now — it's to see that there are <em>many</em> good ways to make a calling out of computing.</p>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · How People Actually Get There</div>
+  </div>
+  <h2 class="section-title">More paths than you'd think — and one thing they share</h2>
+  <div class="read-body">
+    <p>You might picture the road into computer science as one road: high school → college → CS degree → first job. That road exists, and lots of people travel it. But it's not the only road. Real engineers come from real lives, and those lives don't all look the same.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">The college degree path</div>
+        <div class="step-body">Four years of university studying computer science, math, and engineering. Strong for theory and for getting into research or large companies that hire from college campuses. Costs time and money — but for many people, it's the right route.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">The bootcamp path</div>
+        <div class="step-body">An intensive 3–9 month program focused on specific job-ready skills, like building websites or analyzing data. Often used by people switching careers from something else. Less broad than a degree, but faster and far cheaper.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">The self-taught path</div>
+        <div class="step-body">Free online courses, library books, YouTube tutorials, a notebook full of practice problems, and lots of patience. Many great engineers learned this way. The hard part isn't the material — it's the discipline to keep going without a teacher pushing you.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">The apprenticeship / mentor path</div>
+        <div class="step-body">Some companies and military programs hire people without degrees and train them on the job, paired with an experienced engineer. You earn while you learn. Increasingly common — and increasingly respected.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-title">The internship pipeline</div>
+        <div class="step-body">An <span class="key-term">internship</span> is a short, paid (or sometimes unpaid) job — usually a summer — where a student does real work for a real company. Most professional engineers had at least one. Internships turn classroom learning into the real thing.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Different roads, same destination. What do they all share? <strong>Practice on real problems</strong>. Every engineer you've ever met — the famous ones at huge companies and the quiet ones at your local hospital — got there the same way: by solving lots of problems, badly at first, then better, with the courage to keep going when something didn't work.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Some of the most famous people in computing never finished a CS degree. Margaret Hamilton — the engineer who wrote the software that landed astronauts on the Moon in 1969 — was self-taught after college (her degree was in mathematics, not CS). She invented the term "<strong>software engineering</strong>" because the field didn't even have a name yet. Sometimes the path doesn't exist until you walk it.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Ethical Responsibility — In Every Career</div>
+  </div>
+  <h2 class="section-title">Every CS career has a moral edge — not just AI</h2>
+  <div class="read-body">
+    <p>You've spent the last few weeks thinking about <strong>AI ethics</strong>. But ethical responsibility isn't only the AI engineer's problem. Every career in this family has its own moral edge — its own decisions where doing the work well means doing it <em>rightly</em>. Three quick examples.</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--pixel-pink);">🎨 UX Designer · Accessibility</div>
+      <div class="trait-body">A UX designer who makes a button only readable in tiny gray text has excluded people with low vision. A designer who insists on a high-contrast, screen-reader-friendly version has included them. That choice — small, daily, repeated — is what <span class="key-term">accessibility</span> means in practice.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">🔒 Cybersecurity · Honesty</div>
+      <div class="trait-body">A security engineer who discovers a flaw faces a real choice: report it and help fix it, or sell it to people who want to abuse it. The right answer is obvious — but only if you've made up your mind <em>before</em> the moment arrives.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">📊 Data Scientist · Honest Charts</div>
+      <div class="trait-body">A data scientist can stretch a chart's y-axis to make a tiny change look huge — and tell a true number while telling a false story. The ethics of data work is the ethics of not lying with shapes, colors, and selection.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gamer-green);">🛠️ Software Engineer · Quality</div>
+      <div class="trait-body">An engineer who ships code that "works on my machine" but breaks for thousands of users hasn't really finished the job. Caring about <em>other people</em> using your code — testing it, fixing the edge cases — is the daily ethics of software work.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>In 2014, security researcher Heartbleed-discoverer Neel Mehta found a critical flaw in a widely used piece of internet software. He could have kept it quiet, sold it, or used it. Instead he reported it — and within days, engineers across the world patched servers that protected billions of people. One person's ethical choice protected the digital lives of nearly everyone reading these words. <strong>Ethical responsibility scales.</strong></p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Digital Citizenship As Virtue</div>
+  </div>
+  <h2 class="section-title">You don't have to be an engineer to live online well</h2>
+  <div class="read-body">
+    <p>Most of the people reading this will not become full-time computer scientists. But every one of you will spend the rest of your life <em>inside</em> the digital world other people built. How will you live there? The classical tradition has a name for this question — it's the question of <strong>virtue</strong>. A virtue is a settled habit of acting well. The Greeks and Romans named four <span class="key-term">cardinal virtues</span> at the center of a good life. Each one has a clear meaning online.</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">⚖️ Prudence — Wise Foresight</div>
+      <div class="trait-body">The prudent poster pauses before publishing. <em>Could this hurt someone? Would I be proud of this in five years? Is this true?</em> Prudence is the slow breath before the click. It is the first virtue in classical lists because every other one needs it.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">⚖️ Justice — Giving What Is Owed</div>
+      <div class="trait-body">The just commenter is honest. Credits the source. Doesn't pile onto a stranger's bad day. Defends the absent. Calls out lies without becoming a liar. Justice online is the quiet practice of treating people as people, not pixels.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">🛡️ Fortitude — Courage In Hardship</div>
+      <div class="trait-body">The fortitudinous user keeps learning when it's hard. Faces an inbox of criticism without folding. Tells the truth when a crowd wants something easier. Fortitude online is also the courage to log off when staying on would harm you.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gamer-green);">⏳ Temperance — Self-Mastery</div>
+      <div class="trait-body">The temperate user knows what is enough. Enough scrolling. Enough screen time. Enough opinions shared today. Temperance is not "no fun online" — it is being the one who chooses, not the algorithm.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It — Citizenship As Vocation</div>
+    <div class="callout-body">
+      <p>For the classical thinkers, being a good <em>citizen</em> was itself a calling — perhaps the most important one. Aristotle wrote that a city's worth was measured by the virtue of its citizens, not the strength of its walls. The digital world is now a kind of city — a vast one, with neighborhoods better and worse than most physical ones. Being a good citizen of <em>that</em> city is everyone's vocation, whether you ever write a line of code or not.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Without scrolling up, name <strong>one</strong> CS career and <strong>one</strong> ethical responsibility unique to it. Then pick <strong>one</strong> of the four cardinal virtues and describe a small, real way you could practice it online this week. (Hint: small and real beats big and fake.)</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 35</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Software engineer</div>
+      <div class="vocab-def">A person whose vocation is building apps, websites, and software tools — the most common CS career.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Data scientist</div>
+      <div class="vocab-def">A person who finds patterns and answers in large amounts of data, using math and statistics.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">UX designer</div>
+      <div class="vocab-def">A person who designs how a digital product feels and flows for the people using it. UX = user experience.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Cybersecurity</div>
+      <div class="vocab-def">The practice of protecting computers, networks, and data from being broken into, stolen, or misused.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">AI / ML engineer</div>
+      <div class="vocab-def">A person who builds and trains artificial-intelligence and machine-learning models for real applications.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Internship</div>
+      <div class="vocab-def">A short, real-work job — usually a summer — that helps a student turn classroom skills into professional ones.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Accessibility</div>
+      <div class="vocab-def">Designing software so people with different abilities — vision, hearing, motor, cognitive — can use it just as well.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Digital citizenship</div>
+      <div class="vocab-def">The habit of acting with virtue — prudence, justice, fortitude, temperance — in your digital life.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Which calling — and which virtue — sounds most like you?</div>
+    <p>Pick <strong>one</strong> CS career from this lesson that you'd want to learn more about, and <strong>one</strong> of the four cardinal virtues you'd want to practice better online this year. Answer in 4–6 sentences:</p>
+    <ul>
+      <li>Which CS career sounds most like a calling for you — and why? (Be honest. "None of them" is allowed too — say so and explain.)</li>
+      <li>Which of the four cardinal virtues (prudence, justice, fortitude, temperance) do you most want to grow this year online?</li>
+      <li>Describe <strong>one small habit</strong> you could start this week that would grow that virtue.</li>
+      <li>How would your future self thank you for starting that habit now?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>Next week — the last week of the course — is your <strong>capstone</strong>. You'll pull from every unit (digital communication, citizenship, programming, modeling, and careers) to design and deliver one final project that shows what you've learned. The year ends with a course-final assessment that crosses all five units. Bring your best.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Career Match Sortable ==========
+(function() {
+  const PROFILES = [
+    { id: 'p1', text: 'Maya loves drawing buttons that look nice, and she gets annoyed when an app makes Grandma squint.', answer: 'design',   why: 'Best fit: <strong>UX Designer</strong>. Cares about how things feel to use and worries about real users (accessibility for Grandma).' },
+    { id: 'p2', text: 'Priya is obsessed with finding hidden patterns in messy data — sports stats, grades, weather charts.', answer: 'data',     why: 'Best fit: <strong>Data Scientist</strong>. The work is finding patterns in piles of data — that’s the calling.' },
+    { id: 'p3', text: 'James loves catching cheaters in online games and feels a thrill when he finds a system’s weak spot.', answer: 'security', why: 'Best fit: <strong>Cybersecurity</strong>. Detective work and protecting systems are the heart of the job.' },
+    { id: 'p4', text: 'Tomás likes shipping projects that other people actually use. He once made a tiny app for his mom’s store.', answer: 'build',    why: 'Best fit: <strong>Software Engineer</strong>. Builds things real people use — the everyday backbone of CS.' },
+    { id: 'p5', text: 'Aiyana loves machines that move. She fixed an old RC car and dreams of building a robot that delivers food.', answer: 'people',   why: 'Best fit: <strong>Robotics Engineer</strong>. Real-world moving machines combine code, mechanics, and electrical work.' },
+    { id: 'p6', text: 'Wen is fascinated by how voice assistants learn new words and wonders how Netflix knows what she’ll like.', answer: 'ai',       why: 'Best fit: <strong>AI / ML Engineer</strong>. Teaching machines to learn from data is the work she’s already curious about.' }
+  ];
+
+  const ANSWER_LABEL = {
+    design: 'UX Designer', data: 'Data Scientist', security: 'Cybersecurity',
+    build: 'Software Engineer', people: 'Robotics', ai: 'AI / ML'
+  };
+
+  const pool        = document.getElementById('cm-pool');
+  const colDesign   = document.querySelector('.cm-col.col-design');
+  const colData     = document.querySelector('.cm-col.col-data');
+  const colSecurity = document.querySelector('.cm-col.col-security');
+  const colBuild    = document.querySelector('.cm-col.col-build');
+  const colPeople   = document.querySelector('.cm-col.col-people');
+  const colAI       = document.querySelector('.cm-col.col-ai');
+  const resetBtn    = document.getElementById('cm-reset');
+  const scoreBtn    = document.getElementById('cm-score');
+  const fbZone      = document.getElementById('cm-feedback');
+  const fbList      = document.getElementById('cm-feedback-list');
+  const allZones    = [pool, colDesign, colData, colSecurity, colBuild, colPeople, colAI];
+
+  if (!pool || !colDesign || !colData || !colSecurity || !colBuild || !colPeople || !colAI) return;
+
+  let selectedCardId = null;
+  let placements = {};
+
+  function buildCards() {
+    pool.querySelectorAll('.cm-card').forEach(c => c.remove());
+    [colDesign, colData, colSecurity, colBuild, colPeople, colAI].forEach(col => {
+      col.querySelectorAll('.cm-card').forEach(c => c.remove());
+    });
+    selectedCardId = null;
+    placements = {};
+    PROFILES.forEach(prof => {
+      placements[prof.id] = 'pool';
+      const card = document.createElement('div');
+      card.className = 'cm-card';
+      card.setAttribute('draggable', 'true');
+      card.setAttribute('data-id', prof.id);
+      card.textContent = prof.text;
+      attachCardHandlers(card);
+      pool.appendChild(card);
+    });
+    refreshPoolEmpty();
+    fbZone.className = 'try-it-feedback';
+    fbZone.classList.remove('show');
+    fbList.classList.remove('show');
+    fbList.innerHTML = '';
+  }
+
+  function refreshPoolEmpty() {
+    const emptyMsg = pool.querySelector('.cm-pool-empty');
+    const hasCards = pool.querySelector('.cm-card') !== null;
+    if (emptyMsg) emptyMsg.style.display = hasCards ? 'none' : 'block';
+  }
+
+  function attachCardHandlers(card) {
+    card.addEventListener('dragstart', (e) => {
+      card.classList.add('dragging');
+      try { e.dataTransfer.setData('text/plain', card.getAttribute('data-id')); } catch (err) {}
+      if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+    });
+    card.addEventListener('click', () => {
+      if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+      const wasSelected = card.classList.contains('selected');
+      document.querySelectorAll('.cm-card.selected').forEach(c => c.classList.remove('selected'));
+      if (!wasSelected) {
+        card.classList.add('selected');
+        selectedCardId = card.getAttribute('data-id');
+      } else {
+        selectedCardId = null;
+      }
+    });
+  }
+
+  function attachZoneHandlers(zone) {
+    zone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      zone.classList.add('drop-target');
+      if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
+    });
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove('drop-target');
+    });
+    zone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      zone.classList.remove('drop-target');
+      let id = '';
+      try { id = e.dataTransfer.getData('text/plain'); } catch (err) {}
+      if (!id) {
+        const dragging = document.querySelector('.cm-card.dragging');
+        if (dragging) id = dragging.getAttribute('data-id');
+      }
+      if (!id) return;
+      moveCard(id, zone.getAttribute('data-zone'));
+    });
+    zone.addEventListener('click', (e) => {
+      if (!selectedCardId) return;
+      if (e.target.classList && e.target.classList.contains('cm-card')) return;
+      moveCard(selectedCardId, zone.getAttribute('data-zone'));
+      selectedCardId = null;
+    });
+  }
+
+  const ZONE_MAP = {
+    pool: () => pool,
+    design: () => colDesign,
+    data: () => colData,
+    security: () => colSecurity,
+    build: () => colBuild,
+    people: () => colPeople,
+    ai: () => colAI
+  };
+
+  function moveCard(profId, zoneName) {
+    const card = document.querySelector('.cm-card[data-id="' + profId + '"]');
+    if (!card) return;
+    card.classList.remove('selected', 'correct', 'wrong');
+    const target = ZONE_MAP[zoneName] && ZONE_MAP[zoneName]();
+    if (!target) return;
+    target.appendChild(card);
+    placements[profId] = zoneName;
+    refreshPoolEmpty();
+    fbZone.classList.remove('show');
+    fbList.classList.remove('show');
+  }
+
+  allZones.forEach(attachZoneHandlers);
+
+  scoreBtn.addEventListener('click', () => {
+    const unplaced = PROFILES.filter(p => placements[p.id] === 'pool').length;
+    if (unplaced > 0) {
+      fbZone.className = 'try-it-feedback warn show';
+      fbZone.innerHTML = 'You still have <strong>' + unplaced + '</strong> card' + (unplaced === 1 ? '' : 's') + ' waiting. Place every card first, then score.';
+      fbList.classList.remove('show');
+      return;
+    }
+    let correct = 0;
+    const items = [];
+    PROFILES.forEach(p => {
+      const card = document.querySelector('.cm-card[data-id="' + p.id + '"]');
+      const placed = placements[p.id];
+      const isRight = (placed === p.answer);
+      if (card) {
+        card.classList.remove('correct', 'wrong', 'selected');
+        card.classList.add(isRight ? 'correct' : 'wrong');
+      }
+      if (isRight) correct++;
+      items.push(
+        '<p style="margin-bottom:8px;">' +
+        (isRight ? '<span style="color:#3d6522;font-weight:700;">✓</span> ' : '<span style="color:#b91c1c;font-weight:700;">✗</span> ') +
+        '<strong>' + p.text + '</strong> &mdash; best fit: <strong>' + ANSWER_LABEL[p.answer] + '</strong>. ' + p.why +
+        '</p>'
+      );
+    });
+    const total = PROFILES.length;
+    if (correct === total) {
+      fbZone.className = 'try-it-feedback success show';
+      fbZone.innerHTML = '✨ Perfect &mdash; <strong>' + correct + ' of ' + total + '</strong>. You’re reading the difference between CS callings.';
+    } else if (correct >= 4) {
+      fbZone.className = 'try-it-feedback success show';
+      fbZone.innerHTML = '<strong>' + correct + ' of ' + total + ' correct.</strong> Strong read. Check the explanations below for the ones you missed.';
+    } else {
+      fbZone.className = 'try-it-feedback warn show';
+      fbZone.innerHTML = '<strong>' + correct + ' of ' + total + ' correct.</strong> Re-read Section 2 — each career card mentions the kind of work a person who chose it would love most.';
+    }
+    fbList.classList.add('show');
+    fbList.innerHTML = items.join('');
+  });
+
+  resetBtn.addEventListener('click', buildCards);
+
+  buildCards();
+})();
+</script>
+
+</body>
+</html>

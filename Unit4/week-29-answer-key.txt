@@ -1,0 +1,123 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 29 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 4 · Lesson 4.1
+  Standards: SC.6.PE.3.1, SC.6.ET.1.1
+  Topic: Digital Modeling & Simulation
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → B
+  Q3 → B
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which BEST describes a digital model?
+───────────────────────────────────────────────────────────────
+  A) An exact, perfect copy of something real
+     ❌ A model is SIMPLIFIED, not perfect — that's the whole
+        point. A perfect copy would BE the real thing.
+  B) A simplified version of something real, built from numbers
+     and rules so we can study or predict it                    ✓ CORRECT
+     ✅ Exactly. A digital model uses numbers and rules to make
+        a usable, simplified stand-in for the real thing.
+        (SC.6.PE.3.1)
+  C) Any photograph saved on a computer
+     ❌ A photo is static. A model can be RUN, changed, and used
+        to predict behavior.
+  D) Hardware shaped like the thing it represents
+     ❌ Digital models are made of code, not physical hardware.
+
+───────────────────────────────────────────────────────────────
+Q2. You're modeling how long a snowman lasts on a sunny day.
+    Which is the BEST example of a VARIABLE in this model?
+───────────────────────────────────────────────────────────────
+  A) The freezing point of water (0°C)
+     ❌ A constant — it doesn't change. A variable is a value
+        that CAN change.
+  B) Outside temperature (changes hour by hour, day by day)     ✓ CORRECT
+     ✅ Outside temperature changes — that's exactly what a
+        variable is. The model checks the variable to predict
+        melting. (SC.6.PE.3.1)
+  C) The number of pi (π)
+     ❌ π is a mathematical constant — never changes.
+  D) The chemical formula for water (H₂O)
+     ❌ A fixed fact, not a value that changes during a sim.
+
+───────────────────────────────────────────────────────────────
+Q3. Why do engineers run simulations of new airplane designs
+    BEFORE building real planes?
+───────────────────────────────────────────────────────────────
+  A) Building real planes is illegal until simulation is done
+     ❌ Not true — engineers DO build real planes. Simulations
+        come first to reduce cost and risk.
+  B) Simulations let engineers test many designs cheaply and
+     safely, without risking real planes, time, or lives        ✓ CORRECT
+     ✅ Right — the big value is the safe, cheap "what if?"
+        Engineers can try many designs before committing real
+        money or lives. (SC.6.ET.1.1)
+  C) Simulations always predict the future perfectly
+     ❌ Simulations are powerful, never perfect. They help us
+        prepare, not predict everything.
+  D) Real planes don't work as well as simulated ones
+     ❌ Real planes are the goal — simulation is a step toward
+        them, not a replacement.
+
+───────────────────────────────────────────────────────────────
+Q4. Which is an example of HAPTIC FEEDBACK?
+───────────────────────────────────────────────────────────────
+  A) A bright color on a screen
+     ❌ Visual feedback. Haptic = something you FEEL.
+  B) A loud sound from speakers
+     ❌ Auditory feedback. Haptic = touch / feel.
+  C) Your phone vibrating to alert you to a new message         ✓ CORRECT
+     ✅ A vibration is haptic feedback — information you feel
+        through your sense of touch. (SC.6.ET.1.1)
+  D) A spoken voice from a smart speaker
+     ❌ Auditory output, not haptic.
+
+───────────────────────────────────────────────────────────────
+Q5. Modeling city traffic. Which detail is BEST to abstract
+    away (leave out)?
+───────────────────────────────────────────────────────────────
+  A) Cars per minute entering each highway
+     ❌ One of the most important variables for traffic — never
+        abstract away.
+  B) Average speed limit on each road
+     ❌ Directly affects how fast traffic moves. Keep it.
+  C) The exact paint color of each car                          ✓ CORRECT
+     ✅ Paint color doesn't change how traffic flows — that's
+        exactly the kind of detail a good model abstracts away.
+        (SC.6.PE.3.1)
+  D) Location of major intersections
+     ❌ Intersections are where jams form — keep this.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-29-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 31 — Human-AI Collaboration | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== CARD GRID ========== */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 8px; }
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TWO-COLUMN COMPARE ========== */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul { margin: 0; padding-left: 20px; color: #4b5563; font-size: 14.5px; line-height: 1.7; }
+
+/* ========== STEPS ========== */
+.steps-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.step-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TRAITS ========== */
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.trait-card { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px; }
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body { color: #374151; font-size: 14.5px; }
+
+/* ========== VOCAB ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* ========== REFLECTION ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* ========== HMB CATEGORIZER WIDGET ========== */
+.hmb-pool {
+  background: #f8f9fa;
+  border: 1px dashed #c5cdd6;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 70px;
+  margin-bottom: 14px;
+}
+.hmb-pool-empty {
+  width: 100%;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+  padding: 8px 0;
+}
+.hmb-card {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  color: var(--binary-blue);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  cursor: grab;
+  user-select: none;
+  transition: all 0.15s;
+  font-weight: 500;
+  max-width: 100%;
+}
+.hmb-card:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.25); transform: translateY(-1px); }
+.hmb-card.selected {
+  background: var(--bitstream-blue);
+  color: white;
+  border-color: var(--dark-bitstream);
+}
+.hmb-card.dragging { opacity: 0.5; cursor: grabbing; }
+.hmb-card.correct { border-color: var(--gamer-green); background: #f0fdf4; }
+.hmb-card.wrong   { border-color: #ef4444; background: #fef2f2; }
+.hmb-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.hmb-col {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hmb-col.drop-target { border-color: var(--gateway-gold); background: #fffbeb; }
+.hmb-col.col-human   { border-top: 5px solid var(--portal-purple); }
+.hmb-col.col-machine { border-top: 5px solid var(--bitstream-blue); }
+.hmb-col.col-both    { border-top: 5px solid var(--gamer-green); }
+.hmb-col-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.hmb-col.col-human   .hmb-col-label { color: var(--portal-purple); }
+.hmb-col.col-machine .hmb-col-label { color: var(--dark-bitstream); }
+.hmb-col.col-both    .hmb-col-label { color: #3d6522; }
+.hmb-feedback-list {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #374151;
+  display: none;
+}
+.hmb-feedback-list.show { display: block; }
+.hmb-feedback-list strong { color: var(--binary-blue); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .hmb-cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 4 · WEEK 31
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 4: Modeling &amp; AI</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 31: Human-AI Collaboration</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 4 • WEEK 31 • READING</div>
+  <h1 class="lesson-title">Human-AI Collaboration</h1>
+  <p class="lesson-description">Robots help surgeons. Algorithms recommend music. Self-driving features keep cars in their lanes. But none of these tools work alone — and none of them <em>should</em>. This week, you'll learn what AI is genuinely good at, what humans must keep doing, and how the best work happens when the two collaborate.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Identify</strong> real applications of AI in fields like medicine, transportation, and the arts.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Compare</strong> the strengths of humans (judgment, empathy, ethical reasoning) with the strengths of machines (speed, scale, pattern recognition).</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Explain</strong> "human-in-the-loop" — when human oversight of an AI system is required.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Apply prudence</strong> — the classical virtue of wise foresight — to decisions about when to delegate to AI and when to keep human hands on the wheel.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · AI In Your World</div>
+  </div>
+  <h2 class="section-title">It's already here — and not where you think</h2>
+  <div class="read-body">
+    <p>When people hear "<span class="key-term">artificial intelligence</span>," they often picture a movie robot. The truth is quieter and far more interesting: AI has been quietly slipping into ordinary tools for years, and you've used it dozens of times today without noticing.</p>
+    <p>When your phone unlocks by looking at your face, that's AI. When a streaming app suggests the next song, that's AI. When you say "Hey, set a timer for ten minutes" and your speaker actually does it — that's a chain of AI systems converting sound to words, words to a command, and the command to an action. None of these tools <em>thinks</em> the way you do, but each one performs a task that used to require a human.</p>
+    <p>And it isn't just phones. AI helps doctors spot tumors in scans, helps farmers know when to water a field, and helps a self-driving car keep its lane on a quiet highway. The same technology that recommends a video can help a surgeon make a more precise incision.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <rect x="20" y="40" width="120" height="100" rx="12" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="80" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#0E5568">RECOMMEND</text>
+      <text x="80" y="105" text-anchor="middle" font-size="32">🎵</text>
+      <text x="80" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">music · video · books</text>
+
+      <rect x="160" y="40" width="120" height="100" rx="12" fill="#67308F" opacity="0.16" stroke="#67308F" stroke-width="2"/>
+      <text x="220" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#67308F">SEE</text>
+      <text x="220" y="105" text-anchor="middle" font-size="32">📷</text>
+      <text x="220" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">face · search · scans</text>
+
+      <rect x="300" y="40" width="120" height="100" rx="12" fill="#C7922C" opacity="0.16" stroke="#C7922C" stroke-width="2"/>
+      <text x="360" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#8a6620">HEAR</text>
+      <text x="360" y="105" text-anchor="middle" font-size="32">🎙️</text>
+      <text x="360" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">voice · translate</text>
+
+      <rect x="440" y="40" width="140" height="100" rx="12" fill="#76C043" opacity="0.16" stroke="#76C043" stroke-width="2"/>
+      <text x="510" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="12" font-weight="800" fill="#3d6522">ASSIST</text>
+      <text x="510" y="105" text-anchor="middle" font-size="32">🚗</text>
+      <text x="510" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">driving · surgery</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Artificial intelligence (AI)</strong> — software that performs tasks that used to require a human, by spotting patterns in huge amounts of data.</p>
+      <p><strong>Recommendation system</strong> — an AI that learns what you've liked before and suggests new things it predicts you'll also like.</p>
+      <p><strong>Self-driving car</strong> — a vehicle that uses cameras, sensors, and AI to handle some or all of the driving — usually with a human still required to take over.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · What Humans Do Best</div>
+  </div>
+  <h2 class="section-title">Judgment, empathy, and the things only people can offer</h2>
+  <div class="read-body">
+    <p>An AI can recommend a song you'll probably enjoy. It cannot sit beside a friend who's lost a grandparent and know what to say. AI can read 10,000 medical images in a second. It cannot decide, from a sad parent's face, that this family needs an extra ten minutes and a cup of tea before hearing news. The difference is not size, it is <em>kind</em>.</p>
+    <p>Humans are uniquely good at four things, and you'll see these four words again and again in this unit:</p>
+    <p><span class="key-term">Judgment</span> — picking the right answer when the rule book runs out. <span class="key-term">Empathy</span> — actually caring about another person's feelings, not just labeling them. <span class="key-term">Ethical reasoning</span> — asking <em>should</em> we, not just <em>can</em> we. <span class="key-term">Creativity</span> — making something new for a reason that matters.</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Imagine an AI that has watched a million sympathy cards and can stitch together a perfect-sounding message. Would it <em>be</em> sympathy? Or would it just look like sympathy from the outside? The classical thinkers would say true compassion is a gift one person freely offers another — the appearance of compassion, no matter how convincing, is something else.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · What Machines Do Best</div>
+  </div>
+  <h2 class="section-title">Speed, scale, and a tireless eye for patterns</h2>
+  <div class="read-body">
+    <p>Machines are not better at being people. They are better at being machines — and that is genuinely useful. There are at least four jobs where an AI can do what no human ever could.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">🧠 What Humans Do Best</div>
+      <div class="compare-card-headline">Judgment, empathy, ethics</div>
+      <ul>
+        <li>Use <strong>judgment</strong> when rules don't cover the case</li>
+        <li>Show real <strong>empathy</strong> for other people</li>
+        <li>Ask <strong>"should we?"</strong> not just "can we?"</li>
+        <li>Create something new <strong>for a reason</strong></li>
+        <li>Notice when <strong>context</strong> changes everything</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">⚡ What Machines Do Best</div>
+      <div class="compare-card-headline">Speed, scale, patience</div>
+      <ul>
+        <li><strong>Pattern recognition</strong> across huge data sets</li>
+        <li>Sub-second <strong>speed</strong> on repetitive tasks</li>
+        <li><strong>Tireless</strong> — no fatigue, no bad mood</li>
+        <li><strong>Parallel</strong> work — many things at once</li>
+        <li>Consistent <strong>precision</strong> on well-defined jobs</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice that these two columns aren't enemies. They're complements. A doctor cannot scan 10,000 X-rays an hour, and a machine cannot tell a worried family the news. Put them together and the patient gets the best of both.</p>
+    <p>That observation — that humans and machines are good at <em>different</em> things — is the whole foundation of this week's idea: AI is a <span class="key-term">collaboration</span>, not a replacement.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>A modern fraud-detection AI at a large bank can scan over <strong>10,000 credit-card transactions per second</strong>, looking for the pattern of a stolen card. No human team could ever do this. But when the AI flags a transaction as suspicious, the bank still calls a <em>person</em> to ask, "Was this you?" — because only the human knows what they actually did. Machine + human = a system that catches thieves without freezing every legitimate purchase.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Working Together — Case Studies</div>
+  </div>
+  <h2 class="section-title">Three places where the team beats either alone</h2>
+  <div class="read-body">
+    <p>Here are three real examples of human-AI <strong>collaboration</strong> — places where the human contributes things only a human can, the machine contributes things only a machine can, and the result is better than either could do alone.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head">
+        <strong>🩺 Robotic-Assisted Surgery</strong>
+      </div>
+      <div class="platform-card-body">A surgical robot's instruments can be steadier than any human hand and can move in spaces too tight for fingers. But the surgeon decides <em>where</em> to cut, <em>when</em> to stop, and what an unexpected finding means for this patient. The machine provides the precision; the human provides the judgment.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <strong>🚙 Driver-Assist Technology</strong>
+      </div>
+      <div class="platform-card-body">Modern cars use AI for lane-keeping, automatic braking, and parking. The system reacts to a swerving car ahead in milliseconds — faster than a human can flinch. But the driver still chooses the route, handles unfamiliar weather, and is responsible for the trip. The car is a copilot, not a chauffeur.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head">
+        <strong>🎨 AI-Assisted Art &amp; Music</strong>
+      </div>
+      <div class="platform-card-body">Artists now use AI tools to draft sketches, generate variations, or suggest chord progressions. The tool can produce a hundred options in a second. But the artist chooses which option matters, why it matters, and how it fits the piece — the parts of art that only a person with something to say can do.</div>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — HUMAN, MACHINE, OR BOTH? ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🤝 Try It — Categorize</div>
+    <div class="try-it-title">Human, Machine, or Both?</div>
+    <p class="try-it-instructions">Below are 10 real-world tasks. Drag each card into the column that fits best — <strong>Human</strong>, <strong>Machine</strong>, or <strong>Both</strong>. (No drag? Click a card to select it, then click a column.) When you've placed every card, tap <strong>Score</strong> for feedback. Hint: "Both" means the task works best when a human and a machine team up.</p>
+
+    <div id="hmb-pool" class="hmb-pool" data-zone="pool">
+      <div class="hmb-pool-empty">Cards waiting here — drag or click to assign.</div>
+    </div>
+
+    <div class="hmb-cols">
+      <div class="hmb-col col-human" data-zone="human">
+        <div class="hmb-col-label">🧠 Human</div>
+      </div>
+      <div class="hmb-col col-machine" data-zone="machine">
+        <div class="hmb-col-label">⚙️ Machine</div>
+      </div>
+      <div class="hmb-col col-both" data-zone="both">
+        <div class="hmb-col-label">🤝 Both</div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-secondary" id="hmb-reset">Reset</button>
+      <button class="try-it-btn try-it-btn-success" id="hmb-score">✨ Score</button>
+    </div>
+
+    <div class="try-it-feedback" id="hmb-feedback"></div>
+    <div class="hmb-feedback-list" id="hmb-feedback-list"></div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice what happened. Some tasks <em>look</em> like a clean win for one side, but most real-world jobs land in "Both." That's the lesson: the deepest power of AI is unleashed when humans and machines collaborate, each playing the part they're built for.</p>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · The Hand-Off — Human-In-The-Loop</div>
+  </div>
+  <h2 class="section-title">Some decisions must always have a human in them</h2>
+  <div class="read-body">
+    <p>Now for the most important idea of the week. Some tasks should <em>never</em> be handed off entirely to an AI — even an AI that does them well. That principle is called <span class="key-term">human-in-the-loop</span>. It means a person stays in the decision, takes responsibility, and can step in to override the machine.</p>
+    <p>Here are decisions where serious people across the world agree: a human must remain in the loop.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Sentencing and parole</div>
+        <div class="step-body">A computer might calculate a "risk score" — but the decision to release a person, or keep them locked away, is about justice and human dignity. A judge, accountable to a community, must own that call.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Hiring and firing</div>
+        <div class="step-body">AI can screen applications quickly. But a real person must sit across from the candidate, look them in the eye, and decide. People deserve to be evaluated by other people for life-shaping choices.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Medical diagnosis</div>
+        <div class="step-body">An AI can suggest possibilities. A doctor — who knows the patient, the family, and the situation — confirms, communicates, and chooses treatment. The AI is a second opinion, never the final voice.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Life-or-death automated decisions</div>
+        <div class="step-body">If a system could harm or kill a person, the agreement among engineers and ethicists is the same: a human stays in the loop, ready to intervene. No exception.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 The Virtue of Prudence</div>
+    <div class="callout-body">
+      <p>Classical thinkers named four <strong>cardinal virtues</strong> — habits of soul that hold a good life together. The first is <em>prudentia</em>, or <strong>prudence</strong>: wise foresight. Prudence is the virtue of looking before you leap, of asking what could go wrong, of choosing the right tool for the right moment.</p>
+      <p>That is exactly what we need now. AI is a powerful tool. The prudent question is never just "Can the machine do this?" but "<em>Should</em> the machine do this — and what part stays with me?" A prudent student of AI is not afraid of it and not in awe of it. The prudent student keeps the wheel in their own hand and asks, sentence by sentence, "What part of this is mine to do?"</p>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>In November 2018, a self-driving prototype hit a person crossing a road at night. The AI had detected something but failed to identify it as a pedestrian. The human safety driver, expected to be ready, was looking down. Engineers studying the case agreed: this was not just a machine failure, it was a <strong>collaboration failure</strong>. The lesson — written into the rules of every serious self-driving program since — is that you do not save lives by removing the human. You save lives by designing the partnership well.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Without scrolling up, name <strong>one</strong> human strength and <strong>one</strong> machine strength from this lesson. Then pick a task in your life — homework help, music practice, a video project — and describe one part you would <em>let</em> AI do and one part you would <em>keep</em> for yourself. Why?</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 31</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Artificial intelligence (AI)</div>
+      <div class="vocab-def">Software that performs tasks once thought to need a human, by spotting patterns in large amounts of data.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Collaboration</div>
+      <div class="vocab-def">A working partnership where each side contributes what they're best at — in our case, a human and an AI.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Judgment</div>
+      <div class="vocab-def">The human ability to weigh a situation and choose well, especially when the rules don't fully cover the case.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Pattern recognition</div>
+      <div class="vocab-def">The machine's strength of spotting a familiar shape or trend across enormous amounts of data, faster than any person could.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Human-in-the-loop</div>
+      <div class="vocab-def">A design rule that keeps a real person inside an AI-driven decision so they can override, take responsibility, or step in.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Automation</div>
+      <div class="vocab-def">Letting a machine perform a task that a human used to do — often the right move for repetitive or dangerous work.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Augmentation</div>
+      <div class="vocab-def">Using AI to make a person <em>better</em> at their job, instead of replacing them — the surgeon-with-robot model.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Oversight</div>
+      <div class="vocab-def">Watching over an AI system so a human can catch mistakes, ensure fairness, and stay accountable for outcomes.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Design a human-AI partnership for one part of your life.</div>
+    <p>Pick <strong>one</strong> real task you do regularly — homework help, music practice, a creative project, helping with chores, learning a language, anything you actually do. Then design a smart partnership between you and an AI tool. Answer in 4–6 sentences:</p>
+    <ul>
+      <li>What would the <strong>AI</strong> do? (Where does it shine — speed, scale, pattern matching?)</li>
+      <li>What would <strong>you</strong> keep doing yourself? (Where does judgment, empathy, or creativity matter?)</li>
+      <li>Where would you keep a <strong>human-in-the-loop</strong> — even if the AI seems to handle it well?</li>
+      <li>What would the <strong>prudent</strong> version of this partnership look like?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 32</strong>, you'll go inside an AI for the first time. How does it actually <em>learn</em>? What are the ethical questions designers must wrestle with — fairness, bias, honesty? And how does the classical tradition of virtue ethics give us tools to think clearly about a technology that didn't exist a century ago?</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Human, Machine, or Both? Categorizer ==========
+(function() {
+  const TASKS = [
+    { id: 't1', text: 'Diagnose a rare illness from a patient’s history',                 answer: 'both',    why: 'Best as <strong>Both</strong>. The machine pattern-matches the symptoms against millions of past cases; the human doctor exercises judgment for this patient.' },
+    { id: 't2', text: 'Play a million chess games to learn from them',                          answer: 'machine', why: 'Best as <strong>Machine</strong>. Tireless, parallel, super-fast play is exactly what computers are built for.' },
+    { id: 't3', text: 'Write a heartfelt sympathy letter to a friend',                          answer: 'human',   why: 'Best as <strong>Human</strong>. Real empathy comes from one person caring for another. An AI letter would only mimic the form.' },
+    { id: 't4', text: 'Spot fraud across 10,000 credit-card transactions per second',           answer: 'machine', why: 'Best as <strong>Machine</strong>. No human team can scan that volume that fast. This is a clean machine win.' },
+    { id: 't5', text: 'Decide a parole case',                                                   answer: 'human',   why: 'Best as <strong>Human</strong>. Justice and human dignity are at stake. A judge accountable to a community must own this call.' },
+    { id: 't6', text: 'Translate a recipe to another language',                                 answer: 'both',    why: 'Best as <strong>Both</strong>. AI drafts the translation in a second; a human checks for tone, idiom, and accuracy.' },
+    { id: 't7', text: 'Compose original music that touches a listener’s soul',             answer: 'both',    why: 'Best as <strong>Both</strong>. AI tools can generate ideas and variations; the human artist shapes meaning and chooses what matters.' },
+    { id: 't8', text: 'Sort 50,000 photos by who is in them',                                   answer: 'machine', why: 'Best as <strong>Machine</strong>. Face recognition across huge libraries is a textbook pattern-matching task.' },
+    { id: 't9', text: 'Comfort a child who scraped their knee',                                 answer: 'human',   why: 'Best as <strong>Human</strong>. A scraped knee needs a real person’s presence and care. No machine substitute exists.' },
+    { id: 't10', text: 'Drive a car safely in unfamiliar weather',                              answer: 'both',    why: 'Best as <strong>Both</strong>. Driver-assist handles routine reactions; the human driver judges the weird, unexpected moments — a classic human-in-the-loop case.' }
+  ];
+
+  const ANSWER_LABEL = { human: 'Human', machine: 'Machine', both: 'Both' };
+
+  const pool        = document.getElementById('hmb-pool');
+  const colHuman    = document.querySelector('.hmb-col.col-human');
+  const colMachine  = document.querySelector('.hmb-col.col-machine');
+  const colBoth     = document.querySelector('.hmb-col.col-both');
+  const resetBtn    = document.getElementById('hmb-reset');
+  const scoreBtn    = document.getElementById('hmb-score');
+  const fbZone      = document.getElementById('hmb-feedback');
+  const fbList      = document.getElementById('hmb-feedback-list');
+  const allZones    = [pool, colHuman, colMachine, colBoth];
+
+  if (!pool || !colHuman || !colMachine || !colBoth) return;
+
+  let selectedCardId = null; // for click-to-place fallback
+  let placements = {};       // { taskId: 'human'|'machine'|'both'|'pool' }
+
+  // --- Build cards ---
+  function buildCards() {
+    pool.querySelectorAll('.hmb-card').forEach(c => c.remove());
+    [colHuman, colMachine, colBoth].forEach(col => {
+      col.querySelectorAll('.hmb-card').forEach(c => c.remove());
+    });
+    selectedCardId = null;
+    placements = {};
+    TASKS.forEach(task => {
+      placements[task.id] = 'pool';
+      const card = document.createElement('div');
+      card.className = 'hmb-card';
+      card.setAttribute('draggable', 'true');
+      card.setAttribute('data-id', task.id);
+      card.textContent = task.text;
+      attachCardHandlers(card);
+      pool.appendChild(card);
+    });
+    refreshPoolEmpty();
+    fbZone.className = 'try-it-feedback';
+    fbZone.classList.remove('show');
+    fbList.classList.remove('show');
+    fbList.innerHTML = '';
+  }
+
+  function refreshPoolEmpty() {
+    const emptyMsg = pool.querySelector('.hmb-pool-empty');
+    const hasCards = pool.querySelector('.hmb-card') !== null;
+    if (emptyMsg) emptyMsg.style.display = hasCards ? 'none' : 'block';
+  }
+
+  // --- Drag handlers ---
+  function attachCardHandlers(card) {
+    card.addEventListener('dragstart', (e) => {
+      card.classList.add('dragging');
+      try { e.dataTransfer.setData('text/plain', card.getAttribute('data-id')); } catch (err) {}
+      if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+    });
+    // click-to-select (mobile fallback)
+    card.addEventListener('click', () => {
+      if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+      // Toggle selection
+      const wasSelected = card.classList.contains('selected');
+      pool.querySelectorAll('.hmb-card.selected').forEach(c => c.classList.remove('selected'));
+      [colHuman, colMachine, colBoth].forEach(col => {
+        col.querySelectorAll('.hmb-card.selected').forEach(c => c.classList.remove('selected'));
+      });
+      if (!wasSelected) {
+        card.classList.add('selected');
+        selectedCardId = card.getAttribute('data-id');
+      } else {
+        selectedCardId = null;
+      }
+    });
+  }
+
+  function attachZoneHandlers(zone) {
+    zone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      zone.classList.add('drop-target');
+      if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
+    });
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove('drop-target');
+    });
+    zone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      zone.classList.remove('drop-target');
+      let id = '';
+      try { id = e.dataTransfer.getData('text/plain'); } catch (err) {}
+      if (!id) {
+        const dragging = document.querySelector('.hmb-card.dragging');
+        if (dragging) id = dragging.getAttribute('data-id');
+      }
+      if (!id) return;
+      moveCard(id, zone.getAttribute('data-zone'));
+    });
+    // click-to-place (mobile fallback)
+    zone.addEventListener('click', (e) => {
+      if (!selectedCardId) return;
+      // Don't trigger if user clicked a card itself (handled by card)
+      if (e.target.classList && e.target.classList.contains('hmb-card')) return;
+      moveCard(selectedCardId, zone.getAttribute('data-zone'));
+      selectedCardId = null;
+    });
+  }
+
+  function moveCard(taskId, zoneName) {
+    const card = document.querySelector('.hmb-card[data-id="' + taskId + '"]');
+    if (!card) return;
+    card.classList.remove('selected', 'correct', 'wrong');
+    let target;
+    if (zoneName === 'pool')         target = pool;
+    else if (zoneName === 'human')   target = colHuman;
+    else if (zoneName === 'machine') target = colMachine;
+    else if (zoneName === 'both')    target = colBoth;
+    else return;
+    target.appendChild(card);
+    placements[taskId] = zoneName;
+    refreshPoolEmpty();
+    // clear feedback if user keeps editing
+    fbZone.classList.remove('show');
+    fbList.classList.remove('show');
+  }
+
+  // attach zone handlers to all four
+  allZones.forEach(attachZoneHandlers);
+
+  // --- Score ---
+  scoreBtn.addEventListener('click', () => {
+    // Make sure every card is placed
+    const unplaced = TASKS.filter(t => placements[t.id] === 'pool').length;
+    if (unplaced > 0) {
+      fbZone.className = 'try-it-feedback warn show';
+      fbZone.innerHTML = 'You still have <strong>' + unplaced + '</strong> card' + (unplaced === 1 ? '' : 's') + ' in the waiting area. Place every card first, then score.';
+      fbList.classList.remove('show');
+      return;
+    }
+    let correct = 0;
+    const items = [];
+    TASKS.forEach(t => {
+      const card = document.querySelector('.hmb-card[data-id="' + t.id + '"]');
+      const placed = placements[t.id];
+      const isRight = (placed === t.answer);
+      if (card) {
+        card.classList.remove('correct', 'wrong', 'selected');
+        card.classList.add(isRight ? 'correct' : 'wrong');
+      }
+      if (isRight) correct++;
+      items.push(
+        '<p style="margin-bottom:8px;">' +
+        (isRight ? '<span style="color:#3d6522;font-weight:700;">✓</span> ' : '<span style="color:#b91c1c;font-weight:700;">✗</span> ') +
+        '<strong>' + t.text + '</strong> &mdash; best fit: <strong>' + ANSWER_LABEL[t.answer] + '</strong>. ' + t.why +
+        '</p>'
+      );
+    });
+    const total = TASKS.length;
+    if (correct === total) {
+      fbZone.className = 'try-it-feedback success show';
+      fbZone.innerHTML = '✨ Perfect &mdash; <strong>' + correct + ' of ' + total + '</strong>. You’re reading the difference between human jobs, machine jobs, and the cases where collaboration wins.';
+    } else if (correct >= 7) {
+      fbZone.className = 'try-it-feedback success show';
+      fbZone.innerHTML = '<strong>' + correct + ' of ' + total + ' correct.</strong> Strong work. Look at the explanations below for the ones you missed and notice how often "Both" is the honest answer.';
+    } else {
+      fbZone.className = 'try-it-feedback warn show';
+      fbZone.innerHTML = '<strong>' + correct + ' of ' + total + ' correct.</strong> Re-read Sections 2 and 3 &mdash; the human strengths (judgment, empathy) vs. the machine strengths (speed, scale) &mdash; then try again.';
+    }
+    fbList.classList.add('show');
+    fbList.innerHTML = items.join('');
+  });
+
+  resetBtn.addEventListener('click', buildCards);
+
+  buildCards();
+})();
+</script>
+
+</body>
+</html>

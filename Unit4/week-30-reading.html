@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 30 — Engineering Design Process | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== CARD GRID ========== */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 8px; }
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TWO-COLUMN COMPARE ========== */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul { margin: 0; padding-left: 20px; color: #4b5563; font-size: 14.5px; line-height: 1.7; }
+
+/* ========== STEPS ========== */
+.steps-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.step-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TRAITS ========== */
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.trait-card { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px; }
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body { color: #374151; font-size: 14.5px; }
+
+/* ========== VOCAB ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* ========== REFLECTION ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* Sortable list */
+.sortable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sortable-item {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid var(--gateway-gold);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.25s, border-color 0.25s;
+  font-size: 14.5px;
+  color: var(--binary-blue);
+}
+.sortable-item:hover { box-shadow: 0 4px 12px rgba(199,146,44,0.25); }
+.sortable-item.dragging { opacity: 0.4; cursor: grabbing; }
+.sortable-item.drag-over { border-color: var(--bitstream-blue); transform: scale(1.02); }
+.sortable-handle {
+  color: var(--gateway-gold);
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+  letter-spacing: -2px;
+}
+.sortable-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gateway-gold);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.25s;
+}
+.sortable-text { flex: 1; line-height: 1.4; }
+.sortable-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.sortable-arrow {
+  width: 28px;
+  height: 22px;
+  border: none;
+  background: rgba(199,146,44,0.2);
+  color: var(--gateway-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  transition: background 0.15s, color 0.15s;
+}
+.sortable-arrow:hover:not(:disabled) { background: var(--gateway-gold); color: white; }
+.sortable-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.sortable-item.correct {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-color: var(--gamer-green);
+}
+.sortable-item.correct .sortable-num { background: var(--gamer-green); }
+.sortable-item.correct .sortable-handle { color: var(--gamer-green); }
+.sortable-item.incorrect {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-color: #ef4444;
+}
+.sortable-item.incorrect .sortable-num { background: #ef4444; }
+.sortable-item.incorrect .sortable-handle { color: #ef4444; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 4 · WEEK 30
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 4: Modeling &amp; AI</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 30: Engineering Design Process</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 4 • WEEK 30 • READING</div>
+  <h1 class="lesson-title">The Engineering Design Process</h1>
+  <p class="lesson-description">No great invention was ever finished on the first try. Bicycles, airplanes, video games, smartphones — every one of them was rebuilt over and over by people willing to throw away their first idea and try again. This week, you'll meet the cycle every great inventor follows, and you'll see why <em>iteration</em> is a virtue, not a sign of failure.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Name and order</strong> the five steps of the engineering design process.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Distinguish criteria from constraints</strong> when evaluating a design — what success looks like vs. what limits you.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Compare two or more design ideas</strong> using trade-offs and feedback to pick the best path forward.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Explain why iteration is a virtue</strong> — and why throwing work away is sometimes the most professional thing you can do.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · Why Every Great Thing Was Rebuilt</div>
+  </div>
+  <h2 class="section-title">Nothing useful is finished on the first try</h2>
+  <div class="read-body">
+    <p>The first bicycle had no pedals. You pushed it along the ground with your feet like a scooter. The first airplane to fly — the Wright brothers' Flyer — flew for twelve seconds before crashing into a sand dune. The first iPhone couldn't copy and paste. The first version of the video game <em>Minecraft</em> was so simple it didn't even have crafting in it.</p>
+    <p>Every one of those things was eventually <strong>rebuilt</strong> — sometimes dozens of times, sometimes thousands. The thing you use today is the great-great-grandchild of the thing the inventor first tried. The reason it works so well isn't because the inventor was a genius on day one. It's because the inventor was willing to try, fail, look honestly at the failure, and then build again.</p>
+    <p>Engineers and computer scientists give this cycle a name: the <span class="key-term">engineering design process</span>. It has five steps, and they go around in a loop, not a straight line. You don't reach the end and stop. You go around, and around, and around, getting closer each time.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <!-- Cycle arrows (a pentagon arrangement) -->
+      <circle cx="300" cy="120" r="92" fill="none" stroke="#C7922C" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+      <!-- Step 1 -->
+      <circle cx="300" cy="28" r="22" fill="#55C8E8"/>
+      <text x="300" y="33" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="16" font-weight="800" fill="#0E1C42">1</text>
+      <text x="300" y="62" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#0E5568">IDENTIFY</text>
+      <!-- Step 2 -->
+      <circle cx="388" cy="80" r="22" fill="#76C043"/>
+      <text x="388" y="85" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="16" font-weight="800" fill="#0E1C42">2</text>
+      <text x="388" y="120" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#3d6522">RESEARCH</text>
+      <!-- Step 3 -->
+      <circle cx="370" cy="180" r="22" fill="#67308F"/>
+      <text x="370" y="185" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="16" font-weight="800" fill="white">3</text>
+      <text x="370" y="220" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#67308F">DEVELOP</text>
+      <!-- Step 4 -->
+      <circle cx="230" cy="180" r="22" fill="#F78F1E"/>
+      <text x="230" y="185" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="16" font-weight="800" fill="#0E1C42">4</text>
+      <text x="230" y="220" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#7c3a0a">TEST</text>
+      <!-- Step 5 -->
+      <circle cx="212" cy="80" r="22" fill="#C7922C"/>
+      <text x="212" y="85" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="16" font-weight="800" fill="white">5</text>
+      <text x="212" y="120" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="700" fill="#8a6620">IMPROVE</text>
+      <!-- Center label -->
+      <text x="300" y="118" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E1C42">DESIGN</text>
+      <text x="300" y="134" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E1C42">CYCLE</text>
+      <!-- Arrowheads suggesting flow -->
+      <polygon points="350,42 358,48 352,54" fill="#C7922C"/>
+      <polygon points="394,140 388,148 386,140" fill="#C7922C"/>
+      <polygon points="298,200 290,206 296,210" fill="#C7922C"/>
+      <polygon points="208,140 214,148 218,140" fill="#C7922C"/>
+      <polygon points="252,46 248,52 254,56" fill="#C7922C"/>
+    </svg>
+  </div>
+
+  <!-- ========== TRY IT — DESIGN CYCLE SORTABLE ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🧩 Try It — Design Cycle Sortable</div>
+    <div class="try-it-title">Put the Design Process in the Right Order</div>
+    <p class="try-it-instructions">Below are the five steps of the engineering design process — but they've been scrambled. <strong>Drag the cards</strong> (or use the ▲▼ arrows) to put them back in the order a real engineer would follow, then click <strong>Check My Order</strong>.</p>
+    <ol id="cycle-list" class="sortable-list"></ol>
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="check-cycle">Check My Order</button>
+      <button class="try-it-btn try-it-btn-secondary" id="shuffle-cycle">Shuffle &amp; Try Again</button>
+    </div>
+    <div class="try-it-feedback" id="cycle-feedback"></div>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Engineering design process</strong> — the five-step cycle (identify, research, develop, test, improve) that engineers, designers, and programmers use to turn an idea into a working solution.</p>
+      <p><strong>Iteration</strong> — going around the cycle again with what you learned last time. Each loop is one iteration.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Steps 1–2 · Identify the Need + Research</div>
+  </div>
+  <h2 class="section-title">Finding the right problem is half the work</h2>
+  <div class="read-body">
+    <p>Beginners think the hardest part of building something is the building. Veterans know the hardest part is figuring out <em>what to build in the first place</em>. The first two steps of the design process exist to slow you down and make you ask: do I even understand the problem yet?</p>
+    <p><strong>Step 1 — Identify the need or problem.</strong> Who is this for? What do they actually struggle with? Engineers call this <em>the user</em>. If you skip this step, you build something nobody wants — a beautiful solution to a problem that doesn't exist.</p>
+    <p><strong>Step 2 — Research and gather information.</strong> Has anyone solved this before? What did they try? What worked, and what didn't? Most "new" inventions are clever combinations of older ones. The fastest path forward is often to learn what already exists, then figure out where it falls short.</p>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>When the team behind the Roomba was trying to invent a robot vacuum, their first idea was a robot that <em>looked like a tiny butler</em>. They built one. Nobody wanted it. They went back to step 1 and asked: <em>"What do people actually hate about cleaning?"</em> The answer was <strong>vacuuming under furniture</strong>. So they built a flat disc that could fit under a couch. That second design — born from re-doing the research — is the one that became famous.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Step 3 · Develop &amp; Compare Solutions</div>
+  </div>
+  <h2 class="section-title">Criteria, constraints, and the art of trade-offs</h2>
+  <div class="read-body">
+    <p>Once you understand the problem, your job is to come up with <strong>more than one</strong> possible solution and compare them side-by-side. Designers almost never pick the first idea — they sketch three or four and then ask: <em>which one is best?</em> But "best" has to be measured against something. That's where two key words come in.</p>
+    <p><span class="key-term">Criteria</span> are <strong>what success looks like</strong> — the goals your design must hit. ("It must be fun to play." "It must take less than 30 seconds to use." "It must be readable from across a room.") Criteria are how you decide whether a solution is good.</p>
+    <p><span class="key-term">Constraints</span> are <strong>the limits you can't cross</strong> — budget, time, materials, weight, the size of the robotics-kit motor, the rules of the contest. Constraints aren't goals — they're walls. A great design hits the criteria <em>without</em> breaking through the constraints.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">🎯 Criteria</div>
+      <div class="compare-card-headline">What success looks like</div>
+      <ul>
+        <li>"The drone must hover for at least 5 minutes."</li>
+        <li>"The app must work for left-handed users."</li>
+        <li>"The chair must be comfortable for 1 hour."</li>
+        <li>"The robot must beat the maze in under 90 seconds."</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">🚧 Constraint</div>
+      <div class="compare-card-headline">A limit you can't cross</div>
+      <ul>
+        <li>"Total cost must stay under $50."</li>
+        <li>"You only have until Friday."</li>
+        <li>"It must fit inside a backpack."</li>
+        <li>"You can only use parts from the school's robotics kit."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>When two ideas both hit the criteria, you choose between them with a <span class="key-term">trade-off</span>. A trade-off is the honest acknowledgment that you can't have everything. A faster drone uses more battery. A simpler app loses a feature. A cheaper robot is slower. Engineering is full of trade-offs, and choosing wisely is the whole skill.</p>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Most professional designers use <strong>digital tools</strong> to compare ideas before they build anything. CAD software lets engineers spin a 3-D model around to spot problems. Apps like Figma let UI designers click through three different layouts in five minutes. Spreadsheets let teams score each idea against the criteria. The faster you can compare designs, the better the design you ship.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Steps 4–5 · Test, Get Feedback, Improve</div>
+  </div>
+  <h2 class="section-title">Build a prototype, break it, and rebuild it better</h2>
+  <div class="read-body">
+    <p>Now comes the part where you actually build something. But here's the surprise: the first thing you build is <em>not supposed to be the final version</em>. It's a <span class="key-term">prototype</span> — a quick, rough draft made on purpose so you can find what's wrong with it. The whole point of a prototype is to fail safely, on a small scale, before failing big.</p>
+    <p>Once you have a prototype, you <strong>test it</strong>. You don't test it alone in your head, either — you put it in front of someone else and watch what happens. The information you collect when other people use your design is called <span class="key-term">feedback</span>. Feedback is sometimes painful. Someone will say your game is confusing. Someone will say your robot tipped over. Someone will say your sentence doesn't make sense. Listen anyway.</p>
+    <p>Then comes step 5: <span class="key-term">improve</span>. You take the feedback, decide what to keep and what to change, and you make a new version. That's <span class="key-term">revision</span> — and it's also the moment when the cycle quietly loops back to step 1 again. Every improvement reveals a new problem. So you go around again. And again.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Identify the need</div>
+        <div class="step-body">Find the real user. State the real problem. Don't skip ahead.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Research</div>
+        <div class="step-body">Find out what people have already tried. Learn from the work that came before yours.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Develop solutions</div>
+        <div class="step-body">Sketch more than one idea. Compare them against your <em>criteria</em> and within your <em>constraints</em>. Choose with eyes open.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Build a prototype and test it</div>
+        <div class="step-body">Make a rough version on purpose. Put it in front of real users. Collect feedback honestly.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-title">Gather feedback and improve</div>
+        <div class="step-body">Revise based on what you learned. Then go around the cycle again. The loop is the whole point.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p>A team is designing a paper-airplane that must <strong>fly at least 6 meters</strong> and must <strong>be made from one sheet of letter paper</strong>. Which of those is a <em>criterion</em>, and which is a <em>constraint</em>? (Hint: one defines success, the other limits how you achieve it.)</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Iteration as a Classical Virtue</div>
+  </div>
+  <h2 class="section-title">Why the willingness to throw work away is a kind of courage</h2>
+  <div class="read-body">
+    <p>The Greeks and Romans had a word for the steady, repeated effort it takes to reach excellence: they called it part of <em>fortitudo</em> — what we now translate as <span class="key-term">fortitude</span>. Fortitude isn't only courage in a single dramatic moment. It's the patience to keep working when the first version, the second version, and the third version are all wrong, and you still believe the right version is reachable.</p>
+    <p>The medieval craftsmen who built cathedrals went through dozens of design revisions over decades. The painters who came after them did the same — Leonardo da Vinci's notebooks are full of sketches of the same idea drawn ten different ways, until the tenth one was right. Today's engineers, programmers, and designers stand inside that long tradition. The tools are different. The discipline is the same.</p>
+    <p>What classical thinkers understood — and what every great engineer rediscovers — is that <strong>iteration is not failure</strong>. Iteration is how excellence is actually made. The first try almost never produces something worth keeping. The willingness to look at your own first try and say <em>"this isn't good enough yet"</em> — and then start again without losing heart — is one of the most important habits a young scholar can build.</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>The classical idea of <strong>craftsmanship</strong> says that the goal of any good work — a sculpture, a house, an essay, a piece of code — is not to be finished quickly, but to be made <em>well</em>. Made-well takes iteration. When you revise your writing, when you rebuild your robotics design, when you debug your code, you're practicing one of the oldest virtues in Western education: the patient pursuit of excellence.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 30</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Engineering design process</div>
+      <div class="vocab-def">The five-step cycle (identify, research, develop, test, improve) used to turn an idea into a working solution.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Criteria</div>
+      <div class="vocab-def">The goals a design must hit — what success looks like for the user.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Constraint</div>
+      <div class="vocab-def">A limit you can't cross — budget, time, materials, size, or the rules of the project.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Prototype</div>
+      <div class="vocab-def">A rough first version of a design, built on purpose so you can find what's wrong with it before committing to a final.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Iteration</div>
+      <div class="vocab-def">Going around the design cycle again, using what you learned last time to make the next version better.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Feedback</div>
+      <div class="vocab-def">Information you gather from real users about how your design actually performs.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Revision</div>
+      <div class="vocab-def">A new version of a design produced by acting on feedback — the practical result of step 5.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Trade-off</div>
+      <div class="vocab-def">An honest exchange where gaining one quality (speed, cost, simplicity) means giving up another. Engineering choices are full of them.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Pick one thing you've made — and walk it through the cycle.</div>
+    <p>Choose <strong>one</strong> thing you've actually built or made: a school project, a piece of art, some code, a story you wrote, even a recipe you cooked. Then answer in 4–6 sentences:</p>
+    <ul>
+      <li>What was the <strong>need or problem</strong> the thing was trying to solve?</li>
+      <li>Name <strong>one criterion</strong> you used to judge whether it was good.</li>
+      <li>Name <strong>one constraint</strong> you had to design within (time, materials, your own skill, etc.).</li>
+      <li>What changed between your first version and your final version? In other words, what did <strong>iteration</strong> teach you about your own work?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 31</strong>, you'll meet <em>Human–AI Collaboration</em> — the careful question of when humans and AI should work together, and when humans must absolutely stay in the loop. The design process you just learned becomes especially important when one of your "team members" is an algorithm.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Design Cycle Sortable ==========
+(function() {
+  const correctSteps = [
+    "Identify the need or problem",
+    "Research and gather information",
+    "Develop possible solutions",
+    "Build a prototype and test it",
+    "Gather feedback and improve"
+  ];
+  const list = document.getElementById('cycle-list');
+  const feedback = document.getElementById('cycle-feedback');
+  if (!list || !feedback) return;
+  let order = [];
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    if (a.every((v, i) => v === arr[i])) {
+      [a[0], a[1]] = [a[1], a[0]];
+    }
+    return a;
+  }
+
+  function render() {
+    list.innerHTML = '';
+    order.forEach((text, idx) => {
+      const li = document.createElement('li');
+      li.className = 'sortable-item';
+      li.draggable = true;
+      const handle = document.createElement('span');
+      handle.className = 'sortable-handle';
+      handle.setAttribute('aria-hidden', 'true');
+      handle.textContent = '⋮⋮';
+      const num = document.createElement('span');
+      num.className = 'sortable-num';
+      num.textContent = (idx + 1);
+      const txt = document.createElement('span');
+      txt.className = 'sortable-text';
+      txt.textContent = text;
+      const arrows = document.createElement('span');
+      arrows.className = 'sortable-arrows';
+      const upBtn = document.createElement('button');
+      upBtn.className = 'sortable-arrow';
+      upBtn.dataset.dir = 'up';
+      upBtn.setAttribute('aria-label', 'Move up');
+      upBtn.textContent = '▲';
+      const downBtn = document.createElement('button');
+      downBtn.className = 'sortable-arrow';
+      downBtn.dataset.dir = 'down';
+      downBtn.setAttribute('aria-label', 'Move down');
+      downBtn.textContent = '▼';
+      arrows.appendChild(upBtn);
+      arrows.appendChild(downBtn);
+      li.appendChild(handle);
+      li.appendChild(num);
+      li.appendChild(txt);
+      li.appendChild(arrows);
+      list.appendChild(li);
+    });
+    attachHandlers();
+    updateArrowDisabled();
+  }
+
+  function updateArrowDisabled() {
+    const items = list.querySelectorAll('.sortable-item');
+    items.forEach((item, i) => {
+      item.querySelector('[data-dir="up"]').disabled = (i === 0);
+      item.querySelector('[data-dir="down"]').disabled = (i === items.length - 1);
+    });
+  }
+
+  let dragSrc = null;
+
+  function attachHandlers() {
+    const items = list.querySelectorAll('.sortable-item');
+    items.forEach(item => {
+      item.addEventListener('dragstart', (e) => {
+        dragSrc = item;
+        item.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      item.addEventListener('dragend', () => {
+        item.classList.remove('dragging');
+        list.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+      });
+      item.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        if (item !== dragSrc) item.classList.add('drag-over');
+      });
+      item.addEventListener('dragleave', () => item.classList.remove('drag-over'));
+      item.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (item !== dragSrc && dragSrc) {
+          const items2 = Array.from(list.querySelectorAll('.sortable-item'));
+          const srcIdx = items2.indexOf(dragSrc);
+          const tgtIdx = items2.indexOf(item);
+          const moved = order.splice(srcIdx, 1)[0];
+          order.splice(tgtIdx, 0, moved);
+          feedback.classList.remove('show');
+          render();
+        }
+      });
+      item.querySelector('[data-dir="up"]').addEventListener('click', () => {
+        const idx = Array.from(list.children).indexOf(item);
+        if (idx > 0) {
+          [order[idx], order[idx - 1]] = [order[idx - 1], order[idx]];
+          feedback.classList.remove('show');
+          render();
+        }
+      });
+      item.querySelector('[data-dir="down"]').addEventListener('click', () => {
+        const idx = Array.from(list.children).indexOf(item);
+        if (idx < order.length - 1) {
+          [order[idx], order[idx + 1]] = [order[idx + 1], order[idx]];
+          feedback.classList.remove('show');
+          render();
+        }
+      });
+    });
+  }
+
+  function check() {
+    const items = list.querySelectorAll('.sortable-item');
+    let allCorrect = true;
+    let correctCount = 0;
+    items.forEach((item, i) => {
+      item.classList.remove('correct', 'incorrect');
+      if (order[i] === correctSteps[i]) {
+        item.classList.add('correct');
+        correctCount++;
+      } else {
+        item.classList.add('incorrect');
+        allCorrect = false;
+      }
+    });
+    feedback.classList.add('show');
+    if (allCorrect) {
+      feedback.className = 'try-it-feedback show success';
+      feedback.innerHTML = '🎉 <strong>Perfect — that\'s the engineering design process.</strong> The order matters because each step depends on the one before it: you can\'t research a problem you haven\'t named, you can\'t develop solutions before you know what you\'re solving, and you can\'t improve a design until you\'ve actually tested it with real users. Skip a step and the cycle collapses — you end up "improving" something that never solved the right problem in the first place. That\'s why real engineers protect this order: it\'s how iteration becomes excellence instead of guesswork.';
+    } else {
+      feedback.className = 'try-it-feedback show warn';
+      feedback.innerHTML = '⚠️ <strong>' + correctCount + ' of 5 in the right spot — green cards are correct, move the red ones.</strong> Hint: the cycle starts with finding the right problem, not jumping into a solution.';
+    }
+  }
+
+  function reset() {
+    order = shuffle(correctSteps);
+    render();
+    feedback.classList.remove('show');
+  }
+
+  document.getElementById('check-cycle').addEventListener('click', check);
+  document.getElementById('shuffle-cycle').addEventListener('click', reset);
+  reset();
+})();
+</script>
+
+</body>
+</html>

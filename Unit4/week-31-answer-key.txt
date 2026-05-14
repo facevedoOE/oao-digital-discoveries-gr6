@@ -1,0 +1,113 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 31 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 4 · Lesson 4.3
+  Standards: SC.6.ET.3.2, SC.6.ET.1.1
+  Topic: Human-AI Collaboration
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → A
+  Q2 → B
+  Q3 → B
+  Q4 → B
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which is a real, everyday use of AI you've probably already
+    encountered?
+───────────────────────────────────────────────────────────────
+  A) A streaming service suggesting your next song or video    ✓ CORRECT
+     ✅ Recommendation systems learn from your activity to
+        predict what you'll like next. (SC.6.ET.3.2)
+  B) A wall calendar showing the date
+     ❌ Printed object — no AI.
+  C) A pencil sharpener
+     ❌ Mechanical tool — no AI.
+  D) A glow-in-the-dark sticker
+     ❌ Chemistry, not AI.
+
+───────────────────────────────────────────────────────────────
+Q2. Which is a uniquely HUMAN strength AI doesn't match well?
+───────────────────────────────────────────────────────────────
+  A) Performing the same calculation a million times
+     ❌ That's a machine strength — humans get tired.
+  B) Empathy and ethical judgment in unfamiliar situations    ✓ CORRECT
+     ✅ Empathy and ethical judgment are uniquely human.
+        (SC.6.ET.3.2)
+  C) Spotting tiny patterns in millions of data points
+     ❌ Machine strength.
+  D) Operating 24 hours a day without rest
+     ❌ Machine strength — humans need sleep.
+
+───────────────────────────────────────────────────────────────
+Q3. Which is a MACHINE strength humans cannot match alone?
+───────────────────────────────────────────────────────────────
+  A) Choosing the perfect comforting words for a child
+     ❌ Empathy in real time = human strength.
+  B) Reading thousands of pages and finding one specific
+     phrase in a fraction of a second                          ✓ CORRECT
+     ✅ Searching huge text volumes at speed is a classic
+        machine strength. (SC.6.ET.3.2)
+  C) Resolving a moral dilemma between two friends
+     ❌ Human territory.
+  D) Inventing a new birthday tradition for your family
+     ❌ Creativity in emotional context = human territory.
+
+───────────────────────────────────────────────────────────────
+Q4. Which scenario most clearly REQUIRES a human in the loop?
+───────────────────────────────────────────────────────────────
+  A) Sorting your camera roll into folders
+     ❌ Low-stakes — automation alone is fine.
+  B) A medical AI deciding to deny treatment based on a scan  ✓ CORRECT
+     ✅ Denying medical treatment is high-stakes — a human
+        doctor must stay in the loop. (SC.6.ET.3.2)
+  C) Auto-correct suggesting word fixes
+     ❌ Low-stakes suggestion you can ignore.
+  D) A music app shuffling your playlist
+     ❌ Low-stakes — automation is fine.
+
+───────────────────────────────────────────────────────────────
+Q5. Friend wants to use AI to write their college essay. Most
+    PRUDENT response?
+───────────────────────────────────────────────────────────────
+  A) Yes — faster and easier
+     ❌ Prudence asks "what could go wrong?" — friend could
+        face dishonesty consequences and miss the learning.
+  B) Encourage them to write it themselves so the admissions
+     reader sees THEIR thinking                                ✓ CORRECT
+     ✅ Prudence (wise foresight) recognizes the essay's whole
+        point is to share the friend's thinking. (SC.6.ET.3.2)
+  C) Yes, but remove the AI's name from the file
+     ❌ Hiding the source doesn't change the deeper issue.
+  D) Say nothing; not your problem
+     ❌ Silence isn't prudence — a good friend offers careful
+        counsel.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-31-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

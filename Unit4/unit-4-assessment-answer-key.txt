@@ -1,0 +1,210 @@
+═══════════════════════════════════════════════════════════════
+  UNIT 4 ASSESSMENT — ANSWER KEY
+  Digital Discoveries · Unit 4 · Week 34 · Summative
+  Standards: All Unit 4 (SC.6.PE.3.1, 3.2, 3.3; SC.6.ET.1.1, 2.1, 2.2, 3.2)
+  Topic: Modeling & AI — full unit summative
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID  ·  15 questions  ·  1 point each (15 total)
+───────────────────────────────────────────────────────────────
+  Q1  → B          Q6  → C          Q11 → B
+  Q2  → B          Q7  → B          Q12 → B
+  Q3  → C          Q8  → B          Q13 → D
+  Q4  → B          Q9  → C          Q14 → B
+  Q5  → B          Q10 → B          Q15 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 15 multiple-choice questions, 1 point each (15 points total)
+  • 2 attempts allowed (assessment, not practice)
+  • Show feedback after submission
+  • Shuffle answers: your preference
+  • Time limit: optional (recommend 30–40 minutes)
+  • Pass threshold: 9 of 15 (60%)
+
+═══════════════════════════════════════════════════════════════
+  TOPIC COVERAGE
+═══════════════════════════════════════════════════════════════
+  Q1–Q3   Modeling, conditions, HCI                  (Week 29)
+  Q4–Q6   Engineering design process                 (Week 30)
+  Q7–Q9   Human-AI collaboration & in-the-loop       (Week 31)
+  Q10–Q13 AI fundamentals, bias, virtues             (Week 32)
+  Q14–Q15 Cross-cutting synthesis                    (All weeks)
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. A simulation is BEST described as:
+───────────────────────────────────────────────────────────────
+  A) A wild guess
+     ❌ Simulations are structured runs of a model.
+  B) What happens when a digital model is run                  ✓ CORRECT
+     ✅ A simulation is the running of a model. (SC.6.PE.3.1)
+  C) A static picture
+     ❌ Static images don't change. Simulations show change.
+  D) A list of facts
+     ❌ Data alone isn't a simulation.
+
+───────────────────────────────────────────────────────────────
+Q2. Which is an example of a CONDITION?
+───────────────────────────────────────────────────────────────
+  A) score = 0
+     ❌ Variable assignment, not a condition.
+  B) IF score > 100 THEN level up                              ✓ CORRECT
+     ✅ Textbook IF/THEN condition. (SC.6.PE.3.1)
+  C) player_name = "Alex"
+     ❌ Assignment.
+  D) lives = 3
+     ❌ Assignment.
+
+───────────────────────────────────────────────────────────────
+Q3. Game controller buzz when character takes damage = ?
+───────────────────────────────────────────────────────────────
+  A) Gesture tracking                ❌ Reads body motion.
+  B) Voice input                     ❌ Spoken commands.
+  C) Haptic feedback                                          ✓ CORRECT
+     ✅ Information you feel through vibration. (SC.6.ET.1.1)
+  D) Typing                          ❌ Text input.
+
+───────────────────────────────────────────────────────────────
+Q4. Which step comes FIRST in the design process?
+───────────────────────────────────────────────────────────────
+  A) Build a prototype               ❌ Comes after problem ID.
+  B) Identify the need or problem                              ✓ CORRECT
+     ✅ The whole rest of the cycle depends on naming the
+        problem first. (SC.6.PE.3.2)
+  C) Test with users                 ❌ Tests come after build.
+  D) Improve                         ❌ Improving requires test.
+
+───────────────────────────────────────────────────────────────
+Q5. $50 budget limit is a:
+───────────────────────────────────────────────────────────────
+  A) Criterion                       ❌ Criterion = success measure.
+  B) Constraint                                                ✓ CORRECT
+     ✅ A limit you must work within. (SC.6.PE.3.3)
+  C) Prototype                       ❌ Prototype = working draft.
+  D) Iteration                       ❌ Iteration = doing the loop again.
+
+───────────────────────────────────────────────────────────────
+Q6. Test reveals real bug. BEST move?
+───────────────────────────────────────────────────────────────
+  A) Ship anyway                     ❌ Hoping isn't engineering.
+  B) Start completely from scratch   ❌ One bug rarely justifies that.
+  C) Revise to fix the bug, then test again — iterate          ✓ CORRECT
+     ✅ Test → Improve loop. (SC.6.PE.3.3)
+  D) Hide the bug                    ❌ Fails users.
+
+───────────────────────────────────────────────────────────────
+Q7. Which task plays to a uniquely HUMAN strength?
+───────────────────────────────────────────────────────────────
+  A) Sorting 1M cat photos           ❌ Pure machine pattern recog.
+  B) Comforting a grieving friend                              ✓ CORRECT
+     ✅ Empathy in real grief is uniquely human. (SC.6.ET.3.2)
+  C) Multiplying 6-digit numbers     ❌ Calculator territory.
+  D) Spotting fraud in 1000s/sec     ❌ Machine territory.
+
+───────────────────────────────────────────────────────────────
+Q8. Which task plays to a MACHINE strength?
+───────────────────────────────────────────────────────────────
+  A) Comforting a frightened child   ❌ Empathy = human.
+  B) Scanning thousands of medical images per second           ✓ CORRECT
+     ✅ Pattern recognition at scale = machine. (SC.6.ET.3.2)
+  C) Parole decisions                ❌ Ethical judgment = human.
+  D) Moral dilemmas                  ❌ Human territory.
+
+───────────────────────────────────────────────────────────────
+Q9. Which task most clearly REQUIRES a human in the loop?
+───────────────────────────────────────────────────────────────
+  A) Sorting vacation photos         ❌ Low-stakes, automatable.
+  B) Step counter on a watch         ❌ Sensor + math.
+  C) Hiring a teacher                                          ✓ CORRECT
+     ✅ Hiring affects lives + history of biased automation.
+        Human must stay in loop. (SC.6.ET.3.2)
+  D) Adding cart total               ❌ Pure arithmetic.
+
+───────────────────────────────────────────────────────────────
+Q10. A calculator computing 9+5 is:
+───────────────────────────────────────────────────────────────
+  A) Learning-based                  ❌ Doesn't improve from data.
+  B) Rules-based                                               ✓ CORRECT
+     ✅ Hand-written math rules. Nothing learns. (SC.6.ET.2.1)
+  C) Generative AI                   ❌ Calculator isn't generative.
+  D) ML model                        ❌ No training data.
+
+───────────────────────────────────────────────────────────────
+Q11. Machine learning is BEST described as:
+───────────────────────────────────────────────────────────────
+  A) Software that follows pre-written rules
+     ❌ That's RULES-BASED, not learning-based.
+  B) Software that improves itself by spotting patterns
+     in data                                                  ✓ CORRECT
+     ✅ ML systems train on data. (SC.6.ET.2.1)
+  C) A team of human teachers        ❌ ML is software, not people.
+  D) Mind-reading hardware           ❌ ML finds statistical patterns.
+
+───────────────────────────────────────────────────────────────
+Q12. AI hiring tool unfairly rejects women. Source of bias?
+───────────────────────────────────────────────────────────────
+  A) Brand of laptop                 ❌ Hardware doesn't cause bias.
+  B) Biased training data — historical records were biased    ✓ CORRECT
+     ✅ Bias in AI almost always comes from biased training
+        data. (SC.6.ET.2.2)
+  C) Time of day                     ❌ Not where bias enters.
+  D) Magic                           ❌ No magic — clear cause.
+
+───────────────────────────────────────────────────────────────
+Q13. Setting a daily limit on social-media scrolling. Virtue?
+───────────────────────────────────────────────────────────────
+  A) Prudence                        ❌ Could relate, but...
+  B) Justice                         ❌ Justice is fairness toward others.
+  C) Fortitude                       ❌ Fortitude = perseverance through hard
+                                        work, not restraint.
+  D) Temperance                                                ✓ CORRECT
+     ✅ Temperance = moderation; choosing the right amount.
+        (SC.6.ET.2.2)
+
+───────────────────────────────────────────────────────────────
+Q14. Which BEST captures the big idea of Unit 4?
+───────────────────────────────────────────────────────────────
+  A) AI replaces humans in every task
+     ❌ The opposite case is what Unit 4 made.
+  B) Modeling, design, and AI work best when guided by human
+     judgment and the cardinal virtues                        ✓ CORRECT
+     ✅ Powerful tools + human virtues = wise use.
+        (All Unit 4 standards)
+  C) Cardinal virtues have nothing to do with technology
+     ❌ Unit 4 explicitly tied them to ethical use.
+  D) Simulations always perfectly replace real-world testing
+     ❌ Sims are useful, never perfect.
+
+───────────────────────────────────────────────────────────────
+Q15. Learning-based AI BEST described as:
+───────────────────────────────────────────────────────────────
+  A) Magical & impossible to understand
+     ❌ Has explainable mechanics — a model trained on data.
+  B) Software with no rules at all
+     ❌ Has rules — they were learned, not handwritten.
+  C) A digital model whose conditions were learned from data
+     instead of handwritten by a programmer                   ✓ CORRECT
+     ✅ Learning-based AI is just a model where conditions
+        came from training data. (SC.6.PE.3.1, SC.6.ET.2.1)
+  D) Physical hardware
+     ❌ AI is software running on hardware.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: unit-4-assessment-canvas-import.zip
+  4. Click Import. The assessment appears in Quizzes.
+  5. Open it → verify correct answers match this key.
+  6. Edit settings → 2 attempts, 15 points, min_score = 9 (60%).
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

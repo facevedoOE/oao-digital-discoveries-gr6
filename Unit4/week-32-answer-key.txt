@@ -1,0 +1,143 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 32 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 4 · Lesson 4.4
+  Standards: SC.6.ET.2.1, SC.6.ET.2.2
+  Topic: AI Fundamentals & Ethics
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → C
+  Q3 → A
+  Q4 → B
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which BEST describes machine learning?
+───────────────────────────────────────────────────────────────
+  A) A programmer types in every rule the software needs to
+     follow, by hand
+     ❌ That describes TRADITIONAL programming, not machine
+        learning. Machine learning is special because the rules
+        come from PATTERNS IN DATA, not from a programmer.
+  B) Software that improves at a task by being shown lots of
+     examples (training data) instead of being given hand-
+     written rules                                              ✓ CORRECT
+     ✅ Exactly. Machine learning gets better by spotting
+        patterns in examples — that's what makes it different
+        from traditional programming. (SC.6.ET.2.1)
+  C) A robot that physically learns by walking around a
+     classroom
+     ❌ Machine learning isn't about a physical robot — it's
+        about how the software inside is built.
+  D) Any program that runs on a fast computer
+     ❌ Speed alone doesn't make a program AI. The defining
+        trait of machine learning is that it adjusts itself
+        based on examples.
+
+───────────────────────────────────────────────────────────────
+Q2. Which is BEST described as LEARNING-BASED software (not
+    rules-based)?
+───────────────────────────────────────────────────────────────
+  A) A microwave running for 30 seconds when you press "30 sec"
+     ❌ Rules-based — fixed countdown, no learning.
+  B) A traffic light cycling green-yellow-red on a fixed timer
+     ❌ Rules-based — fixed schedule, no learning from real
+        traffic.
+  C) A streaming app that recommends your next show based on
+     what you and people like you have watched                  ✓ CORRECT
+     ✅ A recommender uses past behavior (yours and millions of
+        others') to predict what you'll like next. Classic
+        learning-based AI. (SC.6.ET.2.1)
+  D) A calculator computing 7 × 8
+     ❌ Rules-based — 7 × 8 always equals 56. The calculator
+        doesn't get better with use.
+
+───────────────────────────────────────────────────────────────
+Q3. Which everyday tool is the BEST example of GENERATIVE AI?
+───────────────────────────────────────────────────────────────
+  A) A chatbot that writes a brand-new poem about your dog when
+     you ask it to                                              ✓ CORRECT
+     ✅ Generative AI creates new text, images, audio, or video
+        by predicting what should come next based on training
+        data. A chatbot writing a fresh poem fits perfectly.
+        (SC.6.ET.2.1)
+  B) A pocket calculator
+     ❌ Rules-based math, not generation. It computes a known
+        answer rather than creating something new.
+  C) A digital clock
+     ❌ Just a counter — nothing learned, nothing generated.
+  D) A flashlight app
+     ❌ Rules-based: tap = on, tap = off. No AI involved.
+
+───────────────────────────────────────────────────────────────
+Q4. An AI hiring tool consistently rejects qualified women
+    applicants because it was trained mostly on past hires
+    (mostly men). What is this — and what's the BEST first step?
+───────────────────────────────────────────────────────────────
+  A) The AI is being "objective" — there's nothing to fix
+     ❌ An AI that copies an unfair pattern is NOT objective —
+        it's biased. "Objective" describes the math, not the
+        outcome.
+  B) Bias from biased training data — identify it, retrain on
+     better data, add human review                              ✓ CORRECT
+     ✅ Textbook AI ethics problem. The model learned the
+        unfairness in the data. Fix the data, add a human in
+        the loop. (SC.6.ET.2.2)
+  C) A privacy problem — the AI shouldn't see résumés
+     ❌ Privacy is a real AI concern, but the issue here is
+        unfair decisions caused by biased data — that's bias.
+  D) An ownership problem
+     ❌ Ownership is about who controls a creation. This
+        problem is about FAIRNESS in evaluation.
+
+───────────────────────────────────────────────────────────────
+Q5. Your friend asks at 11pm: "Can I feed your essay into
+    ChatGPT and have it write mine in the same style?" Using
+    SOCRATIC / VIRTUE-ETHICS reasoning (especially PRUDENCE),
+    what's the BEST response?
+───────────────────────────────────────────────────────────────
+  A) Send the essay without comment
+     ❌ Plausible deniability isn't a virtue. Prudence asks you
+        to think past the next moment.
+  B) Yell at them and refuse to talk to them again
+     ❌ Prudence and friendship aren't opposites. You can
+        decline AND be kind.
+  C) Decline kindly, name the integrity issue, and offer to
+     help them outline their own essay even though it's late    ✓ CORRECT
+     ✅ Prudence + justice + friendship working together. You
+        name the issue, decline the shortcut, AND offer real
+        help. Exactly the kind of choice the cardinal virtues
+        point toward. (SC.6.ET.2.2)
+  D) Use ChatGPT to write your friend's essay for them yourself
+     ❌ That just transfers the dishonesty from your friend to
+        you. Prudence rules it out.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-32-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

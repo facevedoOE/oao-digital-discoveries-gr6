@@ -1,0 +1,164 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 30 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 4 · Week 30
+  Topic: Engineering Design Process
+  Standards: SC.6.PE.3.2, SC.6.PE.3.3
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → B
+  Q3 → C
+  Q4 → C
+  Q5 → B
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which of the following lists the five steps of the
+    ENGINEERING DESIGN PROCESS in the correct order?
+───────────────────────────────────────────────────────────────
+  A) Build a prototype → Identify the need → Research → Improve
+     → Develop solutions
+     ❌ You can't build a prototype before you know what problem
+        you're solving. The process always starts by identifying
+        the need.
+  B) Identify the need → Research → Develop solutions →
+     Build a prototype and test → Gather feedback and improve   ✓ CORRECT
+     ✅ The five steps are: identify the need → research →
+        develop solutions → build a prototype and test → gather
+        feedback and improve. The cycle then loops back.
+        (SC.6.PE.3.2)
+  C) Research → Identify the need → Test → Develop solutions →
+     Improve
+     ❌ Research can't come before you know what to research.
+        You have to identify the need first.
+  D) Improve → Test → Develop → Research → Identify the need
+     ❌ That's the order reversed. The cycle starts with
+        identifying the need; you can't improve a design before
+        it exists.
+
+───────────────────────────────────────────────────────────────
+Q2. A class is designing a robot that MUST reach the end of a
+    maze in under 90 seconds and MUST be built using only the
+    parts in the school's robotics kit. Which statement is BEST?
+───────────────────────────────────────────────────────────────
+  A) Both rules are criteria — they describe what success looks
+     like.
+     ❌ Not quite. Criteria describe what success looks like;
+        constraints are limits you can't cross. The parts-kit
+        rule is a limit, not a goal.
+  B) The 90-second time limit is a criterion (success goal);
+     the parts-kit rule is a constraint (a limit).             ✓ CORRECT
+     ✅ "Reach the end in under 90 seconds" is the success goal
+        — that's a criterion. "Use only the school's robotics
+        kit" is a hard limit you can't cross — that's a
+        constraint. (SC.6.PE.3.2)
+  C) Both rules are constraints — they're both limits.
+     ❌ The 90-second rule is the goal, not a limit. Goals are
+        criteria; limits are constraints. The two rules play
+        different roles.
+  D) The parts-kit rule is a criterion, and the time limit is
+     a constraint.
+     ❌ Reversed. The 90-second rule defines success
+        (criterion); the parts-kit rule limits how you may
+        build (constraint).
+
+───────────────────────────────────────────────────────────────
+Q3. Which statement BEST describes ITERATION in the engineering
+    design process?
+───────────────────────────────────────────────────────────────
+  A) Doing the design once and never changing it.
+     ❌ Almost no real design is finished on the first try.
+        Doing it once is the opposite of iteration.
+  B) Starting over from scratch every time, with no memory of
+     past attempts.
+     ❌ Iteration carries lessons forward — that's the whole
+        point. Starting over with no memory wastes the feedback
+        you collected.
+  C) Going around the design cycle again, using what you
+     learned last time to make the next version better.        ✓ CORRECT
+     ✅ Iteration means looping the cycle again with what you
+        learned last time. Each iteration should make the design
+        better. (SC.6.PE.3.3)
+  D) A sign of failure that good engineers avoid.
+     ❌ Iteration is the opposite of failure — it's how
+        excellence is actually built. Real engineers iterate on
+        purpose.
+
+───────────────────────────────────────────────────────────────
+Q4. Your team has a working video-game prototype. The team has
+    played it and it runs fine, but no one outside the team has
+    ever tried it. What is the BEST next step in the design
+    process?
+───────────────────────────────────────────────────────────────
+  A) Declare the prototype final — if the team likes it, it's
+     ready.
+     ❌ The team built it — of course they like it. The point
+        of testing is to expose the design to people who didn't
+        build it.
+  B) Add 30 more features before showing anyone the game.
+     ❌ Adding features without testing what you have just
+        buries the bugs deeper. Test first, then improve.
+  C) Get external testers to play it, gather feedback, and
+     use that feedback to improve the design.                  ✓ CORRECT
+     ✅ Step 4–5 of the cycle: get external testers, gather
+        feedback, and improve. A working prototype is exactly
+        when external testing is most valuable. (SC.6.PE.3.3)
+  D) Throw the prototype away and start a different game.
+     ❌ A working prototype is a victory — don't throw it out
+        before you've even tested it. Iterate on what you have
+        first.
+
+───────────────────────────────────────────────────────────────
+Q5. A teammate says: "Our design works perfectly on the first
+    try. We don't need to test it or change it — it's already
+    finished." Which response is BEST, based on the engineering
+    design process?
+───────────────────────────────────────────────────────────────
+  A) Agree — if it works, it's done.
+     ❌ "Works for us" almost never means "works for everyone."
+        The team built it, so they know how to use it. Real
+        users will surprise you.
+  B) Even a "finished" design usually needs more testing and
+     iteration. Getting outside feedback almost always reveals
+     problems we can't see ourselves.                          ✓ CORRECT
+     ✅ The fifth step of the cycle exists precisely because
+        designs that look "finished" almost always have problems
+        the designers can't see. Iteration is a virtue, not a
+        sign of failure. (SC.6.PE.3.3)
+  C) Agree, but only if no one has complained yet.
+     ❌ "No one has complained" usually just means no one has
+        tested it. Silence isn't proof of success.
+  D) Disagree, and throw the design out completely just to be
+     safe.
+     ❌ Trashing the whole design without testing is just as
+        wasteful as shipping it without testing. The right move
+        is to gather feedback and iterate.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-30-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

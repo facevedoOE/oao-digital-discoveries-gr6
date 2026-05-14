@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 36 — Year-End Capstone &amp; Course Final | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== UNIT-ARC CARDS ========== */
+.unit-arc { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 8px; }
+.arc-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 5px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+}
+.arc-card .arc-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.arc-card .arc-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.arc-card .arc-body { color: #4b5563; font-size: 14.5px; line-height: 1.65; }
+
+/* ========== TRACK CARDS ========== */
+.track-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 20px 0; }
+.track-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-top: 5px solid;
+  border-radius: 10px;
+  padding: 18px 22px;
+}
+.track-card .track-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.track-card .track-name {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.track-card .track-body { color: #4b5563; font-size: 14.5px; line-height: 1.65; }
+
+/* ========== STEPS ========== */
+.steps-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.step-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== VOCAB ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* ========== REFLECTION ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* ========== CONCEPT TO UNIT WIDGET ========== */
+.cu-pool {
+  background: #f8f9fa;
+  border: 1px dashed #c5cdd6;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 70px;
+  margin-bottom: 14px;
+}
+.cu-pool-empty {
+  width: 100%;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  font-style: italic;
+  padding: 8px 0;
+}
+.cu-card {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  color: var(--binary-blue);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.3;
+  cursor: grab;
+  user-select: none;
+  transition: all 0.15s;
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+.cu-card:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.25); transform: translateY(-1px); }
+.cu-card.selected {
+  background: var(--bitstream-blue);
+  color: white;
+  border-color: var(--dark-bitstream);
+}
+.cu-card.dragging { opacity: 0.5; cursor: grabbing; }
+.cu-card.correct { border-color: var(--gamer-green); background: #f0fdf4; }
+.cu-card.wrong   { border-color: #ef4444; background: #fef2f2; }
+.cu-cols {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.cu-col {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.cu-col.drop-target { border-color: var(--gateway-gold); background: #fffbeb; }
+.cu-col.col-u1 { border-top: 5px solid var(--bitstream-blue); }
+.cu-col.col-u2 { border-top: 5px solid var(--gamer-green); }
+.cu-col.col-u3 { border-top: 5px solid var(--portal-purple); }
+.cu-col.col-u4 { border-top: 5px solid var(--odyssey-orange); }
+.cu-col.col-u5 { border-top: 5px solid var(--gateway-gold); }
+.cu-col-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2px;
+}
+.cu-col-sub {
+  font-size: 10px;
+  color: #6b7280;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.cu-col.col-u1 .cu-col-label { color: var(--dark-bitstream); }
+.cu-col.col-u2 .cu-col-label { color: #3d6522; }
+.cu-col.col-u3 .cu-col-label { color: var(--portal-purple); }
+.cu-col.col-u4 .cu-col-label { color: var(--odyssey-orange); }
+.cu-col.col-u5 .cu-col-label { color: var(--gateway-gold); }
+.cu-feedback-list {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #374151;
+  display: none;
+}
+.cu-feedback-list.show { display: block; }
+.cu-feedback-list strong { color: var(--binary-blue); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .cu-cols { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .cu-cols { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 5 · WEEK 36
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 5: Careers, Ethics &amp; Capstone</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 36: Year-End Capstone &amp; Course Final</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 5 • WEEK 36 • READING</div>
+  <h1 class="lesson-title">Year-End Capstone &amp; Course Final</h1>
+  <p class="lesson-description">This is the last week of the course. Take a breath. Behind you is a year of learning — from data packets to digital virtues. Ahead of you is your <em>capstone</em>: one project of your choice that pulls everything together. This reading is your map. Read it, take stock, then go build.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Trace the arc</strong> of the year — how the five units connect into a single picture of what it means to use technology well.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Synthesize</strong> what you've learned by sorting key concepts back to the unit where each was introduced.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Choose</strong> one of three capstone tracks — model, pitch, or essay/talk — and apply the right pieces of the year's learning to it.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Reflect</strong> on which habits and virtues you want to carry forward — into 7th grade and beyond.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · The Year In One Breath</div>
+  </div>
+  <h2 class="section-title">Five units, one arc</h2>
+  <div class="read-body">
+    <p>A 36-week year of learning is a lot. But every long thing has a shape, and this course has a shape too. Five units, each building on the last, each adding one new way to think clearly about the digital world.</p>
+  </div>
+
+  <div class="unit-arc">
+    <div class="arc-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="arc-num" style="color: var(--dark-bitstream);">Unit 1 · Weeks 1–8</div>
+      <div class="arc-title">🌐 Digital Communication</div>
+      <div class="arc-body">How messages move across the internet — packets, routers, addresses; the difference between sync and async; the strange new etiquette of life on screens.</div>
+    </div>
+    <div class="arc-card" style="border-left-color: var(--gamer-green);">
+      <div class="arc-num" style="color: #3d6522;">Unit 2 · Weeks 9–18</div>
+      <div class="arc-title">🛡️ Digital Citizenship &amp; Safety</div>
+      <div class="arc-body">How to keep yourself and others safe online — passwords, phishing, identity, kindness, and the responsibility every user has to the strangers around them.</div>
+    </div>
+    <div class="arc-card" style="border-left-color: var(--portal-purple);">
+      <div class="arc-num" style="color: var(--portal-purple);">Unit 3 · Weeks 19–28</div>
+      <div class="arc-title">💻 Programming Fundamentals</div>
+      <div class="arc-body">How to think like a computer scientist — algorithms, variables, conditionals, loops, functions; how to find and fix a bug; the patience that turns frustration into mastery.</div>
+    </div>
+    <div class="arc-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="arc-num" style="color: var(--odyssey-orange);">Unit 4 · Weeks 29–34</div>
+      <div class="arc-title">🤖 Modeling &amp; AI</div>
+      <div class="arc-body">How computers model the real world — simulations, abstraction, the engineering design process; what AI actually is, what it isn't, and how humans should stay in the loop.</div>
+    </div>
+    <div class="arc-card" style="border-left-color: var(--gateway-gold);">
+      <div class="arc-num" style="color: var(--gateway-gold);">Unit 5 · Weeks 35–36</div>
+      <div class="arc-title">🧭 Careers, Ethics &amp; Capstone</div>
+      <div class="arc-body">Who builds the digital world — and how each career carries its own ethics. How the four cardinal virtues turn ordinary online life into a kind of citizenship. And then: your own work, in this capstone.</div>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — CONCEPT TO UNIT SORTABLE ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🧠 Try It — Year-End Recall</div>
+    <div class="try-it-title">Concept to Unit — sort the year</div>
+    <p class="try-it-instructions">Below are 12 key concepts from the year. Drag each one into the unit where it was introduced. (No drag? Click a card to select it, then click a column.) Some you'll know cold. Some will make you pause. When every card is placed, tap <strong>Score</strong> — and read why each one belongs where it does.</p>
+
+    <div id="cu-pool" class="cu-pool" data-zone="pool">
+      <div class="cu-pool-empty">Cards waiting here — drag or click to assign.</div>
+    </div>
+
+    <div class="cu-cols">
+      <div class="cu-col col-u1" data-zone="u1">
+        <div class="cu-col-label">Unit 1</div>
+        <div class="cu-col-sub">communication</div>
+      </div>
+      <div class="cu-col col-u2" data-zone="u2">
+        <div class="cu-col-label">Unit 2</div>
+        <div class="cu-col-sub">citizenship</div>
+      </div>
+      <div class="cu-col col-u3" data-zone="u3">
+        <div class="cu-col-label">Unit 3</div>
+        <div class="cu-col-sub">programming</div>
+      </div>
+      <div class="cu-col col-u4" data-zone="u4">
+        <div class="cu-col-label">Unit 4</div>
+        <div class="cu-col-sub">modeling &amp; AI</div>
+      </div>
+      <div class="cu-col col-u5" data-zone="u5">
+        <div class="cu-col-label">Unit 5</div>
+        <div class="cu-col-sub">careers &amp; ethics</div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-secondary" id="cu-reset">Reset</button>
+      <button class="try-it-btn try-it-btn-success" id="cu-score">✨ Score</button>
+    </div>
+
+    <div class="try-it-feedback" id="cu-feedback"></div>
+    <div class="cu-feedback-list" id="cu-feedback-list"></div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · What This Course Was Really About</div>
+  </div>
+  <h2 class="section-title">A habit, not a vocabulary list</h2>
+  <div class="read-body">
+    <p>If a stranger asked you what you learned this year, you could list the topics — packets, passwords, Python, machine learning. You'd be right, but you'd also be selling yourself short. Beneath every unit, this course has been teaching a single habit: <strong>making thoughtful, careful, virtuous decisions with technology</strong>.</p>
+    <p>Look back at the arc. Unit 1 was about <em>how</em> messages move — and behind that, how to choose the right channel for the right moment. Unit 2 was about how to keep yourself safe — and behind that, how to treat other people online. Unit 3 was about code — and behind that, the patience to read your own mistakes carefully. Unit 4 was about modeling — and behind that, the prudence to abstract well and the wisdom to keep a human in the loop. Unit 5 was about careers and citizenship — and behind that, what kind of person you want to be in this digital city.</p>
+    <p>Every unit was teaching you to <em>pause and choose well</em>. That's the habit. And it's the one habit you'll carry into every room of your digital life.</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>The classical thinkers had a word for "a habit of choosing well": <em>virtue</em>. A virtue isn't a feeling or a rule — it's a settled habit that shows up <strong>under pressure</strong>. The student who reflexively pauses before posting has a virtue. The student who has to consult a checklist every time does not yet. Repetition turns choice into habit, and habit into character. This year was a long, slow shaping of that kind of character.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Choosing Your Capstone</div>
+  </div>
+  <h2 class="section-title">Three tracks — pick one that plays to you</h2>
+  <div class="read-body">
+    <p>Your <span class="key-term">capstone</span> is the project that crowns the year. It's a chance to show what you've learned — not on a quiz, but in a piece of work you choose, shape, and put your name on. You pick one of three tracks. Each one pulls from different parts of the year. None is harder or better than the others. Choose the one that plays to your strengths and your interests.</p>
+  </div>
+
+  <div class="track-grid">
+    <div class="track-card" style="border-top-color: var(--portal-purple);">
+      <div class="track-label" style="color: var(--portal-purple);">Track A · Build A Digital Model</div>
+      <div class="track-name">Design and build (or describe in detail) a simulation of something real.</div>
+      <div class="track-body">Pulls from <strong>Units 3 and 4</strong>. Pick something in the world — a snowball fight, a school cafeteria line, the spread of a rumor, a basketball shot. Identify the variables, the conditions, what you abstracted away. If you can code it, code it. If you can't, sketch it clearly. Reflect honestly on what your model gets right and where it fails.</div>
+    </div>
+    <div class="track-card" style="border-top-color: var(--gamer-green);">
+      <div class="track-label" style="color: #3d6522;">Track B · Pitch A CS Solution</div>
+      <div class="track-name">Identify a real problem in your community and design a software solution.</div>
+      <div class="track-body">Pulls from <strong>Units 2, 4, and 5</strong>. Find a real problem someone you know actually has. Use the engineering design process from Week 30 — criteria, constraints, sketches, prototypes. Add an ethical-review pass: who could be harmed? Who's left out? You don't have to <em>build</em> the software — but design it well enough that someone else could.</div>
+    </div>
+    <div class="track-card" style="border-top-color: var(--odyssey-orange);">
+      <div class="track-label" style="color: var(--odyssey-orange);">Track C · AI Perspectives, Expanded</div>
+      <div class="track-name">Take a position on AI's role in society and argue it well.</div>
+      <div class="track-body">Pulls from <strong>Units 4 and 5</strong>. Build on the Week 33 project. Pick a focused question about AI and society. Take a clear position. Defend it with three pieces of evidence. Steelman one counterargument. Connect your position to one of the four cardinal virtues. Deliver it as a 5-minute presentation or a 1000-word essay.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>"Capstone" comes from architecture: the <em>capstone</em> is the final, top stone placed on an arch or a wall. It locks the rest of the stones together — until the capstone is set, the structure is not yet a structure. Your year of learning is a kind of arch. The next two weeks set the capstone.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Tips From Past Projects</div>
+  </div>
+  <h2 class="section-title">How to make this capstone strong</h2>
+  <div class="read-body">
+    <p>Every year, students do this kind of capstone. Year after year, the patterns of what makes a strong project — and what sinks a weak one — look the same. Here is the advice past students wish they'd had.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Start small. Then iterate.</div>
+        <div class="step-body">Don't try to model the whole solar system; model one planet. Don't try to fix every problem in your community; pick the one you understand best. Remember <span class="key-term">iteration</span> from Week 30 — going around the cycle again and again is the move, not a sign of failure.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Show your thinking, not just your output.</div>
+        <div class="step-body">A clean output with no reasoning behind it is weaker than a messy output with clear reasoning. Show what you tried, what you ruled out, and why. Your <em>process</em> is half the project.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Get one honest piece of feedback before you finish.</div>
+        <div class="step-body">Show your draft to a parent, sibling, or friend who isn't in this course. Watch their face. If they're confused, your audience will be. If they ask a real question, write down the answer somewhere in your project.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Polish last, not first.</div>
+        <div class="step-body">Don't pick fonts on day one. Get the substance right, then make it pretty. Polish on weak content is just decorated thin air.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-title">Connect it to a virtue.</div>
+        <div class="step-body">The strongest capstones name <em>why</em> the work matters — usually by tying it back to one of the four cardinal virtues. Why is your project a prudent one? A just one? A temperate one? Make that connection explicit somewhere.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The word <strong>capstone</strong> shares a root with <em>cap</em> — what goes on top. In medieval Europe, the master mason kept the most beautiful and trickiest stone for last. If the capstone was set well, the arch would stand for a thousand years. If it slipped, the whole thing could come down. A small piece, at the end, holding everything together. That's roughly what this final project is for your year.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · What Comes After This Course</div>
+  </div>
+  <h2 class="section-title">Keep building, keep questioning, keep practicing</h2>
+  <div class="read-body">
+    <p>In a few weeks, this course will be in your past. But the digital world won't be. Whatever you do next — 7th grade computer science, a different elective, a science track, a future career in something completely different — three habits will keep paying off.</p>
+    <p><strong>Keep building.</strong> Pick small projects of your own. A weather widget. A budget tracker. A game. A model of something you care about. The students who keep their hands on the work between courses are the ones who arrive in the next course already ahead.</p>
+    <p><strong>Keep questioning.</strong> When a new app, a new AI tool, a new social platform shows up — and they will keep showing up — bring this year's questions to it. What's it built on? What variables does it track? Who benefits? Who's left out? Where's the human in the loop?</p>
+    <p><strong>Keep practicing the virtues.</strong> Pause before posting. Tell the truth in charts and in comments. Log off when you've had enough. Show up well for the people you share digital space with. These small, repeated choices are how character is made.</p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 A Last Word From The Classical Tradition</div>
+    <div class="callout-body">
+      <p>Aristotle wrote that excellence is not an act, but a habit — that we are what we repeatedly do. Plato thought the highest aim of education was to teach people to <em>love what is good</em>, so they would freely choose it for the rest of their lives. The Roman thinker Marcus Aurelius reminded himself, every morning, that the day would bring difficult people and difficult choices — and that the right answer was always to act with prudence, justice, fortitude, and temperance.</p>
+      <p>These ideas are 2,000 years old. They were not written for the internet. They have not been improved upon for the internet. They are the inheritance you take with you. Now, in your own time and your own way, you carry that inheritance forward into a world neither Aristotle nor Marcus Aurelius could have imagined — and you use it well.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Without scrolling up, name <strong>one</strong> idea you learned this year that surprised you. Name <strong>one</strong> habit you want to take forward. And, just for yourself, name the <strong>one classmate, family member, or friend</strong> you want to show your capstone project to when it's done. (Then go build it for them.)</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 36</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Capstone</div>
+      <div class="vocab-def">The final, top stone of an arch — and, in school, the culminating project that locks a course of study together.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Synthesis</div>
+      <div class="vocab-def">Pulling together pieces from different places and combining them into a single coherent whole.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Portfolio</div>
+      <div class="vocab-def">A collection of finished work that shows what you can do — kept and added to over time.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Mastery</div>
+      <div class="vocab-def">Deep, settled skill — the kind that shows up easily under pressure, not just on a good day.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Vocation</div>
+      <div class="vocab-def">A calling — work you feel made to do, not just paid to do. From the Latin <em>vocare</em>, "to call."</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Citizenship</div>
+      <div class="vocab-def">Belonging to a community — and acting like it. Online, this means treating other users as fellow members of a real place.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Deliverable</div>
+      <div class="vocab-def">The thing you actually hand over at the end — the file, the video, the document. The visible proof of your work.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Reflection</div>
+      <div class="vocab-def">Looking back on what you did and asking what worked, what didn't, and what you'd change. The closing move of every project.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Final Weekly Reflection</div>
+    <div class="reflection-q">Looking back, looking forward.</div>
+    <p>In 6–8 sentences, write the closing reflection of your year:</p>
+    <ul>
+      <li>What's <strong>one thing</strong> from this course you didn't know in September that feels obvious now?</li>
+      <li>Which unit shifted how you see the digital world the most — and why?</li>
+      <li>Which of the <strong>four cardinal virtues</strong> grew in you this year? Be honest — small growth counts.</li>
+      <li>Which capstone <strong>track</strong> are you choosing, and why?</li>
+      <li>What's <strong>one habit</strong> you want to keep practicing after this course ends?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>The activity page for Week 36 is your <strong>Capstone Project Guide</strong> — the full brief, the three tracks, the rubric, and a planning template. Read it carefully and plan before you build. Then there's one more thing: the <strong>Course Final Assessment</strong>, a 20-question cumulative quiz that crosses all five units. Bring everything you've learned. You're ready.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Concept to Unit Sortable ==========
+(function() {
+  const CONCEPTS = [
+    { id: 'c1',  text: 'Data packet',         answer: 'u1', why: '<strong>Unit 1</strong>. Packets are the chunks messages get split into to travel the internet — Week 1–4 introduced them.' },
+    { id: 'c2',  text: 'Router',              answer: 'u1', why: '<strong>Unit 1</strong>. A router forwards packets between networks. You met it in Unit 1.' },
+    { id: 'c3',  text: 'Phishing',            answer: 'u2', why: '<strong>Unit 2</strong>. Tricking people into revealing passwords or info — a Unit 2 (digital citizenship and safety) staple.' },
+    { id: 'c4',  text: 'Password hygiene',    answer: 'u2', why: '<strong>Unit 2</strong>. Strong, unique passwords and good password habits were Unit 2 territory.' },
+    { id: 'c5',  text: 'Function',            answer: 'u3', why: '<strong>Unit 3</strong>. Named, reusable chunks of code — introduced in Unit 3 (programming fundamentals).' },
+    { id: 'c6',  text: 'Loop',                answer: 'u3', why: '<strong>Unit 3</strong>. A way to repeat a block of code — the loop concept lives in Unit 3.' },
+    { id: 'c7',  text: 'Debugging',           answer: 'u3', why: '<strong>Unit 3</strong>. The discipline of reading your code carefully to find what went wrong — Unit 3 made it a habit.' },
+    { id: 'c8',  text: 'Machine learning',    answer: 'u4', why: '<strong>Unit 4</strong>. Software that learns patterns from data — Week 32 took you inside it.' },
+    { id: 'c9',  text: 'Iteration',           answer: 'u4', why: '<strong>Unit 4</strong>. The engineering design process from Week 30 — going around the cycle until it works.' },
+    { id: 'c10', text: 'Human-in-the-loop',   answer: 'u4', why: '<strong>Unit 4</strong>. The rule that a real person stays inside a high-stakes AI decision — from Week 31.' },
+    { id: 'c11', text: 'Career path',         answer: 'u5', why: '<strong>Unit 5</strong>. The route from beginner to skilled practitioner — a Week 35 idea.' },
+    { id: 'c12', text: 'Cardinal virtue',     answer: 'u5', why: '<strong>Unit 5</strong>. Prudence, justice, fortitude, temperance — the four habits of soul at the center of a good life. Week 35.' }
+  ];
+
+  const ANSWER_LABEL = { u1: 'Unit 1', u2: 'Unit 2', u3: 'Unit 3', u4: 'Unit 4', u5: 'Unit 5' };
+
+  const pool   = document.getElementById('cu-pool');
+  const colU1  = document.querySelector('.cu-col.col-u1');
+  const colU2  = document.querySelector('.cu-col.col-u2');
+  const colU3  = document.querySelector('.cu-col.col-u3');
+  const colU4  = document.querySelector('.cu-col.col-u4');
+  const colU5  = document.querySelector('.cu-col.col-u5');
+  const resetBtn = document.getElementById('cu-reset');
+  const scoreBtn = document.getElementById('cu-score');
+  const fbZone   = document.getElementById('cu-feedback');
+  const fbList   = document.getElementById('cu-feedback-list');
+  const allZones = [pool, colU1, colU2, colU3, colU4, colU5];
+
+  if (!pool || !colU1 || !colU2 || !colU3 || !colU4 || !colU5) return;
+
+  let selectedCardId = null;
+  let placements = {};
+
+  function buildCards() {
+    pool.querySelectorAll('.cu-card').forEach(c => c.remove());
+    [colU1, colU2, colU3, colU4, colU5].forEach(col => {
+      col.querySelectorAll('.cu-card').forEach(c => c.remove());
+    });
+    selectedCardId = null;
+    placements = {};
+    CONCEPTS.forEach(c => {
+      placements[c.id] = 'pool';
+      const card = document.createElement('div');
+      card.className = 'cu-card';
+      card.setAttribute('draggable', 'true');
+      card.setAttribute('data-id', c.id);
+      card.textContent = c.text;
+      attachCardHandlers(card);
+      pool.appendChild(card);
+    });
+    refreshPoolEmpty();
+    fbZone.className = 'try-it-feedback';
+    fbZone.classList.remove('show');
+    fbList.classList.remove('show');
+    fbList.innerHTML = '';
+  }
+
+  function refreshPoolEmpty() {
+    const emptyMsg = pool.querySelector('.cu-pool-empty');
+    const hasCards = pool.querySelector('.cu-card') !== null;
+    if (emptyMsg) emptyMsg.style.display = hasCards ? 'none' : 'block';
+  }
+
+  function attachCardHandlers(card) {
+    card.addEventListener('dragstart', (e) => {
+      card.classList.add('dragging');
+      try { e.dataTransfer.setData('text/plain', card.getAttribute('data-id')); } catch (err) {}
+      if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+    });
+    card.addEventListener('click', () => {
+      if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+      const wasSelected = card.classList.contains('selected');
+      document.querySelectorAll('.cu-card.selected').forEach(c => c.classList.remove('selected'));
+      if (!wasSelected) {
+        card.classList.add('selected');
+        selectedCardId = card.getAttribute('data-id');
+      } else {
+        selectedCardId = null;
+      }
+    });
+  }
+
+  const ZONE_MAP = {
+    pool: () => pool, u1: () => colU1, u2: () => colU2, u3: () => colU3, u4: () => colU4, u5: () => colU5
+  };
+
+  function attachZoneHandlers(zone) {
+    zone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      zone.classList.add('drop-target');
+      if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
+    });
+    zone.addEventListener('dragleave', () => {
+      zone.classList.remove('drop-target');
+    });
+    zone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      zone.classList.remove('drop-target');
+      let id = '';
+      try { id = e.dataTransfer.getData('text/plain'); } catch (err) {}
+      if (!id) {
+        const dragging = document.querySelector('.cu-card.dragging');
+        if (dragging) id = dragging.getAttribute('data-id');
+      }
+      if (!id) return;
+      moveCard(id, zone.getAttribute('data-zone'));
+    });
+    zone.addEventListener('click', (e) => {
+      if (!selectedCardId) return;
+      if (e.target.classList && e.target.classList.contains('cu-card')) return;
+      moveCard(selectedCardId, zone.getAttribute('data-zone'));
+      selectedCardId = null;
+    });
+  }
+
+  function moveCard(conceptId, zoneName) {
+    const card = document.querySelector('.cu-card[data-id="' + conceptId + '"]');
+    if (!card) return;
+    card.classList.remove('selected', 'correct', 'wrong');
+    const target = ZONE_MAP[zoneName] && ZONE_MAP[zoneName]();
+    if (!target) return;
+    target.appendChild(card);
+    placements[conceptId] = zoneName;
+    refreshPoolEmpty();
+    fbZone.classList.remove('show');
+    fbList.classList.remove('show');
+  }
+
+  allZones.forEach(attachZoneHandlers);
+
+  scoreBtn.addEventListener('click', () => {
+    const unplaced = CONCEPTS.filter(c => placements[c.id] === 'pool').length;
+    if (unplaced > 0) {
+      fbZone.className = 'try-it-feedback warn show';
+      fbZone.innerHTML = 'You still have <strong>' + unplaced + '</strong> card' + (unplaced === 1 ? '' : 's') + ' waiting. Place every card first, then score.';
+      fbList.classList.remove('show');
+      return;
+    }
+    let correct = 0;
+    const items = [];
+    CONCEPTS.forEach(c => {
+      const card = document.querySelector('.cu-card[data-id="' + c.id + '"]');
+      const placed = placements[c.id];
+      const isRight = (placed === c.answer);
+      if (card) {
+        card.classList.remove('correct', 'wrong', 'selected');
+        card.classList.add(isRight ? 'correct' : 'wrong');
+      }
+      if (isRight) correct++;
+      items.push(
+        '<p style="margin-bottom:8px;">' +
+        (isRight ? '<span style="color:#3d6522;font-weight:700;">✓</span> ' : '<span style="color:#b91c1c;font-weight:700;">✗</span> ') +
+        '<strong>' + c.text + '</strong> &mdash; belongs in <strong>' + ANSWER_LABEL[c.answer] + '</strong>. ' + c.why +
+        '</p>'
+      );
+    });
+    const total = CONCEPTS.length;
+    if (correct === total) {
+      fbZone.className = 'try-it-feedback success show';
+      fbZone.innerHTML = '✨ Perfect &mdash; <strong>' + correct + ' of ' + total + '</strong>. You hold the full year of this course in your head right now.';
+    } else if (correct >= 9) {
+      fbZone.className = 'try-it-feedback success show';
+      fbZone.innerHTML = '<strong>' + correct + ' of ' + total + ' correct.</strong> Strong recall across the year. Check the misses below — those are the spots to revisit before the final.';
+    } else {
+      fbZone.className = 'try-it-feedback warn show';
+      fbZone.innerHTML = '<strong>' + correct + ' of ' + total + ' correct.</strong> Read the unit arc in Section 1 again — each unit owns a clear set of ideas — then re-sort.';
+    }
+    fbList.classList.add('show');
+    fbList.innerHTML = items.join('');
+  });
+
+  resetBtn.addEventListener('click', buildCards);
+
+  buildCards();
+})();
+</script>
+
+</body>
+</html>

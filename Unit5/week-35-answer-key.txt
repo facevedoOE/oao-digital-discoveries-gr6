@@ -1,0 +1,150 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 35 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 5 · Lesson 5.1
+  Standards: SC.6.ET.1.2, SC.6.TI.1.4, SC.6.TI.1.1, SC.6.TI.2.1
+  Topic: Careers in Computing & Digital Citizenship
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B
+  Q2 → B
+  Q3 → C
+  Q4 → C
+  Q5 → C
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Maria's job is to make sure that when you tap a button in
+    an app, it feels right — that the layout, color, words, and
+    flow guide you naturally and work for people with all kinds
+    of abilities. Which CS career is Maria MOST likely in?
+───────────────────────────────────────────────────────────────
+  A) Cybersecurity analyst
+     ❌ Cybersecurity analysts protect systems from attack.
+        Maria's work is about how the app feels, not defense.
+  B) UX designer                                                 ✓ CORRECT
+     ✅ UX designers shape how a product feels and flows for
+        the people using it — including making it accessible.
+        (SC.6.ET.1.2)
+  C) Data scientist
+     ❌ Data scientists find patterns in big data sets. Maria's
+        focus is the user experience, not the data.
+  D) Network administrator
+     ❌ Network admins keep computers and Wi-Fi connected. That's
+        important work, but it's not about how apps feel to use.
+
+───────────────────────────────────────────────────────────────
+Q2. Daniela never finished college. Over four years she taught
+    herself to code, built a public portfolio of real projects,
+    and contributed to open-source software. Which statement
+    about her chances of becoming a software engineer is MOST
+    accurate?
+───────────────────────────────────────────────────────────────
+  A) Impossible — every software engineer must have a 4-year
+     CS degree
+     ❌ This is a common myth. Many software engineers came in
+        through bootcamps, self-teaching, or apprenticeships.
+  B) Self-teaching with a strong portfolio of real projects is
+     a recognized path — many engineers came in this way        ✓ CORRECT
+     ✅ Practice on real problems is the common thread across
+        every route into CS. A polished portfolio is real
+        evidence of skill. (SC.6.ET.1.2)
+  C) Only a bootcamp counts — anything else is just a hobby
+     ❌ Bootcamps are one good path, but they're not the only
+        one. Self-teaching, apprenticeship, and the degree path
+        all work too.
+  D) She'll have to start over with a brand-new 4-year CS
+     degree before anyone will consider her
+     ❌ She doesn't have to start over. Many companies hire
+        based on demonstrated skill.
+
+───────────────────────────────────────────────────────────────
+Q3. You're a security engineer at a streaming company. You
+    discover a critical bug that would let anyone steal user
+    passwords. What is the MOST ethical FIRST move?
+───────────────────────────────────────────────────────────────
+  A) Quietly sell the bug to whoever offers the most money
+     ❌ Selling a vulnerability to attackers harms real users.
+        That's a clear ethical failure.
+  B) Post the exact bug publicly on social media before the
+     company can react
+     ❌ Public disclosure before a fix is in place exposes
+        users to attackers. Responsible disclosure goes to the
+        company first.
+  C) Report it to your security team and leadership
+     immediately, then help patch it before users are harmed   ✓ CORRECT
+     ✅ Responsible disclosure — the ethical heart of
+        cybersecurity. Report internally first, then help fix
+        the bug before users are harmed. (SC.6.TI.2.1)
+  D) Wait a year to see if anyone else finds it first
+     ❌ Waiting just leaves users exposed. Speed protects
+        people; hesitation harms them.
+
+───────────────────────────────────────────────────────────────
+Q4. A classmate posts a video of themselves tripping and
+    spilling lunch everywhere. Comments are piling on. What is
+    the MOST PRUDENT response, in the classical sense of
+    prudence (wise foresight)?
+───────────────────────────────────────────────────────────────
+  A) Pile on with a clever joke — everyone else is doing it
+     ❌ Piling on harms a real person for a small social
+        reward. Prudence pauses before the joke.
+  B) Screenshot and share to a group chat so more people see
+     ❌ Amplifying someone's bad day is the opposite of
+        prudence — it makes the harm bigger.
+  C) Don't pile on. If it feels right, send the person a
+     private message that's kind                                ✓ CORRECT
+     ✅ Prudence is the pause before publishing — and a small
+        private kindness is justice in action. (SC.6.TI.1.1)
+  D) Tell yourself it's "just the internet" and leave a sneaky
+     negative emoji
+     ❌ A "sneaky" negative reaction still adds harm. Prudence
+        asks whether the click helps a real person — not
+        whether it can be hidden.
+
+───────────────────────────────────────────────────────────────
+Q5. You feel like scrolling for another hour, but you're tired
+    and have homework. You put the phone down. Which of the
+    four cardinal virtues did you MOST clearly practice?
+───────────────────────────────────────────────────────────────
+  A) Prudence — wise foresight
+     ❌ Prudence is the pause before deciding. The act of
+        stopping when you've had enough is closer to temperance.
+  B) Justice — giving people what is owed
+     ❌ Justice is about how you treat others. This choice was
+        about how you treat yourself.
+  C) Temperance — self-mastery, knowing what is enough         ✓ CORRECT
+     ✅ Temperance is the virtue of knowing your limit and
+        choosing it. Putting the phone down when enough is
+        enough is temperance in action. (SC.6.TI.1.1)
+  D) Fortitude — courage in hardship
+     ❌ Fortitude does help, but the lead virtue here —
+        knowing what is enough — is temperance.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-35-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

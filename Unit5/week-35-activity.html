@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 35 Activity — Career Sleuth! | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#0a0a14;font-family:'Wix Madefor Text',system-ui,sans-serif;color:#e2e8f0;line-height:1.6;min-height:100vh;">
+
+<div id="app-root" style="max-width:820px;margin:0 auto;padding:20px;">
+
+  <!-- HEADER -->
+  <div style="background:#0E1C42;border-radius:14px;padding:20px 24px;margin-bottom:18px;border:1px solid #1e2a4a;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap;">
+      <div style="background:#F78F1E;color:#0E1C42;padding:5px 12px;border-radius:14px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:11px;letter-spacing:0.14em;">🕵️ ACTIVITY</div>
+      <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;">Unit 5 · Week 35 · SC.6.ET.1.2, SC.6.TI.1.4, SC.6.TI.1.1</div>
+    </div>
+    <h1 style="font-family:'Wix Madefor Display',sans-serif;font-size:28px;font-weight:800;color:#ffffff;margin:0 0 6px;line-height:1.2;">Career Sleuth!</h1>
+    <p style="margin:0;color:#c8d6e8;font-size:14px;">10 real problems and one tricky path. For each one, pick the CS career — or the right ethical move — that fits best. Earn XP. Retry as often as you want.</p>
+  </div>
+
+  <!-- PROGRESS + XP BAR -->
+  <div id="status-bar" style="background:#111122;border:1px solid #1e2a4a;border-radius:12px;padding:14px 20px;margin-bottom:18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <span style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Progress</span>
+        <span id="progress-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:13px;font-weight:700;">Question 1 of 10</span>
+      </div>
+      <div style="background:#0a0a14;border-radius:10px;height:10px;overflow:hidden;">
+        <div id="progress-fill" style="background:linear-gradient(90deg,#55C8E8,#76C043);height:100%;width:0%;transition:width 0.4s ease;"></div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#C7922C,#8a6620);padding:8px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;">
+      <span style="font-size:18px;">⚡</span>
+      <span style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">XP</span>
+      <span id="xp-text" style="color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-size:18px;font-weight:800;">0</span>
+    </div>
+  </div>
+
+  <!-- QUESTION CONTAINER -->
+  <div id="question-container"></div>
+
+  <!-- FOOTER NOTE -->
+  <div style="text-align:center;color:#55687a;font-size:12px;margin-top:24px;padding:12px;">
+    Digital Discoveries · Optima Academy Online · Course 0200021
+  </div>
+
+</div>
+
+<script>
+// ═════════════════════════════════════════════════════════════
+// QUESTION BANK — 10 Career Sleuth scenarios
+// ═════════════════════════════════════════════════════════════
+const QUESTIONS = [
+  {
+    id: 1,
+    tag: 'Tiny Phone Screen',
+    tagColor: '#A53E97',
+    status: 'amber',
+    icon: '📱',
+    scenario: "A school's website looks fine on a laptop, but on a phone the buttons are so small you can't tap them, and half the page runs off the edge. Which CS career is BEST suited to fix this?",
+    options: [
+      { text: 'UX designer — redesigns how the site looks and flows on a small screen, with usable buttons and readable text', correct: true, why: "Right — making a product feel good and work for real users (especially on small screens) is the heart of UX design." },
+      { text: 'Cybersecurity analyst — protects the site from being hacked', correct: false, why: "Security is about defense against attackers, not how the site looks or feels on a phone." },
+      { text: 'Data scientist — finds patterns in how students use the site', correct: false, why: "Patterns are useful, but the immediate problem is that the site isn't usable — that's a design problem, not a data problem." },
+      { text: 'Network administrator — keeps the school Wi-Fi running', correct: false, why: "Network admins keep things connected. They don't redesign websites for phones." }
+    ]
+  },
+  {
+    id: 2,
+    tag: 'Hospital Breach',
+    tagColor: '#C7922C',
+    status: 'red',
+    icon: '🔒',
+    scenario: "A hospital's patient database has been broken into three times in two years. Each time, sensitive medical records were exposed. Which CS career is the hospital MOST likely calling first?",
+    options: [
+      { text: 'Game developer — builds engaging interfaces', correct: false, why: "Games are fun, but the problem is theft of medical data — a security problem, not a fun problem." },
+      { text: 'Cybersecurity analyst — finds how attackers got in, patches the holes, and watches for the next attempt', correct: true, why: "Yes — breaches of sensitive data are the textbook cybersecurity case. They hunt vulnerabilities and lock them down." },
+      { text: 'UX designer — makes the database friendlier for nurses', correct: false, why: "Friendly interfaces are great, but they don't stop attackers. The hospital needs defense first." },
+      { text: 'Data scientist — finds patterns in patient outcomes', correct: false, why: "Pattern-finding is useful, but it doesn't keep thieves out. This is a security problem." }
+    ]
+  },
+  {
+    id: 3,
+    tag: 'Who Will Get Sick?',
+    tagColor: '#55C8E8',
+    status: 'blue',
+    icon: '📊',
+    scenario: "A hospital wants software that looks at thousands of past patient records and predicts which patients arriving today are most likely to need extra care in the next 24 hours. Which CS career drives this work?",
+    options: [
+      { text: 'IT / network administrator — runs the servers', correct: false, why: "Admins keep the servers up, but the actual prediction work — finding patterns in thousands of records — is a different skill." },
+      { text: 'Robotics engineer — builds the surgical robots', correct: false, why: "Robotics is about machines that move. This problem is about finding patterns in past records, not physical machines." },
+      { text: 'Data scientist — finds patterns in past records to predict what may happen now', correct: true, why: "Exactly. Pattern-finding across large amounts of data is the data scientist's calling. (And often, an ML engineer collaborates.)" },
+      { text: 'UX designer — designs the dashboard nurses look at', correct: false, why: "The dashboard matters, but the core work — figuring out who's at risk — is data work, not design work." }
+    ]
+  },
+  {
+    id: 4,
+    tag: 'Stop Sign in Fog',
+    tagColor: '#F78F1E',
+    status: 'red',
+    icon: '🤖',
+    scenario: "A self-driving car needs to recognize stop signs even when they're partly hidden by fog, leaves, or weird lighting. Which CS career is BEST suited to lead this work?",
+    options: [
+      { text: 'AI / ML engineer — trains a machine-learning model to recognize stop signs across thousands of tough images', correct: true, why: "Right — teaching a model to recognize objects in messy real-world images is exactly the ML engineer's calling." },
+      { text: 'Network administrator — keeps the car connected to the cloud', correct: false, why: "Networking helps, but the hard part is the recognition itself — and that's a learning problem." },
+      { text: 'UX designer — designs the dashboard the driver sees', correct: false, why: "The dashboard matters, but the question is how the car itself recognizes the sign — an ML problem." },
+      { text: 'Software engineer — writes a list of IF/THEN rules for every possible stop-sign scenario', correct: false, why: "You can't write rules for every possible fog pattern. That's why ML matters — the model learns the patterns no human could list." }
+    ]
+  },
+  {
+    id: 5,
+    tag: 'Butterfingers Bot',
+    tagColor: '#67308F',
+    status: 'amber',
+    icon: '🦾',
+    scenario: "A factory robot arm keeps dropping packages onto the conveyor belt — sometimes too hard, sometimes too soft. Which CS career is BEST suited to design and tune the fix?",
+    options: [
+      { text: 'Data scientist — runs a study on package weight', correct: false, why: "Data could help, but the actual fix — adjusting how the arm grips and moves — is a robotics problem." },
+      { text: 'UX designer — redesigns the box labels', correct: false, why: "Labels are not the issue. The arm's grip and motion is the issue." },
+      { text: 'Robotics engineer — designs how the arm grips, senses weight, and moves smoothly', correct: true, why: "Yes — robots that move objects in the real world are the robotics engineer's home turf. Sensors + motors + code." },
+      { text: 'Cybersecurity analyst — checks if the robot was hacked', correct: false, why: "Possible but unlikely. Most of the time, this is a mechanical / sensing / control problem — robotics engineering." }
+    ]
+  },
+  {
+    id: 6,
+    tag: 'Ethical First Move',
+    tagColor: '#76C043',
+    status: 'green',
+    icon: '⚖️',
+    scenario: "You're a security engineer at a video-streaming company. You discover a serious bug that would let anyone steal user passwords. What's the BEST ethical FIRST move?",
+    options: [
+      { text: 'Quietly use the bug to grab some passwords yourself — only for testing', correct: false, why: "Even \"only for testing,\" taking real users' passwords without permission is the bad move. Don't cross that line." },
+      { text: 'Post it on social media to warn everyone before the company can react', correct: false, why: "Public disclosure before a fix would actually expose users to attackers. Responsible disclosure goes to the company first." },
+      { text: 'Tell your security team and leadership immediately, then help patch it before any user is harmed', correct: true, why: "Right. The first move is to report it internally — quickly — so it can be fixed before attackers find it. This is what \"ethical responsibility\" looks like in practice." },
+      { text: 'Wait a month to see if anyone else finds it first', correct: false, why: "Waiting just leaves users exposed. Speed protects people. Hesitation harms them." }
+    ]
+  },
+  {
+    id: 7,
+    tag: 'A Stranger\'s Bad Day',
+    tagColor: '#55C8E8',
+    status: 'green',
+    icon: '💬',
+    scenario: "A classmate posts a video where they trip and drop their lunch all over themselves. Comments are piling up making fun of them. You think the moment is genuinely embarrassing for them. What's the MOST PRUDENT response?",
+    options: [
+      { text: 'Pile on with a clever joke — everyone else is doing it', correct: false, why: "That's the easy move, but it harms a real person for a small social reward. Prudence pauses before the joke." },
+      { text: 'Screenshot and share to a group chat so more people can see', correct: false, why: "Amplifying someone's bad day is the opposite of prudence. You're making the hurt bigger." },
+      { text: 'Don\'t pile on — and if it feels right, send the person a private message that\'s kind. Don\'t make it worse.', correct: true, why: "Yes — prudence is the pause before publishing, and justice is treating a person as a person. A private kind word costs nothing and helps." },
+      { text: 'Report the video to the platform without telling the person', correct: false, why: "Reporting can sometimes help, but blindly reporting a classmate's own post can also make them feel worse. The prudent first move is not to amplify the harm and to consider what the person would actually want." }
+    ]
+  },
+  {
+    id: 8,
+    tag: 'No Degree, Real Skill',
+    tagColor: '#76C043',
+    status: 'green',
+    icon: '🎓',
+    scenario: "Your friend Daniela never finished college but spent four years building real projects, posting them to a public portfolio, and contributing to open-source code. She's applying for a software-engineer job. Is this realistic?",
+    options: [
+      { text: 'No — you can\'t become a software engineer without a CS degree', correct: false, why: "That's a myth. Many great engineers came in through bootcamps, self-teaching, or apprenticeships. A real portfolio matters." },
+      { text: 'Yes — many software engineers came in through self-teaching or alternative paths, and a strong portfolio of real projects often opens the door', correct: true, why: "Right. Real practice on real problems is the common thread across every path into CS. A polished portfolio is real evidence of skill." },
+      { text: 'Only if she lies on her resume and pretends to have a degree', correct: false, why: "Never lie. Most companies will look up the degree, and honesty is part of being trustworthy in this field." },
+      { text: 'Yes, but she\'ll need to start over completely with a four-year CS degree first', correct: false, why: "She does not have to start over. Many companies hire based on demonstrated skill, especially with a strong portfolio." }
+    ]
+  },
+  {
+    id: 9,
+    tag: 'Chart Choices',
+    tagColor: '#55C8E8',
+    status: 'amber',
+    icon: '📈',
+    scenario: "A data scientist is asked to make sales for the year look more impressive in a slide. The real growth is 2%. Their boss suggests \"just stretch the y-axis so it looks like a big jump.\" What's the MOST ETHICAL response?",
+    options: [
+      { text: 'Stretch the y-axis — the underlying number is still true, so it\'s fine', correct: false, why: "A true number told with a misleading shape is still a lie. The viewer reads the picture, not just the digit." },
+      { text: 'Refuse and offer to make a chart that\'s both honest and clear — with a labeled axis and context for the 2% growth', correct: true, why: "Right. The ethics of data work is the ethics of not lying with shapes. An honest chart can still be a beautiful, clear one." },
+      { text: 'Make two slides — one stretched, one honest — and let the boss pick', correct: false, why: "This puts the boss in a tempting spot and treats deception as one option among equals. The right move is to make only the honest version." },
+      { text: 'Quit immediately', correct: false, why: "Quitting is dramatic but doesn't solve the problem. The professional move is to refuse the dishonest chart and offer an honest one." }
+    ]
+  },
+  {
+    id: 10,
+    tag: 'Virtue Match',
+    tagColor: '#C7922C',
+    status: 'green',
+    icon: '🛡️',
+    scenario: "You feel the urge to scroll one more hour even though you're already tired and have homework. You put the phone down anyway. Which of the four cardinal virtues did you just practice?",
+    options: [
+      { text: 'Prudence — wise foresight before acting', correct: false, why: "Prudence is the pause before deciding. The act here is the self-mastery of stopping when you\'ve had enough — closer to temperance." },
+      { text: 'Justice — giving people what is owed', correct: false, why: "Justice is about how you treat others. Stopping scrolling is about how you treat yourself." },
+      { text: 'Temperance — self-mastery, knowing what is enough', correct: true, why: "Right. Temperance is the virtue of knowing your limit and choosing it. Putting the phone down when you've had enough is temperance in action." },
+      { text: 'Fortitude — courage in hardship', correct: false, why: "Fortitude does help here, but the specific virtue of knowing what is enough is temperance. Often they work together — but the lead virtue is temperance." }
+    ]
+  }
+];
+
+// ═════════════════════════════════════════════════════════════
+// STATE
+// ═════════════════════════════════════════════════════════════
+const POINTS_PER_CORRECT = 10;
+let currentIndex = 0;
+let totalXP = 0;
+let correctCount = 0;
+let answered = false;
+
+// ═════════════════════════════════════════════════════════════
+// RENDERING
+// ═════════════════════════════════════════════════════════════
+const STATUS_COLORS = {
+  red:   '#ff6b6b',
+  amber: '#F78F1E',
+  green: '#76C043',
+  blue:  '#55C8E8'
+};
+
+function renderQuestion() {
+  const q = QUESTIONS[currentIndex];
+  answered = false;
+  updateStatusBar();
+
+  const container = document.getElementById('question-container');
+  container.innerHTML = `
+    <div style="background:#111122;border:1px solid #1e2a4a;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+      <div style="background:linear-gradient(135deg,#0E1C42,#1a2a5e);padding:20px 24px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #1e2a4a;">
+        <div style="width:12px;height:12px;border-radius:50%;background:${STATUS_COLORS[q.status]};box-shadow:0 0 12px ${STATUS_COLORS[q.status]};flex-shrink:0;"></div>
+        <div style="background:${q.tagColor};color:#0E1C42;padding:4px 10px;border-radius:10px;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;">${q.tag}</div>
+        <div style="margin-left:auto;font-size:28px;">${q.icon}</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;">Scenario ${q.id}</div>
+        <p style="color:#ffffff;font-size:17px;line-height:1.55;margin:0 0 22px;">${q.scenario}</p>
+        <div id="options-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <div id="feedback-zone" style="margin-top:18px;"></div>
+      </div>
+    </div>
+  `;
+
+  const list = document.getElementById('options-list');
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.setAttribute('data-idx', idx);
+    btn.style.cssText = `
+      background:#0a0a14;border:2px solid #1e2a4a;border-radius:10px;
+      padding:14px 18px;color:#e2e8f0;font-family:inherit;font-size:15px;
+      text-align:left;cursor:pointer;transition:all 0.2s ease;
+      display:flex;gap:12px;align-items:flex-start;
+    `;
+    btn.innerHTML = `
+      <div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#1e2a4a;color:#55C8E8;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">${String.fromCharCode(65+idx)}</div>
+      <div style="flex:1;padding-top:4px;">${opt.text}</div>
+    `;
+    btn.addEventListener('mouseenter', () => {
+      if (!answered) { btn.style.borderColor = '#55C8E8'; btn.style.background = '#111933'; }
+    });
+    btn.addEventListener('mouseleave', () => {
+      if (!answered) { btn.style.borderColor = '#1e2a4a'; btn.style.background = '#0a0a14'; }
+    });
+    btn.addEventListener('click', () => handleAnswer(idx));
+    list.appendChild(btn);
+  });
+}
+
+function handleAnswer(selectedIdx) {
+  if (answered) return;
+  answered = true;
+
+  const q = QUESTIONS[currentIndex];
+  const chosen = q.options[selectedIdx];
+  const buttons = document.querySelectorAll('#options-list button');
+
+  buttons.forEach((btn, i) => {
+    btn.style.cursor = 'default';
+    btn.disabled = true;
+    const opt = q.options[i];
+    if (opt.correct) {
+      btn.style.borderColor = '#76C043';
+      btn.style.background = 'rgba(118,192,67,0.12)';
+      btn.querySelector('div').style.background = '#76C043';
+      btn.querySelector('div').style.color = '#0E1C42';
+    } else if (i === selectedIdx && !opt.correct) {
+      btn.style.borderColor = '#ff6b6b';
+      btn.style.background = 'rgba(255,107,107,0.10)';
+      btn.querySelector('div').style.background = '#ff6b6b';
+      btn.querySelector('div').style.color = '#ffffff';
+    } else {
+      btn.style.opacity = '0.55';
+    }
+  });
+
+  if (chosen.correct) {
+    totalXP += POINTS_PER_CORRECT;
+    correctCount++;
+  }
+  updateStatusBar();
+
+  const fb = document.getElementById('feedback-zone');
+  const color = chosen.correct ? '#76C043' : '#ff6b6b';
+  const bgColor = chosen.correct ? 'rgba(118,192,67,0.10)' : 'rgba(255,107,107,0.08)';
+  const label = chosen.correct ? '✅ CORRECT  ·  +' + POINTS_PER_CORRECT + ' XP' : '❌ NOT QUITE';
+  fb.innerHTML = `
+    <div style="background:${bgColor};border:1px solid ${color};border-left:4px solid ${color};border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px;">
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:8px;">${label}</div>
+      <div style="color:#e2e8f0;font-size:14px;line-height:1.6;">${chosen.why}</div>
+    </div>
+    <button id="next-btn" style="width:100%;background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 18px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;">
+      ${currentIndex < QUESTIONS.length - 1 ? 'Next Scenario →' : 'See Your Results →'}
+    </button>
+  `;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.addEventListener('mouseenter', () => { nextBtn.style.transform = 'translateY(-2px)'; nextBtn.style.boxShadow = '0 6px 20px rgba(85,200,232,0.4)'; });
+  nextBtn.addEventListener('mouseleave', () => { nextBtn.style.transform = 'translateY(0)'; nextBtn.style.boxShadow = 'none'; });
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    if (currentIndex < QUESTIONS.length) {
+      renderQuestion();
+    } else {
+      renderResults();
+    }
+  });
+}
+
+function updateStatusBar() {
+  document.getElementById('progress-text').textContent = `Question ${Math.min(currentIndex+1, QUESTIONS.length)} of ${QUESTIONS.length}`;
+  const pct = ((answered ? currentIndex + 1 : currentIndex) / QUESTIONS.length) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('xp-text').textContent = totalXP;
+}
+
+function renderResults() {
+  const maxXP = POINTS_PER_CORRECT * QUESTIONS.length;
+  const pct = Math.round((totalXP / maxXP) * 100);
+  let message, emoji, color;
+  if (pct === 100) {
+    message = "A master sleuth! You can name the right CS career — and the right virtue — for any scene.";
+    emoji = "🏆"; color = "#C7922C";
+  } else if (pct >= 80) {
+    message = "Excellent work — you're reading both the CS career map and the digital-citizenship compass.";
+    emoji = "⭐"; color = "#76C043";
+  } else if (pct >= 60) {
+    message = "Good progress. Re-read Sections 2, 4, and 5 — the careers, the ethics, and the virtues — and try again.";
+    emoji = "💪"; color = "#55C8E8";
+  } else {
+    message = "Keep going! Head back to the Week 35 reading and walk through the career map and virtues again.";
+    emoji = "📚"; color = "#67308F";
+  }
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = 'Complete!';
+
+  document.getElementById('question-container').innerHTML = `
+    <div style="background:linear-gradient(135deg,#111122,#0E1C42);border:1px solid ${color};border-radius:14px;padding:36px 28px;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,0.5);">
+      <div style="font-size:72px;margin-bottom:12px;">${emoji}</div>
+      <div style="color:${color};font-family:'Wix Madefor Display',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:10px;">Activity Complete</div>
+      <h2 style="font-family:'Wix Madefor Display',sans-serif;color:#ffffff;font-size:32px;font-weight:800;margin:0 0 8px;">${totalXP} / ${maxXP} XP</h2>
+      <div style="color:#c8d6e8;font-size:16px;margin-bottom:6px;">${correctCount} of ${QUESTIONS.length} correct · ${pct}%</div>
+      <p style="color:#e2e8f0;font-size:16px;line-height:1.55;max-width:520px;margin:16px auto 28px;">${message}</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="retry-btn" style="background:linear-gradient(135deg,#55C8E8,#0E5568);border:none;border-radius:10px;padding:14px 26px;color:#ffffff;font-family:'Wix Madefor Display',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:transform 0.2s;">
+          ↻ Try Again
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('retry-btn').addEventListener('click', () => {
+    currentIndex = 0; totalXP = 0; correctCount = 0;
+    renderQuestion();
+  });
+
+  // Canvas grade passback
+  try {
+    window.parent.postMessage({
+      type: 'canvas-grade',
+      score: totalXP,
+      maxScore: maxXP,
+      percent: pct,
+      correctCount: correctCount,
+      totalQuestions: QUESTIONS.length,
+      activity: 'week-35-activity'
+    }, '*');
+  } catch (e) { /* no-op */ }
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

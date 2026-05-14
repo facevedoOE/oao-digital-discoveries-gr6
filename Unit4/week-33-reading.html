@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 33 — Unit 4 Review &amp; AI Perspectives Project | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: var(--font-text); font-size: 16px; line-height: 1.7; color: #374151; background: #f8f9fa; }
+
+/* HEADER */
+.oao-header { background: var(--binary-blue); color: white; position: sticky; top: 0; z-index: 50; box-shadow: 0 4px 20px rgba(14,28,66,0.3); }
+.oao-header-inner { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: #ffffff; letter-spacing: -0.01em; }
+.oao-wordmark-sub { font-family: var(--font-display); font-size: 8px; font-weight: 500; color: rgba(255,255,255,0.7); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2px; }
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course { font-family: var(--font-display); font-size: 14px; color: var(--bitstream-blue); font-weight: 600; }
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge { display: flex; align-items: center; gap: 8px; background: var(--gateway-gold); color: white; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; font-family: var(--font-display); letter-spacing: 0.04em; }
+
+/* BREADCRUMB */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner { max-width: 900px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #6b7280; flex-wrap: wrap; }
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* LESSON */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+.lesson-badge { display: inline-block; padding: 4px 14px; background: var(--bitstream-blue); color: white; font-size: 13px; font-weight: 700; font-family: var(--font-display); border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 16px; }
+.lesson-title { font-family: var(--font-display); font-size: 36px; font-weight: 800; color: var(--binary-blue); line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.01em; }
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* OBJECTIVES */
+.objectives-box { background: linear-gradient(135deg, #eff6ff, #ecfeff); border: 2px solid var(--bitstream-blue); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+.objectives-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--binary-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-display); font-weight: 800; font-size: 13px; color: white; }
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* SECTION HEADERS */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num { width: 44px; height: 44px; border-radius: 10px; background: var(--bitstream-blue); color: var(--binary-blue); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 16px; flex-shrink: 0; }
+.section-label { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.22em; color: var(--bitstream-blue); text-transform: uppercase; }
+.section-title { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--binary-blue); line-height: 1.2; margin-bottom: 14px; }
+
+/* READING TEXT */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term { background: rgba(199,146,44,0.15); padding: 2px 6px; border-radius: 4px; font-weight: 600; color: var(--binary-blue); }
+
+/* CALLOUTS */
+.callout { border-left: 5px solid; border-radius: 0 12px 12px 0; padding: 22px 26px; margin: 24px 0; }
+.callout-label { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* WEEK RECAP CARDS */
+.recap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.recap-card { background: white; border: 1px solid #e5e7eb; border-top: 4px solid; border-radius: 10px; padding: 22px; }
+.recap-card-week { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; }
+.recap-card-title { color: var(--binary-blue); font-family: var(--font-display); font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.recap-card ul { margin: 0; padding-left: 20px; color: #4b5563; font-size: 14.5px; line-height: 1.7; }
+
+/* VOCAB */
+.vocab-section-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--binary-blue); margin: 48px 0 16px; display: flex; align-items: center; gap: 10px; }
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 18px; transition: border-color 0.2s, box-shadow 0.2s; }
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term { font-family: var(--font-display); font-weight: 700; color: var(--binary-blue); font-size: 15.5px; margin-bottom: 6px; }
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* REFLECTION */
+.reflection-hero { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); border-radius: 14px; padding: 30px 32px; margin: 40px 0 8px; color: white; box-shadow: 0 8px 32px rgba(199,146,44,0.25); }
+.reflection-label { font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--binary-blue); margin-bottom: 10px; }
+.reflection-q { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: white; margin-bottom: 14px; line-height: 1.3; }
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* FOOTER */
+.lesson-footer { background: var(--binary-blue); color: rgba(255,255,255,0.7); text-align: center; padding: 18px 24px; font-size: 12px; }
+
+/* INTERACTIVE WIDGETS — try-it base */
+.try-it { background: white; border: 2px solid var(--bitstream-blue); border-radius: 14px; padding: 24px; margin: 24px 0; box-shadow: 0 4px 20px rgba(85,200,232,0.10); }
+.try-it-label { display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; background: var(--bitstream-blue); color: white; padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; }
+.try-it-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--binary-blue); margin-bottom: 8px; }
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn { font-family: var(--font-display); font-weight: 700; font-size: 14px; padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.15s; }
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; display: none; line-height: 1.5; }
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid var(--gamer-green); color: #1f4128; }
+.try-it-feedback.warn { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left: 4px solid var(--odyssey-orange); color: #7c3a0a; }
+
+/* BUILD YOUR ARGUMENT WIDGET */
+.arg-position-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.arg-position-row label { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--binary-blue); }
+.arg-select {
+  flex: 1; min-width: 240px;
+  padding: 10px 12px;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 8px;
+  font-family: var(--font-text);
+  font-size: 14.5px;
+  color: var(--binary-blue);
+  background: white;
+  cursor: pointer;
+}
+.arg-select:focus { outline: 2px solid var(--gateway-gold); }
+.arg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.arg-zone {
+  background: #f8f9fa;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 220px;
+}
+.arg-zone-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arg-zone.is-target {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-color: var(--bitstream-blue);
+  border-style: solid;
+}
+.arg-zone.is-target .arg-zone-label { color: var(--dark-bitstream); }
+.arg-cards { display: flex; flex-direction: column; gap: 8px; }
+.arg-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--binary-blue);
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.2s;
+}
+.arg-card:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.18); border-color: var(--bitstream-blue); }
+.arg-card.dragging { opacity: 0.4; cursor: grabbing; }
+.arg-card .arg-card-handle { color: var(--bitstream-blue); font-weight: 800; font-size: 16px; letter-spacing: -2px; }
+.arg-card .arg-card-text { flex: 1; }
+.arg-card.matches { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: var(--gamer-green); }
+.arg-card.mismatches { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-color: #ef4444; }
+.arg-card.irrelevant { background: linear-gradient(135deg, #f3f4f6, #e5e7eb); border-color: #9ca3af; opacity: 0.85; }
+.arg-card-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+.arg-card.matches .arg-card-tag { background: var(--gamer-green); color: white; }
+.arg-card.mismatches .arg-card-tag { background: #ef4444; color: white; }
+.arg-card.irrelevant .arg-card-tag { background: #6b7280; color: white; }
+.arg-card-why { font-size: 12.5px; color: #4b5563; margin-top: 4px; line-height: 1.45; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .recap-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .arg-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 4 · WEEK 33
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 4: Modeling &amp; AI</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 33: Unit 4 Review &amp; AI Perspectives Project</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <div class="lesson-badge">UNIT 4 • WEEK 33 • READING</div>
+  <h1 class="lesson-title">Unit 4 Review &amp; AI Perspectives Project</h1>
+  <p class="lesson-description">You've spent four weeks moving from <em>"what is a model?"</em> all the way to <em>"what's the prudent way to use AI?"</em>. This week you'll look back over the whole arc, refresh the vocabulary, and start the Unit 4 project — an infographic or short presentation arguing your own position on AI in society.</p>
+
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Connect the concepts</strong> from Weeks 29–32: models &amp; simulations, the engineering design process, human–AI collaboration, and AI ethics.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Take a position</strong> on a question about AI in society and gather evidence to support it.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Distinguish supporting evidence from counter-evidence</strong> and red herrings — facts that sound related but actually aren't.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Plan a polished deliverable</strong> — an infographic, a short slide deck, or a 90-second video — that makes your case clearly.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · The Big Arc</div>
+  </div>
+  <h2 class="section-title">From numbers in a box to the four cardinal virtues</h2>
+  <div class="read-body">
+    <p>It might not be obvious yet, but Unit 4 has been telling one story. Let's walk through it backwards so the shape stands out.</p>
+    <p>You ended at <strong>ethics</strong> — questions about what's <em>right</em> and <em>prudent</em> when using AI. You can only ask those questions because, the week before, you learned what AI <em>is</em>: software that learns from data and finds patterns. And you can only see <em>why</em> AI is special once you've contrasted it with a human partner — what humans bring (judgment, empathy, ethical reasoning) and what machines bring (speed, precision, tireless repetition). Two weeks before that, you learned the <strong>engineering design process</strong> — how iteration turns rough ideas into polished work. And under all of that sits <strong>modeling</strong> — the original move of pulling a piece of the world into a computer as numbers and rules.</p>
+    <p>So the unit's arc, in plain English: <em>You can only build something well if you can model it. You can only refine it if you iterate. You can only deploy it wisely if you understand who should do what. And you can only judge it justly if you reason about it as a virtuous person would.</em></p>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Week-by-Week Refresh</div>
+  </div>
+  <h2 class="section-title">The five-card recap</h2>
+  <div class="recap-grid">
+    <div class="recap-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="recap-card-week" style="color: var(--bitstream-blue);">Week 29 · Modeling</div>
+      <div class="recap-card-title">Models &amp; simulations</div>
+      <ul>
+        <li><strong>Variables</strong> are the knobs; <strong>conditions</strong> are the wiring.</li>
+        <li><strong>Abstraction</strong> is choosing what to leave out.</li>
+        <li>HCIs (touch, voice, gesture, haptic) are how we talk to models.</li>
+      </ul>
+    </div>
+    <div class="recap-card" style="border-top-color: var(--gamer-green);">
+      <div class="recap-card-week" style="color: #3d6522;">Week 30 · Design</div>
+      <div class="recap-card-title">Engineering design process</div>
+      <ul>
+        <li>Identify · Research · Develop · Test · Improve.</li>
+        <li><strong>Criteria</strong> = success measure. <strong>Constraints</strong> = limits.</li>
+        <li>Iteration is craftsmanship — not a sign of failure.</li>
+      </ul>
+    </div>
+    <div class="recap-card" style="border-top-color: var(--odyssey-orange);">
+      <div class="recap-card-week" style="color: var(--odyssey-orange);">Week 31 · Collaboration</div>
+      <div class="recap-card-title">Human + AI together</div>
+      <ul>
+        <li>Humans: judgment, empathy, ethical reasoning.</li>
+        <li>Machines: speed, scale, no fatigue.</li>
+        <li>High-stakes calls keep a <em>human in the loop</em>.</li>
+      </ul>
+    </div>
+    <div class="recap-card" style="border-top-color: var(--portal-purple);">
+      <div class="recap-card-week" style="color: var(--portal-purple);">Week 32 · AI Ethics</div>
+      <div class="recap-card-title">Fundamentals &amp; virtue</div>
+      <ul>
+        <li><strong>Rules-based</strong> vs <strong>learning-based</strong> software.</li>
+        <li>Ethical issues: bias, privacy, ownership, displacement.</li>
+        <li>Cardinal virtues guide use: prudence, justice, fortitude, temperance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Connecting Models + AI</div>
+  </div>
+  <h2 class="section-title">Why "learning-based" is just a smarter kind of model</h2>
+  <div class="read-body">
+    <p>Here's a connection that becomes obvious once you've seen both pieces: <strong>a learning-based AI is just a model whose conditions were not handwritten.</strong></p>
+    <p>In Week 29, you ran the Pond Simulator. The IF/THEN rules — <em>"if temperature is above 32°C, fish stress increases"</em> — were written by a human. That's a rules-based model.</p>
+    <p>In Week 32, you saw <em>learning-based</em> software like Spotify recommendations or face recognition. Those are also models — they have variables (your listening history; the pixels of a face) and they produce outputs (a song; a name). But the conditions weren't typed in by an engineer. The system <em>learned</em> them by sifting through huge amounts of training data. That's the only difference.</p>
+    <p>Why does this matter? Because every concern you learned about in Week 32 — bias, privacy, ownership — comes from <strong>where the conditions came from</strong>. Bias slips in when training data isn't fair. Privacy concerns come from training data being personal. Ownership questions come from training data being someone else's work. The model is only as just as the data that taught it. <em>A computer is only as fair as the world that taught it to count.</em></p>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>The classical thinkers held that wisdom requires both <strong>knowing the truth</strong> and <strong>knowing your own ignorance</strong>. When we use AI we are doing both at once: trusting that the model has learned something true, and remaining alert to the gap between what it knows and what it pretends to know. That second virtue — humility before the limits of any tool — is what keeps a smart user from becoming a careless one.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · The Ethical Thread</div>
+  </div>
+  <h2 class="section-title">Why this whole unit centers on virtue</h2>
+  <div class="read-body">
+    <p>You may have noticed something unusual about Unit 4. We didn't just teach you <em>how</em> to build technology. We kept asking <em>whether</em> you should — and <em>how</em> you should. That was on purpose.</p>
+    <p>The four <strong>cardinal virtues</strong> from the classical tradition — <strong>prudence</strong> (wise foresight), <strong>justice</strong> (giving each person their due), <strong>fortitude</strong> (perseverance through difficulty), and <strong>temperance</strong> (moderation in pleasure and use) — were never just about ancient life. They map onto modern decisions about AI startlingly well.</p>
+  </div>
+
+  <div class="recap-grid">
+    <div class="recap-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="recap-card-week" style="color: var(--bitstream-blue);">⚖️ Justice in AI</div>
+      <div class="recap-card-title">Bias, fairness, ownership</div>
+      <ul>
+        <li>Asking whether training data was collected fairly.</li>
+        <li>Crediting human creators when their work shaped a tool.</li>
+        <li>Refusing to deploy a model that systematically harms a group.</li>
+      </ul>
+    </div>
+    <div class="recap-card" style="border-top-color: var(--gateway-gold);">
+      <div class="recap-card-week" style="color: var(--gateway-gold);">🦉 Prudence in AI</div>
+      <div class="recap-card-title">Wise foresight</div>
+      <ul>
+        <li>Knowing when to delegate to AI and when to stay hands-on.</li>
+        <li>Reading the privacy settings before pressing "agree."</li>
+        <li>Asking <em>"what could go wrong?"</em> before celebrating a launch.</li>
+      </ul>
+    </div>
+    <div class="recap-card" style="border-top-color: var(--gamer-green);">
+      <div class="recap-card-week" style="color: #3d6522;">💪 Fortitude in AI</div>
+      <div class="recap-card-title">Doing the hard work yourself</div>
+      <ul>
+        <li>Writing your own essay even when AI offers a shortcut.</li>
+        <li>Learning a skill instead of always outsourcing it.</li>
+        <li>Iterating on a real prototype instead of giving up.</li>
+      </ul>
+    </div>
+    <div class="recap-card" style="border-top-color: var(--portal-purple);">
+      <div class="recap-card-week" style="color: var(--portal-purple);">🌿 Temperance in AI</div>
+      <div class="recap-card-title">Moderation, not addiction</div>
+      <ul>
+        <li>Putting the phone down when the algorithm wants you scrolling.</li>
+        <li>Using generative tools to assist, not replace, your thinking.</li>
+        <li>Choosing depth of attention over endless feed.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · The AI Perspectives Project</div>
+  </div>
+  <h2 class="section-title">Pick a position. Build the case.</h2>
+  <div class="read-body">
+    <p>Now it's your turn. Your project for the next two weeks is to build a short, polished argument about <strong>AI's role in society</strong> — the kind of thing you might present to a thoughtful audience that hasn't taken this course.</p>
+    <p>The full project guide (rubric, suggested topics, scaffolded planning template) lives in this week's <strong>Activity</strong> page. Here in the reading, we'll practice the move that sits at the heart of any good argument: <strong>choose a position, then assemble evidence that <em>actually</em> supports it</strong> — distinguishing it from evidence that doesn't.</p>
+  </div>
+
+  <!-- ========== TRY IT — BUILD YOUR ARGUMENT ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🎯 Try It — Build Your Argument</div>
+    <div class="try-it-title">Pick a position, then drag 3 supporting cards.</div>
+    <p class="try-it-instructions">Below are <strong>8 evidence cards</strong> about AI and creativity. Some support one position, some support the opposite, some are red herrings (true but unrelated), and some are just neutral. <strong>Step 1:</strong> pick a position from the dropdown. <strong>Step 2:</strong> drag exactly 3 cards into your "evidence" box. <strong>Step 3:</strong> click <em>Check My Argument</em> to see whether each card actually supports your position.</p>
+
+    <div class="arg-position-row">
+      <label for="arg-position">My position:</label>
+      <select class="arg-select" id="arg-position">
+        <option value="helps">AI tools help human creativity (a net positive).</option>
+        <option value="threatens">AI tools threaten human creativity (a net negative).</option>
+        <option value="neutral">It's neutral — depends on how each person uses it.</option>
+      </select>
+    </div>
+
+    <div class="arg-grid">
+      <div class="arg-zone" id="arg-bank">
+        <div class="arg-zone-label">Available evidence <span id="arg-bank-count" style="font-weight:700;">8</span></div>
+        <div class="arg-cards" id="arg-bank-cards"></div>
+      </div>
+      <div class="arg-zone is-target" id="arg-mine">
+        <div class="arg-zone-label">My evidence <span id="arg-mine-count" style="font-weight:700;">0 / 3</span></div>
+        <div class="arg-cards" id="arg-mine-cards"></div>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-primary" id="arg-check">Check My Argument</button>
+      <button class="try-it-btn try-it-btn-secondary" id="arg-reset">Reset</button>
+    </div>
+    <div class="try-it-feedback" id="arg-feedback"></div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>Lawyers, scientists, and journalists do exactly this move every day. They take a position — <em>"this medicine works,"</em> <em>"this contract was breached,"</em> <em>"this election was clean"</em> — and then they build a chain of evidence under it. The skill they're really exercising isn't writing or speaking. It's <strong>recognizing which evidence is on point and which is a distraction</strong>. That's the same skill you just practiced.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 33</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card"><div class="vocab-term">Synthesis</div><div class="vocab-def">Bringing several ideas together to form a single, bigger picture.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Position</div><div class="vocab-def">The claim you are making — what you believe is true and want others to consider.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Evidence</div><div class="vocab-def">A fact, example, or quote that backs up your position.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Counterargument</div><div class="vocab-def">A reason a thoughtful person might disagree with your position — worth knowing so you can answer it.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Infographic</div><div class="vocab-def">A picture-and-text design that makes information clear at a glance.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Presentation</div><div class="vocab-def">A short series of slides or a video that walks an audience through your argument.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Virtue</div><div class="vocab-def">A trained habit of doing the right thing well — like prudence, justice, fortitude, or temperance.</div></div>
+    <div class="vocab-card"><div class="vocab-term">Perspective</div><div class="vocab-def">The viewpoint from which a person sees an issue, shaped by their experience and reasoning.</div></div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Without rereading, name the four cardinal virtues and one example of each from this unit. Then write the question your AI Perspectives project will try to answer. (You'll refine that question in the activity — but having a draft now is gold.)</p>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">What's the question you most want to answer about AI?</div>
+    <p>Spend a few minutes writing freely. Then answer in 4–6 sentences:</p>
+    <ul>
+      <li>What's the question? (e.g. "Should students use AI to help with writing?")</li>
+      <li>What position do you currently lean toward?</li>
+      <li>Name <strong>one</strong> piece of evidence you already know that supports your lean.</li>
+      <li>Name <strong>one</strong> reasonable counterargument from someone who disagrees with you.</li>
+      <li>Which cardinal virtue is most useful for thinking through this question?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>This week's <strong>Activity</strong> is special — instead of a 10-scenario quiz, it's the full <em>AI Perspectives Project Guide</em>, with the rubric, suggested topics, the structure for your infographic or presentation, evaluation criteria, and a planning template. Open it next, build your project on your own time, and submit when ready.</p>
+      <p>In <strong>Week 34</strong> you'll wrap up Unit 4 with a 15-question summative assessment covering everything from modeling through ethics.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Build Your Argument ==========
+(function() {
+  const positionSelect = document.getElementById('arg-position');
+  const bankZone = document.getElementById('arg-bank');
+  const mineZone = document.getElementById('arg-mine');
+  const bankCards = document.getElementById('arg-bank-cards');
+  const mineCards = document.getElementById('arg-mine-cards');
+  const bankCount = document.getElementById('arg-bank-count');
+  const mineCount = document.getElementById('arg-mine-count');
+  const checkBtn = document.getElementById('arg-check');
+  const resetBtn = document.getElementById('arg-reset');
+  const feedback = document.getElementById('arg-feedback');
+  if (!positionSelect || !bankCards || !mineCards) return;
+
+  // Each evidence card. `supports` is one of: 'helps' | 'threatens' | 'neutral' | 'red-herring'.
+  const EVIDENCE = [
+    { id: 'e1', text: 'AI tools let beginners produce music videos and short films that would have required a full studio team a decade ago.', supports: 'helps' },
+    { id: 'e2', text: 'Many illustrators report losing work to clients who now use AI image generators instead of paying human artists.', supports: 'threatens' },
+    { id: 'e3', text: 'Whether AI helps or hurts an artist depends entirely on how that artist chooses to use it — as an assistant or as a replacement.', supports: 'neutral' },
+    { id: 'e4', text: 'Ancient Greek artists used the same kinds of mineral pigments for nearly a thousand years.', supports: 'red-herring' },
+    { id: 'e5', text: 'Many image-generation models are trained on millions of human-made artworks without asking the original creators.', supports: 'threatens' },
+    { id: 'e6', text: 'Beethoven composed his Ninth Symphony after going almost completely deaf.', supports: 'red-herring' },
+    { id: 'e7', text: 'Studies show writers who use AI as an editor (not as a ghostwriter) often revise more carefully and produce stronger drafts.', supports: 'helps' },
+    { id: 'e8', text: 'Whether new technology helps or hurts creativity has always depended on how it\'s used — printing presses, cameras, and synthesizers all faced this same debate.', supports: 'neutral' }
+  ];
+
+  let inMine = new Set(); // ids of cards currently in "my evidence"
+  let dragId = null;
+  let resultsShown = false;
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  let bankOrder = shuffle(EVIDENCE.map(e => e.id));
+
+  function makeCard(ev) {
+    const card = document.createElement('div');
+    card.className = 'arg-card';
+    card.draggable = true;
+    card.dataset.id = ev.id;
+    card.innerHTML =
+      '<span class="arg-card-handle" aria-hidden="true">⋮⋮</span>' +
+      '<div class="arg-card-text">' + ev.text + '</div>';
+    return card;
+  }
+
+  function render() {
+    // Clear results state if we re-render
+    feedback.classList.remove('show');
+    bankCards.innerHTML = '';
+    mineCards.innerHTML = '';
+
+    // Bank
+    bankOrder.forEach(id => {
+      if (inMine.has(id)) return;
+      const ev = EVIDENCE.find(e => e.id === id);
+      const card = makeCard(ev);
+      bankCards.appendChild(card);
+    });
+
+    // Mine
+    inMine.forEach(id => {
+      const ev = EVIDENCE.find(e => e.id === id);
+      const card = makeCard(ev);
+      mineCards.appendChild(card);
+    });
+
+    bankCount.textContent = (EVIDENCE.length - inMine.size);
+    mineCount.textContent = inMine.size + ' / 3';
+
+    attachDragHandlers();
+    resultsShown = false;
+  }
+
+  function attachDragHandlers() {
+    document.querySelectorAll('.arg-card').forEach(card => {
+      card.addEventListener('dragstart', (e) => {
+        dragId = card.dataset.id;
+        card.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      card.addEventListener('dragend', () => {
+        card.classList.remove('dragging');
+      });
+      // Click-to-toggle as a fallback for touch
+      card.addEventListener('click', () => {
+        const id = card.dataset.id;
+        if (inMine.has(id)) {
+          inMine.delete(id);
+          render();
+        } else if (inMine.size < 3) {
+          inMine.add(id);
+          render();
+        }
+      });
+    });
+
+    [bankZone, mineZone].forEach(zone => {
+      zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('is-target'); });
+      zone.addEventListener('dragleave', () => {
+        if (zone === mineZone) return; // mineZone always shows highlight
+        zone.classList.remove('is-target');
+      });
+      zone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (!dragId) return;
+        const id = dragId;
+        if (zone === mineZone) {
+          if (!inMine.has(id) && inMine.size < 3) inMine.add(id);
+        } else if (zone === bankZone) {
+          if (inMine.has(id)) inMine.delete(id);
+        }
+        dragId = null;
+        render();
+      });
+    });
+  }
+
+  function check() {
+    if (inMine.size !== 3) {
+      feedback.className = 'try-it-feedback show warn';
+      feedback.innerHTML = '⚠️ <strong>Pick exactly 3 pieces of evidence first</strong> — then click Check.';
+      return;
+    }
+    const pos = positionSelect.value;
+    let strong = 0, weak = 0, irrelevant = 0;
+
+    document.querySelectorAll('#arg-mine-cards .arg-card').forEach(card => {
+      const id = card.dataset.id;
+      const ev = EVIDENCE.find(e => e.id === id);
+      let cls, tag, why;
+      if (ev.supports === 'red-herring') {
+        cls = 'irrelevant';
+        tag = 'Off-topic';
+        why = 'True, but unrelated to AI and creativity. Off-topic evidence weakens an argument even when each fact is correct.';
+        irrelevant++;
+      } else if (ev.supports === pos) {
+        cls = 'matches';
+        tag = 'Supports your position';
+        why = 'This actually backs up the position you chose. Strong evidence.';
+        strong++;
+      } else {
+        cls = 'mismatches';
+        tag = 'Supports the OTHER side';
+        why = 'This is true, but it argues for a different position than the one you picked. Including it would weaken your case.';
+        weak++;
+      }
+      card.classList.add(cls);
+      const tagEl = document.createElement('span');
+      tagEl.className = 'arg-card-tag';
+      tagEl.textContent = tag;
+      card.appendChild(tagEl);
+      const whyEl = document.createElement('div');
+      whyEl.className = 'arg-card-why';
+      whyEl.textContent = why;
+      card.appendChild(whyEl);
+    });
+
+    let msg, klass;
+    if (strong === 3) {
+      msg = '🎯 <strong>Bullseye — three pieces of strong evidence, all on point.</strong> A reader who hasn\'t taken this course would walk away convinced. Notice what just happened: assembling a clear argument is more about <em>filtering</em> evidence than <em>finding</em> it.';
+      klass = 'success';
+    } else if (strong >= 2) {
+      msg = '👍 <strong>Almost there — ' + strong + ' of 3 pieces are on point.</strong> Look at the cards labeled "Off-topic" or "Supports the OTHER side" and swap them out. Reset and try again.';
+      klass = 'warn';
+    } else {
+      msg = '🔍 <strong>Most of these don\'t actually support the position you picked.</strong> Either change your position, or swap your evidence. Reset and give it another go.';
+      klass = 'warn';
+    }
+    feedback.className = 'try-it-feedback show ' + klass;
+    feedback.innerHTML = msg;
+    resultsShown = true;
+  }
+
+  function reset() {
+    inMine = new Set();
+    bankOrder = shuffle(EVIDENCE.map(e => e.id));
+    render();
+  }
+
+  positionSelect.addEventListener('change', () => {
+    if (resultsShown) reset();
+  });
+  checkBtn.addEventListener('click', check);
+  resetBtn.addEventListener('click', reset);
+  render();
+})();
+</script>
+
+</body>
+</html>

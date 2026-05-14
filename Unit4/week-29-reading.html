@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 29 — Digital Modeling &amp; Simulation | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== CARD GRID ========== */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 8px; }
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TWO-COLUMN COMPARE ========== */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul { margin: 0; padding-left: 20px; color: #4b5563; font-size: 14.5px; line-height: 1.7; }
+
+/* ========== STEPS ========== */
+.steps-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.step-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TRAITS ========== */
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.trait-card { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px; }
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body { color: #374151; font-size: 14.5px; }
+
+/* ========== VOCAB ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* ========== REFLECTION ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* ========== POND SIM WIDGET ========== */
+.pond-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 4px;
+}
+.pond-controls {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.pond-stage {
+  background: linear-gradient(180deg, #cfeefb 0%, #cfeefb 38%, #76a9c0 39%, #2e6680 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+}
+.pond-stage svg { display: block; width: 100%; height: 100%; min-height: 240px; }
+.pond-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pond-slider-row label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pond-slider-row label .pond-val {
+  background: var(--binary-blue);
+  color: white;
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  min-width: 52px;
+  text-align: center;
+}
+.pond-slider-row input[type=range] {
+  width: 100%;
+  accent-color: var(--bitstream-blue);
+  cursor: pointer;
+}
+.pond-readouts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+.pond-readout {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+}
+.pond-readout-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+.pond-readout-value {
+  font-family: 'Consolas', 'Menlo', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--binary-blue);
+}
+.pond-readout-value.warn { color: #b45309; }
+.pond-readout-value.bad  { color: #b91c1c; }
+.pond-status {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border: 1px solid var(--bitstream-blue);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: var(--binary-blue);
+  line-height: 1.55;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .pond-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 4 · WEEK 29
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 4: Modeling &amp; AI</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 29: Digital Modeling &amp; Simulation</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 4 • WEEK 29 • READING</div>
+  <h1 class="lesson-title">Digital Modeling &amp; Simulation</h1>
+  <p class="lesson-description">Scientists test rocket engines without flying a rocket. Cities plan traffic without closing a road. How? They build a <em>model</em> — a small, careful copy of reality that runs inside a computer. This week, you'll learn what models really are, why they matter, and you'll run one yourself.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Define</strong> a digital model and a simulation, and explain how they're related.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Identify variables and conditions</strong> in a model and predict how changing them changes the output.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Recognize abstraction</strong> — the choice of which real-world details a model keeps and which it leaves out.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Describe human-computer interfaces</strong> — gesture, voice, and haptic ways of talking to digital systems.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · What Is a Digital Model?</div>
+  </div>
+  <h2 class="section-title">A small, careful copy of reality</h2>
+  <div class="read-body">
+    <p>You've been making models since you were a kid. A LEGO castle is a model of a castle. A drawing of your dog is a model of your dog. A plastic anatomy figure in science class is a model of a body. None of those things <em>are</em> the real thing — but each one keeps the parts that matter for what you're trying to learn or play with.</p>
+    <p>A <span class="key-term">digital model</span> is the same idea, only the model lives inside a computer. Instead of plastic bricks, the parts are <strong>numbers, rules, and pictures</strong>. Instead of sitting still on a shelf, the model can <em>change</em> over time when you press a button or move a slider. When a model runs and shows you what would happen, that running version is called a <span class="key-term">simulation</span>.</p>
+    <p>Think of it this way: the model is the recipe. The simulation is what happens when you actually cook.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <rect x="30" y="40" width="150" height="100" rx="12" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="105" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E5568">REAL WORLD</text>
+      <text x="105" y="105" text-anchor="middle" font-size="34">🌧️</text>
+      <text x="105" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">storm clouds, wind</text>
+
+      <line x1="195" y1="90" x2="245" y2="90" stroke="#C7922C" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="245,90 233,84 233,96" fill="#C7922C"/>
+      <text x="220" y="80" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#8a6620">model</text>
+
+      <rect x="260" y="40" width="150" height="100" rx="12" fill="#67308F" opacity="0.16" stroke="#67308F" stroke-width="2"/>
+      <text x="335" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#67308F">DIGITAL MODEL</text>
+      <text x="335" y="105" text-anchor="middle" font-size="34">🧮</text>
+      <text x="335" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">numbers + rules</text>
+
+      <line x1="425" y1="90" x2="475" y2="90" stroke="#76C043" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="475,90 463,84 463,96" fill="#76C043"/>
+      <text x="450" y="80" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#3d6522">simulate</text>
+
+      <rect x="490" y="40" width="100" height="100" rx="12" fill="#76C043" opacity="0.16" stroke="#76C043" stroke-width="2"/>
+      <text x="540" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#3d6522">FORECAST</text>
+      <text x="540" y="105" text-anchor="middle" font-size="34">⛈️</text>
+      <text x="540" y="130" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">what may happen</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Model</strong> — a simplified version of something real, designed to help us study or predict it.</p>
+      <p><strong>Digital model</strong> — a model built from numbers, rules, and code that lives inside a computer.</p>
+      <p><strong>Simulation</strong> — what happens when you <em>run</em> a digital model and watch how it behaves over time or when inputs change.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Variables &amp; Conditions — The Knobs</div>
+  </div>
+  <h2 class="section-title">The numbers that make a model behave</h2>
+  <div class="read-body">
+    <p>Imagine the dashboard of an old radio: dials for volume, for treble, for tuning. Each dial is a knob you can twist, and twisting it changes what comes out of the speaker. A digital model has knobs too — except they're called <span class="key-term">variables</span>.</p>
+    <p>A variable is just a labeled box that holds a number, a word, or a yes/no value the model needs. <em>Rainfall</em>, <em>temperature</em>, <em>player score</em>, <em>fuel left in the tank</em> — every model has them. When the variable changes, the model behaves differently. That's the whole reason variables exist: so the same model can answer many questions.</p>
+    <p>But variables alone aren't enough. Models also have <span class="key-term">conditions</span> — the IF/THEN rules that say <em>"if rainfall is high, then the pond fills up faster"</em> or <em>"if temperature drops below freezing, then the water turns to ice."</em> Variables are the knobs. Conditions are the wiring that connects each knob to what you see on the screen.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">🎚️ Variable</div>
+      <div class="compare-card-headline">A value that can change</div>
+      <ul>
+        <li><code>rainfall</code> = 30 (mm per week)</li>
+        <li><code>sun_hours</code> = 8</li>
+        <li><code>temperature</code> = 22 (°C)</li>
+        <li><code>player_lives</code> = 3</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">🔀 Condition</div>
+      <div class="compare-card-headline">A rule that uses variables</div>
+      <ul>
+        <li>IF <code>rainfall &gt; 50</code> THEN flood warning</li>
+        <li>IF <code>temperature &lt; 0</code> THEN water freezes</li>
+        <li>IF <code>sun_hours &gt; 10</code> AND <code>rainfall &lt; 5</code> THEN drought</li>
+        <li>IF <code>player_lives = 0</code> THEN game over</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>The classical thinkers had a word for the careful study of how one thing causes another: <em>prudentia</em> — the virtue of <strong>prudence</strong>, or wise foresight. A good model is an act of prudence. By thinking carefully about which variables matter and which conditions follow from them, you give yourself a way to look ahead before acting.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · Real-World Simulations</div>
+  </div>
+  <h2 class="section-title">Where models actually do work</h2>
+  <div class="read-body">
+    <p>Digital models aren't just classroom toys. Right now, somewhere on Earth, a giant simulation is running and helping someone make a decision. Here are three places you've already met them — even if you didn't know.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head">
+        <strong>🌦️ Weather Forecasting</strong>
+      </div>
+      <div class="platform-card-body">When the weather app says "70% chance of rain tomorrow," that number didn't come from a guess. Supercomputers split the atmosphere into millions of tiny cubes and run rules of physics on each one — temperature, pressure, humidity, wind. The simulation tries thousands of slightly different starting conditions and counts how many end with rain. <em>That</em> is the 70%.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <strong>🐟 Ecosystem Simulations</strong>
+      </div>
+      <div class="platform-card-body">Biologists model entire forests, coral reefs, and ponds to ask "what would happen if…" — what if a new fish enters the lake? What if the temperature rises? Models can't replace real fieldwork, but they can warn scientists which experiments are worth running and which ones would be a disaster to try in the wild.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--odyssey-orange);">
+      <div class="platform-card-head">
+        <strong>🎮 Physics Engines in Games</strong>
+      </div>
+      <div class="platform-card-body">Every time you watch a barrel tumble down stairs in a video game, or knock a tower over in a sandbox game, you're seeing a tiny physics simulation. The game's <em>physics engine</em> tracks the position, mass, and velocity of every object and applies the rules of motion 60 times a second so the world looks alive.</div>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — POND ECOSYSTEM SIMULATOR ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🐟 Try It — Live Simulation</div>
+    <div class="try-it-title">Pond Ecosystem Simulator</div>
+    <p class="try-it-instructions">You're in charge of a small pond. Adjust the three variables — <strong>rainfall</strong>, <strong>sun hours</strong>, and <strong>temperature</strong> — and watch the pond respond. The water level, the fish count, and the algae bloom all change because of the conditions wired into the model. Your goal: find a balance where fish are happy and algae stays under control.</p>
+
+    <div class="pond-grid">
+      <div class="pond-controls">
+        <div class="pond-slider-row">
+          <label>Rainfall <span class="pond-val" id="pond-val-rain">30 mm</span></label>
+          <input type="range" id="pond-rain" min="0" max="100" value="30">
+        </div>
+        <div class="pond-slider-row">
+          <label>Sun hours / day <span class="pond-val" id="pond-val-sun">8 h</span></label>
+          <input type="range" id="pond-sun" min="0" max="14" value="8">
+        </div>
+        <div class="pond-slider-row">
+          <label>Temperature <span class="pond-val" id="pond-val-temp">22 °C</span></label>
+          <input type="range" id="pond-temp" min="-5" max="40" value="22">
+        </div>
+
+        <div class="pond-readouts">
+          <div class="pond-readout">
+            <div class="pond-readout-label">Water</div>
+            <div class="pond-readout-value" id="pond-out-water">—</div>
+          </div>
+          <div class="pond-readout">
+            <div class="pond-readout-label">Fish</div>
+            <div class="pond-readout-value" id="pond-out-fish">—</div>
+          </div>
+          <div class="pond-readout">
+            <div class="pond-readout-label">Algae</div>
+            <div class="pond-readout-value" id="pond-out-algae">—</div>
+          </div>
+        </div>
+
+        <div class="pond-status" id="pond-status">Move the sliders to run the simulation.</div>
+      </div>
+
+      <div class="pond-stage" aria-label="Pond view">
+        <svg viewBox="0 0 400 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- sky gradient is from CSS background; SVG draws the pond shapes on top -->
+          <!-- Sun -->
+          <circle id="pond-sun-shape" cx="340" cy="46" r="22" fill="#F7C948"/>
+          <!-- Pond container (ground) -->
+          <rect x="0" y="160" width="400" height="120" fill="#3d2f1b"/>
+          <ellipse cx="200" cy="170" rx="180" ry="20" fill="#2a1f12"/>
+          <!-- Water (height controlled by JS) -->
+          <rect id="pond-water" x="20" y="190" width="360" height="80" fill="#3aa3c7" opacity="0.95"/>
+          <!-- Algae layer (opacity controlled) -->
+          <rect id="pond-algae" x="20" y="190" width="360" height="80" fill="#5fb33f" opacity="0"/>
+          <!-- Water shine -->
+          <ellipse cx="120" cy="200" rx="60" ry="3" fill="white" opacity="0.4"/>
+          <ellipse cx="280" cy="208" rx="40" ry="2" fill="white" opacity="0.3"/>
+          <!-- Reeds -->
+          <line x1="40" y1="190" x2="40" y2="160" stroke="#3d6522" stroke-width="3" stroke-linecap="round"/>
+          <line x1="50" y1="190" x2="50" y2="166" stroke="#3d6522" stroke-width="3" stroke-linecap="round"/>
+          <line x1="360" y1="190" x2="360" y2="158" stroke="#3d6522" stroke-width="3" stroke-linecap="round"/>
+          <line x1="350" y1="190" x2="350" y2="164" stroke="#3d6522" stroke-width="3" stroke-linecap="round"/>
+          <!-- Fish group -->
+          <g id="pond-fish-group"></g>
+          <!-- Rain group (raindrop lines) -->
+          <g id="pond-rain-group"></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-secondary" id="pond-reset">Reset to defaults</button>
+      <button class="try-it-btn try-it-btn-primary" id="pond-flood">🌊 Try a flood</button>
+      <button class="try-it-btn try-it-btn-success" id="pond-balance">✨ Find balance</button>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Notice what just happened: there is no real pond. There are no real fish. The whole "ecosystem" is three numbers and a handful of IF/THEN rules. That's a digital model. It can't perfectly predict what would happen in your backyard pond — but it <em>can</em> show you what changes when conditions shift, and that's enormously useful.</p>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · Why Simulations Matter</div>
+  </div>
+  <h2 class="section-title">Test the dangerous, expensive, or impossible — safely</h2>
+  <div class="read-body">
+    <p>Why bother with a model when you could test the real thing? Three reasons.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Some experiments are too dangerous to run for real</div>
+        <div class="step-body">Engineers don't crash-test airplanes by flying real ones into walls. They simulate the impact first. Doctors test new heart-surgery techniques in simulation before any patient is ever cut open.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Some experiments are too slow or too fast to watch in real life</div>
+        <div class="step-body">Climate scientists model decades of warming in an afternoon. Game designers slow down a 1-millisecond explosion so artists can polish each frame. Simulations let you stretch or squeeze time.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Some experiments are too expensive to repeat</div>
+        <div class="step-body">A real spacecraft costs hundreds of millions of dollars. A simulation costs the electricity to run a computer. Engineers fly a hundred simulated launches before bolting on the first real fuel tank.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>NASA's Mars rovers <strong>Curiosity</strong> and <strong>Perseverance</strong> were driven thousands of times across simulated Martian terrain on Earth before either touched real Martian dust. The drivers practice every move on the model first — because if a real wheel slips into a real crater on Mars, there's no "undo" button 140 million miles away.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>Every weather forecast you've ever seen comes from a simulation called a <strong>numerical weather prediction model</strong>. The biggest ones run on supercomputers that can perform <em>quintillions</em> of calculations per second — that's a 1 followed by 18 zeros. And even with all that power, weather forecasts past about 10 days get unreliable, because tiny rounding errors snowball over time. Models help us see further — but not infinitely far.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Talking to Digital Models — HCI</div>
+  </div>
+  <h2 class="section-title">Gestures, voices, and the buzz in your phone</h2>
+  <div class="read-body">
+    <p>If a model lives inside the computer, how do you actually <em>tell it</em> what to do? You use a <span class="key-term">human-computer interface</span> — usually shortened to HCI. That's the fancy name for any way a person can talk to (or feel back from) a machine. You've used a dozen kinds today already.</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">👆 Touch &amp; Click</div>
+      <div class="trait-body">The basics: tapping a screen, dragging a slider, clicking a mouse. Simple, fast, and used by nearly every app on Earth.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">🤚 Gesture Tracking</div>
+      <div class="trait-body">Cameras and sensors watch your hand or body and translate motion into commands. Used in motion-controlled games, sign-language translators, and surgical robots.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">🎙️ Voice Input</div>
+      <div class="trait-body">"Hey, what's the weather?" Voice assistants turn spoken words into text, then into commands. The model "listens" by running a speech-recognition simulation.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: #3d6522;">📳 Haptic Feedback</div>
+      <div class="trait-body">When your phone buzzes for a notification, that's haptics — feedback you feel. Game controllers, smart watches, and modern car steering wheels all use it to talk back to you.</div>
+    </div>
+  </div>
+
+  <div class="read-body">
+    <p>Every HCI is itself a tiny model. A voice assistant has a <em>model of speech</em>. A motion-controlled game has a <em>model of your skeleton</em>. The richer the model, the more naturally you can interact — and the more it feels like you're "really there." That's why the field of HCI is one of the most exciting frontiers in computer science right now.</p>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Open the Pond Simulator above one more time. Identify <strong>one variable</strong>, <strong>one condition</strong> the model probably uses, and <strong>one detail</strong> about real ponds the model has chosen to leave out (an example of abstraction). Bonus: name an HCI you used to interact with the simulator.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 29</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Model</div>
+      <div class="vocab-def">A simplified version of something real, built so we can study or predict it.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Simulation</div>
+      <div class="vocab-def">What happens when a digital model is run — the model's behavior over time or under different inputs.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Variable</div>
+      <div class="vocab-def">A labeled value inside a model that can change — like temperature, score, or fuel level.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Condition</div>
+      <div class="vocab-def">An IF/THEN rule that uses variables to decide what the model does next.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Abstraction</div>
+      <div class="vocab-def">Choosing which real-world details a model keeps and which it leaves out, so the model stays simple enough to use.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Human-computer interface (HCI)</div>
+      <div class="vocab-def">Any way a person communicates with a computer — touch, click, gesture, voice, or haptic feedback.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Gesture tracking</div>
+      <div class="vocab-def">An HCI that uses cameras or sensors to read the motion of a hand, arm, or body and turn it into commands.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Haptic feedback</div>
+      <div class="vocab-def">Information you feel through vibration or motion, usually from a phone, controller, or watch.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Pick one thing you'd like to model — and design it.</div>
+    <p>Choose <strong>one</strong> small piece of the world you'd like to model on a computer (your bedroom temperature over a day, the spread of a rumor at school, a snowball fight, a basketball shot — your call). Then answer in 4–6 sentences:</p>
+    <ul>
+      <li>What are <strong>three variables</strong> your model would need?</li>
+      <li>Write one <strong>IF/THEN condition</strong> you'd wire into it.</li>
+      <li>Name <strong>one detail</strong> from the real thing you would deliberately leave out (your abstraction).</li>
+      <li>What HCI would feel right for someone using your model — sliders, voice, gesture, something else? Why?</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 30</strong>, you'll meet the <em>engineering design process</em> — the time-tested cycle every great inventor follows to turn an idea into a working solution. You'll also see why iteration (going around the cycle again, and again, and again) is a virtue, not a sign of failure.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Pond Ecosystem Simulator ==========
+(function() {
+  const rainSlider = document.getElementById('pond-rain');
+  const sunSlider  = document.getElementById('pond-sun');
+  const tempSlider = document.getElementById('pond-temp');
+  if (!rainSlider || !sunSlider || !tempSlider) return;
+
+  const rainVal = document.getElementById('pond-val-rain');
+  const sunVal  = document.getElementById('pond-val-sun');
+  const tempVal = document.getElementById('pond-val-temp');
+
+  const outWater = document.getElementById('pond-out-water');
+  const outFish  = document.getElementById('pond-out-fish');
+  const outAlgae = document.getElementById('pond-out-algae');
+  const status   = document.getElementById('pond-status');
+
+  const waterRect = document.getElementById('pond-water');
+  const algaeRect = document.getElementById('pond-algae');
+  const fishGroup = document.getElementById('pond-fish-group');
+  const rainGroup = document.getElementById('pond-rain-group');
+  const sunShape  = document.getElementById('pond-sun-shape');
+
+  // ----- The model: variables -> outputs -----
+  function compute(rain, sun, temp) {
+    // Water level: more rain, more water; high heat evaporates a little
+    let waterPct = 35 + rain * 0.6 - Math.max(0, temp - 25) * 1.2;
+    waterPct = Math.max(5, Math.min(100, waterPct));
+
+    // Algae: thrives in warmth + sun, exploded when too much rain washes nutrients in
+    let algae = 0;
+    algae += Math.max(0, temp - 18) * 1.2;
+    algae += Math.max(0, sun - 6) * 3;
+    if (rain > 70) algae += (rain - 70) * 0.6;
+    algae = Math.max(0, Math.min(100, algae));
+
+    // Fish: like moderate water and moderate temp, hate too much algae or freezing or drought
+    let fish = 6;
+    if (waterPct < 20) fish -= 4;
+    else if (waterPct < 35) fish -= 2;
+    if (temp < 4)  fish -= 4;
+    if (temp > 32) fish -= 3;
+    if (algae > 60) fish -= 3;
+    else if (algae > 35) fish -= 1;
+    if (waterPct > 90 && rain > 80) fish -= 1; // flooding
+    fish = Math.max(0, Math.min(8, Math.round(fish)));
+
+    return { waterPct, algae, fish };
+  }
+
+  // ----- Render the visuals -----
+  function renderFish(count) {
+    fishGroup.innerHTML = '';
+    const xs = [80, 160, 240, 320, 110, 290, 200, 60];
+    const ys = [225, 240, 220, 245, 250, 230, 235, 215];
+    for (let i = 0; i < count; i++) {
+      const x = xs[i % xs.length];
+      const y = ys[i % ys.length];
+      const flip = (i % 2 === 0) ? 1 : -1;
+      const fish = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      fish.setAttribute('transform', 'translate(' + x + ',' + y + ') scale(' + flip + ',1)');
+      fish.innerHTML =
+        '<ellipse cx="0" cy="0" rx="11" ry="5" fill="#f59f3a"/>' +
+        '<polygon points="-11,0 -18,-5 -18,5" fill="#f59f3a"/>' +
+        '<circle cx="6" cy="-1.5" r="1.4" fill="#0E1C42"/>';
+      fishGroup.appendChild(fish);
+    }
+  }
+
+  function renderRain(intensity) {
+    rainGroup.innerHTML = '';
+    const drops = Math.round(intensity / 8);
+    for (let i = 0; i < drops; i++) {
+      const x = 20 + Math.random() * 360;
+      const y = 30 + Math.random() * 130;
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', x);
+      line.setAttribute('y1', y);
+      line.setAttribute('x2', x - 4);
+      line.setAttribute('y2', y + 12);
+      line.setAttribute('stroke', '#bfe5f4');
+      line.setAttribute('stroke-width', '2');
+      line.setAttribute('stroke-linecap', 'round');
+      line.setAttribute('opacity', '0.85');
+      rainGroup.appendChild(line);
+    }
+  }
+
+  function renderSun(sun) {
+    // Bright when sun > 6, dimmer otherwise
+    const opacity = Math.max(0.25, Math.min(1, sun / 12));
+    const r = 18 + sun * 0.6;
+    sunShape.setAttribute('opacity', opacity);
+    sunShape.setAttribute('r', r);
+  }
+
+  function update() {
+    const rain = parseInt(rainSlider.value, 10);
+    const sun  = parseInt(sunSlider.value, 10);
+    const temp = parseInt(tempSlider.value, 10);
+
+    rainVal.textContent = rain + ' mm';
+    sunVal.textContent  = sun + ' h';
+    tempVal.textContent = temp + ' °C';
+
+    const out = compute(rain, sun, temp);
+
+    // Outputs
+    outWater.textContent = Math.round(out.waterPct) + '%';
+    outFish.textContent  = out.fish;
+    outAlgae.textContent = Math.round(out.algae) + '%';
+
+    outWater.className = 'pond-readout-value' + (out.waterPct < 20 ? ' bad' : (out.waterPct < 35 ? ' warn' : ''));
+    outFish.className  = 'pond-readout-value' + (out.fish === 0 ? ' bad' : (out.fish <= 2 ? ' warn' : ''));
+    outAlgae.className = 'pond-readout-value' + (out.algae > 60 ? ' bad' : (out.algae > 35 ? ' warn' : ''));
+
+    // Visuals
+    // Water: stage is 280 tall. Water bottom at y=270, top moves with waterPct.
+    const stageBottom = 270;
+    const maxWaterTop = 195; // shallowest
+    const minWaterTop = 270; // dry pond
+    const waterTop = minWaterTop - (out.waterPct / 100) * (minWaterTop - maxWaterTop);
+    const waterHeight = stageBottom - waterTop;
+    waterRect.setAttribute('y', waterTop);
+    waterRect.setAttribute('height', Math.max(0, waterHeight));
+    algaeRect.setAttribute('y', waterTop);
+    algaeRect.setAttribute('height', Math.max(0, waterHeight));
+    algaeRect.setAttribute('opacity', (out.algae / 120).toFixed(2));
+
+    renderFish(out.fish);
+    renderRain(rain);
+    renderSun(sun);
+
+    // Status sentence
+    let msg;
+    if (out.fish >= 6 && out.algae < 35 && out.waterPct >= 35 && out.waterPct <= 90) {
+      msg = '<strong>The pond is thriving.</strong> Healthy water level, low algae, fish are happy.';
+    } else if (out.fish === 0) {
+      msg = '<strong>The pond cannot support fish right now.</strong> Try gentler conditions — moderate rain, mild temperature.';
+    } else if (out.algae > 60) {
+      msg = '<strong>An algae bloom is choking the pond.</strong> Too much warmth and sun. Cool things down or reduce sun.';
+    } else if (out.waterPct < 20) {
+      msg = '<strong>The pond is drying up.</strong> Increase rainfall or lower the temperature so less water evaporates.';
+    } else if (out.waterPct > 90 && rain > 80) {
+      msg = '<strong>The pond is flooding.</strong> Heavy rain is overwhelming the ecosystem.';
+    } else {
+      msg = '<strong>The pond is hanging on.</strong> Some pressure from one of the variables — try fine-tuning.';
+    }
+    status.innerHTML = msg;
+  }
+
+  // Sliders
+  [rainSlider, sunSlider, tempSlider].forEach(s => s.addEventListener('input', update));
+
+  // Buttons
+  document.getElementById('pond-reset').addEventListener('click', () => {
+    rainSlider.value = 30; sunSlider.value = 8; tempSlider.value = 22; update();
+  });
+  document.getElementById('pond-flood').addEventListener('click', () => {
+    rainSlider.value = 95; sunSlider.value = 4; tempSlider.value = 18; update();
+  });
+  document.getElementById('pond-balance').addEventListener('click', () => {
+    rainSlider.value = 40; sunSlider.value = 7; tempSlider.value = 20; update();
+  });
+
+  update();
+})();
+</script>
+
+</body>
+</html>

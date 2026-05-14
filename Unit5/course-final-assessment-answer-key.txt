@@ -1,0 +1,363 @@
+═══════════════════════════════════════════════════════════════
+  COURSE FINAL ASSESSMENT — ANSWER KEY
+  Digital Discoveries · Grade 6 · Year-End Cumulative
+  All five units (Weeks 1–35)
+  Topic: Cumulative — communication, citizenship, programming,
+         modeling, AI, careers, and digital virtue
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-
+populate correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  UNIT 1 — DIGITAL COMMUNICATION
+  Q1  → C    (asynchronous = email)
+  Q2  → B    (packets travel different paths and reassemble)
+  Q3  → B    (ask before assuming — tone is hard in short text)
+
+  UNIT 2 — DIGITAL CITIZENSHIP & SAFETY
+  Q4  → B    (phishing — urgency + misspelled URL)
+  Q5  → C    (long, unique, not reused)
+  Q6  → C    (don't pile on; defend or message kindly)
+
+  UNIT 3 — PROGRAMMING FUNDAMENTALS
+  Q7  → C    (score is a variable)
+  Q8  → B    (28 > 32 is false — cooler stays off)
+  Q9  → B    (loops repeat code)
+  Q10 → B    (read the error message)
+
+  UNIT 4 — MODELING & AI
+  Q11 → B    (digital model = simplified, numbers + rules)
+  Q12 → B    (temperature is the variable)
+  Q13 → B    (define the problem + criteria/constraints first)
+  Q14 → B    (doctor reviews and decides — human-in-the-loop)
+  Q15 → B    (biased training data → biased AI)
+  Q16 → C    (paint color → abstract away)
+
+  UNIT 5 — CAREERS, ETHICS & VIRTUE
+  Q17 → B    (data scientist finds patterns in data)
+  Q18 → B    (multiple paths; common thread is real practice)
+  Q19 → C    (report internally, then patch)
+  Q20 → C    (temperance — knowing what is enough)
+───────────────────────────────────────────────────────────────
+
+Assessment settings to verify in Canvas:
+  • 20 multiple-choice questions, 1 point each (20 points total)
+  • 2 attempts allowed
+  • Minimum score to pass: 12 / 20 (60%)
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: your preference (recommended: 45–60 minutes)
+
+═══════════════════════════════════════════════════════════════
+  TOPIC DISTRIBUTION (verify with what's deployed)
+═══════════════════════════════════════════════════════════════
+  Unit 1 (Digital Communication):       3 questions  (Q1–Q3)
+  Unit 2 (Digital Citizenship & Safety):3 questions  (Q4–Q6)
+  Unit 3 (Programming Fundamentals):    4 questions  (Q7–Q10)
+  Unit 4 (Modeling & AI):               6 questions  (Q11–Q16)
+  Unit 5 (Careers, Ethics & Virtue):    4 questions  (Q17–Q20)
+                                       ───
+                                        20 questions, 1 pt each
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. Which is the BEST example of ASYNCHRONOUS communication?
+───────────────────────────────────────────────────────────────
+  A) A live phone call
+     ❌ Phone calls are synchronous.
+  B) A live video chat
+     ❌ Video chat is synchronous — happens in real time.
+  C) An email you send tonight, friend reads tomorrow            ✓ CORRECT
+     ✅ Asynchronous — sender and reader don't need to be
+        available at the same moment. (Unit 1)
+  D) Two people talking face to face
+     ❌ Face to face is synchronous.
+
+───────────────────────────────────────────────────────────────
+Q2. When you send a video clip across the internet, the data is
+    MOST likely:
+───────────────────────────────────────────────────────────────
+  A) Sent as one giant file along a single fixed path
+     ❌ The internet doesn't work that way.
+  B) Split into packets that travel different paths and are
+     reassembled at the destination                              ✓ CORRECT
+     ✅ Packets hop between routers along different paths and
+        reassemble at the destination. (Unit 1)
+  C) Hand-carried by a network technician
+     ❌ Data travels electronically as packets.
+  D) Stored on your phone until friend manually downloads it
+     ❌ Sending = real transmission, not just storage.
+
+───────────────────────────────────────────────────────────────
+Q3. Friend replies "k." to your long message. Most charitable
+    way to handle it?
+───────────────────────────────────────────────────────────────
+  A) Assume they're angry and stop talking to them
+     ❌ Jumping to "they're angry" is the trap text sets.
+  B) Tone is hard to read in short texts — ask before
+     assuming, or wait until you can talk in person              ✓ CORRECT
+     ✅ Short texts strip out tone. Check before assuming the
+        worst. (Unit 1)
+  C) Send "fine, bye then" and end the friendship
+     ❌ Escalation in response to a one-letter reply is the
+        spiral to avoid.
+  D) Decide every "k." in the world definitely means hatred
+     ❌ Texts are short and ambiguous — not a hidden code.
+
+───────────────────────────────────────────────────────────────
+Q4. URGENT email with misspelled bank URL. Most likely?
+───────────────────────────────────────────────────────────────
+  A) Bank just changed its website name
+     ❌ Banks don't change URLs by misspelling.
+  B) Phishing attempt to steal your login                        ✓ CORRECT
+     ✅ Urgency + misspelled URL + "click NOW" is the classic
+        phishing recipe. Open the real site directly. (Unit 2)
+  C) Normal software update message
+     ❌ Software updates don't come from outside emails like
+        this.
+  D) Friend playing a harmless joke
+     ❌ This is a phishing pattern, not a joke.
+
+───────────────────────────────────────────────────────────────
+Q5. STRONGEST password choice?
+───────────────────────────────────────────────────────────────
+  A) password123
+     ❌ On every cracked-password list. Bot would guess it in
+        milliseconds.
+  B) Your birthday
+     ❌ Birthdays are easy to find or guess.
+  C) A long unique phrase, different from every other site      ✓ CORRECT
+     ✅ Long + unique + not reused is the recipe for a strong
+        password. (Unit 2)
+  D) Your pet's name
+     ❌ Often posted publicly. Easy to find.
+
+───────────────────────────────────────────────────────────────
+Q6. Stranger online getting roasted for a small mistake. BEST
+    response?
+───────────────────────────────────────────────────────────────
+  A) Pile on with a clever joke
+     ❌ Piling on harms a real person for small social reward.
+  B) Screenshot it and post to your own feed
+     ❌ Amplifying someone's bad day is the opposite of being
+        a good digital citizen.
+  C) Don't add to the harm — defend or message kindly if it
+     feels right                                                 ✓ CORRECT
+     ✅ Don't pile on; if appropriate, defend or message
+        kindly. Digital citizenship in action. (Unit 2)
+  D) Tag five friends to come laugh too
+     ❌ Pulling more people into the pile-on harms further.
+
+───────────────────────────────────────────────────────────────
+Q7. score = 0, then score = score + 10. What is `score`?
+───────────────────────────────────────────────────────────────
+  A) Function
+     ❌ Functions are named reusable code blocks.
+  B) Loop
+     ❌ Loops repeat code; `score` doesn't repeat.
+  C) Variable                                                    ✓ CORRECT
+     ✅ A variable is a named box holding a value that can
+        change. (Unit 3)
+  D) Comment
+     ❌ Comments are ignored by the computer; `score` is real
+        code.
+
+───────────────────────────────────────────────────────────────
+Q8. IF temperature > 32 THEN turn on cooler. temperature = 28.
+    What happens?
+───────────────────────────────────────────────────────────────
+  A) The cooler turns on
+     ❌ Condition requires > 32. 28 is not > 32.
+  B) The cooler does NOT turn on                                 ✓ CORRECT
+     ✅ 28 is not > 32, so the IF is false and the THEN block
+        is skipped. (Unit 3)
+  C) Temperature changes to 32
+     ❌ IF only checks the value; it doesn't change it.
+  D) The program crashes
+     ❌ Nothing to crash on. A clean false IF skips the THEN.
+
+───────────────────────────────────────────────────────────────
+Q9. A loop is MOST useful when you want to:
+───────────────────────────────────────────────────────────────
+  A) Save the program for later
+     ❌ That's a file-save command, not a loop.
+  B) Repeat a block of code a number of times, or for each
+     item in a list                                              ✓ CORRECT
+     ✅ Loops repeat — counted or per-item. (Unit 3)
+  C) Send a message to another computer
+     ❌ Networking, not looping.
+  D) Stop the program forever
+     ❌ Loops repeat blocks; they don't stop programs.
+
+───────────────────────────────────────────────────────────────
+Q10. Program crashes with an error. MOST productive first move?
+───────────────────────────────────────────────────────────────
+  A) Delete and start over
+     ❌ You'd throw away every clue. Read first.
+  B) Read the error message carefully                            ✓ CORRECT
+     ✅ The error message is the program's letter to you —
+        most of the answer is in it. (Unit 3)
+  C) Re-run the same code unchanged
+     ❌ Same code + same data = same crash.
+  D) Blame the computer
+     ❌ The bug is almost always in the code.
+
+───────────────────────────────────────────────────────────────
+Q11. A digital model is BEST described as:
+───────────────────────────────────────────────────────────────
+  A) Exact perfect copy
+     ❌ Models are simplified.
+  B) Simplified version built from numbers + rules to study
+     or predict the real thing                                   ✓ CORRECT
+     ✅ Digital model = numbers + rules, built for study or
+        prediction. (Unit 4)
+  C) A photograph
+     ❌ Photos are static; models can be run.
+  D) Hardware shaped like the thing
+     ❌ Digital models are code, not hardware.
+
+───────────────────────────────────────────────────────────────
+Q12. Modeling snowman melting. BEST example of a variable?
+───────────────────────────────────────────────────────────────
+  A) Freezing point of water (0°C)
+     ❌ Constant — doesn't change.
+  B) Outdoor temperature (changes hour by hour)                  ✓ CORRECT
+     ✅ Outdoor temperature changes — that's what a variable
+        is. (Unit 4)
+  C) The value of pi
+     ❌ Constant.
+  D) Chemical formula for water (H₂O)
+     ❌ A fixed fact, not a changing value.
+
+───────────────────────────────────────────────────────────────
+Q13. Which step typically comes FIRST in engineering design?
+───────────────────────────────────────────────────────────────
+  A) Build the final product
+     ❌ Build is much later.
+  B) Identify the problem and its criteria/constraints           ✓ CORRECT
+     ✅ Define the problem and its constraints first.
+        (Unit 4, Week 30)
+  C) Run a final user test
+     ❌ Testing comes after design/prototype.
+  D) Ship the product and write marketing copy
+     ❌ Shipping is the last step.
+
+───────────────────────────────────────────────────────────────
+Q14. AI flags a patient "high risk." Human-in-the-loop:
+───────────────────────────────────────────────────────────────
+  A) Treatment begins automatically
+     ❌ That removes the human — the opposite of the principle.
+  B) Doctor reviews the flag, talks to patient, decides          ✓ CORRECT
+     ✅ AI assists, doctor decides — the textbook human-in-
+        the-loop. (Unit 4)
+  C) Patient auto-emailed a diagnosis
+     ❌ Skips the human conversation real care requires.
+  D) Trust AI confidence with no human review
+     ❌ Opposite of human-in-the-loop.
+
+───────────────────────────────────────────────────────────────
+Q15. AI hiring tool trained on past 90%-one-demographic hires.
+     MOST likely problem?
+───────────────────────────────────────────────────────────────
+  A) AI performs perfectly — past data is always trustworthy
+     ❌ Past data carries past biases.
+  B) AI may carry forward and amplify the bias, treating new
+     applicants unfairly                                         ✓ CORRECT
+     ✅ Trained on biased history, AI repeats and amplifies
+        the bias. Textbook AI-ethics problem. (Unit 4)
+  C) AI hires at random
+     ❌ A trained AI follows patterns it learned.
+  D) AI refuses to hire anyone
+     ❌ It would carry past patterns, not refuse outright.
+
+───────────────────────────────────────────────────────────────
+Q16. Modeling highway traffic. BEST detail to abstract away?
+───────────────────────────────────────────────────────────────
+  A) Cars per minute entering each ramp
+     ❌ Critical traffic variable. Keep it.
+  B) Number of lanes
+     ❌ Directly affects how much traffic the road can carry.
+  C) The paint color of each car                                 ✓ CORRECT
+     ✅ Paint color doesn't affect flow — exactly the kind of
+        detail abstraction removes. (Unit 4)
+  D) Average speed limit on each road
+     ❌ Directly affects traffic speed. Keep it.
+
+───────────────────────────────────────────────────────────────
+Q17. Whose job: find patterns in data to answer "what might
+     happen next"?
+───────────────────────────────────────────────────────────────
+  A) Cybersecurity analyst
+     ❌ Cybersecurity is defense, not data analysis.
+  B) Data scientist                                              ✓ CORRECT
+     ✅ Finding patterns in data and predicting what comes
+        next is the data scientist's calling. (Unit 5)
+  C) UX designer
+     ❌ UX shapes how products feel, not data analysis.
+  D) Network administrator
+     ❌ Admins keep networks running, not analyze data.
+
+───────────────────────────────────────────────────────────────
+Q18. Paths into a CS career — which is MOST accurate?
+───────────────────────────────────────────────────────────────
+  A) Only a 4-year CS degree
+     ❌ Common myth — many paths work.
+  B) Multiple paths work; common thread is practice on real
+     problems                                                    ✓ CORRECT
+     ✅ Degree, bootcamp, self-teaching, apprenticeship all
+        work; real practice is the through-line. (Unit 5)
+  C) Must start before age 10
+     ❌ Many engineers start much later.
+  D) Internet age made adult learning impossible
+     ❌ Internet makes self-teaching easier than ever.
+
+───────────────────────────────────────────────────────────────
+Q19. Security engineer finds critical bug. MOST ethical FIRST
+     move?
+───────────────────────────────────────────────────────────────
+  A) Sell secretly to highest bidder
+     ❌ Clear ethical failure — harms users.
+  B) Post publicly before company can react
+     ❌ Exposes users. Responsible disclosure goes to company
+        first.
+  C) Report internally and help patch before users harmed       ✓ CORRECT
+     ✅ Responsible disclosure — report internally first, then
+        help fix. (Unit 5)
+  D) Use it to peek at colleagues' accounts
+     ❌ Abuse of trust. Don't.
+
+───────────────────────────────────────────────────────────────
+Q20. You close the app and go finish homework. Which virtue?
+───────────────────────────────────────────────────────────────
+  A) Prudence — wise foresight
+     ❌ Prudence pauses before deciding. This is mastery in
+        the moment.
+  B) Justice — what is owed
+     ❌ Justice is about others; this is about yourself.
+  C) Temperance — knowing what is enough                        ✓ CORRECT
+     ✅ Temperance is the virtue of knowing your limit and
+        choosing it. (Unit 5)
+  D) Fortitude — courage in hardship
+     ❌ Helps, but the lead virtue is temperance.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: course-final-assessment-canvas-import.zip
+  4. Click Import. The assessment appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings:
+       • Points: 20
+       • Attempts: 2
+       • Minimum score to pass: 12 (60%)
+       • Time limit (recommended): 45–60 minutes
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

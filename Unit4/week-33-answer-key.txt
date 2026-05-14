@@ -1,0 +1,122 @@
+═══════════════════════════════════════════════════════════════
+  WEEK 33 QUIZ — ANSWER KEY
+  Digital Discoveries · Unit 4 · Lesson 4.5
+  Standards: All Unit 4 (SC.6.PE.3.1, 3.2, 3.3; SC.6.ET.1.1, 2.1, 2.2, 3.2)
+  Topic: Cross-cutting Unit 4 Review
+═══════════════════════════════════════════════════════════════
+
+MANUAL FALLBACK KEY (use this if QTI import does not auto-populate
+correct answers in Canvas):
+
+───────────────────────────────────────────────────────────────
+QUICK-ANSWER GRID
+───────────────────────────────────────────────────────────────
+  Q1 → B          (Week 29 — variables in models)
+  Q2 → B          (Week 30 — design-process iteration)
+  Q3 → B          (Week 31 — machine-alone task)
+  Q4 → C          (Week 32 — fortitude as virtue)
+  Q5 → B          (Synthesis — learning-based AI as a kind of model)
+───────────────────────────────────────────────────────────────
+
+Quiz settings to verify in Canvas:
+  • 5 multiple-choice questions, 1 point each (5 points total)
+  • 3 attempts allowed
+  • Show feedback after each attempt
+  • Shuffle answers: your preference
+  • Time limit: none
+
+Note: Week 33 is a REVIEW quiz, not the unit assessment. The summative
+assessment is Week 34 (15 questions, 2 attempts, 60% pass).
+
+═══════════════════════════════════════════════════════════════
+  FULL PER-ANSWER FEEDBACK (for manual editing if needed)
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+Q1. (W29) A digital pond model uses sliders for rainfall, sun,
+    and temperature. The sliders represent the model's:
+───────────────────────────────────────────────────────────────
+  A) Outputs
+     ❌ Outputs are what the model PRODUCES (water level, fish).
+        Sliders are inputs you control.
+  B) Variables — values that can change                        ✓ CORRECT
+     ✅ Sliders let users change values — that's a textbook
+        variable. (SC.6.PE.3.1)
+  C) Constants
+     ❌ Constants don't change. Sliders are designed to.
+  D) Conditions (IF/THEN rules)
+     ❌ Conditions use the variables; they aren't the values
+        themselves.
+
+───────────────────────────────────────────────────────────────
+Q2. (W30) Three users testing your bus-tracking app report a
+    crash. BEST next step?
+───────────────────────────────────────────────────────────────
+  A) Ship it — three testers isn't a lot
+     ❌ Shipping a known-broken product isn't engineering.
+  B) Use the feedback to revise and iterate                    ✓ CORRECT
+     ✅ Test → Improve is the design loop. Real feedback gets
+        a real fix and another round of testing. (SC.6.PE.3.2)
+  C) Scrap the project
+     ❌ One fixable bug isn't a failed project.
+  D) Ignore the feedback
+     ❌ User feedback is the most valuable input the design
+        cycle has.
+
+───────────────────────────────────────────────────────────────
+Q3. (W31) Which task is BEST suited for a machine working alone?
+───────────────────────────────────────────────────────────────
+  A) Granting parole
+     ❌ High-stakes ethical judgment requires a human in the
+        loop.
+  B) Sorting 500,000 photos by which contain a cat             ✓ CORRECT
+     ✅ High-volume, low-judgment pattern recognition is
+        exactly where machines shine alone. (SC.6.ET.3.2)
+  C) Comforting a grieving family member
+     ❌ Empathy is a uniquely human strength.
+  D) Diagnosing a complicated medical case
+     ❌ AI assists, but a human doctor stays in the loop —
+        this is collaboration, not solo machine work.
+
+───────────────────────────────────────────────────────────────
+Q4. (W32) Friend used AI for entire essay. Which response
+    BEST reflects FORTITUDE?
+───────────────────────────────────────────────────────────────
+  A) Use AI for your own essay too
+     ❌ Same shortcut. Not fortitude.
+  B) Say nothing
+     ❌ Silence isn't fortitude.
+  C) Choose to write your own essay even though it's harder    ✓ CORRECT
+     ✅ Fortitude = persevering through hard work even when an
+        easier path is available. (SC.6.ET.2.2)
+  D) Report anonymously without talking first
+     ❌ May be motivated by something — but it isn't an example
+        of fortitude practiced on yourself.
+
+───────────────────────────────────────────────────────────────
+Q5. (Synthesis) How does learning-based AI relate to the
+    digital models from Week 29?
+───────────────────────────────────────────────────────────────
+  A) No connection
+     ❌ The whole Section 3 of W33 reading was this connection.
+  B) A learning-based AI is a digital model whose conditions
+     were learned from data instead of written by hand         ✓ CORRECT
+     ✅ Both have variables and outputs. The difference is just
+        where the conditions came from. (SC.6.PE.3.1, ET.2.1)
+  C) Learning-based AI replaces all earlier models
+     ❌ Rules-based models still outperform learning-based for
+        many tasks (calculators, thermostats). They coexist.
+  D) Digital models can't have variables; only AI does
+     ❌ Variables are foundational to ALL digital models.
+
+═══════════════════════════════════════════════════════════════
+  IMPORT INSTRUCTIONS — Canvas
+═══════════════════════════════════════════════════════════════
+  1. In your Canvas course: Settings → Import Course Content
+  2. Content Type: "QTI .zip file"
+  3. Upload: week-33-quiz-canvas-import.zip
+  4. Click Import. The quiz appears in Quizzes.
+  5. Open the quiz → verify correct answers match this key.
+  6. Edit quiz settings → set attempts to 3, points to 5.
+  7. Assign due date and publish.
+═══════════════════════════════════════════════════════════════

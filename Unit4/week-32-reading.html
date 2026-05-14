@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 32 — AI Fundamentals &amp; Ethics | Digital Discoveries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ========== OAO DESIGN SYSTEM ========== */
+:root {
+  --binary-blue: #0E1C42;
+  --bitstream-blue: #55C8E8;
+  --gateway-gold: #C7922C;
+  --portal-purple: #67308F;
+  --pixel-pink: #A53E97;
+  --gamer-green: #76C043;
+  --odyssey-orange: #F78F1E;
+  --dark-bitstream: #0E5568;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-text: 'Wix Madefor Text', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  background: #f8f9fa;
+}
+
+/* ========== HEADER ========== */
+.oao-header {
+  background: var(--binary-blue);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(14,28,66,0.3);
+}
+.oao-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.oao-logo-area { display: flex; align-items: center; gap: 14px; }
+.oao-logo { height: 44px; width: auto; display: block; }
+.oao-wordmark { line-height: 1.1; }
+.oao-wordmark-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.oao-wordmark-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.oao-header-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); }
+.oao-header-course {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bitstream-blue);
+  font-weight: 600;
+}
+.oao-header-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.oao-week-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gateway-gold);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb-bar { background: white; border-bottom: 1px solid #e5e7eb; }
+.breadcrumb-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.breadcrumb-inner a { color: #6b7280; text-decoration: none; transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--bitstream-blue); }
+.breadcrumb-inner .current { color: var(--binary-blue); font-weight: 600; }
+.breadcrumb-sep { width: 16px; height: 16px; fill: none; stroke: #9ca3af; stroke-width: 2; }
+
+/* ========== LESSON CONTAINER ========== */
+.lesson-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* ========== LESSON HEADER ========== */
+.lesson-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--bitstream-blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.lesson-description { font-size: 18px; color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+
+/* ========== OBJECTIVES BOX ========== */
+.objectives-box {
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.objectives-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.objective-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.objective-item:last-child { margin-bottom: 0; }
+.objective-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: white;
+}
+.objective-num.c1 { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: var(--binary-blue); }
+.objective-num.c2 { background: linear-gradient(135deg, var(--gateway-gold), #8a6620); }
+.objective-num.c3 { background: linear-gradient(135deg, var(--portal-purple), #3d1c59); }
+.objective-num.c4 { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: var(--binary-blue); }
+
+/* ========== SECTION HEADERS ========== */
+.section-header { display: flex; align-items: center; gap: 14px; margin: 48px 0 20px; }
+.section-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bitstream-blue);
+  color: var(--binary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--bitstream-blue);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+/* ========== READING TEXT ========== */
+.read-body { color: #374151; line-height: 1.8; }
+.read-body p { margin-bottom: 16px; font-size: 16px; }
+.read-body p:last-child { margin-bottom: 0; }
+.read-body strong { color: var(--binary-blue); }
+.read-body em { color: var(--dark-bitstream); }
+.key-term {
+  background: rgba(199,146,44,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--binary-blue);
+}
+
+/* ========== DIAGRAM CARD ========== */
+.diagram-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.diagram-card svg { max-width: 100%; height: auto; }
+
+/* ========== CALLOUT BLOCKS ========== */
+.callout {
+  border-left: 5px solid;
+  border-radius: 0 12px 12px 0;
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+.callout-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.callout-body { color: #374151; font-size: 15px; line-height: 1.75; }
+.callout-body p { margin-bottom: 10px; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body strong { color: var(--binary-blue); }
+
+.callout-vocab { background: linear-gradient(135deg, #eff6ff, #e0f2fe); border-left-color: var(--bitstream-blue); }
+.callout-vocab .callout-label { color: var(--dark-bitstream); }
+.callout-check { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-check .callout-label { color: var(--gateway-gold); }
+.callout-think { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border-left-color: var(--portal-purple); }
+.callout-think .callout-label { color: var(--portal-purple); }
+.callout-fact { background: linear-gradient(135deg, #fff7ed, #fed7aa33); border-left-color: var(--odyssey-orange); }
+.callout-fact .callout-label { color: var(--odyssey-orange); }
+.callout-realworld { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left-color: var(--gamer-green); }
+.callout-realworld .callout-label { color: #3d6522; }
+.callout-next { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left-color: var(--gateway-gold); }
+.callout-next .callout-label { color: var(--gateway-gold); }
+
+/* ========== CARD GRID ========== */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 8px; }
+.platform-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s;
+}
+.platform-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.platform-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.platform-card-head strong {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+.platform-card-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TWO-COLUMN COMPARE ========== */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.compare-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid;
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-card-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.compare-card-headline {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-card ul { margin: 0; padding-left: 20px; color: #4b5563; font-size: 14.5px; line-height: 1.7; }
+
+/* ========== STEPS ========== */
+.steps-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 24px; margin: 20px 0; }
+.step-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+}
+.step-title {
+  color: var(--binary-blue);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body { color: #4b5563; font-size: 14.5px; line-height: 1.6; }
+
+/* ========== TRAITS ========== */
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.trait-card { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px; }
+.trait-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.trait-body { color: #374151; font-size: 14.5px; }
+
+/* ========== VOCAB ========== */
+.vocab-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin: 48px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.vocab-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vocab-card:hover { border-color: var(--bitstream-blue); box-shadow: 0 4px 12px rgba(85,200,232,0.15); }
+.vocab-term {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--binary-blue);
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.vocab-def { font-size: 14px; color: #4b5563; line-height: 1.6; }
+
+/* ========== REFLECTION ========== */
+.reflection-hero {
+  background: linear-gradient(135deg, var(--gateway-gold), #8a6620);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 40px 0 8px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(199,146,44,0.25);
+}
+.reflection-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--binary-blue);
+  margin-bottom: 10px;
+}
+.reflection-q {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.reflection-hero p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+.reflection-hero ul { margin: 0; padding-left: 22px; line-height: 1.85; font-size: 15px; }
+
+/* ========== FOOTER ========== */
+.lesson-footer {
+  background: var(--binary-blue);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 12px;
+}
+
+/* ========== INTERACTIVE WIDGETS ========== */
+.try-it {
+  background: white;
+  border: 2px solid var(--bitstream-blue);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(85,200,232,0.10);
+}
+.try-it-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--bitstream-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.try-it-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--binary-blue);
+  margin-bottom: 8px;
+}
+.try-it-instructions { color: #4b5563; font-size: 14.5px; margin-bottom: 18px; line-height: 1.6; }
+.try-it-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.try-it-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.try-it-btn-primary { background: linear-gradient(135deg, var(--bitstream-blue), var(--dark-bitstream)); color: white; }
+.try-it-btn-primary:hover { box-shadow: 0 4px 12px rgba(85,200,232,0.35); transform: translateY(-1px); }
+.try-it-btn-secondary { background: white; color: var(--binary-blue); border: 2px solid #d1d5db; }
+.try-it-btn-secondary:hover { border-color: #9ca3af; }
+.try-it-btn-success { background: linear-gradient(135deg, var(--gamer-green), #3d6522); color: white; }
+.try-it-btn-success:hover { box-shadow: 0 4px 12px rgba(118,192,67,0.35); transform: translateY(-1px); }
+.try-it-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  line-height: 1.5;
+}
+.try-it-feedback.show { display: block; }
+.try-it-feedback.success {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-left: 4px solid var(--gamer-green);
+  color: #1f4128;
+}
+.try-it-feedback.warn {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa33);
+  border-left: 4px solid var(--odyssey-orange);
+  color: #7c3a0a;
+}
+
+/* ========== CLASSIFIER WIDGET ========== */
+.classifier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 4px;
+}
+.classifier-scenarios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.classifier-row {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.classifier-row .scenario-text {
+  flex: 1;
+  min-width: 200px;
+  font-size: 14.5px;
+  color: #374151;
+  line-height: 1.5;
+}
+.classifier-buttons {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.classifier-pick {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border: 2px solid #d1d5db;
+  background: white;
+  color: var(--binary-blue);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.classifier-pick:hover { border-color: var(--bitstream-blue); }
+.classifier-pick.selected-rules {
+  background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+  border-color: var(--bitstream-blue);
+  color: var(--dark-bitstream);
+}
+.classifier-pick.selected-learning {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-color: var(--portal-purple);
+  color: var(--portal-purple);
+}
+.classifier-pick.correct-mark {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7) !important;
+  border-color: var(--gamer-green) !important;
+  color: #1f4128 !important;
+}
+.classifier-pick.wrong-mark {
+  background: rgba(255,107,107,0.10) !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+}
+.classifier-row.revealed { background: #ffffff; }
+.classifier-why {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.55;
+  margin-top: 6px;
+  flex-basis: 100%;
+  display: none;
+  background: #fffbeb;
+  border-left: 3px solid var(--gateway-gold);
+  padding: 8px 10px;
+  border-radius: 0 6px 6px 0;
+}
+.classifier-row.revealed .classifier-why { display: block; }
+.classifier-score {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--binary-blue);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lesson-title { font-size: 28px; }
+  .lesson-container { padding: 24px 16px 60px; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .traits-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .oao-header-inner { padding: 0 16px; }
+  .oao-header-sub { display: none; }
+  .classifier-row { flex-direction: column; align-items: stretch; }
+  .classifier-buttons { justify-content: stretch; }
+  .classifier-pick { flex: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="oao-header">
+  <div class="oao-header-inner">
+    <div class="oao-logo-area">
+      <img src="../assets/oao-logo.png" alt="Optima Academy Online" class="oao-logo">
+      <div class="oao-wordmark">
+        <div class="oao-wordmark-name">Optima</div>
+        <div class="oao-wordmark-sub">Academy Online</div>
+      </div>
+      <div class="oao-header-divider"></div>
+      <div>
+        <div class="oao-header-course">Digital Discoveries</div>
+        <div class="oao-header-sub">Grade 6 · Computer Science</div>
+      </div>
+    </div>
+    <div class="oao-week-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      UNIT 4 · WEEK 32
+    </div>
+  </div>
+</header>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Course Home</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <a href="index.html">Unit 4: Modeling &amp; AI</a>
+    <svg class="breadcrumb-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="current">Week 32: AI Fundamentals &amp; Ethics</span>
+  </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="lesson-container">
+
+  <!-- Lesson header -->
+  <div class="lesson-badge">UNIT 4 • WEEK 32 • READING</div>
+  <h1 class="lesson-title">AI Fundamentals &amp; Ethics</h1>
+  <p class="lesson-description">Artificial intelligence already writes essays, recommends songs, recognizes your face, and answers your questions. But how does it actually <em>work</em> — and how should a thoughtful person decide when to use it? This week, you'll separate the magic from the math, and you'll borrow some help from the ancient Greeks to think clearly about what's just, prudent, and true.</p>
+
+  <!-- Objectives -->
+  <div class="objectives-box">
+    <div class="objectives-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bitstream-blue)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="var(--bitstream-blue)"/></svg>
+      Learning Objectives
+    </div>
+    <p style="margin-bottom:14px; color:#4b5563;">By the end of this week, you will be able to:</p>
+    <div class="objective-item">
+      <div class="objective-num c1">1</div>
+      <div><strong style="color:var(--binary-blue);">Explain</strong> what makes a piece of software "intelligent" — and why machine learning is different from traditional programming.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c2">2</div>
+      <div><strong style="color:var(--binary-blue);">Distinguish</strong> rules-based software from learning-based software, and identify examples of each.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c3">3</div>
+      <div><strong style="color:var(--binary-blue);">Identify</strong> ethical questions that AI raises — bias, privacy, ownership, and the future of work.</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num c4">4</div>
+      <div><strong style="color:var(--binary-blue);">Apply</strong> the four cardinal virtues — prudence, justice, fortitude, and temperance — to real decisions about using AI.</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-label">Section 1 · What Makes AI "Intelligent"?</div>
+  </div>
+  <h2 class="section-title">Learning from data — not just following orders</h2>
+  <div class="read-body">
+    <p>Imagine teaching a younger sibling to recognize cats. You don't hand them a 200-page manual titled "How to Identify a Cat." You show them cats. Lots of cats. Big cats, small cats, fluffy cats, hairless cats, photographs of cats, the cat next door. After a while, they just <em>know</em>. They don't memorize a list of rules — they pick up the <em>pattern</em>.</p>
+    <p>That, more or less, is how <span class="key-term">artificial intelligence</span> learns too. The clever trick at the heart of modern AI is called <span class="key-term">machine learning</span>: instead of a programmer writing every rule by hand, the computer is shown <strong>millions of examples</strong> — called <span class="key-term">training data</span> — and it adjusts itself until it can spot the pattern on its own.</p>
+    <p>This is a real shift. A traditional program <em>knows</em> facts because a human typed them in. A machine-learning program <em>recognizes</em> patterns because it found them inside a mountain of data. Knowing facts and recognizing patterns are two very different skills — and AI is mostly about the second one.</p>
+  </div>
+
+  <div class="diagram-card">
+    <svg width="100%" height="190" viewBox="0 0 600 190" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+      <rect x="20" y="40" width="170" height="110" rx="12" fill="#67308F" opacity="0.16" stroke="#67308F" stroke-width="2"/>
+      <text x="105" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#67308F">TRAINING DATA</text>
+      <text x="105" y="108" text-anchor="middle" font-size="34">📚</text>
+      <text x="105" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">millions of examples</text>
+
+      <line x1="200" y1="95" x2="250" y2="95" stroke="#C7922C" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="250,95 238,89 238,101" fill="#C7922C"/>
+      <text x="225" y="85" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#8a6620">learn</text>
+
+      <rect x="265" y="40" width="170" height="110" rx="12" fill="#55C8E8" opacity="0.18" stroke="#55C8E8" stroke-width="2"/>
+      <text x="350" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="13" font-weight="800" fill="#0E5568">AI MODEL</text>
+      <text x="350" y="108" text-anchor="middle" font-size="34">🧠</text>
+      <text x="350" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="11" fill="#6b7280">a giant pattern-matcher</text>
+
+      <line x1="445" y1="95" x2="495" y2="95" stroke="#76C043" stroke-width="3" stroke-dasharray="6,4"/>
+      <polygon points="495,95 483,89 483,101" fill="#76C043"/>
+      <text x="470" y="85" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="10" font-weight="800" fill="#3d6522">predict</text>
+
+      <rect x="510" y="40" width="80" height="110" rx="12" fill="#76C043" opacity="0.16" stroke="#76C043" stroke-width="2"/>
+      <text x="550" y="68" text-anchor="middle" font-family="Wix Madefor Display, sans-serif" font-size="11" font-weight="800" fill="#3d6522">ANSWER</text>
+      <text x="550" y="108" text-anchor="middle" font-size="32">💬</text>
+      <text x="550" y="138" text-anchor="middle" font-family="Wix Madefor Text, sans-serif" font-size="10" fill="#6b7280">about new input</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-vocab">
+    <div class="callout-label">📘 Vocabulary</div>
+    <div class="callout-body">
+      <p><strong>Artificial intelligence (AI)</strong> — software that performs tasks people normally call "intelligent": recognizing patterns, generating language, making predictions, choosing what to recommend.</p>
+      <p><strong>Machine learning</strong> — the most common kind of AI; software that gets better at a task by being shown lots of examples instead of being given hand-written rules.</p>
+      <p><strong>Training data</strong> — the giant pile of examples used to teach a machine-learning model the pattern.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-label">Section 2 · Rules-Based vs Learning-Based</div>
+  </div>
+  <h2 class="section-title">Two very different ways to make a computer "smart"</h2>
+  <div class="read-body">
+    <p>Not all software is AI. Most isn't. The world is filled with <span class="key-term">rules-based</span> software that follows a fixed list of IF/THEN instructions written by a human. Your microwave is rules-based. So is a calculator. So is a basic thermostat. They're useful, but they don't <em>learn</em> anything. They do exactly the same thing today as they did yesterday.</p>
+    <p><span class="key-term">Learning-based</span> software is different. It improves over time as more data flows in. The Spotify recommender that knows you like indie folk knows it because it watched what you played, what you skipped, and what people like you played next. It wasn't programmed to recommend that song — it <em>learned</em>.</p>
+    <p>Knowing which kind of software you're dealing with matters, because it tells you what to expect. A rules-based system is predictable: same input, same output. A learning-based system can be surprising — and sometimes wrong in ways even its creators didn't expect.</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card" style="border-top-color: var(--bitstream-blue);">
+      <div class="compare-card-label" style="color: var(--bitstream-blue);">📐 Rules-Based</div>
+      <div class="compare-card-headline">Fixed instructions written by a human</div>
+      <ul>
+        <li>Calculator: 7 × 8 = 56, every time</li>
+        <li>Thermostat: IF temp &lt; 70 THEN turn on heater</li>
+        <li>Microwave timer: count down 30 seconds</li>
+        <li>Traffic light cycle: green → yellow → red on a timer</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-top-color: var(--portal-purple);">
+      <div class="compare-card-label" style="color: var(--portal-purple);">🧠 Learning-Based</div>
+      <div class="compare-card-headline">Patterns picked up from data</div>
+      <ul>
+        <li>Spotify suggesting your next song</li>
+        <li>Email filter learning what spam looks like</li>
+        <li>Camera recognizing a friend's face</li>
+        <li>ChatGPT writing a poem about your dog</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== TRY IT — RULES vs LEARNING CLASSIFIER ========== -->
+  <div class="try-it">
+    <div class="try-it-label">🧪 Try It — Classify the Software</div>
+    <div class="try-it-title">Rules-Based vs Learning-Based Classifier</div>
+    <p class="try-it-instructions">Below are <strong>8 real things</strong> a computer might do. For each one, click <strong>Rules</strong> or <strong>Learning</strong> based on how you think it works. When you've made all 8 choices, hit <em>Score &amp; Reveal</em> to see how you did and read a short explanation for each.</p>
+
+    <div class="classifier-grid">
+      <div class="classifier-scenarios" id="classifier-scenarios"></div>
+      <div class="classifier-score" id="classifier-score" aria-live="polite">0 of 8 classified · 0 correct</div>
+    </div>
+
+    <div class="try-it-controls">
+      <button class="try-it-btn try-it-btn-secondary" id="classifier-reset">Reset</button>
+      <button class="try-it-btn try-it-btn-success" id="classifier-grade">✨ Score &amp; Reveal</button>
+    </div>
+
+    <div class="try-it-feedback" id="classifier-feedback"></div>
+  </div>
+
+  <div class="read-body">
+    <p>Here's the takeaway: <strong>rules-based software follows fixed instructions written by humans; learning-based software adjusts itself by spotting patterns in lots of data.</strong> Most of what people call "AI" today is the second kind — and that's why it can do impressive things, but also why it can fail in surprising ways.</p>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-label">Section 3 · AI Tools You've Already Used</div>
+  </div>
+  <h2 class="section-title">It's been in your pocket the whole time</h2>
+  <div class="read-body">
+    <p>You don't need to log into a fancy lab to meet AI. By lunchtime today you've probably interacted with half a dozen AI systems without thinking about it. Here are some of the big ones.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="platform-card" style="border-left-color: var(--bitstream-blue);">
+      <div class="platform-card-head">
+        <strong>🎵 Recommendation Systems</strong>
+      </div>
+      <div class="platform-card-body">YouTube's "up next." Netflix's "because you watched." Spotify's Discover Weekly. TikTok's For You feed. All are AI engines that compare your viewing history against patterns from millions of other users to predict what you'll want next.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--portal-purple);">
+      <div class="platform-card-head">
+        <strong>💬 Chatbots &amp; Generative AI</strong>
+      </div>
+      <div class="platform-card-body">ChatGPT, Claude, Gemini, image generators like DALL·E or Midjourney. These models read or saw enormous amounts of text and pictures, and now generate new text or images by predicting what should come next, one piece at a time.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gamer-green);">
+      <div class="platform-card-head">
+        <strong>📷 Image &amp; Voice Recognition</strong>
+      </div>
+      <div class="platform-card-body">Your phone's camera unlocking when it sees your face. Voice transcription on a video call. Auto-captioning on YouTube. Search-by-photo in Google. All trained on huge labeled datasets of images or audio.</div>
+    </div>
+    <div class="platform-card" style="border-left-color: var(--gateway-gold);">
+      <div class="platform-card-head">
+        <strong>⌨️ Autocomplete &amp; Autocorrect</strong>
+      </div>
+      <div class="platform-card-body">When your phone suggests the next word as you type, that's a mini language model running locally. Same idea as a chatbot, but predicting the next word rather than a whole essay.</div>
+    </div>
+  </div>
+
+  <div class="callout callout-fact">
+    <div class="callout-label">💡 Did You Know?</div>
+    <div class="callout-body">
+      <p>The biggest modern AI models are trained on <strong>trillions of words</strong> of text — more than any single person could read in 100,000 lifetimes. That's why they can write so fluently. But it's also why they sometimes confidently make things up: they're predicting what <em>sounds</em> right, not checking what's true.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-label">Section 4 · The Ethical Questions</div>
+  </div>
+  <h2 class="section-title">Powerful tools come with hard questions</h2>
+  <div class="read-body">
+    <p>AI can do remarkable things. It can also cause real harm. Both can be true at the same time. As AI gets more powerful, the people who use it well will be the ones who can name the hard questions and think them through. Here are four of the biggest ones.</p>
+  </div>
+
+  <div class="steps-card">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Bias — when training data is unfair, the AI learns the unfairness</div>
+        <div class="step-body">An AI hiring tool was trained on a decade of past hires. Past hires skewed male — so the AI learned that "qualified" looked male and started rejecting women. The AI wasn't sexist on purpose; it just copied the pattern in the data. Garbage in, garbage out.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Privacy — your data is the fuel</div>
+        <div class="step-body">Most AI tools learn from data, and a lot of that data is people. Voice assistants record voices. Chatbots remember conversations. Photo apps catalogue faces. Some of it makes the tool better. Some of it ends up sold to advertisers, or leaked, or used in ways the original people never agreed to.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Ownership — whose creativity is it, anyway?</div>
+        <div class="step-body">When an image generator copies the style of a living artist who never gave permission, who owns the result? When a student uses ChatGPT to write a whole essay, whose work was it? These aren't trick questions — they're real, unsolved debates happening right now in courts and classrooms.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Jobs — what happens when machines do the work?</div>
+        <div class="step-body">Some jobs change because of AI. Some disappear. Some new ones appear. History suggests the picture is mixed: machines have replaced human work many times before (think of the printing press, the cotton gin, the spreadsheet), and people adapted. But the transition is rarely smooth, and the question of <em>whom</em> AI helps and <em>whom</em> it hurts is one we have to keep asking.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-realworld">
+    <div class="callout-label">🌎 Real-World Connection</div>
+    <div class="callout-body">
+      <p>In 2018, a major retailer scrapped an AI tool it had been building for years to screen résumés — because the model had taught itself to penalize résumés that contained the word "women's" (as in "women's chess club"). The engineers didn't program that in. The data did. Catching that bias was the work of careful, thoughtful humans — not the machine.</p>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 5 ========== -->
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-label">Section 5 · Thinking Like Socrates About AI</div>
+  </div>
+  <h2 class="section-title">The four cardinal virtues meet the chatbot</h2>
+  <div class="read-body">
+    <p>How do you actually <em>decide</em> what's the right thing to do with a powerful new tool? You ask the questions Socrates asked his students 2,400 years ago: <em>What is just? What is prudent? What is true?</em> The classical thinkers grouped the deepest answers under four virtues — the four <strong>cardinal virtues</strong>. They still work, even when the question is "should I use ChatGPT to write this essay?"</p>
+  </div>
+
+  <div class="traits-grid">
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--portal-purple);">🦉 Prudence</div>
+      <div class="trait-body"><strong>Wise foresight.</strong> Before you use an AI tool, ask: <em>what could go wrong, and who would it hurt?</em> Prudence isn't fear — it's the habit of thinking past the next click.</div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--bitstream-blue);">⚖️ Justice</div>
+      <div class="trait-body"><strong>Giving each person their due.</strong> If an AI is biased against some group, or copies an artist's style without consent, justice is the virtue that says <em>"this is not fair, and I won't pretend it is."</em></div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gamer-green);">💪 Fortitude</div>
+      <div class="trait-body"><strong>Courage to do the hard work.</strong> When AI offers you a shortcut around real learning — writing your essay, solving your math problem — fortitude is the virtue that says <em>"I'll do it myself, even though it's harder."</em></div>
+    </div>
+    <div class="trait-card">
+      <div class="trait-label" style="color: var(--gateway-gold);">🌿 Temperance</div>
+      <div class="trait-body"><strong>Moderation in use.</strong> A great tool can become a bad habit. Temperance asks: <em>am I using AI to help me grow, or to avoid effort? Am I still capable of doing this on my own?</em></div>
+    </div>
+  </div>
+
+  <div class="callout callout-think">
+    <div class="callout-label">💭 Think About It</div>
+    <div class="callout-body">
+      <p>Socrates famously said the unexamined life is not worth living. The unexamined <em>tool</em> isn't either. Every AI you use is making thousands of small choices on your behalf — what song to play, what text to suggest, what face to recognize. The four cardinal virtues — <strong>prudence</strong>, <strong>justice</strong>, <strong>fortitude</strong>, and <strong>temperance</strong> — give you a checklist for examining those choices instead of letting them happen <em>to</em> you.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-check">
+    <div class="callout-label">✅ Check for Understanding</div>
+    <div class="callout-body">
+      <p><strong>Pause and try:</strong> Pick one AI tool you used in the last 24 hours. Name it. Then identify <strong>one</strong> of the four cardinal virtues that matters most when you use that tool, and explain why in one sentence.</p>
+    </div>
+  </div>
+
+  <!-- ========== KEY VOCABULARY ========== -->
+  <h2 class="vocab-section-title">📚 Key Vocabulary — Week 32</h2>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="vocab-term">Machine learning</div>
+      <div class="vocab-def">A kind of software that improves at a task by being shown lots of examples, instead of being given hand-written rules.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Training data</div>
+      <div class="vocab-def">The collection of examples used to teach a machine-learning model. The bigger and more representative the dataset, the better the model can perform.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Bias</div>
+      <div class="vocab-def">An unfair pattern in an AI's behavior, usually caused by unfair patterns in its training data.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Recommendation system</div>
+      <div class="vocab-def">An AI that predicts what content you'll like next, based on what you and people like you have liked before.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Generative AI</div>
+      <div class="vocab-def">An AI that creates new text, images, audio, or video by predicting what should come next based on training data.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Ethics</div>
+      <div class="vocab-def">The careful study of what's right and wrong, and how to act well — especially when the choice is hard.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Prudence</div>
+      <div class="vocab-def">The cardinal virtue of wise foresight — thinking carefully about what may follow from a choice before making it.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="vocab-term">Justice</div>
+      <div class="vocab-def">The cardinal virtue of giving each person their due — fairness, especially when a system might treat people unequally.</div>
+    </div>
+  </div>
+
+  <!-- ========== REFLECTION ========== -->
+  <div class="reflection-hero">
+    <div class="reflection-label">🪞 Weekly Reflection</div>
+    <div class="reflection-q">Pick one AI tool you use — and examine it like Socrates would.</div>
+    <p>Choose <strong>one</strong> AI tool you actually use (a chatbot, a recommender, autocomplete, a photo filter, voice transcription — anything counts). Then answer in 4–6 sentences:</p>
+    <ul>
+      <li><strong>Name it</strong> and briefly describe what it does for you.</li>
+      <li><strong>One way it could go wrong</strong> if you used it carelessly — bias, privacy, ownership, or just over-reliance.</li>
+      <li><strong>Pick one of the four cardinal virtues</strong> — prudence, justice, fortitude, or temperance — and explain how that virtue would shape the way you use the tool.</li>
+      <li><strong>One concrete habit</strong> you'll keep (or start) so the tool helps you grow, instead of doing your thinking for you.</li>
+    </ul>
+  </div>
+
+  <!-- ========== WHAT'S NEXT ========== -->
+  <div class="callout callout-next" style="margin-top:24px;">
+    <div class="callout-label">→ What's Next</div>
+    <div class="callout-body">
+      <p>In <strong>Week 33</strong>, you'll wrap up Unit 4 with a <em>Unit Review</em> and the <strong>AI Perspectives Project</strong> — synthesize everything you've learned about modeling, simulation, the engineering design process, and AI ethics, and build a position-driven infographic that makes a clear, well-reasoned case to a real audience.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="lesson-footer">
+  Digital Discoveries · Optima Academy Online · Course 0200021
+</footer>
+
+<!-- ========== INTERACTIVE WIDGET LOGIC ========== -->
+<script>
+// ========== Rules vs Learning Classifier ==========
+(function() {
+  const SCENARIOS = [
+    { text: "A calculator computing 7 × 8", correct: "rules",    why: "Rules-based — a calculator follows fixed math operations. It doesn't get better at multiplication after 1,000 uses." },
+    { text: "Spotify suggesting your next song", correct: "learning", why: "Learning-based — Spotify uses your listening history (and millions of others') to predict what you'll like next." },
+    { text: "A thermostat turning on the heat at 70°F", correct: "rules",    why: "Rules-based — one IF/THEN rule: IF temperature &lt; 70°F, THEN turn on the heater." },
+    { text: "ChatGPT writing a poem about your dog", correct: "learning", why: "Learning-based — ChatGPT learned statistical patterns from a huge pile of text. It generates new text by predicting what should come next." },
+    { text: "A traffic light cycling green-yellow-red on a timer", correct: "rules",    why: "Rules-based — the light follows a fixed schedule. It doesn't adjust by watching traffic." },
+    { text: "Email auto-detecting spam", correct: "learning", why: "Learning-based — modern spam filters learn from billions of labeled emails what spam tends to look like." },
+    { text: "A microwave running for 30 seconds when you press '30 sec'", correct: "rules",    why: "Rules-based — a deterministic countdown. No learning, no patterns, no surprises." },
+    { text: "Your phone's camera auto-recognizing your friend's face", correct: "learning", why: "Learning-based — face-recognition models are trained on lots of labeled face images." }
+  ];
+
+  const list = document.getElementById('classifier-scenarios');
+  const scoreLine = document.getElementById('classifier-score');
+  const feedback  = document.getElementById('classifier-feedback');
+  if (!list) return;
+
+  const state = SCENARIOS.map(() => ({ pick: null, revealed: false }));
+
+  function render() {
+    list.innerHTML = '';
+    SCENARIOS.forEach((s, i) => {
+      const row = document.createElement('div');
+      row.className = 'classifier-row' + (state[i].revealed ? ' revealed' : '');
+
+      const text = document.createElement('div');
+      text.className = 'scenario-text';
+      text.innerHTML = '<strong style="color:var(--binary-blue);">' + (i+1) + '.</strong> ' + s.text;
+      row.appendChild(text);
+
+      const btns = document.createElement('div');
+      btns.className = 'classifier-buttons';
+
+      ['rules', 'learning'].forEach(kind => {
+        const b = document.createElement('button');
+        b.className = 'classifier-pick';
+        b.textContent = kind === 'rules' ? 'Rules' : 'Learning';
+        if (state[i].pick === kind) {
+          b.classList.add(kind === 'rules' ? 'selected-rules' : 'selected-learning');
+        }
+        if (state[i].revealed) {
+          if (s.correct === kind) b.classList.add('correct-mark');
+          else if (state[i].pick === kind) b.classList.add('wrong-mark');
+        }
+        b.addEventListener('click', () => {
+          if (state[i].revealed) return;
+          state[i].pick = kind;
+          updateScoreLine();
+          render();
+        });
+        btns.appendChild(b);
+      });
+      row.appendChild(btns);
+
+      const why = document.createElement('div');
+      why.className = 'classifier-why';
+      why.innerHTML = '<strong>Why:</strong> ' + s.why;
+      row.appendChild(why);
+
+      list.appendChild(row);
+    });
+    updateScoreLine();
+  }
+
+  function updateScoreLine() {
+    const picked = state.filter(s => s.pick !== null).length;
+    const correct = state.filter((s, i) => s.pick === SCENARIOS[i].correct).length;
+    if (state.some(s => s.revealed)) {
+      scoreLine.textContent = correct + ' of ' + SCENARIOS.length + ' correct';
+    } else {
+      scoreLine.textContent = picked + ' of ' + SCENARIOS.length + ' classified · click Score & Reveal when you\'re ready';
+    }
+  }
+
+  document.getElementById('classifier-grade').addEventListener('click', () => {
+    state.forEach(s => { s.revealed = true; });
+    const correct = state.filter((s, i) => s.pick === SCENARIOS[i].correct).length;
+    const total = SCENARIOS.length;
+    feedback.classList.remove('warn', 'success');
+    feedback.classList.add('show');
+    if (correct === total) {
+      feedback.classList.add('success');
+      feedback.innerHTML = '🏆 Perfect — ' + correct + ' of ' + total + '. Remember: <strong>rules-based software follows fixed instructions written by humans; learning-based software adjusts itself by spotting patterns in lots of data.</strong>';
+    } else if (correct >= 6) {
+      feedback.classList.add('success');
+      feedback.innerHTML = '✅ Strong work — ' + correct + ' of ' + total + '. The key idea: <strong>rules-based software follows fixed instructions written by humans; learning-based software adjusts itself by spotting patterns in lots of data.</strong>';
+    } else {
+      feedback.classList.add('warn');
+      feedback.innerHTML = '🔁 ' + correct + ' of ' + total + '. Re-read each "Why" — and remember the rule of thumb: <strong>rules-based software follows fixed instructions written by humans; learning-based software adjusts itself by spotting patterns in lots of data.</strong>';
+    }
+    render();
+  });
+
+  document.getElementById('classifier-reset').addEventListener('click', () => {
+    state.forEach(s => { s.pick = null; s.revealed = false; });
+    feedback.classList.remove('show', 'success', 'warn');
+    feedback.innerHTML = '';
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
