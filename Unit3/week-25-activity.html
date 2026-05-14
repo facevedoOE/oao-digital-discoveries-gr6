@@ -94,7 +94,7 @@ const QUESTIONS = [
       { text: 'It uses too many quotation marks.', correct: false, why: "Quotation marks aren't the issue — strings need them. The issue is repeated structure." },
       { text: 'It violates DRY — the same two lines repeat with only the name changing. A function with a name parameter would be cleaner.', correct: true, why: "Yes! This is a classic DRY violation. Wrap the two prints in a function like welcome(name) and call it three times." },
       { text: 'It would not run at all.', correct: false, why: "The code runs fine — it's just messy and hard to maintain." },
-      { text: 'It's missing a return statement.', correct: false, why: "Print and return are different — this code is meant to print, not return. The real issue is the repetition." }
+      { text: 'It\'s missing a return statement.', correct: false, why: "Print and return are different — this code is meant to print, not return. The real issue is the repetition." }
     ]
   },
   {
@@ -178,7 +178,7 @@ const QUESTIONS = [
       { text: 'Functions make programs run faster, always.', correct: false, why: "Speed isn't the main reason — sometimes functions even add a tiny bit of overhead. The real benefit is organization and reuse." },
       { text: 'Each function does one focused job, so the code is easier to read, test, fix, and reuse.', correct: true, why: "That's the heart of modular programming — small named pieces are easier to understand and easier to fix when something breaks." },
       { text: 'Python refuses to run programs longer than 100 lines.', correct: false, why: "Python doesn't care how long your file is. The reason to use functions is human-centered: clarity and reuse." },
-      { text: 'Functions encrypt your code so others can't see it.', correct: false, why: "Functions don't hide or encrypt code. They organize it so humans can read and reuse it." }
+      { text: 'Functions encrypt your code so others can\'t see it.', correct: false, why: "Functions don't hide or encrypt code. They organize it so humans can read and reuse it." }
     ]
   },
   {
@@ -189,10 +189,10 @@ const QUESTIONS = [
     icon: '🎮',
     scenario: "Read this code carefully. What gets PRINTED when it runs?\n\ndef cheer():\n    print(\"Let's go!\")\n\nprint(\"About to call the function\")\n# function is defined, but not called yet on line above\nprint(\"After all that, still nothing from cheer\")",
     options: [
-      { text: '"Let's go!" prints once', correct: false, why: "cheer() is defined but never CALLED — defining a function does not run its body." },
+      { text: '"Let\'s go!" prints once', correct: false, why: "cheer() is defined but never CALLED — defining a function does not run its body." },
       { text: 'Nothing prints; cheer() never runs', correct: false, why: "The two normal print() lines do still run — they aren't inside the function." },
       { text: '"About to call the function" then "After all that, still nothing from cheer"', correct: true, why: "Exactly! Defining cheer() with def doesn't run it — Python just memorizes it. Only the two top-level print() calls run." },
-      { text: '"Let's go!" prints three times', correct: false, why: "There's no loop and no function call. cheer() is defined but never invoked." }
+      { text: '"Let\'s go!" prints three times', correct: false, why: "There's no loop and no function call. cheer() is defined but never invoked." }
     ]
   }
 ];
